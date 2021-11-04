@@ -1,5 +1,5 @@
 {
-    "name": "electriccitizen\/d9-upstream",
+    "name": "electriccitizen\/ec-upstream",
     "description": "Install Drupal 9 with Composer on Pantheon.",
     "type": "project",
     "license": "MIT",
