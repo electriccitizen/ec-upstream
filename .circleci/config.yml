@@ -142,24 +142,24 @@ jobs:
           name: setup-environment-vars
           command: /build-tools-ci/scripts/set-environment
 
-      - run:
-          # Uncomment line 26 in .ci/test/behat/initialize to create a backup
-          # prior to running Behat tests. This is useful to reset the multidev
-          # environment to the previous state after Behat tests have run.
-          name: prepare for Behat testing
-          command: ./.ci/test/behat/initialize
+#      - run:
+#          # Uncomment line 26 in .ci/test/behat/initialize to create a backup
+#          # prior to running Behat tests. This is useful to reset the multidev
+#          # environment to the previous state after Behat tests have run.
+#          name: prepare for Behat testing
+#          command: ./.ci/test/behat/initialize
+#
+#      - run:
+#          name: run acceptance tests with Behat
+#          command: ./.ci/test/behat/run
 
-      - run:
-          name: run acceptance tests with Behat
-          command: ./.ci/test/behat/run
-
-      - run:
-          # Uncomment line 13 in .ci/test/behat/cleanup to restore a backup
-          # after running Behat tests. This is useful to reset the multidev
-          # environment to the previous state after Behat tests have run.
-          name: clean up after Behat
-          command: ./.ci/test/behat/cleanup
-          when: always
+#      - run:
+#          # Uncomment line 13 in .ci/test/behat/cleanup to restore a backup
+#          # after running Behat tests. This is useful to reset the multidev
+#          # environment to the previous state after Behat tests have run.
+#          name: clean up after Behat
+#          command: ./.ci/test/behat/cleanup
+#          when: always
 
       - save_cache:
           key: composer-cache-{{ checksum "composer.lock" }}
@@ -170,30 +170,30 @@ jobs:
           path: /tmp/artifacts
           destination: artifacts
 
-  visual_regression_test:
-    <<: *defaults
-    docker:
-      - image: backstopjs/backstopjs:4.1.9
-    steps:
-      - checkout
-
-      - attach_workspace:
-          at: /tmp/workspace
-
-      - run: cp /tmp/workspace/bash_env.txt $BASH_ENV
-      - run: echo "export CI_BUILD_URL='${CIRCLE_BUILD_URL}'" >> $BASH_ENV
-      - run: echo "export CI_NODE_INDEX='${CIRCLE_NODE_INDEX}'" >> $BASH_ENV
-      - run: echo "export CI_REPOSITORY_URL='${CIRCLE_REPOSITORY_URL}'" >> $BASH_ENV
-      - run: echo "export ARTIFACTS_DIR_URL='${CIRCLE_BUILD_URL}/artifacts/${CIRCLE_NODE_INDEX}/artifacts'" >> $BASH_ENV
-      - run: source $BASH_ENV
-
-      - run:
-          name: visual regression test
-          command: ./.ci/test/visual-regression/run
-
-      - store_artifacts:
-          path: /tmp/artifacts
-          destination: artifacts
+#  visual_regression_test:
+#    <<: *defaults
+#    docker:
+#      - image: backstopjs/backstopjs:4.1.9
+#    steps:
+#      - checkout
+#
+#      - attach_workspace:
+#          at: /tmp/workspace
+#
+#      - run: cp /tmp/workspace/bash_env.txt $BASH_ENV
+#      - run: echo "export CI_BUILD_URL='${CIRCLE_BUILD_URL}'" >> $BASH_ENV
+#      - run: echo "export CI_NODE_INDEX='${CIRCLE_NODE_INDEX}'" >> $BASH_ENV
+#      - run: echo "export CI_REPOSITORY_URL='${CIRCLE_REPOSITORY_URL}'" >> $BASH_ENV
+#      - run: echo "export ARTIFACTS_DIR_URL='${CIRCLE_BUILD_URL}/artifacts/${CIRCLE_NODE_INDEX}/artifacts'" >> $BASH_ENV
+#      - run: source $BASH_ENV
+#
+#      - run:
+#          name: visual regression test
+#          command: ./.ci/test/visual-regression/run
+#
+#      - store_artifacts:
+#          path: /tmp/artifacts
+#          destination: artifacts
 
   composer_lock_updater:
     <<: *defaults
