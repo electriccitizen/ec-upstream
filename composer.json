@@ -100,6 +100,24 @@
                 "type:quicksilver-script"
             ]
         },
+        "patches": {
+            "drupal/core": {
+                "db version": "https://raw.githubusercontent.com/stevector/drupal-9-project/master/patches/issue-2--mariadb-version.patch",
+                "Update module can get 'stuck' with 'no releases available', https://www.drupal.org/project/drupal/issues/2920285": "https://www.drupal.org/files/issues/2920285-update-status.patch"
+            },
+            "drupal/entity_embed": {
+                "Array to string conversion for Media Image": "https://www.drupal.org/files/issues/2019-10-18/entity-embed-array-to-string--3069448-19.patch"
+            },
+            "drupal/focal_point": {
+                "Preview modal closes media library": "https://www.drupal.org/files/issues/2020-10-06/3162210-17.patch"
+            },
+            "drupal/responsive_preview": {
+                "3229548 - 404 when trying to serve Drupal as subfolder": "https://www.drupal.org/files/issues/2021-08-24/404_drupal_from_subfolder_3229548-2.patch"
+            },
+            "drupal/token": {
+                "Responsive Preview Integration": "https://www.drupal.org/files/issues/2021-08-13/responsive_preview_support_3218969-6.patch"
+            }
+        },
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
             "drupal\/core": "-p2"
