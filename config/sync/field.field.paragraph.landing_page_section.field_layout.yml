@@ -8,7 +8,7 @@ dependencies:
   module:
     - options
 _core:
-  default_config_hash: 92Us0rH_2C6jhb3aPFWtGa_JnGZrLJe3GTWyCyfjg9w
+  default_config_hash: 2TsRnVt3IHmjb55b-ofT_OvgT--zZxAS3S-cpy8wFZI
 id: paragraph.landing_page_section.field_layout
 field_name: field_layout
 entity_type: paragraph

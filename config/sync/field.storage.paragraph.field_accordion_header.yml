@@ -5,7 +5,7 @@ dependencies:
   module:
     - paragraphs
 _core:
-  default_config_hash: p1g434r8rWvAcFzdvajbGnuE8ayFPy0Ht9PPjDIJqzA
+  default_config_hash: 7RxJhiMxhP6oMT3SB4KFmdRUuN4cSbfKbv85qvQbqLE
 id: paragraph.field_accordion_header
 field_name: field_accordion_header
 entity_type: paragraph

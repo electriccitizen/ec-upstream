@@ -1,4 +1,4 @@
-uuid: 3b84828c-6e32-4385-8275-3a7f35ce78c6
+uuid: d577df36-8b72-4a13-b56a-6d8e72a21431
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - webform
 _core:
-  default_config_hash: YmnzPham0leu-1tj81PjgqB5KDxgUjTrfNHtimd7uz8
+  default_config_hash: fUZj9FNp5M9y2Inqmlr39xmX3NgIBbWwyrtVVFlAMj4
 id: relationship
 label: Relationship
 category: Demographic

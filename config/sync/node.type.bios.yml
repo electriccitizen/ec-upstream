@@ -9,7 +9,7 @@ third_party_settings:
     available_menus: {  }
     parent: ''
 _core:
-  default_config_hash: Z7pXaoWR-Hypm1Wdkxm-vfC6hLZfq9lPENLQeV42hOg
+  default_config_hash: Upw3Fr3FdxLI0VGTXqHX7P-dYoBmEAhf3QLMawIwsFA
 name: Bios
 type: bios
 description: 'Add bio nodes.'

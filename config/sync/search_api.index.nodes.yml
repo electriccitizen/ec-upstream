@@ -9,7 +9,7 @@ dependencies:
     - node
     - search_api
 _core:
-  default_config_hash: iBiVBdu5Bx6-mkZBrr9eW9DIk0D8ufNJD4YECjXhnBI
+  default_config_hash: t2DsQd4U0dH3PyvGMWVR6HHEBwqdBqnnnMyMMGpL9EE
 id: nodes
 name: Content
 description: 'Search settings for nodes, paragraphs, terms.'

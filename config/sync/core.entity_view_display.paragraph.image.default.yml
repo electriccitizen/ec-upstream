@@ -18,7 +18,7 @@ third_party_settings:
     enabled: false
     allow_custom: false
 _core:
-  default_config_hash: G99ifUcLlEIXxmKB1bqpU4cWaG_n_piAlRRBoLo59IA
+  default_config_hash: '-2-EWssWs59A0eC6m4w82dn0vYxPU-DurW6l_kqcY48'
 id: paragraph.image.default
 targetEntityType: paragraph
 bundle: image

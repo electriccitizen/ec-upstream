@@ -11,7 +11,7 @@ dependencies:
   module:
     - link
 _core:
-  default_config_hash: kPiyYeSkvTlMSUE6sHdpKgKx8BTTjC1t4v83aNGdJc4
+  default_config_hash: q47TgTzbehbcAgIufxrbuzCJsgoR7UJuaMyBT3C5gBg
 id: paragraph.events_list.default
 targetEntityType: paragraph
 bundle: events_list

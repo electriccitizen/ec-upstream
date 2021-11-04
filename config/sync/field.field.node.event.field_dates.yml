@@ -13,7 +13,7 @@ third_party_settings:
     allow_recurring: true
     month_limit: 12
 _core:
-  default_config_hash: 2ObXJHl_DV3MXoM0k4YP3eXjTBu1DLNvMreHZbk644Q
+  default_config_hash: cuzzXSASOeX4Y2-fLutm21L3ifmANvZNHFl8Qxs2n9w
 id: node.event.field_dates
 field_name: field_dates
 entity_type: node

@@ -17,7 +17,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: 3ZvJR78pFMJhxEBR4xtWT9zcYvSbKLAFWNginvwv4lY
+  default_config_hash: GcMFOKkHknTq5Z-NOeMq3iF5l6xpiMQeQmzC-qaGt3Y
 id: node.bios.teaser
 targetEntityType: node
 bundle: bios

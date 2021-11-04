@@ -155,7 +155,7 @@ third_party_settings:
       restricted_categories: {  }
     allowed_block_categories: {  }
 _core:
-  default_config_hash: k2QXSYi_r4gsST6OsmDu8u4sjBUm1Y5DTxhCEY5tf-4
+  default_config_hash: JfbxBjB9__O1weDCyVcnK1CwAh5sXem9AUKWIFqNlk8
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page

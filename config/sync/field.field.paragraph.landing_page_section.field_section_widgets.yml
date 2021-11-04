@@ -24,7 +24,7 @@ dependencies:
   module:
     - entity_reference_revisions
 _core:
-  default_config_hash: JfKbn4xEoYeVGr41BmOs9-ZYs0kf3PeO-HfTIKF6EBI
+  default_config_hash: gUkuOg62NwnKexL0boNhUqUIhROjHgZvE8dhtxrJXac
 id: paragraph.landing_page_section.field_section_widgets
 field_name: field_section_widgets
 entity_type: paragraph

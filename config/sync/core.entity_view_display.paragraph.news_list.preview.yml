@@ -16,7 +16,7 @@ third_party_settings:
     allow_custom: false
     enabled: false
 _core:
-  default_config_hash: tLtFYoNJJebmfihIxoF64zZibJds8bZTS8U2vQecJRU
+  default_config_hash: 8qE2ZKxg_XYRQ77oZ8Xz7kMATi1zQk7jEjhDIjVA0Io
 id: paragraph.news_list.preview
 targetEntityType: paragraph
 bundle: news_list

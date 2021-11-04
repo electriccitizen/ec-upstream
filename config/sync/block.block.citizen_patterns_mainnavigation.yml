@@ -9,7 +9,7 @@ dependencies:
   theme:
     - citizen_patterns
 _core:
-  default_config_hash: aUO1DwaX1UQamhNgJS2xDgh2TOrbkhJYVyGTpBvYQF0
+  default_config_hash: c9L8E5CrakDbgagLgsLDk7zFHiHbVJyvxaE3xiulsMA
 id: citizen_patterns_mainnavigation
 theme: citizen_patterns
 region: header

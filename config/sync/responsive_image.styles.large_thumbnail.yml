@@ -9,7 +9,7 @@ dependencies:
   theme:
     - citizen_patterns
 _core:
-  default_config_hash: PuR_nE6uqVkn1dw_VeuYtF0sYLlUXKI1t4iV8tmH4PY
+  default_config_hash: oKybX029aIQXs24RtaTq8Lcru1DKI3dkIAIym-t2odA
 id: large_thumbnail
 label: 'Large Thumbnail'
 image_style_mappings:

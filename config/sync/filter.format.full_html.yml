@@ -8,7 +8,7 @@ dependencies:
     - linkit
     - pathologic
 _core:
-  default_config_hash: U0Po-4Ptqt_dIm-7VKPi_63awEdLjY4fidB4V8_6poc
+  default_config_hash: KxN6njZwWQyamjrEt4LXtznc0pC8l_GPjd0gMcJfNVQ
 name: 'Full HTML'
 format: full_html
 weight: 1

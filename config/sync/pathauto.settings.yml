@@ -44,7 +44,7 @@ case: true
 ignore_words: 'a, an, as, at, before, but, by, for, from, is, in, into, like, of, off, on, onto, per, since, than, the, this, that, to, up, via, with'
 update_action: 2
 _core:
-  default_config_hash: jJesVY58KouR9PH0gMNkFGQMn5TZq6J2JcDsG_JvMbI
+  default_config_hash: DnAHxklfa9I3bKiCLCZwFxmYJ9s0dyH-20FPPekScJo
 safe_tokens:
   - alias
   - alias

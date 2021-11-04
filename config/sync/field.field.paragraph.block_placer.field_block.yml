@@ -9,7 +9,7 @@ dependencies:
     - field.storage.paragraph.field_block
     - paragraphs.paragraphs_type.block_placer
 _core:
-  default_config_hash: r_X8Xt3sySUrk2Z5uBX5NUYuIlW8P4LL7lmoUaS6GxI
+  default_config_hash: aDUjcFlLh-vbKdLYEEAmoQ2-odg-nWQSsinWemIwGSw
 id: paragraph.block_placer.field_block
 field_name: field_block
 entity_type: paragraph

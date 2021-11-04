@@ -8,7 +8,7 @@ third_party_settings:
   crop:
     image_field: null
 _core:
-  default_config_hash: cGk6fhJj05nbHmnEOqIJp6UwOLQie5mPjGf2Fln5NIY
+  default_config_hash: rmHB4QAWzFkyBrXgr-6aVBL3wphMY14lnijp-3U03Jg
 id: remote_video
 label: 'Remote Video'
 description: 'Embed remote video from YouTube or Vimeo.'

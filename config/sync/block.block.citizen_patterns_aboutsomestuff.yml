@@ -5,7 +5,7 @@ dependencies:
   theme:
     - citizen_patterns
 _core:
-  default_config_hash: tTM_NmQBS6y4ZS84-5MgkG_ndr_n0JM3_U9joyBNiwo
+  default_config_hash: IQyf8YcrY4XU1u1VvW4hypQ3pHk-TkY2J08PA8gXyAk
 id: citizen_patterns_aboutsomestuff
 theme: citizen_patterns
 region: prefooter

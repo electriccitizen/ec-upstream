@@ -39,7 +39,7 @@ third_party_settings:
       label: Location
       region: content
 _core:
-  default_config_hash: ycU7LpICBfJdkpFDCPD2Py0MtjiRgmmf68AjcB1og6Q
+  default_config_hash: NpmOzu3DgPhN9hlQ5tgPOfPCjULJaR49VMx4p5HaF2Y
 id: node.event.default
 targetEntityType: node
 bundle: event

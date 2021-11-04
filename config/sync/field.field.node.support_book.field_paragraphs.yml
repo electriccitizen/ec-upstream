@@ -9,7 +9,7 @@ dependencies:
   module:
     - entity_reference_revisions
 _core:
-  default_config_hash: Nm7nTUKIp3plEoeE0VphZVWn8WgQ9ZUD2QU-JmhCkoM
+  default_config_hash: '-IY_O-zNJdtwaFympKLEruPDyusTxhxChjKn4tpstB0'
 id: node.support_book.field_paragraphs
 field_name: field_paragraphs
 entity_type: node

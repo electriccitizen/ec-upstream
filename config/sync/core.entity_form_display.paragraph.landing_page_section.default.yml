@@ -47,7 +47,7 @@ third_party_settings:
       label: 'Section Extras'
       region: content
 _core:
-  default_config_hash: '-JHqBCiwT8w-W5jtCzvEPRrYZjtAgTlWG2NH-KWcOFo'
+  default_config_hash: _8PNZHjSeB35BbvbKWWi507Vty1Ra3AvJ-d59kffD0Q
 id: paragraph.landing_page_section.default
 targetEntityType: paragraph
 bundle: landing_page_section

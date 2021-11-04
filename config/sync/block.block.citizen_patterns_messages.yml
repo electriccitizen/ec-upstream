@@ -7,7 +7,7 @@ dependencies:
   theme:
     - citizen_patterns
 _core:
-  default_config_hash: 31cojOz9aI-5Qa_edseKdsXfjR-GDCzbck_peQBGQ8s
+  default_config_hash: EUZo_g0tDFjOXrdXs8mYZaXx-iMDoxLctBPwnm1gky8
 id: citizen_patterns_messages
 theme: citizen_patterns
 region: content

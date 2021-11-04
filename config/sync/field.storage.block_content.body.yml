@@ -1,4 +1,4 @@
-uuid: d32fe233-0613-4b1b-a7b0-17eccae1800b
+uuid: afef724f-1993-4d20-b19f-edc9235490f8
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - block_content
     - text
 _core:
-  default_config_hash: 9E6LVjV2ZerFiy6vqKurYNTayRpII7e6eco-XmFBMPE
+  default_config_hash: Ci_eA-XJniUaujGAgr5rj7T9RxC9VuiurUm3ue8jzfQ
 id: block_content.body
 field_name: body
 entity_type: block_content

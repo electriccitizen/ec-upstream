@@ -15,7 +15,7 @@ third_party_settings:
     restricted_html: '0'
     plain_text: '0'
 _core:
-  default_config_hash: 3bN6t-6sWzGv8FFcBRCHOuJ8lbBZiXOehqGSbCBdGAM
+  default_config_hash: 6Fu4CiPAc1aDfNyNRx8a_w5DOEo3db4Sjpxyf3EIRrs
 id: block_content.newsletter.field_modal_intro
 field_name: field_modal_intro
 entity_type: block_content

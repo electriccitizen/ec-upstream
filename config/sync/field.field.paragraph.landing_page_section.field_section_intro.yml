@@ -15,7 +15,7 @@ third_party_settings:
     restricted_html: '0'
     plain_text: '0'
 _core:
-  default_config_hash: fsobYTDCZXweQ-7W1nctahR9k6hPDGXHrsR9P9vsL3Q
+  default_config_hash: wGUQf7yQi_vv089ZDVzcO_uyFlPBElqmSTlPVm0ot60
 id: paragraph.landing_page_section.field_section_intro
 field_name: field_section_intro
 entity_type: paragraph

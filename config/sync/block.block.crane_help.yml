@@ -7,7 +7,7 @@ dependencies:
   theme:
     - crane
 _core:
-  default_config_hash: gmlzyO9g2rB7EJO2F7Xl3oHHtM79OVHG2ZOxtIxEkDs
+  default_config_hash: SYNtpi7R4kXlpsvsHMCgTv9CU6eyRvp_XGHgFP3Y2xA
 id: crane_help
 theme: crane
 region: help

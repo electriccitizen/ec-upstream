@@ -17,7 +17,7 @@ third_party_settings:
     allow_custom: false
     enabled: false
 _core:
-  default_config_hash: uZaaOrIloGMsUF22F1jmqSNfm_b5kVij16LQ5qXrj_Q
+  default_config_hash: rhx578CSISOYVZf5tDLJY9lZeCqv17E6UZNOiMeaL3E
 id: paragraph.gallery.preview
 targetEntityType: paragraph
 bundle: gallery

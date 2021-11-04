@@ -22,7 +22,7 @@ third_party_settings:
         third_party_settings: {  }
     enabled: true
 _core:
-  default_config_hash: DZ-woYo0PtwlkW5McfBMZQFZt3bHp75qcWQqz0TQcO4
+  default_config_hash: JojBvjsTwE63e9rOPXnRHpXnsi6d975hfOFT9ZFqKHI
 id: user.user.compact
 targetEntityType: user
 bundle: user

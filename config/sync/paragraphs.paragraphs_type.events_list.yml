@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: 4X63JabJOUW6of-py1RLefj6ttYKqXopv7uMxmc0_J0
+  default_config_hash: jiuq-VjijLyFb4TGqZ9tkIuZM9w4fTGVHoPdu-pN9bA
 id: events_list
 label: 'Events List'
 icon_uuid: null

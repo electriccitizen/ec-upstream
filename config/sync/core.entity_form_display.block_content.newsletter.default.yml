@@ -32,7 +32,7 @@ third_party_settings:
       label: 'Modal Settings'
       region: content
 _core:
-  default_config_hash: tyMaGi9L4mcRYfqOm2dIsWO5loQensFJwCpCq2CnR-8
+  default_config_hash: KC9aZy9oW9i0bNCHZQWXT_4wQ8DmOoYJN1TXlL857PM
 id: block_content.newsletter.default
 targetEntityType: block_content
 bundle: newsletter

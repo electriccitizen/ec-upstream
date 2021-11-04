@@ -144,7 +144,7 @@ third_party_settings:
         - two_column_sidebar_left
         - two_column_sidebar_right
 _core:
-  default_config_hash: z6XCWUe2EwJ4gud4BdxDoZINxHjMF-8cpBWeJVgfCrU
+  default_config_hash: c7uqJ9yjkJBNOy6l3l0MSEKiOqau5nQnkkUV7wpZN5U
 id: node.support_book.default
 targetEntityType: node
 bundle: support_book

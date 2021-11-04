@@ -11,7 +11,7 @@ dependencies:
   module:
     - focal_point
 _core:
-  default_config_hash: sxQ0RhPHxocJOqgoN-buvOP3t1Ycp_4mla0T2ivVLxQ
+  default_config_hash: b84LPVVvCRXmPM6OLdXaccT71vZcqZYI_hPukTmAnNY
 id: media.image.media_library
 targetEntityType: media
 bundle: image

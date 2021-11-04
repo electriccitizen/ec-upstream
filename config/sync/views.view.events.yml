@@ -16,7 +16,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: 3XJatF2SyLHJ9qJKyn16DG76JGS2gzRiE670OtJOZnQ
+  default_config_hash: sxgJFnsmIy-A1nmCzoUJvEAXwsG5kZjY7AevwpdN8g8
 id: events
 label: Events
 module: views

@@ -7,7 +7,7 @@ dependencies:
   theme:
     - seven
 _core:
-  default_config_hash: QtDVuiZq1Y8luva83PgqQg9tPzgOpgRV6TjDOvN_S_c
+  default_config_hash: fwOaKNw2x0tlS9UtUdE6XaufOz6j7GOa60SOpz7kF7E
 id: seven_breadcrumbs
 theme: seven
 region: breadcrumb

@@ -5,7 +5,7 @@ dependencies:
   module:
     - paragraphs
 _core:
-  default_config_hash: t0FrSHjrxTh6_LW1mETu1vQ-I7r8ukgashkVbI-J1BA
+  default_config_hash: 4oXWFKI-L2vxKbGqoddIvSwrhbaz0J3eiYebvnvrlb0
 id: paragraph.field_anchor_link
 field_name: field_anchor_link
 entity_type: paragraph

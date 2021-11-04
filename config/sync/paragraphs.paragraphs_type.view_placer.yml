@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: 6ZPZzAQoQSTgm1DVvMfu1uFepDJEN7hDN976TW3nlR4
+  default_config_hash: VwasM4XkGPRvIdLBVCPNmjyfFHp8GIUr2Ht76pNOsmw
 id: view_placer
 label: 'View Placer'
 icon_uuid: null

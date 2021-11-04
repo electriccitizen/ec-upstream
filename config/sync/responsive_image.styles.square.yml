@@ -9,7 +9,7 @@ dependencies:
   theme:
     - citizen_patterns
 _core:
-  default_config_hash: 1bYxNuv8M9ZuJONpq9SVuCBRNRQ8PqNWvgFeQGOwP88
+  default_config_hash: jPfwtWlyexXgZiWAIeirrIsw3WQaPpbrLTPO5AA4mS4
 id: square
 label: Square
 image_style_mappings:

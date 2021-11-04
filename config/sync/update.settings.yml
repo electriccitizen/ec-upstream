@@ -7,7 +7,7 @@ fetch:
   timeout: 30
 notification:
   emails:
-    - admin@example.com
+    - no-reply@electriccitien.com
   threshold: all
 _core:
-  default_config_hash: xd9xTTyHeLEctQePVrSp3DUSfP6Ey6JLqQeHkvikCa4
+  default_config_hash: 7AQHu4zyPCyOKCQmPgoqbTtUX2VyExI5-HUWRhz_BO0

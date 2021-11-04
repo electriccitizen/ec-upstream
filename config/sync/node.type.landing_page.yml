@@ -9,7 +9,7 @@ third_party_settings:
     available_menus: {  }
     parent: ''
 _core:
-  default_config_hash: uVbMj7GX93Dtxy7BQpjfxWOTiAPxdvBOdGEBtCXv3fw
+  default_config_hash: N5hiZ0hjQuWJ6-q3E9mEiuVCbwSlH2hWpUMHM51iAms
 name: 'Landing Page'
 type: landing_page
 description: 'Use for the home page and highly designed upper-level pages.'

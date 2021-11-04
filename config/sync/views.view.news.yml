@@ -14,7 +14,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: 2hrrk_Wk_3yHRN2KRmzQwdOB_sC7mXsSQeIcsT3iYGs
+  default_config_hash: zYw7f_aVXlqk_rfXdBz3YhiBdozM5r2f0U73-3fDuUw
 id: news
 label: News
 module: views

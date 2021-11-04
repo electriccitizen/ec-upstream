@@ -10,7 +10,7 @@ dependencies:
     - paragraphs
     - text
 _core:
-  default_config_hash: FOUotShXhZ9PYOE-J7Mr05uzJCn6x798WeqWOpu1MGc
+  default_config_hash: kLUn4fezyvhNmDfqEdDsOuqW1RNC2mxOa_T_Q7STvCk
 id: node.support_book.default
 targetEntityType: node
 bundle: support_book

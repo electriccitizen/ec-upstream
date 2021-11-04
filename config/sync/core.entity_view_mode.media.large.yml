@@ -5,7 +5,7 @@ dependencies:
   module:
     - media
 _core:
-  default_config_hash: O2EAM2g6YVgyNLzkrdrxsKqIJ3s0gyWQt83cHPY5muk
+  default_config_hash: CLlsky2uF865_Q46NdEoinajP8YlSdmIIwtVBmDbIL4
 id: media.large
 label: Large
 targetEntityType: media

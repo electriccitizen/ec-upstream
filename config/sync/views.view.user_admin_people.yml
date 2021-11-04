@@ -1,4 +1,4 @@
-uuid: cc662d42-e5e5-436b-acb6-f5974667c38a
+uuid: 31e54597-78de-4b34-9d76-704adf521677
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     - role_delegation
     - user
 _core:
-  default_config_hash: nbzPVbar_5wxPdoo0hR9_E9AJIVKFKrmpc2H9rHplFk
+  default_config_hash: '--VODy2j7WpzoBNhTNdf48BIAt0Fu7Eu2CUmjownFBY'
 id: user_admin_people
 label: People
 module: user

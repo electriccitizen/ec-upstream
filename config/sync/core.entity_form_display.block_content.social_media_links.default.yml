@@ -10,7 +10,7 @@ dependencies:
     - link
     - text
 _core:
-  default_config_hash: vghJZCUMwFleFa_bZoh80eOsU89VBhbfWsQXiHUAagk
+  default_config_hash: jVG6sIBQXZRZ4yV_I1eQazXt-2AAeOlnZxUI1_Hxxcc
 id: block_content.social_media_links.default
 targetEntityType: block_content
 bundle: social_media_links

@@ -5,7 +5,7 @@ dependencies:
   theme:
     - citizen_patterns
 _core:
-  default_config_hash: UBPvIxGm8ccBfyOIBRdNfAaS7-1bpn2NC7sOxrmss1U
+  default_config_hash: UpPXWtNGBySQXJv4ilFqNkvPa88-JBOYT-0iJFJu4H0
 id: citizen_patterns_copyright
 theme: citizen_patterns
 region: footer

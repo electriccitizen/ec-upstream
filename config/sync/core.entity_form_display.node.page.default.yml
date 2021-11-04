@@ -14,7 +14,7 @@ dependencies:
     - paragraphs
     - text
 _core:
-  default_config_hash: HIVZoC13iO2VYk91ZU_8GkiYJ7wiVj2Kc_BGYjj1Wno
+  default_config_hash: AiIN5NmdeLPo4TB4twM4DqmFPIh2MoiDLb-mjYmVdHE
 id: node.page.default
 targetEntityType: node
 bundle: page

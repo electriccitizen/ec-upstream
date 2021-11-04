@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.field_widget_title
     - paragraphs.paragraphs_type.block_placer
 _core:
-  default_config_hash: 60t0LsjvuB3eoqzdtjvg7rcXBz0PkedC0sSYBL9BTpg
+  default_config_hash: 5CKsFJTQbRlkaWJGqG4g4Ns_-YdZSo9-Kn3E1aXDVkM
 id: paragraph.block_placer.field_widget_title
 field_name: field_widget_title
 entity_type: paragraph

@@ -5,7 +5,7 @@ dependencies:
   module:
     - paragraphs
 _core:
-  default_config_hash: 1sYZjvDjNMn-3A1-j_ZS4KvAt3icfvkfxj7hakoc23A
+  default_config_hash: iD2KcWzcoNl0hlw548V48C8O3B9l1CH9LQ5ALPO2w-w
 id: paragraph.token
 label: Token
 targetEntityType: paragraph

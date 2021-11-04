@@ -7,7 +7,7 @@ dependencies:
   theme:
     - stable
 _core:
-  default_config_hash: UDv49hth07R0cLVr-jdCEhZ8PGDcUCC8HuBeWgsfl88
+  default_config_hash: faOtnwA4BZi7jITCyqU_gniWPmMYoodYlfvxB42kCZM
 id: stable_help
 theme: stable
 region: content

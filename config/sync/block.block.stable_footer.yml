@@ -9,7 +9,7 @@ dependencies:
   theme:
     - stable
 _core:
-  default_config_hash: l855krM2T5a7X8RUfOqQ1J3bsg6G5raBizmo0ZZg0YI
+  default_config_hash: NipmUNYW0Cb3hwNy2ldeLilLgycNbBG-jV6tDhH5kHw
 id: stable_footer
 theme: stable
 region: sidebar_first

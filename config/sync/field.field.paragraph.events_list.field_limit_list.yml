@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.field_limit_list
     - paragraphs.paragraphs_type.events_list
 _core:
-  default_config_hash: Yr3nPYU4BUdet2JAv17X_cM57mjG4l6aHFd8eIAWdPw
+  default_config_hash: Ji49hb1PC5Tmc3lA-cwUe68gd6AbYVQt2zde5PKF3cI
 id: paragraph.events_list.field_limit_list
 field_name: field_limit_list
 entity_type: paragraph

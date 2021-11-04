@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.field_anchor_link
     - paragraphs.paragraphs_type.accordion_item
 _core:
-  default_config_hash: sVgQc3eCQyai-fR4NyfFXfIDr7MckRPHPWaprODV4_Y
+  default_config_hash: BDWsadd2sFyftRUQuKi9fgZ8DTpP5RC2g8Gz6QwijDk
 id: paragraph.accordion_item.field_anchor_link
 field_name: field_anchor_link
 entity_type: paragraph

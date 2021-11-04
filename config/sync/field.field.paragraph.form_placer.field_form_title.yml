@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.field_form_title
     - paragraphs.paragraphs_type.form_placer
 _core:
-  default_config_hash: BA3sENpqvQ1znbv0Rd_AbMI0G9FTcMOGaMuoeKJcIkQ
+  default_config_hash: imQJeJeLu7pIoqAziAXZ2nPTtLABLt0WY_SL_7knhak
 id: paragraph.form_placer.field_form_title
 field_name: field_form_title
 entity_type: paragraph

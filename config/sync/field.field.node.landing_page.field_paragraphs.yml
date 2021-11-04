@@ -9,7 +9,7 @@ dependencies:
   module:
     - entity_reference_revisions
 _core:
-  default_config_hash: tUeE6JV3VqDT_CGHBvi1QXzQvpordqAyoeJw7m_MZcI
+  default_config_hash: _cHbxm9SWSita_ypF49TybYne38YoUXfDB9TznqqFXo
 id: node.landing_page.field_paragraphs
 field_name: field_paragraphs
 entity_type: node

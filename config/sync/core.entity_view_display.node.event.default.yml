@@ -485,7 +485,7 @@ third_party_settings:
       restricted_categories: {  }
     allowed_block_categories: {  }
 _core:
-  default_config_hash: PwfG5aa9g-RboAFbvhxVuepIFTpan4kldDgtqZKWILw
+  default_config_hash: if3rUUYuWDAG6I8L9lgq-gSN9XAuZMhHyIlfBWRsZbs
 id: node.event.default
 targetEntityType: node
 bundle: event

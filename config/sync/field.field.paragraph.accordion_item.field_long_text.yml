@@ -15,7 +15,7 @@ third_party_settings:
     restricted_html: '0'
     plain_text: '0'
 _core:
-  default_config_hash: BllLJ6a2k-RZQRiNmNtfdCEebeeuvrzOZg45ZI43HNE
+  default_config_hash: rQGm1P3cT6LawGZhYnEHM21D0xMWwFujwQ-1jgCQmCg
 id: paragraph.accordion_item.field_long_text
 field_name: field_long_text
 entity_type: paragraph

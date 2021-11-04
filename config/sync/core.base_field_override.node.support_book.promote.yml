@@ -5,7 +5,7 @@ dependencies:
   config:
     - node.type.support_book
 _core:
-  default_config_hash: DiYvUe_r18L6vZUa5KA9oyBMYLdyOvk59CEBSxNmxeo
+  default_config_hash: 45lOG5ep4ZTSh2SsD1UNm5MNUUImLcyINVEilTmOlp8
 id: node.support_book.promote
 field_name: promote
 entity_type: node

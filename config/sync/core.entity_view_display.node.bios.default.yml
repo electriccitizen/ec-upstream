@@ -169,7 +169,7 @@ third_party_settings:
         - layout_onecol
       restricted_categories: {  }
 _core:
-  default_config_hash: bayNIyk9UNHhBtKStdylRl8zS-gvbo38u4TJZX1kYb0
+  default_config_hash: 5B6kXAAmFMzavs5iFwC15pBNWviSgJjF6pIjT8MSlKI
 id: node.bios.default
 targetEntityType: node
 bundle: bios

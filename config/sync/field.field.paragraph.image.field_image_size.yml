@@ -8,7 +8,7 @@ dependencies:
   module:
     - options
 _core:
-  default_config_hash: PjOPXwofNH2S4TsATtCL8rDUXiwOQYy4-b4nAVplI6Y
+  default_config_hash: UPH4OIVSUAPysPpGR3J4nKu9qdLGmjrg3gO-vtIwaXM
 id: paragraph.image.field_image_size
 field_name: field_image_size
 entity_type: paragraph

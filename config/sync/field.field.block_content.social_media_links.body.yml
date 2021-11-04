@@ -15,7 +15,7 @@ third_party_settings:
     restricted_html: '0'
     plain_text: '0'
 _core:
-  default_config_hash: QHCrHhanobIVj8CPtu87IAJ4OqCwK_RiVScm5MxU33o
+  default_config_hash: 7OVwIAuYha_9fCLaK5Urn9JT4_rw23MDmnhCVz58ap4
 id: block_content.social_media_links.body
 field_name: body
 entity_type: block_content

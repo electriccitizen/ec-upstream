@@ -15,7 +15,7 @@ third_party_settings:
     restricted_html: '0'
     plain_text: '0'
 _core:
-  default_config_hash: '-5_dP25828mBkcHEpE-YPuRyLCPB24xcwDk3Bp2EKKc'
+  default_config_hash: dZfsflMvlRCeWcEZnmZDX-KaQmi11xGc0diGdHPp4Q0
 id: node.support_book.body
 field_name: body
 entity_type: node

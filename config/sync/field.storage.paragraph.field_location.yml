@@ -6,7 +6,7 @@ dependencies:
     - geolocation
     - paragraphs
 _core:
-  default_config_hash: MjI1yP7YUGcNne7rLFrc3EcAlJDs9qGAUHr7u8Y13D0
+  default_config_hash: '-AWELBEz3Yanmg8AUANgh0UP2I_nSQamCIUUuJAir58'
 id: paragraph.field_location
 field_name: field_location
 entity_type: paragraph

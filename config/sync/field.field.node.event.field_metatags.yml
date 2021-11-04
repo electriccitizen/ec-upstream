@@ -8,7 +8,7 @@ dependencies:
   module:
     - metatag
 _core:
-  default_config_hash: vKlHvkQWrzPqnacVXB2MuOCuv9a6Nch1Yx-rmbyiFhk
+  default_config_hash: MuJXvncVx-aDSOEjNTaQeRnsNuU4xJG0ZgQQNttuAlk
 id: node.event.field_metatags
 field_name: field_metatags
 entity_type: node

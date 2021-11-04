@@ -9,7 +9,7 @@ dependencies:
   theme:
     - citizen_patterns
 _core:
-  default_config_hash: MTkfSBoKXrG87rwiJJqWgmuOAehPleJiwAC2MzRzby0
+  default_config_hash: Mn6dH7YmVB1yBwbvVrCFTzYPWEfbbPGmt3p3QyNzRBo
 id: thumbnail_cropped
 label: 'Thumbnail Cropped'
 image_style_mappings:

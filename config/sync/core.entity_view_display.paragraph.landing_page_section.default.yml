@@ -19,7 +19,7 @@ third_party_settings:
     enabled: false
     allow_custom: false
 _core:
-  default_config_hash: iUkyLCLA61L6vhaKjhZaDFdVjXlTO0ijK4f2qNfFAHg
+  default_config_hash: 1qgZDhZYhRU6L7KA7IJGGdjEpz9d36U-Do3bXGsljso
 id: paragraph.landing_page_section.default
 targetEntityType: paragraph
 bundle: landing_page_section

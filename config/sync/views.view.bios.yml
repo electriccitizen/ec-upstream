@@ -10,7 +10,7 @@ dependencies:
     - node
     - user
 _core:
-  default_config_hash: D25lJoXA2jA5Du2GfZ1aldQfHNtLYhkULAroUYu0FIE
+  default_config_hash: 3ycpVvTNgbzBcmj1Md6ICUCn9BIpeWapPAlO7M7WDhI
 id: bios
 label: Bios
 module: views

@@ -5,7 +5,7 @@ dependencies:
   config:
     - taxonomy.vocabulary.categories
 _core:
-  default_config_hash: 8KuNJ5Di1umEdcbLqnyvaKNWaELMM6DgL6OMBZBxxng
+  default_config_hash: p3rZBq1oPbAeRY_ODI2iPqBTWGkRchwH6fCPMKKowdU
 id: taxonomy_term.categories.default
 targetEntityType: taxonomy_term
 bundle: categories

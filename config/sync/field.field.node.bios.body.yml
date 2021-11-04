@@ -15,7 +15,7 @@ third_party_settings:
     restricted_html: '0'
     plain_text: '0'
 _core:
-  default_config_hash: LISdnNY-meBmbvqkCBERPa2GW-5mbjVvMfn4bc2O19M
+  default_config_hash: ldbS166HAOcyxQxVK-JURxvfw5YOpoxlhz9WCrHEI9M
 id: node.bios.body
 field_name: body
 entity_type: node

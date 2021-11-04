@@ -1,11 +1,11 @@
-uuid: 985a4b60-fbb2-40c1-8d24-3d92a04ad2db
+uuid: f46adcf5-e972-45df-8610-7fbde3d775b2
 langcode: en
 status: true
 dependencies:
   module:
     - search_api
 _core:
-  default_config_hash: s3FmV6Plm0cyd_nQ2gdtYqDrVH-ucCctceCIW9_Dm70
+  default_config_hash: 3_couE3Vm-fRqiRSeI5MxJ1sgQQz4IKggjgCbfQ26Qo
 id: search-api-server-form
 label: 'Add or edit a Search API server'
 module: search_api

@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: 8A2VgkXXJDtR9-7t9HqLwYVyvR3wO8Ye3fL-Egur-Xw
+  default_config_hash: JotecaDH6FqenwPpGTB370LYSGcRJAdLfXPZkjhsM64
 id: site_manager
 label: 'Site Manager'
 weight: 5

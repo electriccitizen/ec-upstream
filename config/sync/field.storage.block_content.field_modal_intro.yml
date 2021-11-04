@@ -6,7 +6,7 @@ dependencies:
     - block_content
     - text
 _core:
-  default_config_hash: KgJ4i13WzHOazai6pdX2m0EoT9Kicai8wEvuhJXQva8
+  default_config_hash: yLSvrKTYmrPXOOV7Zq4gQy4UWBLm9gwL9zc7yrlnm4w
 id: block_content.field_modal_intro
 field_name: field_modal_intro
 entity_type: block_content

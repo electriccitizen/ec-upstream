@@ -29,7 +29,7 @@ third_party_settings:
       label: 'User Personalization'
       region: content
 _core:
-  default_config_hash: kiPvAg0A1rgMUH3D49ZVgyVaitke0OVHc1rtS-AqMic
+  default_config_hash: vDisusue_BnFtr1z-xhaC6_R5S5mdcGCJ4PK3TRbaYw
 id: user.user.default
 targetEntityType: user
 bundle: user
