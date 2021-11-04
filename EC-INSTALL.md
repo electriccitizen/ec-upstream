@@ -2,13 +2,13 @@ Upstream-D9 Local Development
 ======================
 Reviewed by Wilbur, 2021-09-16
 Reviewed by Adam, 2021-08-10
-Reviewed by broekerfoo, 2021-11-04
+Reviewed by broeker, 2021-11-04
 
 # Project Details
 - **NAME:** ec-upstream 
 - **URL:** http://dev-ec-upstream.pantheonsite.io/
 - **LOCAL URL:** http://ec-upstream.docksal
-- **BRANCH:** main
+- **BRANCH:** master
 - **HOSTING:** [Pantheon Dashboard](https://dashboard.pantheon.io/sites/b043b678-2567-403a-aafc-947c7d9a76de#dev/code)
 )
 - **CIRCLE CI:** [Logs](https://app.circleci.com/pipelines/github/electriccitizen/ec-upstream)
