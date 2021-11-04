@@ -2,7 +2,7 @@
 defaults: &defaults
   docker:
     - image: quay.io/pantheon-public/build-tools-ci:6.x
-  working_directory: ~/example_drops_8_composer
+  working_directory: ~/ec_upstream
   environment:
     #=========================================================================
     # In addition to the environment variables defined in this file, also
@@ -227,10 +227,10 @@ workflows:
 #          requires:
 #            - configure_env_vars
 #            - deploy_to_pantheon
-          filters:
-            branches:
-              ignore:
-                - master
+#          filters:
+#            branches:
+#              ignore:
+#                - master
 #      - behat_test:
 #          requires:
 #            - deploy_to_pantheon
