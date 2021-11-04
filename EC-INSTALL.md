@@ -8,7 +8,7 @@ Reviewed by broeker, 2021-11-04
 - **NAME:** ec-upstream 
 - **URL:** http://dev-ec-upstream.pantheonsite.io/
 - **LOCAL URL:** http://ec-upstream.docksal
-- **BRANCH:** main
+- **BRANCH:** master
 - **HOSTING:** [Pantheon Dashboard](https://dashboard.pantheon.io/sites/b043b678-2567-403a-aafc-947c7d9a76de#dev/code)
 )
 - **CIRCLE CI:** [Logs](https://app.circleci.com/pipelines/github/electriccitizen/ec-upstream)
