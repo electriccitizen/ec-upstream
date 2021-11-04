@@ -96,7 +96,7 @@ These aliases are always available via:
 @<site-name>.test
 @<site-name>.live
 ```
-Note that all projects will not have all environments enabled.
+Note that not all projects will have all environments enabled.
 
 **PR-NNN** (Multidevs) 
 
