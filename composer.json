@@ -111,9 +111,6 @@
             "drupal/focal_point": {
                 "Preview modal closes media library": "https://www.drupal.org/files/issues/2020-10-06/3162210-17.patch"
             },
-            "drupal/responsive_preview": {
-                "3229548 - 404 when trying to serve Drupal as subfolder": "https://www.drupal.org/files/issues/2021-08-24/404_drupal_from_subfolder_3229548-2.patch"
-            },
             "drupal/token": {
                 "Responsive Preview Integration": "https://www.drupal.org/files/issues/2021-08-13/responsive_preview_support_3218969-6.patch"
             }
