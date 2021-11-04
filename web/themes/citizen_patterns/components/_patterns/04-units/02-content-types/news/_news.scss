@@ -1,0 +1,20 @@
+/* =============
+   NEWS NODE
+================ */
+.node-news.node-content{
+
+	max-width: $contentStop;
+	@include auto;
+
+	.block-field.block-title{
+		max-width: 100%;
+		h1{
+			text-align: left;
+		}
+	}
+
+	.block-created{
+		@include metaText;
+	}
+	
+}//end news

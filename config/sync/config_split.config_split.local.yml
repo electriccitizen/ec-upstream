@@ -1,0 +1,21 @@
+uuid: b43fdef2-b38d-46eb-b8df-15e4546bb63d
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: Sccj5P8dyt7i5ILYjOMuK4RhX29jQUhIWh2-Hs8YX9k
+id: local
+label: Local
+description: ''
+weight: 0
+storage: folder
+folder: ../config/local
+module:
+  devel: 0
+  devel_generate: 0
+  stage_file_proxy: 0
+  webform_devel: 0
+theme: {  }
+complete_list: {  }
+partial_list:
+  - system.performance

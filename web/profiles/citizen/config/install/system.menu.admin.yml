@@ -1,0 +1,10 @@
+uuid: 4ef04f41-a065-459e-a97c-935be1ff4dd2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: JiMGeSNyInLcBNzptMBjJE1JP6EsAL9vYMP9GDYGUnc
+id: admin
+label: Administration
+description: 'Administrative task links'
+locked: true

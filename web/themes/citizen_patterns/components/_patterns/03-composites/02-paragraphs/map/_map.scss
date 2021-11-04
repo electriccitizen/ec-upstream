@@ -1,0 +1,14 @@
+/* ===============
+   MAP WIDGET
+================= */
+
+.paragraph--type--map{
+	@include textConstrain;
+	.field:not(:last-child){
+		margin-bottom: $spaceXxs;
+	}
+	.organization{
+		font-weight: $heavy;
+	}
+}//end map widget
+

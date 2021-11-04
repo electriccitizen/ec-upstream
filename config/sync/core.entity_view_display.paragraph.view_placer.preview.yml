@@ -1,0 +1,41 @@
+uuid: f4b9ead5-d832-4224-84f1-eb7d393c82bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.view_placer.field_bios_displays
+    - field.field.paragraph.view_placer.field_events_displays
+    - field.field.paragraph.view_placer.field_link
+    - field.field.paragraph.view_placer.field_news_displays
+    - field.field.paragraph.view_placer.field_view
+    - field.field.paragraph.view_placer.field_widget_title
+    - paragraphs.paragraphs_type.view_placer
+  module:
+    - layout_builder
+    - options
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+_core:
+  default_config_hash: x83MQyvj0PBYa8VSCrcNlh3yQcyKc5AN1ledZNGpeoc
+id: paragraph.view_placer.preview
+targetEntityType: paragraph
+bundle: view_placer
+mode: preview
+content:
+  field_view:
+    type: list_default
+    weight: 0
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_bios_displays: true
+  field_events_displays: true
+  field_link: true
+  field_news_displays: true
+  field_widget_title: true
+  search_api_excerpt: true

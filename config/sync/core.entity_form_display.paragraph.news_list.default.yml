@@ -1,0 +1,51 @@
+uuid: c644b526-3eab-4d3b-b165-4812554a6fc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.news_list.field_category
+    - field.field.paragraph.news_list.field_limit_list
+    - field.field.paragraph.news_list.field_link
+    - field.field.paragraph.news_list.field_widget_title
+    - paragraphs.paragraphs_type.news_list
+  module:
+    - link
+_core:
+  default_config_hash: BZ__CxzTUJPLnv9FT21ltxcWOfSEvX-8LV_Yf1IEtoY
+id: paragraph.news_list.default
+targetEntityType: paragraph
+bundle: news_list
+mode: default
+content:
+  field_category:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_limit_list:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_widget_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

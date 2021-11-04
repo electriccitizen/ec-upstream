@@ -1,0 +1,10 @@
+uuid: 6a114d43-db7d-4f8b-bf36-a89c5c8685f3
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: XTqOZ0E2YbsBzLFs0s44oeUjCINMGhqV-bM0SpEW0C8
+id: support-book
+label: 'Support Book'
+description: 'Support book sidebar menu'
+locked: false

@@ -1,0 +1,25 @@
+uuid: 13a60e8b-f0e0-4cd1-a0ff-a69a514b1281
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.view_placer
+  module:
+    - link
+_core:
+  default_config_hash: F2SXTWITRfxRNGbb2D_5i9gzavqvYWV2NjGcUlD2kOA
+id: paragraph.view_placer.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: view_placer
+label: 'More Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

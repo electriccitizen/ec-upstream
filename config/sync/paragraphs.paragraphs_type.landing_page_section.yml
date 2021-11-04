@@ -1,0 +1,12 @@
+uuid: 4526a62d-2fa4-4819-842f-a0e217e92bac
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: BxT_D93qYkGDGDp-DayDdQFoGvMPGNdS67ZCQsC4i7Y
+id: landing_page_section
+label: 'Landing Page Section'
+icon_uuid: null
+icon_default: null
+description: 'Add a customizable section of widgets to a landing page.'
+behavior_plugins: {  }

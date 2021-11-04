@@ -1,0 +1,20 @@
+/* ===============
+   LINKS N FILES WIDGET
+================== */
+
+.paragraph--type--links-files{
+	@include textConstrain;
+	//set margins for links and files lists
+	.links-files{
+		margin-top: 2.5rem;
+		&.multi-col{
+			@include smallTab{
+				@include cssColumns(2,4rem,nobreak);
+			}
+		}
+		& > div{
+			margin-bottom: 1rem;
+		}
+	}
+}//end links-files widget
+

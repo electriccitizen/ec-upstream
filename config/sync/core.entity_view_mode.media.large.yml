@@ -1,0 +1,12 @@
+uuid: 90b37a29-b156-40c3-b0f8-19eabd3b8043
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: O2EAM2g6YVgyNLzkrdrxsKqIJ3s0gyWQt83cHPY5muk
+id: media.large
+label: Large
+targetEntityType: media
+cache: true

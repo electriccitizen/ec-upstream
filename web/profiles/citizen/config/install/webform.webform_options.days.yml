@@ -1,0 +1,21 @@
+uuid: 17dc6d53-2cda-403a-bbba-07174bd83694
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: 7UJdLHKIUs51PO2d2OrmApvVfgpe2zYO9CK9_BTBW2Y
+id: days
+label: Days
+category: 'Date and time'
+likert: false
+options: |
+  Sunday: Sunday
+  Monday: Monday
+  Tuesday: Tuesday
+  Wednesday: Wednesday
+  Thursday: Thursday
+  Friday: Friday
+  Saturday: Saturday

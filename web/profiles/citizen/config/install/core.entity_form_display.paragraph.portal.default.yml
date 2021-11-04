@@ -1,0 +1,55 @@
+uuid: b3fb6bb5-bef8-402a-8413-c9f2277e5a61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.portal.field_headline
+    - field.field.paragraph.portal.field_image
+    - field.field.paragraph.portal.field_link
+    - field.field.paragraph.portal.field_long_text
+    - paragraphs.paragraphs_type.portal
+  module:
+    - link
+    - media_library
+    - text
+_core:
+  default_config_hash: SI5AUSpVR4CDhZdqhVXQmHaNAB1gp7fop-_2dp1UwjY
+id: paragraph.portal.default
+targetEntityType: paragraph
+bundle: portal
+mode: default
+content:
+  field_headline:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_image:
+    weight: 0
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_long_text:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+hidden:
+  created: true
+  status: true

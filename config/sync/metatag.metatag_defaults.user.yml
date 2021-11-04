@@ -1,0 +1,12 @@
+uuid: c7972f52-6ae8-44ed-8fd3-4e2c72dbdb65
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: k5zXy8gKBM3hxPJuFEPwOJNepx8YDDMvjxZB0XT3JPs
+id: user
+label: User
+tags:
+  title: '[user:name] | [site:name]'
+  robots: 'noindex, nofollow, noarchive, nosnippet, noodp, noydir, noimageindex, notranslate'
+  description: '[site:name]'

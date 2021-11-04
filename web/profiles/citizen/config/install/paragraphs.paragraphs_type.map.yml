@@ -1,0 +1,12 @@
+uuid: 25274d2e-f291-4c6a-9da0-33b516c180ae
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: kcsx35ukrCj5dPSZkAgdChVkYTzRFVZ-IV_5aC8-960
+id: map
+label: Map
+icon_uuid: null
+icon_default: null
+description: 'Add a google map of a single location.'
+behavior_plugins: {  }

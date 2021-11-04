@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% block form %}
+    <form{{ attributes }}>
+        {% block children %}
+        {{ children }}
+        {% endblock %}
+        <div class="custom-help-text">To create an email link, enter '<strong>mailto:</strong>example@email.com'.</div>
+    </form>
+{% endblock %}

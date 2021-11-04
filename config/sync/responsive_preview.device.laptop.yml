@@ -1,0 +1,14 @@
+uuid: 205ee032-a57d-4d6f-a17e-a53d8b55cffb
+langcode: en
+status: 1
+dependencies: {  }
+_core:
+  default_config_hash: 3IpIEK4FfRybnfhdOjx83TEhGSpsGXXBkGpEV9D3WC8
+id: laptop
+label: Laptop
+weight: -10
+orientation: landscape
+dimensions:
+  width: 1200
+  height: 744
+  dppx: !!float 1

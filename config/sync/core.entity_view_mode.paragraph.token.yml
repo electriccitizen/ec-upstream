@@ -1,0 +1,12 @@
+uuid: ba20d7e9-1dca-460e-8eff-255bdf4a07ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: 1sYZjvDjNMn-3A1-j_ZS4KvAt3icfvkfxj7hakoc23A
+id: paragraph.token
+label: Token
+targetEntityType: paragraph
+cache: true

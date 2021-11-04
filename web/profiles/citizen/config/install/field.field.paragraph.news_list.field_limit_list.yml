@@ -1,0 +1,25 @@
+uuid: 8a0b0ff2-19d7-4147-bf77-4c63c87f3e16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_limit_list
+    - paragraphs.paragraphs_type.news_list
+_core:
+  default_config_hash: VRZP_fZtn4um74WIY1mdla38q2QHn_8AFcMM-S8grEI
+id: paragraph.news_list.field_limit_list
+field_name: field_limit_list
+entity_type: paragraph
+bundle: news_list
+label: 'Limit List'
+description: 'Limit the amount of articles in the list to a specific number.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

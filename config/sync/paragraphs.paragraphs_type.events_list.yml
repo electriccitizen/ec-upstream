@@ -1,0 +1,12 @@
+uuid: bb9e5e4e-70d0-4ff6-a858-c610a7d4efd2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 4X63JabJOUW6of-py1RLefj6ttYKqXopv7uMxmc0_J0
+id: events_list
+label: 'Events List'
+icon_uuid: null
+icon_default: null
+description: 'Add a list of events for a specific category.'
+behavior_plugins: {  }

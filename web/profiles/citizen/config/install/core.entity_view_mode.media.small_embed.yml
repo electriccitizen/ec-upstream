@@ -1,0 +1,12 @@
+uuid: 30e4485f-dbd8-411d-b416-675052cb1837
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: XdyoZIk0sru2DCBUTWNB_v6xozwc891-LW_UEmByqe0
+id: media.small_embed
+label: 'Small Embed'
+targetEntityType: media
+cache: true

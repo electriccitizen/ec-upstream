@@ -1,0 +1,23 @@
+uuid: 73aa2568-b7bd-44b6-993a-db0733ae7641
+langcode: en
+status: true
+dependencies:
+  theme:
+    - stable
+_core:
+  default_config_hash: UBPvIxGm8ccBfyOIBRdNfAaS7-1bpn2NC7sOxrmss1U
+id: stable_copyright
+theme: stable
+region: footer
+weight: -5
+provider: null
+plugin: 'block_content:27de869c-2ba8-4187-b40e-31c99519f508'
+settings:
+  id: 'block_content:27de869c-2ba8-4187-b40e-31c99519f508'
+  label: Copyright
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

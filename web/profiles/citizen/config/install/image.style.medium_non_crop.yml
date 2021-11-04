@@ -1,0 +1,17 @@
+uuid: 008aabb8-b03a-43aa-9487-def80ace170c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: AT3329HzQLgjrlfOBJZ7RvsMlGpw2yqUc0CN3h-34QE
+name: medium_non_crop
+label: 'Medium non-crop'
+effects:
+  c79d9961-d0d8-4178-8960-3bd3a292c19a:
+    uuid: c79d9961-d0d8-4178-8960-3bd3a292c19a
+    id: image_scale
+    weight: 1
+    data:
+      width: 480
+      height: null
+      upscale: true

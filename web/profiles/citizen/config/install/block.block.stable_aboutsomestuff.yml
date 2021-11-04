@@ -1,0 +1,23 @@
+uuid: c633c0cb-ef5b-46c5-8eed-247d4f049ff5
+langcode: en
+status: true
+dependencies:
+  theme:
+    - stable
+_core:
+  default_config_hash: tTM_NmQBS6y4ZS84-5MgkG_ndr_n0JM3_U9joyBNiwo
+id: stable_aboutsomestuff
+theme: stable
+region: sidebar_first
+weight: -5
+provider: null
+plugin: 'block_content:776b5982-01ea-4b37-acde-8e3f751d0c95'
+settings:
+  id: 'block_content:776b5982-01ea-4b37-acde-8e3f751d0c95'
+  label: 'About Some Stuff'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

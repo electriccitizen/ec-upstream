@@ -1,0 +1,11 @@
+features:
+  favicon: true
+logo:
+  use_default: true
+favicon:
+  use_default: true
+third_party_settings:
+  shortcut:
+    module_link: true
+_core:
+  default_config_hash: M9sOL6g-eilP1E0NE2yaWnveRzN-AEV1UOeA77UFB7Q

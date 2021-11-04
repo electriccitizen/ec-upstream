@@ -1,0 +1,32 @@
+uuid: 171a3cee-410e-46ff-a8db-b89670451b9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.custom_embed.field_embed_content
+    - field.field.paragraph.custom_embed.field_widget_title
+    - paragraphs.paragraphs_type.custom_embed
+_core:
+  default_config_hash: 5ygsFzj4-Rd3af2fX9mgv-y2MnlndmrlNazQYhYzDsI
+id: paragraph.custom_embed.default
+targetEntityType: paragraph
+bundle: custom_embed
+mode: default
+content:
+  field_embed_content:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_widget_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

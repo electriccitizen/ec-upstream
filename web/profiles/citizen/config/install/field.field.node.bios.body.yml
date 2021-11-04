@@ -1,0 +1,32 @@
+uuid: 92772198-587a-4c51-82ac-68757d47a4eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.bios
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    limited_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
+_core:
+  default_config_hash: LISdnNY-meBmbvqkCBERPa2GW-5mbjVvMfn4bc2O19M
+id: node.bios.body
+field_name: body
+entity_type: node
+bundle: bios
+label: Bio
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,20 @@
+/* ===============
+   NEWS LIST WIDGET
+================= */
+
+.paragraph--type--news-list{
+	@include textConstrain;
+	.views-row{
+		@include viewsListItem;
+		&:not(:last-child){
+			margin-bottom: $spaceSm;
+		}
+	}
+	.field-link{
+		margin-top: $spaceMd;
+		a{
+			@include button;
+		}
+	}
+}//end news list widget
+

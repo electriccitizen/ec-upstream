@@ -1,0 +1,21 @@
+uuid: 5f1e12fa-f932-4cb3-89ce-9947dd5993dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_anchor_link
+    - paragraphs.paragraphs_type.landing_page_section
+_core:
+  default_config_hash: CBto53tueMudogbeziG8uS2NJDFE5HI-677kUpMS1N8
+id: paragraph.landing_page_section.field_anchor_link
+field_name: field_anchor_link
+entity_type: paragraph
+bundle: landing_page_section
+label: 'TOC Link'
+description: 'TOC links will automatically build a table of contents above the first section on the page. You can also link directly to the section anchor by adding the anchor tag below to the end of a page URL.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

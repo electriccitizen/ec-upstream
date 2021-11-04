@@ -1,0 +1,8 @@
+status: 1
+pattern: '[node:field_first_name] [node:field_last_name]'
+escape: false
+dependencies:
+  config:
+    - node.type.bios
+_core:
+  default_config_hash: xFMPvi6QKbB-7tGxUQZ9p76Xrwz3DEJSvA8bhpm7sPQ

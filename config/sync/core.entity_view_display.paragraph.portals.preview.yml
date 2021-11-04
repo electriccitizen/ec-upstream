@@ -1,0 +1,35 @@
+uuid: b1cbb46d-af1d-4f16-8eee-85624712fbd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.portals.field_portals
+    - field.field.paragraph.portals.field_widget_title
+    - paragraphs.paragraphs_type.portals
+  module:
+    - entity_reference_revisions
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+_core:
+  default_config_hash: nhyl1sTALu-T55i55Q8Ns4OlKzXdxD5afThRyPb-_Ko
+id: paragraph.portals.preview
+targetEntityType: paragraph
+bundle: portals
+mode: preview
+content:
+  field_portals:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: preview
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_widget_title: true
+  search_api_excerpt: true

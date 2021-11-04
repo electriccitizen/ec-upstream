@@ -1,0 +1,27 @@
+uuid: 2091e987-7a5b-449d-b62c-f9851013713d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - stable
+_core:
+  default_config_hash: nPYZ_Of-biraL_uFvSNG_SmHon3CS5bXSxBJG9efOKA
+id: stable_sitesearch
+theme: stable
+region: header
+weight: -6
+provider: null
+plugin: site_search
+settings:
+  id: site_search
+  label: 'Site Search'
+  provider: citizen
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /site-search
+    negate: true
+    context_mapping: {  }

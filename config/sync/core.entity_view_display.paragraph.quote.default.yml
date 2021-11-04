@@ -1,0 +1,51 @@
+uuid: 0978072e-c311-4bb0-8daa-81e4f44c1152
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quote.field_image
+    - field.field.paragraph.quote.field_quote
+    - field.field.paragraph.quote.field_source
+    - field.field.paragraph.quote.field_widget_title
+    - paragraphs.paragraphs_type.quote
+_core:
+  default_config_hash: uJFhLc1L4f6Dqh3zmSKn8555prUywHapng3VcLomuhk
+id: paragraph.quote.default
+targetEntityType: paragraph
+bundle: quote
+mode: default
+content:
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: square
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_quote:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_source:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_widget_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

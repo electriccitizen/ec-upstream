@@ -1,0 +1,12 @@
+/* ===============
+  VIEW PLACER WIDGET
+================= */
+
+.paragraph--type--view-placer{
+	.field-link{
+		margin-top: $spaceLg;
+		a{
+			@include button;
+		}
+	}
+}//end social media

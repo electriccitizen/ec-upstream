@@ -1,0 +1,17 @@
+uuid: f48b8b29-958e-41a3-a3da-805c9295c8eb
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: pKpDA5Plz9Sv710j8PmlaSCCFiU6M-OD5GTx6qjBrUY
+id: dev
+label: Dev
+description: ''
+weight: 0
+storage: database
+folder: ''
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list:
+  - system.performance

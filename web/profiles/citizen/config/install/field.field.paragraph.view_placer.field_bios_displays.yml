@@ -1,0 +1,23 @@
+uuid: 954bfc61-ff69-4a36-a063-e84156abb955
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bios_displays
+    - paragraphs.paragraphs_type.view_placer
+  module:
+    - options
+_core:
+  default_config_hash: TNtgUzH27QcVqxYhQIZm3b7Y91xLCKC8nhBSvJ-0oZA
+id: paragraph.view_placer.field_bios_displays
+field_name: field_bios_displays
+entity_type: paragraph
+bundle: view_placer
+label: 'Bios Displays'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

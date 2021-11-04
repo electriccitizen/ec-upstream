@@ -1,0 +1,28 @@
+/* =============
+   EVENT NODE
+================ */
+.node-event.node-content{
+	max-width: $contentStop;
+	@include auto;
+
+	.block-field.block-title{
+		max-width: 100%;
+		h1{
+			text-align: left;
+		}
+	}
+
+	.block-field-dates{
+		@include metaText;
+	}
+
+	.block-field-event-location{
+		//hide long/lat title
+		.geolocation-google-map{
+			.location-title{
+				display: none;
+			}
+		}
+	}//end event location
+
+}//end event

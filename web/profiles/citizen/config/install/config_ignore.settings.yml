@@ -1,0 +1,6 @@
+ignored_config_entities:
+  - 'webform.webform.*'
+  - system.performance.yml
+  - geolocation_google_maps.settings
+_core:
+  default_config_hash: rQUQ3eWTZCu78yMenpFRbgv9EyYPQAOz3Ey_ZiDB46I

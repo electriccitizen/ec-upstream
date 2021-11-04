@@ -1,0 +1,34 @@
+uuid: bf280778-dc3a-4132-85bf-cf6e5b2b7100
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.form_placer.field_form
+    - field.field.paragraph.form_placer.field_form_title
+    - paragraphs.paragraphs_type.form_placer
+  module:
+    - layout_builder
+    - webform
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+_core:
+  default_config_hash: bI18UWm-ZGUou9DCCOYIdk5Zu6WOb3_wfmh9hY6twxk
+id: paragraph.form_placer.preview
+targetEntityType: paragraph
+bundle: form_placer
+mode: preview
+content:
+  field_form:
+    weight: 0
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+hidden:
+  field_form_title: true
+  search_api_excerpt: true

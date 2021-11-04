@@ -1,0 +1,10 @@
+uuid: 307ff48b-93be-4771-aae3-e8797f4181bb
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: jAznTZH5KVEEHSvohrR3Cq4RC4_VS-XIBz3Ie2NzykU
+id: secondary
+label: Secondary
+description: 'Links for ancillary pages'
+locked: false

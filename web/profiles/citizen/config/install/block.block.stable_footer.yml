@@ -1,0 +1,33 @@
+uuid: 3e842bc1-068f-4421-8dd4-a3bdc825b0e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - menu_block
+  theme:
+    - stable
+_core:
+  default_config_hash: l855krM2T5a7X8RUfOqQ1J3bsg6G5raBizmo0ZZg0YI
+id: stable_footer
+theme: stable
+region: sidebar_first
+weight: -4
+provider: null
+plugin: 'menu_block:footer'
+settings:
+  id: 'menu_block:footer'
+  label: Quicklinks
+  provider: menu_block
+  label_display: visible
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'footer:'
+  suggestion: footer
+  label_type: block
+  label_link: false
+visibility: {  }
