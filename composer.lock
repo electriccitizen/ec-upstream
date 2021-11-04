@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "63a19d61bf8052c2e0e386b62a5fd715",
+    "content-hash": "728411036937c88582a78e099f53d29d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2687,54 +2687,6 @@
                 "source": "https://git.drupalcode.org/project/config_split",
                 "issues": "https://www.drupal.org/project/issues/config_split",
                 "slack": "https://drupal.slack.com/archives/C45342CDD"
-            }
-        },
-        {
-            "name": "drupal/config_update",
-            "version": "1.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/config_update.git",
-                "reference": "8.x-1.7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/config_update-8.x-1.7.zip",
-                "reference": "8.x-1.7",
-                "shasum": "8f079abf7c2ea826a27fa5224b0770a26404c968"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.7",
-                    "datestamp": "1586355587",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "jhodgdon",
-                    "homepage": "https://www.drupal.org/user/155601"
-                },
-                {
-                    "name": "nedjo",
-                    "homepage": "https://www.drupal.org/user/4481"
-                }
-            ],
-            "description": "Provides basic revert and update functionality for other modules",
-            "homepage": "https://www.drupal.org/project/config_update",
-            "support": {
-                "source": "https://git.drupalcode.org/project/config_update"
             }
         },
         {
@@ -7020,7 +6972,7 @@
         },
         {
             "name": "pantheon-upstreams/upstream-configuration",
-            "version": "dev-master",
+            "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "upstream-configuration",
