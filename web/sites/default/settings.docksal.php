@@ -7,10 +7,11 @@ $databases['default']['default'] = array (
   'host' => 'db',
   'driver' => 'mysql',
 );
-$settings['hash_salt'] = 'wahoo';
+$settings['hash_salt'] = 'I wish i were a boy in France.';
 
 // Site Specific URL 
-$base_url = "http://d9-upstream.docksal";
+$base_url = "http://ec-upstream.docksal";
+$settings['trusted_host_patterns'] = array('^ec-upstream\.docksal');
 
 $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
 
@@ -22,8 +23,6 @@ $config['system.performance']['js']['preprocess'] = FALSE;
 $settings['rebuild_access'] = TRUE;
 
 $settings['skip_permissions_hardening'] = TRUE;
-
-$settings['trusted_host_patterns'] = array('^d9-upstream\.docksal');
 
 $settings['file_temporary_path'] = '/tmp';
 $settings['file_public_path'] = 'sites/default/files';

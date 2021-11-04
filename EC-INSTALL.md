@@ -2,13 +2,13 @@ Upstream-D9 Local Development
 ======================
 Reviewed by Wilbur, 2021-09-16
 Reviewed by Adam, 2021-08-10
-Reviewed by broeker, 2021-11-04
+Updated by broeker, 2021-11-04
 
 # Project Details
 - **NAME:** ec-upstream 
 - **URL:** http://dev-ec-upstream.pantheonsite.io/
 - **LOCAL URL:** http://ec-upstream.docksal
-- **BRANCH:** master
+- **BRANCH:** main
 - **HOSTING:** [Pantheon Dashboard](https://dashboard.pantheon.io/sites/b043b678-2567-403a-aafc-947c7d9a76de#dev/code)
 )
 - **CIRCLE CI:** [Logs](https://app.circleci.com/pipelines/github/electriccitizen/ec-upstream)
@@ -82,6 +82,29 @@ The active theme for this project is **citizen_patterns**:
 
 See the THEME-INSTALL.md file inside of the theme root for install instructions.
 [THEME-INSTALL.md](/web/themes/citizen_patterns/THEME-INSTALL.md)
+
+# Drush aliases
+
+To interact with Pantheon via drush, you can use the Drush aliases that are auto-generated for each environment. For example:
+
+**DEV, TEST, LIVE**
+
+These aliases are always available via:
+
+```
+@<site-name>.dev
+@<site-name>.test
+@<site-name>.live
+```
+Note that all projects will not have all environments enabled.
+
+**PR-NNN** (Multidevs) 
+
+Whenever you create a Github pull request, a new Pantheon multidev is created in the format `PR-NNN`  (e.g. PR-123) You can interact with this environment via:
+
+```
+@<site-name>.pr-123
+```
 
 # Project Legend
 
