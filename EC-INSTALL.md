@@ -92,9 +92,9 @@ To interact with Pantheon via drush, you can use the Drush aliases that are auto
 These aliases are always available via:
 
 ```
-@<site-name>.dev
-@<site-name>.test
-@<site-name>.live
+@ec-upstream.dev
+@ec-upstream.test
+@ec-upstream.live
 ```
 Note that not all projects will have all environments enabled.
 
@@ -103,7 +103,7 @@ Note that not all projects will have all environments enabled.
 Whenever you create a Github pull request, a new Pantheon multidev is created in the format `PR-NNN`  (e.g. PR-123) You can interact with this environment via:
 
 ```
-@<site-name>.pr-123
+@ec-upstream.pr-123
 ```
 
 # Project Legend
@@ -127,7 +127,7 @@ See `~/Projects/ec-upstream/.docksal/docksal.yml`
 - trusted_host_pattern
 - file paths
 
-See `/Projects/upstream-d9/web/sites/default/settings.docksal.php`
+See `/Projects/ec-upstream/web/sites/default/settings.docksal.php`
 
 # Enabling Xdebug
 
