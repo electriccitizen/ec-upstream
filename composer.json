@@ -131,7 +131,7 @@
         "build-env": {
             "export-configuration": "drush config-export --yes",
             "install-cms": [
-                "drush site-install citizen --account-mail=no-reply@electriccitien.com --account-name=admin  --site-mail=no-reply@electriccitizen.com --site-name=d9-upstream --yes"
+                "drush site-install citizen --account-mail=no-reply@electriccitien.com --account-name=admin  --site-mail=no-reply@electriccitizen.com --site-name=ec-upstream --yes"
             ]
         }
     },
