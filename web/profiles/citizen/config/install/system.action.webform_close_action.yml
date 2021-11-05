@@ -1,11 +1,11 @@
-uuid: 65f0b1bc-775b-4fc4-ae11-2439983d410e
+uuid: d6c1b921-6444-4bdf-b4d4-90f7cf46f642
 langcode: en
 status: true
 dependencies:
   module:
     - webform
 _core:
-  default_config_hash: Dl-1T9PDkraB7MyMUjTJAioPEx6UNvIB9gqmnB1CRkk
+  default_config_hash: Sxwa5kVNa1fy0aTaceOcUXmQGiFs8t4POYvMov7T_7U
 id: webform_close_action
 label: 'Close webform'
 type: webform

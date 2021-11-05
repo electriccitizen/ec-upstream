@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: bYpESzv6ya5DWXflhByAMwM3yltLWTCDi04zD6FsM88
+  default_config_hash: boHfZyJ7rSDCFcwKED87Vc2FAyW3fBjh9zYNO9v8Q3A
 id: block_placer
 label: 'Block Placer'
 icon_uuid: null

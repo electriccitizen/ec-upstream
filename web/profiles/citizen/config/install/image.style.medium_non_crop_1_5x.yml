@@ -5,7 +5,7 @@ dependencies:
   module:
     - image_style_quality
 _core:
-  default_config_hash: kIroYQkGVlsyPz3XgsjAn0-ET-3ZzIwXnL8gQPGAj0Q
+  default_config_hash: k_gR06OgoUloLH8qm1pc3cRxignbehkEn0vQ0uQkuk0
 name: medium_non_crop_1_5x
 label: 'Medium non-crop 1.5x'
 effects:

@@ -15,7 +15,7 @@ third_party_settings:
     enabled: false
     allow_custom: false
 _core:
-  default_config_hash: dNInjJjACiwjbXqhyLts8Jj68k9aYnDIMfyHq9mALBo
+  default_config_hash: makLmBtTVU5pQ26w52xHPE51pFgW7NYAk9jFdWvqRyk
 id: media.document.small_embed
 targetEntityType: media
 bundle: document

@@ -5,7 +5,7 @@ dependencies:
   theme:
     - citizen_patterns
 _core:
-  default_config_hash: Rx-ioSr6CtwlWEB1VH7V4MOnLA96k3KjYnyi_e1CajU
+  default_config_hash: 0EQ4QbIaCUfon3hDORfwpH5HrTQtpmIf9suDIH8OFk4
 id: stayintouch
 theme: citizen_patterns
 region: prefooter

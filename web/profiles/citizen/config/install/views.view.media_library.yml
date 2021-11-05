@@ -1,4 +1,4 @@
-uuid: 6d8bf1b5-9f89-4bfc-97f9-229bb2bff030
+uuid: 3e058a05-f576-4d6d-be3a-c3cf030b42e9
 langcode: en
 status: true
 dependencies:
@@ -15,7 +15,7 @@ dependencies:
     - user
     - views_infinite_scroll
 _core:
-  default_config_hash: HWD8Skk2aVekLdXXeSRu0_3ISismNehwuIqROsUvXk8
+  default_config_hash: QWD6-J0BEL_SEmObjfRNxLWEduZYnHhinj2yfpPvurA
 id: media_library
 label: 'Media library'
 module: views

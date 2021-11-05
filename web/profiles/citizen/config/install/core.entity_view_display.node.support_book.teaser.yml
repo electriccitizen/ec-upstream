@@ -59,7 +59,7 @@ third_party_settings:
         third_party_settings: {  }
     enabled: true
 _core:
-  default_config_hash: dRB4DpiH2zgZTpl1oISadWdIMUQFhPbxx-NZ6xPn6IQ
+  default_config_hash: 1nbP7ywMSA1yGctyqFcyGXmyI-VcfgQHI5WUHz8Vqmo
 id: node.support_book.teaser
 targetEntityType: node
 bundle: support_book

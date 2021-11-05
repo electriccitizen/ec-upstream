@@ -5,7 +5,7 @@ dependencies:
   module:
     - media
 _core:
-  default_config_hash: 3IV06_qc_biWhvORhCiReNjTC_goxxVrAryukBxcZOU
+  default_config_hash: TSayG4tI17uxtisZe9nqSJHmVoS_V2Y42gD_Vu3viZM
 id: media.large_embed
 label: 'Large Embed'
 targetEntityType: media

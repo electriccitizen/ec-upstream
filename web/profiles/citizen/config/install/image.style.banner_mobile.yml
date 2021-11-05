@@ -5,7 +5,7 @@ dependencies:
   module:
     - focal_point
 _core:
-  default_config_hash: HyFlVGBga2T08FNr-PVBLZDA3uTQSjiZDa4-2UpSUz8
+  default_config_hash: asn-A7fHJcgKOe6ShKi9FnKpf1G0iZeCfGDdcNCrf9w
 name: banner_mobile
 label: 'Banner Mobile'
 effects:

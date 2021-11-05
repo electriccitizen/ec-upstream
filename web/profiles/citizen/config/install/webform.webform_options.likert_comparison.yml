@@ -1,4 +1,4 @@
-uuid: 8198af36-cada-4bc4-8733-c1b4696c2b60
+uuid: 20e99664-31f4-4eb3-a10b-00dac6f12bc0
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - webform
 _core:
-  default_config_hash: Pdn7jK-fvdjbbl0J9MX4-kS5v3tzsb6_XD7q27E3pLI
+  default_config_hash: og17f-Tovh0B5YmENdOsoVLvE-bLmfGaxWPMklaBCxQ
 id: likert_comparison
 label: 'Likert: Comparison'
 category: Likert

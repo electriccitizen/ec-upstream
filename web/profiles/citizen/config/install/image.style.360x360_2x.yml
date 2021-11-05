@@ -6,7 +6,7 @@ dependencies:
     - focal_point
     - image_style_quality
 _core:
-  default_config_hash: jEOz_9w1yw0AAwN-H6nomTvBVVy1HFliYWUj58gqzKI
+  default_config_hash: YXLiuKBnNpOyTPaMRQYG0rZV4zNayMW0toGyUjYUpXM
 name: 360x360_2x
 label: '360x360 2x'
 effects:

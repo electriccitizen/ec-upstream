@@ -6,7 +6,7 @@ dependencies:
     module:
       - responsive_image
 _core:
-  default_config_hash: artrtZfGDnnFx1TZmdovIFwKQV9bk_hBAwOjvsb1WSY
+  default_config_hash: ne7VfwYhA9qKRwckB3syEzAT9cehKseEBi14pvrLvLA
 name: max_2600x2600
 label: 'Max 2600x2600'
 effects:

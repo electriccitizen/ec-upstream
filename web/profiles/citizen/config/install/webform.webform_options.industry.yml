@@ -1,4 +1,4 @@
-uuid: 8fdcb4d6-3342-40b3-ba84-f0b2199ec3a1
+uuid: 39ea2f4f-6909-423c-bc2b-8cad62254768
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - webform
 _core:
-  default_config_hash: Np4E65p-zI1c8aQXU2Mc7IchWcqRmYxrAHFUW75SSG0
+  default_config_hash: bsqW9cR6HzCX-0zJtYmCCw1AquuRhty0VnY9s_ACg5U
 id: industry
 label: Industry
 category: Demographic

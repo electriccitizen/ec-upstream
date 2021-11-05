@@ -5,7 +5,7 @@ dependencies:
   theme:
     - stable
 _core:
-  default_config_hash: hs6ZlwhdEdbrIGtwY8UFbjTWC6j5h_Bpj-7HOV-bY2w
+  default_config_hash: F1x5ktKY4OnkeTAS65NBxqapJtgFvL1dLbeb-8v2EFw
 id: stable_local_tasks
 theme: stable
 region: content

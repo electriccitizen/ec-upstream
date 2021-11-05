@@ -8,7 +8,7 @@ dependencies:
   module:
     - options
 _core:
-  default_config_hash: TNtgUzH27QcVqxYhQIZm3b7Y91xLCKC8nhBSvJ-0oZA
+  default_config_hash: Td3Uwc_hd3JHKrh0xSieTBraoNlmYK6bYr4VAk1dzH0
 id: paragraph.view_placer.field_bios_displays
 field_name: field_bios_displays
 entity_type: paragraph

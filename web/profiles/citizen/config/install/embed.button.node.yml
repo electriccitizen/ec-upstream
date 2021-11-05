@@ -1,4 +1,4 @@
-uuid: ee592628-9170-4efc-b1d2-2ae461da45ed
+uuid: b9e5e178-449a-42ed-af58-0eee9ebaee5f
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - entity_embed
     - node
 _core:
-  default_config_hash: fYJERWPaDwJQfRb_3fFkfS7plBZLQ43XJLd2F76FIT0
+  default_config_hash: zOrpa2_DpTnb2eBlEGawD8TqMXWp0ytMalr2FHB6vvc
 label: Node
 id: node
 type_id: entity

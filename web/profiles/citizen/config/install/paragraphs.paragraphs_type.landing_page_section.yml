@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: BxT_D93qYkGDGDp-DayDdQFoGvMPGNdS67ZCQsC4i7Y
+  default_config_hash: '-qlrQQelfnuqqqnSzJSCRmXw8rFIvmmtixZBk6lq_i4'
 id: landing_page_section
 label: 'Landing Page Section'
 icon_uuid: null

@@ -5,7 +5,7 @@ dependencies:
   module:
     - focal_point
 _core:
-  default_config_hash: wVac_U7Dk56XtLoOzagRzrzj0__QMNXw8UYaNefJVT0
+  default_config_hash: hcBx2-dswsKISClfH6snFhB9ttu6yTJhq1hBiFqwoMw
 name: 360x360
 label: 360x360
 effects:

@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: U-wN3rsloctN10-6mNvHkKu093uPFOYH_s6XggpiOsw
+  default_config_hash: vyGWPA9_hnT_ellHAdCahCNZ0vqTSpq_I9vOpDITF0g
 id: number_date_short
 label: 'Number Date Short'
 locked: false

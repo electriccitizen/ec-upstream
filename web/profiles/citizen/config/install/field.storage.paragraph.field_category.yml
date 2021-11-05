@@ -6,7 +6,7 @@ dependencies:
     - paragraphs
     - taxonomy
 _core:
-  default_config_hash: kjzV1a9raR8z1ikKAwZezcspJ54a0u0JKjhd2YPvqMg
+  default_config_hash: 3A9gX-b5MgTimJCygL1kE_LWxT0v9h3qIHziwf1FHWY
 id: paragraph.field_category
 field_name: field_category
 entity_type: paragraph

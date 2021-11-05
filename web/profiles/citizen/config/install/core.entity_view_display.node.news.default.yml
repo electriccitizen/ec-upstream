@@ -148,7 +148,7 @@ third_party_settings:
       restricted_categories: {  }
     allowed_block_categories: {  }
 _core:
-  default_config_hash: wWQZPlMDIOMy1pbm9hjB7crB5JVVe2l6RQfLzfcZfFc
+  default_config_hash: PWJGwQSzQ57lQ8pj91aBtgYi8dbMi62RQiyqL7r4Drg
 id: node.news.default
 targetEntityType: node
 bundle: news

@@ -16,7 +16,7 @@ third_party_settings:
     enabled: false
     allow_custom: false
 _core:
-  default_config_hash: 7apyQ2qt6g_FfgqNKY-H9CPW53z8xfYqQANa-rq_pSM
+  default_config_hash: Jzff8eawRHDs9zIFsFdnKZhRKv1wAHmnPT1xbLJC0IE
 id: paragraph.video.preview
 targetEntityType: paragraph
 bundle: video

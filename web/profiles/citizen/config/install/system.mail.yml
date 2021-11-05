@@ -2,4 +2,4 @@ interface:
   default: php_mail
   webform: webform_php_mail
 _core:
-  default_config_hash: WS5fORrquxEJQOjQb71OstpVVs4vEd8a7EVxiUHP7TM
+  default_config_hash: SbkU5cJFkqhuCNXj5mBPfmt1QxcnJ3IEYwBRd7QhmMo

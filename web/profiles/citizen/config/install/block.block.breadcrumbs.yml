@@ -7,7 +7,7 @@ dependencies:
   theme:
     - crane
 _core:
-  default_config_hash: 1cazR-9U-3Cnaq51Sm9j75kIO9Zo1j80GsZ5l0A-9rI
+  default_config_hash: wEGkyUHbI2n4s0C4Ktug3XANFfHtRHOsHIf8Mpa0XjU
 id: breadcrumbs
 theme: crane
 region: header

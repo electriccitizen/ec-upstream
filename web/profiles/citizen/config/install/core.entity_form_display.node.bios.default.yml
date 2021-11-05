@@ -37,7 +37,7 @@ third_party_settings:
         required_fields: true
       label: 'Contact Information'
 _core:
-  default_config_hash: OMIENZbhyj3R38Cu_vdvmDZdqHoYx-2y_jWlq54-Vns
+  default_config_hash: Wqu6ERzhsTmdoJ_9IgNEBlqYI47Gc6CGlyDaGDIS3Cs
 id: node.bios.default
 targetEntityType: node
 bundle: bios

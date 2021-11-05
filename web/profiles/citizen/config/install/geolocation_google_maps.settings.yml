@@ -7,7 +7,7 @@ google_map_custom_url_parameters:
   client: ''
   channel: ''
 _core:
-  default_config_hash: nYTqWXWfxOjfyhshbUXToHvDnX18ryj_qEWh3iy7BoQ
+  default_config_hash: 7njla24aQlKupc0HsgGzeoDMAZ3svARheCDAvz4Sj0Y
 google_map_api_server_key: ''
 use_current_language: true
 china_mode: false

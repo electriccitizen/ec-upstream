@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.field_widget_title
     - paragraphs.paragraphs_type.image
 _core:
-  default_config_hash: ja_7Bt6Ql61FmL993EPwP3DGXfjfATa1S8WUy8muDtk
+  default_config_hash: 4xu2LPmKPS1BORvk3mS26cbLmg2l_qaFW6YNU9WtHbE
 id: paragraph.image.field_widget_title
 field_name: field_widget_title
 entity_type: paragraph

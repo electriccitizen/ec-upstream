@@ -14,7 +14,7 @@ dependencies:
   theme:
     - citizen_patterns
 _core:
-  default_config_hash: PBuh65_EUru_9nCsT-zLviOpVzwtwMDN34_eAqEgza0
+  default_config_hash: O9213CAG_JooaqguWpN-8hMfjmsy-B9o0XtZ47inV8o
 id: full_non_crop
 label: 'Full non-crop'
 image_style_mappings:

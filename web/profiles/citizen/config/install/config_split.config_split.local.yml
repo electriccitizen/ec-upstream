@@ -3,14 +3,15 @@ langcode: en
 status: false
 dependencies: {  }
 _core:
-  default_config_hash: Sccj5P8dyt7i5ILYjOMuK4RhX29jQUhIWh2-Hs8YX9k
+  default_config_hash: GV0D-ZZVSD_CvtccKB4Cfyd2XzxQFynEuqOnGTRZlR0
 id: local
 label: Local
-description: ''
+description: 'Config split for Local.'
 weight: 0
 storage: folder
 folder: ../config/local
 module:
+  dblog: 0
   devel: 0
   devel_generate: 0
   stage_file_proxy: 0

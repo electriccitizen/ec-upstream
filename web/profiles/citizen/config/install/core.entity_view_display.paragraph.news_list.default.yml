@@ -11,7 +11,7 @@ dependencies:
   module:
     - link
 _core:
-  default_config_hash: akc7RJtQ91XGyN_KSON9aJ6h9nDhd4TPmRrgFAAeCM4
+  default_config_hash: BzhifTWrO6I1qnzv0PZ6WErXkRUfd656Qo_-KCR3W8c
 id: paragraph.news_list.default
 targetEntityType: paragraph
 bundle: news_list

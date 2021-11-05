@@ -9,7 +9,7 @@ dependencies:
   theme:
     - stable
 _core:
-  default_config_hash: aUO1DwaX1UQamhNgJS2xDgh2TOrbkhJYVyGTpBvYQF0
+  default_config_hash: icfyEnuAAcg8pof9tYUCdUR6xeOaw7bZIbh0-1LBduc
 id: stable_mainnavigation
 theme: stable
 region: header

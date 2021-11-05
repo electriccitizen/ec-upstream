@@ -1,9 +1,9 @@
-uuid: ddf0e5aa-bb33-400c-bc42-df0012192bdc
+uuid: 87b74ac8-0273-485e-81eb-997f01e33458
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: k-7cDDR_mx6JDUTxjkEFfqYwxVq1KTB6Smas39vTbcQ
+  default_config_hash: pYQ_CvDraqpZfhefLizI0JzF_jGl8o3Q7GykDxUDkZc
 id: fallback
 label: 'Fallback date format'
 locked: true

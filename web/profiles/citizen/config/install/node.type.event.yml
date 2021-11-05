@@ -9,7 +9,7 @@ third_party_settings:
     available_menus: {  }
     parent: ''
 _core:
-  default_config_hash: Fky5O6eGOpPSk_skWSgUxzmfaY7HPZT6i-4YdAbK8uQ
+  default_config_hash: GrCjKq5q78nezfyfRtZ-hgkXD-RG9Wbw8r0mmrm8IDQ
 name: Event
 type: event
 description: 'Create event nodes.'

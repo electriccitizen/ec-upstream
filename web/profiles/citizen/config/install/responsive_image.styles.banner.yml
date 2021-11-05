@@ -15,7 +15,7 @@ dependencies:
   theme:
     - citizen_patterns
 _core:
-  default_config_hash: spjHAc78J6gP9JxiNR2jLzi2Mtk8J9qDogIEz0tc9no
+  default_config_hash: ZCfZ5VaVVQoovrlgCseR90NJKu5dHwelRtPkCFiTuQg
 id: banner
 label: Banner
 image_style_mappings:

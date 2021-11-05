@@ -11,7 +11,7 @@ dependencies:
     - link
     - media_library
 _core:
-  default_config_hash: jfUUIk5No90P40l3a72uNGMIavzg6mHHnT1n0GgiMNE
+  default_config_hash: _Z3v9DO4e5xA7mkZhdan9qLFEyd2tHrbDBu9GNQNhG4
 id: paragraph.links_files.default
 targetEntityType: paragraph
 bundle: links_files

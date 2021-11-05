@@ -8,7 +8,7 @@ dependencies:
   module:
     - metatag
 _core:
-  default_config_hash: '-A6MNpyWuAEEhQLniA7m52Pvh-fnJjS6BQWHjSy8bsY'
+  default_config_hash: 3Gz48telKMqnnHdHwpRhrbXoBR77MFa3EipAhXWsMG0
 id: node.bios.field_metatags
 field_name: field_metatags
 entity_type: node

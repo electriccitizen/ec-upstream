@@ -7,7 +7,7 @@ dependencies:
   theme:
     - seven
 _core:
-  default_config_hash: JrHzom1YFIVOnvFOmlg8Q-PSIrQHVj7u1gf4WuP63s8
+  default_config_hash: BzbOySxWU92i-Y2L9VAJhon3OGDAK0do1XiFBlyr858
 id: seven_login
 theme: seven
 region: content

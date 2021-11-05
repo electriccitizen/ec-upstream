@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.field_limit_list
     - paragraphs.paragraphs_type.news_list
 _core:
-  default_config_hash: VRZP_fZtn4um74WIY1mdla38q2QHn_8AFcMM-S8grEI
+  default_config_hash: OXYxsUyhnJrdCDxAMw56Cu70zT1cSUqPst5xYcZC29Q
 id: paragraph.news_list.field_limit_list
 field_name: field_limit_list
 entity_type: paragraph

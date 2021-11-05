@@ -8,7 +8,7 @@ dependencies:
   module:
     - options
 _core:
-  default_config_hash: 0BkZSuNp42bg70pbmExUoHuXO5VNTHftjYr2liaFpZQ
+  default_config_hash: EMefUBM-z0v75j9QGcYZfNLV5wGFjFqqpDXfyfbdmx0
 id: paragraph.view_placer.field_news_displays
 field_name: field_news_displays
 entity_type: paragraph

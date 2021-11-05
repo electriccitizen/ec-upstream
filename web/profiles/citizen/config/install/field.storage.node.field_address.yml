@@ -6,7 +6,7 @@ dependencies:
     - address
     - node
 _core:
-  default_config_hash: LqV-xV0D10mDwSIbrXRyt1vbsFwBAWdOsk5FEi-scFM
+  default_config_hash: WuiSAcVUiCoLdHpOuGlR8zSF5PZCJojPVGJID_ztiCM
 id: node.field_address
 field_name: field_address
 entity_type: node

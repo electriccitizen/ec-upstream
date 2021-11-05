@@ -9,7 +9,7 @@ dependencies:
   module:
     - entity_reference_revisions
 _core:
-  default_config_hash: THq3qIGrvqkKw6gIFo3pLfNvddeMURcSFPhITmMaQSk
+  default_config_hash: NsEqvTF9ucgdI06p2j17_i4hWD2dS95LNLqCQJz6fuM
 id: paragraph.portals.default
 targetEntityType: paragraph
 bundle: portals

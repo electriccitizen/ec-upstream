@@ -1,5 +1,5 @@
-name: 'Drush Site-Install'
-mail: admin@example.com
+name: d9-upstream
+mail: no-reply@electriccitizen.com
 slogan: ''
 page:
   403: ''
@@ -10,6 +10,6 @@ weight_select_max: 100
 langcode: en
 default_langcode: en
 _core:
-  default_config_hash: u_jh8EtWVm3wsgjlW1kD0lxzLxVwZ9dg_5wtLp2jVIU
-uuid: cc37b3be-e307-411c-b57d-64bccf3d85bc
+  default_config_hash: lanTo3Ur0uVCOkUlu8znLn_uPkCbk-TtYtfMOj2KNv4
+uuid: 5993ea43-20ed-4630-97c8-addd2f05df4a
 mail_notification: ''

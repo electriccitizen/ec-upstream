@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.field_position
     - node.type.bios
 _core:
-  default_config_hash: UODDY0MOKtbxRtp7HkGTX2jBcFxtnjBr4nSSC_whBPk
+  default_config_hash: NbP-cFRZqxkUrXr5TEueKL3xs4MeZDB9kTLStWiv_NE
 id: node.bios.field_position
 field_name: field_position
 entity_type: node

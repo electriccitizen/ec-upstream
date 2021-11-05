@@ -6,7 +6,7 @@ dependencies:
     - paragraphs
     - webform
 _core:
-  default_config_hash: D6YDBhvjkGaH8OZu9kQVWMZtAoe2a_ISx372mg-eOio
+  default_config_hash: 3edHHICP1nZvOKmC1qTlGq6Ir0vZ_QMjafywCvjBNyw
 id: paragraph.field_form
 field_name: field_form
 entity_type: paragraph

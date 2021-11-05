@@ -9,7 +9,7 @@ dependencies:
   module:
     - file
 _core:
-  default_config_hash: MzSbxw1WvYVHOsLR6HP29_3Q8D8FJlVNztHRrfo1tQo
+  default_config_hash: IH65x_fGCAKWRtV9bhqhsyWEeOfzwZKoKTD3NgjeL9Q
 id: media.document.media_library
 targetEntityType: media
 bundle: document

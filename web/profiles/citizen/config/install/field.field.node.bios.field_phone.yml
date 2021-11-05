@@ -8,7 +8,7 @@ dependencies:
   module:
     - telephone
 _core:
-  default_config_hash: e0T3Ao-whi1PT1P1fzz5kDwEOWpod1_aEpgsccf03tI
+  default_config_hash: FE4zarFyD0u6igIE2IIfV4FWYXfXCI83_Vxw-ktjYrk
 id: node.bios.field_phone
 field_name: field_phone
 entity_type: node

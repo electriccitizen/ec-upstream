@@ -15,7 +15,7 @@ third_party_settings:
     restricted_html: '0'
     plain_text: '0'
 _core:
-  default_config_hash: Lt2unt7k2s3ycYFb6EPK9bHZrBPE_sU9D3182yUdWQU
+  default_config_hash: zGQNuxIcKRFbvXm0qjRRKs2IQRJRJxVrQT4Eh1UyMFo
 id: paragraph.portal.field_long_text
 field_name: field_long_text
 entity_type: paragraph

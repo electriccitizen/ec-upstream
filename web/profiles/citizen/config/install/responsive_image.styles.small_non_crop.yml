@@ -9,7 +9,7 @@ dependencies:
   theme:
     - citizen_patterns
 _core:
-  default_config_hash: AYUzNCVQ07_chRiCQziZmSIK7hnFy2FjLc5W4Sacun4
+  default_config_hash: 7Xbnqzo8Kx6SQpbxOF0D06Lfg8Mpu-RQUxv6ilVl9HM
 id: small_non_crop
 label: 'Small non-crop'
 image_style_mappings:

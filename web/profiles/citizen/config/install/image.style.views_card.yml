@@ -5,7 +5,7 @@ dependencies:
   module:
     - focal_point
 _core:
-  default_config_hash: QsstNt28eHDIkSeNwiKnaW2lCyCfgY8vbdvmRZjX-qY
+  default_config_hash: 22LcGO-35q6NI4ZmWTl89Nnc7Du19UtsKuXNSp0dBDk
 name: views_card
 label: 'Views Card'
 effects:

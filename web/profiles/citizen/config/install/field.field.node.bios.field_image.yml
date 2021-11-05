@@ -7,7 +7,7 @@ dependencies:
     - media.type.image
     - node.type.bios
 _core:
-  default_config_hash: 6JCbht-8NNR8xXosZ2_uWLTm3Lmz-cdN2hx2gpxqDkw
+  default_config_hash: PEK9_Aw7_4w8umdwW_xB64q3TF0yWgPa5F6aoptYIxI
 id: node.bios.field_image
 field_name: field_image
 entity_type: node

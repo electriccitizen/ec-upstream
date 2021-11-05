@@ -7,7 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.events_list
     - taxonomy.vocabulary.categories
 _core:
-  default_config_hash: XkcIDA3GXhfdipse9kB6-koDgz2E8POBxm_DgqGi9gc
+  default_config_hash: DfAbo9qnsunOxEITJI3xmBZYvp8xSbt_cc-x91TVWGE
 id: paragraph.events_list.field_category
 field_name: field_category
 entity_type: paragraph

@@ -1,4 +1,4 @@
-uuid: 363a9344-0c8d-4ce1-be63-edf9a14314d0
+uuid: e8a72d49-7138-4551-a9ee-e2d8b9b5595d
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - webform
 _core:
-  default_config_hash: iJA3AZY1pamjKlgjfF3Jp38HK7aCEeuZG8entPl_mjg
+  default_config_hash: 8isXVxhqEHwFO5LDuA3CGV5Wbypzm7GlEcMX-wdPfqw
 id: yes_no
 label: Yes/No
 category: General

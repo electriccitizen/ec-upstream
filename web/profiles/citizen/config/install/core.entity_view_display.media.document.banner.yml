@@ -37,7 +37,7 @@ third_party_settings:
         third_party_settings: {  }
     enabled: true
 _core:
-  default_config_hash: FzivHGf7RRwRyvnDFeI1tjkomJ5g9vXFve82vAo3hzo
+  default_config_hash: l2_dAZZ739xiSIoSYD0GJoRg8qh0jR-6DWdNuDeKhhw
 id: media.document.banner
 targetEntityType: media
 bundle: document

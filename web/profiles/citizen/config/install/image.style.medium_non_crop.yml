@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: AT3329HzQLgjrlfOBJZ7RvsMlGpw2yqUc0CN3h-34QE
+  default_config_hash: O9FBGtK7Tz4oxSWZf3fIwSKN_p6-I-fO3UpetDhiy0Y
 name: medium_non_crop
 label: 'Medium non-crop'
 effects:

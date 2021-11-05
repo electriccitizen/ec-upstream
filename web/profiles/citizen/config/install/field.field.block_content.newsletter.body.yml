@@ -15,7 +15,7 @@ third_party_settings:
     restricted_html: '0'
     plain_text: '0'
 _core:
-  default_config_hash: cM9PuTQaxOKKlCEOMpWcQpgREsF_4ludTg03h53-JeM
+  default_config_hash: 8tXJwP-O94ybww-5zIdww2jx23cDxz6AvniRXjBmSc0
 id: block_content.newsletter.body
 field_name: body
 entity_type: block_content

@@ -7,7 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.news_list
     - taxonomy.vocabulary.categories
 _core:
-  default_config_hash: UKHdrrNSJNnaF_-fTNNWnymlLAQerqKLaFndLtO3FGg
+  default_config_hash: ju_nViVnm1VQcgz8kdlaAG2uT4E0jhqq1wkyPnjcW9w
 id: paragraph.news_list.field_category
 field_name: field_category
 entity_type: paragraph

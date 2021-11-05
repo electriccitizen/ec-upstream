@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: qOb0H2jeQnROSgdstNunBEuDoYg5qlJhpXJsZ6TilwA
+  default_config_hash: TRiP1uwmOfuPDOczRB_zH8De3LLWoc97TOAPST7cMm0
 id: portal
 label: Portal
 icon_uuid: null

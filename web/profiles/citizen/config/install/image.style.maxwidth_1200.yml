@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: HTdomJnhVkce8AW7L6dmVrG9FOIKvLa3niBRg9WYPVA
+  default_config_hash: k7WmjDaSB3rl48ebNTTEz8hvbF7j1jIc5_kqMRHe-0c
 name: maxwidth_1200
 label: 'Max Width (1200)'
 effects:

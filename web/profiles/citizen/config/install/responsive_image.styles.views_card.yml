@@ -9,7 +9,7 @@ dependencies:
   theme:
     - citizen_patterns
 _core:
-  default_config_hash: 8vGnlwii9Kh5FrWxdEW7l-Tv1yVjPo9Dkry-k72RHu8
+  default_config_hash: 04B-PMPpVpCat0r6qiD_J4LSALJxIgcHPHZpdu1JAow
 id: views_card
 label: 'Views Card'
 image_style_mappings:

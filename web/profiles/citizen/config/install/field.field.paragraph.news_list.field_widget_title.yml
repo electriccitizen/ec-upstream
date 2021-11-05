@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.field_widget_title
     - paragraphs.paragraphs_type.news_list
 _core:
-  default_config_hash: 5o6jsd4MeN0Z9k0jIFqYCHxRj6kbFfH1fvQ8gFdAGWE
+  default_config_hash: 5a1v2R3cGeumI9rWw2wwEDlMbSOjjXgKIABU6SI2PJE
 id: paragraph.news_list.field_widget_title
 field_name: field_widget_title
 entity_type: paragraph

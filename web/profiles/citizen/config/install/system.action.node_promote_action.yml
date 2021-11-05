@@ -1,11 +1,11 @@
-uuid: 029bfc55-afcf-4a1a-85d3-1d5681427f80
+uuid: 7b6f27ec-0fc3-4425-becf-ae13ae3424e8
 langcode: en
 status: true
 dependencies:
   module:
     - node
 _core:
-  default_config_hash: 8XS1YGxwLmJLeMiekILeT01y1Is_7W6Y1-KnMHfOgo4
+  default_config_hash: 5nfgwuLnOyzKDsFvKA5xHZhJwJLmEor-Ro1RpE0ITNY
 id: node_promote_action
 label: 'Promote content to front page'
 type: node

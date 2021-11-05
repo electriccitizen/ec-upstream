@@ -17,7 +17,7 @@ third_party_settings:
     enabled: false
     allow_custom: false
 _core:
-  default_config_hash: '-P2bVRocVnOi3GxYr5GfWT-aTOAxWzYDUY6Ct7sGz4g'
+  default_config_hash: Ck_6qvDzaY1kFXphJNwBnUS6DMfIqDQdIFidUhBSPlo
 id: media.image.banner
 targetEntityType: media
 bundle: image

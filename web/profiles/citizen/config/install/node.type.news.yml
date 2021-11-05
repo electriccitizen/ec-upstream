@@ -9,7 +9,7 @@ third_party_settings:
     available_menus: {  }
     parent: ''
 _core:
-  default_config_hash: Mb0uusEMlpYYckMsMnC1YR04zGY6orYOgc5YqvyJ2fw
+  default_config_hash: jsNhHUHRrqf4rxD0FQcQ1CFfc-1NcGFR1RV7N6FpaKo
 name: News
 type: news
 description: 'Add news nodes.'

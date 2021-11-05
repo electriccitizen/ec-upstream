@@ -5,7 +5,7 @@ dependencies:
   module:
     - node
 _core:
-  default_config_hash: ixHwoTRil4bmof_XJ9i9L0Vz6btt1q9gBjuBXR09rp4
+  default_config_hash: uuQzIP_AA0ARNzXXPk2kp_r96ULo7JpbjNp8bjpUaUo
 id: bios
 label: Bios
 type: 'canonical_entities:node'

@@ -5,7 +5,7 @@ dependencies:
   module:
     - user
 _core:
-  default_config_hash: QA2Bu24ETBc8x3CLObj6KOG5svdjpNqBZRf-EDrL1lo
+  default_config_hash: XzC9CRavqhDsqi7CIqqk1h141y4gn851IAYFG8pX9hw
 id: user.field_last_name
 field_name: field_last_name
 entity_type: user

@@ -167,7 +167,7 @@ third_party_settings:
         - two_column_sidebar_left
         - two_column_sidebar_right
 _core:
-  default_config_hash: kjLMvWENry8LZWMv50Pdhudj-KNqWrU72Iyei5xTqtA
+  default_config_hash: aESEsMuNwgmISFCbsRua01GPa16I_B6V1V0O5s3JTcw
 id: node.page.default
 targetEntityType: node
 bundle: page

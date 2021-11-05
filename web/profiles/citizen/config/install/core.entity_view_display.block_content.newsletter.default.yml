@@ -13,7 +13,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: TRw9EfOs4WSdKXBqne60gL03iphH87N_nbehdN7GLlg
+  default_config_hash: vgiFDVoff7yRTExbwC8EvAVg7D-8DWzVwP_b0d-oLmY
 id: block_content.newsletter.default
 targetEntityType: block_content
 bundle: newsletter

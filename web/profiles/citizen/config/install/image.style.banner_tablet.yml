@@ -5,7 +5,7 @@ dependencies:
   module:
     - focal_point
 _core:
-  default_config_hash: XQldOp41T08DYGTiKGiz_TsFNDTsTkXPEH8_iN1sj5c
+  default_config_hash: Oan9bs98oskNCi59LeoF71IjLfH0xmgqe_tIXvIW4X0
 name: banner_tablet
 label: 'Banner Tablet'
 effects:

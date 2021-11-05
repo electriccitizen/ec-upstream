@@ -8,7 +8,7 @@ dependencies:
   module:
     - link
 _core:
-  default_config_hash: dyjX_-q8Z8VKh1qzv0guaUMFXMlgFj6-4UTKq86W0aQ
+  default_config_hash: m2I-3KeOji6lcK7OhRRT0uy2lZ1LynlSxa3gKwx8pAQ
 id: paragraph.news_list.field_link
 field_name: field_link
 entity_type: paragraph

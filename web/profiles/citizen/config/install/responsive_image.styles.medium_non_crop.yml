@@ -12,7 +12,7 @@ dependencies:
   theme:
     - citizen_patterns
 _core:
-  default_config_hash: cK_0lS_haolm6JJ-7BO8nKxeeNNvmgHFzt-feqXbu7g
+  default_config_hash: x40UnjXcW6v635qXWh3gl7xUuH0w-PkysK8yf0JKhP8
 id: medium_non_crop
 label: 'Medium non-crop'
 image_style_mappings:

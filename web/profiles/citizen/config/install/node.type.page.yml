@@ -9,7 +9,7 @@ third_party_settings:
     available_menus: {  }
     parent: ''
 _core:
-  default_config_hash: S5WIbfGI71BNAqEE7dgw5IsOX6dPAs1tvWAXIJSAKZ8
+  default_config_hash: lynFVHnuciYlMYjBCvO754nalb8sbm3rSMebNyP8sUs
 name: 'Basic page'
 type: page
 description: 'Use basic pages for text heavy lower-level pages that can be reached through the sidebar menu.'

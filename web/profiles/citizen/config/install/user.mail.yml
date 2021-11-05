@@ -27,4 +27,4 @@ status_canceled:
   subject: 'Account details for [user:display-name] at [site:name] (canceled)'
 langcode: en
 _core:
-  default_config_hash: 9M54oUHg7b-xWLt17iHZ99WsqVbNxMfbeoHHxqxp2Zw
+  default_config_hash: jee_k88wD5OZR3Pu39pUP5SctvXeU1WPIQL_xAywKv8

@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.field_widget_title
     - paragraphs.paragraphs_type.video
 _core:
-  default_config_hash: oYqUHuJABpCi_2JUZXvPi8S2GfdeLBlpoicK2umv0SA
+  default_config_hash: KmwA2gjyK13oZS73qlFmRQz89ZDZFSNRC6IKfidW0Ec
 id: paragraph.video.field_widget_title
 field_name: field_widget_title
 entity_type: paragraph
