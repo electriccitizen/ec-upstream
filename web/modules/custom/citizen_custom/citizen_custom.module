@@ -1,0 +1,340 @@
+<?php
+
+/**
+ * @file
+ * Contains citizen_custom.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Site\Settings;
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_help().
+ */
+function citizen_custom_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the citizen custom module.
+    case 'help.page.citizen_custom':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom glue module for Electric Citizen sites') . '</p>';
+      return $output;
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function citizen_custom_theme() {
+  return [
+    'citizen_custom' => [
+      'template' => 'citizen_custom',
+      'render element' => 'children',
+    ],
+    'site_search' => [
+      'variables' => [
+        'title' => 'Site Search',
+      ],
+    ],
+  ];
+}
+
+/* ADD USER ROLE CLASSES
+------------------------*/
+function citizen_custom_preprocess_html(&$variables){
+  // print \Drupal::request()->getHost();
+  /* Find the current user */
+  $user = \Drupal::currentUser();
+  $userRole = $user->getRoles();
+  foreach($userRole as $role ){
+    if($role != 'authenticated'){
+      $variables['attributes']['class'][] = 'role-' . $role;
+    }
+  }
+}
+
+/*
+ * add env toolbar indicator with hook_toolbar
+ */
+function citizen_custom_toolbar() {
+  $env = Settings::get('environment');
+  $toolbar = '';
+  if ($env == 'local') {
+    $toolbar = t('Local');
+  }
+  elseif ($env == 'dev') {
+    $toolbar = t('Dev');
+  }
+  elseif ($env == 'test') {
+    $toolbar = t('Test');
+  }
+  elseif ($env == 'live') {
+    $toolbar = t('Live');
+  }
+
+  $items = [];
+  if ($toolbar){
+    $items['env'] = [
+      '#type' => 'toolbar_item',
+      '#weight' => -1,
+      'tab' => [
+        '#type' => 'link',
+        '#title' => $toolbar,
+        '#url' => \Drupal\Core\Url::fromRoute('<front>'),
+        '#options' => [
+          'attributes' => [
+            'title' => t('Home page'),
+            'class' => [
+              'toolbar-icon',
+              'toolbar-item',
+            ],
+          ],
+        ],
+        '#attached' => [
+          'library' => [
+            'citizen_custom/toolbar-env-tab'
+          ]
+        ],
+      ],
+      '#wrapper_attributes' => [
+        'id' => 'env-tab',
+        'class' => strtolower($toolbar),
+      ],
+    ];
+  }
+  return $items;
+}
+
+/*
+ * set promotion text on node forms
+ */
+function citizen_custom_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $node = $form_state->getFormObject()->getEntity();
+  if ($node->getType() == 'news') {
+    $form['promote']['widget']['value']['#title'] = 'Add to Featured News';
+    $form['promote']['widget']['value']['#description'] = 'Should have a news image.';
+  }
+  if ($node->getType() == 'event') {
+    $form['promote']['widget']['value']['#title'] = 'Add to Featured Events';
+    $form['promote']['widget']['value']['#description'] = 'Should have a news image.';
+  }
+}
+
+/*
+ * general form alter
+ */
+function citizen_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $formId = $form['#id'];
+  $user = \Drupal::currentUser();
+  $userRole = $user->getRoles();
+  //remove layout builder revision info access (to hide revision field)
+  if (strpos($form_id, 'layout_builder_form') > 0) {
+    $form['advanced']['#access'] = FALSE;
+    $form['revision_information']['#access'] = FALSE;
+    $form['revision']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function citizen_custom_preprocess_block(&$variables) {
+  if ($variables['plugin_id'] == 'site_search') {
+    $variables['attributes']['role'] = 'search';
+  }
+  /* SET CUSTOM HELP TEXT */
+  if ($variables['plugin_id'] == 'help_block') {
+    $route_name = \Drupal::routeMatch()->getRouteName();
+    $parameters = \Drupal::routeMatch()->getCurrentRouteMatch()->getParameters();
+    if (isset($variables['content'][0]['#markup'])){
+      switch ($route_name) {
+        case 'layout_builder.defaults.node.view':
+          if($parameters->get('node_type')){
+            $nodeType = $parameters->get('node_type');
+            $cleanType = ucwords(str_replace("_"," ",$nodeType)) . ' ';
+          }
+          $output = '';
+          $output .= '<h2>' . $cleanType . t('Layout Builder') . '</h2>';
+          $output .= '<p><strong>' . t('WARNING: ') . '</strong>'. t('Changes to this layout will affect all non-customized ') . str_replace("_"," ",$nodeType) . t(' nodes.') . '</p>';
+          $output .= '<p><small>' . t('Forms and links inside the content of the layout builder tool have been disabled.') . '</small></p>';
+          $variables['content'][0]['#markup'] = $output;
+          break;
+        case 'layout_builder.overrides.node.view':
+          $output = '';
+          $output .= '<h2>' . t('Customize This Layout') . '</h2>';
+          $output .= '<p><strong>' . t('WARNING: ') . '</strong>'. t('Saving this layout (even without making changes) will turn this into a custom node. Custom nodes will not reflect any future global changes to the content type. If you are here in error, click "View" or "Edit" above to exit.') . '</p>';
+          $output .= '<p><small>' . t('Forms and links inside the content of the layout builder tool have been disabled.') . '</small></p>';
+          $variables['content'][0]['#markup'] = $output;
+          break;
+        case 'layout_builder.overrides.node.discard_changes':
+          $output = '';
+          $output .= '<h2>' . t('Discard Changes') . '</h2>';
+          $output .= '<p>' . t('Remove any non-saved changes made in layout customization.') . '</p>';
+          $variables['content'][0]['#markup'] = $output;
+          break;
+        case 'layout_builder.overrides.node.revert':
+          $output = '';
+          $output .= '<h2>' . t('Revert Custom Layout') . '</h2>';
+          $output .= '<p>' . t('Revert this layout to the default layout for this content type.') . '</p>';
+          $variables['content'][0]['#markup'] = $output;
+          break;
+      }
+
+    }
+  }
+}
+
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function citizen_custom_local_tasks_alter(&$local_tasks) {
+  //hide redirects settings from non admins
+  $user = \Drupal::currentUser();
+  $userRole = $user->getRoles();
+  if(!in_array('administrator', $userRole)){
+    if(isset($local_tasks['redirect.list'])){
+      unset($local_tasks['redirect.list']);
+    }
+    if(isset($local_tasks['redirect.settings'])){
+      unset($local_tasks['redirect.settings']);
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for the search_block_form form.
+ *
+ * Since the exposed form is a GET form, we don't want it to send the form
+ * tokens. However, you cannot make this happen in the form builder function
+ * itself, because the tokens are added to the form after the builder function
+ * is called. So, we have to do it in a form_alter.
+ *
+ * @see \Drupal\search\Form\SearchBlockForm
+ */
+function citizen_custom_form_site_search_form_alter(&$form, FormStateInterface $form_state) {
+  $form['form_build_id']['#access'] = FALSE;
+  $form['form_token']['#access'] = FALSE;
+  $form['form_id']['#access'] = FALSE;
+}
+
+/**
+ * Implements hook_field_widget_alter for paragraph fields preview themeing assistance.
+ */
+function citizen_custom_field_widget_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
+  $field_definition = $context['items']->getFieldDefinition();
+  if ($field_definition->getType() == 'entity_reference_revisions') {
+    if (isset($element['#paragraph_type'])) {
+      $type = $element['#paragraph_type'];
+      $element['top']['type']['#attributes']['class'][] = str_replace('_','-',$type);
+      if(isset($element['top']['type']['icon'])){
+        unset($element['top']['type']['icon']);
+      }
+    }
+  }
+  //add custom link help text for emails
+  if ($field_definition->getType() == 'link') { 
+    if ($element['uri']['#description']) {
+      $linkHelp = $element['uri']['#description'];
+      $element['uri']['#description'] = $linkHelp . ' To create an email link, enter "<strong>mailto:</strong>example@email.com".';
+    }
+  }
+  if ($field_definition->getName() == 'field_anchor_link') {
+    // Guarantees unique wrapper id for pages with multiple anchor fields.
+    $id = implode('-', $element['#field_parents']);
+    $initial_anchor_id = _citizen_custom_get_anchor_tag($element['value']);
+    $initial_anchor_text = t("Anchor tag: $initial_anchor_id");
+    $element['anchor'] = [
+      '#type' => 'item',
+      '#prefix' => "<div id='$id'>",
+      '#suffix' => "<span class='description'>$initial_anchor_text</span></div>",
+    ];
+    $element['#attached']['library'][] = 'citizen_custom/anchor_ajax_event';
+    $element['value']['#attributes']['class'][] = 'anchorfield-ajax-trigger';
+    $element['value']['#ajax'] = [
+      'callback' => '_citizen_custom_anchor_link_callback',
+      'disable-refocus' => FALSE,
+      'event' => 'finishedinput',
+      'wrapper' => $id,
+    ];
+  }
+}
+
+/**
+ * Custom AJAX callback function for displaying a rendered anchor id.
+ */
+function _citizen_custom_anchor_link_callback(&$form, FormStateInterface $form_state) {
+  $anchor_element = $form_state->getTriggeringElement();
+  $id = implode('-', $anchor_element['#field_parents']);
+  $anchor_id = _citizen_custom_get_anchor_tag($anchor_element);
+  $output = t("<div id=\"$id\"><span class=\"description\">Anchor tag: $anchor_id</span></div>");
+
+  return ['#markup' => $output];
+}
+
+/**
+ * Finds and renders the anchor id for field_anchor_link form items.
+ *
+ * @param array $anchor_element
+ *   The form render array for an anchor element.
+ *
+ * @return string
+ *   The rendered anchor id.
+ */
+function _citizen_custom_get_anchor_tag($anchor_element) {
+  $id = implode('-', $anchor_element['#field_parents']);
+  $anchor_id = "";
+
+  // Equivalent to twig 'clean_id' filter.
+  $anchor_id = Html::getId(trim($anchor_element['#default_value']));
+  return $anchor_id ? "#$anchor_id" : "";
+}
+
+/**
+ * Implements views_pre_view to repurpose paragraph events list for use with multiple filters
+ */
+function citizen_custom_views_pre_view($view, $display_id, &$args) {
+  if(isset($view->element['#name'])) {
+    if (($view->element['#name'] == 'events') && ($view->current_display === 'events_list')) {
+      $filters = $view->display_handler->getOption('filters');
+      $paragraph_id = $view->args[0];
+      if ($paragraph_id){
+        $paragraph = \Drupal\paragraphs\Entity\Paragraph::load($paragraph_id);
+
+        if(isset($paragraph->field_limit_list[0])){
+          $per_page = $paragraph->field_limit_list[0]->value;
+          $pager = $view->display_handler->getOption('pager');
+          $pager['type'] = 'some';
+          $view->setItemsPerPage($per_page);
+        } else {
+          $pager['type'] = 'none';
+        }
+         $view->display_handler->setOption('pager', $pager);
+      }//end if paragraph_id
+    } // End Paragraphs Event View
+
+    //paragraph news view
+    if (($view->element['#name'] === 'news') && ($view->current_display === 'news_list')) {
+      $filters = $view->display_handler->getOption('filters');
+      $paragraph_id = $view->args[0];
+
+      if ($paragraph_id){
+        $paragraph = \Drupal\paragraphs\Entity\Paragraph::load($paragraph_id);
+
+        if(isset($paragraph->field_limit_list[0])){
+          $per_page = $paragraph->field_limit_list[0]->value;
+          $pager = $view->display_handler->getOption('pager');
+          $pager['type'] = 'some';
+          $view->setItemsPerPage($per_page);
+        } else {
+          $pager['type'] = 'none';
+        }
+
+        $view->display_handler->setOption('pager', $pager);
+      }//end if paragraph_id
+    } // End Paragraphs News View
+  }//end isset name
+} // End views_pre_view.
+
