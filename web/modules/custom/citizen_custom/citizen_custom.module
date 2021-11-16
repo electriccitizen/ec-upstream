@@ -238,7 +238,7 @@ function citizen_custom_field_widget_form_alter(&$element, \Drupal\Core\Form\For
   if ($field_definition->getType() == 'link') { 
     if ($element['uri']['#description']) {
       $linkHelp = $element['uri']['#description'];
-      $element['uri']['#description'] = $linkHelp . ' To create an email link, enter "<strong>mailto:</strong>example@email.com".';
+      $element['uri']['#description']['#items'][] = t('To create an email link, enter "<strong>mailto:</strong>example@email.com".');
     }
   }
   if ($field_definition->getName() == 'field_anchor_link') {
