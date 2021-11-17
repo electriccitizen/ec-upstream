@@ -131,3 +131,8 @@ upstream/web/
 
 # Ignore .env files as they are personal
 /.env
+
+#ignore files for local theming
+/web/themes/*/node_modules
+.DS_Store
+/database.sql

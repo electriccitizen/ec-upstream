@@ -2,13 +2,11 @@
 # THEME-INSTALL.md
 
 ## LAST REVIEWED
-Last tested and working on Node version 14.17.0 and NPM version 6.14.13 on 2021-8-10, by Adam. You can use NVM to switch to these versions if yours are different and not working.
+Last tested and working on Node version 14.17.0 and NPM version 6.14.13 on 2021-11-17, by Adam. You can use NVM to switch to these versions if yours are different and not working.
 
 ## ABOUT CITIZEN PATTERNS THEME
 
 Citizen Patterns is an Atomic design based Pattern Lab theme by Electric Citizen, http://www.electriccitizen.com. 
-
-For Drupal 9, Citizen Patterns uses Emulsify by Four Kitchens as a starting place. The Emulsify Gulp npm package is a dependency of the Citizen Patterns theme.
 
 Pattern Lab can be deployed as a living styleguide by running ```npm run deploy```. This will build a /build folder in the theme root (if you get an error about /build not existing just run again) and deploy that folder to the gh-pages branch of the project repo. If no gh-pages branch exists, it will create one. You can then view the living style guide on this url: https://electriccitizen.github.io/< my project >/pattern-lab/public. For production sites, a custom url should be used: https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site
 
