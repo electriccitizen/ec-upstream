@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.news.field_metatags
     - node.type.news
   module:
+    - citizen_custom
     - layout_builder
     - layout_builder_restrictions
     - layout_discovery
@@ -118,6 +119,17 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 0
+          6dd9ea31-a419-4a1f-abd4-f10e6f85aef5:
+            uuid: 6dd9ea31-a419-4a1f-abd4-f10e6f85aef5
+            region: first
+            configuration:
+              id: social_share
+              label: 'Social Share'
+              provider: citizen_custom
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
     allow_custom: false
     is_enabled: true

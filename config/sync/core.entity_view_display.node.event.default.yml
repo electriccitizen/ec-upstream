@@ -13,6 +13,7 @@ dependencies:
     - node.type.event
   module:
     - address
+    - citizen_custom
     - geolocation
     - layout_builder
     - layout_builder_restrictions
@@ -455,6 +456,17 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 0
+          7a2c900f-1069-48fb-8e79-3a7ad9779fb6:
+            uuid: 7a2c900f-1069-48fb-8e79-3a7ad9779fb6
+            region: first
+            configuration:
+              id: social_share
+              label: 'Social Share'
+              provider: citizen_custom
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
     allow_custom: false
     is_enabled: true
