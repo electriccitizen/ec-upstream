@@ -39,6 +39,12 @@ function citizen_custom_theme() {
         'title' => 'Site Search',
       ],
     ],
+	'social_share_block' => [
+      'variables' => [
+        'title' => 'Social Share',
+		'data' => [],
+      ],
+    ],
   ];
 }
 
