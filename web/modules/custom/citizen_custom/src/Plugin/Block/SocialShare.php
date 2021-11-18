@@ -24,9 +24,11 @@ class SocialShare extends BlockBase
      */
     public function build()
     {
+        //get the current node
         $node = \Drupal::routeMatch()->getParameter('node');
         if ($node instanceof \Drupal\node\NodeInterface) {
-            //You can get nid and anything else you need from the node object.
+            
+            //get the variables we need to pass to twig
             $base_url = $GLOBALS['base_url'];
             $full_url = $base_url . $node->toUrl()->toString();
             $title = $node->getTitle();
