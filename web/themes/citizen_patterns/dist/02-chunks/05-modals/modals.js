@@ -1,6 +1,10 @@
-"use strict";(function(a,b){/* MODAL WINDOWS
------------------------------------- */b.behaviors.modal={attach:function attach(b){a(".modal-trigger",b).once("modal_window").each(function(){var b=a(this),c=b.attr("aria-controls"),d=a("#"+c),e="#"+d.find(".modal-close").attr("id");//open the newsletter modal form on click
-//close the modal form on close click
-//trap focus
-a(this).click(function(b){return b.preventDefault(),d.attr("aria-modal","true").addClass("active-modal").show(0).find(".modal-inner").fadeIn(400),/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)||d.find("input:first").focus(),a("body").css("position","fixed"),!1}),a(document).on("click",e,function(c){c.preventDefault(),d.removeAttr("aria-modal").removeClass("active-modal").find(".modal-inner").fadeOut(400).end().hide(0),/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)||b.focus(),a("body").css("position","static"),a(document).scrollTop(b.offset().top-200)}),window.onload=function(){setTimeout(function(){function a(a){var c=a||window.event,d=c.which||c.keyCode;9===d&&(c.preventDefault?c.preventDefault():c.returnValue=!1,b.focus())}var b=document.getElementById(d.find(".modal-close").attr("id")),c=document.querySelector(".modal-content *[type=\"submit\"]:last-of-type");c.addEventListener?c.addEventListener("keydown",a,!1):c.attachEvent&&c.attachEvent("onkeydown",a)},300)}})}}})(jQuery,Drupal);
+"use strict";(function(a,b){//Pop-up content functionality.
+b.behaviors.modal={attach:function attach(b){a(".modal",b).once("modalContent").each(function(){console.log("modals exist");//set the variable needed to keep the modal controls specific
+var b=a(".modal-lead",this).attr("data-attribute-id");console.log(b),a(".modal-wrapper",this).appendTo(".overflow-guard"),window.addEventListener("load",function(){//close when the modal window is clicked out side of the content
+//close when the close button is clicked
+function d(){e.classList.add("close-modal"),setTimeout(function(){e.classList.remove("close-modal","active-modal")},1200)}//open the modal
+//set the controls for this specific modal
+var e=c("modal-outer-"+b),f=c("modal-trigger-"+b),g=c("modal-inner-"+b),h=c("modal-close-"+b);//set the click functions
+e.addEventListener("click",function(){e.classList.add("close-modal"),setTimeout(function(){e.classList.remove("close-modal","active-modal")},1200)}),f.addEventListener("click",function(){if(e.classList.add("active-modal"),0!=g.getElementsByTagName("form").length)g.getElementsByTagName("form")[0].getElementsByTagName("input")[0].focus();else{var a=e.getElementsByTagName("dialog")[0];a.focus()}}//prevent close when the modal inner content is clicked
+),g.addEventListener("click",function(a){return a.stopPropagation(),a.stopImmediatePropagation(),!1}),h.addEventListener("click",d),a(document).keydown(function(a){27==a.keyCode&&d()})});var c=document.getElementById.bind(document),d=document.querySelector.bind(document)})}}})(jQuery,Drupal);
 //# sourceMappingURL=modals.js.map

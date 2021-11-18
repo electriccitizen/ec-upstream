@@ -1,61 +1,72 @@
 (function($, Drupal) {
 
-/* MODAL WINDOWS
------------------------------------- */
-Drupal.behaviors.modal = {
-	attach: function (context, settings) {
-		$('.modal-trigger', context).once('modal_window').each(function(){
-      var modalTrigger = $(this);
-      var modalID = modalTrigger.attr('aria-controls');
-      var modalItem = $('#' + modalID);
-      var modalClose = '#' + modalItem.find('.modal-close').attr('id');
+	//Pop-up content functionality.
+	Drupal.behaviors.modal = {
+		attach: function (context, settings) {
+			$(".modal", context).once('modalContent').each(function(){
+				//set the variable needed to keep the modal controls specific
+				var pid = $('.modal-lead', this).attr('data-attribute-id');
+				$('.modal-wrapper', this).appendTo('.overflow-guard');
+	
+				//load the setup
+				window.addEventListener('load', setup);
+				const get = document.getElementById.bind(document);
+		  		const query = document.querySelector.bind(document);
+	
+				function setup() {
+					//set the controls for this specific modal
+					let modalRoot = get('modal-outer-' + pid);
+					let button = get('modal-trigger-' + pid);
+					let modal = get('modal-inner-' + pid);
+					let close = get('modal-close-' + pid);
+					//set the click functions
+					modalRoot.addEventListener('click', rootClick);
+					button.addEventListener('click', openModal);
+					modal.addEventListener('click', modalClick);
+					close.addEventListener('click', modalClose);
+					//close when the modal window is clicked out side of the content
+					function rootClick() {
+						modalRoot.classList.add('close-modal');
+						setTimeout(function(){ modalRoot.classList.remove('close-modal','active-modal'); }, 1200);
+					}
+					//close when the close button is clicked
+					function modalClose() {
+						modalRoot.classList.add('close-modal');
+						setTimeout(function(){ modalRoot.classList.remove('close-modal','active-modal'); }, 1200);
 
-			//open the newsletter modal form on click
-      $(this).click(function(e){
-        e.preventDefault();
-        modalItem.attr('aria-modal','true').addClass('active-modal').show(0).find('.modal-inner').fadeIn(400);
-        if (!( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-          modalItem.find('input:first').focus();
-        }
-        $('body').css('position','fixed');
-        return false;
-      });
-      
-      //close the modal form on close click
-      $(document).on('click', modalClose, function(e){
-        e.preventDefault();
-        modalItem.removeAttr('aria-modal').removeClass('active-modal').find('.modal-inner').fadeOut(400).end().hide(0);
-        if (!( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-          modalTrigger.focus();
-        }
-        $('body').css('position','static');
-        $(document).scrollTop(modalTrigger.offset().top - 200); 
-      });
-
-      
-      //trap focus
-      window.onload = function() {
-        setTimeout(function(){
-          var firstAnchor = document.getElementById(modalItem.find('.modal-close').attr('id')),
-              lastAnchor = document.querySelector('.modal-content *[type="submit"]:last-of-type');
-
-          function keydownHandler(e) {
-            var evt = e || window.event;
-            var keyCode = evt.which || evt.keyCode;
-            if(keyCode === 9) { // TAB pressed
-                if(evt.preventDefault) evt.preventDefault();
-                else evt.returnValue = false;
-                firstAnchor.focus();
-            }
-          }
-
-          if(lastAnchor.addEventListener) lastAnchor.addEventListener('keydown', keydownHandler, false);
-          else if(lastAnchor.attachEvent) lastAnchor.attachEvent('onkeydown', keydownHandler);
-        }, 300);
-      }
-		});
+						//if there is a external video in an iframe or an HTML video, stop it when the modal closes
+						if(modal.getElementsByTagName('iframe').length != 0) {
+							modal.getElementsByTagName('iframe')[0].src = modal.getElementsByTagName('iframe')[0].src;
+						} else if(modal.getElementsByTagName('video').length != 0) {
+							modal.getElementsByTagName('video')[0].pause();
+							modal.getElementsByTagName('video')[0].currentTime = 0;
+						}
+					}
+					//open the modal
+					function openModal() {
+						modalRoot.classList.add('active-modal');
+						if(modal.getElementsByTagName('form').length != 0) {
+							modal.getElementsByTagName('form')[0].getElementsByTagName('input')[0].focus();
+						} else {
+							let dialog = modalRoot.getElementsByTagName('dialog')[0];
+							dialog.focus();
+						}
+					}
+					//prevent close when the modal inner content is clicked
+					function modalClick(e) {
+					//e.preventDefault();
+					e.stopPropagation();
+					e.stopImmediatePropagation();
+					return false;
+					}
+					$(document).keydown(function(event) { 
+						if (event.keyCode == 27) { 
+						  modalClose();
+						}
+					  });
+		  		}
+			});
+		}
 	}
-};
-
-
-})(jQuery, Drupal);
+	
+	})(jQuery, Drupal);

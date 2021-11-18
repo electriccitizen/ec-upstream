@@ -1,39 +1,63 @@
 /* ================
 	MODALS
 ================== */
-.modal-element{
+.modal-wrapper {
 	display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
 	bottom: 0;
 	right: 0;
-	z-index: 501;
-	background: $modalBack;
-	.modal-inner{
+	z-index: 999;
+	background: rgba(0, 0, 0, .8);
+	width: 100%;
+	height: 100%;
+	border: 0;
+	.modal-inner {
 		display: none;
 		position: absolute;
+		padding: 2.5rem;
 		top: 50%;
 		left: 50%;
-		width: 90vw;
-		max-width: 640px;
+		width: auto;
+		max-width: 90vw;
 		height: auto;
-		max-height: 800px;
-		@include translate(-50%,-50%);
-		background: $modalContentBack;
-		& > .contextual .trigger{
+		max-height: 95vh;
+		@include translate(-50%, -50%);
+		background: #fff;
+		border: 0;
+		overflow-y: scroll;
+		&>.contextual .trigger {
 			right: -12px;
 		}
-	}
-	.modal-header{
+		.modal-close {
+			background: 0 0;
+			font-size: 24px;
+			color: #000;
+			height: 32px;
+			width: 32px;
+			top: 10px;
+			right: 10px;
+			position: absolute;
+			border: 0;
+			font-family: "Open Sans", Helvetica, Arial, sans-serif;
+			padding: 0;
+			z-index: 9999;
+			&:focus,
+			&:hover {
+				color: #bf0e0e;
+			}
+		}
+	} //end modal-inner
+	.modal-header {
 		position: relative;
-		h2{
-			padding: 2rem 2.5rem;
-			background: $modalHeaderBack;
+
+		h2 {
 			@include heading4;
-			color: $modalHeader;
-		}//end block title
-		.modal-close{
+			margin: 0 0 1rem;
+		}
+		//end block title
+		.modal-close {
 			border: 1px solid transparent;
 			display: block;
 			position: absolute;
@@ -45,26 +69,44 @@
 			background: url('../images/preview/close-white.svg') no-repeat;
 			background-size: 20px 20px;
 			background-position: center;
-			&:hover,&:focus{
+			&:hover,
+			&:focus {
 				opacity: .8;
 				border-color: $white;
 				outline: none;
 			}
 		}
-	}//end modal-header
-	.modal-content{
+	} //end modal-header
+	.modal-content {
 		overflow-y: scroll;
-		padding: 2.5rem 2.5rem 5rem;
 		overflow-x: hidden;
 		color: $modalContent;
-		.modal-intro{
+
+		.modal-intro {
 			margin-bottom: $spaceMd;
-			& > *:last-child{
+
+			&>*:last-child {
 				margin-bottom: 0;
 			}
 		}
-		input:focus{
+
+		input:focus {
 			cursor: pointer;
 		}
+	} //end modal-content
+	&.active-modal {
+		display: block;
+
+		.modal-inner {
+			display: block;
+		}
 	}
-}//end modal-element
+	&.close-modal {
+		display: none;
+
+		modal-inner {
+			display: none;
+		}
+	}
+}
+//end modal-wrapper
