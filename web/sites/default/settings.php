@@ -36,16 +36,19 @@ $settings['config_sync_directory'] = "../config/sync";
 if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
   $settings['file_temp_path'] = '/tmp';
 
-  switch($_ENV['PANTHEON_ENVIRONMENT']) {
+  switch ($_ENV['PANTHEON_ENVIRONMENT']) {
     case 'live':
-       $config['config_split.config_split.live']['status'] = TRUE;
+      $config['config_split.config_split.live']['status'] = TRUE;
       break;
+
     case 'test':
-       $config['config_split.config_split.test']['status'] = TRUE;
+      $config['config_split.config_split.test']['status'] = TRUE;
       break;
+
     default:
       $config['config_split.config_split.dev']['status'] = TRUE;
       break;
+
   }
 } else {
     // LOCAL

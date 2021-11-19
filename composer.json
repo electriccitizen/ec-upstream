@@ -14,9 +14,6 @@
         }
     ],
     "require": {
-        "drush-ops/behat-drush-endpoint": "^9.4",
-        "drush/drush": "^10",
-        "pantheon-upstreams/upstream-configuration":"*" ,
         "drupal/addanother": "^1.0",
         "drupal/address": "^1.9",
         "drupal/admin_toolbar": "^3.0",
@@ -64,7 +61,10 @@
         "drupal/views_bulk_operations": "^4.0",
         "drupal/views_infinite_scroll": "^1.7",
         "drupal/webform": "^6.0",
-        "drupal/xmlsitemap": "^1.0"
+        "drupal/xmlsitemap": "^1.0",
+        "drush-ops/behat-drush-endpoint": "^9.4",
+        "drush/drush": "^10",
+        "pantheon-upstreams/upstream-configuration": "*"
     },
     "conflict": {
         "drupal\/drupal": "*"
