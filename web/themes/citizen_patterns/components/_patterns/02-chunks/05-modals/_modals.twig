@@ -9,7 +9,7 @@
 
 		{%- if modalTrigger -%}
 			<button id="modal-trigger-{{ modalIdentifier }}" aria-controls="modal-outer-{{ modalIdentifier }}">{{- modalTrigger -}}</button>
-		{% endif }
+		{% endif %}
 	</div>
 	<dialog class="modal-wrapper" id="modal-outer-{{ modalIdentifier }}" aria-modal="true" >
 		<div class="modal-inner" id="modal-inner-{{ modalIdentifier }}"tabindex="-1">
