@@ -33,6 +33,8 @@
 {% endblock %}
 
 {% block blockContent %}
+	{{ attach_library('citizen_patterns/modal') }}
+
 	{% set intro = {
 		'#type': 'processed_text',
 		'#text': content.body.0['#text'],
@@ -44,18 +46,15 @@
 		'#format': content.field_modal_intro.0['#format']
 	} %}
 
-	{% embed "@composites/01-blocks/newsletter/_newsletter.twig" 
+	{% set modalId = content['#block_content'].id() %}
+	{% embed "@chunks/05-modals/_modals.twig"
 		with{
-			embedForm: content.field_form_embed['#items'].0.value,
-			modal: content.field_form_modal.0['#markup'],
 			modalHeader: content.field_modal_header['#items'].0.value,
 			modalTrigger: content.field_modal_trigger['#items'].0.value,
+			embedForm: content.field_form_embed['#items'].0.value,
+			modalIdentifier: modalId
 		}
 	%}
-
-		{% block library %}
-			{{ attach_library('citizen_patterns/modal') }}
-		{% endblock %}
 
 	{% endembed %}
 
