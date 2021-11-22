@@ -227,9 +227,9 @@ function citizen_custom_form_site_search_form_alter(&$form, FormStateInterface $
 }
 
 /**
- * Implements hook_field_widget_alter for paragraph fields preview themeing assistance.
+ * Implements hook_field_widget_single_element_form_alter for paragraph fields preview themeing assistance.
  */
-function citizen_custom_field_widget_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
+function citizen_custom_field_widget_single_element_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
   $field_definition = $context['items']->getFieldDefinition();
   if ($field_definition->getType() == 'entity_reference_revisions') {
     if (isset($element['#paragraph_type'])) {
