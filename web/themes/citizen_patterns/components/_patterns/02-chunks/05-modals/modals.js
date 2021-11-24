@@ -48,8 +48,7 @@
 						if(modal.getElementsByTagName('form').length != 0) {
 							modal.getElementsByTagName('form')[0].getElementsByTagName('input')[0].focus();
 						} else {
-							let dialog = modalRoot.getElementsByTagName('dialog')[0];
-							dialog.focus();
+							modal.focus();
 						}
 					}
 					//prevent close when the modal inner content is clicked
