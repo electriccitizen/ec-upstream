@@ -30,7 +30,7 @@ class SocialShare extends BlockBase
             
             //get the variables we need to pass to twig
             $base_url = $GLOBALS['base_url'];
-            $full_url = $base_url . $node->toUrl()->toString();
+            $full_url = $node->toUrl()->toString();
             $title = $node->getTitle();
         }
 
