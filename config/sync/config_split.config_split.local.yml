@@ -20,3 +20,4 @@ theme: {  }
 complete_list: {  }
 partial_list:
   - system.performance
+  - system.logging
