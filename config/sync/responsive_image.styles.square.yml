@@ -14,19 +14,19 @@ id: square
 label: Square
 image_style_mappings:
   -
-    breakpoint_id: citizen_patterns.mobile
-    multiplier: 1.5x
     image_mapping_type: image_style
     image_mapping: 360x360_1_5x
-  -
     breakpoint_id: citizen_patterns.mobile
-    multiplier: 1x
+    multiplier: 1.5x
+  -
     image_mapping_type: image_style
     image_mapping: 360x360
-  -
     breakpoint_id: citizen_patterns.mobile
-    multiplier: 2x
+    multiplier: 1x
+  -
     image_mapping_type: image_style
     image_mapping: 360x360_2x
+    breakpoint_id: citizen_patterns.mobile
+    multiplier: 2x
 breakpoint_group: citizen_patterns
 fallback_image_style: 360x360

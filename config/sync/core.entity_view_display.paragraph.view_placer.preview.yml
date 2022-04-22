@@ -16,8 +16,8 @@ dependencies:
     - options
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 _core:
   default_config_hash: JNkyKkRfvqQf3U1fceQjNTYqjqI-0qCaMIhKWaoWWT4
 id: paragraph.view_placer.preview
@@ -27,11 +27,11 @@ mode: preview
 content:
   field_view:
     type: list_default
-    weight: 0
-    region: content
     label: inline
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_bios_displays: true
   field_events_displays: true

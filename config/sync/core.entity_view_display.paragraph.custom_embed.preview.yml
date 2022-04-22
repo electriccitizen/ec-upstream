@@ -11,8 +11,8 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 _core:
   default_config_hash: CJrkxEyXI7Y5bPQogfSZfdtBivLaW9wnD96PCXaYm8A
 id: paragraph.custom_embed.preview
@@ -21,12 +21,12 @@ bundle: custom_embed
 mode: preview
 content:
   field_widget_title:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
 hidden:
   field_embed_content: true

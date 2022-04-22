@@ -11,9 +11,9 @@ field_name: gathercontent_option_ids
 entity_type: taxonomy_term
 type: string
 settings:
-  is_ascii: false
-  case_sensitive: false
   max_length: 255
+  case_sensitive: false
+  is_ascii: false
 module: core
 locked: true
 cardinality: -1

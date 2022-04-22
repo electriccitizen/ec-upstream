@@ -13,8 +13,8 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 _core:
   default_config_hash: X7oXpF8rRrn82g3aI9sE8g8UkW7f4mabtnhcNgR0Sc0
 id: media.image.large_embed
@@ -24,20 +24,20 @@ mode: large_embed
 content:
   field_caption:
     type: basic_string
-    weight: 1
-    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
+    region: content
   field_media_image:
     type: image
-    weight: 0
-    region: content
     label: hidden
     settings:
-      image_style: large_non_crop
       image_link: ''
+      image_style: large_non_crop
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   created: true
   name: true

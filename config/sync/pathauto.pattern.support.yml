@@ -13,12 +13,12 @@ pattern: '[node:menu-link:parents:join:/]/[node:title]'
 selection_criteria:
   7fde42f4-b65e-4b50-aec7-b672b707e177:
     id: node_type
-    bundles:
-      support_book: support_book
     negate: false
+    uuid: 7fde42f4-b65e-4b50-aec7-b672b707e177
     context_mapping:
       node: node
-    uuid: 7fde42f4-b65e-4b50-aec7-b672b707e177
+    bundles:
+      support_book: support_book
 selection_logic: and
 weight: -5
 relationships: {  }

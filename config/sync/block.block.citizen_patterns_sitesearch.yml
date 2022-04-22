@@ -17,11 +17,11 @@ plugin: site_search
 settings:
   id: site_search
   label: 'Site Search'
-  provider: citizen
   label_display: '0'
+  provider: citizen
 visibility:
   request_path:
     id: request_path
-    pages: /site-search
     negate: true
     context_mapping: {  }
+    pages: /site-search

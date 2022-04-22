@@ -16,6 +16,8 @@ dependencies:
     - citizen_patterns
 third_party_settings:
   layout_builder:
+    enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: layout_onecol
@@ -28,18 +30,18 @@ third_party_settings:
             configuration:
               id: 'field_block:user:user:name'
               label: Name
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
               formatter:
-                label: hidden
                 type: string
+                label: hidden
                 settings:
                   link_to_entity: false
                 third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
             weight: 2
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: tabs
@@ -52,30 +54,28 @@ third_party_settings:
             configuration:
               id: 'views_block:user_dashboard-my_content'
               label: ''
-              provider: views
               label_display: visible
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           df4d5ea9-4ccf-49c3-b834-c19a3ccd7803:
             uuid: df4d5ea9-4ccf-49c3-b834-c19a3ccd7803
             region: tabs
             configuration:
               id: 'views_block:user_dashboard-all_recent_content'
               label: ''
-              provider: views
               label_display: visible
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
         third_party_settings: {  }
-    allow_custom: false
     is_enabled: true
-    enabled: true
 _core:
   default_config_hash: NDtgPdpr9EfNY6km7KdOaxtzoL2y4690tGK21Z90VS0
 id: user.user.default
@@ -84,33 +84,33 @@ bundle: user
 mode: default
 content:
   field_first_name:
-    weight: 7
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 7
     region: content
   field_last_name:
-    weight: 8
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 8
     region: content
   field_user_image:
-    weight: 6
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 6
     region: content
   member_for:
-    weight: 5
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 5
+    region: content
 hidden:
   search_api_excerpt: true

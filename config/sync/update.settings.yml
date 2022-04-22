@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: 7AQHu4zyPCyOKCQmPgoqbTtUX2VyExI5-HUWRhz_BO0
 check:
   disabled_extensions: false
   interval_days: 1
@@ -9,5 +11,3 @@ notification:
   emails:
     - no-reply@electriccitien.com
   threshold: all
-_core:
-  default_config_hash: 7AQHu4zyPCyOKCQmPgoqbTtUX2VyExI5-HUWRhz_BO0

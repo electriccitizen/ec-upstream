@@ -12,9 +12,9 @@ dependencies:
     - link
 third_party_settings:
   layout_builder:
-    sections: {  }
     enabled: false
     allow_custom: false
+    sections: {  }
 _core:
   default_config_hash: _x7MwhSiy9McqMBeBdb5scAV5L2USCCCPBdpGghIs0o
 id: paragraph.links_files.default
@@ -24,15 +24,15 @@ mode: default
 content:
   field_file_multi:
     type: entity_reference_entity_view
-    weight: 2
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    weight: 2
     region: content
   field_link_multi:
-    weight: 1
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -41,15 +41,15 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 1
     region: content
   field_widget_title:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
 hidden:
   search_api_excerpt: true

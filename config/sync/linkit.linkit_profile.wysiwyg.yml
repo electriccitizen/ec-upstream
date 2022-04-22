@@ -10,34 +10,34 @@ dependencies:
     - node
 _core:
   default_config_hash: OGbleuOgYZQiCASrbT-9bJDKb7L4TH281LhY0p5CeBM
-id: wysiwyg
 label: WYSIWYG
+id: wysiwyg
 description: ''
 matchers:
   50988d03-448b-43e9-926e-fe6f6a804bd6:
-    uuid: 50988d03-448b-43e9-926e-fe6f6a804bd6
     id: 'entity:node'
-    weight: 0
+    uuid: 50988d03-448b-43e9-926e-fe6f6a804bd6
     settings:
+      metadata: ''
       bundles: {  }
       group_by_bundle: true
-      include_unpublished: false
       substitution_type: canonical
-      metadata: ''
       limit: 100
-  0295521d-abea-485f-b0b2-02d7de94a6c2:
-    uuid: 0295521d-abea-485f-b0b2-02d7de94a6c2
-    id: 'entity:file'
+      include_unpublished: false
     weight: 0
+  0295521d-abea-485f-b0b2-02d7de94a6c2:
+    id: 'entity:file'
+    uuid: 0295521d-abea-485f-b0b2-02d7de94a6c2
     settings:
+      metadata: ''
       bundles: null
       group_by_bundle: null
+      substitution_type: file
+      limit: 100
+      file_extensions: ''
+      file_status: 1
       images:
         show_dimensions: false
         show_thumbnail: true
         thumbnail_image_style: linkit_result_thumbnail
-      substitution_type: file
-      metadata: ''
-      file_extensions: ''
-      file_status: 1
-      limit: 100
+    weight: 0

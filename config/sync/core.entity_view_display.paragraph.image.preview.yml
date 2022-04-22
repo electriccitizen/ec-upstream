@@ -26,13 +26,13 @@ mode: preview
 content:
   field_image:
     type: media_thumbnail
-    weight: 0
-    region: content
     label: inline
     settings:
-      image_style: paragraph_preview
       image_link: ''
+      image_style: paragraph_preview
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_image_size: true
   field_link: true

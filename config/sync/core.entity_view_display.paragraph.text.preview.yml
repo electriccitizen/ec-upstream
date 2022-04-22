@@ -23,11 +23,11 @@ mode: preview
 content:
   field_long_text:
     type: text_default
-    weight: 0
-    region: content
     label: inline
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_widget_title: true
   search_api_excerpt: true
