@@ -16,7 +16,7 @@ services:
   #  see http://docksal.readthedocs.io/en/master/advanced/stack-settings/ and
   #  https://hub.docker.com/r/docksal/cli/tags/.
   db:
-    image: docksal/mysql:5.7
+    image: docksal/mariadb:10.4
   cli:
     image: docksal/cli:php7.4
     # Uncomment to add support for xdebug - see http://docksal.readthedocs.io/en/master/tools/xdebug/.
