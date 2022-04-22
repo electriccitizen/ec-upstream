@@ -14,8 +14,8 @@ dependencies:
     - media
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 _core:
   default_config_hash: rhx578CSISOYVZf5tDLJY9lZeCqv17E6UZNOiMeaL3E
 id: paragraph.gallery.preview
@@ -24,24 +24,24 @@ bundle: gallery
 mode: preview
 content:
   field_gallery_type:
-    weight: 0
+    type: boolean
     label: inline
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
+    weight: 0
     region: content
   field_image_multi:
     type: media_thumbnail
-    weight: 1
-    region: content
     label: hidden
     settings:
-      image_style: paragraph_preview
       image_link: ''
+      image_style: paragraph_preview
     third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   field_widget_title: true
   search_api_excerpt: true

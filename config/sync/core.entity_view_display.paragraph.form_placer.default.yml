@@ -16,12 +16,12 @@ bundle: form_placer
 mode: default
 content:
   field_form:
-    weight: 0
+    type: webform_entity_reference_entity_view
     label: hidden
     settings:
       source_entity: true
     third_party_settings: {  }
-    type: webform_entity_reference_entity_view
+    weight: 0
     region: content
 hidden:
   field_form_title: true

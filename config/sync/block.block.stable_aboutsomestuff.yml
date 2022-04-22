@@ -15,8 +15,8 @@ plugin: 'block_content:776b5982-01ea-4b37-acde-8e3f751d0c95'
 settings:
   id: 'block_content:776b5982-01ea-4b37-acde-8e3f751d0c95'
   label: 'About Some Stuff'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full

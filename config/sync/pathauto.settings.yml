@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: DnAHxklfa9I3bKiCLCZwFxmYJ9s0dyH-20FPPekScJo
 enabled_entity_types:
   - redirect
   - user
@@ -43,8 +45,6 @@ reduce_ascii: false
 case: true
 ignore_words: 'a, an, as, at, before, but, by, for, from, is, in, into, like, of, off, on, onto, per, since, than, the, this, that, to, up, via, with'
 update_action: 2
-_core:
-  default_config_hash: DnAHxklfa9I3bKiCLCZwFxmYJ9s0dyH-20FPPekScJo
 safe_tokens:
   - alias
   - alias

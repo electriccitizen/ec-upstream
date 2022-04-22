@@ -13,12 +13,12 @@ pattern: 'bios/[node:title]'
 selection_criteria:
   1e19efa3-96e8-4998-8613-ae3f8e267d04:
     id: node_type
-    bundles:
-      bios: bios
     negate: false
+    uuid: 1e19efa3-96e8-4998-8613-ae3f8e267d04
     context_mapping:
       node: node
-    uuid: 1e19efa3-96e8-4998-8613-ae3f8e267d04
+    bundles:
+      bios: bios
 selection_logic: and
 weight: -5
 relationships: {  }

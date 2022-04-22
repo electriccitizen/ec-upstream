@@ -38,7 +38,6 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       accordions: accordions
       block_placer: block_placer
@@ -56,62 +55,63 @@ settings:
       text: text
       video: video
       view_placer: view_placer
+    negate: 0
     target_bundles_drag_drop:
       accordion_item:
         weight: -38
         enabled: false
       accordions:
-        enabled: true
         weight: -39
+        enabled: true
       block_placer:
-        enabled: true
         weight: -37
+        enabled: true
       custom_embed:
-        enabled: true
         weight: -36
+        enabled: true
       events_list:
-        enabled: true
         weight: -35
+        enabled: true
       form_placer:
-        enabled: true
         weight: -34
+        enabled: true
       gallery:
-        enabled: true
         weight: -33
+        enabled: true
       horizontal_rule:
-        enabled: true
         weight: -32
-      image:
         enabled: true
+      image:
         weight: -31
+        enabled: true
       landing_page_section:
         weight: -30
         enabled: false
       links_files:
-        enabled: true
         weight: -29
+        enabled: true
       map:
-        enabled: true
         weight: -28
-      news_list:
         enabled: true
+      news_list:
         weight: -27
+        enabled: true
       portal:
         weight: -21
         enabled: false
       portals:
-        enabled: true
         weight: -25
+        enabled: true
       quote:
-        enabled: true
         weight: -26
+        enabled: true
       text:
-        enabled: true
         weight: -24
+        enabled: true
       video:
-        enabled: true
         weight: -23
-      view_placer:
         enabled: true
+      view_placer:
         weight: -22
+        enabled: true
 field_type: entity_reference_revisions
