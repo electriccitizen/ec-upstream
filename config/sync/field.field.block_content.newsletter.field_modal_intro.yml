@@ -10,10 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    limited_html: limited_html
-    basic_html: '0'
-    restricted_html: '0'
-    plain_text: '0'
+    allowed_formats:
+      - limited_html
 _core:
   default_config_hash: 6Fu4CiPAc1aDfNyNRx8a_w5DOEo3db4Sjpxyf3EIRrs
 id: block_content.newsletter.field_modal_intro

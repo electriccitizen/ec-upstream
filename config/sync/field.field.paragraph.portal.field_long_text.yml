@@ -10,10 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    limited_html: limited_html
-    basic_html: '0'
-    restricted_html: '0'
-    plain_text: '0'
+    allowed_formats:
+      - limited_html
 _core:
   default_config_hash: zGQNuxIcKRFbvXm0qjRRKs2IQRJRJxVrQT4Eh1UyMFo
 id: paragraph.portal.field_long_text
