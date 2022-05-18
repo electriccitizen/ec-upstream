@@ -8,6 +8,7 @@ id: dev
 label: Dev
 description: 'Config split for Dev and Multi-Dev.'
 weight: 0
+stackable: false
 storage: folder
 folder: ../config/dev
 module:
