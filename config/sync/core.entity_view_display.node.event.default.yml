@@ -109,6 +109,9 @@ third_party_settings:
                   info_text:
                     value: "<p><strong>[node:field_address:organization]</strong><br />\r\n[node:field_address:address_line1]<br />\r\n[node:field_address:address_line2]<br />\r\n[node:field_address:locality] [node:field_address:administrative_area], [node:field_address:postal_code]</p>\r\n"
                     format: basic_html
+                  replacement_patterns:
+                    token_geolocation:
+                      token_items: ''
                   centre:
                     fit_bounds:
                       enable: true
@@ -410,9 +413,6 @@ third_party_settings:
                     height: 245px
                     width: 100%
                     gestureHandling: auto
-                  replacement_patterns:
-                    token_geolocation:
-                      token_items: ''
                 third_party_settings: {  }
             weight: 4
             additional: {  }
