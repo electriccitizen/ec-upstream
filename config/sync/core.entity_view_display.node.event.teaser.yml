@@ -18,9 +18,9 @@ dependencies:
     - user
 third_party_settings:
   layout_builder:
-    sections: {  }
     enabled: false
     allow_custom: false
+    sections: {  }
 _core:
   default_config_hash: 2jvdZWyCmOcYQfH-0UbmFxOYvUsl3gK4w5vwhwLpLZY
 id: node.event.teaser
@@ -29,18 +29,18 @@ bundle: event
 mode: teaser
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 101
     region: content
   links:
-    weight: 100
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 100
+    region: content
 hidden:
   addtoany: true
   field_address: true

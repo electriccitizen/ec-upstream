@@ -23,9 +23,9 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       landing_page_section: landing_page_section
+    negate: 0
     target_bundles_drag_drop:
       accordion_group:
         weight: 15
@@ -52,8 +52,8 @@ settings:
         weight: 22
         enabled: false
       landing_page_section:
-        enabled: true
         weight: 23
+        enabled: true
       links_files:
         weight: 24
         enabled: false

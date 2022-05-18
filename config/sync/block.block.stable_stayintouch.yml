@@ -15,8 +15,8 @@ plugin: 'block_content:84a09ce2-e145-4874-90b6-067da5857172'
 settings:
   id: 'block_content:84a09ce2-e145-4874-90b6-067da5857172'
   label: 'Stay in Touch'
-  provider: block_content
   label_display: visible
+  provider: block_content
   status: true
   info: ''
   view_mode: full

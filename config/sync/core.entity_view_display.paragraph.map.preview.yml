@@ -13,8 +13,8 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 _core:
   default_config_hash: '-SSRqH1TPaES7iAN4RFmHHe6p30n0AepA_BFpTh2IK0'
 id: paragraph.map.preview
@@ -23,11 +23,11 @@ bundle: map
 mode: preview
 content:
   field_address:
-    weight: 0
+    type: address_default
     label: inline
     settings: {  }
     third_party_settings: {  }
-    type: address_default
+    weight: 0
     region: content
 hidden:
   field_location: true

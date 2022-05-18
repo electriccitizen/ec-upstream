@@ -36,7 +36,6 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       accordions: accordions
       custom_embed: custom_embed
@@ -52,61 +51,62 @@ settings:
       quote: quote
       text: text
       video: video
+    negate: 0
     target_bundles_drag_drop:
       accordion_item:
         weight: -38
         enabled: false
       accordions:
-        enabled: true
         weight: -39
+        enabled: true
       block_placer:
-        enabled: true
         weight: -36
+        enabled: true
       custom_embed:
-        enabled: true
         weight: -37
+        enabled: true
       events_list:
-        enabled: true
         weight: -35
+        enabled: true
       form:
-        enabled: true
         weight: -34
-      form_placer:
         enabled: true
+      form_placer:
         weight: -33
+        enabled: true
       from_library:
         weight: -32
         enabled: false
       gallery:
-        enabled: true
         weight: -31
+        enabled: true
       horizontal_rule:
-        enabled: true
         weight: -30
-      image:
         enabled: true
+      image:
         weight: -29
+        enabled: true
       landing_page_section:
         weight: -28
         enabled: false
       links_files:
-        enabled: true
         weight: -27
+        enabled: true
       map:
-        enabled: true
         weight: -26
+        enabled: true
       news_list:
-        enabled: true
         weight: -25
+        enabled: true
       quote:
-        enabled: true
         weight: -24
+        enabled: true
       text:
-        enabled: true
         weight: -23
-      video:
         enabled: true
+      video:
         weight: -22
+        enabled: true
       view_placer:
         weight: -21
         enabled: false

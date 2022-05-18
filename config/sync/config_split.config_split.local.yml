@@ -8,6 +8,7 @@ id: local
 label: Local
 description: 'Config split for Local.'
 weight: 0
+stackable: false
 storage: folder
 folder: ../config/local
 module:
@@ -20,3 +21,4 @@ theme: {  }
 complete_list: {  }
 partial_list:
   - system.performance
+  - system.logging

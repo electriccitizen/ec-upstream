@@ -20,11 +20,11 @@ bundle: view_placer
 mode: default
 content:
   field_bios_displays:
+    type: options_select
     weight: 5
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_events_displays:
     type: options_select
     weight: 3
@@ -32,13 +32,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_link:
+    type: link_default
     weight: 6
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_news_displays:
     type: options_select
     weight: 2

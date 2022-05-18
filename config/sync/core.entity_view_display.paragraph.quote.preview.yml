@@ -13,8 +13,8 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 _core:
   default_config_hash: MQVggETsIJKUt0mOI0GSiBcS6vImKITVoo8VSI2S6Og
 id: paragraph.quote.preview
@@ -23,11 +23,11 @@ bundle: quote
 mode: preview
 content:
   field_quote:
-    weight: 0
+    type: basic_string
     label: inline
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 0
     region: content
 hidden:
   field_image: true

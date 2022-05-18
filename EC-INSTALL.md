@@ -1,13 +1,13 @@
-Upstream-D9 Local Development
-======================
-Reviewed by Wilbur, 2021-09-16
+EC-Upstream Local Development
+=============================
+Reviewed by Wilbur, 2022-05-16
 Reviewed by Adam, 2021-08-10
 Updated by broeker, 2021-11-04
 
 # Project Details
 - **NAME:** ec-upstream 
 - **URL:** http://dev-ec-upstream.pantheonsite.io/
-- **LOCAL URL:** http://ec-upstream.docksal
+- **LOCAL URL:** http://ec-upstream.docksal.site
 - **BRANCH:** main
 - **HOSTING:** [Pantheon Dashboard](https://dashboard.pantheon.io/sites/b043b678-2567-403a-aafc-947c7d9a76de#dev/code)
 )
@@ -31,6 +31,8 @@ Follow these steps to install a local development environment.
 `composer install`
 
 `fin start`
+
+`fin hosts add`
 
 ## Download and import the database
 
@@ -87,14 +89,15 @@ See the THEME-INSTALL.md file inside of the theme root for install instructions.
 
 To interact with Pantheon via drush, you can use the Drush aliases that are auto-generated for each environment. For example:
 
-**DEV, TEST, LIVE**
+**DEV, TEST**
+
+* There is no LIVE environment for the EC-Upstream site.
 
 These aliases are always available via:
 
 ```
 @ec-upstream.dev
 @ec-upstream.test
-@ec-upstream.live
 ```
 Note that not all projects will have all environments enabled.
 
@@ -109,7 +112,7 @@ Whenever you create a Github pull request, a new Pantheon multidev is created in
 # Project Legend
 
 ## Docksal Images
-- DB - docksal/mysql:5.7
+- DB - docksal/mariadb:10.4
 - CLI - docksal/cli:stable-php7.4
 - SOLR - docksal/solr:1.0-solr3
 

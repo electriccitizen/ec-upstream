@@ -21,21 +21,21 @@ bundle: view_placer
 mode: default
 content:
   field_bios_displays:
-    weight: 6
+    type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_key
+    weight: 6
     region: content
   field_events_displays:
-    weight: 3
+    type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_key
+    weight: 3
     region: content
   field_link:
-    weight: 7
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -44,29 +44,29 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 7
     region: content
   field_news_displays:
-    weight: 4
+    type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_key
+    weight: 4
     region: content
   field_view:
-    weight: 1
+    type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_key
+    weight: 1
     region: content
   field_widget_title:
     type: string
-    weight: 0
-    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   search_api_excerpt: true

@@ -24,13 +24,13 @@ mode: preview
 content:
   field_video:
     type: media_thumbnail
-    weight: 0
-    region: content
     label: inline
     settings:
-      image_style: paragraph_preview
       image_link: ''
+      image_style: paragraph_preview
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_widget_title: true
   search_api_excerpt: true

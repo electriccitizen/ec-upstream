@@ -11,9 +11,9 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    sections: {  }
     enabled: false
     allow_custom: false
+    sections: {  }
 _core:
   default_config_hash: QhnkU9P6uVDASfrJNWYhKKMhcFMKtg7a3XlVfTci69Q
 id: media.document.full
@@ -23,11 +23,11 @@ mode: full
 content:
   field_media_file:
     type: file_default
-    weight: 0
     label: hidden
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   created: true

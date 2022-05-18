@@ -11,9 +11,9 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    sections: {  }
     enabled: false
     allow_custom: false
+    sections: {  }
 _core:
   default_config_hash: Nta20Cq4MopS9tzdB1RMDI4YxMSuzMhbjz5Uecgid3E
 id: media.document.large_embed
@@ -22,12 +22,12 @@ bundle: document
 mode: large_embed
 content:
   field_media_file:
-    weight: 0
+    type: file_default
     label: hidden
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
-    type: file_default
+    weight: 0
     region: content
 hidden:
   created: true

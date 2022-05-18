@@ -11,8 +11,8 @@ dependencies:
     - media
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 _core:
   default_config_hash: gzYk-8SS3W6shtQcV6_vzJAr9MxLecXVlCXr4XhVKmw
 id: media.remote_video.small_embed
@@ -23,11 +23,11 @@ content:
   field_media_oembed_video:
     type: oembed
     label: visually_hidden
-    weight: 0
     settings:
       max_width: 0
       max_height: 0
     third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   created: true

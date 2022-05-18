@@ -10,10 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    limited_html: limited_html
-    basic_html: '0'
-    restricted_html: '0'
-    plain_text: '0'
+    allowed_formats:
+      - limited_html
 _core:
   default_config_hash: wGUQf7yQi_vv089ZDVzcO_uyFlPBElqmSTlPVm0ot60
 id: paragraph.landing_page_section.field_section_intro

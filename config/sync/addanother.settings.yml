@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: xffg78HlruUS9vo_o2xJXlGBJFaHf-kA9jUXoQPdVvw
 default_button: false
 default_message: true
 default_tab: false
@@ -42,5 +44,3 @@ tab_edit:
   landing_page: false
   gather_content_node: false
   bios: false
-_core:
-  default_config_hash: xffg78HlruUS9vo_o2xJXlGBJFaHf-kA9jUXoQPdVvw

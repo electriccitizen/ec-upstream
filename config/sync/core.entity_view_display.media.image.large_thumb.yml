@@ -13,9 +13,9 @@ dependencies:
     - responsive_image
 third_party_settings:
   layout_builder:
-    sections: {  }
     enabled: false
     allow_custom: false
+    sections: {  }
 _core:
   default_config_hash: EdLJQuPixkpRki306F1_axHOG3kUryrto5Jo1dbD3BI
 id: media.image.large_thumb
@@ -25,13 +25,13 @@ mode: large_thumb
 content:
   field_media_image:
     type: responsive_image
-    weight: 0
-    region: content
     label: hidden
     settings:
       responsive_image_style: large_thumbnail
       image_link: ''
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   created: true
   field_caption: true

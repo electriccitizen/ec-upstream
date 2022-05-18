@@ -20,49 +20,49 @@ id: banner
 label: Banner
 image_style_mappings:
   -
-    breakpoint_id: citizen_patterns.largedesk
-    multiplier: 1x
     image_mapping_type: image_style
     image_mapping: banner_big_desk
-  -
-    breakpoint_id: citizen_patterns.middesk
+    breakpoint_id: citizen_patterns.largedesk
     multiplier: 1x
+  -
     image_mapping_type: image_style
     image_mapping: banner_middesk
-  -
-    breakpoint_id: citizen_patterns.desk
+    breakpoint_id: citizen_patterns.middesk
     multiplier: 1x
+  -
     image_mapping_type: image_style
     image_mapping: banner_desk
+    breakpoint_id: citizen_patterns.desk
+    multiplier: 1x
   -
-    breakpoint_id: citizen_patterns.tab
-    multiplier: 1.5x
     image_mapping_type: image_style
     image_mapping: banner_tablet_1_5x
-  -
     breakpoint_id: citizen_patterns.tab
-    multiplier: 1x
+    multiplier: 1.5x
+  -
     image_mapping_type: image_style
     image_mapping: banner_tablet
-  -
     breakpoint_id: citizen_patterns.tab
-    multiplier: 2x
+    multiplier: 1x
+  -
     image_mapping_type: image_style
     image_mapping: banner_tablet_2x
+    breakpoint_id: citizen_patterns.tab
+    multiplier: 2x
   -
-    breakpoint_id: citizen_patterns.mobile
-    multiplier: 1.5x
     image_mapping_type: image_style
     image_mapping: banner_mobile_1_5x
-  -
     breakpoint_id: citizen_patterns.mobile
-    multiplier: 1x
+    multiplier: 1.5x
+  -
     image_mapping_type: image_style
     image_mapping: banner_mobile
-  -
     breakpoint_id: citizen_patterns.mobile
-    multiplier: 2x
+    multiplier: 1x
+  -
     image_mapping_type: image_style
     image_mapping: banner_mobile_2x
+    breakpoint_id: citizen_patterns.mobile
+    multiplier: 2x
 breakpoint_group: citizen_patterns
 fallback_image_style: banner_desk

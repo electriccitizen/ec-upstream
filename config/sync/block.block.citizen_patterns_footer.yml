@@ -19,15 +19,15 @@ plugin: 'menu_block:footer'
 settings:
   id: 'menu_block:footer'
   label: Quicklinks
-  provider: menu_block
   label_display: visible
+  provider: menu_block
   follow: false
   follow_parent: child
+  label_link: false
+  label_type: block
   level: 1
   depth: 1
   expand_all_items: false
   parent: 'footer:'
   suggestion: footer
-  label_type: block
-  label_link: false
 visibility: {  }
