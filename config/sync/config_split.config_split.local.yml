@@ -8,7 +8,6 @@ id: local
 label: Local
 description: 'Config split for Local.'
 weight: 0
-stackable: false
 storage: folder
 folder: ../config/local
 module:
