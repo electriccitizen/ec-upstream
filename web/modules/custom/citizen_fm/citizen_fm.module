@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * Implements hook_page_attachments().
+ */
+function citizen_fm_page_attachments(array &$attachments) {
+  $user = \Drupal::currentUser();
+
+  if ($user->hasPermission('update any media')) {
+    $attachments['#attached']['library'][] = 'citizen_fm/citizen_fm';
+  }
+
+}
+
+function citizen_fm_menu() {
+  $items['media/ajax/%'] = [
+    'page callback' => 'get_media_id',
+    'page_arguments' => array(2),
+    'type' => MENU_CALLBACK,
+    'access arguments' => ['update any media'],
+//    'delivery callback' => 'return_mid'
+  ];
+  return $items;
+}
+
+function get_media_mid($uuid) {
+  $db = \Drupal::service('database');
+  $mid = $db->select('media', 'm')
+    ->fields('m', ['mid'])
+    ->condition('uuid', $uuid, '=')
+    ->execute()
+    ->fetchField();
+  $json = json_encode(['mid' => $mid]);
+
+  return $json;
+}

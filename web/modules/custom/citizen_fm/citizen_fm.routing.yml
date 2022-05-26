@@ -1,0 +1,8 @@
+citizen_fm.mid_filename:
+  path: /media/filename/{filename}
+  defaults:
+    _controller: Drupal\citizen_fm\Controller\CitizenFM::midFromFilename
+citizen_fm.mid_uuid:
+  path: /media/uuid/{uuid}
+  defaults:
+    _controller: Drupal\citizen_fm\Controller\CitizenFM::midFromUuid
