@@ -12,7 +12,7 @@ type: 'canonical_entities:node'
 pattern: 'events/[node:title]'
 selection_criteria:
   6f90d8d3-3135-4107-9cbe-ccb2c1578810:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
     uuid: 6f90d8d3-3135-4107-9cbe-ccb2c1578810
     context_mapping:
