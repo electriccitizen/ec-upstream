@@ -15,7 +15,6 @@ dependencies:
     - layout_builder_restrictions
     - layout_discovery
     - metatag
-    - system
     - text
     - user
 third_party_settings:
@@ -28,17 +27,6 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          697f9831-8be0-4ba4-8734-cdd641a7fe10:
-            uuid: 697f9831-8be0-4ba4-8734-cdd641a7fe10
-            region: content
-            configuration:
-              id: system_breadcrumb_block
-              label: Breadcrumbs
-              label_display: '0'
-              provider: system
-              context_mapping: {  }
-            weight: 1
-            additional: {  }
           d966ac11-940d-40b2-a007-a271eea48262:
             uuid: d966ac11-940d-40b2-a007-a271eea48262
             region: content

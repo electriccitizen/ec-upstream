@@ -37,7 +37,7 @@
 				}
 			}
 			//about
-			.block-2{
+			.block-1{
 				width: 100%;
 				@include tab{
 					width: 33.333%;
@@ -115,7 +115,7 @@
 					max-width: 320px;
 					@include safeFlexOrder(2);
 					.platform-links{
-						@include safeFlex(row,wrap,end,start);
+						@include safeFlex(row,wrap,start,start);
 					}
 				}
 				a{
@@ -126,7 +126,7 @@
 				}
 			}
 			//copyright
-			.block-1{
+			.block-4{
 				@include onlySmall{
 					width: 100%;
 				}	

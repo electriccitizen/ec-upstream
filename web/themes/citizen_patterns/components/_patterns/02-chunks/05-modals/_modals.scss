@@ -27,7 +27,10 @@
 		background: #fff;
 		border: 0;
 		overflow-y: scroll;
-		&>.contextual .trigger {
+		@include tab{
+			min-width: 500px;
+		}
+		& >.contextual .trigger {
 			right: -12px;
 		}
 		.modal-close {
@@ -51,7 +54,7 @@
 	} //end modal-inner
 	.modal-header {
 		position: relative;
-
+		background: $lightGrey;
 		h2 {
 			@include heading4;
 			margin: 0 0 1rem;

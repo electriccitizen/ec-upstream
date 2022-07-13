@@ -8,10 +8,6 @@
 	
 	ul:not(.contextual-links){
 		@include listReset;
-		@include safeFlex(row,wrap,center,start);
-		@include tab{
-			@include safeFlex(row,wrap,start,start);
-		}
 		li{
 			position: relative;
 			a{
@@ -28,28 +24,13 @@
 					}
 				}
 			}
-			&:not(:first-child){
-				padding-left: 8px;
-				@include tab{
-					padding-left: 0;
-				}
-			}
-			&:not(:last-child){
-				padding-right: 8px;
-				@include tab{
-					margin-right: 8px;
-				}
-				&:after{
-					@include vertRule(right,60%,$white);
-				}
-			}
 		}//end li
 	}//end ul
 }//end footer-menu
 
 /* COPYRIGHT
 -------------- */
-.block-1{
+.block-4{
 	.copyright{
 		text-align: center;
 		font-size: 2rem;

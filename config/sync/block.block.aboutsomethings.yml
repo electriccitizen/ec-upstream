@@ -1,22 +1,22 @@
-uuid: d6772a97-5f0d-4af2-9f92-a93343c58cdb
+uuid: 93234713-8acb-4db8-8c8a-dfeaff5be1f3
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:newsletter:c8367705-851a-4bd1-a2d2-44d6c822b1d8'
+    - 'block_content:basic:9f1d2a20-cf57-41e3-af59-6423d2a37e2a'
   module:
     - block_content
   theme:
     - citizen_patterns
-id: stayintouch
+id: aboutsomethings
 theme: citizen_patterns
 region: prefooter
-weight: -4
+weight: -6
 provider: null
-plugin: 'block_content:c8367705-851a-4bd1-a2d2-44d6c822b1d8'
+plugin: 'block_content:9f1d2a20-cf57-41e3-af59-6423d2a37e2a'
 settings:
-  id: 'block_content:c8367705-851a-4bd1-a2d2-44d6c822b1d8'
-  label: 'Stay in Touch'
+  id: 'block_content:9f1d2a20-cf57-41e3-af59-6423d2a37e2a'
+  label: 'About Some Things'
   label_display: visible
   provider: block_content
   status: true
