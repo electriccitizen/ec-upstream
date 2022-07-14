@@ -1,0 +1,19 @@
+uuid: 3fd03b24-bbf5-4301-9dbe-b1b98e5cacdb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_test
+    - node.type.landing_page
+id: node.landing_page.field_test
+field_name: field_test
+entity_type: node
+bundle: landing_page
+label: test
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
