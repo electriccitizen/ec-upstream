@@ -6,7 +6,7 @@ items:
   - name: $darkIce
     value: '#e4f5fc'
   - name: $lightGrey
-    value: '#f9f9f9'
+    value: '#ededed'
   - name: $grey
     value: '#ccc'
   - name: $midGrey
