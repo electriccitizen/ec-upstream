@@ -1,15 +1,15 @@
-uuid: f151d782-e8cc-48cd-b8ea-808fb7779750
+uuid: 91f5e080-cb60-4879-b45b-55111b5c88a6
 langcode: en
 status: true
 dependencies:
   theme:
-    - crane
+    - claro
 _core:
-  default_config_hash: vgf0ANmtvsubB5Jftie3CssnVmo12Rb2GQSMBCN-LNs
-id: crane_local_actions
-theme: crane
-region: header
-weight: -1
+  default_config_hash: CdXfDmRgAvms7EQovxxWPdYi0GitxeRbVtScYK16ZH0
+id: claro_local_actions
+theme: claro
+region: content
+weight: -10
 provider: null
 plugin: local_actions_block
 settings:

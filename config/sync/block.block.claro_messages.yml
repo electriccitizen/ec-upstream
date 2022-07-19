@@ -1,17 +1,17 @@
-uuid: 098ce244-33bb-43f6-9839-a52762534a80
+uuid: 683edf6d-993c-4a21-8dba-756865a3cae9
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - crane
+    - claro
 _core:
-  default_config_hash: 7gsnEFXtpbVc2qJHkGxOidOwvPZ-dhUeYo_1oQK0YJg
-id: crane_messages
-theme: crane
+  default_config_hash: '-Ac3ISpIT0PQ-whzD7_dw0SdKi6dAbRFNWdSjOiVDqg'
+id: claro_messages
+theme: claro
 region: highlighted
-weight: -2
+weight: 0
 provider: null
 plugin: system_messages_block
 settings:
