@@ -1,17 +1,17 @@
-uuid: 925abd23-faae-4692-ab5c-37b3a0d08a49
+uuid: 7ddc4c5e-acc5-46cd-b2f1-9ede0c718662
 langcode: en
 status: true
 dependencies:
   module:
     - help
   theme:
-    - crane
+    - claro
 _core:
-  default_config_hash: SYNtpi7R4kXlpsvsHMCgTv9CU6eyRvp_XGHgFP3Y2xA
-id: crane_help
-theme: crane
+  default_config_hash: jccFSSVqV0WCDb6NtML1VWAWTtDbZ-zn5YgTRMgMrIM
+id: claro_help
+theme: claro
 region: help
-weight: -2
+weight: 0
 provider: null
 plugin: help_block
 settings:
