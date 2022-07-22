@@ -1,11 +1,9 @@
-uuid: 26c80634-5ae7-4499-997b-991ac8e48232
+uuid: 3b43de4d-9044-4cf3-955f-6516de473466
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-_core:
-  default_config_hash: L2A_m33EaAr_cGwg2vmbKrKj0snNbp31l6xyHwiwBAk
 id: paragraph.field_section_title
 field_name: field_section_title
 entity_type: paragraph

@@ -1,17 +1,15 @@
-uuid: 38679c68-cbb9-48d0-9790-61a9cb60f0e2
+uuid: 6a4a0c29-9dd0-411d-80fb-19e057e09009
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_style
-    - paragraphs.paragraphs_type.landing_page_section
+    - paragraphs.paragraphs_type.layout_section
     - taxonomy.vocabulary.section_styles
-_core:
-  default_config_hash: mah9qejPoZVyiAVcjfyI_u88PRJtAQFctCpPzEgthCw
-id: paragraph.landing_page_section.field_style
+id: paragraph.layout_section.field_style
 field_name: field_style
 entity_type: paragraph
-bundle: landing_page_section
+bundle: layout_section
 label: Style
 description: ''
 required: false
