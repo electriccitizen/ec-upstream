@@ -19,14 +19,6 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_style:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
+  field_style: true
   search_api_excerpt: true
