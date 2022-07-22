@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs
     - node.type.landing_page
-    - paragraphs.paragraphs_type.landing_page_section
   module:
     - entity_reference_revisions
 _core:
@@ -23,8 +22,7 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles:
-      landing_page_section: landing_page_section
+    target_bundles: {  }
     negate: 0
     target_bundles_drag_drop:
       accordion_group:
