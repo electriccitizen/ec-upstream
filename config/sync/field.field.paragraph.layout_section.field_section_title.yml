@@ -1,16 +1,14 @@
-uuid: fc227188-2b42-4abd-be1e-cd5da12f0040
+uuid: 6e25fb8c-ab45-4e7c-9458-7598dbd624c4
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_section_title
-    - paragraphs.paragraphs_type.landing_page_section
-_core:
-  default_config_hash: lhFGnPJLRa84Hcf5aTul9jOaHHA2xyplUZTTOoXewL4
-id: paragraph.landing_page_section.field_section_title
+    - paragraphs.paragraphs_type.layout_section
+id: paragraph.layout_section.field_section_title
 field_name: field_section_title
 entity_type: paragraph
-bundle: landing_page_section
+bundle: layout_section
 label: 'Section Title'
 description: ''
 required: false
