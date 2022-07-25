@@ -3,6 +3,9 @@
 ================= */
 
 .paragraph--type--view-placer{
+	.wrapper{
+		max-width: 100% !important;
+	}
 	.field-link{
 		margin-top: $spaceLg;
 		a{

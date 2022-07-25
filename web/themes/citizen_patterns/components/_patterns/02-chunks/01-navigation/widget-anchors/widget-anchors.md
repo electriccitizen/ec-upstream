@@ -1,4 +1,0 @@
----
-title: Anchor Navigation
----
-

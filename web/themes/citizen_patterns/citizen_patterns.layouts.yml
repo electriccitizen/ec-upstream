@@ -26,7 +26,7 @@ two_column_sidebar_right:
       label: Second
 tabs:
   label: Tabs
-  category: Crane Layouts
+  category: Citizen Layouts
   path: templates/layout
   template: layout--tabs
   default_region: tabs

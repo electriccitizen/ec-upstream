@@ -35,6 +35,7 @@ permissions:
   - 'view paragraph content horizontal_rule'
   - 'view paragraph content image'
   - 'view paragraph content landing_page_section'
+  - 'view paragraph content layout_section'
   - 'view paragraph content links_files'
   - 'view paragraph content map'
   - 'view paragraph content news_list'

@@ -8,7 +8,6 @@
 {% endblock %}
 
 <div class="section{% if background %} background {{ background }}{% else %} backless{% endif %}{% if layout %} {{ layout }}{% endif %}">
-	{%- if anchor -%}<a name="anchor-{{ anchor }}" id="anchor-{{ anchor }}"></a>{%- endif -%}
 	{% block paragraphItem %}
 		{{- item.content -}}
 	{% endblock %}
