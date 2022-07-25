@@ -6,8 +6,11 @@ dependencies:
     - menu_ui
 third_party_settings:
   menu_ui:
-    available_menus: {  }
-    parent: ''
+    available_menus:
+      - footer
+      - main
+      - secondary
+    parent: 'main:'
 _core:
   default_config_hash: lynFVHnuciYlMYjBCvO754nalb8sbm3rSMebNyP8sUs
 name: 'Basic page'

@@ -12,7 +12,7 @@ _core:
   default_config_hash: Upw3Fr3FdxLI0VGTXqHX7P-dYoBmEAhf3QLMawIwsFA
 name: Bios
 type: bios
-description: 'Add bio nodes.'
+description: 'Add bio information for a person.'
 help: ''
 new_revision: true
 preview_mode: 0

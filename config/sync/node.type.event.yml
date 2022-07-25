@@ -12,7 +12,7 @@ _core:
   default_config_hash: GrCjKq5q78nezfyfRtZ-hgkXD-RG9Wbw8r0mmrm8IDQ
 name: Event
 type: event
-description: 'Create event nodes.'
+description: 'Create an upcoming event.'
 help: ''
 new_revision: true
 preview_mode: 0
