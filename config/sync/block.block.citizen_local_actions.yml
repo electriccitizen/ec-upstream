@@ -1,0 +1,20 @@
+uuid: fdb5edee-a80f-43f9-8813-1a57501a95e4
+langcode: en
+status: true
+dependencies:
+  theme:
+    - citizen
+_core:
+  default_config_hash: 5GJ2p4I_EeFqtPksYve78IDxw9QB5FY2HZ9VKymHoX4
+id: citizen_local_actions
+theme: citizen
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

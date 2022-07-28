@@ -1,0 +1,22 @@
+uuid: 43964120-a3b7-4f13-9627-c6e89c930601
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - citizen
+_core:
+  default_config_hash: EUZo_g0tDFjOXrdXs8mYZaXx-iMDoxLctBPwnm1gky8
+id: citizen_messages
+theme: citizen
+region: content
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,26 @@
+/* ==================
+ GLOBAL SITE STYLES
+====================*/
+
+@use "../variables/" as *;
+
+body {
+	width: 100%;
+}//end body
+
+.overflow-guard{
+	overflow-x: hidden;
+	padding: 0 $siteMarginMobile;
+	background: green;
+	@include tab{
+		background: $pink;
+	}
+	div{
+		box-sizing: border-box;
+
+		*{
+			box-sizing: inherit;
+		}
+	}
+}
+

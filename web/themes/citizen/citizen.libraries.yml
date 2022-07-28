@@ -1,0 +1,11 @@
+global:
+  version: 1.0
+  header: true
+  css:
+    theme:
+      dist/style.css: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.once

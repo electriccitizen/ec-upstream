@@ -1,0 +1,22 @@
+uuid: c33ed5e9-0156-4626-ad29-202d32c10e52
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - citizen
+_core:
+  default_config_hash: gev70gb-Z6mJzOmMuRSImQ4Z2X7P1sxiO0BoNGwGziw
+id: citizen_help
+theme: citizen
+region: content
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

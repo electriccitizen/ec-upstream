@@ -6,14 +6,10 @@ dependencies:
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
     - field.field.user.user.field_user_image
-    - views.view.user_dashboard
   module:
     - layout_builder
     - layout_discovery
     - user
-    - views
-  theme:
-    - citizen_patterns
 third_party_settings:
   layout_builder:
     enabled: true
@@ -41,38 +37,6 @@ third_party_settings:
                   link_to_entity: false
                 third_party_settings: {  }
             weight: 2
-            additional: {  }
-        third_party_settings: {  }
-      -
-        layout_id: tabs
-        layout_settings:
-          label: ''
-        components:
-          c6e0f15d-b1b7-400d-9dfd-285731b27dd7:
-            uuid: c6e0f15d-b1b7-400d-9dfd-285731b27dd7
-            region: tabs
-            configuration:
-              id: 'views_block:user_dashboard-my_content'
-              label: ''
-              label_display: visible
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 0
-            additional: {  }
-          df4d5ea9-4ccf-49c3-b834-c19a3ccd7803:
-            uuid: df4d5ea9-4ccf-49c3-b834-c19a3ccd7803
-            region: tabs
-            configuration:
-              id: 'views_block:user_dashboard-all_recent_content'
-              label: ''
-              label_display: visible
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 1
             additional: {  }
         third_party_settings: {  }
     is_enabled: true

@@ -1,0 +1,25 @@
+uuid: 991e1128-5c52-40ba-89d9-2e21fca55b5a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:28a9b8e5-8032-4eb8-801d-5353b5d05c0a'
+  module:
+    - block_content
+  theme:
+    - citizen
+id: citizen_copyright
+theme: citizen
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:28a9b8e5-8032-4eb8-801d-5353b5d05c0a'
+settings:
+  id: 'block_content:28a9b8e5-8032-4eb8-801d-5353b5d05c0a'
+  label: Copyright
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

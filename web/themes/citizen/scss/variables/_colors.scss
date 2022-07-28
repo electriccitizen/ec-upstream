@@ -1,0 +1,148 @@
+/* ==================
+  COLORS
+===================== */ 
+
+/* COLORS
+---------------- */
+$white         : #fff;
+$darkWhite     : #fbfbfa;
+$offWhite      : #f1efed;
+$lightGrey     : #ededed;
+$midGrey       : #979797;
+$pink          : #f8e8f1;
+$eggShell      : #ffeec1;
+$gold          : #f1b71c;
+$brightYellow  : #f2dc26;
+$bloodOrange   : #fd4507;
+$red           : #d0021b;
+$azure         : #29abe2;
+$darkAzure		 : #0077C0;
+$royalBlue     : #177ba6;
+$royalDarkBlue : #15749D;
+$battleship    : #5D7192;
+$darkGrey      : #4d4d4d;
+$gunmetal      : #505761;
+$black         : #262626;
+$darkBlack     : #000000;
+$mint          : #a2bab9;
+$transWhite    : rgba(255,255,255,0.7);
+$transBlack    : rgba(35,35,35,0.7);
+$transTint     : rgba(80,87,97,0.5);
+
+/* ADMINS - do not customize per site */
+$adminGold      : #fcd105;
+$adminWhiteGold : #fefbc7;
+$adminFuchsia   : #c028bb;
+$adminGreen     : #018901;
+$adminGrey      : #676767;
+$adminTransGrey : rgba(92,96,98,.92);
+
+
+/* ===================
+COMPONENT COLORS
+======================== */
+
+/* TEXT & BUTTONS
+---------------------- */
+$baseText          : $darkBlack;
+$link              : $royalBlue;
+$activeLink        : $azure;
+$hoverLink         : $gunmetal;
+$breadLink         : $link;
+$breadLinkHover    : $hoverLink;
+$breadCurrent      : $gunmetal;
+$highlighter       : $brightYellow;
+$buttonBack        : $gold;
+$buttonBackHover   : $azure;
+$buttonBackActive  : $royalBlue;
+$buttonText        : $black;
+$buttonTextHover   : $black;
+$buttonTextActive  : $white;
+$submitBack        : $royalBlue;
+$submitText        : $white;
+$submitBackHover   : $azure;
+$submitTextHover   : $black;
+$resetBack         : $gunmetal;
+$resetText         : $white;
+$resetBackHover    : $azure;
+$resetTextHover    : $black;
+$cautionBack       : $battleship;
+$cautionText       : $white;
+$cautionBackHover  : $azure;
+$cautionTextHover  : $black;
+
+/* SYSTEM
+--------------------- */
+$siteBack        : $white;
+$unpub           : $pink;
+$borderRule      : $darkBlack;
+$headerBack      : $white;
+$footerBack      : $mint;
+$footerText      : $black;
+
+
+/* NAVIGATION
+----------------- */
+$hamburger            : $azure;
+$hamburgerActive      : $azure;
+$mainNavLink          : $black;
+$mainNavLinkHover     : $black;
+$mainNavLinkBack      : transparent;
+$mainNavLinkBackHover : $azure;
+$footerLink           : $black;
+$footerLinkHover      : $gunmetal;
+$footerIcon           : $gunmetal;
+$footerIconHover      : $azure;
+
+/* FORMS
+--------------------- */
+$formElementBorder        : $gold;
+$placeColor               : $baseText;
+$placeFocusColor          : $placeColor;
+$validation               : $black;
+$checkBox                 : $gold;
+$checkBoxHover            : $black;
+$checkBoxBackHover        : $azure;
+$checkBoxChecked          : darken($checkBox, 5%);
+$checkBoxCheckedBack      : $transBlack;
+$checkBoxCheckedBackHover : $royalDarkBlue;
+$selectArrow              : $gunmetal;
+$selectHighlight          : $link;
+
+/* TABLES
+---------------- */
+$tableHeaderBack  : $siteBack;
+$tableHeaderText  : $darkBlack;
+$evenRowBack      : $siteBack;
+$evenRowText      : $baseText;
+$oddRowBack       : $offWhite;
+$oddRowText       : $baseText;
+
+/* PAGERS
+--------------------- */
+$pagerBorder                : $borderRule;
+$pagerBack                  : transparent;
+$pagerNumber                : $link;
+$pagerNumberBack            : transparent;
+$pagerNumberHover           : $hoverLink;
+$pagerNumberBackHover       : transparent;
+$pagerNumberActive          : $white;
+$pagerNumberActiveBack      : $link;
+$pagerNumberActiveHover     : $white;
+$pagerNumberActiveBackHover : $hoverLink;
+$pagerLink                  : $white;
+$pagerLinkBack              : $royalBlue;
+$pagerLinkHover             : $black;
+$pagerLinkBackHover         : $azure;
+$resultsText                : $baseText;
+
+/* MESSAGES
+---------------- */
+$messageText          : $black;
+$messageBack          : $offWhite;
+$messageGoodBorder    : $adminGreen;
+$messageWarningBorder : $adminGold;
+$messageErrorBorder   : $adminFuchsia;
+$messageGoodIcon    : '../images/message/message-status.svg';
+$messageWarningIcon : '../images/message/message-warning.svg';
+$messageErrorIcon   : '../images/message/message-error.svg';

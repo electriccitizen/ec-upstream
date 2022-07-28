@@ -1,0 +1,19 @@
+name: Citizen
+type: theme
+description: Custom theme by Electric Citizen for use with modern Drupal websites
+package: Citizen
+core_version_requirement: ^9
+# Defines libraries group in which we can add css/js.
+libraries:
+  - citizen/global
+  - citizen/fonts
+ckeditor_stylesheets:
+  - https://fonts.googleapis.com/css?family=Open+Sans:ital,wght@0,400;;0,700;1,400
+  - dist/cke.css
+base theme: stable
+hidden: false
+regions:
+  header: Header
+  content: Content
+  footer_left: 'Footer Left'
+  footer_right: 'Footer Right'

@@ -1,0 +1,81 @@
+/* ============================
+  WYSIWYG CKE STYLES
+============================ */
+
+a:visited{
+	color: #900021;
+}
+
+.media--type-video{
+	max-width: 100%;
+}
+.media--type-video .video-embed-field-responsive-video{
+	position: relative;
+	padding-bottom: 56.25%;
+}
+.media--type-video .video-embed-field-responsive-video iframe{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+.align-left .media--type-video,.align-right .media--type-video{
+	width: 350px;
+}
+
+table th, table td{
+	min-width: 40px;
+	padding: 2px 6px;
+}
+
+.caption-drupal-entity div[data-entity-embed-display-settings="folwell_fifth"] + figcaption{
+	max-width: 206px;
+}
+
+.caption-drupal-entity div[data-entity-embed-display-settings="folwell_third"] + figcaption{
+	max-width: 368px;
+}
+
+.caption-drupal-entity div[data-entity-embed-display-settings="folwell_hlaf"] + figcaption{
+	max-width: 568px;
+}
+
+.caption-drupal-entity div[data-entity-embed-display-settings="300x300"] + figcaption{
+	max-width: 300px;
+}
+
+.caption-drupal-entity div[data-entity-embed-display-settings="365x240"] + figcaption{
+	max-width: 365px;
+}
+
+.caption-drupal-entity div[data-entity-embed-display-settings="medium"] + figcaption{
+	max-width: 220px;
+}
+
+.caption-drupal-entity div[data-entity-embed-display-settings="large"] + figcaption{
+	max-width: 480px;
+}
+
+.caption-drupal-entity div[data-entity-embed-display-settings="profile_image"] + figcaption{
+	max-width: 220px;
+}
+
+ul.two-column,ol.two-column{
+	padding-left: 0;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+	-webkit-column-gap: 20px;
+	-moz-column-gap: 20px;
+	column-gap: 20px;
+}
+ul.two-column li,ol.two-column li{
+	display: block;
+	-webkit-column-break-inside: avoid;
+	page-break-inside: avoid;
+	break-inside: avoid;
+	overflow: hidden;
+}

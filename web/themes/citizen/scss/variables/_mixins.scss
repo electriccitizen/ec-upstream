@@ -1,0 +1,372 @@
+/* =========================
+   MIXINS
+=========================== */
+
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+	transform: $transforms;
+}
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+@mixin translateX ($x) {
+	@include transform(translateX($x));
+}
+@mixin translateY ($y) {
+	@include transform(translateY($y));
+}
+@mixin rotate ($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+@mixin rotate3d ($rotx, $roty, $rotz, $deg) {
+	@include transform(rotate3d($rotx, $roty, $rotz, #{$deg}deg));
+}
+
+//skew and element horizontally and vertically
+@mixin skew ($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//change the scale of an element relative to its original state
+@mixin scale($scalex, $scaley) {
+	@include transform(scale($scalex, $scaley));
+}
+@mixin scale3d($scalex, $scaley, $scalez) {
+	@include transform(scale($scalex, $scaley, $scalez));
+}
+
+// CSS columns short hand with number or columns and gutter
+@mixin cssColumns($columns, $gap, $break){
+	-webkit-column-count: #{$columns};
+	-moz-column-count: #{$columns};
+	column-count: #{$columns};
+	-webkit-column-gap: #{$gap};
+	-moz-column-gap: #{$gap};
+	column-gap: #{$gap};
+	@if $break == 'nobreak'{
+		& > *{
+			display: block;
+			-webkit-column-break-inside: avoid;
+			page-break-inside: avoid;
+			break-inside: avoid;
+			overflow: hidden;
+		}
+	}
+}
+
+@mixin fullBack($fullback){
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -50vw;
+	z-index: -1;
+	width: 200vw;
+	height: 100%;
+	background: $fullback;
+}
+
+// visually hide something but allow screen reader access
+@mixin visuallyHidden{
+	position: absolute;
+	left: -900vw;
+	top: 0;
+	font-size: 1px;
+	opacity: .1;
+}
+
+// remove default ul padding margin, list style
+@mixin listReset {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+@mixin inlineLabel{
+	font-family: $header;
+	font-weight: $xHeavy;
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+// center something with auto left and right margins
+@mixin auto{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// set left and right margins to ignore side padding of main container
+@mixin edgeToEdge {
+	margin-left: $siteMarginMobile * -1;
+	margin-right: $siteMarginMobile * -1;
+}
+
+// reset left and right margins to 0
+@mixin edgeReset {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+// set ie friendly flex layout with direction, wrap, inline, and perpendicular alignment
+@mixin safeFlex($direction, $wrap, $justify, $align){
+	display: flex;
+	display: -ms-flexbox;
+	flex-direction: $direction;
+	-ms-flex-direction: $direction;
+	@if $wrap == 'wrap'{
+		flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+	}@else{
+		flex-wrap: nowrap;
+		-ms-flex-wrap: none;
+	}
+	@if $justify == 'start'{
+		justify-content: flex-start;
+		-ms-flex-pack: start;
+	}@else if $justify == 'end'{
+		justify-content: flex-end;
+		-ms-flex-pack: end;
+	}@else if $justify == 'center'{
+		justify-content: center;
+		-ms-flex-pack: center;
+	}@else if  $justify == 'justify'{
+		justify-content: space-between;
+		-ms-flex-pack: justify;
+	}
+	@if $align == 'start'{
+		align-items: flex-start;
+		-ms-flex-align: start;
+	}@else if $align == 'end'{
+		align-items: flex-end;
+		-ms-flex-align: end;
+	}@else if $align == 'center'{
+		align-items: center;
+		-ms-flex-align: center;
+	}@else if $align == 'stretch'{
+		align-items: stretch;
+		-ms-flex-align: stretch;
+	}@else if $align == 'baseline'{
+		align-items: baseline;
+		-ms-flex-align: baseline;
+	}
+}//end safe-flex
+
+
+// IE friendly mixin for flex size shorthand
+@mixin safeFlexSize($grow, $shrink, $size){
+	flex: $grow $shrink $size;
+	-ms-flex: $grow $shrink $size;
+}
+
+
+// IE friendly mixin for flex order
+@mixin safeFlexOrder($order){
+	order: $order;
+	-ms-flex-order: $order;
+}
+
+// set negative edges on a parent to allow children to have equal space between without overflowing edges
+@mixin bleed($bleedType,$bleedWidth){
+	margin-left: $bleedWidth * -0.5;
+	margin-right: $bleedWidth * -0.5;
+	width: calc(100% + #{$bleedWidth});
+	& > *{
+		@if $bleedType == 'margin'{
+			margin-left: $bleedWidth * 0.5;
+			margin-right: $bleedWidth * 0.5;
+		}@else if $bleedType == 'padding'{
+			padding-left: $bleedWidth * 0.5;
+			padding-right: $bleedWidth * 0.5;
+		}
+	}
+}
+
+// clear floats (used on parent container)
+@mixin clearFix {
+	&::after {
+		clear: both;
+		content: "";
+		display: table;
+	}
+}
+
+/* ================= 
+  ANIMATION MIXINS
+===================== */
+
+///mixin - animation
+@mixin animation($animate...) {
+	$max: length($animate);
+	$animations: '';
+
+	@for $i from 1 through $max {
+		$animations: #{$animations + nth($animate, $i)};
+
+		@if $i < $max {
+			$animations: #{$animations + ", "};
+		}
+	}
+	-webkit-animation: $animations;
+	-moz-animation:    $animations;
+	-o-animation:      $animations;
+	animation:         $animations;
+}
+
+///mixin - keyframes
+@mixin keyframes($animationName) {
+	@-webkit-keyframes #{$animationName} {
+		@content;
+	}
+	@-moz-keyframes #{$animationName} {
+		@content;
+	}
+	@-o-keyframes #{$animationName} {
+		@content;
+	}
+	@keyframes #{$animationName} {
+		@content;
+	}
+}
+
+
+/*  Keyframes setup
+------------ */
+
+//slide in from 150% right (150% of the element height)
+//delayed fade in
+@include keyframes(fadeIn){
+	from{
+		opacity: 0;
+	}
+	50%{
+		opacity: .5;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+//slide down (height slide from 0)
+@include keyframes(slideDown){
+	0%{
+
+		height: 0;
+		opacity: 0;
+	}
+	100%{
+
+		height: auto;
+		opacity: 1;
+	}
+}
+
+
+//slide down (height slide from 0)
+@include keyframes(onScreenDown){
+	0%{
+		top: -100%;
+	}
+	100%{
+		top: 0;
+	}
+}
+
+//slide down (height slide from 0)
+@include keyframes(onScreenUp){
+	0%{
+		bottom: -100%;
+	}
+	100%{
+		bottom: 0;
+	}
+}
+
+//scale 1.25 times then back to normal
+@include keyframes(breathe){
+	0%{
+		@include scale(1, 1);
+	}
+	50%{
+		@include scale(1.15, 1.15);
+	}
+	100%{
+		@include scale(1, 1);
+	}
+}
+
+
+.fadeIn {
+	@include animation('fadeIn 1.5s 1');
+}
+
+
+@mixin transAll($time){
+	transition: all $time ease;
+	-moz-transition: all $time ease;
+	-webkit-transition: all $time ease;
+	-webkit-transform: translateZ(0);
+}
+
+@mixin transClear{
+	transition: none;
+	-moz-transition: none;
+	-webkit-transition: none;
+}
+@mixin transFormAnimate{
+	-webkit-transition: -webkit-transform 0.15s ease-in 0s;
+	transition: -webkit-transform 0.15s ease-in 0s;
+	transition: transform 0.15s ease-in 0s;
+	transition: transform 0.15s ease-in 0s, -webkit-transform 0.15s ease-in 0s;
+}
+
+// color interior elements when on a dark background
+@mixin darkBack {
+	.field--type-text-long,.field--name-title{
+		h2,h3,h4,h5,h6,p,div,li,span {
+			color: $white;
+		}
+	}
+	a{
+		color: $transWhite;
+		border-bottom-color: $transWhite;
+		&:hover,&:focus{
+			color: $white;
+			@include transAll(.3s);
+		}
+	}
+	figcaption {
+		color: $white;
+	}
+}//end darkBack
+
+// color interior elements when on a light background
+@mixin lightBack {
+	.field--type-text-long,.field--name-title{
+		h2,h3,h4,h5,h6,p,div,li,span {
+			color: $black;
+		}
+	}
+	figcaption {
+		color: $black;
+	}
+}//end darkBack
+
+// define a background gradient with direct, start color and stop color
+@mixin gradient($grad-direction,$grad-start,$grad-stop) {
+	background: -moz-linear-gradient($grad-direction, $grad-start 0%,$grad-stop 100%); /* FF3.6+ */
+	background: -webkit-linear-gradient($grad-direction, $grad-start 0%,$grad-stop 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient($grad-direction, $grad-start 0%,$grad-stop 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient($grad-direction, $grad-start 0%,$grad-stop 100%); /* IE10+ */
+	@if $grad-direction == 'top'{
+		background: linear-gradient(to bottom, $grad-start 0%,$grad-stop 100%); /* W3C */
+	}@else if $grad-direction == 'bottom'{
+		background: linear-gradient(to top, $grad-start 0%,$grad-stop 100%); /* W3C */
+	}@else if $grad-direction == 'left'{
+		background: linear-gradient(to right, $grad-start 0%,$grad-stop 100%); /* W3C */
+	}@else if $grad-direction == 'right'{
+		background: linear-gradient(to left, $grad-start 0%,$grad-stop 100%); /* W3C */
+	}
+}

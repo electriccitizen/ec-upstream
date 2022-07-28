@@ -1,0 +1,33 @@
+uuid: f66d8490-d3a8-4813-a445-aa0a742dad8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - menu_block
+  theme:
+    - citizen
+_core:
+  default_config_hash: 2VA69XayHZewRlk5D2y0nLUtkrvITcyLRTCOsCDiJUA
+id: citizen_footer
+theme: citizen
+region: header
+weight: -5
+provider: null
+plugin: 'menu_block:footer'
+settings:
+  id: 'menu_block:footer'
+  label: Quicklinks
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'footer:'
+  suggestion: footer
+visibility: {  }
