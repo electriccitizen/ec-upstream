@@ -1,4 +1,4 @@
-uuid: c578c922-f1be-4ba3-ab74-ef7244fbe1bb
+uuid: 7ab35a6a-194c-445f-8a9b-0a6c587a5d8c
 langcode: en
 status: true
 dependencies:
@@ -7,9 +7,9 @@ dependencies:
   module:
     - block_content
   theme:
-    - citizen
-id: citizen_stayintouch
-theme: citizen
+    - citizen_front
+id: citizen_front_stayintouch
+theme: citizen_front
 region: header
 weight: -4
 provider: null

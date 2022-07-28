@@ -1,4 +1,4 @@
-uuid: 101c13ee-9fd0-4039-9ad9-46441d9e2e7b
+uuid: 122889b8-075b-467b-a7e3-414cf5947925
 langcode: en
 status: true
 dependencies:
@@ -6,11 +6,11 @@ dependencies:
     - citizen_custom
     - system
   theme:
-    - citizen
+    - citizen_front
 _core:
   default_config_hash: ZArko7DF6X5guRcgeKeyS0W1gr3mpdzfeJej0WXjJK0
-id: citizen_sitesearch
-theme: citizen
+id: citizen_front_sitesearch
+theme: citizen_front
 region: header
 weight: -6
 provider: null

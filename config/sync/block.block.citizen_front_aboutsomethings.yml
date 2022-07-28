@@ -1,4 +1,4 @@
-uuid: ad9c443a-ee18-4f62-ab46-5752be6f10a2
+uuid: 453dc1b2-645a-4423-8991-58e59df723b8
 langcode: en
 status: true
 dependencies:
@@ -7,9 +7,9 @@ dependencies:
   module:
     - block_content
   theme:
-    - citizen
-id: citizen_aboutsomethings
-theme: citizen
+    - citizen_front
+id: citizen_front_aboutsomethings
+theme: citizen_front
 region: header
 weight: -6
 provider: null

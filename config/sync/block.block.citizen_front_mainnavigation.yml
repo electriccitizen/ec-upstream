@@ -1,4 +1,4 @@
-uuid: 15fddedb-59ec-49ed-bdbf-656177a30b37
+uuid: 6fc8a06b-5051-4120-9f73-1066de0c3d66
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   module:
     - superfish
   theme:
-    - citizen
+    - citizen_front
 _core:
   default_config_hash: c9L8E5CrakDbgagLgsLDk7zFHiHbVJyvxaE3xiulsMA
-id: citizen_mainnavigation
-theme: citizen
+id: citizen_front_mainnavigation
+theme: citizen_front
 region: header
 weight: -5
 provider: null

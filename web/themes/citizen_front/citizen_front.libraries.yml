@@ -4,8 +4,14 @@ global:
   css:
     theme:
       dist/style.css: {}
+  js:
+    js/global.js: {}
   dependencies:
     - core/drupal
     - core/drupalSettings
     - core/jquery
     - core/jquery.once
+fonts:
+  css:
+    theme:
+      https://use.typekit.net/wzj4jtl.css: { type: external, preprocess: false }

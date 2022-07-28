@@ -11,10 +11,7 @@ body {
 .overflow-guard{
 	overflow-x: hidden;
 	padding: 0 $siteMarginMobile;
-	background: green;
-	@include tab{
-		background: $pink;
-	}
+	background: $siteBack;
 	div{
 		box-sizing: border-box;
 

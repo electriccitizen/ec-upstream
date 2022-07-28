@@ -1,4 +1,4 @@
-citizen.mobile:
+citizen_front.mobile:
   label: Mobile
   mediaQuery: ''
   weight: 0
@@ -6,7 +6,7 @@ citizen.mobile:
     - 1x
     - 1.5x
     - 2x
-citizen.tablet:
+citizen_front.tablet:
   label: Tablet
   mediaQuery: '(min-width:400px)'
   weight: 1
@@ -14,7 +14,7 @@ citizen.tablet:
     - 1x
     - 1.5x
     - 2x
-citizen.desk:
+citizen_front.desk:
   label: Desk
   mediaQuery: '(min-width:760px)'
   weight: 2

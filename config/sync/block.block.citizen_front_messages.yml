@@ -1,15 +1,15 @@
-uuid: 43964120-a3b7-4f13-9627-c6e89c930601
+uuid: 5d437e94-b13e-4b80-a246-342f2daa2fcf
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - citizen
+    - citizen_front
 _core:
   default_config_hash: EUZo_g0tDFjOXrdXs8mYZaXx-iMDoxLctBPwnm1gky8
-id: citizen_messages
-theme: citizen
+id: citizen_front_messages
+theme: citizen_front
 region: content
 weight: -7
 provider: null

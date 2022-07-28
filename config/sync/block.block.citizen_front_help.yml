@@ -1,15 +1,15 @@
-uuid: c33ed5e9-0156-4626-ad29-202d32c10e52
+uuid: 75dc5e19-4748-4e8a-9cc0-9b4e984a8342
 langcode: en
 status: true
 dependencies:
   module:
     - help
   theme:
-    - citizen
+    - citizen_front
 _core:
   default_config_hash: gev70gb-Z6mJzOmMuRSImQ4Z2X7P1sxiO0BoNGwGziw
-id: citizen_help
-theme: citizen
+id: citizen_front_help
+theme: citizen_front
 region: content
 weight: -5
 provider: null

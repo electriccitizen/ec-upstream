@@ -1,13 +1,13 @@
-uuid: fdb5edee-a80f-43f9-8813-1a57501a95e4
+uuid: 3a63cf6f-a162-4e9e-b2dc-5bf390d56419
 langcode: en
 status: true
 dependencies:
   theme:
-    - citizen
+    - citizen_front
 _core:
   default_config_hash: 5GJ2p4I_EeFqtPksYve78IDxw9QB5FY2HZ9VKymHoX4
-id: citizen_local_actions
-theme: citizen
+id: citizen_front_local_actions
+theme: citizen_front
 region: content
 weight: -4
 provider: null
