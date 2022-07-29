@@ -1,4 +1,4 @@
-@use "colors" as *;
+@use 'colors' as *;
 
 /* HIDDEN FROM PL SWATCHES BUT USED ON SITE */
 $white         : #fff;
@@ -21,7 +21,7 @@ $adminTransGrey : rgba(92,96,98,.92);
     COMPONENT SPECIFIC COLORS
 =============================   */
 
-/* TEXT & BUTTONS
+/* TEXT
 ---------------------- */
 $baseText          : $darkGrey;
 $link              : $red;
@@ -30,6 +30,9 @@ $hoverLink         : $midGrey;
 $breadLink         : $link;
 $breadLinkHover    : $hoverLink;
 $breadCurrent      : $darkGrey;
+
+/* BUTTONS
+---------------------- */
 $buttonBack        : $link;
 $buttonBackHover   : $grey;
 $buttonBackActive  : darken($grey, 5%);

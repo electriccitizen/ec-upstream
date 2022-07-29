@@ -3,6 +3,7 @@
 ==================== */
 
 @use '../../../00-base/base' as *;
+@use '../../../02-chunks/media/media-mixins' as *;
 
 .paragraph--type--gallery{
 	.lightbox{
@@ -32,7 +33,7 @@
 				}
 				img {
 					width: 100%;
-					@include imageHover($lightGrey,$borderRule);
+					@include imageHover;
 				}
 
 			}//end image lightbox

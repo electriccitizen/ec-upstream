@@ -19,7 +19,15 @@
 		&:not(:last-child){
 			margin-bottom: $spaceSm;
 		}
-	}
+		.views-field-title{
+			font-size: 2.75rem;
+			font-weight: 700;
+			margin-bottom: $spaceXxs;
+		}
+		.views-field-field-dates,.views-field-created{
+			@include metaText;
+		}
+	}//end vies row
 	.field-link{
 		margin-top: $spaceMd;
 		a{

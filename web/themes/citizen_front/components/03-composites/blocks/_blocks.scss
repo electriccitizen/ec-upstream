@@ -4,11 +4,11 @@
 
 /* ADD SUB BLOCKS
 ------------------- */
-@forward "branding/branding";
-@forward "newsletter/newsletter";
-@forward "search/search";
-@forward "social-links/social-links";
-@forward "social-share/social-share";
+@forward 'branding/branding';
+@forward 'newsletter/newsletter';
+@forward 'search/search';
+@forward 'social-links/social-links';
+@forward 'social-share/social-share';
 
 @use '../../00-base/base' as *;
 

@@ -4,12 +4,21 @@
 
 /* WIDGETS INDEX
 ------------------- */
-@forward "accordions/accordions";
-@forward "block-placer/block-placer";
-@forward "events-list/events-list";
-@forward "form-placer/form-placer";
-@forward "gallery/gallery";
-//@forward "drawers/drawers";
+@forward 'accordions/accordions';
+@forward 'block-placer/block-placer';
+@forward 'events-list/events-list';
+@forward 'form-placer/form-placer';
+@forward 'gallery/gallery';
+@forward 'horizontal-rule/horizontal-rule';
+@forward 'image/image';
+@forward 'links-files/links-files';
+@forward 'map/map';
+@forward 'news-list/news-list';
+@forward 'portals/portals';
+@forward 'quote/quote';
+@forward 'text/text';
+@forward 'video/video';
+@forward 'view-placer/view-placer';
 
 @use '../../00-base/base' as *;
 

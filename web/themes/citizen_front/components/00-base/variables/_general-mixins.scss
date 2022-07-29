@@ -2,10 +2,11 @@
 	MIXINS
 ======================= */
 
-@use "colors";
-@use "component-colors";
-@use "fonts";
-@use "units";
+@use 'colors';
+@use 'component-colors';
+@use 'fonts';
+@use 'units';
+@use 'sass:math';
 
 /* TRANSFORM & TRANSITION MIXINS
 ------------------------------ */
@@ -217,15 +218,6 @@
 	}
 }
 
-@mixin imageHover($startBorder,$hoverBorder){
-	border: 1px solid $startBorder;
-	&:hover,&:focus{
-		border-color: $hoverBorder;
-		opacity: .7;
-		@include transAll(.3s);
-	}
-}
-
 @mixin listReset {
 	list-style: none;
 	margin: 0;
@@ -249,7 +241,7 @@
 	display: block;
 	position: absolute;
 	#{$rulePosition}: 0;
-	top: (100% - $ruleHeight) / 2;
+	top: math.div(100% - $ruleHeight, 2);
 	width: 1px;
 	height: $ruleHeight;
 	background: $ruleColor;
@@ -278,8 +270,8 @@
 	-webkit-transform: rotate(0.05deg);
 	-moz-transform: scale(1.1);
 	transform: rotate(0.05deg);
-	$actualWidth: $triWidth / 2;
-	$actualHeight: $triHeight / 2;
+	$actualWidth: math.div($triWidth, 2);
+	$actualHeight: math.div($triWidth, 2);
 	@if $triDirection == 'up'{
 		border-right: $actualWidth double rgba(0,0,0,0);
 		border-left: $actualWidth double rgba(0,0,0,0);
@@ -299,93 +291,37 @@
 	}
 }
 
-@mixin outsideSliderArrows{
-	padding-left: $siteMarginMobile;
-	padding-right: $siteMarginMobile;
-
-	//override arrow padding then there are not enough slick items to have slider / have buttons
-	.slick-list:only-child{
-		@include edgeToEdge;
-	}
-	.slick-arrow{
-		&.slick-prev{
-			left: 0;
-			&:before{
-				border-right-color: $lightGrey;
-			}
-			&:hover:before{
-				border-right-color: $link;
-			}
-		}
-		&.slick-next{
-			right: 0;
-			&:before{
-				border-left-color: $lightGrey;
-			}
-			&:hover:before{
-				border-left-color: $link;
-			}
-		}
-	}
-}//end outside slider arrows
-
-@mixin lightBack {
-	h2,h3,h4,h5,h6,p,div {
-		color: $black;
-		&.pane-title{
-			border-color: $borderRule;
-		}
+@mixin lightBack($lightText,$lightLink) {
+	h2,h3,h4,h5,h6,p,div,.field-caption {
+		color: $lightText;
 	}
 	:before,:after{
-		color: $black;
+		color: $lightText;
 	}
 	a{
-		color: $transBlack;
+		color: $lightLink;
 		&:hover,&:focus{
-			color: $black;
+			opacity: .6;
 			@include transAll(.3s);
 		}
-	}
-	.widget-title > a{
-		color: $black;
-		&:hover,&:focus{
-			color: $transBlack;
-			@include transAll(.3s);
-		}
-	}
-	.field-caption {
-		color: $black;
 	}
 }//end lightBack
 
-@mixin darkBack {
-	h2,h3,h4,h5,h6,p,div {
-		color: $white;
-		&.pane-title{
-			border-color: $white;
-		}
+@mixin darkBack($darkText,$darkLink) {
+	h2,h3,h4,h5,h6,p,div,.field-caption {
+		color: $darkText;
 	}
 	:before,:after{
-		color: $white !important;
+		color: $darkText;
 	}
 	a{
-		color: $transWhite;
+		color: $darkLink;
 		&:hover,&:focus{
-			color: $white;
+			opacity: .6;
 			@include transAll(.3s);
 		}
 	}
-	.widget-title > a{
-		color: $white;
-		&:hover,&:focus{
-			color: $transWhite;
-			@include transAll(.3s);
-		}
-	}
-	.field-caption {
-		color: $white;
-	}
-}//end darkBack
+}//end lightBack
 
 @mixin svgBack($name, $width, $height){
 	background-image: url(../images/svg/#{$name}.svg);
@@ -443,3 +379,4 @@
 .fadeIn {
 	@include animation('fadeIn 1.5s 1');
 }
+

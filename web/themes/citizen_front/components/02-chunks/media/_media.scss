@@ -2,11 +2,14 @@
 	 MEDIA
 ============== */
 @use '../../00-base/base' as *;
+@use 'media-mixins' as *;
 
 img{
-	width: 100%;
-	height: auto;
-	display: block;
+	@include imageBase;
+}
+
+.field-caption{
+	@include caption;
 }
 
 .field-media-image + .field-caption{
@@ -17,17 +20,7 @@ img{
 /* EMBEDDED VIDEO
 ------------------ */
 .field-media-oembed-video{
-	position: relative;
-	padding-bottom: 56.25%;
-	iframe{
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		width: 100%;
-		height: 100%;
-	}
+	@include responsiveVideo;
 }
 
 /* EMBEDDED MEDIA
@@ -69,85 +62,43 @@ img{
 	}
 	// control sizes for images and video
 	&.small-embed{
-		width: 280px;
-		max-width: 100%;
+		@include smallEmbed;
 	}
 	&.medium-embed{
-		width: 480px;
-		max-width: 100%;
+		@include mediumEmbed;
 	}
 	&.large-embed{
-		width: 640px;
-		max-width: 100%;
+		@include largeEmbed;
 	}
 	&.full{
-		width: 100%;
+		@include fullEmbed;
 	}
 	&.default{
-		img{
-			width: auto;
-			height: auto;
-			max-width: 100%;
-			@include auto;		
-		}
+		@include defaultEmbed;
 	}
 }//end article
 
-
-/* EMBEDDED DOC ICONS
----------------------------------------- */
-%docIcons{
-	position: relative;
-	padding-left: 22px;
-	&:hover:before,&:focus:before{
-		opacity: .7;
-	}
-	&:before{
-		content:'';
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 2px;
-		width: 18px;
-		height: 18px;
-	}
-}
 span.file{
 	a{
-		@extend %docIcons;
-		&:before{
-			color: $fileIcon;
-		}
+		@include docIcon;
 	}
 }
 .text-with-summary,.text-long,span.file{
 	a[href$='.pdf']{
-		@extend %docIcons;
-		&:before{			
-			color: $pdfIcon;
-		}	
+		@include pdfIcon;
 	}
 
 	//word
 	a[href$='.doc'],a[href$=".docx"]{
-		@extend %docIcons;
-		&:before{
-			color: $wordIcon;
-		}
+		@include wordIcon;
 	}
 	//excel
 	a[href$='.xls'],a[href$=".xlsx"]{
-		@extend %docIcons;
-		&:before{
-			color: $excelIcon;
-		}
+		@include excelIcon;
 	}
 	//powerpoint
 	a[href$='.ppt'],a[href$=".pptx"]{
-		@extend %docIcons;
-		&:before{
-			color: $pptIcon;
-		}
+		@include pptIcon;
 	}
 }//end wysiwyg fields
 
