@@ -10,8 +10,8 @@ dependencies:
     - citizen_front
 id: citizen_front_connectwithus
 theme: citizen_front
-region: header
-weight: 0
+region: footer
+weight: -6
 provider: null
 plugin: 'block_content:9c4fce3f-caea-493f-a187-40935606dbc8'
 settings:

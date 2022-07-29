@@ -1,0 +1,30 @@
+/* ===============
+   EVENTS LIST
+================= */
+
+@use '../../../00-base/base' as *;
+@use '../../../01-parts/buttons/button-mixins' as *;
+
+.paragraph--type--events-list{
+	@include textConstrain;
+	.views-row{
+		.views-field-title{
+			font-size: 2.75rem;
+			font-weight: 700;
+			margin-bottom: $spaceXxs;
+		}
+		.views-field-field-dates,.views-field-created{
+			@include metaText;
+		}
+		&:not(:last-child){
+			margin-bottom: $spaceSm;
+		}
+	}
+	.field-link{
+		margin-top: $spaceMd;
+		a{
+			@include button;
+		}
+	}
+}//end events list widget
+

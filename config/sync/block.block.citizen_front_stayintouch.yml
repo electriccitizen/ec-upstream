@@ -10,7 +10,7 @@ dependencies:
     - citizen_front
 id: citizen_front_stayintouch
 theme: citizen_front
-region: header
+region: prefooter
 weight: -4
 provider: null
 plugin: 'block_content:c8367705-851a-4bd1-a2d2-44d6c822b1d8'

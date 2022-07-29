@@ -1,4 +1,4 @@
-@import '_color-vars.scss';
+@use "colors" as *;
 
 /* HIDDEN FROM PL SWATCHES BUT USED ON SITE */
 $white         : #fff;
@@ -95,9 +95,9 @@ $searchCloseBackHover      : $black;
 
 /* FORMS
 --------------------- */
-$formElementBorder        : $borderRule;
-$formElementBorderHover   : $borderRule;
-$formElementBorderFocus   : $link;
+$inputBorderColor         : $borderRule;
+$inputBorderHover         : $borderRule;
+$inputBorderFocus         : $link;
 $placeColor               : $adminGrey;
 $placeFocusColor          : $placeColor;
 $validation               : $brightRed;

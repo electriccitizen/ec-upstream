@@ -44,32 +44,19 @@
  */
 #}
 
-{#
-	DRUPAL: This template is being embedded into multiple Drupal templates. Macros variables can also alter the footer theming/behavior. Avaiable variables: fixed, non-fixed.
-#}
-
 <div class="layout-container">
-
 	{% block pageHeader %}
-		{% embed '@composites/04-layout/01-header/header.twig' %}
+		<header role="banner" class="site-header">
+			<a href="#main-navigation" class="visually-hidden focusable">
+				{%- trans %}Skip to main navigation{% endtrans -%}
+			</a>
+			<a href="#main-content" class="visually-hidden focusable">
+				{%- trans %}Skip to main content{% endtrans -%}
+			</a>
 			{% block headerContent %}
 				{{ page.header }}
 			{% endblock %}
-		{% endembed %}
-	{% endblock %}
-
-	{% block pageMeta %}
-		{{ page.primary_menu }}
-		{{ page.secondary_menu }}
-
-		{{ page.breadcrumb }}
-
-		{{ page.highlighted }}
-
-		{{ page.help }}
-
-		{{ messages }}
-
+		</header>
 	{% endblock %}
 
 	{% block pageMain %}
@@ -84,39 +71,31 @@
 				</div>{# /.layout-content #}
 			{% endblock %}
 			
-			{% if page.sidebar_first %}
-				<aside class="layout-sidebar-first" role="complementary">
-					{{ page.sidebar_first }}
-				</aside>
-			{% endif %}
-
-			{% if page.sidebar_second %}
-				<aside class="layout-sidebar-second" role="complementary">
-					{{ page.sidebar_second }}
-				</aside>
-			{% endif %}
-
 		</main>
 	{% endblock %}
 
 	{% block pagePreFooter %}
 		{% if page.prefooter %}
-			{% embed '@composites/04-layout/02-footer/_prefooter.twig' %}
-				{% block prefooterContent %}
-					{{ page.prefooter }}
-				{% endblock %}
-			{% endembed %}
+			<section class="prefooter-wrapper" role="complementary" aria-labelledby="prefooter-section">
+				<div class="prefooter-inner">	
+					{% block prefooterContent %}
+						{{ page.prefooter }}
+					{% endblock %}
+				</div>
+			</section>
 		{% endif %}
 	{% endblock %}
 
 	{% block pageFooter %}
 		{% if page.footer %}
-			{% embed '@composites/04-layout/02-footer/footer.twig' %}
+			<footer role="contentinfo" class="site-footer">
+			<div class="footer-inner">	
 				{% block footerContent %}
 					{{ page.footer }}
 				{% endblock %}
-			{% endembed %}
+			</div>
+			<div class="back-anchor"><a href="#" role="button" aria-label="back-to-top"></a></div>
+		</footer>
 		{% endif %}
 	{% endblock %}
-
 </div>

@@ -13,7 +13,7 @@ ckeditor_stylesheets:
 base theme: stable
 hidden: false
 regions:
-  header: Header
+  header: Header 
   content: Content
-  footer_left: 'Footer Left'
-  footer_right: 'Footer Right'
+  prefooter: Pre-Footer  
+  footer: Footer 

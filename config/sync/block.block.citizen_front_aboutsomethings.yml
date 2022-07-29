@@ -10,7 +10,7 @@ dependencies:
     - citizen_front
 id: citizen_front_aboutsomethings
 theme: citizen_front
-region: header
+region: prefooter
 weight: -6
 provider: null
 plugin: 'block_content:9f1d2a20-cf57-41e3-af59-6423d2a37e2a'

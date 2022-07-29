@@ -12,7 +12,7 @@ _core:
   default_config_hash: 2VA69XayHZewRlk5D2y0nLUtkrvITcyLRTCOsCDiJUA
 id: citizen_front_footer
 theme: citizen_front
-region: header
+region: prefooter
 weight: -5
 provider: null
 plugin: 'menu_block:footer'

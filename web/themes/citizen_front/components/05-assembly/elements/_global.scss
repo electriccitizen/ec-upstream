@@ -1,0 +1,23 @@
+/* ==================
+ GLOBAL SITE STYLES
+====================*/
+
+@use '../../00-base/base' as *;
+
+body {
+	width: 100%;
+}//end body
+
+.overflow-guard{
+	overflow-x: hidden;
+	padding: 0 $siteMarginMobile;
+	background: $siteBack;
+	div{
+		box-sizing: border-box;
+
+		*{
+			box-sizing: inherit;
+		}
+	}
+}
+
