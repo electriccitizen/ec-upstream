@@ -1,0 +1,42 @@
+/* ===================
+	LAYOUT SECTION
+===================== */
+
+@use '../../../00-base/base' as *;
+
+.paragraph--layout-section{
+	padding-left: 0;
+	padding-right: 0;
+	&:not(.background){
+		&:not(:first-child){
+			padding-top: $spaceLg;
+		}
+		&:not(:last-child){
+			padding-bottom: $spaceLg;
+		}
+		& + .section:not(.background){
+			padding-top: 0;
+		}
+	}
+	&.background{
+		padding-bottom: $spaceLg;
+		padding-top: $spaceLg;
+	}
+	&.light-grey{
+		background: $lightGrey;
+	}
+	.field-section-title{
+		@include textConstrain;
+	}
+
+	//default section layout
+	.field-section-widgets{
+		position: relative;
+		z-index: 4;
+		max-width: $contentStop;
+		@include auto;
+		margin-bottom: -$elementSpace;
+	}//end field section widgets
+
+}//end layout section paragraph
+
