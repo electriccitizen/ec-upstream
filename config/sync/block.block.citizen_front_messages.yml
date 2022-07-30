@@ -1,0 +1,22 @@
+uuid: 5d437e94-b13e-4b80-a246-342f2daa2fcf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - citizen_front
+_core:
+  default_config_hash: EUZo_g0tDFjOXrdXs8mYZaXx-iMDoxLctBPwnm1gky8
+id: citizen_front_messages
+theme: citizen_front
+region: content
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

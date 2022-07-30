@@ -1,0 +1,28 @@
+uuid: 122889b8-075b-467b-a7e3-414cf5947925
+langcode: en
+status: true
+dependencies:
+  module:
+    - citizen_custom
+    - system
+  theme:
+    - citizen_front
+_core:
+  default_config_hash: ZArko7DF6X5guRcgeKeyS0W1gr3mpdzfeJej0WXjJK0
+id: citizen_front_sitesearch
+theme: citizen_front
+region: header
+weight: -6
+provider: null
+plugin: site_search
+settings:
+  id: site_search
+  label: 'Site Search'
+  label_display: '0'
+  provider: citizen
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: /site-search

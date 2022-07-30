@@ -1,0 +1,25 @@
+uuid: 7ab35a6a-194c-445f-8a9b-0a6c587a5d8c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:newsletter:c8367705-851a-4bd1-a2d2-44d6c822b1d8'
+  module:
+    - block_content
+  theme:
+    - citizen_front
+id: citizen_front_stayintouch
+theme: citizen_front
+region: prefooter
+weight: -4
+provider: null
+plugin: 'block_content:c8367705-851a-4bd1-a2d2-44d6c822b1d8'
+settings:
+  id: 'block_content:c8367705-851a-4bd1-a2d2-44d6c822b1d8'
+  label: 'Stay in Touch'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

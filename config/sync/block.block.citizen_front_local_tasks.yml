@@ -1,0 +1,22 @@
+uuid: af49f95b-c53e-420c-a53c-84ccddd13b8f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - citizen_front
+_core:
+  default_config_hash: jQHtGFoiMSMKUSxx-inTvcCSIz43A5mNdXP_WEiMqDo
+id: citizen_front_local_tasks
+theme: citizen_front
+region: content
+weight: -6
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

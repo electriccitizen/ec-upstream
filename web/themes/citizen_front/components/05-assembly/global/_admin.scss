@@ -1,0 +1,353 @@
+/* ==================
+ FRONT-END ADMIN ELEMENTS STYLES
+====================*/
+
+@use '../../00-base/base' as *;
+@use '../../01-parts/forms/elements/form-mixins' as *;
+@use '../../01-parts/buttons/button-mixins' as *;
+
+/* ADMIN TOOLBAR
+------------------ */
+#toolbar-bar{
+	button{
+		margin-bottom: 0;
+	}
+	.toolbar-vertical &{
+		max-height: 39px;
+	}
+	#responsive-preview-toolbar-tab {
+		&.open {
+			ul.responsive-preview-options {
+				padding-left: 0;
+				margin-top: .5rem;
+				li {
+					&:before {
+						content: "•";
+						position: absolute;
+						left: 0;
+						top: 1px;
+						font-size: 12px;
+					}
+					button {
+						text-transform: capitalize;
+						font-weight: normal;
+					}
+				}
+			}//end responsvie preview options
+			&:before {
+				z-index: 0;
+			}
+		}
+	}//end responsive preview toolbar tab
+
+}//end toolbar bar
+.toolbar-tray-horizontal{
+	.menu-item--expanded{
+		background: none;
+	}
+	.menu-item{
+		&:hover{
+			background-color: $iceBlue;
+			a{
+				background-color: transparent;
+			}
+		}
+		a:focus{
+			background-color: $iceBlue;
+		}
+		a:active{
+			background-color: $darkIce;
+		}
+	}
+	ul{
+		li.menu-item--expanded{
+			ul{
+				li.menu-item--expanded{
+					background-image: url('../images/form-elements/caret-right-blue.svg');
+					background-size: 16px 16px;
+					&:hover{
+						background-image: url('../images/form-elements/caret-right-blue-dark.svg');
+					}
+				}
+			}
+		}
+	}
+}//end toolbar horizontal
+
+/* ADMIN NODE EDIT TABS
+----------------- */
+#block-citizen-front-local-tasks{
+	max-width: $contentStop;
+	padding: 30px 0 0;
+	position: relative;
+	@include auto;
+	body:not(.logged-in) &{
+		display: none;
+	}
+	.tabs {
+		@include listReset;
+		@include safeFlex(row,wrap,null,null);
+		border-bottom: 1px solid $borderRule;
+		li {
+			@include onlySmall{
+				width: 100%;
+			}
+			@include tab{
+				&:not(:first-child){
+					margin-left: -1px;
+				}
+			}
+		}
+		a {
+			text-transform: none;
+			padding: 4px 12px;
+			display: block;
+			margin-bottom: $spaceXs;
+			border: 1px solid $borderRule;
+			font-weight: $heavy;
+			color: $black;
+			&:hover,&:focus{
+				background: $buttonBackHover;
+				color: $buttonTextHover;
+				text-decoration: none;
+			}
+			&:active{
+				background: $buttonBackActive;
+				color: $buttonTextActive;
+			}
+			&.is-active {
+				background-color: $adminGold;
+				&:hover,&:focus{
+					background: $buttonBackHover;
+					color: $buttonTextHover;
+				}
+				&:active{
+					background: $buttonBackActive;
+					color: $buttonTextActive;
+				}
+			}
+			@include tab{
+				margin-bottom: -1px;
+			}
+		}//end a
+	}// end tabs
+}//end local tasks
+
+
+/* MODERATION SIDEBAR */
+.moderation-sidebar-actions{
+	a,input.button{
+		&:hover,&:focus{
+			text-decoration: underline !important;
+		}
+	}
+}
+
+/* DIALOGS */
+.ui-dialog .ui-dialog-title{
+	white-space: normal;
+}
+.ui-dialog-off-canvas + .select2-container--open{
+	height: 40px;
+	.select2-dropdown{
+		font-size: 1.75rem;
+		width: 100% !important;
+		&.select2-dropdown--below{
+			position: absolute;
+			top: 100%;
+			left: 0;
+		}
+	}
+}
+
+/* OFF CANVAS */
+/*
+.ui-dialog-off-canvas #drupal-off-canvas{
+	*{
+		font-family: $bodyFont;
+	}
+	form{
+		color: $white;
+	}
+	.js-form-type-checkbox{
+		@include customOptions;
+	}
+	.ui-autocomplete li a{
+		background: $siteBack;
+		font-size: 1.75rem;
+		&.ui-state-active{
+			background: $link;
+			border-color: $link;
+			color: $white !important;
+			text-decoration: none;
+			margin: 0;
+		}
+	}
+
+	.form-item{
+		margin-bottom: $spaceSm;
+		display: block;
+		&.form-item-settings-admin-label{
+			color: $white;
+			font-weight: $heavy;
+		}
+		label{
+			display: block;
+			margin-bottom: 10px;
+			font-size: 1.75rem;
+			color: $white;
+		}
+	}
+
+	.form-text{
+		color: $darkGrey;
+		border: 2px solid $link;
+		background: $white;
+		margin-top: $spaceXxs;
+		&:focus{
+			@include placeholderFocus;
+			outline: none;
+			border-color: $link;
+			box-shadow: inset 0 0 0 1px $link;
+			background: $offWhite;
+		}
+	}//end form-text
+
+	.js-form-type-checkbox{
+		input{
+			display: inline-block;
+		}
+		label{
+			display: inline-block;
+		}
+	}
+
+	select.form-select{
+		border: $inputBorderWidth solid $inputBorderFocus;
+		min-width: 180px;
+		&:hover,&:focus{
+			background: $white;
+			color: $black;
+		}
+	}
+
+	input[type="submit"].button--primary{
+		@include submitButton;
+		border-radius: 0;
+	}
+	a.button.dialog-cancel{
+		margin-top: -$spaceXs;
+		@include cautionButton;
+	}
+}//end off canvas
+
+*/
+
+/* TOOLTIPS
+------------------ */
+/* 
+
+.ui-tooltip{
+	font-size: 1.5rem;
+	border: 1px solid $borderRule;
+	padding: 1rem 2rem;
+	background: $offWhite;
+	box-shadow: 2px 2px 3px rgba(35,35,35,0.2);
+}
+*/
+
+/* DATEPICKER
+------------------- */
+/*
+.ui-datepicker{
+	padding: 0;
+	&.ui-widget-content{
+		border: $inputBorderWidth solid $inputBorderFocus;
+		border-radius: 0;
+	}
+	.ui-datepicker-header{
+		background: $datepickerHeader;
+		color: $datepickerHeaderElement;
+		border: 0;
+		border-radius: 0;
+		select{
+			@include browserWipe;
+			color: $white;
+			border: 0;
+			background-image: url('../images/form-elements/arrow-down-white.svg');
+			background-repeat: no-repeat;
+			background-size: 12px;
+			background-position: 50px center;
+		}
+		a{
+			&.ui-state-hover{
+				border-color: transparent;
+				background: rgba(255,255,255,0.2);
+			}
+			&.ui-datepicker-next{
+				.ui-icon{
+					background: url('../images/form-elements/caret-right-white.svg');
+					background-repeat: no-repeat;
+					background-size: 8px;
+					background-position: center;
+				}
+			}
+			&.ui-datepicker-prev{
+				.ui-icon{
+					background: url('../images/form-elements/caret-right-white.svg');
+					background-repeat: no-repeat;
+					background-size: 8px;
+					background-position: center;
+					@include rotate(180);
+				}
+			}
+		}//end a
+	}//end ui-datepicker-header
+	.ui-datepicker-calendar{
+		thead{
+			background: $datepickerDaysBack;
+			color: $datepickerDays;
+		}
+		td{
+			.ui-state-default{
+				border-color: $datepickerDateBorder;
+				background: $datepickerDateBack;
+				color: $datepickerDate;
+				&:hover,&:focus{
+					background: $buttonBackHover;
+					color: $buttonTextHover;
+				}
+				&:active{
+					background: $buttonBackActive;
+					color: $buttonTextActive;
+				}
+				&.ui-state-highlight{
+					background: $datepickerCurrentBack;
+					color: $datepickerCurrent;
+					&:hover,&:focus{
+						background: $buttonBackHover;
+						color: $buttonTextHover;
+					}
+					&:active{
+						background: $buttonBackActive;
+						color: $buttonTextActive;
+					}
+				}//end highlight
+				&.ui-state-active{
+					background: $datepickerSelectedBack;
+					color: $datepickerSelected;
+					&:hover,&:focus{
+						background: $buttonBackHover;
+						color: $buttonTextHover;
+					}
+					&:active{
+						background: $buttonBackActive;
+						color: $buttonTextActive;
+					}
+				}
+			}//end ui-state-default
+		}//end td
+	}//end calendar
+}//end ui-datepicker
+
+*/

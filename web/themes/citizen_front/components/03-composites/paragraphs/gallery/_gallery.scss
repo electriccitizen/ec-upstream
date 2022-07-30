@@ -1,0 +1,61 @@
+/* ===============
+   GALLERY WIDGET
+==================== */
+
+@use '../../../00-base/base' as *;
+@use '../../../02-chunks/media/media-mixins' as *;
+
+.paragraph--type--gallery{
+	.lightbox{
+		.gallery-wrapper{
+			@include safeFlex(row,wrap,center,start);
+			@include bleed(padding,20px);
+			margin-bottom: -$spaceSm;
+			//hide the content before lightbox
+			.featherlight-hidden {
+				display: none;
+			}
+			//Image lighbox
+			.image-gal {
+				margin-bottom: $spaceSm;
+				overflow: hidden;
+				cursor: pointer;
+				width: 100%;
+				min-width: 240px;
+				@include smallTab{
+					width: 50%;
+				}
+				@include tab{
+					width: 33.33%;
+				}
+				@include desk{
+					width: 25%;
+				}
+				img {
+					width: 100%;
+					@include imageHover;
+				}
+
+			}//end image lightbox
+		}//end gallery-wrapper
+	}//end lightbox
+	.slider {
+		@include textConstrain;
+		//slider container overrides layout padding on mobile
+		.field-image-multi {
+			@include edgeToEdge;
+			width: calc(100% + 40px);
+			@include tab {
+				@include edgeReset;
+				width: 100%;
+			}
+			img {
+				width: 100%;
+			}
+		}
+	}//end slider
+}//end gallery paragraph
+
+
+
+
