@@ -1,3 +1,0 @@
----
-title: Site Section Menu
----

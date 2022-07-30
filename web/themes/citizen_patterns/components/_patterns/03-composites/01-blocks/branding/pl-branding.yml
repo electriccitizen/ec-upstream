@@ -1,9 +1,0 @@
-
-logo:
-  '../../images/custom/logo.svg'
-path:
-  '#'
-projectName:
-  'Citizen Patterns'
-classes:
-  'block-system-branding-block'
