@@ -12,6 +12,7 @@ dependencies:
     - layout_paragraphs
     - media_library
     - metatag
+    - path
     - text
 _core:
   default_config_hash: AiIN5NmdeLPo4TB4twM4DqmFPIh2MoiDLb-mjYmVdHE
@@ -54,6 +55,12 @@ content:
       nesting_depth: 0
       require_layouts: 0
     third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     weight: 5
@@ -71,7 +78,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  path: true
   promote: true
   sticky: true
   uid: true

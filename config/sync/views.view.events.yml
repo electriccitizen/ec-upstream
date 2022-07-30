@@ -8,6 +8,7 @@ dependencies:
     - field.storage.node.field_image
     - node.type.event
     - taxonomy.vocabulary.categories
+    - taxonomy.vocabulary.event_categories
   module:
     - node
     - paragraphs
@@ -499,8 +500,6 @@ display:
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_image'
-        - 'config_split_state:field.storage.node.body'
-        - 'config_split_state:field.storage.node.field_image'
   all_upcoming_events:
     id: all_upcoming_events
     display_title: 'All Upcoming Events'
@@ -947,7 +946,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: true
-          vid: categories
+          vid: event_categories
           type: select
           hierarchy: false
           limit: true
@@ -1037,9 +1036,6 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_dates'
         - 'config:field.storage.node.field_image'
-        - 'config_split_state:field.storage.node.body'
-        - 'config_split_state:field.storage.node.field_dates'
-        - 'config_split_state:field.storage.node.field_image'
   events_list:
     id: events_list
     display_title: 'Events List'
@@ -1371,4 +1367,3 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_dates'
-        - 'config_split_state:field.storage.node.field_dates'

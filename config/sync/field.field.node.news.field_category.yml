@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_category
     - node.type.news
-    - taxonomy.vocabulary.categories
+    - taxonomy.vocabulary.news_categories
 _core:
   default_config_hash: WMRJrFp_0_SYShGR_B36g8cKQv2MXOiv24-_8pFt4xo
 id: node.news.field_category
@@ -22,7 +22,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      categories: categories
+      news_categories: news_categories
     sort:
       field: _none
       direction: asc

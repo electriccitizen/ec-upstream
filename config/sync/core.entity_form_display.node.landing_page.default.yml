@@ -52,9 +52,9 @@ content:
     weight: 3
     region: content
     settings:
-      preview_view_mode: default
+      preview_view_mode: preview
       nesting_depth: 0
-      require_layouts: 0
+      require_layouts: 1
     third_party_settings: {  }
   path:
     type: path

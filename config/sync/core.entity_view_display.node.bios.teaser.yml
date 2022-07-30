@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.bios.body
+    - field.field.node.bios.field_bio_order
     - field.field.node.bios.field_email
     - field.field.node.bios.field_first_name
     - field.field.node.bios.field_image
@@ -37,6 +38,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_bio_order: true
   field_email: true
   field_first_name: true
   field_image: true

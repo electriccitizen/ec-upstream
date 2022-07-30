@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.bios.body
+    - field.field.node.bios.field_bio_order
     - field.field.node.bios.field_email
     - field.field.node.bios.field_first_name
     - field.field.node.bios.field_image
@@ -181,6 +182,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_bio_order:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 108
     region: content
   field_email:
     type: basic_string

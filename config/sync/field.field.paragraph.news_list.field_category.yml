@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_category
     - paragraphs.paragraphs_type.news_list
-    - taxonomy.vocabulary.categories
+    - taxonomy.vocabulary.news_categories
 _core:
   default_config_hash: ju_nViVnm1VQcgz8kdlaAG2uT4E0jhqq1wkyPnjcW9w
 id: paragraph.news_list.field_category
@@ -22,7 +22,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      categories: categories
+      news_categories: news_categories
     sort:
       field: name
       direction: asc
