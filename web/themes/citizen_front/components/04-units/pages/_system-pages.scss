@@ -10,7 +10,7 @@ html > body:not(.is-front):not(.path-node){
 		@include auto;
 		padding: 0 $siteMarginMobile $siteBottomSpace;
 	}
-	#block-citizen-patterns-content{
+	#block-citizen-front-content{
 		padding-top: $elementSpace;
 	}
 	.block-page-title-block{

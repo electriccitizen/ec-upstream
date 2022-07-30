@@ -76,7 +76,7 @@
 
 /* ADMIN NODE EDIT TABS
 ----------------- */
-#block-citizen-patterns-local-tasks{
+#block-citizen-front-local-tasks{
 	max-width: $contentStop;
 	padding: 30px 0 0;
 	position: relative;
@@ -133,8 +133,6 @@
 	}// end tabs
 }//end local tasks
 
-/* NON-LAYOUT-BUILDER SIDEBAR PANELs, OFF CANVAS, UI- ELEMENTS
--------------------------------------------- */
 
 /* MODERATION SIDEBAR */
 .moderation-sidebar-actions{
@@ -163,6 +161,7 @@
 }
 
 /* OFF CANVAS */
+/*
 .ui-dialog-off-canvas #drupal-off-canvas{
 	*{
 		font-family: $bodyFont;
@@ -242,8 +241,12 @@
 	}
 }//end off canvas
 
+*/
+
 /* TOOLTIPS
 ------------------ */
+/* 
+
 .ui-tooltip{
 	font-size: 1.5rem;
 	border: 1px solid $borderRule;
@@ -251,9 +254,11 @@
 	background: $offWhite;
 	box-shadow: 2px 2px 3px rgba(35,35,35,0.2);
 }
+*/
 
 /* DATEPICKER
 ------------------- */
+/*
 .ui-datepicker{
 	padding: 0;
 	&.ui-widget-content{
@@ -344,3 +349,5 @@
 		}//end td
 	}//end calendar
 }//end ui-datepicker
+
+*/

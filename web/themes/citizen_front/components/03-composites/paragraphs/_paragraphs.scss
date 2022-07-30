@@ -12,6 +12,7 @@
 @forward 'horizontal-rule/horizontal-rule';
 @forward 'image/image';
 @forward 'links-files/links-files';
+@forward 'layout-section/layout-section';
 @forward 'map/map';
 @forward 'news-list/news-list';
 @forward 'portals/portals';
@@ -24,100 +25,15 @@
 
 //widgets parent field
 .block-field-paragraphs{
-	//override layout padding
 	@include edgeToEdge;
-	.field-paragraphs{
-		//use flex to support layout field
-		@include safeFlex(row,wrap,null,null);
-	}	
 }//end field paragraphs
 
-
-/* ===========
-SECTION LAYOUTS
-============= */
-.paragraph{
-	width: 100%;
-}
-
-/* WIDGETS FLEX ITEMS
+/* WIDGETS
 --------------------- */
-.section{
+.widget{
 	width: 100%;
 	padding-left: $siteMarginMobile;
 	padding-right: $siteMarginMobile;
 	position: relative;
-
-	&:not(.background){
-		&:not(:first-child){
-			padding-top: $spaceLg;
-		}
-		&:not(:last-child){
-			padding-bottom: $spaceLg;
-		}
-		& + .section:not(.background){
-			padding-top: 0;
-		}
-	}
-	&.background{
-		padding-bottom: $spaceLg;
-		padding-top: $spaceLg;
-	}
-	.field-section-title{
-		@include textConstrain;
-	}
-
-	//default section layout
-	.field-section-widgets{
-		position: relative;
-		z-index: 4;
-		max-width: $contentStop;
-		@include auto;
-		& > .section-wrapper {
-			margin-bottom: -$elementSpace;
-			& > .section-item{
-				width: 100%;
-				//need mins so that js can calculate width and height (for slider)
-				min-height: 0;
-				min-width: 0;
-				margin-bottom: $elementSpace;
-			}
-		}
-	}//end field section widgets
-
-	&.two-column{
-		.section-wrapper{
-			@include safeFlex(row,wrap,start,stretch);
-			@include tab{
-				@include bleed(padding,22px);
-			}
-			@include desk{
-				@include bleed(padding,32px);
-			}
-			& > .section-item{
-				width: 100%;
-				@include tab{
-					width: 50%;
-				}
-			}
-		}
-	}//end columned
-
-	&.three-column{
-		@extend .two-column;
-		.section-wrapper > .section-item{
-			@include tab{
-				width: 33.333%;
-			}
-		}//end section item
-	}//end three column
-
-	/* background styles
-	--------------------- */
-	&.light-grey{
-		background: $lightGrey;
-	}
-}//end section
-
-
+}//end widget
 

@@ -20,6 +20,7 @@
 	display: none;
 }
 
+/*
 .layout-builder-form{
 	max-width: $contentStop;
 	@include auto;
@@ -64,7 +65,11 @@
 		display: none;
 	}
 
+	*/
+
 	/* PRETTIFY LAYOUT BUILDER PREVIEW CONTENT */
+
+	/*
 	.layout-builder-block{
 		.field,a{
 			word-break: break-all;
@@ -148,7 +153,11 @@
 	@extend .layout-builder-discard-changes;
 }
 
+*/
+
 /* LAYOUT BLOCK FORMS */
+
+/*
 form.layout-builder-configure-block,form.layout-builder-block-move,form.layout-builder-remove-block,form.layout-builder-remove-section{
 	padding-top: $spaceSm !important;
 	.js-layout-builder-category{
@@ -175,7 +184,11 @@ form.layout-builder-configure-block,form.layout-builder-block-move,form.layout-b
 	}
 }//end layout builder configure/move/remove block
 
+*/
+
 /* OFF CANVAS */
+
+/*
 .ui-dialog-off-canvas #drupal-off-canvas{
 	//layout builder layout selections
 	.layout-selection{
@@ -242,3 +255,4 @@ form.layout-builder-configure-block,form.layout-builder-block-move,form.layout-b
 		display: none;
 	}
 }//end off canvas
+*/

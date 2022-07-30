@@ -25,6 +25,7 @@
  * @see template_preprocess_block()
  */
 #}
+
 {% if plugin_id %}
   {% if 'views_block' in plugin_id  %}
     {% set pluginClass = 'views-block block-' ~ content['#name']|clean_class ~ ' block-' ~ content['#display_id']|clean_class%}
@@ -51,8 +52,9 @@
   plClasses
 ] %}
 
+
 {% block blockAttributes %}
-  <div{% if (content['#block_content'].bundle|clean_class == 'basic') %} data-quickedit-entity-id="block_content/{{ elements.content['#block_content'].id() }}"{% endif %}{{ attributes.addClass(drupalClasses) }}>
+	<div{% if (content['#block_content'].bundle|clean_class == 'basic') or (content['#block_content'].bundle|clean_class == 'teaser-block-type') or (content['#block_content'].bundle|clean_class == 'contact-accordion-block') or (content['#block_content'].bundle|clean_class == 'paragraphs') %} data-quickedit-entity-id="block_content/{{ elements.content['#block_content'].id() }}"{% endif %}{{ attributes.addClass(drupalClasses) }}>
 {% endblock %}
   {% block blockSetup %}
     {{ title_prefix }}
@@ -66,8 +68,8 @@
       {{ content }}
     {% endblock %}
   {% endblock %}
-{% block blockEndAttributes %}
 </div>
-{% endblock %}
+
+
 
 
