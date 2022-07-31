@@ -40,7 +40,6 @@ dependencies:
   - field_ui
   - file
   - filter
-  - flippy
   - focal_point
   - geolocation
   - geolocation_address
@@ -108,5 +107,5 @@ dependencies:
 themes:
   - stable
   - seven
-  - citizen_patterns
+  - citizen_dart
   - crane
