@@ -39,13 +39,14 @@
 
 {% if paragraph.id.value %}
 	{% if drupal_view('news','news_list', paragraph.id.value)|render|striptags|trim|length > 0 %}
-		{% extend 'paragraph.html.twig' %}
-		{% block widgetContent %}
-			<div class="view-widget widget-news-list">
-			  {{ drupal_view('news','news_list', paragraph.id.value) }}
-			</div>
-			{{ content.field_link }}			
-		{% endblock %}	
+		{% embed 'paragraph.html.twig' %}
+			{% block widgetContent %}
+				<div class="view-widget widget-news-list">
+				  {{ drupal_view('news','news_list', paragraph.id.value) }}
+				</div>
+				{{ content.field_link }}			
+			{% endblock %}	
+		{% endembed %}
 	{% endif %}
 {% else %}
 	<p><strong>News list widgets are not available in preview until the node is saved after they have been added.</strong></p>

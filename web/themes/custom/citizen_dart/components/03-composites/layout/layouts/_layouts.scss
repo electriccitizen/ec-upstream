@@ -50,6 +50,84 @@
 	}
 }//end layout-twocol-sideleft
 
+/* TWO COLUMN QUAD SPLIT */
+.layout--twocol-quad-split{
+	width: 100%;
+	max-width: $contentStop;
+	@include auto;
+	@include clearFix;
+	@include onlyMobile{
+		@include safeFlex(column,nowrap,start,start);
+	}
+	.field-long-text,.text-long,.text-with-summary{
+		&:after{
+			content: none;
+			clear: none !important;
+		}
+	}
+	.layout__region--first{
+		width: 100%;
+		@include onlyMobile{
+			@include safeFlexOrder(2);
+		}
+		@include desk{
+			float: left;
+			width: $sideBar;
+		}
+	}//end layout region first
+	.layout__region--second{
+		width: 100%;
+		@include onlyMobile{
+			@include safeFlexOrder(4);
+			& + .layout__region--third {
+				margin-bottom: 0 !important;
+			}
+		}
+		@include desk{
+			float: left;
+			clear: left;
+			width: $sideBar;
+		}
+	}//end layout region second
+	.layout__region--third{
+		width: 100%;
+		@include onlyMobile{
+			@include safeFlexOrder(1);
+			&:only-child {
+				margin-bottom: $siteBottomSpace !important;
+			}
+		}
+		@include desk{
+			width: calc(100% - #{$sideBar});
+			margin-left: $sideBar;
+			padding-left: $sectionGutter;
+			&:first-child{
+				width: 100%;
+				max-width: $textMax;
+				@include auto;
+				padding-left: 0;
+			}
+		}
+	}//end layout region third
+	.layout__region--content{
+		width: 100%;
+		@include onlyMobile{
+			@include safeFlexOrder(3);
+		}
+		@include desk{
+			width: calc(100% - #{$sideBar});
+			margin-left: $sideBar;
+			padding-left: $sectionGutter;
+			&:first-child{
+				width: 100%;
+				max-width: $textMax;
+				@include auto;
+				padding-left: 0;
+			}
+		}
+	}//end layout region content
+}//end layout-twocol-quad-split
+
 /* TWO COLUMN SIDEBAR RIGHT */
 .layout--twocol-sideright{
 	width: 100%;
@@ -73,7 +151,7 @@
 			width: $sideBar;
 		}
 	}//end layout region second
-}//end layout-twocol-sideleft
+}//end layout-twocol-sideright
 
 /* TABS */
 .layout--tabs{

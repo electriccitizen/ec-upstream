@@ -167,8 +167,28 @@ third_party_settings:
       allowed_layouts:
         - layout_onecol
       blacklisted_blocks: {  }
-      whitelisted_blocks: {  }
-      restricted_categories: {  }
+      whitelisted_blocks:
+        System:
+          - system_breadcrumb_block
+      restricted_categories:
+        - '@entity'
+        - 'Chaos Tools'
+        - 'Custom block types'
+        - 'Custom blocks'
+        - Devel
+        - Flippy
+        - Forms
+        - Geolocation
+        - Help
+        - 'Inline blocks'
+        - 'Lists (Views)'
+        - Menus
+        - 'Responsive Preview'
+        - 'Site Search'
+        - Superfish
+        - User
+        - Webform
+        - core
 _core:
   default_config_hash: 5B6kXAAmFMzavs5iFwC15pBNWviSgJjF6pIjT8MSlKI
 id: node.bios.default

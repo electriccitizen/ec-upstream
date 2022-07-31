@@ -11,6 +11,24 @@ two_column_sidebar_left:
       label: First
     content:
       label: Content
+two_column_quad_split:
+  label: Two Column Quad Split
+  category: Citizen Dart Layouts
+  path: templates/layout
+  template: layout--twocol-quad-split
+  default_region: first
+  icon_map:
+    - [first, third, third, third]
+    - [second, content, content, content]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+    third:
+      label: Third
+    content:
+      label: Content
 two_column_sidebar_right:
   label: Two Column Sidebar Right
   category: Citizen Dart Layouts
