@@ -6,11 +6,13 @@
 
 body {
 	width: 100%;
+	&.gin--vertical-toolbar{
+		width: calc(100% - 66px);
+	}
 }//end body
 
 .overflow-guard{
 	overflow-x: hidden;
-	padding: 0 $siteMarginMobile;
 	background: $siteBack;
 	div{
 		box-sizing: border-box;
@@ -19,7 +21,10 @@ body {
 			box-sizing: inherit;
 		}
 	}
-}
+	.main-page-content{
+		padding: 0 $siteMarginMobile;
+	}
+}//end overflow guard
 
 .container-inline div{
 	display: inline;

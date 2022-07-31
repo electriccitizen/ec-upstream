@@ -6,73 +6,27 @@
 @use '../../01-parts/forms/elements/form-mixins' as *;
 @use '../../01-parts/buttons/button-mixins' as *;
 
-/* ADMIN TOOLBAR
------------------- */
-#toolbar-bar{
-	button{
-		margin-bottom: 0;
-	}
-	.toolbar-vertical &{
-		max-height: 39px;
-	}
-	#responsive-preview-toolbar-tab {
-		&.open {
-			ul.responsive-preview-options {
-				padding-left: 0;
-				margin-top: .5rem;
-				li {
-					&:before {
-						content: "•";
-						position: absolute;
-						left: 0;
-						top: 1px;
-						font-size: 12px;
-					}
-					button {
-						text-transform: capitalize;
-						font-weight: normal;
-					}
-				}
-			}//end responsvie preview options
-			&:before {
-				z-index: 0;
-			}
-		}
-	}//end responsive preview toolbar tab
+/* GIN TOOLBAR
+--------------------- */
 
-}//end toolbar bar
-.toolbar-tray-horizontal{
-	.menu-item--expanded{
-		background: none;
-	}
-	.menu-item{
-		&:hover{
-			background-color: $iceBlue;
-			a{
-				background-color: transparent;
-			}
-		}
-		a:focus{
-			background-color: $iceBlue;
-		}
-		a:active{
-			background-color: $darkIce;
-		}
-	}
-	ul{
-		li.menu-item--expanded{
-			ul{
-				li.menu-item--expanded{
-					background-image: url('../images/form-elements/caret-right-blue.svg');
-					background-size: 16px 16px;
-					&:hover{
-						background-image: url('../images/form-elements/caret-right-blue-dark.svg');
+//fix rem usage of flyout menu sub items from Gin toolbar
+#gin-toolbar-bar{
+	body.gin--vertical-toolbar &{
+		.toolbar-menu-administration{
+			& > .toolbar-menu{
+				& > .menu-item{
+					.toolbar-menu{
+						.menu-item{
+							.toolbar-icon{
+								font-size: 14px;
+							}
+						}
 					}
-				}
-			}
-		}
-	}
-}//end toolbar horizontal
+				}//end menu item
+			}//end top level toolbar menu (icons)
+		}//end toolbar administration
+	}//end gin vertical toolbar
+}//end gin toolbar
 
 /* ADMIN NODE EDIT TABS
 ----------------- */

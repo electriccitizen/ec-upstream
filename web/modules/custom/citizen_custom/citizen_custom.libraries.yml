@@ -1,13 +1,10 @@
-toolbar-env-tab:
+admin-global:
   version: 1.0
   css:
     theme:
-      css/toolbar-env-tab.css: {}
-
-anchor_ajax_event:
-  version: VERSION
+      css/admin.css: {}
   js:
-    js/anchor-field-ajax-event.js: {}
+    js/admin.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once
