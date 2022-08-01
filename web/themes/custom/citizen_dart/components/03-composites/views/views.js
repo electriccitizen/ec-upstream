@@ -8,13 +8,13 @@ Drupal.behaviors.viewsScroll = {
       //check if searched
       var urlCurrent = window.location.href;
       if((urlCurrent.indexOf("?f") > -1) || (urlCurrent.indexOf("?c") > -1) || (urlCurrent.indexOf("?s") > -1)){
-		$(document).ready(function(){
-			setTimeout(function() {
-	   			$('html, body').animate({
-					scrollTop: $('.view .exposed-form-container').offset().top - 10
-	   			});
-   			}, 300);
- 		});
+				$(document).ready(function(){
+					setTimeout(function() {
+			   			$('html, body').animate({
+							scrollTop: $('.view .exposed-form-container').offset().top - 10
+			   			});
+		   			}, 300);
+		 		});
       }
     });
   }
