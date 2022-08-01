@@ -7,8 +7,10 @@ dependencies:
     - field.field.media.image.field_caption
     - field.field.media.image.field_media_image
     - media.type.image
+    - responsive_image.styles.large
   module:
     - layout_builder
+    - responsive_image
 third_party_settings:
   layout_builder:
     enabled: false
@@ -27,10 +29,18 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_media_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   addtoany: true
   created: true
-  field_media_image: true
   name: true
   search_api_excerpt: true
   thumbnail: true

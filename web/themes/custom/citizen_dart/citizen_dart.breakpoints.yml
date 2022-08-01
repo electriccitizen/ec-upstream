@@ -6,9 +6,9 @@ citizen_dart.mobile:
     - 1x
     - 1.5x
     - 2x
-citizen_dart.tablet:
+citizen_dart.tab:
   label: Tablet
-  mediaQuery: '(min-width:400px)'
+  mediaQuery: '(min-width:496px)'
   weight: 1
   multipliers:
     - 1x
@@ -16,9 +16,20 @@ citizen_dart.tablet:
     - 2x
 citizen_dart.desk:
   label: Desk
-  mediaQuery: '(min-width:760px)'
+  mediaQuery: '(min-width:896px)'
   weight: 2
   multipliers:
     - 1x
-
+citizen_dart.middesk:
+  label: Mid Desk
+  mediaQuery: '(min-width:1144px)'
+  weight: 2
+  multipliers:
+    - 1x
+citizen_dart.largedesk:
+  label: Large Desk
+  mediaQuery: '(min-width:1320px)'
+  weight: 2
+  multipliers:
+    - 1x
 
