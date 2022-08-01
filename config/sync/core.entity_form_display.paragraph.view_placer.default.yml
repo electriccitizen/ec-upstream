@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.view_placer.field_bios_displays
     - field.field.paragraph.view_placer.field_events_displays
     - field.field.paragraph.view_placer.field_link
     - field.field.paragraph.view_placer.field_news_displays
@@ -18,6 +19,12 @@ targetEntityType: paragraph
 bundle: view_placer
 mode: default
 content:
+  field_bios_displays:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_events_displays:
     type: options_select
     weight: 3
@@ -26,7 +33,7 @@ content:
     third_party_settings: {  }
   field_link:
     type: link_default
-    weight: 6
+    weight: 5
     region: content
     settings:
       placeholder_url: ''
