@@ -38,18 +38,18 @@
 #}
 
 {% extends 'paragraph.html.twig' %}
-	{% block widgetContent %}
-		{% set viewName = content.field_view.0['#markup'] %}
-		{% if viewName == 'events' %}
-			{% set displayName = content.field_events_displays.0['#markup'] %}
-		{% elseif viewName == 'news' %}
-			{% set displayName = content.field_news_displays.0['#markup'] %}
-		{% elseif viewName == 'bios' %}
-			{% set displayName = content.field_bios_displays.0['#markup'] %}
-		{% endif %}
-		<div class="view-widget widget-{{ viewName }} {{ displayName }}">
-		  {{ drupal_view(viewName,displayName) }}
-		  {{ content.field_link }}
-		</div>
-	{% endblock %}
-{% endembed %}
+
+{% block widgetContent %}
+	{% set viewName = content.field_view.0['#markup'] %}
+	{% if viewName == 'events' %}
+		{% set displayName = content.field_events_displays.0['#markup'] %}
+	{% elseif viewName == 'news' %}
+		{% set displayName = content.field_news_displays.0['#markup'] %}
+	{% elseif viewName == 'bios' %}
+		{% set displayName = content.field_bios_displays.0['#markup'] %}
+	{% endif %}
+	<div class="view-widget widget-{{ viewName }} {{ displayName }}">
+	  {{ drupal_view(viewName,displayName) }}
+	  {{ content.field_link }}
+	</div>
+{% endblock %}
