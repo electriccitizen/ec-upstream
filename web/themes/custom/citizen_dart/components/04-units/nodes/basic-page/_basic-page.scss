@@ -5,6 +5,9 @@
 @use '../../../00-base/base' as *;
 
 .node-page{
+	.breadcrumb{
+		padding: 0;
+	}
 	.block-field-image{
 		@include edgeToEdge;
 	}
