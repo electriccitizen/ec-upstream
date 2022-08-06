@@ -3,13 +3,14 @@
 ===================== */
 @use '../../../00-base/base' as *;
 
-.block--system-menu.section-menu{
+#block-section-menu{
 	@include onlyMobile{
 		margin-bottom: $spaceLg;
 	}
 	h2.block-title{
 		position: relative;
-		padding: 1rem $siteMarginMobile;
+		display: block;
+		padding: 1.5rem $siteMarginMobile;
 		background: $menuBlockTitleBack;
 		color: $menuBlockTitle;
 		max-width: none;
@@ -43,6 +44,7 @@
 	background: $menuBack;
 	padding-top: $spaceSm;
 	padding-bottom: $spaceMd;
+	border-bottom: 2px solid $menuBlockTitleBack;
 	@include onlyMobile{
 		padding-left: $siteMarginMobile;
 		padding-right: $siteMarginMobile;
