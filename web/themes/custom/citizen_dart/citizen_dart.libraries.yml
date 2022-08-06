@@ -73,7 +73,7 @@ select:
       components-addons/select2/select2.min.css: { minified: true }
   js:
     components-addons/select2/select2.min.js: { minified: true }
-    components-addons/01-parts/forms/forms.js: {}
+    components/01-parts/forms/forms.js: {}
 slick:
   version: 1.8.1
   css:

@@ -53,7 +53,10 @@
 
 .drawer-content{
 	display: none;
-	&.open-drawer:not(.not-fade){
-		padding-bottom: $spaceMd;
+	padding-top: $spaceXxs;
+	&.open-drawer{
+		&:not(.not-fade){
+			padding-bottom: $spaceMd;
+		}
 	}
 }//end drawer content

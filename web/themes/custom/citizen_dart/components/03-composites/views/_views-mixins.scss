@@ -13,7 +13,7 @@
 }
 @mixin viewsMeta{
 	@include metaText;
-	margin-bottom: $spaceXxs;
+	margin-bottom: $spaceSm;
 }
 
 @mixin viewsRowStandard{
@@ -32,7 +32,7 @@
 	@include smallTab{
 		@include safeFlex(row,nowrap,start,start);
 		.views-field-field-image{
-			@include safeFlexSize(0,0,320px);
+			@include safeFlexSize(0,0,340px);
 			padding-right: 40px;
 			margin-bottom: 0;
 		}

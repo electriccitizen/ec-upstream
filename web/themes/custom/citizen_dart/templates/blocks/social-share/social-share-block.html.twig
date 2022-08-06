@@ -28,10 +28,6 @@
 
 {% extends 'block.html.twig' %}
 
-{% block dLabel %}
-	{{- label -}}
-{% endblock %}
-
 {% block blockContent %}
 
 	<div class="social-share">
@@ -40,5 +36,5 @@
 		<a href="http://www.linkedin.com/shareArticle?mini=true&url={{data.url}}&title={{data.title}}&source={{data.base_url}}" target="_blank" class="linkedin-share" aria-label="Share this on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
 		<a href="mailto:?subject={{data.title}}&body=Click the link:%0d%0a{{data.url}}" class="email-share" target="_blank" aria-label="Share this via email"><i class="fas fa-envelope-square" aria-hidden="true"></i></a>
 	</div>
-
+  <strong>Need to plug in material icons instead of FA - or use custom to get to show</strong>strong.
 {% endblock %}
