@@ -40,8 +40,8 @@
 {% extends 'paragraph.html.twig' %}
 
 {% block widgetInner %}
-	<div class="widget-section{% if content.field_style.0 %} {{ content.field_style.0.entity.label|clean_class }}{% endif %}">
-		{{- content|without('field_style') -}}
+	<div class="widget-section">
+		{{- content -}}
 	</div>
 {% endblock %}
 

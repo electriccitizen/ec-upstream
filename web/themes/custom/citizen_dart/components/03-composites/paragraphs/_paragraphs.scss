@@ -22,6 +22,7 @@
 @forward 'view-placer/view-placer';
 
 @use '../../00-base/base' as *;
+@use 'sass:math';
 
 //widgets parent field
 .block-field-paragraphs{
@@ -32,8 +33,30 @@
 --------------------- */
 .widget{
 	width: 100%;
-	padding-left: $siteMarginMobile;
-	padding-right: $siteMarginMobile;
+	padding: 0 $siteMarginMobile;
+	padding: 0 $siteMarginMobile;
 	position: relative;
+	//regular widgets not in layout sections
+	&:not(.layout-section){
+		margin-bottom: $elementSpace;
+	}
+	//layout-sections
+	&.layout-section{
+		&.background{
+			padding-top: $elementSpace;
+			&.light-grey{
+				background: $offWhite;
+			}
+			&.light-blue{
+				background: $iceBlue;
+			}
+			& + .backless{
+				margin-top: $elementSpace;
+			}
+			&:last-child{
+				margin-bottom: -$siteBottomSpace;
+			}
+		}//end background
+	}//end layout section
 }//end widget
 

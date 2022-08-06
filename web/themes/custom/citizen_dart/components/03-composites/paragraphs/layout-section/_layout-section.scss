@@ -5,41 +5,18 @@
 @use '../../../00-base/base' as *;
 
 .paragraph--type--layout-section{
-	padding-left: 0;
-	padding-right: 0;
-
-	.widget-section{
-		&:not(.background){
-			&:not(:first-child){
-				padding-top: $spaceLg;
-			}
-			&:not(:last-child){
-				padding-bottom: $spaceLg;
-			}
-			& + .section:not(.background){
-				padding-top: 0;
-			}
-		}
-		&.background{
-			padding-bottom: $spaceLg;
-			padding-top: $spaceLg;
-		}
-		&.light-grey{
-			background: $lightGrey;
-		}
-	}//end widget section
 	.field-section-title{
 		@include textConstrain;
+		@include heading3;
+		text-align: center;
+		margin-bottom: $spaceSm;
 	}
 
-	.layout{
-		max-width: 1200px;
-		@include auto;
+	.widget-section{
 		position: relative;
 		z-index: 4;
 		max-width: $contentStop;
 		@include auto;
-		margin-bottom: -$elementSpace;
 	}
 
 }//end layout section paragraph
