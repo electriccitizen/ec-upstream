@@ -20,12 +20,16 @@ use Drupal\taxonomy\Entity\Term;
       if ((!$node instanceof NodeInterface) && (isset($vid))) {
         $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($vid);
       }
-    //set published or unpublished
+    	//set published or unpublished
       if($node->status[0]->value == '1'){
         $variables['attributes']['class'][] = 'published';
       } else {
         $variables['attributes']['class'][] = 'unpublished';
       }
+      //check for main image
+      if (!empty($node->field_image[0])){
+	      $variables['attributes']['class'][] = 'has-main-image';
+	    }
     }
   }
 

@@ -7,8 +7,7 @@
 %imageBio{
 	.has-main-image &{
 		@include tab{
-			margin-left: 370px;
-			text-align: left;
+			margin-left: 360px;
 		}
 	}
 }
@@ -16,13 +15,16 @@
 .node-bios{
 
 	#node-section-1,#node-section-2{
-		max-width: $contentStop;
+		max-width: $textMax;
+		.has-main-image &{
+			max-width: $contentStop;
+		}
 		@include auto;
 		@include clearFix;
 	}
 	
 	.block-field-image{
-		max-width: 350px;
+		max-width: 320px;
 		@include auto;
 		@include tab{
 			float: left;
@@ -32,11 +34,19 @@
 
 	.block-field.block-title{
 		@extend %imageBio;
+		@include tab{
+			text-align: left;
+		}
 	}
 
 	.block-field-position{
 		@extend %imageBio;
 		@include heading4;
+		margin-top: -$spaceMd;
+		text-align: center;
+		@include tab{
+			text-align: left;
+		}
 		&:not(:last-child){
 			margin-bottom: $spaceMd;
 		}
