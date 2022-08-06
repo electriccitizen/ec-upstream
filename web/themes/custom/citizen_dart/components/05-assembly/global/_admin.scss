@@ -52,7 +52,7 @@
 ----------------- */
 #block-citizen-dart-local-tasks{
 	max-width: $contentStop;
-	padding: $spaceMd 0 $spaceSm $spaceSm;
+	padding: $spaceMd 0 $spaceSm;
 	position: relative;
 	@include auto;
 	body:not(.logged-in) &{

@@ -6,9 +6,9 @@
 
 .site-header {
 	background: $headerBack;
+	padding: 20px $siteMarginMobile;
 	& > div{
-		padding: 20px $siteMarginMobile;
-		max-width: $contentStop + 40px;
+		max-width: $contentStop;
 		@include auto;
 		position: relative;
 		@include safeFlex(row,wrap,null,center);

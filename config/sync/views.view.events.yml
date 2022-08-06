@@ -777,7 +777,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"title\">{{ title }}</div>\r\n{{ field_dates }}\r\n{% if body %}\r\n  <div class=\"body\">{{ body }}</div>\r\n{% endif %}"
+            text: "<div class=\"views-field-title\">{{ title }}</div>\r\n{{ field_dates }}\r\n{% if body %}\r\n  <div class=\"views-field-body\">{{ body }}</div>\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false

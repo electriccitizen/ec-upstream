@@ -98,7 +98,7 @@ content:
     region: content
     settings:
       auto_client_location: ''
-      auto_client_location_marker: '1'
+      auto_client_location_marker: '0'
       allow_override_map_settings: 0
       hide_textfield_form: false
       centre:
@@ -445,6 +445,7 @@ content:
     region: content
     settings:
       sidebar: true
+      use_details: true
     third_party_settings: {  }
   promote:
     type: boolean_checkbox

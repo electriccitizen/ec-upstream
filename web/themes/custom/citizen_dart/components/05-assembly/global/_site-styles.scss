@@ -22,7 +22,7 @@ body {
 		}
 	}
 	.main-page-content{
-		padding: 0 $siteMarginMobile;
+		padding: 0;
 	}
 }//end overflow guard
 
@@ -59,7 +59,7 @@ body {
 		display: block;
 		width: 100%;
 		background: $siteBack;
-		padding: .5rem 2rem;
+		padding: .5rem 3rem;
 	}
 }
 
