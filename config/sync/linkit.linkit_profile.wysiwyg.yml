@@ -25,16 +25,16 @@ matchers:
       limit: 100
       include_unpublished: false
     weight: 0
-  0295521d-abea-485f-b0b2-02d7de94a6c2:
+  d0611905-3b16-41b4-a70f-05577b12b3a1:
     id: 'entity:file'
-    uuid: 0295521d-abea-485f-b0b2-02d7de94a6c2
+    uuid: d0611905-3b16-41b4-a70f-05577b12b3a1
     settings:
       metadata: ''
       bundles: null
       group_by_bundle: null
       substitution_type: file
       limit: 100
-      file_extensions: ''
+      file_extensions: 'txt pdf doc docx zip xls xlsx ppt pptx'
       file_status: 1
       images:
         show_dimensions: false

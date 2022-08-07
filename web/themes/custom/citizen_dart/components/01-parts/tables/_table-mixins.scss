@@ -12,7 +12,7 @@
 	background-repeat: no-repeat;
 	background-size: 2rem;
 	background-position: center left;
-	background-image: url('../images/form-elements/sort.svg');
+	background-image: url('../images/elements/sort.svg');
 	padding-left: 3rem;
 	&:after{
 		content: none;
@@ -34,10 +34,10 @@
 		width: 2.25rem;
 		height: 2.25rem;
 		&.tablesort--desc{	
-			background-image: url('../images/form-elements/arrow-down-white.svg');
+			background-image: url('../images/elements/arrow-down-white.svg');
 		}
 		&.tablesort--asc{
-			background-image: url('../images/form-elements/arrow-up-white.svg');
+			background-image: url('../images/elements/arrow-up-white.svg');
 		}
 	}
 }

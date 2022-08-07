@@ -190,7 +190,7 @@
 			@include browserWipe;
 			color: $white;
 			border: 0;
-			background-image: url('../images/form-elements/arrow-down-white.svg');
+			background-image: url('../images/elements/arrow-down-white.svg');
 			background-repeat: no-repeat;
 			background-size: 12px;
 			background-position: 50px center;
@@ -202,7 +202,7 @@
 			}
 			&.ui-datepicker-next{
 				.ui-icon{
-					background: url('../images/form-elements/caret-right-white.svg');
+					background: url('../images/elements/caret-right-white.svg');
 					background-repeat: no-repeat;
 					background-size: 8px;
 					background-position: center;
@@ -210,7 +210,7 @@
 			}
 			&.ui-datepicker-prev{
 				.ui-icon{
-					background: url('../images/form-elements/caret-right-white.svg');
+					background: url('../images/elements/caret-right-white.svg');
 					background-repeat: no-repeat;
 					background-size: 8px;
 					background-position: center;

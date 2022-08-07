@@ -45,7 +45,7 @@
 			right: 0;
 			position: absolute;
 			border: 0;
-			font-family: "Open Sans", Helvetica, Arial, sans-serif;
+			font-family: $bodyFont;
 			padding: 0;
 			z-index: 9999;
 			&:focus,

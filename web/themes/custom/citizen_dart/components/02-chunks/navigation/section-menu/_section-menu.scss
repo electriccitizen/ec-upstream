@@ -21,17 +21,16 @@
 		}	 
 		a.section-menu-toggle{
 			color: $menuBlockTitle;
-			i{
-				margin-right: 2.5rem;
-			}
+			display: inline-block;
+			vertical-align: middle;
+			text-align: center;
+			width: 60px;
 			&:hover,&:focus{
 				color: $menuBlockTitleHover;
 			}
 			@include desk{
 				pointer-events: none;
-				i{
-					display: none;
-				}
+				display: none;
 			}
 		}
 	}

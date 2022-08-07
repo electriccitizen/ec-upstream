@@ -11,7 +11,7 @@
 	margin-top: $spaceXxs;
 	&:hover,&:focus{
 		&:after{
-			background-image: url('../images/form-elements/caret-down-dkgrey.svg');
+			background-image: url('../images/elements/caret-down-hover.svg');
 		}
 	}
 	&:after{
@@ -22,7 +22,7 @@
 		position: absolute;
 		bottom: calc(50% - 1rem);
 		right: 0;
-		background-image: url('../images/form-elements/caret-down-red.svg');
+		background-image: url('../images/elements/caret-down.svg');
 		background-position: center;
 		background-size: 14px 14px;
 		background-repeat: no-repeat;

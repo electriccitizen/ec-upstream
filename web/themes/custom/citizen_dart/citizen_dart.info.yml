@@ -8,7 +8,7 @@ libraries:
   - citizen_dart/global
   - citizen_dart/fonts
 ckeditor_stylesheets:
-  - https://fonts.googleapis.com/css?family=Open+Sans:ital,wght@0,400;;0,700;1,400
+  - https://fonts.googleapis.com/css?family=Open+Sans:ital,wght@0,400;;0,700;1,400|Material+Icons+Outlined
   - dist/cke.css
 base theme: stable
 hidden: false

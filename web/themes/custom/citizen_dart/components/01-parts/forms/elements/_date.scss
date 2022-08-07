@@ -45,33 +45,18 @@ field--type-datetime{
 }
 
 //date picker
-.js-form-type-datetime,.js-form-type-date{
-	.form-item{
-		margin-bottom: 0 !important;
-	}
+.js-form-type-datetime{
 	.container-inline{
-		@include safeFlex(row,wrap,start,start);
-		& > *{
-			display: block;
+		@include safeFlex(row,nowrap,start,start);
+		.js-form-type-date{
+			max-width: 230px;
+			margin-right: 10px;
+			margin-bottom: 0;
 		}
-		.form-item-date-time-daypicker-date{
-			width: 70%;
-			max-width: 360px;
-			input{
-				background-image: url('../images/form-elements/calendar.svg');
-				background-repeat: no-repeat;
-				background-size: 30px;
-				background-position: 8px center;
-				padding-left: 46px;
-			}
-		}
-		.form-item-date-time-daypicker-time{
-			width: 27.5%;
-			margin-left: 2.5%;
-		}
-		.ui-datepicker-trigger{
-			display: none;
-		}
+		.js-form-type-webform-time{
+			max-width: 120px;
+			margin-bottom: 0;
+		}	
 	}//end container inline
 }//end date picker
 

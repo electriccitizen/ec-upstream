@@ -62,10 +62,10 @@ html {
 	}
 }
 .align-left{
-	@extend .align-left;
+	@extend .align-right;
 	float: left;
 	margin:0 20px 20px 0;
-	.document{
+	&.document{
 		text-align: left;
 	}
 }
@@ -183,31 +183,13 @@ a[href$='.pdf'],a[href$='.doc'],a[href$=".docx"],a[href$='.xls'],a[href$=".xlsx"
 	padding-left: 22px;
 	display: inline-block;
 	&:before{
-		content: '';
-		font-family: 'Font Awesome 5 Free';
-		font-size: 15px;
+		@include materialIconOutline(\e873);
 		display: block;
 		position: absolute;
-		top: 2px;
-		left: 4px;
-		width: 18px;
-		height: 18px;
+		top: 1px;
+		left: -2px;
+		color: $fileIcon;
+		font-size: 20px;
 	}
-}
-a[href$='.pdf']:before{
-	content: "\f1c1";
-	color: $pdfIcon;
-}
-a[href$='.doc']:before,a[href$=".docx"]:before{
-	content: "\f1c2";
-	color: $wordIcon;
-}
-a[href$='.xls']:before,a[href$=".xlsx"]:before{
-	content: "\f1c3";
-	color: $excelIcon;
-}
-a[href$='.ppt']:before,a[href$=".pptx"]:before{
-	content: "\f1c4";
-	color: $pptIcon;
 }
 

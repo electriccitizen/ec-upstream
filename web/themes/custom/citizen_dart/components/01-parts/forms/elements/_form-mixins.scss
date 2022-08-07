@@ -136,7 +136,7 @@
 			}
 		}
 		&[type="checkbox"]:checked{
-			background-image: url('../images/form-elements/checkmark.svg');
+			background-image: url('../images/elements/checkmark.svg');
 			background-repeat: no-repeat;
 			background-position: center;
 		}
@@ -144,12 +144,12 @@
 			border-radius: 50%;
 			&:checked{
 				background-color: $siteBack;
-				background-image: url('../images/form-elements/radio-dot-red.svg');
+				background-image: url('../images/elements/radio-dot.svg');
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: 10px 10px;
 				&:hover,&:focus{
-					background-image: url('../images/form-elements/radio-dot-hover.svg');
+					background-image: url('../images/elements/radio-dot-hover.svg');
 				}
 			}
 		}

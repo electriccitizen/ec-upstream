@@ -185,4 +185,31 @@ $h6Sm: 2rem;
 		vertical-align: -3.2rem;
 		display: inline-block;
 	}
+}//end quote
+
+%materialSetup{
+	font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+@mixin materialIcon($icon){
+	content: '#{$icon}';
+	font-family: 'Material Icons';
+  @extend %materialSetup;
+}
+@mixin materialIconOutline($icon){
+	content: '#{$icon}';
+	font-family: 'Material Icons Outlined';
+  @extend %materialSetup;
 }

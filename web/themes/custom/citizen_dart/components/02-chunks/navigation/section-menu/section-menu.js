@@ -7,9 +7,9 @@ Drupal.behaviors.sectionMenu = {
 				e.preventDefault();
 		      if($(window).outerWidth() < 980){
 		        if($(this).is('.active-nav')){
-		          $(this).attr('aria-expanded', 'false').removeClass('active-nav').find('i').removeClass('fa-times-circle').addClass('fa-bars').closest('#section-menu-title').next('#section-menu-wrapper').attr('aria-hidden', 'true').slideUp(500);
+		          $(this).attr('aria-expanded', 'false').removeClass('active-nav').find('.material-icons').html('menu').closest('#section-menu-title').next('#section-menu-wrapper').attr('aria-hidden', 'true').slideUp(500);
 		        }else{
-		          $(this).attr('aria-expanded', 'true').addClass('active-nav').find('i').removeClass('fa-bars').addClass('fa-times-circle').closest('#section-menu-title').next('#section-menu-wrapper').attr('aria-hidden', 'false').slideDown(500);
+		          $(this).attr('aria-expanded', 'true').addClass('active-nav').find('.material-icons').html('close').closest('#section-menu-title').next('#section-menu-wrapper').attr('aria-hidden', 'false').slideDown(500);
 		        }
 		      }
 			});
