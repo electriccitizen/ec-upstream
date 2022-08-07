@@ -4,129 +4,45 @@
 
 @use '../../00-base/base' as *;
 
-/* PROFILE INFORMATION
-------------------------- */
-.block-name{
-	margin-bottom: $spaceSm;
-	text-align: center;
-	max-width: $desk;
-	position: relative;
-	@include desk{
-		@include clearFix;
-	}
-	.field.name{
-		@include safeFlex(column,nowrap,start,center);
-		@include desk{
-			@supports(display: grid){
-				display: grid;
-				grid-template-columns: 1fr 225px;
-				grid-template-rows: auto;
-				grid-template-areas:
-					"header sidebar"
-					"middle sidebar"
-					"bottom sidebar";
-			}
-		}
-	}
-	h1{
-		font-size: $h1Sm;
-		font-weight: $regular;
-		margin-bottom: $spaceSm;
-		@include safeFlexOrder(1);
-		@include tab{
-			font-size: 4.2rem;
-		}
-		@include desk{
-			@supports(display: grid){
-				grid-area: header;
-				grid-column: 1 / span 1;
-				padding-top: 3rem;
-				text-align: left;
-			}
-		}
-	}//end h1
-
-	.user-image-wrapper{
-		width: 225px;
-		height: 225px;
+.user-dashboard{
+	.field-user-image{
 		border-radius: 50%;
-		margin-bottom: $spaceSm;
 		overflow: hidden;
-		@include safeFlexOrder(2);
-		@include desk{
-			@supports(display: grid){
-				grid-area: sidebar;
-				grid-column: 2 / span 1;
-			}
+		@include onlyMobile{
+			max-width: 225px;
 		}
-		img{
-			height: 100%;
-			object-fit: cover;
-			object-position: center center;
+	}
+	.block-name{
+		margin-bottom: $spaceXxs;
+		h1{
+			margin-bottom: $spaceXs;
 		}
-	}//end user image wrapper
-
-	.user-info{
-		@include safeFlex(row,wrap,center,start);
-		@include bleed(padding,20px);
-		@include safeFlexOrder(3);
-		margin-bottom: $spaceMd;
-		@include desk{
-			@supports(display: grid){
-				grid-area: middle;
-				grid-column: 1 / span 1;
-				@include safeFlex(row,wrap,start,start);
-			}
-		}
-		& > div{
+	}
+	.user-actions{
+		margin-bottom: $elementSpace;
+		@include safeFlex(row,wrap,start,start);
+		@include bleed(padding,16px);
+		div{
+			display: inline-block;
 			&:not(:last-child){
 				position: relative;
 				&:after{
-					@include vertRule(right,70%,$baseText);
+					@include vertRule(right,80%,$borderRule);
 				}
 			}
 		}
-		.user-name{
-			span:not(:last-child){
-				margin-right: .25em;
-			}
+	}
+	.layout--tabs .layout__region--tabs{
+		.tab-item{
+			padding-top: 0;
 		}
-		.edit-link a{
-			text-decoration: none;
-			&:hover,&:focus{
-				text-decoration: underline;
-			}
-		}
-	}//user info
-
-	//action buttons
-	.action-buttons{
-		@include safeFlexOrder(4);
-		@include safeFlex(row,wrap,center,start);
-		@include bleed(margin,.8rem);
-		@include desk{
-			@supports(display: grid){
-				grid-area: bottom;
-				grid-column: 1 / span 1;
-				text-align: left;
-				@include safeFlex(row,wrap,start,start);
-			}
-		}
-		& > a{
-			width: 192px;
-			display: block;
-		}
-	}//end action buttons
-}//end username
+	}
+}//end user dashboard
 
 
 /* CONTENT VIEWS
 -------------------- */
-.user-dashboard .layout--tabs .layout__region--tabs{
-	.tab-item{
-		padding-top: 0;
-	}
-}
+
 .views-block.block-user-dashboard{
 	@include onlyMobile{
 		padding-top: 1rem;
