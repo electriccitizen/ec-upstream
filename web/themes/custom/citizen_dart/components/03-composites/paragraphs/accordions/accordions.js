@@ -25,34 +25,7 @@ Drupal.behaviors.accordion = {
             }, 510);
           }
         });
-
-        var controlId = $(this).find('.accordion-header a').attr('id');
-        if (controlId) {
-          $("a[href='#" + controlId + "']").click(function(e) {
-            e.preventDefault();
-            anchorOpen($($(this).attr('href')));
-          });
-        }
       });
-
-      var urlHash = window.location.hash.substr(0);
-      if (urlHash) {
-        $(urlHash).once('accordionscroll').each(function() {
-          $activeHeader = $(this).parent('.accordion-header');
-          if ($activeHeader) {
-            accordionOpen($activeHeader);
-          }
-        });
-      }
-
-      function anchorOpen($anchor) {
-        setTimeout(function(){
-          $('html, body').animate({
-            scrollTop: $anchor.offset().top - 100
-          });
-        }, 20);
-        accordionOpen($anchor.parent('.accordion-header'));
-      }
 
       function accordionOpen($activeHeader) {
         $('.accord-active').find('.field-long-text').slideUp(300).attr('aria-hidden', 'true').end().removeClass('accord-active').find('.accordion-header a').attr('aria-expanded', 'false');

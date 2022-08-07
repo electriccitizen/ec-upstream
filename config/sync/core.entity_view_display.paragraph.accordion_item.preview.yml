@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.accordion_item.field_accordion_header
-    - field.field.paragraph.accordion_item.field_anchor_link
     - field.field.paragraph.accordion_item.field_long_text
     - paragraphs.paragraphs_type.accordion_item
   module:
@@ -30,6 +29,5 @@ content:
     weight: 0
     region: content
 hidden:
-  field_anchor_link: true
   field_long_text: true
   search_api_excerpt: true

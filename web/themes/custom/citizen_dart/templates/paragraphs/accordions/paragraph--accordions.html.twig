@@ -51,10 +51,9 @@
 				'#text': accordion['#paragraph'].field_long_text.0.value,
 				'#format': accordion['#paragraph'].field_long_text.0.format
 			 } %}
-			{% set anchorId = accordion['#paragraph'].field_anchor_link.0 ? accordion['#paragraph'].field_anchor_link.0.value|clean_id : "" %}
 			<div class="accordion-item">
 				<div class="accordion-header">
-					<a href="#" role="button" id="{{ anchorId }}" aria-controls="{{ controlParent }}" aria-expanded="false">{{ accordion['#paragraph'].field_accordion_header.0.value }}</a>
+					<a href="#" role="button" aria-controls="{{ controlParent }}" aria-expanded="false">{{ accordion['#paragraph'].field_accordion_header.0.value }}</a>
 				</div>
 				<div class="field field-long-text text-long" id="{{ controlParent }}" aria-hidden="true">
 					{{ text }}

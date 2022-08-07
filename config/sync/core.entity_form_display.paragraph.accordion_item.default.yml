@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.accordion_item.field_accordion_header
-    - field.field.paragraph.accordion_item.field_anchor_link
     - field.field.paragraph.accordion_item.field_long_text
     - paragraphs.paragraphs_type.accordion_item
   module:
@@ -19,14 +18,6 @@ content:
   field_accordion_header:
     type: string_textfield
     weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_anchor_link:
-    type: string_textfield
-    weight: 1
     region: content
     settings:
       size: 60
