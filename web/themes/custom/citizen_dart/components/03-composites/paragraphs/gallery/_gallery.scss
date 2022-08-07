@@ -6,31 +6,23 @@
 @use '../../../02-chunks/media/media-mixins' as *;
 
 .paragraph--type--gallery{
+	max-width: 100%;
 	.lightbox{
 		.gallery-wrapper{
 			@include safeFlex(row,wrap,center,start);
-			@include bleed(padding,20px);
-			margin-bottom: -$spaceSm;
+			@include bleed(padding,32px);
+			margin-bottom: -$spaceMd;
 			//hide the content before lightbox
 			.featherlight-hidden {
 				display: none;
 			}
 			//Image lighbox
 			.image-gal {
-				margin-bottom: $spaceSm;
+				margin-bottom: $spaceMd;
 				overflow: hidden;
 				cursor: pointer;
 				width: 100%;
-				min-width: 240px;
-				@include smallTab{
-					width: 50%;
-				}
-				@include tab{
-					width: 33.33%;
-				}
-				@include desk{
-					width: 25%;
-				}
+				max-width: 308px;
 				img {
 					width: 100%;
 					@include imageHover;

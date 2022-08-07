@@ -6,18 +6,13 @@
 
 .paragraph--type--portals{
 	.field-portals{
-		margin-bottom: -$spaceLg;
+		margin-bottom: -$spaceMd;
 		@include safeFlex(row,wrap,center,start);
-		@include bleed(padding,40px);
+		@include bleed(padding,32px);
 		& > div{
-			margin-bottom: $spaceLg;
-			max-width: 440px;
-			@include tab{
-				width: 50%;
-			}
-			@include desk{
-				width: 33.33%;
-			}
+			margin-bottom: $spaceMd;
+			max-width: 308px;
+			width: 100%;
 		}
 		a{
 			text-decoration: none;

@@ -30,7 +30,7 @@
 		@include viewsMeta;
 	}
 	@include smallTab{
-		@include safeFlex(row,nowrap,start,start);
+		@include safeFlex(row,wrap,start,start);
 		.views-field-field-image{
 			@include safeFlexSize(0,0,340px);
 			padding-right: 40px;

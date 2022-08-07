@@ -37,11 +37,11 @@
  */
 #}
 
-{% extend 'paragraph.html.twig' %}
+{% extends 'paragraph.html.twig' %}
 	
 {% block widgetContent %}
-	{% set link = content.field_link_multi %}
-	{% set file = content.field_file_multi['#items'] %}
+	{% set links = content.field_link_multi %}
+	{% set files = content.field_file_multi['#items'] %}
 
 	{%- if links or files -%}
 		{% set count = 0 %}

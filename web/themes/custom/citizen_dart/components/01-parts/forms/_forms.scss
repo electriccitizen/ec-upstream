@@ -126,6 +126,9 @@ fieldset{
 	.form-actions{
 		padding-top: $spaceMd;
 		@include safeFlex(row,wrap,justify,start);
+		input[type=submit].button{
+			margin-bottom: 0;
+		}
 	}
 }//end webform submission form
 

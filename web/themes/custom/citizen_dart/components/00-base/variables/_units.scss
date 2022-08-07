@@ -114,7 +114,7 @@ $sectionGutter: 40px;
 }
 
 @mixin textConstrain{
-	.layout:not(.layout--twocol-sideleft):not(.layout--twocol-sideright) &{
+	.node-section > .layout.one-column &,.widget-section > .layout--onecol &{
 		max-width: $textMax;
 		@include auto;
 	}

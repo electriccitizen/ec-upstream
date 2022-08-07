@@ -37,7 +37,7 @@
  */
 #}
 
-{% extend 'paragraph.html.twig' %}
+{% extends 'paragraph.html.twig' %}
 
 {% block widgetContent %}
 	{% set size = content.field_image_size[0]['#markup'] %}
@@ -54,7 +54,9 @@
 		{% set image =  drupal_entity('media', paragraph.field_image.0.target_id, 'default') %}
 	{%- endif -%}
 
-	<div class="image-wrapper {{ size }}">
+	{% set maxWidth = image['#media'].field_media_image.0.width %}
+
+	<div class="image-wrapper {{ size }}"{% if size == 'default' %}style="max-width:{{ maxWidth }}px;"{% endif %}>
 		{% if content.field_link.0 %}
 			<a href="{{ content.field_link.0['#url'] }}" aria-label="Go to {{ content.field_link.0['#title'] }}">
 		{% endif %}

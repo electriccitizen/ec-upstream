@@ -7,23 +7,11 @@
 
 .paragraph--type--news-list{
 	@include textConstrain;
-	.views-row{
-		&:not(:last-child){
-			margin-bottom: $spaceSm;
-		}
-		.views-field-title{
-			font-size: 2.75rem;
-			font-weight: 700;
-			margin-bottom: $spaceXxs;
-		}
-		.views-field-field-dates,.views-field-created{
-			@include metaText;
-		}
-	}//end views row
 	.field-link{
 		margin-top: $spaceMd;
 		a{
 			@include button;
+			margin-bottom: 0;
 		}
 	}
 }//end news list widget
