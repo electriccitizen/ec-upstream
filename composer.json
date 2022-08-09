@@ -35,7 +35,6 @@
     "drupal/ctools": "^3.4",
     "drupal/default_content": "^2.0",
     "drupal/devel": "^4.0",
-    "drupal/easy_breadcrumb": "^2.0",
     "drupal/entity": "^1.1",
     "drupal/entity_embed": "^1.1",
     "drupal/entity_reference_revisions": "^1.8",
