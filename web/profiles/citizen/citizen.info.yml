@@ -28,7 +28,7 @@ dependencies:
   - datetime
   - default_content
   - dynamic_page_cache
-  - easy_breadcrumb
+#  - easy_breadcrumb
   - editor
   - embed
   - entity
@@ -58,6 +58,7 @@ dependencies:
   - media
   - media_library
   - menu_block
+  - menu_breadcrumb
   - menu_ui
   - metatag
   - metatag_open_graph

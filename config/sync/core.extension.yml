@@ -27,7 +27,6 @@ module:
   datetime: 0
   default_content: 0
   dynamic_page_cache: 0
-  easy_breadcrumb: 0
   editor: 0
   embed: 0
   entity: 0
@@ -59,6 +58,7 @@ module:
   media: 0
   media_library: 0
   menu_block: 0
+  menu_breadcrumb: 0
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
