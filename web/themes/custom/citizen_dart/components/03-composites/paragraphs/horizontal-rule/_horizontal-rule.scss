@@ -5,9 +5,10 @@
 @use '../../../00-base/base' as *;
 
 .paragraph--type--horizontal-rule{
-	@include textConstrain;
+	.text{
+		@include textConstrain;
+	}
 	hr{
 		border-top: 1px solid $borderRule;
 	}
 }//end hr widget
-
