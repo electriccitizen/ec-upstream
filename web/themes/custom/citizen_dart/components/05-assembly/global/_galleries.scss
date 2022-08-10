@@ -151,7 +151,7 @@
 		width: 15%;
 		min-width: 60px;
 		&:before {
-			content: '' !important;
+			content: '';
 			display: block;
 			position: absolute;
 			top: calc(50% - 10px);
@@ -159,11 +159,13 @@
 		&.slick-prev {
 			left: 0;
 			&:before{
-				@include triangle(left,24px,12px,$white);
 				left: 20px;
-				@include tab {
-					@include triangle(left,40px,20px,$white);
-				}
+				font-size: 30px;
+				font-family: 'Material Icons';
+				content: "arrow_back";
+				-webkit-font-feature-settings: 'liga' 1;
+				-moz-font-feature-settings: 'liga' 1;
+				font-feature-settings: 'liga' 1;
 			}
 			&:hover,&:focus{
 				&:before{
@@ -175,11 +177,13 @@
 		&.slick-next {
 			right: 0;
 			&:before{
-				@include triangle(right,24px,12px,$white);
 				right: 20px;
-				@include tab {
-					@include triangle(right,40px,20px,$white);
-				}
+				font-size: 30px;
+				font-family: 'Material Icons';
+				content: "arrow_forward";
+				-webkit-font-feature-settings: 'liga' 1;
+				-moz-font-feature-settings: 'liga' 1;
+				font-feature-settings: 'liga' 1;
 			}
 			&:hover,&:focus{
 				&:before{

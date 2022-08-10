@@ -23,6 +23,8 @@
 						autoplay: true,
 						autoplaySpeed: 5000
 					});
+					$('button.slick-prev').addClass('material-icons');
+					$('button.slick-next').addClass('material-icons');
 				});
 			});
 		}
