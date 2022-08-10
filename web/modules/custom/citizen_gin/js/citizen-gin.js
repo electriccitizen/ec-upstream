@@ -1,5 +1,0 @@
-(function($, Drupal) {
-
-
-
-})(jQuery, Drupal);

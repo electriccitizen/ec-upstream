@@ -57,3 +57,8 @@
 	background: #ccc;
 	color: #121212;
 }
+
+/* Hide Drupal's preview button */
+#edit-preview--2--gin-edit-form {
+  display: none;
+}
