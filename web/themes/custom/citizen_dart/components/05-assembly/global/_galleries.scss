@@ -68,10 +68,16 @@
 			min-width: 60px;
 			span {
 				display: block;
-				width: 12px;
-				height: 24px;
-				left: 10px;
-				@include materialIcon('arrow_back');
+		    font-size: 0;
+		    width: 0;
+		    left: auto;
+		    right: 90%;
+				&:before{
+					position: absolute;
+					top: 40px;
+					left: 10%;
+					@include materialIcon('arrow_back');
+				}
 			}
 			&:hover,&:focus {
 				background: $modalGalButtonBackHover;
@@ -91,10 +97,15 @@
 			min-width: 60px;
 			span {
 				display: block;
-				width: 12px;
-				height: 24px;
-				right: 10px;
-				@include materialIcon('arrow_forward');
+		    font-size: 0;
+		    width: 0;
+		    left: 70%;
+		    right: auto;
+				&:before{
+					position: absolute;
+					top: 40px;
+					@include materialIcon('arrow_forward');
+				}
 			}
 			&:hover,&:focus {
 				background: $modalGalButtonBackHover;
