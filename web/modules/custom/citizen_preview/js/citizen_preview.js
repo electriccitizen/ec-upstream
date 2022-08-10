@@ -4,9 +4,9 @@
 ----------------------- */
 Drupal.behaviors.previewAction = {
 	attach: function (context, settings) {
-    $("#edit-citizen-preview--2", context).once('has-preview').each(function(){
+    $('#edit-citizen-preview--2', context).once('has-preview').each(function(){
 			//trigger preview
-		  $(document).on('click',$(this),function(e) {
+		  $(document).on('click',$('#edit-citizen-preview--2'),function(e) {
 		    e.preventDefault();
 		    $('.responsive-preview-icon-active').trigger('click');
 		  });
