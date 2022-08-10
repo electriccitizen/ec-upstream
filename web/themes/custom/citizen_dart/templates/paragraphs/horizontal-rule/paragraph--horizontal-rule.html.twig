@@ -40,6 +40,12 @@
 {% extends 'paragraph.html.twig' %}
 
 {% block widgetContent %}
-	<hr>
+	{% if elements['#paragraph'].field_width.0.value == 'full' %}
+		{% set class = 'full' %}
+	{% elseif elements['#paragraph'].field_width.0.value == 'text' %}
+		{% set class = 'text' %}
+	{% endif %}
+	<div class="{{class}}">
+		<hr>
+	</div>
 {% endblock %}
-
