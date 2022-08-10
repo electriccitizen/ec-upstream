@@ -71,13 +71,7 @@
 				width: 12px;
 				height: 24px;
 				left: 10px;
-				font-size: 0;
-				@include triangle(left,24px,12px,$white);
-				@include tab{
-					width: 20px;
-					height: 40px;
-					@include triangle(left,40px,20px,$white);
-				}
+				@include materialIcon('arrow_back');
 			}
 			&:hover,&:focus {
 				background: $modalGalButtonBackHover;
@@ -100,13 +94,7 @@
 				width: 12px;
 				height: 24px;
 				right: 10px;
-				font-size: 0;
-				@include triangle(right,24px,12px,$white);
-				@include tab{
-					width: 20px;
-					height: 40px;
-					@include triangle(right,40px,20px,$white);
-				}
+				@include materialIcon('arrow_forward');
 			}
 			&:hover,&:focus {
 				background: $modalGalButtonBackHover;
@@ -160,12 +148,7 @@
 			left: 0;
 			&:before{
 				left: 20px;
-				font-size: 30px;
-				font-family: 'Material Icons';
-				content: "arrow_back";
-				-webkit-font-feature-settings: 'liga' 1;
-				-moz-font-feature-settings: 'liga' 1;
-				font-feature-settings: 'liga' 1;
+				@include materialIcon('arrow_back');
 			}
 			&:hover,&:focus{
 				&:before{
@@ -178,12 +161,7 @@
 			right: 0;
 			&:before{
 				right: 20px;
-				font-size: 30px;
-				font-family: 'Material Icons';
-				content: "arrow_forward";
-				-webkit-font-feature-settings: 'liga' 1;
-				-moz-font-feature-settings: 'liga' 1;
-				font-feature-settings: 'liga' 1;
+				@include materialIcon('arrow_forward');
 			}
 			&:hover,&:focus{
 				&:before{
