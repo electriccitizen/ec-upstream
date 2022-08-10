@@ -1,0 +1,9 @@
+citizen_gin:
+  version: 1.x
+  js:
+    js/citizen-gin.js: {}
+  css:
+    theme:
+      css/citizen-gin.css: {}
+  dependencies:
+    - core/jquery

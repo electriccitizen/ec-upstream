@@ -1,0 +1,5 @@
+name: Citizen Gin
+type: module
+description: Custom module for Gin admin theme
+core_version_requirement: ^9
+package: Citizen of Madison

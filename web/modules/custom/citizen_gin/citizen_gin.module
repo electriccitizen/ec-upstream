@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Contains citizen_gin.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function citizen_gin_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the citizen_gin module.
+    case 'help.page.citizen_gin':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom module for Gin admin theme') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function citizen_gin_page_attachments(array &$attachments) {
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    // Attach citizen-gin.css and citizen-gin.js to all admin pages.
+    $attachments['#attached']['library'][] = 'citizen_gin/citizen_gin';
+  }
+}
