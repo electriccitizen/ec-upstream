@@ -71,13 +71,7 @@
 				width: 12px;
 				height: 24px;
 				left: 10px;
-				font-size: 0;
-				@include triangle(left,24px,12px,$white);
-				@include tab{
-					width: 20px;
-					height: 40px;
-					@include triangle(left,40px,20px,$white);
-				}
+				@include materialIcon('arrow_back');
 			}
 			&:hover,&:focus {
 				background: $modalGalButtonBackHover;
@@ -100,13 +94,7 @@
 				width: 12px;
 				height: 24px;
 				right: 10px;
-				font-size: 0;
-				@include triangle(right,24px,12px,$white);
-				@include tab{
-					width: 20px;
-					height: 40px;
-					@include triangle(right,40px,20px,$white);
-				}
+				@include materialIcon('arrow_forward');
 			}
 			&:hover,&:focus {
 				background: $modalGalButtonBackHover;
@@ -151,7 +139,7 @@
 		width: 15%;
 		min-width: 60px;
 		&:before {
-			content: '' !important;
+			content: '';
 			display: block;
 			position: absolute;
 			top: calc(50% - 10px);
@@ -159,11 +147,8 @@
 		&.slick-prev {
 			left: 0;
 			&:before{
-				@include triangle(left,24px,12px,$white);
 				left: 20px;
-				@include tab {
-					@include triangle(left,40px,20px,$white);
-				}
+				@include materialIcon('arrow_back');
 			}
 			&:hover,&:focus{
 				&:before{
@@ -175,11 +160,8 @@
 		&.slick-next {
 			right: 0;
 			&:before{
-				@include triangle(right,24px,12px,$white);
 				right: 20px;
-				@include tab {
-					@include triangle(right,40px,20px,$white);
-				}
+				@include materialIcon('arrow_forward');
 			}
 			&:hover,&:focus{
 				&:before{
