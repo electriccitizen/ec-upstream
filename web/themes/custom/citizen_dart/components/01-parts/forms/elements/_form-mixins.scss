@@ -143,13 +143,14 @@
 		&[type="radio"]{
 			border-radius: 50%;
 			&:checked{
-				background-color: $siteBack;
+				background-color: $red;
 				background-image: url('../images/elements/radio-dot.svg');
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: 10px 10px;
 				&:hover,&:focus{
-					background-image: url('../images/elements/radio-dot-hover.svg');
+					// background-image: url('../images/elements/radio-dot-hover.svg');
+					background-color: $midGrey;
 				}
 			}
 		}
@@ -174,4 +175,3 @@
 	}
 
 } //end file upload mixin
-
