@@ -107,7 +107,8 @@
     "patches": {
       "drupal/core": {
         "db version": "https://raw.githubusercontent.com/stevector/drupal-9-project/master/patches/issue-2--mariadb-version.patch",
-        "Update module can get 'stuck' with 'no releases available', https://www.drupal.org/project/drupal/issues/2920285": "https://www.drupal.org/files/issues/2920285-update-status.patch"
+        "Update module can get 'stuck' with 'no releases available', https://www.drupal.org/project/drupal/issues/2920285": "https://www.drupal.org/files/issues/2920285-update-status.patch",
+        "Only move 'save' and 'cancel' buttons to modal action area": "https://git.drupalcode.org/project/drupal/-/merge_requests/222.patch"
       },
       "drupal/entity_embed": {
         "Array to string conversion for Media Image": "https://www.drupal.org/files/issues/2019-10-18/entity-embed-array-to-string--3069448-19.patch"
