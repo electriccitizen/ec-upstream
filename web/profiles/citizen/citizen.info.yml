@@ -28,7 +28,6 @@ dependencies:
   - datetime
   - default_content
   - dynamic_page_cache
-#  - easy_breadcrumb
   - editor
   - embed
   - entity
@@ -109,4 +108,4 @@ themes:
   - stable
   - seven
   - citizen_dart
-  - crane
+  - gin
