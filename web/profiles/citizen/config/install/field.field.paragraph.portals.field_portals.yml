@@ -23,9 +23,9 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       portal: portal
+    negate: 0
     target_bundles_drag_drop:
       accordion_item:
         weight: 21
@@ -67,8 +67,8 @@ settings:
         weight: 33
         enabled: false
       portal:
-        enabled: true
         weight: 34
+        enabled: true
       portals:
         weight: 20
         enabled: false

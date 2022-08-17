@@ -1,4 +1,4 @@
-uuid: af401c9e-1812-43a9-8be2-88f1f28b2365
+uuid: 9b1c7c7d-4db3-4887-9649-91d056739b10
 langcode: en
 status: true
 dependencies:
@@ -7,26 +7,29 @@ dependencies:
     - image.style.views_card_1_5x
     - image.style.views_card_2x
   theme:
-    - citizen_patterns
-_core:
-  default_config_hash: 04B-PMPpVpCat0r6qiD_J4LSALJxIgcHPHZpdu1JAow
+    - citizen_dart
 id: views_card
 label: 'Views Card'
 image_style_mappings:
   -
-    breakpoint_id: citizen_patterns.mobile
-    multiplier: 1.5x
-    image_mapping_type: image_style
-    image_mapping: views_card_1_5x
-  -
-    breakpoint_id: citizen_patterns.mobile
-    multiplier: 1x
     image_mapping_type: image_style
     image_mapping: views_card
+    breakpoint_id: citizen_dart.desk
+    multiplier: 1x
   -
-    breakpoint_id: citizen_patterns.mobile
-    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: views_card_1_5x
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: views_card
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 1x
+  -
     image_mapping_type: image_style
     image_mapping: views_card_2x
-breakpoint_group: citizen_patterns
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 2x
+breakpoint_group: citizen_dart
 fallback_image_style: views_card

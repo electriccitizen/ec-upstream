@@ -1,12 +1,10 @@
-uuid: 77583026-9d7f-4c91-b1a2-b895ea379509
+uuid: c7fda19f-2882-4671-a880-766e795788a8
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-_core:
-  default_config_hash: MD25rxSPklHVEzkRI1Q0LHjaMiMCN8MYB-zHkP1DOqY
 id: paragraph.field_bios_displays
 field_name: field_bios_displays
 entity_type: paragraph
@@ -14,8 +12,8 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: all_staff
-      label: 'All Staff'
+      value: all_bios
+      label: 'All Bios'
   allowed_values_function: ''
 module: options
 locked: false

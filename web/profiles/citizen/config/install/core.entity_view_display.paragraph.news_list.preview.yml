@@ -13,8 +13,8 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 _core:
   default_config_hash: 8qE2ZKxg_XYRQ77oZ8Xz7kMATi1zQk7jEjhDIjVA0Io
 id: paragraph.news_list.preview
@@ -23,20 +23,20 @@ bundle: news_list
 mode: preview
 content:
   field_category:
-    weight: 1
+    type: entity_reference_label
     label: inline
     settings:
       link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 1
     region: content
   field_widget_title:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
 hidden:
   field_limit_list: true

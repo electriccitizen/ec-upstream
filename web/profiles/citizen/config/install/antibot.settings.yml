@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: eW4EY8RUSAbppBE5XeniO6Cit9DHj-l92AYIznbwC90
 form_ids:
   - comment_comment_form
   - user_login_form
@@ -7,5 +9,3 @@ form_ids:
   - contact_message_personal_form
   - 'webform*'
 show_form_ids: false
-_core:
-  default_config_hash: eW4EY8RUSAbppBE5XeniO6Cit9DHj-l92AYIznbwC90

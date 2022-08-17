@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: SDj8Ufm8uZ_MN1Yy-tZV4vEgQOBCiw3Srry9-U_9QAk
 scheme_whitelist:
   - http
   - https
@@ -5,5 +7,3 @@ scheme_whitelist:
   - internal
 protocol_style: full
 local_paths: "http://newupstream.docksal/\r\nhttp://dev-newupstream.pantheonsite.io/"
-_core:
-  default_config_hash: SDj8Ufm8uZ_MN1Yy-tZV4vEgQOBCiw3Srry9-U_9QAk

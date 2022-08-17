@@ -8,6 +8,7 @@ id: dev
 label: Dev
 description: 'Config split for Dev and Multi-Dev.'
 weight: 0
+stackable: false
 storage: folder
 folder: ../config/dev
 module:
@@ -17,4 +18,5 @@ module:
   webform_devel: 0
 theme: {  }
 complete_list: {  }
-partial_list: {  }
+partial_list:
+  - system.logging

@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_category
     - node.type.event
-    - taxonomy.vocabulary.categories
+    - taxonomy.vocabulary.event_categories
 _core:
   default_config_hash: '-24WVJRDs6giH3dPoS1JD14n5YXDg23GSEVsG2PDL2w'
 id: node.event.field_category
@@ -22,7 +22,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      categories: categories
+      event_categories: event_categories
     sort:
       field: _none
       direction: asc

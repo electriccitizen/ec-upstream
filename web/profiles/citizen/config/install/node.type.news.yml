@@ -12,7 +12,7 @@ _core:
   default_config_hash: jsNhHUHRrqf4rxD0FQcQ1CFfc-1NcGFR1RV7N6FpaKo
 name: News
 type: news
-description: 'Add news nodes.'
+description: 'Add time sensitive news content.'
 help: ''
 new_revision: true
 preview_mode: 0

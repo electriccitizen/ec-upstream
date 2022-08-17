@@ -10,10 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    basic_html: basic_html
-    limited_html: '0'
-    restricted_html: '0'
-    plain_text: '0'
+    allowed_formats:
+      - basic_html
 _core:
   default_config_hash: rQGm1P3cT6LawGZhYnEHM21D0xMWwFujwQ-1jgCQmCg
 id: paragraph.accordion_item.field_long_text

@@ -14,6 +14,7 @@ dependencies:
     - user
 third_party_settings:
   layout_builder:
+    enabled: true
     sections:
       -
         layout_id: layout_onecol
@@ -26,38 +27,37 @@ third_party_settings:
             configuration:
               id: 'field_block:node:support_book:body'
               label_display: ''
+              context_mapping:
+                entity: layout_builder.entity
               formatter:
-                label: hidden
                 type: text_summary_or_trimmed
+                label: hidden
                 settings:
                   trim_length: 600
                 third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
             weight: 0
+            additional: {  }
           faa42bcf-1c0c-48f5-8b94-5bf77467109d:
             uuid: faa42bcf-1c0c-48f5-8b94-5bf77467109d
             region: content
             configuration:
+              id: 'extra_field_block:node:support_book:links'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'extra_field_block:node:support_book:links'
-            additional: {  }
             weight: 1
+            additional: {  }
           31f6daec-34f0-4ede-8b0d-b195550fb87e:
             uuid: 31f6daec-34f0-4ede-8b0d-b195550fb87e
             region: content
             configuration:
+              id: 'extra_field_block:node:support_book:links'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'extra_field_block:node:support_book:links'
-            additional: {  }
             weight: 2
+            additional: {  }
         third_party_settings: {  }
-    enabled: true
 _core:
   default_config_hash: 1nbP7ywMSA1yGctyqFcyGXmyI-VcfgQHI5WUHz8Vqmo
 id: node.support_book.teaser
@@ -66,18 +66,18 @@ bundle: support_book
 mode: teaser
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 101
     region: content
   links:
-    weight: 100
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 100
+    region: content
 hidden:
   addtoany: true
   field_paragraphs: true

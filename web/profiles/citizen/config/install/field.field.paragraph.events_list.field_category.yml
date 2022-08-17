@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_category
     - paragraphs.paragraphs_type.events_list
-    - taxonomy.vocabulary.categories
+    - taxonomy.vocabulary.event_categories
 _core:
   default_config_hash: DfAbo9qnsunOxEITJI3xmBZYvp8xSbt_cc-x91TVWGE
 id: paragraph.events_list.field_category
@@ -22,7 +22,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      categories: categories
+      event_categories: event_categories
     sort:
       field: name
       direction: asc

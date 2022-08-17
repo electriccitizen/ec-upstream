@@ -1,4 +1,4 @@
-uuid: 140c2be5-e3f2-49dd-ad00-a3a5689e3cc8
+uuid: dd569dc8-294e-4b05-9d93-fd8ab4694792
 langcode: en
 status: true
 dependencies:
@@ -7,26 +7,29 @@ dependencies:
     - image.style.thumbnail_cropped_1_5x
     - image.style.thumbnail_cropped_2x
   theme:
-    - citizen_patterns
-_core:
-  default_config_hash: Mn6dH7YmVB1yBwbvVrCFTzYPWEfbbPGmt3p3QyNzRBo
+    - citizen_dart
 id: thumbnail_cropped
 label: 'Thumbnail Cropped'
 image_style_mappings:
   -
-    breakpoint_id: citizen_patterns.mobile
-    multiplier: 1.5x
-    image_mapping_type: image_style
-    image_mapping: thumbnail_cropped_1_5x
-  -
-    breakpoint_id: citizen_patterns.mobile
-    multiplier: 1x
     image_mapping_type: image_style
     image_mapping: thumbnail_cropped
+    breakpoint_id: citizen_dart.desk
+    multiplier: 1x
   -
-    breakpoint_id: citizen_patterns.mobile
-    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: thumbnail_cropped_1_5x
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: thumbnail_cropped
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 1x
+  -
     image_mapping_type: image_style
     image_mapping: thumbnail_cropped_2x
-breakpoint_group: citizen_patterns
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 2x
+breakpoint_group: citizen_dart
 fallback_image_style: thumbnail_cropped

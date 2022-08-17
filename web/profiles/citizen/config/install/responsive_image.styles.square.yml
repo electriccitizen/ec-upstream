@@ -1,4 +1,4 @@
-uuid: ec80ab15-997b-4d33-8bef-9f9010a167aa
+uuid: e09ad8bc-a23a-4ba8-bd6a-8efef309a969
 langcode: en
 status: true
 dependencies:
@@ -7,26 +7,29 @@ dependencies:
     - image.style.360x360_1_5x
     - image.style.360x360_2x
   theme:
-    - citizen_patterns
-_core:
-  default_config_hash: jPfwtWlyexXgZiWAIeirrIsw3WQaPpbrLTPO5AA4mS4
+    - citizen_dart
 id: square
 label: Square
 image_style_mappings:
   -
-    breakpoint_id: citizen_patterns.mobile
-    multiplier: 1.5x
-    image_mapping_type: image_style
-    image_mapping: 360x360_1_5x
-  -
-    breakpoint_id: citizen_patterns.mobile
-    multiplier: 1x
     image_mapping_type: image_style
     image_mapping: 360x360
+    breakpoint_id: citizen_dart.desk
+    multiplier: 1x
   -
-    breakpoint_id: citizen_patterns.mobile
-    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: 360x360_1_5x
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 1.5x
+  -
+    image_mapping_type: image_style
+    image_mapping: 360x360
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 1x
+  -
     image_mapping_type: image_style
     image_mapping: 360x360_2x
-breakpoint_group: citizen_patterns
+    breakpoint_id: citizen_dart.mobile
+    multiplier: 2x
+breakpoint_group: citizen_dart
 fallback_image_style: 360x360
