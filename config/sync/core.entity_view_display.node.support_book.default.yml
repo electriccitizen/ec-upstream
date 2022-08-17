@@ -128,8 +128,8 @@ third_party_settings:
       allowed_layouts:
         - layout_onecol
         - two_column_sidebar_left
-      blacklisted_blocks: {  }
-      whitelisted_blocks:
+      denylisted_blocks: {  }
+      allowlisted_blocks:
         Menus:
           - 'system_menu_block:support-book'
           - 'menu_block:support-book'
