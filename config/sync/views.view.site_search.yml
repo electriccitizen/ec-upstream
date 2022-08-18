@@ -203,7 +203,7 @@ display:
         type: none
         options: {  }
       cache:
-        type: none
+        type: tag
         options: {  }
       empty:
         area:
@@ -299,7 +299,7 @@ display:
       row:
         type: fields
       query:
-        type: search_api_query
+        type: views_query
         options:
           bypass_access: false
           skip_access: false

@@ -71,6 +71,8 @@ settings:
           items:
             - Styles
   plugins:
+    language:
+      language_list: un
     stylescombo:
       styles: "span.highlight|Highlight\r\ndiv.warning|Warning\r\nsmall|Small\r\ndiv.button|Button"
     drupallink:

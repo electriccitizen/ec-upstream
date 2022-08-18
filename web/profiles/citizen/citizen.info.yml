@@ -52,6 +52,7 @@ dependencies:
   - layout_builder
   - layout_builder_restrictions
   - layout_discovery
+  - layout_paragraphs
   - link
   - linkit
   - media
