@@ -1,16 +1,16 @@
-uuid: afaf4fa1-69a0-4c9a-8661-c83f9f2d7581
+uuid: e5a9ccc9-ab19-4768-9d51-83dd89d21d5e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_bio_category
+    - field.storage.paragraph.field_bios_category
     - paragraphs.paragraphs_type.content_placer
     - taxonomy.vocabulary.bios_categories
-id: paragraph.content_placer.field_bio_category
-field_name: field_bio_category
+id: paragraph.content_placer.field_bios_category
+field_name: field_bios_category
 entity_type: paragraph
 bundle: content_placer
-label: 'Bio Category'
+label: 'Bios Category'
 description: ''
 required: false
 translatable: false

@@ -3,11 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.content_placer.field_bio_category
-    - field.field.paragraph.content_placer.field_bio_list_type
+    - field.field.paragraph.content_placer.field_bios_category
+    - field.field.paragraph.content_placer.field_bios_list_type
     - field.field.paragraph.content_placer.field_content_type
-    - field.field.paragraph.content_placer.field_event_category
-    - field.field.paragraph.content_placer.field_event_list_type
+    - field.field.paragraph.content_placer.field_events_category
+    - field.field.paragraph.content_placer.field_events_list_type
     - field.field.paragraph.content_placer.field_limit_list
     - field.field.paragraph.content_placer.field_link
     - field.field.paragraph.content_placer.field_news_category
@@ -22,19 +22,20 @@ targetEntityType: paragraph
 bundle: content_placer
 mode: default
 content:
-  field_bio_category:
-    type: entity_reference_entity_id
-    label: hidden
-    settings: {  }
+  field_bios_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 11
     region: content
-  field_bio_list_type:
+  field_bios_list_type:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 11
+    weight: 5
     region: content
   field_content_type:
     type: list_key
@@ -43,19 +44,20 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_event_category:
-    type: entity_reference_entity_id
-    label: hidden
-    settings: {  }
+  field_events_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 9
+    weight: 10
     region: content
-  field_event_list_type:
+  field_events_list_type:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 12
+    weight: 6
     region: content
   field_limit_list:
     type: number_integer
@@ -64,7 +66,7 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_link:
     type: link
@@ -76,21 +78,21 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_news_category:
     type: entity_reference_entity_id
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 8
+    weight: 7
     region: content
   field_news_list_type:
     type: list_key
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_widget_title:
     type: string
@@ -98,7 +100,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
 hidden:
   search_api_excerpt: true

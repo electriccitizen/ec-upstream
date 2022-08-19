@@ -1,12 +1,12 @@
-uuid: c4d9a8a8-c53b-427b-a4ec-00ac3f60efe5
+uuid: 711b919d-fa7b-4df2-a1fe-ed944ac972f5
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
     - taxonomy
-id: paragraph.field_bio_category
-field_name: field_bio_category
+id: paragraph.field_bios_category
+field_name: field_bios_category
 entity_type: paragraph
 type: entity_reference
 settings:

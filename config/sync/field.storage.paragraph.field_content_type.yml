@@ -12,11 +12,11 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: bio
-      label: Bio
+      value: bios
+      label: Bios
     -
-      value: event
-      label: Event
+      value: events
+      label: Events
     -
       value: news
       label: News

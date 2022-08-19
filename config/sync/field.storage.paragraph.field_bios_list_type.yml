@@ -1,12 +1,12 @@
-uuid: e0feb707-f5eb-444d-85cf-26b9002f7f1d
+uuid: 90b2322d-4d59-4aa1-a96a-441b32e81ae3
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.field_bio_list_type
-field_name: field_bio_list_type
+id: paragraph.field_bios_list_type
+field_name: field_bios_list_type
 entity_type: paragraph
 type: list_string
 settings:

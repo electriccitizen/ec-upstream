@@ -38,22 +38,24 @@
 #}
 
 {% block widgetContent %}
+	{# get the values we need #}
 	{% set contentType = content.field_content_type.0['#markup'] %}
-	{% if contentType == 'event' %}
+	{% if contentType == 'events' %}
 		{% set listType = content.field_event_list_type.0['#markup'] %}
 	{% elseif contentType == 'news' %}
 		{% set listType = content.field_news_list_type.0['#markup'] %}
-	{% elseif contentType == 'bio' %}
+	{% elseif contentType == 'bios' %}
 		{% set listType = content.field_bio_list_type.0['#markup'] %}
 	{% endif %}
 	<div class="view-widget widget-{{ contentType }} {{ listType }}">
-	  {% if listType == 'custom' and contentType == 'event' %}
+	  {# if a custom list, display the correct list view based on the values above. #}
+	  {% if listType == 'custom'%}
 	  	{% if paragraph.id.value %}
-			{% if drupal_view('events','events_list', paragraph.id.value)|render|striptags|trim|length > 0 %}
+			{% if drupal_view(contentType,contentType~'_list', paragraph.id.value)|render|striptags|trim|length > 0 %}
 				{% embed 'paragraph.html.twig' %}
 					{% block widgetContent %}
 						<div class="view-widget widget-event-list">
-				  			{{ drupal_view('events','events_list', paragraph.id.value) }}
+				  			{{ drupal_view(contentType,contentType~'_list', paragraph.id.value) }}
 						</div>
 						{{ content.field_link }}			
 					{% endblock %}	
@@ -62,36 +64,7 @@
 		{% else %}
 			<p><strong>Events list widgets are not available in preview until the node is saved after they have been added.</strong></p>
 		{% endif %}
-	  {% elseif listType == 'custom' and contentType == 'news' %}
-	  	{% if paragraph.id.value %}
-			{% if drupal_view('news','news_list', paragraph.id.value)|render|striptags|trim|length > 0 %}
-				{% embed 'paragraph.html.twig' %}
-					{% block widgetContent %}
-						<div class="view-widget widget-news-list">
-				  			{{ drupal_view('news','news_list', paragraph.id.value) }}
-						</div>
-						{{ content.field_link }}			
-					{% endblock %}	
-				{% endembed %}
-			{% endif %}
-		{% else %}
-			<p><strong>News list widgets are not available in preview until the node is saved after they have been added.</strong></p>
-		{% endif %}
-	  {% elseif listType == 'custom' and contentType == 'bio' %}
-	  	{% if paragraph.id.value %}
-			{% if drupal_view('news','news_list', paragraph.id.value)|render|striptags|trim|length > 0 %}
-				{% embed 'paragraph.html.twig' %}
-					{% block widgetContent %}
-						<div class="view-widget widget-bio-list">
-				  			{{ drupal_view('bios','bios_list', paragraph.id.value) }}
-						</div>
-						{{ content.field_link }}			
-					{% endblock %}	
-				{% endembed %}
-			{% endif %}
-		{% else %}
-			<p><strong>Bios list widgets are not available in preview until the node is saved after they have been added.</strong></p>
-		{% endif %}
+	  {# otherwise, just display the view that was selected #}
 	  {% else %}
 	  	{{ drupal_view(contentType,listType) }}
 		{{ content.field_link }}

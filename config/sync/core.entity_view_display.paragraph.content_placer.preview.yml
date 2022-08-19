@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.content_placer.field_bio_category
-    - field.field.paragraph.content_placer.field_bio_list_type
+    - field.field.paragraph.content_placer.field_bios_category
+    - field.field.paragraph.content_placer.field_bios_list_type
     - field.field.paragraph.content_placer.field_content_type
-    - field.field.paragraph.content_placer.field_event_category
-    - field.field.paragraph.content_placer.field_event_list_type
+    - field.field.paragraph.content_placer.field_events_category
+    - field.field.paragraph.content_placer.field_events_list_type
     - field.field.paragraph.content_placer.field_limit_list
     - field.field.paragraph.content_placer.field_link
     - field.field.paragraph.content_placer.field_news_category
@@ -43,10 +43,10 @@ content:
     weight: 1
     region: content
 hidden:
-  field_bio_category: true
-  field_bio_list_type: true
-  field_event_category: true
-  field_event_list_type: true
+  field_bios_category: true
+  field_bios_list_type: true
+  field_events_category: true
+  field_events_list_type: true
   field_limit_list: true
   field_link: true
   field_news_category: true
