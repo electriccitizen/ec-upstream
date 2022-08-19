@@ -12,7 +12,7 @@
 				//when the content type select is changed
 				$(this).find('select').change(function(){
 					//get the option
-					var chosen = $(this).find("option:selected").val().replace(/_/g, '-');
+					var chosen = $(this).find("option:selected").text().toLowerCase().replace(/_/g, '-');
 					//hide any options that are showing
 					$('.field--name-field-content-type').nextAll('.field--widget-options-select').hide();
 					//and show the list type field for the selected content type
@@ -23,7 +23,7 @@
 				//when one of the list type fields selects are changed
 				$(this).find('select').change(function(){
 					//get the content type again
-					var chosen = $('.field--name-field-content-type select').find("option:selected").val().replace(/_/g, '-');
+					var chosen = $('.field--name-field-content-type select').find("option:selected").text().toLowerCase().replace(/_/g, '-');
 					//get the list type
 					var typeChosen = $(this).find("option:selected").val().replace(/_/g, '-');
 					
@@ -37,7 +37,7 @@
 			});
 			//on page load, if the content type select has a value, show the appropriate field
 			if($('.field--name-field-content-type select').val()){
-				var chosen = $('.field--name-field-content-type select').find("option:selected").val().replace(/_/g, '-');
+				var chosen = $('.field--name-field-content-type select').find("option:selected").text().toLowerCase().replace(/_/g, '-');
 				$('.field--name-field-content-type').siblings('.field--name-field-' + chosen + '-list-type').show();
 				if($('.field--name-field-' + chosen + '-list-type select').val()){
 					var typeChosen = $('.field--name-field-' + chosen + '-list-type select').val().replace(/_/g, '-');

@@ -17,7 +17,6 @@ dependencies:
     - paragraphs.paragraphs_type.content_placer
   module:
     - layout_builder
-    - options
 third_party_settings:
   layout_builder:
     enabled: false
@@ -28,11 +27,12 @@ bundle: content_placer
 mode: preview
 content:
   field_content_type:
-    type: list_default
+    type: entity_reference_label
     label: inline
-    settings: {  }
+    settings:
+      link: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_widget_title:
     type: string
@@ -40,7 +40,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
   field_bios_category: true

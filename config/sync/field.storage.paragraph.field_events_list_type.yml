@@ -12,7 +12,7 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: all_events
+      value: all_upcoming_events
       label: 'All Events'
     -
       value: custom

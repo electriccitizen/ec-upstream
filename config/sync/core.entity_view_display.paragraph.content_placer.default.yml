@@ -28,7 +28,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 11
+    weight: 9
     region: content
   field_bios_list_type:
     type: list_key
@@ -38,11 +38,12 @@ content:
     weight: 5
     region: content
   field_content_type:
-    type: list_key
+    type: entity_reference_label
     label: hidden
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_events_category:
     type: entity_reference_label
@@ -50,7 +51,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 8
     region: content
   field_events_list_type:
     type: list_key
@@ -100,7 +101,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
   search_api_excerpt: true

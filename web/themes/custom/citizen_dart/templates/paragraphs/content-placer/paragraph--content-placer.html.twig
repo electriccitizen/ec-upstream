@@ -39,7 +39,7 @@
 
 {% block widgetContent %}
 	{# get the values we need #}
-	{% set contentType = content.field_content_type.0['#markup'] %}
+	{% set contentType = content.field_content_type.0['#title']|lower %}
 	{% if contentType == 'events' %}
 		{% set listType = content.field_event_list_type.0['#markup'] %}
 	{% elseif contentType == 'news' %}

@@ -1,27 +1,17 @@
-uuid: f410f65e-8650-46ab-b3e8-8dc0c1bf0e6d
+uuid: 79d74a82-47c1-456f-aa8e-fc38305e70d2
 langcode: en
 status: true
 dependencies:
   module:
-    - options
     - paragraphs
+    - taxonomy
 id: paragraph.field_content_type
 field_name: field_content_type
 entity_type: paragraph
-type: list_string
+type: entity_reference
 settings:
-  allowed_values:
-    -
-      value: bios
-      label: Bios
-    -
-      value: events
-      label: Events
-    -
-      value: news
-      label: News
-  allowed_values_function: ''
-module: options
+  target_type: taxonomy_term
+module: core
 locked: false
 cardinality: 1
 translatable: true
