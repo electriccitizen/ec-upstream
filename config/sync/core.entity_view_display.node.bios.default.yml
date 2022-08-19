@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.bios.body
     - field.field.node.bios.field_bio_order
+    - field.field.node.bios.field_category
     - field.field.node.bios.field_email
     - field.field.node.bios.field_first_name
     - field.field.node.bios.field_image
@@ -166,10 +167,6 @@ third_party_settings:
     entity_view_mode_restriction:
       allowed_layouts:
         - layout_onecol
-      blacklisted_blocks: {  }
-      whitelisted_blocks:
-        System:
-          - system_breadcrumb_block
       restricted_categories:
         - '@entity'
         - 'Chaos Tools'
@@ -189,6 +186,10 @@ third_party_settings:
         - User
         - Webform
         - core
+      blacklisted_blocks: {  }
+      whitelisted_blocks:
+        System:
+          - system_breadcrumb_block
 _core:
   default_config_hash: 5B6kXAAmFMzavs5iFwC15pBNWviSgJjF6pIjT8MSlKI
 id: node.bios.default
@@ -211,6 +212,14 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 108
+    region: content
+  field_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 109
     region: content
   field_email:
     type: basic_string

@@ -1,0 +1,27 @@
+uuid: 59f1f6eb-4963-4234-8be4-8406dc9a7d41
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_event_list_type
+field_name: field_event_list_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: all_events
+      label: 'All Events'
+    -
+      value: custom
+      label: Custom
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

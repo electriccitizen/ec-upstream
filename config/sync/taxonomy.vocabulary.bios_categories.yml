@@ -1,0 +1,8 @@
+uuid: ec8124d7-f5c5-43d7-ba26-077506624638
+langcode: en
+status: true
+dependencies: {  }
+name: 'Bios Categories'
+vid: bios_categories
+description: ''
+weight: 0

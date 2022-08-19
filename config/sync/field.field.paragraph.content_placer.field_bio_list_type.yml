@@ -1,0 +1,21 @@
+uuid: 50db47f5-bf93-47cc-856e-b5849e3bbe5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bio_list_type
+    - paragraphs.paragraphs_type.content_placer
+  module:
+    - options
+id: paragraph.content_placer.field_bio_list_type
+field_name: field_bio_list_type
+entity_type: paragraph
+bundle: content_placer
+label: 'Bio List Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

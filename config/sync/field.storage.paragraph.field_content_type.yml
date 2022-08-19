@@ -1,0 +1,30 @@
+uuid: f410f65e-8650-46ab-b3e8-8dc0c1bf0e6d
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_content_type
+field_name: field_content_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: bio
+      label: Bio
+    -
+      value: event
+      label: Event
+    -
+      value: news
+      label: News
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

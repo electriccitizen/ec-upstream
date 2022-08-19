@@ -1010,7 +1010,7 @@ display:
           id: id
           table: paragraphs_item_field_data
           field: id
-          relationship: reverse__paragraph__field_category
+          relationship: reverse__paragraph__field_news_category
           group_type: group
           admin_label: ''
           entity_type: paragraph
@@ -1108,13 +1108,13 @@ display:
           admin_label: 'field_category: Taxonomy term'
           plugin_id: standard
           required: false
-        reverse__paragraph__field_category:
-          id: reverse__paragraph__field_category
+        reverse__paragraph__field_news_category:
+          id: reverse__paragraph__field_news_category
           table: taxonomy_term_field_data
-          field: reverse__paragraph__field_category
+          field: reverse__paragraph__field_news_category
           relationship: field_category
           group_type: group
-          admin_label: field_category
+          admin_label: field_news_category
           entity_type: taxonomy_term
           plugin_id: entity_reverse
           required: false
