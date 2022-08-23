@@ -1,18 +1,16 @@
-uuid: fd3b09d2-6acb-41ad-a693-067d3d511931
+uuid: 35bd2db4-aa12-4a45-afda-53f7d0fc92e3
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_link
-    - paragraphs.paragraphs_type.news_list
+    - paragraphs.paragraphs_type.content_placer
   module:
     - link
-_core:
-  default_config_hash: m2I-3KeOji6lcK7OhRRT0uy2lZ1LynlSxa3gKwx8pAQ
-id: paragraph.news_list.field_link
+id: paragraph.content_placer.field_link
 field_name: field_link
 entity_type: paragraph
-bundle: news_list
+bundle: content_placer
 label: 'More Link'
 description: ''
 required: false

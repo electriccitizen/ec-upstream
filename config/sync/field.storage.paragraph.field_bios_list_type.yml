@@ -1,27 +1,19 @@
-uuid: 2f9950d7-34ac-41a8-a1f2-4141928edd4a
+uuid: 90b2322d-4d59-4aa1-a96a-441b32e81ae3
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-_core:
-  default_config_hash: 56Nyslu7Kh3iCNn3Ugwg8WycWkrNQqtSNX5WZSG9qJA
-id: paragraph.field_view
-field_name: field_view
+id: paragraph.field_bios_list_type
+field_name: field_bios_list_type
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: events
-      label: Events
-    -
-      value: news
-      label: News
-    -
-      value: bios
-      label: Bios
+      value: all_bios
+      label: 'All Bios'
   allowed_values_function: ''
 module: options
 locked: false

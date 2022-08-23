@@ -1,14 +1,12 @@
-uuid: 575b86d7-04c7-440f-9d35-cd07e05b22dd
+uuid: 79d74a82-47c1-456f-aa8e-fc38305e70d2
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
     - taxonomy
-_core:
-  default_config_hash: 3A9gX-b5MgTimJCygL1kE_LWxT0v9h3qIHziwf1FHWY
-id: paragraph.field_category
-field_name: field_category
+id: paragraph.field_content_type
+field_name: field_content_type
 entity_type: paragraph
 type: entity_reference
 settings:

@@ -1,21 +1,22 @@
-uuid: f090ac66-9263-4156-84d9-b0f7ab7ff620
+uuid: a4ab69e4-709c-4136-bfbe-6bdfdc290437
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-_core:
-  default_config_hash: Xau_PkKczJilgfxh7Uc8VDuxRhNxmWy848jxg7XnECg
-id: paragraph.field_events_displays
-field_name: field_events_displays
+id: paragraph.field_events_list_type
+field_name: field_events_list_type
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
       value: all_upcoming_events
-      label: 'All Upcoming Events'
+      label: 'All Events'
+    -
+      value: custom
+      label: Custom
   allowed_values_function: ''
 module: options
 locked: false

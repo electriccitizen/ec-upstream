@@ -242,6 +242,22 @@ function citizen_custom_views_pre_view($view, $display_id, &$args) {
         $view->display_handler->setOption('pager', $pager);
       }
     }
+	if (($view->element['#name'] === 'bios') && ($view->current_display === 'bios_list')) {
+      $filters = $view->display_handler->getOption('filters');
+      $paragraph_id = $view->args[0];
+      if ($paragraph_id){
+        $paragraph = \Drupal\paragraphs\Entity\Paragraph::load($paragraph_id);
+        if(isset($paragraph->field_limit_list[0])){
+          $per_page = $paragraph->field_limit_list[0]->value;
+          $pager = $view->display_handler->getOption('pager');
+          $pager['type'] = 'some';
+          $view->setItemsPerPage($per_page);
+        } else {
+          $pager['type'] = 'none';
+        }
+        $view->display_handler->setOption('pager', $pager);
+      }
+    }
   }
 }
 

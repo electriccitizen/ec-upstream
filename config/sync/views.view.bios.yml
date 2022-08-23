@@ -8,6 +8,7 @@ dependencies:
     - node.type.bios
   module:
     - node
+    - taxonomy
     - user
 _core:
   default_config_hash: 3ycpVvTNgbzBcmj1Md6ICUCn9BIpeWapPAlO7M7WDhI
