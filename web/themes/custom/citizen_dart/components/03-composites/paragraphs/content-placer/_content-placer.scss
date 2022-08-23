@@ -1,13 +1,16 @@
 /* ===============
-  VIEW PLACER WIDGET
+  CONTENT PLACER WIDGET
 ================= */
 
 @use '../../../00-base/base' as *;
 @use '../../../01-parts/buttons/button-mixins' as *;
 
-.paragraph--type--view-placer{
-	.wrapper{
-		max-width: 100% !important;
+.paragraph--type--content-placer{
+	&.custom-views-list{
+		@include textConstrain;
+	}
+	.field-widget-title{
+		text-align: left;
 	}
 	.field-link{
 		margin-top: $spaceLg;

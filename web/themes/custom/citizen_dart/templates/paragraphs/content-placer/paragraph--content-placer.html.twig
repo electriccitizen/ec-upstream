@@ -37,37 +37,34 @@
  */
 #}
 
-{% block widgetContent %}
-	{# get the values we need #}
-	{% set contentType = content.field_content_type.0['#title']|lower %}
-	{% if contentType == 'events' %}
-		{% set listType = content.field_event_list_type.0['#markup'] %}
-	{% elseif contentType == 'news' %}
-		{% set listType = content.field_news_list_type.0['#markup'] %}
-	{% elseif contentType == 'bios' %}
-		{% set listType = content.field_bio_list_type.0['#markup'] %}
-	{% endif %}
-	<div class="view-widget widget-{{ contentType }} {{ listType }}">
-	  {# if a custom list, display the correct list view based on the values above. #}
-	  {% if listType == 'custom'%}
-	  	{% if paragraph.id.value %}
-			{% if drupal_view(contentType,contentType~'_list', paragraph.id.value)|render|striptags|trim|length > 0 %}
-				{% embed 'paragraph.html.twig' %}
-					{% block widgetContent %}
-						<div class="view-widget widget-event-list">
-				  			{{ drupal_view(contentType,contentType~'_list', paragraph.id.value) }}
-						</div>
-						{{ content.field_link }}			
-					{% endblock %}	
-				{% endembed %}
-			{% endif %}
-		{% else %}
-			<p><strong>Events list widgets are not available in preview until the node is saved after they have been added.</strong></p>
+
+{% set contentType = content.field_content_type.0['#title']|lower %}
+{% set listType = attribute(content, "field_" ~ contentType ~ "_list_type").0["#markup"] %}
+
+{# check for a paragraph id #}
+{% if paragraph.id.value %}
+	{# check if we need a custom list #}
+  {% if listType == 'custom'%}
+  	{# render the custom list view only if there are results form the views pre_render_hook #}
+		{% if drupal_view(contentType,contentType~'_list', paragraph.id.value)|render|striptags|trim|length > 0 %}
+			<div class="paragraph paragraph--type--content-placer content-{{ contentType ~ '-list'}} custom-views-list" data-quickedit-entity-id="paragraph/{{ paragraph.id.value }}">
+				{{ content.field_widget_title }}
+				{{ drupal_view(contentType,contentType~'_list', paragraph.id.value) }}
+				{{ content.field_link }}
+			</div>
 		{% endif %}
-	  {# otherwise, just display the view that was selected #}
-	  {% else %}
-	  	{{ drupal_view(contentType,listType) }}
-		{{ content.field_link }}
+	{# if not just render the view using the view and display selected but only if there is something to render #}
+  {% else %}
+  	{% if drupal_view(contentType,listType)|render|striptags|trim|length > 0 %}
+  		<div class="paragraph paragraph--type--content-placer content-{{ contentType }}-{{ listType }}" data-quickedit-entity-id="paragraph/{{ paragraph.id.value }}>
+	  		{{ content.field_widget_title }}
+		  	{{ drupal_view(contentType,listType) }} 
+		  	{{ content.field_link }}
+		  </div>
 	  {% endif %}
-	</div>
-{% endblock %}
+  {% endif %}
+{# if no idea because the node has not yet been saved, spit out a preview message #}
+{% else %}
+	<p><strong>Events list widgets are not available in preview until the node is saved after they have been added.</strong></p>
+{% endif %}
+

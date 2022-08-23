@@ -215,6 +215,22 @@ function citizen_custom_views_pre_view($view, $display_id, &$args) {
       $paragraph_id = $view->args[0];
       if ($paragraph_id){
         $paragraph = \Drupal\paragraphs\Entity\Paragraph::load($paragraph_id);
+        //unset or alter categories filter
+        if($paragraph->field_events_category[0]){
+          //make an array out of the category set in the paragraph
+          $categories = [];
+          foreach ($paragraph->field_events_category as $delta => $category) {
+            $categories[] = $category->target_id;
+          }
+          // replace the category_tid filter with the paragraph category
+          $filters['field_category_target_id']['value'] = $categories;
+        } else {
+          //if the category field is not used, then unset the category filter
+          if ($filters['field_category_target_id']) {
+            unset($filters['field_category_target_id']);
+          }
+        }//end category filter
+        $view->display_handler->setOption('filters', $filters);
         if(isset($paragraph->field_limit_list[0])){
           $per_page = $paragraph->field_limit_list[0]->value;
           $pager = $view->display_handler->getOption('pager');
@@ -231,22 +247,22 @@ function citizen_custom_views_pre_view($view, $display_id, &$args) {
       $paragraph_id = $view->args[0];
       if ($paragraph_id){
         $paragraph = \Drupal\paragraphs\Entity\Paragraph::load($paragraph_id);
-        if(isset($paragraph->field_limit_list[0])){
-          $per_page = $paragraph->field_limit_list[0]->value;
-          $pager = $view->display_handler->getOption('pager');
-          $pager['type'] = 'some';
-          $view->setItemsPerPage($per_page);
+        //unset or alter categories filter
+        if($paragraph->field_news_category[0]){
+          //make an array out of the category set in the paragraph
+          $categories = [];
+          foreach ($paragraph->field_news_category as $delta => $category) {
+            $categories[] = $category->target_id;
+          }
+          // replace the category_tid filter with the paragraph category
+          $filters['field_category_target_id']['value'] = $categories;
         } else {
-          $pager['type'] = 'none';
-        }
-        $view->display_handler->setOption('pager', $pager);
-      }
-    }
-	if (($view->element['#name'] === 'bios') && ($view->current_display === 'bios_list')) {
-      $filters = $view->display_handler->getOption('filters');
-      $paragraph_id = $view->args[0];
-      if ($paragraph_id){
-        $paragraph = \Drupal\paragraphs\Entity\Paragraph::load($paragraph_id);
+          //if the category field is not used, then unset the category filter
+          if ($filters['field_category_target_id']) {
+            unset($filters['field_category_target_id']);
+          }
+        }//end category filter
+        $view->display_handler->setOption('filters', $filters);
         if(isset($paragraph->field_limit_list[0])){
           $per_page = $paragraph->field_limit_list[0]->value;
           $pager = $view->display_handler->getOption('pager');

@@ -63,7 +63,7 @@ h2.section-title{
 	font-size: 3rem;
 	max-width: $textMax + 40px;
 }
-.widget-title{
+.widget-title,.field-widget-title{
 	@include blockTitle;
 	letter-spacing: 0;
 	text-transform: none;
