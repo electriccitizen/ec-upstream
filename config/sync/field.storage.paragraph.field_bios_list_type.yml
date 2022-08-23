@@ -14,9 +14,6 @@ settings:
     -
       value: all_bios
       label: 'All Bios'
-    -
-      value: custom
-      label: Custom
   allowed_values_function: ''
 module: options
 locked: false

@@ -7,7 +7,6 @@ dependencies:
     - field.storage.node.field_dates
     - field.storage.node.field_image
     - node.type.event
-    - taxonomy.vocabulary.categories
     - taxonomy.vocabulary.event_categories
   module:
     - node
@@ -442,7 +441,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: true
-          vid: categories
+          vid: event_categories
           type: select
           hierarchy: false
           limit: true
@@ -1200,7 +1199,7 @@ display:
           id: id
           table: paragraphs_item_field_data
           field: id
-          relationship: reverse__paragraph__field_event_category
+          relationship: reverse__paragraph__field_events_category
           group_type: group
           admin_label: ''
           entity_type: paragraph
@@ -1344,13 +1343,13 @@ display:
           admin_label: 'field_category: Taxonomy term'
           plugin_id: standard
           required: false
-        reverse__paragraph__field_event_category:
-          id: reverse__paragraph__field_event_category
+        reverse__paragraph__field_events_category:
+          id: reverse__paragraph__field_events_category
           table: taxonomy_term_field_data
-          field: reverse__paragraph__field_event_category
+          field: reverse__paragraph__field_events_category
           relationship: field_category
           group_type: group
-          admin_label: field_event_category
+          admin_label: field_events_category
           entity_type: taxonomy_term
           plugin_id: entity_reverse
           required: false

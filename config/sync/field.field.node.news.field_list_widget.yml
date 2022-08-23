@@ -1,20 +1,24 @@
-uuid: 181dbcd4-27d3-4701-a5c4-5351153e7990
+uuid: 659476d8-6dae-43fa-82b2-6e86ce19a6b9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_content_type
-    - paragraphs.paragraphs_type.content_placer
+    - field.storage.node.field_list_widget
+    - node.type.news
     - taxonomy.vocabulary.list_widget
-id: paragraph.content_placer.field_content_type
-field_name: field_content_type
-entity_type: paragraph
-bundle: content_placer
-label: Content
+  content:
+    - 'taxonomy_term:list_widget:91ce5376-bf2d-4298-8ab4-b93bc32cd508'
+id: node.news.field_list_widget
+field_name: field_list_widget
+entity_type: node
+bundle: news
+label: 'List Widget'
 description: ''
 required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 91ce5376-bf2d-4298-8ab4-b93bc32cd508
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

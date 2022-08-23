@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.content_placer.field_bios_category
     - field.field.paragraph.content_placer.field_bios_list_type
     - field.field.paragraph.content_placer.field_content_type
     - field.field.paragraph.content_placer.field_events_category
@@ -22,14 +21,6 @@ targetEntityType: paragraph
 bundle: content_placer
 mode: default
 content:
-  field_bios_category:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 9
-    region: content
   field_bios_list_type:
     type: list_key
     label: hidden

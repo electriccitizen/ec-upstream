@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.content_placer.field_bios_category
     - field.field.paragraph.content_placer.field_bios_list_type
     - field.field.paragraph.content_placer.field_content_type
     - field.field.paragraph.content_placer.field_events_category
@@ -43,7 +42,6 @@ content:
     weight: 0
     region: content
 hidden:
-  field_bios_category: true
   field_bios_list_type: true
   field_events_category: true
   field_events_list_type: true
