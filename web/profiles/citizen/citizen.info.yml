@@ -16,7 +16,6 @@ dependencies:
   - breakpoint
   - citizen_custom
   - ckeditor
-  - components
   - config
   - config_filter
   - config_ignore
