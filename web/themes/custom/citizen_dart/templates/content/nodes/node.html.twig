@@ -104,12 +104,14 @@
 		{% block node %}  
 		  {%- if content._layout_builder -%}
 		    {% if content._layout_builder.0 %}
-		      {%- for key, layoutSection in content._layout_builder if key|first != '#' -%}
-		        {% block layoutSectionContent %}
-		          <section id="node-section-{{ loop.index }}" class="node-section">
-		            {{- layoutSection -}}
-		          </section>
-		        {% endblock %}
+		      {%- for key, layoutSection in content._layout_builder -%}
+		      	{% if key|first != "#" %}
+			        {% block layoutSectionContent %}
+			          <section id="node-section-{{ loop.index }}" class="node-section">
+			            {{- layoutSection -}}
+			          </section>
+			        {% endblock %}
+			      {% endif %}
 		      {%- endfor -%}
 		    {% else %}
 		      {% block nodeContent %}

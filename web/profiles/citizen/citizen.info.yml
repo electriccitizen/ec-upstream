@@ -2,7 +2,7 @@ name: Electric Citizen
 type: profile
 description: 'Pre-configured install for Electric Citizen site builds.'
 version: 1.0
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 dependencies:
   - address
   - addanother
@@ -16,8 +16,6 @@ dependencies:
   - breakpoint
   - citizen_custom
   - ckeditor
-  - color
-  - components
   - config
   - config_filter
   - config_ignore
@@ -44,7 +42,6 @@ dependencies:
   - geolocation
   - geolocation_address
   - geolocation_google_maps
-  - hal
   - help
   - history
   - image
@@ -67,7 +64,6 @@ dependencies:
   - node
   - options
   - page_cache
-  - paragraphs_type_permissions
   - path
   - path_alias
   - pathologic
