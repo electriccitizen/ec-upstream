@@ -10,7 +10,7 @@ global:
     - core/drupal
     - core/drupalSettings
     - core/jquery
-    - core/jquery.once
+    - core/once
 accordion:
   version: 1.0
   js:
@@ -65,8 +65,6 @@ section-menu:
   version: 1.0
   js:
     components/02-chunks/navigation/section-menu/section-menu.js: {}
-  dependencies:
-    - core/underscore
 select:
   version: 4.0.3
   css:

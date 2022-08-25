@@ -11,7 +11,7 @@
  */
 #}
 {{ attach_library('citizen_dart/select') }}
-{% spaceless %}
+{% apply spaceless %}
   <select{{ attributes }}>
     {% for option in options %}
       {% if option.type == 'optgroup' %}
@@ -25,4 +25,4 @@
       {% endif %}
     {% endfor %}
   </select>
-{% endspaceless %}
+{% endapply %}

@@ -11,10 +11,11 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
+  cacheflush: 0
+  cacheflush_entity: 0
   citizen_custom: 0
   citizen_preview: 0
   ckeditor: 0
-  color: 0
   components: 0
   config: 0
   config_filter: 0
@@ -43,7 +44,6 @@ module:
   geolocation_address: 0
   geolocation_google_maps: 0
   gin_toolbar: 0
-  hal: 0
   help: 0
   history: 0
   image: 0
@@ -68,7 +68,6 @@ module:
   node: 0
   options: 0
   page_cache: 0
-  paragraphs_type_permissions: 0
   path: 0
   path_alias: 0
   pathologic: 0
@@ -95,6 +94,7 @@ module:
   tour: 0
   twig_tweak: 0
   update: 0
+  upgrade_status: 0
   user: 0
   views_bulk_operations: 0
   views_infinite_scroll: 0
@@ -103,6 +103,7 @@ module:
   webform_ui: 0
   extlink: 1
   pathauto: 1
+  xmlsitemap: 1
   views: 10
   paragraphs: 11
   citizen: 1000

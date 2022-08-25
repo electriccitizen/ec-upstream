@@ -45,31 +45,39 @@
 
 	{%- if links or files -%}
 		{% set count = 0 %}
-		{%- for key, link in links if key|first != "#" -%}
-			{% set count = count + 1 %}
+		{%- for key, link in links -%}
+			{% if key|first != '#' %}
+				{% set count = count + 1 %}
+			{% endif %}
 		{% endfor %}
-		{%- for key, file in files if key|first != "#" -%}
-			{% set count = count + 1 %}
+		{%- for key, file in files -%}
+			{% if key|first != '#' %}
+				{% set count = count + 1 %}
+			{% endif %}
 		{% endfor %}
 		<div class="field links-files{% if count > 4 %} multi-col{% endif %}">
 			{% set listCount = 0 %}
-			{%- for key, link in links if key|first != "#" -%}
-				{% set listCount = listCount + 1 %}
-				<div class="lf-item link" data-item="{{ listCount }}">
-					{% block link %}
-						<a href="{{ link['#url'] }}">
-							{{- link['#title'] -}}
-						</a>
-					{% endblock %}
-				</div>
+			{%- for key, link in links -%}
+				{% if key|first != '#' %}
+					{% set listCount = listCount + 1 %}
+					<div class="lf-item link" data-item="{{ listCount }}">
+						{% block link %}
+							<a href="{{ link['#url'] }}">
+								{{- link['#title'] -}}
+							</a>
+						{% endblock %}
+					</div>
+				{% endif %}
 			{%- endfor -%}
-			{%- for key, file in files if key|first != "#" -%}
-				{% set listCount = listCount + 1 %}
-				<div class="lf-item file" data-item="{{ listCount }}">
-					{% block file %}
-						{{ drupal_entity('media', file.entity.id, 'default') }}
-					{% endblock %}
-				</div>
+			{%- for key, file in files -%}
+				{% if key|first != '#' %}
+					{% set listCount = listCount + 1 %}
+					<div class="lf-item file" data-item="{{ listCount }}">
+						{% block file %}
+							{{ drupal_entity('media', file.entity.id, 'default') }}
+						{% endblock %}
+					</div>
+				{% endif %}
 			{%- endfor -%}
 		</div>
 	{%- endif -%}

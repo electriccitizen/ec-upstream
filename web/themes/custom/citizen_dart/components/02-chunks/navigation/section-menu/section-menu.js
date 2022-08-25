@@ -14,7 +14,7 @@ Drupal.behaviors.sectionMenu = {
 		      }
 			});
 
-			$(window).on('resize',  _.debounce( mobileSectionnav, 10 )).trigger('resize');
+			$(window).on('resize', debounce(mobileSectionnav, 150)).trigger('resize');
 					
 			//need doc ready because active-class script fires after theme scripts
 			$(document).ready(function(){
@@ -44,6 +44,19 @@ Drupal.behaviors.sectionMenu = {
 		});
 	}
 }//end section menu function
+
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function() {
+  	var context = this, args = arguments;
+  	clearTimeout(timeout);
+  	timeout = setTimeout(function() {
+  		timeout = null;
+  		if (!immediate) func.apply(context, args);
+  	}, wait);
+  	if (immediate && !timeout) func.apply(context, args);
+  };
+}
 
 function mobileSectionnav() {
   var wwidth = $(window).outerWidth();
