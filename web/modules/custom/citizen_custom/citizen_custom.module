@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\paragraphs\Entity\Paragraph;
 /**
  * @file
  * Contains citizen_custom.module.
@@ -124,7 +125,7 @@ function citizen_custom_page_attachments(array &$attachments) {
 /**
  * Implements hook_form_alter().
  */
-function citizen_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function citizen_custom_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $formId = $form['#id'];
   $user = \Drupal::currentUser();
   $userRole = $user->getRoles();
@@ -139,7 +140,7 @@ function citizen_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface 
 /**
  * Implements hook_node_form_alter().
  */
-function citizen_custom_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function citizen_custom_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $node = $form_state->getFormObject()->getEntity();
   // Change promotion text to something more contextual.
   if ($node->getType() == 'news') {
@@ -183,7 +184,7 @@ function citizen_custom_form_site_search_form_alter(&$form, FormStateInterface $
 /**
  * Implements hook_field_widget_single_element_form_alter()).
  */
-function citizen_custom_field_widget_single_element_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
+function citizen_custom_field_widget_single_element_form_alter(&$element, FormStateInterface $form_state, $context) {
   $field_definition = $context['items']->getFieldDefinition();
   // Add paragraph type classes to paragraph previews.
   if ($field_definition->getType() == 'entity_reference_revisions') {
@@ -214,7 +215,7 @@ function citizen_custom_views_pre_view($view, $display_id, &$args) {
       $filters = $view->display_handler->getOption('filters');
       $paragraph_id = $view->args[0];
       if ($paragraph_id){
-        $paragraph = \Drupal\paragraphs\Entity\Paragraph::load($paragraph_id);
+        $paragraph = Paragraph::load($paragraph_id);
         //unset or alter categories filter
         if($paragraph->field_events_category[0]){
           //make an array out of the category set in the paragraph
@@ -246,7 +247,7 @@ function citizen_custom_views_pre_view($view, $display_id, &$args) {
       $filters = $view->display_handler->getOption('filters');
       $paragraph_id = $view->args[0];
       if ($paragraph_id){
-        $paragraph = \Drupal\paragraphs\Entity\Paragraph::load($paragraph_id);
+        $paragraph = Paragraph::load($paragraph_id);
         //unset or alter categories filter
         if($paragraph->field_news_category[0]){
           //make an array out of the category set in the paragraph

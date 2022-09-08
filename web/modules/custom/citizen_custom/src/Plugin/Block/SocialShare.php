@@ -7,6 +7,7 @@
 
 namespace Drupal\citizen_custom\Plugin\Block;
 
+use Drupal\node\NodeInterface;
 use Drupal\Core\Block\BlockBase;
 
 /**
@@ -26,7 +27,7 @@ class SocialShare extends BlockBase
     {
         //get the current node
         $node = \Drupal::routeMatch()->getParameter('node');
-        if ($node instanceof \Drupal\node\NodeInterface) {
+        if ($node instanceof NodeInterface) {
             
             //get the variables we need to pass to twig
             $base_url = $GLOBALS['base_url'];
