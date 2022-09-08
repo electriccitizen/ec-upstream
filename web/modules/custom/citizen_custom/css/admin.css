@@ -2,3 +2,70 @@
   ADMIN CSS
 =========================*/
 
+/* show field label on layout paragraphs fields */
+.field--name-field-paragraphs > fieldset.layout-paragraphs-field > legend{
+	display: block;
+}
+
+/* use different button colors for sections vs widgets when adding layout paragraphs */
+.node-landing-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle,.node-landing-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-add-content__toggle,.node-landing-page-edit-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle,.node-landing-page-edit-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-add-content__toggle{
+	background: #32cea4;
+}
+.node-landing-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle:hover,.node-landing-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle:focus,.node-landing-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-add-content__toggle:hover,.node-landing-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-add-content__toggle:focus,.node-landing-page-edit-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle:hover,.node-landing-page-edit-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle:focus,.node-landing-page-edit-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-add-content__toggle:hover,.node-landing-page-edit-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-add-content__toggle:focus{
+	background: #058260;
+}
+
+/* PARAGRAPH ICONS FOR LAYOUT PARAGRAPHS */
+.layout-paragraphs-add-more-menu__group--content .layout-paragraphs-add-more-menu__item > a:before{
+	content: '';
+	display: block;
+	width: 100%;
+	height: 20px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 18px;
+}
+/* CUSTOM ICONS ARE ALL DOWNLOADED FROM MATERIAL ICONS */
+.layout-paragraphs-add-more-menu__group--content .paragraph-type-accordions > a:before{
+	background-image: url('../icons/paragraphs/accordions.svg');
+}
+.layout-paragraphs-add-more-menu__group--content .paragraph-type-block_placer > a:before{
+	background-image: url('../icons/paragraphs/block-placer.svg');
+}
+.layout-paragraphs-add-more-menu__group--content .paragraph-type-content_placer > a:before{
+	background-image: url('../icons/paragraphs/content-placer.svg');
+}
+.layout-paragraphs-add-more-menu__group--content .paragraph-type-custom_embed > a:before{
+	background-image: url('../icons/paragraphs/custom-embed.svg');
+}
+.layout-paragraphs-add-more-menu__group--content .paragraph-type-form_placer > a:before{
+	background-image: url('../icons/paragraphs/form-placer.svg');
+}
+.layout-paragraphs-add-more-menu__group--content .paragraph-type-gallery > a:before{
+	background-image: url('../icons/paragraphs/gallery.svg');
+}
+.layout-paragraphs-add-more-menu__group--content .paragraph-type-horizontal_rule > a:before{
+	background-image: url('../icons/paragraphs/horizontal-rule.svg');
+}
+.layout-paragraphs-add-more-menu__group--content .paragraph-type-image > a:before{
+	background-image: url('../icons/paragraphs/image.svg');
+}
+.layout-paragraphs-add-more-menu__group--content .paragraph-type-links_files > a:before{
+	background-image: url('../icons/paragraphs/links-files.svg');
+}
+.layout-paragraphs-add-more-menu__group--content .paragraph-type-map > a:before{
+	background-image: url('../icons/paragraphs/map.svg');
+}
+.layout-paragraphs-add-more-menu__group--content .paragraph-type-portals > a:before{
+	background-image: url('../icons/paragraphs/portals.svg');
+}
+.layout-paragraphs-add-more-menu__group--content .paragraph-type-quote > a:before{
+	background-image: url('../icons/paragraphs/quote.svg');
+}
+.layout-paragraphs-add-more-menu__group--content .paragraph-type-text > a:before{
+	background-image: url('../icons/paragraphs/text.svg');
+}
+.layout-paragraphs-add-more-menu__group--content .paragraph-type-video > a:before{
+	background-image: url('../icons/paragraphs/video.svg');
+}
+

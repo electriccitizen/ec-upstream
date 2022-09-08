@@ -24,7 +24,7 @@ id: node.page.field_paragraphs
 field_name: field_paragraphs
 entity_type: node
 bundle: page
-label: Widgets
+label: 'Add Widgets'
 description: ''
 required: false
 translatable: false
@@ -56,11 +56,11 @@ settings:
       block_placer:
         weight: -36
         enabled: false
+      content_placer:
+        weight: 21
+        enabled: false
       custom_embed:
         weight: -37
-        enabled: true
-      events_list:
-        weight: -35
         enabled: true
       form_placer:
         weight: -33
@@ -83,9 +83,6 @@ settings:
       map:
         weight: -26
         enabled: true
-      news_list:
-        weight: -25
-        enabled: true
       portal:
         weight: 33
         enabled: false
@@ -101,7 +98,4 @@ settings:
       video:
         weight: -22
         enabled: true
-      view_placer:
-        weight: -21
-        enabled: false
 field_type: entity_reference_revisions
