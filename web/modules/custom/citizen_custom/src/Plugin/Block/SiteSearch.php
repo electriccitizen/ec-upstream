@@ -18,6 +18,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class SiteSearch extends BlockBase implements ContainerFactoryPluginInterface {
 
+  /**
+   * The Form builder.
+   *
+   * @var \Drupal\Core\Form\FormBuilderInterface
+   */
   protected $formBuilder;
 
   /**

@@ -10,7 +10,7 @@ use Drupal\Tests\BrowserTestBase;
  *
  * @group citizen_custom
  */
-class LoadTest extends BrowserTestBase{
+class LoadTest extends BrowserTestBase {
 
   /**
    * Modules to enable.
