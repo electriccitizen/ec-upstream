@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Material Icons Outlined';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/themes/custom/citizen_dart/fonts/MaterialIconsOutlined.woff2) format('woff2'),
+  url(/themes/custom/citizen_dart/fonts/MaterialIconsOutlined-Regular.otf) format('opentype');
+}
+
 #responsive-preview-toolbar-tab .responsive-preview-trigger.active {
   background: #018901;
 }
@@ -25,20 +33,38 @@
 .responsive-preview-control.responsive-preview-close {
   right: -5px;
 }
+#responsive-preview-orientation:before,
+#responsive-preview-close:before {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+  color: #ffffff;
+}
 #responsive-preview-orientation:before {
   height: 20px;
   width: 20px;
-  background: url('../icons/orientation-white.svg') no-repeat;
-  background-size: 13px 13px;
-  background-position: center;
+  background-image: none;
+  content: "\ebee";
+  font-family: "Material Icons Outlined";
   top: 6px;
 }
 #responsive-preview-close:before {
   height: 20px;
   width: 20px;
-  background: url('../icons/close-white.svg') no-repeat;
-  background-size: 13px 13px;
-  background-position: center;
+  background-image: none;
+  content: "\e5cd";
+  font-family: "Material Icons Outlined";
   top: 6px;
 }
 
