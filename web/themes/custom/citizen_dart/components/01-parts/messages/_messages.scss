@@ -29,6 +29,7 @@
 		}
 	}
 	&.error-message{
+		border-color: $messageErrorBorder;
 		&:before {
 			@include materialIconOutline(\e888);
 			color: $messageErrorBorder;
@@ -36,12 +37,14 @@
 		}
 	}
 	&.warning-message{
+		border-color: $messageWarningBorder;
 		&:before {
 			@include materialIconOutline(\e002);
 			color: $messageWarningBorder;
 		}
 	}
 	&.status-message{
+		border-color: $messageGoodBorder;
 		&:before {
 			@include materialIconOutline(\e5ca);
 			color: $messageGoodBorder;
