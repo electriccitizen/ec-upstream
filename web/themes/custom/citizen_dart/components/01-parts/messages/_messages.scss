@@ -6,9 +6,7 @@
 .drupal-message {
 	padding: $spaceMd 2.5rem $spaceMd 5.5rem;
 	margin: $spaceMd 0;
-	background-repeat: no-repeat;
-	background-position: 12px center;
-	background-size: 20px 20px;
+	background-image: none;
 	font-size: 2.25rem;
 	background-color: $messageBack;
 	color: $messageText;
@@ -22,16 +20,31 @@
 			opacity: .6;
 		}
 	}
+	&.error-message,
+	&.warning-message,
+	&.status-message {
+		&:before {
+			position: relative;
+			top: 0.7rem;
+		}
+	}
 	&.error-message{
-		border-color: $messageErrorBorder;
-		background-image: url($messageErrorIcon);
+		&:before {
+			@include materialIconOutline(\e888);
+			color: $messageErrorBorder;
+
+		}
 	}
 	&.warning-message{
-		border-color: $messageWarningBorder;
-		background-image: url($messageWarningIcon);
+		&:before {
+			@include materialIconOutline(\e002);
+			color: $messageWarningBorder;
+		}
 	}
 	&.status-message{
-		border-color: $messageGoodBorder;
-		background-image: url($messageGoodIcon);
+		&:before {
+			@include materialIconOutline(\e5ca);
+			color: $messageGoodBorder;
+		}
 	}
 }

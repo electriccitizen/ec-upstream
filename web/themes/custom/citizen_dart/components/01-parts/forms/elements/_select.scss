@@ -62,16 +62,22 @@ body,#drupal-off-canvas{
 				background: $siteBack;
 			}
 			.select2-selection__arrow{
-				background-image: url('../images/elements/caret-down-hover.svg');
-				background-repeat: no-repeat;
-				background-size: 16px;
-				background-position: center;
+				background-image: none;
 				top: 9px;
 				right: 10px;
 				@include transFormAnimate;
 				//hide default select2 arrow
 				b{
 					display: none;
+				}
+				// arrow symbol
+				&:after {
+					@include materialIconOutline(\e5cf);
+					position: absolute;
+					top: 0;
+					right: 0;
+					z-index: 2;
+					pointer-events: none;
 				}
 			}
 		}//end single
@@ -86,10 +92,8 @@ body,#drupal-off-canvas{
 				height: 2.5rem;
 				width: 2.5rem;
 				position: absolute;
-				background-image: url('../images/elements/caret-down-hover.svg');
-				background-repeat: no-repeat;
-				background-size: 2rem;
-				background-position: center;
+				background-image: none;
+				@include materialIconOutline(\e5cf);
 				top: 12px;
 				right: 12px;
 				@include transFormAnimate;
@@ -116,7 +120,7 @@ body,#drupal-off-canvas{
 				z-index: 999;
 			}
 			//selection input
-			.select2-search--inline{ 
+			.select2-search--inline{
 				position: relative;
 				float: none;
 				padding: 2px 3px;
@@ -147,12 +151,12 @@ body,#drupal-off-canvas{
 			}//end single
 
 			//multiple
-			.select2-selection--multiple{		
-				border-width: 2px;	
+			.select2-selection--multiple{
+				border-width: 2px;
 				&:after{
 					@include rotate(180);
 				}
-				.select2-search--inline{ 
+				.select2-search--inline{
 					input.select2-search__field{
 						@include placeholder;
 						&:focus{
@@ -189,6 +193,6 @@ body,#drupal-off-canvas{
 	background-color: $offWhite;
 }
 .select2-container--default .select2-results__option--highlighted[aria-selected]{
-	background-color: $selectHighlight !important; 
+	background-color: $selectHighlight !important;
 }
 

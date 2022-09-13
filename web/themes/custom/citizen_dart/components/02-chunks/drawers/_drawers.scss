@@ -11,7 +11,7 @@
 	margin-top: $spaceXxs;
 	&:hover,&:focus{
 		&:after{
-			background-image: url('../images/elements/caret-down-hover.svg');
+			color: $buttonBackHover;
 		}
 	}
 	&:after{
@@ -20,16 +20,16 @@
 		width: 2rem;
 		height: 2rem;
 		position: absolute;
-		bottom: calc(50% - 1rem);
+		bottom: calc(50% - 0.5rem);
 		right: 0;
-		background-image: url('../images/elements/caret-down.svg');
-		background-position: center;
-		background-size: 14px 14px;
-		background-repeat: no-repeat;
+		@include materialIconOutline(\e5cf);
+		font-size: 24px;
 	}
 	&.active-drawer{
 		&:after{
 			@include rotate(180);
+			bottom: calc(50% - 1.5rem);
+			right: -0.5rem;
 		}
 		&.drawer-fade{
 			&:after{

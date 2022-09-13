@@ -19,11 +19,14 @@
 		border-radius: 50%;
 		position: relative;
 		text-align: center;
-		background-image: url('../images/elements/caret-down-white.svg');
-		background-size: 24px;
-		background-repeat: no-repeat;
-		background-position: center 50%;
-		@include rotate(180);
+		background-image: none;
+		&:after {
+			@include materialIconOutline(\e5ce);
+			color: $white;
+			position: relative;
+			top: 1rem;
+			font-size: 36px;
+		}
 		&:hover,&:focus{
 			background-color: $link;
 		}

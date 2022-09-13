@@ -71,9 +71,9 @@
 			right: 20px;
 			height: 22px;
 			width: 22px;
-			background: url('../images/preview/close-white.svg') no-repeat;
-			background-size: 20px 20px;
-			background-position: center;
+			&:after {
+				@include materialIconOutline(\e5cd);
+			}
 			&:hover,
 			&:focus {
 				opacity: .8;

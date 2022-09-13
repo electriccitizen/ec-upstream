@@ -36,17 +36,16 @@
 #responsive-preview-orientation:before{
 	height: 20px;
 	width: 20px;
-	background: url('../images/preview/orientation-white.svg') no-repeat;
-	background-size: 13px 13px;
-	background-position: center;
+	background-image: none;
+	@include materialIconOutline(\ebee);
 	top: 6px;
 }
 #responsive-preview-close:before{
 	height: 20px;
 	width: 20px;
-	background: url('../images/preview/close-white.svg') no-repeat;
-	background-size: 13px 13px;
-	background-position: center;
+	background-image: none;
+	@include materialIconOutline(\e5cd);
+	color: $white;
 	top: 6px;
 }
 
