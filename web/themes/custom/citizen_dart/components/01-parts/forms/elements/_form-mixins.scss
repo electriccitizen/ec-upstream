@@ -110,8 +110,6 @@
 		width: 18px;
 		height: 18px;
 		background-color: $siteBack;
-		position: relative;
-		top: 3px;
 		cursor: pointer;
 		&:hover{
 			border-color: $checkboxHover;
@@ -135,21 +133,11 @@
 				background-color: $checkboxCheckedBackHover;
 			}
 		}
-		&[type="checkbox"]:checked{
-			background-image: url('../images/elements/checkmark.svg');
-			background-repeat: no-repeat;
-			background-position: center;
-		}
 		&[type="radio"]{
 			border-radius: 50%;
 			&:checked{
 				background-color: $red;
-				background-image: url('../images/elements/radio-dot.svg');
-				background-repeat: no-repeat;
-				background-position: center;
-				background-size: 10px 10px;
 				&:hover,&:focus{
-					// background-image: url('../images/elements/radio-dot-hover.svg');
 					background-color: $midGrey;
 				}
 			}
