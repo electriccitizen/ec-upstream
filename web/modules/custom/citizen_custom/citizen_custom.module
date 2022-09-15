@@ -1,5 +1,8 @@
 <?php
 
+use Drupal\citizen_custom\Entity\CitizenNode;
+use Drupal\citizen_custom\Entity\Event;
+use Drupal\citizen_custom\Entity\News;
 use Drupal\paragraphs\Entity\Paragraph;
 /**
  * @file
@@ -140,18 +143,18 @@ function citizen_custom_form_alter(&$form, FormStateInterface $form_state, $form
 /**
  * Implements hook_node_form_alter().
  */
-function citizen_custom_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $node = $form_state->getFormObject()->getEntity();
-  // Change promotion text to something more contextual.
-  if ($node->getType() == 'news') {
-    $form['promote']['widget']['value']['#title'] = 'Add to Featured News';
-    $form['promote']['widget']['value']['#description'] = 'Should have a news image.';
-  }
-  if ($node->getType() == 'event') {
-    $form['promote']['widget']['value']['#title'] = 'Add to Featured Events';
-    $form['promote']['widget']['value']['#description'] = 'Should have a news image.';
-  }
-}
+//function citizen_custom_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+//  $node = $form_state->getFormObject()->getEntity();
+//  // Change promotion text to something more contextual.
+//  if ($node->getType() == 'news') {
+//    $form['promote']['widget']['value']['#title'] = 'Add to Featured News';
+//    $form['promote']['widget']['value']['#description'] = 'Should have a news image.';
+//  }
+//  if ($node->getType() == 'event') {
+//    $form['promote']['widget']['value']['#title'] = 'Add to Featured Events';
+//    $form['promote']['widget']['value']['#description'] = 'Should have a news image.';
+//  }
+//}
 
 /**
  * Implements hook_local_tasks_alter().
@@ -277,4 +280,34 @@ function citizen_custom_views_pre_view($view, $display_id, &$args) {
     }
   }
 }
+
+/**
+ * Implements hook_entity_bundle_info_alter() for assigning classes to our node bundles.
+ */
+function citizen_custom_entity_bundle_info_alter(array &$bundles): void {
+  foreach ($bundles['node'] as $type => &$bundle) {
+    if (isset($bundle['class'])) {
+      continue;
+    }
+
+    $bundle['class'] = match ($type) {
+      'event' => Event::class,
+      'news'  => News::class,
+      default => CitizenNode::class,
+    };
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter() to add handler classes for each type of
+ * node form. Delegation to specific content type form classes will occur
+ * within the handler
+ */
+function citizen_custom_entity_type_alter(array &$entity_types) {
+  $entity_types['node']
+    ->setFormClass('default', 'Drupal\citizen_custom\Form\FormHandler\DefaultFormHandler');
+  $entity_types['node']
+    ->setFormClass('edit', 'Drupal\citizen_custom\Form\FormHandler\EditFormHandler');
+}
+
 
