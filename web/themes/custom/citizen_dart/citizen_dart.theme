@@ -78,7 +78,7 @@ function citizen_dart_theme_suggestions_paragraph_alter(array &$suggestions, arr
   array_push($suggestions, 'paragraph__' . $paragraph->getType() . '__' . $id);
 }
 
-// provide width and height dimensions for use in the responsive image template
+// provide width and height dimensions for use in the responsive image template to prevent layout shifts
 function citizen_dart_preprocess_responsive_image(&$variables) {
 
   // get responsive image style in order to map hard-coded dimension values
@@ -86,8 +86,8 @@ function citizen_dart_preprocess_responsive_image(&$variables) {
 
   switch ($style_id) {
     case 'banner':
-      $img_width = 1600;
-      $img_height = 544;
+      $img_width = 1000;
+      $img_height = 400;
       break;
     case 'full':
       $img_width = 1200;
