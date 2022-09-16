@@ -78,7 +78,7 @@ function citizen_dart_theme_suggestions_paragraph_alter(array &$suggestions, arr
   array_push($suggestions, 'paragraph__' . $paragraph->getType() . '__' . $id);
 }
 
-
+// provide width and height dimensions for use in the responsive image template
 function citizen_dart_preprocess_responsive_image(&$variables) {
 
   // get responsive image style in order to map hard-coded dimension values
