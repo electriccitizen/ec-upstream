@@ -33,10 +33,13 @@ form:not(.layout-builder-add-block):not(.layout-builder-update-block){
 		input[type="radio"]{
 			margin-right: .6rem;
 			position: relative;
-			top: -2px;
+			top: 3px;
 		}
 		&.custom-options{
 			@include customOptions;
+			input {
+				@include setDimensions(22px,22px);
+			}
 			label:before{
 				border-radius: 50%;
 			}
