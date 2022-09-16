@@ -88,9 +88,8 @@ body,#drupal-off-canvas{
 			padding: 5px 3.5rem 6px 1.5rem;
 			&:after{
 				content: '';
-				display: block;
-				height: 2.5rem;
-				width: 2.5rem;
+				@include safeFlex(row,no-wrap,center,center);
+				@include setDimensions(24px,24px);
 				position: absolute;
 				background-image: none;
 				@include materialIconOutline(\e5cf);
