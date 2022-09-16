@@ -209,12 +209,16 @@ ul.sf-menu.sf-accordion{
 			right: 0;
 			z-index: 1;
 			background: transparent;
-			@include transFormAnimate;
 			//expander toggle
 			&:after{
 				@include materialIconOutline(\e5cf);
 				position: absolute;
 				right: 10px;
+				top: 0;
+				@include safeFlex(row,no-wrap,center,center);
+				@include setDimensions(60px,60px);
+				text-indent: 0;
+				@include transFormAnimate;
 			}
 		}//end accordion button
 
@@ -228,11 +232,16 @@ ul.sf-menu.sf-accordion{
 		}//end menupareny
 		&.sf-expanded > .sf-accordion-button{
 			background: transparent;
-			@include rotate(180);
+
 			&:after{
+				@include rotate(180);
 				@include materialIconOutline(\e5cf);
 				position: absolute;
-				right: 22px;
+				@include safeFlex(row,no-wrap,center,center);
+				@include setDimensions(60px,60px);
+				text-indent: 0;
+
+
 			}
 		}
 	}//end li
