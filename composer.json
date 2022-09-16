@@ -9,11 +9,16 @@
       "url": "https:\/\/packages.drupal.org\/8"
     },
     {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    },
+    {
       "type": "path",
       "url": "upstream-configuration"
     }
   ],
   "require": {
+    "bower-asset/lazysizes": "^5.1",
     "composer/installers": "^1.9",
     "cweagans/composer-patches": "^1.7",
     "drupal/addanother": "^1.0",
@@ -47,6 +52,7 @@
     "drupal/image_style_quality": "^1.4",
     "drupal/layout_builder_restrictions": "^2.7",
     "drupal/layout_paragraphs": "^1.0",
+    "drupal/lazy": "^3.0",
     "drupal/linkit": "^6.0@beta",
     "drupal/media_entity_file_replace": "^1.0",
     "drupal/menu_block": "^1.6",
@@ -72,6 +78,7 @@
     "drupal/xmlsitemap": "^1.0",
     "drush-ops/behat-drush-endpoint": "^9.4",
     "drush/drush": "^10",
+    "oomphinc/composer-installers-extender": "^2.0",
     "pantheon-upstreams/upstream-configuration": "*"
   },
   "conflict": {
@@ -80,12 +87,13 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
+    "installer-types": ["bower-asset", "npm-asset"],
     "installer-paths": {
       "web\/core": [
         "type:drupal-core"
       ],
       "web\/libraries\/{$name}": [
-        "type:drupal-library"
+        "type:drupal-library", "type:bower-asset", "type:npm-asset"
       ],
       "web\/modules\/composer\/{$name}": [
         "type:drupal-module"
@@ -158,7 +166,8 @@
       "cweagans/composer-patches": true,
       "composer/installers": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
-      "drupal/core-project-message": true
+      "drupal/core-project-message": true,
+      "oomphinc/composer-installers-extender": true
     }
   },
   "scripts": {
