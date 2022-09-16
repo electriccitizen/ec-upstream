@@ -323,6 +323,11 @@
 	}
 }//end lightBack
 
+@mixin setDimensions($width,$height){
+	width: #{$width};
+	height: #{$height};
+}
+
 /* ANIMATION MIXINS
 --------------------- */
 @mixin animation($animate...) {
