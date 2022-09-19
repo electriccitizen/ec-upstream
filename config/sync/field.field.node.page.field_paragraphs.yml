@@ -11,6 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.horizontal_rule
     - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.layout_section_single
     - paragraphs.paragraphs_type.links_files
     - paragraphs.paragraphs_type.map
     - paragraphs.paragraphs_type.quote
@@ -24,9 +25,9 @@ id: node.page.field_paragraphs
 field_name: field_paragraphs
 entity_type: node
 bundle: page
-label: 'Add Widgets'
+label: 'Add Sections'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -45,6 +46,7 @@ settings:
       quote: quote
       text: text
       video: video
+      layout_section_single: layout_section_single
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
@@ -77,6 +79,9 @@ settings:
       layout_section:
         weight: 29
         enabled: false
+      layout_section_single:
+        weight: 29
+        enabled: true
       links_files:
         weight: -27
         enabled: true

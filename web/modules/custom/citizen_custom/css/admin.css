@@ -8,12 +8,24 @@
 }
 
 /* use different button colors for sections vs widgets when adding layout paragraphs */
+.node-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle,
+.node-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-add-content__toggle,
+.node-page-edit-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle,
+.node-page-edit-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-add-content__toggle,
 .node-landing-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle,
 .node-landing-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-add-content__toggle,
 .node-landing-page-edit-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle,
 .node-landing-page-edit-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-add-content__toggle {
   background: #32cea4;
 }
+.node-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle:hover,
+.node-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle:focus,
+.node-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-add-content__toggle:hover,
+.node-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-add-content__toggle:focus,
+.node-page-edit-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle:hover,
+.node-page-edit-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle:focus,
+.node-page-edit-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-add-content__toggle:hover,
+.node-page-edit-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-add-content__toggle:focus,
 .node-landing-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle:hover,
 .node-landing-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-item > .layout-paragraphs-add-content__toggle:focus,
 .node-landing-page-form #field-paragraphs-wrapper--active-items > .layout-paragraphs-add-content__toggle:hover,
