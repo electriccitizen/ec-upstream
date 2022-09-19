@@ -7,7 +7,7 @@ dependencies:
     - node.type.news
     - taxonomy.vocabulary.list_widget
   content:
-    - 'taxonomy_term:list_widget:91ce5376-bf2d-4298-8ab4-b93bc32cd508'
+    - 'taxonomy_term:list_widget:04f0d664-1365-4bb4-868b-af182e693f12'
 id: node.news.field_list_widget
 field_name: field_list_widget
 entity_type: node
@@ -18,7 +18,7 @@ required: true
 translatable: false
 default_value:
   -
-    target_uuid: 91ce5376-bf2d-4298-8ab4-b93bc32cd508
+    target_uuid: 04f0d664-1365-4bb4-868b-af182e693f12
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

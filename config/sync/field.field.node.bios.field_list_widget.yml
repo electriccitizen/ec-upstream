@@ -7,7 +7,7 @@ dependencies:
     - node.type.bios
     - taxonomy.vocabulary.list_widget
   content:
-    - 'taxonomy_term:list_widget:ffbca014-5098-4554-8371-95e5ff9be911'
+    - 'taxonomy_term:list_widget:ad7996ed-197a-4f64-a858-04b4f4b73261'
 id: node.bios.field_list_widget
 field_name: field_list_widget
 entity_type: node
@@ -18,7 +18,7 @@ required: true
 translatable: true
 default_value:
   -
-    target_uuid: ffbca014-5098-4554-8371-95e5ff9be911
+    target_uuid: ad7996ed-197a-4f64-a858-04b4f4b73261
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
