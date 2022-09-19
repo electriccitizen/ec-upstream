@@ -25,7 +25,7 @@ id: node.page.field_paragraphs
 field_name: field_paragraphs
 entity_type: node
 bundle: page
-label: 'Add Widgets'
+label: 'Add Sections'
 description: ''
 required: true
 translatable: false
