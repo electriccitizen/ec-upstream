@@ -1,6 +1,6 @@
 # THEME-INSTALL.md
 
-## ABOUT CITIZEN DART THEME - soething
+## ABOUT CITIZEN DART THEME - something
 
 For Drupal 9, Citizen Dart uses the Stable theme starting place, and is meant to expand on that to theme this website.
 
