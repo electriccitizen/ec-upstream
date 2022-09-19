@@ -440,12 +440,6 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
-  field_list_widget:
-    type: options_select
-    weight: 9
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_metatags:
     type: metatag_firehose
     weight: 7
@@ -478,6 +472,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_list_widget: true
   path: true
   sticky: true
   uid: true
