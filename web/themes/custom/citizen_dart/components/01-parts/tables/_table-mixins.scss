@@ -9,13 +9,13 @@
 	display: block;
 	width: 100%;
 	height: 100%;
-	background-repeat: no-repeat;
-	background-size: 2rem;
-	background-position: center left;
-	background-image: url('../images/elements/sort.svg');
+	background-image: none;
 	padding-left: 3rem;
-	&:after{
-		content: none;
+	&:after {
+		@include materialIconOutline(\e164);
+		position: absolute;
+		top: 0;
+		left: -4px;
 	}
 	&:hover,&:focus{
 		opacity: .6;
@@ -28,16 +28,21 @@
 		top: 4px;
 		left: -18px;
 		margin-left: 5px;
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: center;
+		background-image: none;
 		width: 2.25rem;
 		height: 2.25rem;
-		&.tablesort--desc{	
-			background-image: url('../images/elements/arrow-down-white.svg');
+		+ :after {
+			display: none;
+		}
+		&.tablesort--desc{
+			&:after {
+				@include materialIconOutline(\f1e3);
+			}
 		}
 		&.tablesort--asc{
-			background-image: url('../images/elements/arrow-up-white.svg');
+			&:after {
+				@include materialIconOutline(\f1e0);
+			}
 		}
 	}
 }
@@ -48,7 +53,9 @@
 	border-bottom-color: lighten($link, 10%);
 	& > a{
 		color: $white;
-		background-image: none;
+		&:after {
+			content: none;
+		}
 	}
 }
 
@@ -78,6 +85,7 @@
 		padding: 2.5rem 2rem;
 		text-align: left;
 		border-bottom: 3px solid $tableHeaderBack;
+		vertical-align: top;
 		a{
 			@extend %tableSort;
 		}

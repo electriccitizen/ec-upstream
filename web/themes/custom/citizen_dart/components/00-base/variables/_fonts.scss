@@ -4,6 +4,20 @@
 @use 'component-colors' as *;
 @use 'units' as *;
 
+@font-face {
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../fonts/MaterialIcons.woff2) format('woff2'),
+	url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Material Icons Outlined';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../fonts/MaterialIconsOutlined.woff2) format('woff2'),
+	url(../fonts/MaterialIconsOutlined-Regular.otf) format('opentype');;
+}
 
 /*  FAMILIES
 -------------------- */
@@ -212,4 +226,12 @@ $h6Sm: 2rem;
 	content: '#{$icon}';
 	font-family: 'Material Icons Outlined';
   @extend %materialSetup;
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+}
+
+.material-icons-outlined {
+	font-family: 'Material Icons Outlined';
 }

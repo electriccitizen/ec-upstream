@@ -18,13 +18,24 @@
 		@include onlyMobile{
 			padding: 2rem 2.5rem;
 			@include edgeToEdge;
-		}	 
+		}
 		a.section-menu-toggle{
 			color: $menuBlockTitle;
 			display: inline-block;
 			vertical-align: middle;
 			text-align: center;
 			width: 60px;
+			span{
+				display: none;
+			}
+			&:before{
+				@include materialIcon(\e5d2);
+				display: inline-block;
+				top: 0;
+				right: 0;
+				color: $hamburger;
+				line-height: 28px;
+			}
 			&:hover,&:focus{
 				color: $menuBlockTitleHover;
 			}
