@@ -1,6 +1,6 @@
 global:
   version: 1.0
-  header: true
+  header: false
   css:
     theme:
       dist/style.css: {}

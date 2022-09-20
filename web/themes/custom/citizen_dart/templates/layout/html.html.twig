@@ -38,7 +38,9 @@
 		<head-placeholder token="{{ placeholder_token|raw }}">
 		<title>{{ head_title|safe_join(' | ') }}</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<css-placeholder token="{{ placeholder_token|raw }}">
+
+        <link rel="stylesheet" media="all" href="/themes/custom/citizen_dart/dist/critical.css">
+
 		<js-placeholder token="{{ placeholder_token|raw }}">
 		{% block headInsert %}
 			{# place for any site or page specific <head> additions #}
@@ -61,9 +63,10 @@
 			{{ page_bottom }}
 			{% block bottomInsert %}
 				{# place for any site or page specific additions (like fixed modals) #}
-				
+
 			{% endblock %}
 		</div>
+		<css-placeholder token="{{ placeholder_token|raw }}">
 		<js-bottom-placeholder token="{{ placeholder_token|raw }}">
 	</body>
 </html>

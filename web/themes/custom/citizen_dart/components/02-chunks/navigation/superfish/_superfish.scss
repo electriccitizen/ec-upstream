@@ -57,6 +57,7 @@
 ---------------- */
 ul.sf-menu.sf-horizontal{
 	@include safeFlex(row,wrap,end,null);
+	list-style-type: none;
 	//override defult floats
 	li{
 		float: none;
