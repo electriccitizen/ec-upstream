@@ -203,6 +203,9 @@
 	font-size: 1px;
 	opacity: .1;
 }
+.visually-hidden {
+	@include visuallyHidden;
+}
 
 @mixin overlay($overlayColor){
 	&:before{

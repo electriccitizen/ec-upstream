@@ -2,6 +2,5 @@
 	CHUNKS INDEX
 =================== */
 
-@forward 'paragraphs/paragraphs';
-@forward 'views/views';
-
+@forward 'blocks/blocks';
+@forward 'layout/layout';
