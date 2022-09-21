@@ -13,7 +13,7 @@ interface FormOverrideInterface {
    * Declare a CitizenNodeForm class that a bundle type will use to alter
    * its forms
    *
-   * @return \Drupal\citizen_custom\Form\ENtity\CitizenNodeForm
+   * @return \Drupal\citizen_custom\Form\Entity\CitizenNodeForm
    */
   public function getFormClass(): CitizenNodeForm;
 

@@ -77,6 +77,14 @@
   'node-' ~ node.id
 ] %}
 
+{%
+	set published_class =  node.getPublishedClass()
+%}
+{%
+	set has_main_image = node.hasMainImage()
+%}
+
+
 <article{{ attributes.addClass(classes) }}>
 	{% block nodeMeta %}
 	  {{ title_prefix }}

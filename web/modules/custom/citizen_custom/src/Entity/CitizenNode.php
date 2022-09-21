@@ -7,6 +7,8 @@ use Drupal\node\Entity\Node;
 /**
  * The base class for all nodes.
  */
-class CitizenNode extends Node {
+class CitizenNode extends Node implements CitizenNodeInterface {
 
+  use PublishedClassTrait;
+  use HasMainImageTrait;
 }
