@@ -1,7 +1,7 @@
 (function($, Drupal) {
 Drupal.behaviors.sectionMenu = {
 	attach: function (context, settings) {
-		$("#block-section-menu", context).once('section-menu').each(function(){  
+		$("#block-section-menu", context).once('section-menu').each(function(){
 			//mobile toggle
 			$('.section-menu-toggle').click(function(e){
 				e.preventDefault();
@@ -15,7 +15,7 @@ Drupal.behaviors.sectionMenu = {
 			});
 
 			$(window).on('resize', debounce(mobileSectionnav, 150)).trigger('resize');
-					
+
 			//need doc ready because active-class script fires after theme scripts
 			$(document).ready(function(){
 				$('#section-menu-wrapper ul li').each(function(){
@@ -45,31 +45,18 @@ Drupal.behaviors.sectionMenu = {
 	}
 }//end section menu function
 
-function debounce(func, wait, immediate) {
-  var timeout;
-  return function() {
-  	var context = this, args = arguments;
-  	clearTimeout(timeout);
-  	timeout = setTimeout(function() {
-  		timeout = null;
-  		if (!immediate) func.apply(context, args);
-  	}, wait);
-  	if (immediate && !timeout) func.apply(context, args);
-  };
-}
-
 function mobileSectionnav() {
   var wwidth = $(window).outerWidth();
   if (wwidth < 980) {
   	$('.section-menu-toggle').attr('href','#');
-    //add aria roles to menu title and wrapper if not already set by click above 
+    //add aria roles to menu title and wrapper if not already set by click above
     if(!$('.section-menu-toggle').attr('aria-controls')){
       $('.section-menu-toggle').attr({
-        'aria-controls': 'section-menu-wrapper', 
+        'aria-controls': 'section-menu-wrapper',
         'aria-expanded': 'false'
       });
       $('#section-menu-wrapper').attr('aria-hidden', 'true');
-    } 
+    }
   }else{
     //strip all aria roles & prevent click
     $('.section-menu-toggle').removeAttr('aria-controls aria-expanded role href');
