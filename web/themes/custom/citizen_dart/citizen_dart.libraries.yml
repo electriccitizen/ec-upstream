@@ -15,6 +15,10 @@ accordion:
   version: 1.0
   js:
     components/03-composites/paragraphs/accordions/accordions.js: {}
+debounce:
+  version: 1.0
+  js:
+    components-addons/debounce/debounce.js: {}
 drawers:
   version: 1.0
   js:
@@ -64,6 +68,8 @@ section-menu:
   version: 1.0
   js:
     components/02-chunks/navigation/section-menu/section-menu.js: {}
+  dependencies:
+    - citizen_dart/debounce
 select:
   version: 4.0.3
   css:
