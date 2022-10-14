@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - image.style.full_non_crop
+    - image.style.full_non_crop_non_webp
     - image.style.large_non_crop
     - image.style.medium_non_crop
     - image.style.medium_non_crop_1_5x
@@ -57,4 +58,4 @@ image_style_mappings:
     breakpoint_id: citizen_dart.mobile
     multiplier: 2x
 breakpoint_group: citizen_dart
-fallback_image_style: full_non_crop
+fallback_image_style: full_non_crop_non_webp

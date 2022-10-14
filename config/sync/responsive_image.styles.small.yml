@@ -6,6 +6,7 @@ dependencies:
     - image.style.small_non_crop
     - image.style.small_non_crop_1_5x
     - image.style.small_non_crop_2x
+    - image.style.small_non_crop_non_webp
   theme:
     - citizen_dart
 id: small
@@ -32,4 +33,4 @@ image_style_mappings:
     breakpoint_id: citizen_dart.mobile
     multiplier: 2x
 breakpoint_group: citizen_dart
-fallback_image_style: small_non_crop
+fallback_image_style: small_non_crop_non_webp
