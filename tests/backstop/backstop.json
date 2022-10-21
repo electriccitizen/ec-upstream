@@ -21,7 +21,6 @@
   "scenarios": [
     {
       "label": "Homepage",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/",
       "delay": 0,
@@ -30,7 +29,6 @@
     },
     {
       "label": "Bios",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/17",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/17",
       "delay": 0,
@@ -39,16 +37,14 @@
     },
     {
       "label": "Basic Page",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/11",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/11",
       "delay": 0,
-      "hideSelectors": [],
+      "hideSelectors": [".paragraph.paragraph--type--map"],
       "removeSelectors": []
     },
     {
       "label": "BP Sub Item 1",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/13",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/13",
       "delay": 0,
@@ -57,7 +53,6 @@
     },
     {
       "label": "BP Sub Item 2 - different menu link title",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/14",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/14",
       "delay": 0,
@@ -66,7 +61,6 @@
     },
     {
       "label": "Breadcrumb Test - different link title and alias",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/15",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/15",
       "delay": 0,
@@ -75,7 +69,6 @@
     },
     {
       "label": "BP Sub Sub Sub Item",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/16",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/16",
       "delay": 0,
@@ -84,7 +77,6 @@
     },
     {
       "label": "News",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/10",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/10",
       "delay": 0,
@@ -93,7 +85,6 @@
     },
     {
       "label": "Events",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/9",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/9",
       "delay": 0,
@@ -102,7 +93,6 @@
     },
     {
       "label": "All section layouts & styles",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/7",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/7",
       "delay": 0,
@@ -111,7 +101,6 @@
     },
     {
       "label": "Landing Page",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/12",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/12",
       "delay": 0,
@@ -120,16 +109,14 @@
     },
     {
       "label": "All Widgets",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/8",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/8",
-      "delay": 0,
-      "hideSelectors": [],
+      "delay": 4,
+      "hideSelectors": [".gallery-wrapper"],
       "removeSelectors": []
     },
     {
       "label": "News List Cat1",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/34",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/34",
       "delay": 0,
@@ -138,7 +125,6 @@
     },
     {
       "label": "News List Cat 2",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/35",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/35",
       "delay": 0,
@@ -147,7 +133,6 @@
     },
     {
       "label": "News List no results",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/36",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/36",
       "delay": 0,
@@ -156,7 +141,6 @@
     },
     {
       "label": "Events Cat 1",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/37",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/37",
       "delay": 0,
@@ -165,7 +149,6 @@
     },
     {
       "label": "List Widgets",
-      "cookiePath": "cookies.json",
       "url": "http://ec-upstream.docksal.site/node/38",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/38",
       "delay": 0,
