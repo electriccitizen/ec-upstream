@@ -1,0 +1,5 @@
+hotlink: false
+origin: 'http://dev-ec-upstream.pantheonsite.io'
+origin_dir: sites/default/files
+use_imagecache_root: true
+verify: false
