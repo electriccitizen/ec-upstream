@@ -16,9 +16,9 @@ services:
   #  see http://docksal.readthedocs.io/en/master/advanced/stack-settings/ and
   #  https://hub.docker.com/r/docksal/cli/tags/.
   db:
-    image: docksal/mariadb:10.4
+    image: docksal/mariadb:10.6
   cli:
-    image: docksal/cli:php8.1-3.2
+    image: docksal/cli:php8.1
     # Uncomment to add support for xdebug - see http://docksal.readthedocs.io/en/master/tools/xdebug/.
     environment:
       - PANTHEON_SITE_ENV
