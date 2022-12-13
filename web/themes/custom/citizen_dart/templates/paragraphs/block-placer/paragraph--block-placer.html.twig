@@ -43,31 +43,7 @@
 	{% set blockId = content.field_block.0['#block_content'].id.0.value %}
 	{% set blockType = content.field_block.0['#block_content'].bundle|clean_class %}
 	{% set blockLabel = content.field_block.0['#block_content'].label|clean_class %}
-	<div data-quickedit-entity-id="{{ blockId }}" class="block block-{{ blockLabel }} block-{{ blockType }}">
-			{% if blockType == 'newsletter' %}
-				{% set intro = {
-					'#type': 'processed_text',
-					'#text': content.field_block.0['#block_content'].body.0.value,
-					'#format': content.field_block.0['#block_content'].body.0.format
-				} %}
-				{% set modalIntro = {
-					'#type': 'processed_text',
-					'#text': content.field_block.0['#block_content'].field_modal_intro.0.value,
-					'#format': content.field_block.0['#block_content'].field_modal_intro.0.format
-				} %}
-				{% if content.field_block.0['#block_content'].field_form_modal.0.value == '1' %}
-					{% set modal = 'On' %}
-				{% endif %}
-				{% include '@composites/01-blocks/newsletter/_newsletter.twig' 
-					with{
-						label: '',
-						embedForm: content.field_block.0['#block_content'].field_form_embed.0.value,
-						modalHeader: content.field_block.0['#block_content'].field_modal_header.0.value,
-						modalTrigger: content.field_block.0['#block_content'].field_modal_trigger.0.value,
-					}
-				%}
-			{% else %}
-				{{ drupal_entity('block_content',blockId) }}
-			{% endif %}
+	<div data-quickedit-entity-id="{{ blockId }}" class="block block-{{ blockLabel }} block-{{ blockType }}">	
+		{{ drupal_entity('block_content',blockId) }}
 	</div>
 {% endblock %}

@@ -50,11 +50,11 @@ third_party_settings:
             region: first
             configuration:
               id: 'menu_block:support-book'
-              label: 'Web Editor Guide'
+              label: 'Support Book'
               label_display: visible
               provider: menu_block
               context_mapping: {  }
-              follow: true
+              follow: false
               follow_parent: active
               label_link: true
               label_type: root
