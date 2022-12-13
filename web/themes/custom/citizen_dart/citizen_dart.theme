@@ -11,28 +11,53 @@ use Drupal\image\Entity\ImageStyle;
 /**
  * Implements hook_preprocess_html().
  */
-  function citizen_dart_preprocess_html(&$variables) {
-    $node = \Drupal::routeMatch()->getParameter('node');
-    $node_revision = \Drupal::routeMatch()->getParameter('node_revision');
-    if(isset($node_revision)){
-      $vid = $node_revision->getRevisionId();
+function citizen_dart_preprocess_html(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $node_revision = \Drupal::routeMatch()->getParameter('node_revision');
+  if(isset($node_revision)){
+    $vid = $node_revision->getRevisionId();
+  }
+  if ($node) {
+    if ((!$node instanceof NodeInterface) && (isset($vid))) {
+      $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($vid);
     }
-    if ($node) {
-      if ((!$node instanceof NodeInterface) && (isset($vid))) {
-        $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($vid);
-      }
-    	//set published or unpublished
-      if($node->status[0]->value == '1'){
-        $variables['attributes']['class'][] = 'published';
-      } else {
-        $variables['attributes']['class'][] = 'unpublished';
-      }
-      //check for main image
-      if (!empty($node->field_image[0])){
-	      $variables['attributes']['class'][] = 'has-main-image';
-	    }
+  	//set published or unpublished
+    if($node->status[0]->value == '1'){
+      $variables['attributes']['class'][] = 'published';
+    } else {
+      $variables['attributes']['class'][] = 'unpublished';
+    }
+    //check for main image
+    if (!empty($node->field_image[0])){
+      $variables['attributes']['class'][] = 'has-main-image';
     }
   }
+}
+
+/**
+ * Implements hook_preprocess webform to add form titles as twig variables.
+ */
+function citizen_dart_preprocess_webform(&$variables){
+  $webform_id = $variables["element"]["#webform_id"];
+  $webform = \Drupal\webform\Entity\Webform::load($webform_id);
+  if ($webform->get('webform_placer')) {
+    $variables['webform_placer'] = TRUE;
+  }
+  if ($webform->get('show_placer_title')) {
+    $variables['show_placer_title'] = TRUE;
+  }
+  $variables['title'] = $webform->label();
+}
+
+function citizen_dart_preprocess_paragraph__form_placer(&$variables) {
+  $paragraph = isset($variables['paragraph']) ? $variables['paragraph'] : '';
+  if (isset($paragraph->field_form_title->value)) {
+    $form_title = $paragraph->field_form_title->value;
+    $webform = $variables['elements']['field_form'][0]['#webform'];
+    $webform->set('webform_placer', TRUE);
+    $webform->set('show_placer_title', $form_title);
+  }
+}
 
 /**
  * Implements hook_theme_suggestions_page_alter().
@@ -81,7 +106,6 @@ function citizen_dart_theme_suggestions_paragraph_alter(array &$suggestions, arr
 
 // provide width and height dimensions for use in the responsive image template to prevent layout shifts
 function citizen_dart_preprocess_responsive_image(&$variables) {
-
   // get responsive image style in order to map hard-coded dimension values
   $style_id = $variables['responsive_image_style_id'];
 
@@ -148,5 +172,4 @@ function citizen_dart_preprocess_responsive_image(&$variables) {
       $variables['img_element']['#attributes']['fetchpriority'] = 'high';
     }
   }
-
 }

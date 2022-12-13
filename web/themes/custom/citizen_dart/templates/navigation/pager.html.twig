@@ -34,13 +34,6 @@
 
 {{ attach_library('citizen_dart/pager') }}
 
-{% block countShim %}
-	{% set count = 0 %}
-	{% for item in items.pages %}
-		{% set count = count + 1 %}
-	{% endfor %}
-{% endblock %}
-
 {% if items %}
   <nav class="pager" aria-labelledby="pagination-heading">
     <div id="pagination-heading" class="visually-hidden">{{ 'Pagination'|t }}</div>
@@ -58,12 +51,12 @@
             </a>
           </li>
         {% endblock %}
-s
+
         {# Now generate the actual pager piece. #}
         {% block pages %}
 
           <li class="pager__current">
-            {%- trans %}Page{% endtrans %} {{ current }} {% trans %}of {% endtrans %}
+            {%- trans %}Page{% endtrans %} {{ current }} {% trans %}of {% endtrans %} <span class="page-total"></span>
           </li>
 
           {% for key, item in items.pages %}

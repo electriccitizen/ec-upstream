@@ -43,7 +43,7 @@
 
 {% block widgetContent %}
 	{{ attach_library('citizen_dart/accordion') }}
-	<div class="field field-accordion-items" aria-label="Accordion">
+	<div class="field field-accordion-items">
 		{%- for key, accordion in content.field_accordion_items -%}
 			{% if key|first != '#' %}
 				{% set controlParent = 'accordion-content-' ~ paragraph.id() ~ '-' ~ (key + 1) %}
