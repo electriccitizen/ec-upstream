@@ -77,7 +77,7 @@
     "drupal/webform": "^6.0",
     "drupal/xmlsitemap": "^1.0",
     "drush-ops/behat-drush-endpoint": "^9.4",
-    "drush/drush": "^10",
+    "drush/drush": "^11",
     "oomphinc/composer-installers-extender": "^2.0",
     "pantheon-upstreams/upstream-configuration": "*"
   },
