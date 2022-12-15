@@ -137,3 +137,6 @@ upstream/web/
 /web/themes/*/node_modules
 .DS_Store
 /database.sql
+
+# Ignore local DB files
+/*.gz
