@@ -135,7 +135,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: entity_reference_revisions_entity_view
+                type: layout_paragraphs
                 label: hidden
                 settings:
                   view_mode: default
@@ -149,13 +149,6 @@ third_party_settings:
       allowed_layouts:
         - layout_onecol
         - two_column_sidebar_left
-      blacklisted_blocks: {  }
-      whitelisted_blocks:
-        Menus:
-          - 'menu_block:main'
-          - 'system_menu_block:main'
-        System:
-          - system_breadcrumb_block
       restricted_categories:
         - '@entity'
         - 'Chaos Tools'
@@ -175,6 +168,13 @@ third_party_settings:
         - User
         - Webform
         - core
+      blacklisted_blocks: {  }
+      whitelisted_blocks:
+        Menus:
+          - 'menu_block:main'
+          - 'system_menu_block:main'
+        System:
+          - system_breadcrumb_block
 id: node.page.default
 targetEntityType: node
 bundle: page

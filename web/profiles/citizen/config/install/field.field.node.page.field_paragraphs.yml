@@ -7,14 +7,13 @@ dependencies:
     - node.type.page
     - paragraphs.paragraphs_type.accordions
     - paragraphs.paragraphs_type.custom_embed
-    - paragraphs.paragraphs_type.events_list
     - paragraphs.paragraphs_type.form_placer
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.horizontal_rule
     - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.layout_section_single
     - paragraphs.paragraphs_type.links_files
     - paragraphs.paragraphs_type.map
-    - paragraphs.paragraphs_type.news_list
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.video
@@ -26,9 +25,9 @@ id: node.page.field_paragraphs
 field_name: field_paragraphs
 entity_type: node
 bundle: page
-label: Widgets
+label: 'Add Sections'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -38,17 +37,16 @@ settings:
     target_bundles:
       accordions: accordions
       custom_embed: custom_embed
-      events_list: events_list
       form_placer: form_placer
       gallery: gallery
       horizontal_rule: horizontal_rule
       image: image
       links_files: links_files
       map: map
-      news_list: news_list
       quote: quote
       text: text
       video: video
+      layout_section_single: layout_section_single
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
@@ -60,11 +58,11 @@ settings:
       block_placer:
         weight: -36
         enabled: false
+      content_placer:
+        weight: 21
+        enabled: false
       custom_embed:
         weight: -37
-        enabled: true
-      events_list:
-        weight: -35
         enabled: true
       form_placer:
         weight: -33
@@ -81,14 +79,14 @@ settings:
       layout_section:
         weight: 29
         enabled: false
+      layout_section_single:
+        weight: 29
+        enabled: true
       links_files:
         weight: -27
         enabled: true
       map:
         weight: -26
-        enabled: true
-      news_list:
-        weight: -25
         enabled: true
       portal:
         weight: 33
@@ -105,7 +103,4 @@ settings:
       video:
         weight: -22
         enabled: true
-      view_placer:
-        weight: -21
-        enabled: false
 field_type: entity_reference_revisions

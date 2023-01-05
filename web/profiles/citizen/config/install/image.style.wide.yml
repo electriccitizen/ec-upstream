@@ -15,3 +15,9 @@ effects:
       width: 1090
       height: null
       upscale: false
+  0293ce47-c993-40ed-b760-304ccee40e21:
+    uuid: 0293ce47-c993-40ed-b760-304ccee40e21
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

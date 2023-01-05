@@ -3,7 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - image.style.banner_big_desk
     - image.style.banner_desk
+    - image.style.banner_desk_non_webp
     - image.style.banner_middesk
     - image.style.banner_mobile
     - image.style.banner_mobile_1_5x
@@ -17,7 +19,7 @@ label: Banner
 image_style_mappings:
   -
     image_mapping_type: image_style
-    image_mapping: banner_desk
+    image_mapping: banner_big_desk
     breakpoint_id: citizen_dart.largedesk
     multiplier: 1x
   -
@@ -61,4 +63,4 @@ image_style_mappings:
     breakpoint_id: citizen_dart.mobile
     multiplier: 2x
 breakpoint_group: citizen_dart
-fallback_image_style: banner_desk
+fallback_image_style: banner_desk_non_webp

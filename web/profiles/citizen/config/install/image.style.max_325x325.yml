@@ -18,3 +18,9 @@ effects:
       width: 325
       height: 325
       upscale: false
+  d3facf9c-fe19-40ca-bf7b-d896e392c917:
+    uuid: d3facf9c-fe19-40ca-bf7b-d896e392c917
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

@@ -51,6 +51,7 @@ dependencies:
   - layout_builder_restrictions
   - layout_discovery
   - layout_paragraphs
+  - lazy
   - link
   - linkit
   - media

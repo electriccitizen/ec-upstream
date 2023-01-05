@@ -24,3 +24,9 @@ effects:
     weight: 2
     data:
       quality: 30
+  6ebfb2ab-2e15-4c8b-bbb6-3693431b7f33:
+    uuid: 6ebfb2ab-2e15-4c8b-bbb6-3693431b7f33
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

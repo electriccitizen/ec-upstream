@@ -5,6 +5,7 @@ dependencies:
   config:
     - image.style.large_thumbnail
     - image.style.large_thumbnail_2x
+    - image.style.large_thumbnail_non_webp
   theme:
     - citizen_dart
 id: large_thumb
@@ -31,4 +32,4 @@ image_style_mappings:
     breakpoint_id: citizen_dart.mobile
     multiplier: 2x
 breakpoint_group: citizen_dart
-fallback_image_style: large_thumbnail
+fallback_image_style: large_thumbnail_non_webp

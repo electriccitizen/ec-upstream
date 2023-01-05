@@ -50,11 +50,11 @@ third_party_settings:
             region: first
             configuration:
               id: 'menu_block:support-book'
-              label: 'Web Editor Guide'
+              label: 'Support Book'
               label_display: visible
               provider: menu_block
               context_mapping: {  }
-              follow: true
+              follow: false
               follow_parent: active
               label_link: true
               label_type: root
@@ -128,13 +128,6 @@ third_party_settings:
       allowed_layouts:
         - layout_onecol
         - two_column_sidebar_left
-      blacklisted_blocks: {  }
-      whitelisted_blocks:
-        Menus:
-          - 'system_menu_block:support-book'
-          - 'menu_block:support-book'
-        System:
-          - system_breadcrumb_block
       restricted_categories:
         - '@entity'
         - 'Chaos Tools'
@@ -154,6 +147,13 @@ third_party_settings:
         - User
         - Webform
         - core
+      blacklisted_blocks: {  }
+      whitelisted_blocks:
+        Menus:
+          - 'system_menu_block:support-book'
+          - 'menu_block:support-book'
+        System:
+          - system_breadcrumb_block
 id: node.support_book.default
 targetEntityType: node
 bundle: support_book

@@ -6,6 +6,7 @@ dependencies:
     - image.style.360x360
     - image.style.360x360_1_5x
     - image.style.360x360_2x
+    - image.style.360x360_non_webp
   theme:
     - citizen_dart
 id: square
@@ -32,4 +33,4 @@ image_style_mappings:
     breakpoint_id: citizen_dart.mobile
     multiplier: 2x
 breakpoint_group: citizen_dart
-fallback_image_style: 360x360
+fallback_image_style: 360x360_non_webp

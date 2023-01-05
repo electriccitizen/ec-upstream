@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.full
     - core.entity_view_mode.media.large_embed
     - core.entity_view_mode.media.medium_embed
     - core.entity_view_mode.media.small_embed
