@@ -57,7 +57,7 @@ if ! [ -z "$(git status --untracked-files=no --porcelain)" ]; then
     case "$choice" in 
       y|Y ) echo "Fair enough, let's do this!";;
       n|N ) echo "Exiting"; exit;;
-      * ) echo "invalid";;
+      * ) echo "invalid"; exit;;
     esac
 fi
 # Project Files - Pull from Github
