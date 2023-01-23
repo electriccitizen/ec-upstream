@@ -13,14 +13,12 @@ dependencies:
     - node.type.landing_page
     - node.type.news
     - node.type.page
-    - taxonomy.vocabulary.categories
   module:
     - addanother
     - block
     - contextual
     - filter
     - layout_builder
-    - layout_paragraphs
     - media
     - node
     - path
@@ -68,7 +66,6 @@ permissions:
   - 'create news content'
   - 'create page content'
   - 'create remote_video media'
-  - 'create terms in categories'
   - 'create url aliases'
   - 'create webform'
   - 'customize shortcut links'
@@ -100,7 +97,6 @@ permissions:
   - 'delete own webform'
   - 'delete own webform submission'
   - 'delete page revisions'
-  - 'delete terms in categories'
   - 'edit any bios content'
   - 'edit any document media'
   - 'edit any event content'
@@ -122,7 +118,6 @@ permissions:
   - 'edit own remote_video media'
   - 'edit own webform'
   - 'edit own webform submission'
-  - 'edit terms in categories'
   - 'revert all revisions'
   - 'revert bios revisions'
   - 'revert event revisions'
