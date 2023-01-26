@@ -6,7 +6,6 @@ dependencies:
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
     - field.field.user.user.field_user_image
-    - views.view.content_recent
     - views.view.user_dashboard
   module:
     - layout_builder
@@ -122,11 +121,11 @@ third_party_settings:
               items_per_page: none
             weight: 0
             additional: {  }
-          8cd9fa13-35cf-471c-a955-0782738e8853:
-            uuid: 8cd9fa13-35cf-471c-a955-0782738e8853
+          6daaa12b-a863-41c7-9610-0c818f23a731:
+            uuid: 6daaa12b-a863-41c7-9610-0c818f23a731
             region: tabs
             configuration:
-              id: 'views_block:content_recent-block_1'
+              id: 'views_block:user_dashboard-all_recent_content'
               label: ''
               label_display: visible
               provider: views
