@@ -15,8 +15,8 @@ dependencies:
   module:
     - addanother
     - filter
-    - layout_paragraphs
     - media
+    - menu_admin_per_menu
     - node
     - path
     - responsive_preview
@@ -38,7 +38,9 @@ permissions:
   - 'access toolbar'
   - 'access user profiles'
   - 'access webform overview'
-  - 'administer menu'
+  - 'administer footer menu items'
+  - 'administer main menu items'
+  - 'administer secondary menu items'
   - 'change own username'
   - 'create bios content'
   - 'create document media'

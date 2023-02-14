@@ -36,14 +36,4 @@ Drupal.behaviors.backToTop = {
   }
 }
 
-/* BLOCK LAYOUT PATH CHANGE
------------------------ */
-Drupal.behaviors.blockLink = {
-  attach: function (context, settings) {
-    $('.role-site_manager:not(.role-administrator) a[href="/admin/structure/block"]', context).once('changeBlockUIPath').each(function(){
-      $(this).attr('href','/admin/structure/block/block-content').text('Custom Blocks');
-    });
-  }
-};
-
 })(jQuery, Drupal);
