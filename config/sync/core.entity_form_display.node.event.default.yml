@@ -442,7 +442,7 @@ content:
     third_party_settings: {  }
   field_metatags:
     type: metatag_firehose
-    weight: 7
+    weight: 6
     region: content
     settings:
       sidebar: true
@@ -450,7 +450,7 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 6
+    weight: 7
     region: content
     settings:
       display_label: true

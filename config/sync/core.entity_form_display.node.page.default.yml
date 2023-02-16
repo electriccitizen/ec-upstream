@@ -54,16 +54,17 @@ content:
       preview_view_mode: preview
       nesting_depth: 0
       require_layouts: 1
+      empty_message: ''
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true

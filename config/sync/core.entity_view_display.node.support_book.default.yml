@@ -128,13 +128,19 @@ third_party_settings:
       allowed_layouts:
         - layout_onecol
         - two_column_sidebar_left
+      denylisted_blocks: {  }
+      allowlisted_blocks:
+        Menus:
+          - 'menu_block:support-book'
+          - 'system_menu_block:support-book'
+        System:
+          - system_breadcrumb_block
       restricted_categories:
         - '@entity'
         - 'Chaos Tools'
         - 'Custom block types'
         - 'Custom blocks'
         - Devel
-        - Flippy
         - Forms
         - Geolocation
         - Help

@@ -142,13 +142,16 @@ third_party_settings:
       allowed_layouts:
         - layout_onecol
         - two_column_quad_split
+      denylisted_blocks: {  }
+      allowlisted_blocks:
+        System:
+          - system_breadcrumb_block
       restricted_categories:
         - '@entity'
         - 'Chaos Tools'
         - 'Custom block types'
         - 'Custom blocks'
         - Devel
-        - Flippy
         - Forms
         - Geolocation
         - Help
