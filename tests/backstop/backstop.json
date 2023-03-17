@@ -112,8 +112,8 @@
       "url": "http://ec-upstream.docksal.site/node/8",
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/8",
       "delay": 4,
-      "hideSelectors": [".gallery-wrapper"],
-      "removeSelectors": []
+      "hideSelectors": [],
+      "removeSelectors": [".gallery-wrapper"]
     },
     {
       "label": "News List Cat1",
