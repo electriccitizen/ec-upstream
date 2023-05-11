@@ -68,9 +68,7 @@ dependencies:
   - path
   - path_alias
   - pathologic
-  - quickedit
   - quicklink
-  - rdf
   - redirect
   - responsive_image
   - responsive_preview

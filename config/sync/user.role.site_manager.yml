@@ -116,7 +116,6 @@ permissions:
   - 'edit any remote_video media'
   - 'edit any webform'
   - 'edit any webform submission'
-  - 'edit layout paragraphs plugin config'
   - 'edit own bios content'
   - 'edit own document media'
   - 'edit own event content'
