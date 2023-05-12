@@ -71,8 +71,8 @@
     "drupal/search_api": "^1.18",
     "drupal/smart_date": "^4.0",
     "drupal/stable": "^2.0",
-    "drupal/stage_file_proxy": "^1.1",
-    "drupal/superfish": "^1.4",
+    "drupal/stage_file_proxy": "^2.0",
+    "drupal/superfish": "1.x-dev@dev",
     "drupal/token": "^1.7",
     "drupal/twig_tweak": "^3.1",
     "drupal/upgrade_status": "^4.0",
@@ -120,6 +120,9 @@
       "drupal/core": {
         "Update module can get 'stuck' with 'no releases available', https://www.drupal.org/project/drupal/issues/2920285": "https://www.drupal.org/files/issues/2920285-update-status.patch"
       },
+      "drupal/block_content_permissions": {
+        "Allow custom block library access without administering blocks": "https://www.drupal.org/files/issues/2023-01-09/block_content_permissions-access_listing_page-2920739-59.patch"
+      },
       "drupal/entity_embed": {
         "Array to string conversion for Media Image": "https://www.drupal.org/files/issues/2019-10-18/entity-embed-array-to-string--3069448-19.patch"
       },
@@ -129,8 +132,8 @@
       "drupal/token": {
         "Responsive Preview Integration": "https://www.drupal.org/files/issues/2021-08-13/responsive_preview_support_3218969-6.patch"
       },
-      "drupal/block_content_permissions": {
-      	"Allow custom block library access without administering blocks": "https://www.drupal.org/files/issues/2023-01-09/block_content_permissions-access_listing_page-2920739-59.patch"
+      "drupal/superfish": {
+      	"D10 compatibility patch": "https://www.drupal.org/files/issues/2023-01-18/3299991-drupal-10-compatibility-fixes-7.patch"
       }
     },
     "composer-exit-on-patch-failure": true,
@@ -155,6 +158,9 @@
       "install-cms": [
         "drush site-install citizen --account-mail=no-reply@electriccitien.com --account-name=admin  --site-mail=no-reply@electriccitizen.com --site-name=ec-upstream --yes"
       ]
+    },
+    "drupal-lenient": {
+      "allowed-list": ["drupal/superfish"]
     }
   },
   "config": {
