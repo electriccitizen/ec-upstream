@@ -140,3 +140,6 @@ upstream/web/
 
 # Ignore local DB files
 /*.gz
+
+# Ignore docksal settings file
+/web/sites/default/settings.docksal.php
