@@ -44,7 +44,7 @@
     "drupal/entity_usage": "^2.0@beta",
     "drupal/extlink": "^1.5",
     "drupal/field_group": "^3.1",
-    "drupal/focal_point": "^1.5",
+    "drupal/focal_point": "^2.0",
     "drupal/geolocation": "^3.2.0",
     "drupal/gin": "^3.0@beta",
     "drupal/gin_toolbar": "^1.0@beta",
