@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "007a673fad81fd811bc6d9659f185379",
+    "content-hash": "750f5577fb7dc055ca516aadbb0ea6f8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1549,16 +1549,16 @@
         },
         {
             "name": "doctrine/persistence",
-            "version": "3.1.4",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/persistence.git",
-                "reference": "8bf8ab15960787f1a49d405f6eb8c787b4841119"
+                "reference": "63fee8c33bef740db6730eb2a750cd3da6495603"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/8bf8ab15960787f1a49d405f6eb8c787b4841119",
-                "reference": "8bf8ab15960787f1a49d405f6eb8c787b4841119",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/63fee8c33bef740db6730eb2a750cd3da6495603",
+                "reference": "63fee8c33bef740db6730eb2a750cd3da6495603",
                 "shasum": ""
             },
             "require": {
@@ -1627,7 +1627,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/persistence/issues",
-                "source": "https://github.com/doctrine/persistence/tree/3.1.4"
+                "source": "https://github.com/doctrine/persistence/tree/3.2.0"
             },
             "funding": [
                 {
@@ -1643,7 +1643,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-03T11:13:07+00:00"
+            "time": "2023-05-17T18:32:04+00:00"
         },
         {
             "name": "doctrine/reflection",
@@ -2171,106 +2171,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/block_content_permissions",
                 "issues": "https://www.drupal.org/project/issues/block_content_permissions"
-            }
-        },
-        {
-            "name": "drupal/cacheflush",
-            "version": "1.0.0-beta4",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/cacheflush.git",
-                "reference": "8.x-1.0-beta4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/cacheflush-8.x-1.0-beta4.zip",
-                "reference": "8.x-1.0-beta4",
-                "shasum": "fcb0441e2db14c97281270d572d6f1a0a2129468"
-            },
-            "require": {
-                "drupal/cacheflush_entity": "*",
-                "drupal/core": "^8 || ^9"
-            },
-            "require-dev": {
-                "drupal/cacheflush_ui": "*",
-                "drupal/ultimate_cron": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.0-beta4",
-                    "datestamp": "1623265163",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "balintcsaba",
-                    "homepage": "https://www.drupal.org/user/1800496"
-                },
-                {
-                    "name": "reszli",
-                    "homepage": "https://www.drupal.org/user/710368"
-                },
-                {
-                    "name": "vuil",
-                    "homepage": "https://www.drupal.org/user/3568458"
-                }
-            ],
-            "description": "Allows you to create configurable cache flusher presets.",
-            "homepage": "http://drupal.org/project/cacheflush",
-            "support": {
-                "source": "http://cgit.drupalcode.org/cacheflush",
-                "issues": "https://www.drupal.org/project/issues/cacheflush"
-            }
-        },
-        {
-            "name": "drupal/cacheflush_entity",
-            "version": "1.0.0-beta4",
-            "require": {
-                "drupal/cacheflush": "^1",
-                "drupal/core": "^8 || ^9"
-            },
-            "type": "metapackage",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.0-beta4",
-                    "datestamp": "1623265163",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "balintcsaba",
-                    "homepage": "https://www.drupal.org/user/1800496"
-                },
-                {
-                    "name": "reszli",
-                    "homepage": "https://www.drupal.org/user/710368"
-                },
-                {
-                    "name": "vuil",
-                    "homepage": "https://www.drupal.org/user/3568458"
-                }
-            ],
-            "description": "Cacheflush entity.",
-            "homepage": "https://www.drupal.org/project/cacheflush",
-            "support": {
-                "source": "https://git.drupalcode.org/project/cacheflush"
             }
         },
         {
@@ -7720,16 +7620,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.15.4",
+            "version": "v4.15.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "6bb5176bc4af8bcb7d926f88718db9b96a2d4290"
+                "reference": "11e2663a5bc9db5d714eedb4277ee300403b4a9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/6bb5176bc4af8bcb7d926f88718db9b96a2d4290",
-                "reference": "6bb5176bc4af8bcb7d926f88718db9b96a2d4290",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/11e2663a5bc9db5d714eedb4277ee300403b4a9e",
+                "reference": "11e2663a5bc9db5d714eedb4277ee300403b4a9e",
                 "shasum": ""
             },
             "require": {
@@ -7770,9 +7670,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.4"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.5"
             },
-            "time": "2023-03-05T19:49:14+00:00"
+            "time": "2023-05-19T20:20:00+00:00"
         },
         {
             "name": "oomphinc/composer-installers-extender",
@@ -15607,7 +15507,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/auto_entitylabel": 10,
-        "drupal/cacheflush": 10,
         "drupal/entity_usage": 10,
         "drupal/gin": 10,
         "drupal/gin_toolbar": 10,
