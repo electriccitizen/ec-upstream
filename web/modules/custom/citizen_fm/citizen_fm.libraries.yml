@@ -1,4 +1,0 @@
-citizen_fm:
-  version: 1.x
-  js:
-    js/citizen_fm.js: {}

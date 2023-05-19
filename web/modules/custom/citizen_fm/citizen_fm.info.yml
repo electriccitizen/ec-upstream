@@ -1,5 +1,0 @@
-name: Citizen File Management
-type: module
-description: Custom code for file management.
-core_version_requirement: ^9 || ^10
-package: Custom
