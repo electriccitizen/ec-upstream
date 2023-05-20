@@ -15,7 +15,6 @@ dependencies:
   - block_content
   - breakpoint
   - citizen_custom
-  - ckeditor
   - config
   - config_filter
   - config_ignore
@@ -30,7 +29,6 @@ dependencies:
   - editor
   - embed
   - entity
-  - entity_embed
   - entity_reference_revisions
   - entity_usage
   - field
