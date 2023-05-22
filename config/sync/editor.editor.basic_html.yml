@@ -40,6 +40,12 @@ settings:
       - blockQuote
       - code
   plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - left
+        - center
+        - right
+        - justify
     ckeditor5_heading:
       enabled_headings:
         - heading2
@@ -47,14 +53,11 @@ settings:
         - heading4
         - heading5
         - heading6
-    ckeditor5_style:
-      styles:
-        -
-          label: Warning
-          element: '<div class="warning">'
-        -
-          label: Button
-          element: '<div class="button">'
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<cite>'
@@ -83,22 +86,19 @@ settings:
         - '<h6 id class>'
         - '<p class>'
         - '<drupal-media data-caption title>'
-    ckeditor5_list:
-      reversed: false
-      startIndex: true
-    ckeditor5_alignment:
-      enabled_alignments:
-        - left
-        - center
-        - right
-        - justify
-    ckeditor5_imageResize:
-      allow_resize: true
-    media_media:
-      allow_view_mode_override: false
+    ckeditor5_style:
+      styles:
+        -
+          label: Warning
+          element: '<div class="warning">'
+        -
+          label: Button
+          element: '<div class="button">'
     linkit_extension:
       linkit_enabled: true
       linkit_profile: wysiwyg
+    media_media:
+      allow_view_mode_override: false
 image_upload:
   status: true
   scheme: public
