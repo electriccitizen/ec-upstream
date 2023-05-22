@@ -41,6 +41,7 @@
     "drupal/easy_breadcrumb": "^2.0",
     "drupal/embed": "^1.6",
     "drupal/entity": "^1.1",
+    "drupal/entity_embed": "^1.0@dev",
     "drupal/entity_reference_revisions": "^1.8",
     "drupal/entity_usage": "^2.0@beta",
     "drupal/extlink": "^1.5",
