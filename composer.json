@@ -127,7 +127,8 @@
         "Array to string conversion for Media Image": "https://www.drupal.org/files/issues/2019-10-18/entity-embed-array-to-string--3069448-19.patch"
       },
       "drupal/focal_point": {
-        "Preview modal closes media library": "https://www.drupal.org/files/issues/2020-10-06/3162210-17.patch"
+        "Preview modal closes media library": "https://www.drupal.org/files/issues/2020-10-06/3162210-17.patch",
+        "Require jquery_ui_draggable": "https://www.drupal.org/files/issues/2023-04-03/3351521-2.patch"
       },
       "drupal/token": {
         "Responsive Preview Integration": "https://www.drupal.org/files/issues/2021-08-13/responsive_preview_support_3218969-6.patch"
