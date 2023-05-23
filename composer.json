@@ -11,10 +11,6 @@
     {
       "type": "composer",
       "url": "https://asset-packagist.org"
-    },
-    {
-      "type": "path",
-      "url": "upstream-configuration"
     }
   ],
   "require": {
@@ -85,8 +81,7 @@
     "drush-ops/behat-drush-endpoint": "^9.4",
     "drush/drush": "^11",
     "mglaman/composer-drupal-lenient": "^1.0",
-    "oomphinc/composer-installers-extender": "^2.0",
-    "pantheon-upstreams/upstream-configuration": "*"
+    "oomphinc/composer-installers-extender": "^2.0"
   },
   "conflict": {
     "drupal\/drupal": "*"
