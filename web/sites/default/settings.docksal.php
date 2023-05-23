@@ -6,6 +6,9 @@ $databases['default']['default'] = array (
   'password' => 'user',
   'host' => 'db',
   'driver' => 'mysql',
+  'init_commands' => [
+    'isolation_level' => 'SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED',
+  ],
 );
 $settings['hash_salt'] = 'I wish i were a boy in France.';
 
