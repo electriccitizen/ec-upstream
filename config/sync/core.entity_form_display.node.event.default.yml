@@ -73,8 +73,8 @@ content:
     weight: 2
     region: content
     settings:
-      show_extra: '1'
-      hide_date: '1'
+      show_extra: true
+      hide_date: true
       modal: false
       default_duration: 60
       default_duration_increments: |-
