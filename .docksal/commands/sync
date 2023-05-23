@@ -62,8 +62,8 @@ if ! [ -z "$(git status --untracked-files=no --porcelain)" ]; then
 fi
 # Project Files - Pull from Github
 echo -e  "${green_bg} Get latest code ${NC}${yellow} Pulling ${REPO_BRANCH} branch from Github...${NC}"
-#git checkout ${REPO_BRANCH}
-#git pull 
+git checkout ${REPO_BRANCH}
+git pull 
 
 # Fin Restart
 echo -e  "${green_bg} Fin Restart ${NC}${yellow} Restart fin to get latest container updates...${NC}"
