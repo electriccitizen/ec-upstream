@@ -9,6 +9,7 @@ dependencies:
     - core.entity_view_mode.media.small_embed
   module:
     - editor
+    - entity_embed
     - linkit
     - media
     - pathologic
@@ -24,7 +25,7 @@ filters:
     status: true
     weight: -44
     settings:
-      allowed_html: '<br> <p class> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <div class id data-*> <cite> <dl> <dt> <dd> <figcaption> <picture> <small> <mark> <blockquote cite> <span class> <img srcset typeof src alt height width data-entity-type data-entity-uuid data-entity-substitution data-align data-caption> <source srcset media type> <iframe src title frameborder aria-describedby tabindex allowtransparency width height class> <drupal-entity data-* alt title> <article data-* class> <a hreflang target id title class href data-entity-type data-entity-uuid data-entity-substitution> <ul type class> <ol type class start> <drupal-media data-caption title data-entity-type data-entity-uuid alt data-align> <strong> <em> <u> <code> <li> <hr> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption>'
+      allowed_html: '<br> <p class> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <div class id data-*> <cite> <dl> <dt> <dd> <figcaption> <picture> <small> <mark> <blockquote cite> <span class> <img srcset typeof src alt height width data-entity-type data-entity-uuid data-entity-substitution data-align data-caption> <source srcset media type> <iframe src title frameborder aria-describedby tabindex allowtransparency width height class> <drupal-entity data-* alt title> <article data-* class> <a hreflang target id title class href data-entity-type data-entity-uuid data-entity-substitution> <ul type class> <ol type class start> <drupal-media data-caption title data-entity-type data-entity-uuid alt data-view-mode data-align> <strong> <em> <u> <code> <li> <hr> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -50,6 +51,12 @@ filters:
     provider: filter
     status: false
     weight: -38
+    settings: {  }
+  entity_embed:
+    id: entity_embed
+    provider: entity_embed
+    status: false
+    weight: -48
     settings: {  }
   filter_autop:
     id: filter_autop
