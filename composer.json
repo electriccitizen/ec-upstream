@@ -68,7 +68,6 @@
     "drupal/role_delegation": "^1.1",
     "drupal/search_api": "^1.18",
     "drupal/smart_date": "^4.0",
-    "drupal/stable": "^2.0",
     "drupal/stage_file_proxy": "^2.0",
     "drupal/superfish": "1.x-dev@dev",
     "drupal/token": "^1.7",
