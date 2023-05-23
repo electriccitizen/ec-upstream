@@ -164,7 +164,6 @@
     "preferred-install": "dist",
     "sort-packages": true,
     "allow-plugins": {
-      "zaporylie/composer-drupal-optimizations": true,
       "drupal/core-composer-scaffold": true,
       "cweagans/composer-patches": true,
       "composer/installers": true,
