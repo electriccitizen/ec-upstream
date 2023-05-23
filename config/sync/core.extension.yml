@@ -113,7 +113,6 @@ module:
   citizen: 1000
 theme:
   stable: 0
-  seven: 0
   claro: 0
   citizen_dart: 0
   gin: 0
