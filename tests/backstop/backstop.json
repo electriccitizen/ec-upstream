@@ -113,7 +113,7 @@
       "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/8",
       "delay": 4,
       "hideSelectors": [],
-      "removeSelectors": [".gallery-wrapper"]
+      "removeSelectors": [".gallery-wrapper", ".field-location.geolocation"]
     },
     {
       "label": "News List Cat1",
