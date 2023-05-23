@@ -126,6 +126,7 @@ jobs:
       - run:
           name: deploy to Pantheon
           command: ./.ci/deploy/pantheon/dev-multidev
+          no_output_timeout: 20m
 
 #  behat_test:
 #    <<: *defaults
