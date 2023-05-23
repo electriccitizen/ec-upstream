@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - editor
-    - entity_embed
     - linkit
     - media
     - pathologic
@@ -19,12 +18,6 @@ filters:
     provider: editor
     status: false
     weight: -46
-    settings: {  }
-  entity_embed:
-    id: entity_embed
-    provider: entity_embed
-    status: false
-    weight: -39
     settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
