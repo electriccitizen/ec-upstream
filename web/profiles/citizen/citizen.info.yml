@@ -100,7 +100,7 @@ dependencies:
   - paragraphs
 
 themes:
-  - stable9
+  - stable
   - seven
   - citizen_dart
   - gin

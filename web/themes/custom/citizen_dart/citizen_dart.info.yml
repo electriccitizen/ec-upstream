@@ -13,7 +13,7 @@ ckeditor_stylesheets:
 ckeditor5-stylesheets:
   - https://fonts.googleapis.com/css?family=Open+Sans:ital,wght@0,400;;0,700;1,400|Material+Icons+Outlined
   - dist/cke5.css
-base theme: stable9
+base theme: stable
 hidden: false
 regions:
   header: Header 
