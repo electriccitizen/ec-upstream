@@ -1,15 +1,15 @@
-uuid: 09f0dbd8-e4ae-4928-b299-1c2e8a6cde92
+uuid: 2441a438-b4eb-4286-8962-f4f5f1288f70
 langcode: en
 status: true
 dependencies:
   module:
     - help
   theme:
-    - stable
+    - stable9
 _core:
-  default_config_hash: faOtnwA4BZi7jITCyqU_gniWPmMYoodYlfvxB42kCZM
-id: stable_help
-theme: stable
+  default_config_hash: gev70gb-Z6mJzOmMuRSImQ4Z2X7P1sxiO0BoNGwGziw
+id: stable9_help
+theme: stable9
 region: content
 weight: -5
 provider: null

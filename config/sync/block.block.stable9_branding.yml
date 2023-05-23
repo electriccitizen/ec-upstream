@@ -1,15 +1,15 @@
-uuid: 87388c45-31be-480d-9b99-ce70af8cc28e
+uuid: a4c83606-fa3b-4233-87b9-a6dd08a78a51
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - stable
+    - stable9
 _core:
-  default_config_hash: BdHUYmXc1EZFZo1dZaYmfb4mjZa7Ue9YAZIDzRXjfDY
-id: stable_branding
-theme: stable
+  default_config_hash: 9NbN6s35sLKnO8KhDJKCKxTKAnNnRo69nxpk-LzaMXM
+id: stable9_branding
+theme: stable9
 region: header
 weight: -7
 provider: null

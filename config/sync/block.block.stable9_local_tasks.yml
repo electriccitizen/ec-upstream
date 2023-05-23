@@ -1,13 +1,13 @@
-uuid: 7e655b76-96d4-4e4e-912e-3b0c4715ec37
+uuid: 5eabc1e4-49a9-4ccb-b509-52fbd2ca7e4c
 langcode: en
 status: true
 dependencies:
   theme:
-    - stable
+    - stable9
 _core:
-  default_config_hash: F1x5ktKY4OnkeTAS65NBxqapJtgFvL1dLbeb-8v2EFw
-id: stable_local_tasks
-theme: stable
+  default_config_hash: jQHtGFoiMSMKUSxx-inTvcCSIz43A5mNdXP_WEiMqDo
+id: stable9_local_tasks
+theme: stable9
 region: content
 weight: -6
 provider: null

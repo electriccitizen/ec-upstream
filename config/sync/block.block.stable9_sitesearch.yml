@@ -1,15 +1,16 @@
-uuid: 2091e987-7a5b-449d-b62c-f9851013713d
+uuid: 5d668ad4-5016-4f3b-97eb-d67e48b0747f
 langcode: en
 status: true
 dependencies:
   module:
+    - citizen_custom
     - system
   theme:
-    - stable
+    - stable9
 _core:
-  default_config_hash: Ojd5y7OqaHPGS1SoaqqTeCPo-1PINgrfQ1L1SY_gxHM
-id: stable_sitesearch
-theme: stable
+  default_config_hash: ZArko7DF6X5guRcgeKeyS0W1gr3mpdzfeJej0WXjJK0
+id: stable9_sitesearch
+theme: stable9
 region: header
 weight: -6
 provider: null

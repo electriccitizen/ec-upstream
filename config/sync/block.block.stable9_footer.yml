@@ -1,4 +1,4 @@
-uuid: 3e842bc1-068f-4421-8dd4-a3bdc825b0e2
+uuid: 664190d6-f42d-4dd8-9360-b972b350eae4
 langcode: en
 status: true
 dependencies:
@@ -7,13 +7,13 @@ dependencies:
   module:
     - menu_block
   theme:
-    - stable
+    - stable9
 _core:
-  default_config_hash: NipmUNYW0Cb3hwNy2ldeLilLgycNbBG-jV6tDhH5kHw
-id: stable_footer
-theme: stable
+  default_config_hash: 2VA69XayHZewRlk5D2y0nLUtkrvITcyLRTCOsCDiJUA
+id: stable9_footer
+theme: stable9
 region: sidebar_first
-weight: -4
+weight: -5
 provider: null
 plugin: 'menu_block:footer'
 settings:

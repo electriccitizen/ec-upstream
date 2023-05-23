@@ -20,7 +20,7 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: body
     type: text
-    boost: !!float 3
+    boost: 3.0
     dependencies:
       config:
         - field.storage.node.body
@@ -29,7 +29,7 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: title
     type: text
-    boost: !!float 21
+    boost: 21.0
     dependencies:
       module:
         - node
@@ -75,7 +75,7 @@ processor_settings:
     fields:
       - body
       - title
-    ignorable: '[''¿¡!?,.:;]'
+    ignorable: "['¿¡!?,.:;]"
     ignorable_classes:
       - Pc
       - Pd
@@ -130,13 +130,13 @@ processor_settings:
       preprocess_index: -42
     boosts:
       'entity:node':
-        datasource_boost: !!float 1
+        datasource_boost: 1.0
         bundle_boosts:
-          event: !!float 0
-          landing_page: !!float 5
-          news: !!float 0
-          page: !!float 3
-          profiles: !!float 0
+          event: 0.0
+          landing_page: 5.0
+          news: 0.0
+          page: 3.0
+          profiles: 0.0
 tracker_settings:
   default:
     indexing_order: fifo

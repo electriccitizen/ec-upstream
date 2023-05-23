@@ -1,4 +1,4 @@
-uuid: 55b6826c-f2e6-4bd8-9a74-f31e8ffeb6e0
+uuid: 3e3cb3f8-d52e-4965-a736-21b53574d49b
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   module:
     - superfish
   theme:
-    - stable
+    - stable9
 _core:
-  default_config_hash: icfyEnuAAcg8pof9tYUCdUR6xeOaw7bZIbh0-1LBduc
-id: stable_mainnavigation
-theme: stable
+  default_config_hash: c9L8E5CrakDbgagLgsLDk7zFHiHbVJyvxaE3xiulsMA
+id: stable9_mainnavigation
+theme: stable9
 region: header
 weight: -5
 provider: null

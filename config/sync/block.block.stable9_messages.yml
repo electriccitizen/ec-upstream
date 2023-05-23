@@ -1,15 +1,15 @@
-uuid: 5cf45123-585b-4890-97e2-414de16c3e49
+uuid: 9bb79ead-197d-42f6-903d-4323e794d329
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - stable
+    - stable9
 _core:
-  default_config_hash: OrNufKHWjFnHpq3kxrFaWN5Cx0XZ0Y6buytNWV13ASQ
-id: stable_messages
-theme: stable
+  default_config_hash: EUZo_g0tDFjOXrdXs8mYZaXx-iMDoxLctBPwnm1gky8
+id: stable9_messages
+theme: stable9
 region: content
 weight: -7
 provider: null
