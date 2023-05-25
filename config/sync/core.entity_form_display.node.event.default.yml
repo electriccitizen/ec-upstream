@@ -26,8 +26,8 @@ third_party_settings:
   field_group:
     group_location:
       children:
-        - field_event_location
         - field_address
+        - field_event_location
       label: Location
       region: content
       parent_name: ''
@@ -83,6 +83,8 @@ content:
         custom
       show_extra: true
       hide_date: true
+      allday: true
+      separator: to
     third_party_settings:
       smart_date_recur:
         modal: true
@@ -95,7 +97,7 @@ content:
           YEARLY: YEARLY
   field_event_location:
     type: geolocation_googlegeocoder
-    weight: 6
+    weight: 8
     region: content
     settings:
       auto_client_location: ''

@@ -136,24 +136,45 @@
 
 /* OFF CANVAS */
 
-.ui-dialog-off-canvas #drupal-off-canvas-wrapper-wrapper{
-	*{
-		font-family: $bodyFont;
-	}
-	form{
-		color: $white;
-	}
-	select:hover,select:focus{
-		background: $white;
-	}
-	summary{
-		border-top: 1px dotted $white;
-	}
-	.ajax-progress-throbber{
-		background: none;
-		border: 0;
-		.message{
-			display: none;
+#drupal-off-canvas-wrapper{
+	.ui-dialog-titlebar{
+		.ui-dialog-title{
+			font-size: 15px;
+			line-height: .75em;
+			font-weight: $regular;
+			&:before{
+				width: 14px;
+				margin-right: 2px;
+			}
+		}
+		.ui-dialog-titlebar-close{
+			width: 22px;
+			height: 22px;
+			&:hover{
+				border: 1px solid $white;
+			}
 		}
 	}
+	#drupal-off-canvas{
+		font-size: 16px;
+		button,.ui-button{
+			&:before,&:after{
+				content: none;
+			}
+		}
+		summary,input:where(:not([type="checkbox"],[type="radio"],[type="file"])),textarea{
+			font-size: 14px;
+		}
+		.form-actions{
+			margin-top: 10px;
+		}
+		select{
+			background-color: revert;
+			font-size: 14px;
+			background-size: .75em;
+		}
+		#formatter-settings-wrapper{
+			margin-bottom: 10px;
+		}
+	}//end #drupal-off-canvas
 }//end off canvas
