@@ -15,6 +15,29 @@
 /* LAYOUT BUILDER FORM CUSTOMIZATIONS
 ---------------------------------- */
 
+.block-system-main-block {
+	.layout-builder-form,.layout-builder-discard-changes,.layout-builder-revert-overrides{
+		.form-actions{
+			@include safeFlex(row,wrap,start,start);
+			& > input{
+				margin-right: 1.5rem;
+				margin-top: 1rem;
+				min-width: 204px !important;
+			}
+			.button--primary{
+				@include submitButton;
+			}
+			#edit-discard-changes{
+				@include cautionButton;
+			}
+			#edit-revert,a#edit-cancel{
+				@include warningButton;
+				margin-top: 1rem;
+			}
+		}
+	}
+}
+
 //hide the builder label and only show it later when in layout builder
 .builder-label{
 	display: none;

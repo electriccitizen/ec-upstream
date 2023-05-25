@@ -88,7 +88,7 @@ settings:
           element: '<p class="warning">'
         -
           label: Button
-          element: '<a class="button">'
+          element: '<a class="ec-button">'
     linkit_extension:
       linkit_enabled: true
       linkit_profile: wysiwyg
