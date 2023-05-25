@@ -14,6 +14,20 @@
 @use '../../00-base/base' as *;
 @use 'node-mixins' as *;
 
+@mixin warning{
+	min-height: 400px;
+	@include safeFlex(column,nowrap,center,center);
+	& > div{
+		max-width: $textMax + 40px;
+		border: 1px solid $borderRule;
+		padding: 40px 30px;
+	}
+	#block-citizen-dart-content{
+		padding-top: 0 !important;
+	}
+}
+
+
 /* REVISIONS
 -------------------- */
 .revisions-actions{
@@ -48,16 +62,17 @@
 	//restricted access message
 	&:not(.logged-in){
 		.restricted-node{
-			min-height: 400px;
-			@include safeFlex(column,nowrap,center,center);
-			& > div{
-				max-width: $textMax + 40px;
-				border: 1px solid $borderRule;
-				padding: 40px 30px;
-			}
+			@include warning;
 		}
 	}//end restricted access
 }//end path node
+
+//regular 403 & 404 messages
+body .layout-content{
+	& > .error-content{
+		@include warning;
+	}
+}
 
 /* GLOBAL SECTIONS
 -------------------- */

@@ -15,16 +15,25 @@
 		.toolbar-menu-administration{
 			& > .toolbar-menu{
 				& > .menu-item{
+					&.menu-item--active-trail > .toolbar-icon::after,&:hover > .toolbar-icon::after{
+						left: calc(50% - 26px);
+					}
 					.toolbar-menu{
 						.menu-item{
 							.toolbar-icon{
-								font-size: 14px;
+								font-size: 16px;
+							}
+							&.menu-item--expanded{
+								&:before{
+									top: .75rem;
+								}
 							}
 						}
 					}
 				}//end menu item
 			}//end top level toolbar menu (icons)
 		}//end toolbar administration
+		//
 	}//end gin vertical toolbar
 
 }//end gin toolbar
