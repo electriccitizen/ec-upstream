@@ -1,7 +1,7 @@
-(function($, Drupal) {
+(function($, Drupal, once) {
 Drupal.behaviors.pager = {
 	attach: function (context, settings) {
-		$('.count-shim', context).once('page-menu').each(function(){  
+		$(once('page-menu', '.count-shim', context)).each(function(){
 			//add pager counter to results
 			var count = $('.count-shim').html();
 			$('.page-total').html(count);
@@ -16,4 +16,4 @@ Drupal.behaviors.pager = {
 	}
 }//end page menu function
 
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);

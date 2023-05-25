@@ -1,10 +1,10 @@
-(function($, Drupal) {
+(function($, Drupal, once) {
 
 /* USER LOGIN PASSWORD SHOW
 ------------------------------------ */
 Drupal.behaviors.userLogin = {
 	attach: function (context, settings) {
-		$('#user-login-form', context).once('showPass').each(function(){
+		$(once('showPass', '#user-login-form', context)).each(function(){
       $('.show-password').click(function(e){
         e.preventDefault();
         if($(this).is('.show')){
@@ -23,11 +23,11 @@ Drupal.behaviors.userLogin = {
 ------------------------------------ */
 Drupal.behaviors.select2 = {
   attach: function (context, settings) {
-    $("select", context).once('selects').each(function(){
+    $(once('selects', 'select', context)).each(function(){
       $( 'form.views-exposed-form select,form.webform-submission-form select' ).select2({
         placeholder: "Select an option"
       });
-      $(".js-form-type-select", context).once('selectAccessiblity').each(function(){
+      $(once('selectAccessiblity', '.js-form-type-select', context)).each(function(){
         $(document).ready(function(){
           $('.select2-search__field').each(function(){
             var label = $(this).closest('.select2-container').siblings('label').text();
@@ -40,4 +40,4 @@ Drupal.behaviors.select2 = {
    }
 };
 
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);

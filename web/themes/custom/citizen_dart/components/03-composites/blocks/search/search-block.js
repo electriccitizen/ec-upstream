@@ -1,9 +1,9 @@
-(function($, Drupal) {
+(function($, Drupal, once) {
 	
 //search toggle
 Drupal.behaviors.searchToggle = {
 	attach: function (context, settings) {
-	 	$(".block-site-search").once('tSearch').each(function(){  
+	 	$(once('tSearch', '.block-site-search', context)).each(function(){
 	 		$('.t-search', this).click(function(e){
 	 			e.preventDefault();
 	 			$('#search-form-wrapper').slideDown(400).attr('aria-hidden', 'false');
@@ -23,5 +23,5 @@ Drupal.behaviors.searchToggle = {
 	}
 }
 
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);
 

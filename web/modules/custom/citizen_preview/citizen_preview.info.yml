@@ -1,8 +1,0 @@
-name: Citizen Preview
-description: Citizen Preview Overrides
-type: module
-package: Custom
-core_version_requirement: ^9 || ^10
-
-dependencies:
-  - responsive_preview:responsive_preview

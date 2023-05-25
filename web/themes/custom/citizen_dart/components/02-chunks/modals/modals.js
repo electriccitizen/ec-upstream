@@ -1,9 +1,9 @@
-(function($, Drupal) {
+(function($, Drupal, once) {
 
 	//Pop-up content functionality.
 	Drupal.behaviors.modal = {
 		attach: function (context, settings) {
-			$(".modal", context).once('modalContent').each(function(){
+			$(once('modalContent', '.modal', context)).each(function(){
 				//set the variable needed to keep the modal controls specific
 				var pid = $('.modal-lead', this).attr('data-attribute-id');
 				$('.modal-wrapper', this).appendTo('.overflow-guard');
@@ -68,4 +68,4 @@
 		}
 	}
 	
-	})(jQuery, Drupal);
+	})(jQuery, Drupal, once);

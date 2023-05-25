@@ -1,10 +1,10 @@
-(function($, Drupal) {
+(function($, Drupal, once) {
 
 /* Scroll to results if an exposed filter was used & set placeholders for select 2
 ------------------------------------ */
 Drupal.behaviors.viewsScroll = {
   attach: function (context, settings) {
-    $('.view .views-exposed-form', context).once('wasSearched').each(function(){
+    $(once('wasSearched', '.views-exposed-form', context)).each(function(){
       //check if searched
       var urlCurrent = window.location.href;
       if((urlCurrent.indexOf("?f") > -1) || (urlCurrent.indexOf("?c") > -1) || (urlCurrent.indexOf("?s") > -1)){
@@ -20,4 +20,4 @@ Drupal.behaviors.viewsScroll = {
   }
 };
 
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);

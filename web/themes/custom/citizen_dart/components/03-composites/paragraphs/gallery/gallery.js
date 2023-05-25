@@ -1,11 +1,11 @@
 
-(function($, Drupal) {
+(function($, Drupal, once) {
 
 	//Swipebox script for lightbox images.
 	Drupal.behaviors.gallery = {
 		attach: function (context, settings) {
 			//Featherlight
-			$(".gallery-type.lightbox", context).once('lightboxes').each(function(){
+			$(once('lightboxes', '.gallery-type.lightbox', context)).each(function(){
 				$(document).ready(function(){
 					$('.featherlight-gal', this).featherlightGallery({
 						previousIcon: '<',
@@ -16,7 +16,7 @@
 				});
 			});
 			//Slider
-			$(".gallery-type.slider", context).once('slider').each(function(){
+			$(once('slider', '.gallery-type.slider', context)).each(function(){
 				$(document).ready(function(){
 					$('.field-image-multi', this).slick({
 						adaptiveHeight: true,
@@ -30,4 +30,4 @@
 		}
 	}
 
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);

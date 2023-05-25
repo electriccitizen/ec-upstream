@@ -1,10 +1,10 @@
-(function($, Drupal) {
+(function($, Drupal, once) {
 
 /* LAYOUT 
 ------------------ */
 Drupal.behaviors.removeEmptyRegions = {
   attach: function (context, settings) {
-    $(".layout > .layout__region:not(.layout-builder__region)", context).once('removeEmpty').each(function(){  
+    $(once('removeEmpty', '.layout > .layout__region:not(.layout-builder__region)', context)).each(function(){
       if(!$(this).children().length){
         $(this).remove();
       }
@@ -16,7 +16,7 @@ Drupal.behaviors.removeEmptyRegions = {
 ------------------ */
 Drupal.behaviors.backToTop = {
   attach: function (context, settings) {
-    $("html.js", context).once('backTop').each(function(){
+  	$(once('backTop', 'html.js', context)).each(function(){
       $(window).scroll(function(){
         var back = $(window).height() * .8;
         if ($(this).scrollTop() > back ) {
@@ -36,4 +36,4 @@ Drupal.behaviors.backToTop = {
   }
 }
 
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);

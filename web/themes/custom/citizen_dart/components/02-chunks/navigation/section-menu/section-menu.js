@@ -1,7 +1,8 @@
-(function($, Drupal) {
+(function($, Drupal, once) {
+
 Drupal.behaviors.sectionMenu = {
 	attach: function (context, settings) {
-		$("#block-section-menu", context).once('section-menu').each(function(){
+		$(once('section-menu', '#block-section-menu', context)).each(function(){
 			//mobile toggle
 			$('.section-menu-toggle').click(function(e){
 				e.preventDefault();
@@ -65,4 +66,4 @@ function mobileSectionnav() {
 };
 
 
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);

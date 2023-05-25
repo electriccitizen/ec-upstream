@@ -1,9 +1,9 @@
-(function($, Drupal) {
+(function($, Drupal, once) {
 
 //highlight search results
 Drupal.behaviors.searchHighlight = {
 	attach: function (context, settings) {
-	 	$(".search-results").once('tSearch').each(function(){  
+	 	$(once('tSearch', '.search-results', context)).each(function(){
 
 
       //find searched value if not null and highlight each word
@@ -34,7 +34,7 @@ Drupal.behaviors.searchHighlight = {
 
 
 
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);
 
 
 

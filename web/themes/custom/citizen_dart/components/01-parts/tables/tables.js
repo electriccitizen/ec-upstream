@@ -1,10 +1,10 @@
-(function($, Drupal) {
+(function($, Drupal, once) {
 
 /* RESPONSIVE TABLES WITH BASIC TABLE
 ------------------------------------ */
 Drupal.behaviors.basicTable = {
 	attach: function (context, settings) {
-		$('.layout-container table:not(.ui-datepicker-calendar)', context).once('responsive_table').each(function(){
+		$(once('responsive_table', '.layout-container table:not(.ui-datepicker-calendar)', context)).each(function(){
 			$(this).basictable({breakpoint: 760,});
 			//check for no table headers
 			if(!$('thead',this).length){
@@ -14,4 +14,4 @@ Drupal.behaviors.basicTable = {
 	}
 };
 
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);
