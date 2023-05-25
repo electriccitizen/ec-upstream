@@ -58,26 +58,6 @@
 		border-color: $buttonBackActive;
 	}
 	.text-with-summary &,.text-long &{
-		padding: 0;
-		background: none;
-		a{
-			background-color: $buttonBack;
-			padding: $buttonPadding;
-			display: block;
-			max-width: 256px;
-			text-decoration: none;
-			color: $buttonText;
-			&:hover,&:focus {
-				color: $buttonTextHover;
-				background-color: $buttonBackHover;
-				@include transAll(.3s);
-				outline: 0;
-			}
-			&:active{
-				color: $buttonTextActive;
-				background-color: $buttonBackActive;
-			}
-		}//end a
 		& + .button,& + .button-outline{
 			margin-left: 1.5rem;
 		}
@@ -109,22 +89,6 @@
 		background: none;
 		border: none;
 		width: auto;
-		a{
-			background: transparent;
-			border: 1px solid $outlineColor;
-			display: block;
-			text-decoration: none;
-			color: $outlineColor;
-			&:hover,&:focus {
-				color: $buttonTextHover;
-				background-color: $buttonBackHover;
-				@include transAll(.3s);
-			}
-			&:active{
-				color: $buttonTextActive;
-				background-color: $buttonBackActive;
-			}
-		}//end a
 	}//end wysiwyg 
 }
 

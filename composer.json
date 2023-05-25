@@ -172,7 +172,8 @@
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "drupal/core-project-message": true,
       "oomphinc/composer-installers-extender": true,
-      "mglaman/composer-drupal-lenient": true
+      "mglaman/composer-drupal-lenient": true,
+      "zaporylie/composer-drupal-optimizations": true
     }
   },
   "scripts": {

@@ -1,13 +1,13 @@
-(function ($, Drupal) {
+(function ($, Drupal, once) {
 
     /* CONTENT PLACER PARAGRAPH SELECT LIST FUNCTIONALITY
     ----------------------- */
     Drupal.behaviors.contentPlacer = {
       attach: function (context, settings) {
-        $('.field--name-field-content-type .js-form-type-select', context).once('isContentPlacer').each(function () {
-            //hide fields after the content type field
-            $('.field--name-field-content-type').nextAll('.field--widget-options-select').hide();
-            $('.field--name-field-limit-list').hide();
+      	$(once('isContentPlacer', '.field--name-field-content-type .js-form-type-select', context)).each(function(){
+          //hide fields after the content type field
+          $('.field--name-field-content-type').nextAll('.field--widget-options-select').hide();
+          $('.field--name-field-limit-list').hide();
 
           $(document).ajaxComplete(function () {
               // detect the chosen view and show the proper display list field
@@ -59,4 +59,4 @@
       }
     };
 
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);
