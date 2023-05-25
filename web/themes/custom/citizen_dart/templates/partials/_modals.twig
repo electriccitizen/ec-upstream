@@ -6,7 +6,7 @@
 		{% endif %}
 
 		{% if modalTrigger %}
-			<button id="modal-trigger-{{ modalIdentifier }}" aria-controls="modal-outer-{{ modalIdentifier }}">{{- modalTrigger -}}</button>
+			<button id="modal-trigger-{{ modalIdentifier }}" class="ec-modal-trigger" aria-controls="modal-outer-{{ modalIdentifier }}">{{- modalTrigger -}}</button>
 		{% endif %}
 	</div>
 	<dialog class="modal-wrapper" id="modal-outer-{{ modalIdentifier }}" aria-modal="true">

@@ -4,26 +4,12 @@
 @use '../../00-base/base' as *;
 @use 'button-mixins' as *;
 
-button{
-	@include button;
-	cursor: pointer;
-}
-
 //button classes
-.button {
+.ec-button {
 	@include button;
-}
-.button-submit{
-	@include submitButton;
-}
-.button-caution,.button-warning{
-	@include cautionButton;
 }
 .button-danger-robinson{
 	@include warningButton;
-}
-.button-outline{
-	@include outlineButton($link);
 }
 
 /* secondary task buttons

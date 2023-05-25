@@ -58,7 +58,7 @@
 		border-color: $buttonBackActive;
 	}
 	.text-with-summary &,.text-long &{
-		& + .button,& + .button-outline{
+		& + .ec-button,& + .ec-button-outline{
 			margin-left: 1.5rem;
 		}
 	}//end wysiwyg

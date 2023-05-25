@@ -2,7 +2,11 @@
 	MODALS
 ================== */
 @use '../../00-base/base' as *;
+@use '../../01-parts/buttons/button-mixins' as *;
 
+.ec-modal-trigger{
+	@include button;
+}
 .modal-wrapper {
 	display: none;
 	position: fixed;
@@ -56,7 +60,6 @@
 	} //end modal-inner
 	.modal-header {
 		position: relative;
-		background: $lightGrey;
 		h2 {
 			@include heading4;
 			margin: 0 0 1rem;

@@ -42,11 +42,14 @@
 /* SEARCH BLOCK PLACEMENT
 ------------------- */
 .block-site-search{
-	position: static;
+	position: static !important;
 	display: inline-block;
 	text-align: right;
 	@include desk{
 		width: calc(100% - 240px);
+	}
+	.contextual{
+		display: none !important;
 	}
 	//search toggler
 	.t-search{

@@ -178,12 +178,12 @@
 				outline: none;
 				box-shadow: none;
 				border: 0;
-				& + i{
+				& + .material-icons{
 					color: $searchDropSearchIconHover;
 				}
 			}
 		}//end form submit
-		i{
+		.material-icons{
 			position: absolute;
 			top: -45px;
 			right: 8px;
