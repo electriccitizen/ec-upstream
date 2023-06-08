@@ -30,14 +30,14 @@
 		@include viewsMeta;
 	}
 	@include smallTab{
-		@include safeFlex(row,nowrap,start,start);
+		@include safeFlex(row,wrap,start,start);
 		.views-field-field-image{
 			@include safeFlexSize(0,0,340px);
 			padding-right: 40px;
 			margin-bottom: 0;
 		}
 		.views-field-nothing{
-			width: calc(100% - 240px);
+			width: calc(100% - 380px);
 		}
 	}
 }//end standard row
