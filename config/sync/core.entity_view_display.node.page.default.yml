@@ -123,6 +123,13 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
           604d500d-e75b-408b-a64a-406868772fe3:
             uuid: 604d500d-e75b-408b-a64a-406868772fe3
             region: content
@@ -140,7 +147,7 @@ third_party_settings:
                 settings:
                   view_mode: default
                 third_party_settings: {  }
-            weight: 1
+            weight: 0
             additional: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
