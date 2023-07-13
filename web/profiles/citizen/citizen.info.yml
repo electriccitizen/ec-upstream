@@ -13,8 +13,10 @@ dependencies:
   - automated_cron
   - block
   - block_content
+  - block_content_permissions
   - breakpoint
   - citizen_custom
+  - ckeditor5
   - config
   - config_filter
   - config_ignore
@@ -31,6 +33,7 @@ dependencies:
   - entity
   - entity_reference_revisions
   - entity_usage
+  - extlink
   - field
   - field_group
   - field_ui
@@ -45,6 +48,7 @@ dependencies:
   - image
   - image_style_quality
   - inline_form_errors
+  - jquery_ui_draggable
   - layout_builder
   - layout_builder_restrictions
   - layout_discovery
@@ -53,9 +57,12 @@ dependencies:
   - link
   - linkit
   - media
+  - media_entity_file_replace
   - media_library
+  - menu_admin_per_menu
   - menu_block
   - menu_breadcrumb
+  - menu_link_content
   - menu_ui
   - metatag
   - metatag_open_graph
@@ -63,7 +70,9 @@ dependencies:
   - node
   - options
   - page_cache
+  - paragraphs
   - path
+  - pathauto
   - path_alias
   - pathologic
   - quicklink
@@ -88,19 +97,15 @@ dependencies:
   - twig_tweak
   - update
   - user
+  - views
   - views_bulk_operations
   - views_infinite_scroll
   - views_ui
   - webform
   - webform_ui
-  - extlink
-  - menu_link_content
-  - pathauto
-  - views
-  - paragraphs
+  - xmlsitemap
 
 themes:
   - stable9
-  - seven
   - citizen_dart
-  - gin
+  - claro
