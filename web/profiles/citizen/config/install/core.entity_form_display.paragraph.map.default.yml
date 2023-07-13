@@ -20,13 +20,13 @@ mode: default
 content:
   field_address:
     type: address_default
-    weight: 2
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   field_location:
     type: geolocation_googlegeocoder
-    weight: 1
+    weight: 2
     region: content
     settings:
       auto_client_location: ''
@@ -201,7 +201,7 @@ content:
           marker_opacity:
             weight: 0
             settings:
-              opacity: !!float 1
+              opacity: 1.0
             enabled: false
           geolocation_marker_scroll_to_id:
             weight: 0

@@ -11,4 +11,4 @@ orientation: landscape
 dimensions:
   width: 1200
   height: 744
-  dppx: !!float 1
+  dppx: 1.0
