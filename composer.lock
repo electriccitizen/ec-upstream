@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a042ccbf8343a59602b5fe73d523274b",
+    "content-hash": "ef168cd5d118477f75d3c5b86ace0217",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7588,6 +7588,71 @@
             "time": "2021-12-15T12:32:42+00:00"
         },
         {
+            "name": "pantheon-systems/drupal-integrations",
+            "version": "10.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pantheon-systems/drupal-integrations.git",
+                "reference": "12c2b40b790f0db8f9c7b64fcc227880a3ce0663"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pantheon-systems/drupal-integrations/zipball/12c2b40b790f0db8f9c7b64fcc227880a3ce0663",
+                "reference": "12c2b40b790f0db8f9c7b64fcc227880a3ce0663",
+                "shasum": ""
+            },
+            "conflict": {
+                "drupal/core": "<10"
+            },
+            "type": "project",
+            "extra": {
+                "drupal-scaffold": {
+                    "file-mapping": {
+                        "[project-root]/.drush-lock-update": "assets/drush-lock-update",
+                        "[web-root]/sites/default/default.services.pantheon.preproduction.yml": "assets/default.services.pantheon.preproduction.yml",
+                        "[web-root]/sites/default/settings.pantheon.php": "assets/settings.pantheon.php",
+                        "[web-root]/sites/default/settings.php": {
+                            "mode": "replace",
+                            "path": "assets/initial.settings.php",
+                            "overwrite": false
+                        }
+                    }
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Add this project to any Drupal distribution based on drupal/core-composer-scaffold to enable it for use on Pantheon.",
+            "support": {
+                "issues": "https://github.com/pantheon-systems/drupal-integrations/issues",
+                "source": "https://github.com/pantheon-systems/drupal-integrations/tree/10.0.1"
+            },
+            "time": "2023-05-17T17:45:40+00:00"
+        },
+        {
+            "name": "pantheon-upstreams/upstream-configuration",
+            "version": "dev-uwec-test",
+            "dist": {
+                "type": "path",
+                "url": "upstream-configuration",
+                "reference": "71076ec7a85273ac05fa4d5cb9fa9fc2fc726114"
+            },
+            "require": {
+                "composer/installers": "^1.9",
+                "cweagans/composer-patches": "^1.7",
+                "drupal/core-composer-scaffold": "^10",
+                "drupal/core-recommended": "^9 || ^10",
+                "pantheon-systems/drupal-integrations": "^9 || ^10",
+                "php": ">=8.1",
+                "zaporylie/composer-drupal-optimizations": "^1.2"
+            },
+            "type": "project",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "pear/archive_tar",
             "version": "1.4.14",
             "source": {
@@ -11731,6 +11796,53 @@
                 "source": "https://github.com/webflo/drupal-finder/tree/1.2.2"
             },
             "time": "2020-10-27T09:42:17+00:00"
+        },
+        {
+            "name": "zaporylie/composer-drupal-optimizations",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zaporylie/composer-drupal-optimizations.git",
+                "reference": "a7f409a765164fd13ac0bd00e19109165c51b369"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zaporylie/composer-drupal-optimizations/zipball/a7f409a765164fd13ac0bd00e19109165c51b369",
+                "reference": "a7f409a765164fd13ac0bd00e19109165c51b369",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1 || ^2.0"
+            },
+            "require-dev": {
+                "composer/composer": "^1.6",
+                "phpunit/phpunit": "^6"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "zaporylie\\ComposerDrupalOptimizations\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "zaporylie\\ComposerDrupalOptimizations\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jakub Piasecki",
+                    "email": "jakub@piaseccy.pl"
+                }
+            ],
+            "description": "Composer plugin to improve composer performance for Drupal projects",
+            "support": {
+                "issues": "https://github.com/zaporylie/composer-drupal-optimizations/issues",
+                "source": "https://github.com/zaporylie/composer-drupal-optimizations/tree/1.2.0"
+            },
+            "time": "2020-10-22T13:26:00+00:00"
         }
     ],
     "packages-dev": [
