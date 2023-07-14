@@ -85,7 +85,6 @@
     "mglaman/composer-drupal-lenient": "^1.0",
     "oomphinc/composer-installers-extender": "^2.0",
     "pantheon-upstreams/upstream-configuration": "*"
-
   },
   "conflict": {
     "drupal\/drupal": "*"
