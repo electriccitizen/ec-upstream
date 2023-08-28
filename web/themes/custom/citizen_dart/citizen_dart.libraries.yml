@@ -8,6 +8,7 @@ global:
     components/05-assembly/global/site.js: {}
   dependencies:
     - core/drupal
+    - core/drupal.debounce
     - core/drupalSettings
     - core/jquery
     - core/once
@@ -15,10 +16,6 @@ accordion:
   version: 1.0
   js:
     components/03-composites/paragraphs/accordions/accordions.js: {}
-debounce:
-  version: 1.0
-  js:
-    components-addons/debounce/debounce.js: {}
 drawers:
   version: 1.0
   js:

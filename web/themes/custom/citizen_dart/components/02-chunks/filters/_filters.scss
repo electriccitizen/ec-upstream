@@ -5,27 +5,38 @@
 @use '../../01-parts/buttons/button-mixins' as *;
 @use '../../01-parts/forms/elements/form-mixins' as *;
 
-.views-exposed-form{
+.views-exposed-form {
 	@include safeFlex(row,wrap,start,center);
 	@include bleed(padding,20px);
-	.form-item{
+
+	// search results views block
+	&#views-exposed-form-site-search-search-results-block {
+		@include safeFlex(row,wrap,center,center);
+	}
+
+	.form-item {
 		width: 100%;
-		label{
+		
+		label {
 			@include formLabel;
 			margin-bottom: $spaceXxs;
 		}
-		@include smallTab{
+		
+		@include smallTab {
 			width: 50%;
 			max-width: 320px;
 		}
-		.select2-container--default{
+		
+		.select2-container--default {
 			max-width: 100%;
-			.select2-selection__choice{
+			
+			.select2-selection__choice {
 				margin-top: .5rem;
 			}
 		}
 	}
-	.form-actions{
+
+	.form-actions {
 		@include auto;
 		@include safeFlex(row,wrap,start,start);
 		@include smallTab{
