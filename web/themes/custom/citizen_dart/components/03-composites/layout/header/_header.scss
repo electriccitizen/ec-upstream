@@ -41,26 +41,22 @@
 
 /* SEARCH BLOCK PLACEMENT
 ------------------- */
-.block-site-search:not(.block-search-results-block) {
+.block-site-search{
 	position: static !important;
 	display: inline-block;
 	text-align: right;
-
-	@include desk {
+	@include desk{
 		width: calc(100% - 240px);
 	}
-
-	.contextual {
+	.contextual{
 		display: none !important;
 	}
-
 	//search toggler
-	.t-search {
+	.t-search{
 		position: absolute;
 		top: 18px;
 		right: 10px;
-
-		@include desk {
+		@include desk{
 			top: 0;
 		}
 	}

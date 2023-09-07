@@ -3,99 +3,83 @@
 =================== */
 @use '../../../00-base/base' as *;
 
-///mixin placeholder
-%searchBlockPlaceholder {
+///mixin placholder
+%searchBlockPlaceholder{
 	$placeTint: 1;
-
-	&::-webkit-placeholder {
+	&::-webkit-placeholder{
 		opacity: $placeTint;
 		color: $searchDropPlace;
 	}
-
-	&::-moz-placeholder {
+	&::-moz-placeholder{
 		opacity: $placeTint;
 		color: $searchDropPlace;
 	}
-	
-	&:-ms-input-placeholder {
+	&:-ms-input-placeholder{
 		opacity: $placeTint;
 		color: $searchDropPlace;
 	}
-
-	&::-webkit-input-placeholder {
+	&::-webkit-input-placeholder{
 		opacity: $placeTint;
 		color: $searchDropPlace;
 	}
 }
 
 ///mixin - placeholderFocus
-%searchBlockPlaceholderFocus {
+%searchBlockPlaceholderFocus{
 	$placeFocusTint: .2;
-
-	&::-webkit-placeholder {
+	&::-webkit-placeholder{
 		opacity: $placeFocusTint;
 		color: $searchDropPlaceFocus;
 	}
-
-	&::-moz-placeholder {
+	&::-moz-placeholder{
 		opacity: $placeFocusTint;
 		color: $searchDropPlaceFocus;
 	}
-
-	&:-ms-input-placeholder {
+	&:-ms-input-placeholder{
 		opacity: $placeFocusTint;
 		color: $searchDropPlaceFocus;
 	}
-
-	&::-webkit-input-placeholder {
+	&::-webkit-input-placeholder{
 		opacity: $placeFocusTint;
 		color: $searchDropPlaceFocus;
 	}
 }
 
 //search icon
-.t-search-wrapper {
-
-	.t-search {
+.t-search-wrapper{
+	.t-search{
 		border: $inputBorderWidth solid transparent;
 		color: $searchIcon;
-		
-		&:hover,
-		&:focus {
+		&:hover,&:focus{
 			color: $searchIconHover;
 			outline: none;
-			text-decoration: none;
 		}
-
-		.material-icons {
+		.material-icons{
 			font-size: 24px;
 		}
 	}
 }//end t-search-wrapper
 
 //close search
-.t-search-close {
-	height: 48px;
-	width: 48px;
-	display: none;
+.t-search-close{
 	position: absolute;
 	top: -20px;
 	right: 0;
+	height: 48px;
+	width: 48px;
+	display: none;
 	z-index: 502;
-
-	.close-search {
-		height: 100%;
-		width: 100%;
-		background: $searchCloseBack;
-		color: $searchClose;
+	.close-search{
 		font-family: $header;
-		font-size: 24px;
 		display: block;
+		width: 100%;
+		height: 100%;
+		color: $searchClose;
+		font-size: 24px;
+		background: $searchCloseBack;
 		cursor: pointer;
 		@include safeFlex(column,null,center,center);
-
-		&:hover,
-		&:focus {
+		&:hover,&:focus{
 			text-decoration: none;
 			background: $searchCloseBackHover;
 			color: $searchCloseHover;

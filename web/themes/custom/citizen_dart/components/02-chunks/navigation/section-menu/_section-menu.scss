@@ -3,13 +3,11 @@
 ===================== */
 @use '../../../00-base/base' as *;
 
-#block-section-menu {
-
-	@include onlyMobile {
+#block-section-menu{
+	@include onlyMobile{
 		margin-bottom: $spaceLg;
 	}
-
-	h2.block-title {
+	h2.block-title{
 		position: relative;
 		display: block;
 		padding: 1.5rem $siteMarginMobile;
@@ -98,31 +96,27 @@
 				}
 			}//end a
 			//parents
-			&.parent {
-
-		  		& > .expander {
-					width: 3.75rem;
+			&.parent{
+				& > .expander{
+					position: absolute;
+					top: .5rem;
+					left: 0;
 					font-size: 3rem;
 					line-height: 1;
+					width: 3.75rem;
 					text-align: center;
-					position: absolute;
-					top: 5px;
-					left: 0;
-
-					&::before {
+					&:before{
 						content: "+";
 					}
-              	}
-
-				&.expanded > .expander {
-					top: 3px;
-
-					&::before {
-						content: "–";
+				}
+				&.expanded{
+					& > .expander{
+						&:before{
+							content: "–";
+						}
 					}
 				}//end when expanded
 			}//end parent
-
 			li{
 				padding: .5rem 0;
 				a{

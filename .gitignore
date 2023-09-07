@@ -5,7 +5,7 @@
 # To ignore all paths that composer manages when using this project template,
 # remove all double-hashed () lines.
 
-web/sites/default/services.pantheon.preproduction.yml
+web/sites/default/default.services.pantheon.preproduction.yml
 web/sites/default/default.services.yml
 web/sites/default/default.settings.php
 web/sites/default/settings.pantheon.php
@@ -115,7 +115,7 @@ upstream/web/
 /web/profiles/README.txt
 /web/sites/README.txt
 /web/sites/default/default.services.yml
-/web/sites/default/services.pantheon.preproduction.yml
+/web/sites/default/default.services.pantheon.preproduction.yml
 /web/sites/default/default.settings.php
 /web/sites/default/config/.htaccess
 /web/sites/default/config/README
