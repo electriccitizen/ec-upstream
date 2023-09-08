@@ -5,33 +5,36 @@
 @use '../../../00-base/base' as *;
 
 .site-header {
-	background: $headerBack;
 	padding: 20px $siteMarginMobile;
-	& > div{
+	background: $headerBack;
+
+	& > div {
 		max-width: $contentStop;
 		@include auto;
-		position: relative;
 		@include safeFlex(row,wrap,null,center);
+		position: relative;
 	}
 }//end layout container
 
 
 /* BRANDING BLOCK PLACEMENT
 ------------------- */
-.block-system-branding-block{
+.block-system-branding-block {
 	//leave room for search toogle and menu hamburger on mobile
 	width: calc(100% - 70px);
 	position: relative;
 	z-index: 10;
-	@include desk{
+
+	@include desk {
 		width: 240px;
 	}
 
-	a{
-		img{
+	a {
+		img {
 			max-width: 160px;
 			margin-right: 4px;
-			@include desk{
+
+			@include desk {
 				max-width: 100%;
 			}
 		}
@@ -41,22 +44,26 @@
 
 /* SEARCH BLOCK PLACEMENT
 ------------------- */
-.block-site-search{
+.block-site-search:not(.block-search-block) {
 	position: static !important;
 	display: inline-block;
 	text-align: right;
-	@include desk{
+
+	@include desk {
 		width: calc(100% - 240px);
 	}
-	.contextual{
+
+	.contextual {
 		display: none !important;
 	}
+
 	//search toggler
-	.t-search{
+	.t-search {
 		position: absolute;
 		top: 18px;
 		right: 10px;
-		@include desk{
+
+		@include desk {
 			top: 0;
 		}
 	}
@@ -65,27 +72,28 @@
 
 /* MAIN NAVIGATION BLOCK
 ------------------------ */
-.block-superfishmain{
-	@include onlyMobile{
-		&.contextual-region{
+.block-superfishmain {
+
+	@include onlyMobile {
+
+		&.contextual-region {
 			position: static;
 		}
-		#superfish-main-toggle{
-			position: absolute;
+
+		#superfish-main-toggle {
 			height: 32px;
 			width: 32px;
+			position: absolute;
 			top: 20px;
 			right: 50px;
 		}
 	}
 	//desktop position
-	@include desk{
-		position: absolute;
-		right: 0;
-		bottom: -20px;
+	@include desk {
 		width: 100%;
 		padding-left: 280px;
+		position: absolute;
+		bottom: -20px;
+		right: 0;
 	}//end desk
-
 }//end main nav
-
