@@ -35,11 +35,11 @@ Drupal.behaviors.sectionMenu = {
 				//set button roles, tab indexes and key presses on sidebar links
 				$(document).on('click','#section-menu-wrapper .expander',function(e){
 					e.preventDefault();
-          if ( $(this).attr('aria-expanded') == 'false' ) {
-            $(this).attr('aria-expanded', "true").siblings('ul').slideDown('fast').attr('aria-hidden', 'false').end().closest('li').addClass('expanded');
-          } else {
-            $(this).attr('aria-expanded', "false").siblings('ul').slideUp('fast').attr('aria-hidden', 'true').end().closest('li').removeClass('expanded');
-          }
+					if ( $(this).attr('aria-expanded') == 'false' ) {
+						$(this).attr('aria-expanded', "true").siblings('ul').slideDown('fast').attr('aria-hidden', 'false').end().closest('li').addClass('expanded');
+					} else {
+						$(this).attr('aria-expanded', "false").siblings('ul').slideUp('fast').attr('aria-hidden', 'true').end().closest('li').removeClass('expanded');
+					}
 				});
 			});
 		});

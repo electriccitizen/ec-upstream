@@ -3,11 +3,13 @@
 ===================== */
 @use '../../../00-base/base' as *;
 
-#block-section-menu{
-	@include onlyMobile{
+#block-section-menu {
+
+	@include onlyMobile {
 		margin-bottom: $spaceLg;
 	}
-	h2.block-title{
+
+	h2.block-title {
 		position: relative;
 		display: block;
 		padding: 1.5rem $siteMarginMobile;
@@ -15,20 +17,24 @@
 		color: $menuBlockTitle;
 		max-width: none;
 		margin-bottom: 0;
-		@include onlyMobile{
+
+		@include onlyMobile {
 			padding: 2rem 2.5rem;
 			@include edgeToEdge;
 		}
-		a.section-menu-toggle{
+
+		a.section-menu-toggle {
 			color: $menuBlockTitle;
 			display: inline-block;
 			vertical-align: middle;
 			text-align: center;
 			width: 60px;
-			span{
+
+			span {
 				display: none;
 			}
-			&:before{
+
+			&:before {
 				@include materialIcon(\e5d2);
 				display: inline-block;
 				top: 0;
@@ -36,12 +42,15 @@
 				color: $hamburger;
 				line-height: 28px;
 			}
-			&:hover,&:focus{
+
+			&:hover,
+			&:focus {
 				color: $menuBlockTitleHover;
 			}
-			@include desk{
-				pointer-events: none;
+
+			@include desk {
 				display: none;
+				pointer-events: none;
 			}
 		}
 	}
@@ -49,82 +58,99 @@
 
 
 //top level
-#section-menu-wrapper{
+#section-menu-wrapper {
 	display: none;
 	background: $menuBack;
 	padding-top: $spaceSm;
 	padding-bottom: $spaceMd;
 	border-bottom: 2px solid $menuBlockTitleBack;
-	@include onlyMobile{
+
+	@include onlyMobile {
 		padding-left: $siteMarginMobile;
 		padding-right: $siteMarginMobile;
 		@include edgeToEdge;
 	}
-	@include desk{
+
+	@include desk {
 		display: block !important;
 	}
-	& > ul:not(.contextual-links){
+
+	& > ul:not(.contextual-links) {
 		@include listReset;
 		//max-width: 300px;
 		@include auto;
 
 		//child menus
-		ul:not(.contextual-links){
+		ul:not(.contextual-links) {
 			margin: .5rem 0;
 			display: none;
 			padding-left: 2.5rem;
-			&.expanded{
+
+			&.expanded {
 				display: block;
 			}
 		}
+
 		//global menu items
-		li{
-			padding: .5rem 3.5rem;
+		li {
 			list-style: none;
+			padding: .5rem 3.5rem;
 			position: relative;
+
 			//active link
-			a{
+			a {
+				color: $menuTop;
 				text-decoration: none;
 				display: block;
-				color: $menuTop;
-				&:hover,&:focus{
+
+				&:hover,
+				&:focus {
 					color: $menuTopHover;
 				}
-				&.is-active{
+
+				&.is-active {
 					color: $menuTopActive;
 					pointer-events: none;
 				}
 			}//end a
 			//parents
-			&.parent{
-				& > .expander{
-					position: absolute;
-					top: .5rem;
-					left: 0;
+			&.parent {
+
+				& > .expander {
+					width: 3.75rem;
 					font-size: 3rem;
 					line-height: 1;
-					width: 3.75rem;
 					text-align: center;
-					&:before{
+					position: absolute;
+					top: 5px;
+					left: 0;
+
+					&::before {
 						content: "+";
 					}
 				}
-				&.expanded{
-					& > .expander{
-						&:before{
-							content: "–";
-						}
+
+				&.expanded > .expander {
+					top: 3px;
+
+					&::before {
+						content: "–";
 					}
 				}//end when expanded
 			}//end parent
-			li{
+
+			li {
 				padding: .5rem 0;
-				a{
+
+				a {
 					color: $menuChild;
-					&:hover,&:focus{
+
+					&:hover,
+					&:focus {
 						color: $menuChildHover;
 					}
-					&.is-active{
+
+					&.is-active {
 						color: $menuChildActive;
 					}
 				}//end a
@@ -132,4 +158,3 @@
 		}//end global li
 	}//end first level ul
 }//end section menu wrapper
-
