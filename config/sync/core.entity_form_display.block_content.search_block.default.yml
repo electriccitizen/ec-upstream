@@ -1,0 +1,29 @@
+uuid: ff8ca6dc-5c8f-42c3-990a-a86200560361
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.search_block
+    - field.field.block_content.search_block.field_search_view
+  module:
+    - viewsreference
+id: block_content.search_block.default
+targetEntityType: block_content
+bundle: search_block
+mode: default
+content:
+  field_search_view:
+    type: viewsreference_select
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
