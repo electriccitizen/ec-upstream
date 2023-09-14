@@ -36,6 +36,7 @@ settings:
       - heading
       - '|'
       - style
+      - Fullscreen
   plugins:
     ckeditor5_alignment:
       enabled_alignments:

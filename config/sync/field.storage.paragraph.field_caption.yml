@@ -1,14 +1,12 @@
-uuid: 996157be-313f-4419-b444-e9a95d1bd688
+uuid: 9dfeb6d1-6420-4358-9f37-71abfeaf8efa
 langcode: en
 status: true
 dependencies:
   module:
-    - media
-_core:
-  default_config_hash: pUhs9Zzqg5uXuHdDsd8CWcX9w-0w7WS9vsQPd3DB-2k
-id: media.field_caption
+    - paragraphs
+id: paragraph.field_caption
 field_name: field_caption
-entity_type: media
+entity_type: paragraph
 type: string_long
 settings:
   case_sensitive: false

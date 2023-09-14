@@ -26,7 +26,6 @@ dependencies:
     - path
     - redirect
     - responsive_preview
-    - role_delegation
     - shortcut
     - system
     - taxonomy

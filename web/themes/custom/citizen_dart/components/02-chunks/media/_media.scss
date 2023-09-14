@@ -4,82 +4,113 @@
 @use '../../00-base/base' as *;
 @use 'media-mixins' as *;
 
-img{
+img {
 	@include imageBase;
 }
 
-.field-caption{
+figcaption {
 	@include caption;
 }
 
-.field-media-image + .field-caption{
+article + figcaption {
 	margin-top: $spaceXs;
 }
 
 
 /* EMBEDDED VIDEO
 ------------------ */
-.field-media-oembed-video{
+.field-media-oembed-video {
 	@include responsiveVideo;
 }
 
 /* EMBEDDED MEDIA
 ------------------- */
-.text-with-summary article,.text-long article{
+.text-with-summary article.media-item,
+.text-with-summary figure {
+	margin: 0 0 $spaceMd 0;
+	
+	@include desk {
+		margin: 0;
+	}
+}
+
+.text-with-summary article.media-item,
+.text-with-summary figure,
+.text-long article {
+
 	// set float props and max-widths for floated items
-	&.align-left{
+	&.align-left {
 		float: none;
-		@include smallTab{
-			&:not(.document){
+
+		@include desk {
+
+			&:not(.document) {
 				max-width: 50% !important;
-				float: left;
 				margin: 0 $spaceMd $spaceMd 0;
+				float: left;
 			}
-			&.document{
+
+			&.document {
+				width: 100%;
 				text-align: left;
-				width: 100%;
 			}
 		}
 	}
-	&.align-right{
+
+	&.align-right {
 		float: none;
-		@include smallTab{
-			&:not(.document){
+
+		@include desk {
+
+			&:not(.document) {
 				max-width: 50%;
-				float: right;
 				margin: 0 0 $spaceMd $spaceMd;
+				float: right;
 			}
-			&.document{
-				text-align: right;
+
+			&.document {
 				width: 100%;
+				text-align: right;
 			}
 		}
 	}
-	&.align-center{
-		&.document{
+
+	&.align-center {
+
+		&.document {
 			text-align: center;
 		}
 	}
+
 	// control sizes for images and video
-	&.small-embed{
-		@include smallEmbed;
+
+	@include desk {
+
+		&.small-embed {
+			@include smallEmbed;
+		}
+
+		&.medium-embed {
+			@include mediumEmbed;
+		}
+
+		&.large-embed {
+			@include largeEmbed;
+		}
 	}
-	&.medium-embed{
-		@include mediumEmbed;
-	}
-	&.large-embed{
-		@include largeEmbed;
-	}
-	&.full{
+
+	&.full {
 		@include fullEmbed;
 	}
-	&.default{
+
+	&.default {
 		@include defaultEmbed;
 	}
 }//end article
 
-span.file{
-	a{
+span.file {
+
+	a {
 		@include docIcon;
 	}
 }

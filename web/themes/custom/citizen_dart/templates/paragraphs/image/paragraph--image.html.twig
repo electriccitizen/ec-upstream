@@ -40,6 +40,7 @@
 {% extends 'paragraph.html.twig' %}
 
 {% block widgetContent %}
+
 	{% set size = content.field_image_size[0]['#markup'] %}
 		
 	{%- if (size == 'small') -%}
@@ -56,12 +57,17 @@
 
 	{% set maxWidth = image['#media'].field_media_image.0.width %}
 
+	{% set caption = content.field_caption.0['#context'].value %}
+
 	<div class="image-wrapper {{ size }}"{% if size == 'default' %}style="max-width:{{ maxWidth }}px;"{% endif %}>
 		{% if content.field_link.0 %}
 			<a href="{{ content.field_link.0['#url'] }}" aria-label="Go to {{ content.field_link.0['#title'] }}">
 		{% endif %}
 			{% block image %}
 				{{ image }}
+				<figcaption>
+					{{ caption }}
+				</figcaption>
 			{% endblock %}
 		{% if content.field_link.0 %}
 			</a>
