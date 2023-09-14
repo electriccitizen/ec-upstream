@@ -59,7 +59,7 @@
 
 	{% set caption = content.field_caption.0['#context'].value %}
 
-	<div class="image-wrapper {{ size }}"{% if size == 'default' %}style="max-width:{{ maxWidth }}px;"{% endif %}>
+	<div class="image-wrapper {{ size }}"{% if size == 'default' %}style="width:{{ maxWidth }}px; max-width: 100%;"{% endif %}>
 		{% if content.field_link.0 %}
 			<a href="{{ content.field_link.0['#url'] }}" aria-label="Go to {{ content.field_link.0['#title'] }}">
 		{% endif %}

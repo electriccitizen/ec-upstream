@@ -5,34 +5,40 @@
 @use '../../../00-base/base' as *;
 @use '../../../02-chunks/media/media-mixins' as *;
 
-.paragraph--type--image{
+.paragraph--type--image {
 
-	.image-wrapper{
+	.image-wrapper {
 		@include auto;
-		&.small{
+
+		&.small {
 			max-width: 280px;
 		}
-		&.medium{
+
+		&.medium {
 			max-width: 480px;
 		}
-		&.large{
+		
+		&.large {
 			max-width: 640px;
 		}
-		&.default{
-			img{
+		
+		&.default {
+			
+			img {
 				width: auto;
+				max-width: 100%;
 				@include auto;
 			}
 		}
 	}
 	
-	a{
+	a {
 		color: $baseText;
 		text-decoration: none;
-		img{
+		
+		img {
 			@include imageHover;
 		}
 	}
-	
-}//end image widget
+} //end image widget
 
