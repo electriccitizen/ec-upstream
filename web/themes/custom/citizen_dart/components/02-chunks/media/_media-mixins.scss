@@ -3,32 +3,35 @@
 ============== */
 @use '../../00-base/base' as *;
 
-@mixin imageBase{
+@mixin imageBase {
 	display: block;
 	width: 100%;
 	height: auto;
 }
 
-@mixin imageHover{
+@mixin imageHover {
 	border: 1px solid $lightGrey;
-	&:hover,&:focus{
+
+	&:hover,
+	&:focus {
 		border-color: $borderRule;
 		opacity: .7;
 		@include transAll(.3s);
 	}
 }
 
-@mixin caption{
+@mixin caption {
 	text-align: center;
 	font-size: 2rem;
 	font-style: italic;
 	color: $midGrey;
 }
 
-@mixin responsiveVideo{
+@mixin responsiveVideo {
 	position: relative;
 	padding-bottom: 56.25%;
-	iframe{
+
+	iframe {
 		position: absolute;
 		top: 0;
 		left: 0;

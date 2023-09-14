@@ -2,17 +2,17 @@
 
 Drupal.behaviors.sectionMenu = {
 	attach: function (context, settings) {
-		$(once('section-menu', '#block-section-menu', context)).each(function(){
+		$(once('section-menu', '#block-section-menu', context)).each(function() {
 			//mobile toggle
-			$('.section-menu-toggle').on('click', function(e){
+			$('.section-menu-toggle').on('click', function(e) {
 				e.preventDefault();
-		      if ( $(window).outerWidth() < 980 ) {
-		        if ( $(this).is('.active-nav') ) {
-		          $(this).attr('aria-expanded', 'false').removeClass('active-nav').find('.material-icons').html('menu').closest('#section-menu-title').next('#section-menu-wrapper').attr('aria-hidden', 'true').slideUp('fast');
-		        } else {
-		          $(this).attr('aria-expanded', 'true').addClass('active-nav').find('.material-icons').html('close').closest('#section-menu-title').next('#section-menu-wrapper').attr('aria-hidden', 'false').slideDown('fast');
-		        }
-		      }
+				if ( $(window).outerWidth() < 980 ) {
+					if ( $(this).is('.active-nav') ) {
+						$(this).attr('aria-expanded', 'false').removeClass('active-nav').find('.material-icons').html('menu').closest('#section-menu-title').next('#section-menu-wrapper').attr('aria-hidden', 'true').slideUp('fast');
+					} else {
+					  	$(this).attr('aria-expanded', 'true').addClass('active-nav').find('.material-icons').html('close').closest('#section-menu-title').next('#section-menu-wrapper').attr('aria-hidden', 'false').slideDown('fast');
+					}
+				}
 			});
 
 			$(window).on('resize', Drupal.debounce(mobileSectionNav, 150, false));

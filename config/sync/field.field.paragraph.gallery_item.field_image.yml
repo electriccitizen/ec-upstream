@@ -1,21 +1,19 @@
-uuid: 1d933405-b91f-49c8-b852-a3b83a134100
+uuid: 6cd1519a-c071-4580-b594-693c7ab86edc
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_image_multi
+    - field.storage.paragraph.field_image
     - media.type.image
-    - paragraphs.paragraphs_type.gallery
-_core:
-  default_config_hash: mNsvBm4uJ_9YSs2B3BmE3jXQ_kOxARlu7VrEdYCBano
-id: paragraph.gallery.field_image_multi
-field_name: field_image_multi
+    - paragraphs.paragraphs_type.gallery_item
+id: paragraph.gallery_item.field_image
+field_name: field_image
 entity_type: paragraph
-bundle: gallery
-label: Images
+bundle: gallery_item
+label: Image
 description: '<strong>Optimal image size:</strong> is 1200px'
-required: true
-translatable: false
+required: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

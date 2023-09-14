@@ -40,6 +40,7 @@
 {% extends 'paragraph.html.twig' %}
 
 {% block widgetContent %}
+
 	{% set size = content.field_image_size[0]['#markup'] %}
 		
 	{%- if (size == 'small') -%}
@@ -55,6 +56,7 @@
 	{%- endif -%}
 
 	{% set maxWidth = image['#media'].field_media_image.0.width %}
+	{% set caption = content.field_caption.0['#context'].value %}
 
 	<div class="image-wrapper {{ size }}"{% if size == 'default' %}style="width:{{ maxWidth }}px; max-width: 100%;"{% endif %}>
 		{% if content.field_link.0 %}
@@ -62,6 +64,9 @@
 		{% endif %}
 			{% block image %}
 				{{ image }}
+				<figcaption>
+					{{ caption }}
+				</figcaption>
 			{% endblock %}
 		{% if content.field_link.0 %}
 			</a>

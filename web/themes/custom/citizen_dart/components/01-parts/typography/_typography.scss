@@ -10,35 +10,43 @@ h1 {
 	@include heading1;
 }
 
-h2{
+h2 {
 	@include heading2;
-	.text-long &,.text-with-summary &{
+	
+	.text-long &,
+	.text-with-summary & {
 		margin-bottom: $spaceLg;
 	}
 }
 
-h3{
+h3 {
 	@include heading3;
-	.text-long &,.text-with-summary &{
+	
+	.text-long &,
+	.text-with-summary & {
 		margin-bottom: $spaceMd;
 	}
 }
 
-h4{
+h4 {
 	@include heading4;
-	.text-long &,.text-with-summary &{
+	
+	.text-long &,
+	.text-with-summary & {
 		margin-bottom: $spaceSm;
 	}
 }
 
-h5{
+h5 {
 	@include heading5;
-	.text-long &,.text-with-summary &{
+	
+	.text-long &,
+	.text-with-summary & {
 		margin-bottom: $spaceXs;
 	}
 }
 
-h6{
+h6 {
 	@include heading6;
 }
 
@@ -47,23 +55,26 @@ h2+ul, h3+ul, h4+ul, h5+ul, h6+ul {
 }
 
 
-
 /* BLOCK, SECTION AND WIDGET HEADINGS
 -------------------------- */
-.block-title{
+.block-title {
 	max-width: $textMax;
 	text-align: center;
 	@include auto;
 }
-h2.block-title{
+
+h2.block-title {
 	@include blockTitle;
 }
-h2.section-title{
+
+h2.section-title {
 	@include blockTitle;
 	font-size: 3rem;
 	max-width: $textMax + 40px;
 }
-.widget-title,.field-widget-title{
+
+.widget-title,
+.field-widget-title {
 	@include blockTitle;
 	letter-spacing: 0;
 	text-transform: none;
@@ -71,7 +82,8 @@ h2.section-title{
 
 /* TEXT STYLES
 --------------- */
-html,code{
+html,
+code {
 	font-family: $bodyFont;
 	font-size: $em-base;
 	line-height: 1.4;
@@ -87,9 +99,10 @@ body {
 	font-size: $baseSize;
 }
 
-p{
+p {
 	margin-top: 0;
-	&:not(:last-child){
+
+	&:not(:last-child) {
 		margin-bottom: $spaceMd;
 	}
 }
@@ -97,23 +110,28 @@ p{
 a {
 	color: $link;
 	text-decoration: none;
-	&:hover,&:focus {
+	
+	&:hover,
+	&:focus {
 		color: $hoverLink;
 		text-decoration: underline;
-		.text-with-summary &,.text-long &{
+		
+		.text-with-summary &,
+		.text-long & {
 			@include transAll(.3s);
 		}
 	}
 }
 
-em{
+em {
 	font-style: italic;
 }
-strong{
+
+strong {
 	font-weight: $heavy;
 }
 
-small{
+small {
 	font-size: 80%;
 }
 
@@ -126,29 +144,35 @@ small{
 	text-align: center;
 }
 
-.hr,hr {
+.hr,
+hr {
 	border-style: solid;
 	border-width: 1px 0 0;
 	color: currentColor;
-	& + *{
+
+	& + * {
 		margin-top: $spaceMd;
 	}
 }
 
-blockquote{
+blockquote {
 	@include quote;
 }
 
 //clear floats in common long text fields, remove bottom margin from last child
-.text-with-summary,.text-long{
+.text-with-summary,
+.text-long {
 	@include clearFix;
-	& > *:last-child{
+
+	& > *:last-child {
 		margin-bottom: 0;
 	}
-	& + *{
+
+	& + * {
 		clear: both;
 	}
-	article:not(:last-child){
+
+	article:not(:last-child):not([data-quickedit-entity-id*=media]) {
 		margin-bottom: $spaceMd;
 	}
 }//end text-with-summary,text-long
@@ -157,9 +181,10 @@ blockquote{
 --------------- */
 
 //svg icon color
-svg{
+svg {
 	fill: currentColor;
-	use{
+
+	use {
 		fill: currentColor;
 	}
 }

@@ -1,15 +1,13 @@
-uuid: e59de69e-a833-4621-81f3-23c8be995cee
+uuid: b434459f-9217-41b2-ac1a-54cb81a6e2c2
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_caption
-    - media.type.image
-_core:
-  default_config_hash: QLP_z1PVVKJyXExf3mgZS0wT3RL4WX3OknycMel0kO0
-id: media.image.field_caption
+    - field.storage.paragraph.field_caption
+    - paragraphs.paragraphs_type.image
+id: paragraph.image.field_caption
 field_name: field_caption
-entity_type: media
+entity_type: paragraph
 bundle: image
 label: Caption
 description: '<strong>NOTE:</strong> Captions may not be displayed in all places this media is used.'

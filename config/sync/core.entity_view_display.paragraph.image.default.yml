@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.image.field_caption
     - field.field.paragraph.image.field_image
     - field.field.paragraph.image.field_image_size
     - field.field.paragraph.image.field_link
@@ -16,7 +17,6 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-    sections: {  }
 _core:
   default_config_hash: '-2-EWssWs59A0eC6m4w82dn0vYxPU-DurW6l_kqcY48'
 id: paragraph.image.default
@@ -24,6 +24,13 @@ targetEntityType: paragraph
 bundle: image
 mode: default
 content:
+  field_caption:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_image:
     type: entity_reference_entity_view
     label: hidden
