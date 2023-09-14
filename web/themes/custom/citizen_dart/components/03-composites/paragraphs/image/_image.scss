@@ -6,7 +6,6 @@
 @use '../../../02-chunks/media/media-mixins' as *;
 
 .paragraph--type--image{
-
 	.image-wrapper{
 		@include auto;
 		&.small{
@@ -21,6 +20,7 @@
 		&.default{
 			img{
 				width: auto;
+				max-width: 100%;
 				@include auto;
 			}
 		}
