@@ -56,7 +56,6 @@
 	{%- endif -%}
 
 	{% set maxWidth = image['#media'].field_media_image.0.width %}
-
 	{% set caption = content.field_caption.0['#context'].value %}
 
 	<div class="image-wrapper {{ size }}"{% if size == 'default' %}style="width:{{ maxWidth }}px; max-width: 100%;"{% endif %}>
