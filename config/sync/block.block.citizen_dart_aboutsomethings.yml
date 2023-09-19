@@ -11,7 +11,7 @@ dependencies:
 id: citizen_dart_aboutsomethings
 theme: citizen_dart
 region: prefooter
-weight: -6
+weight: -7
 provider: null
 plugin: 'block_content:9f1d2a20-cf57-41e3-af59-6423d2a37e2a'
 settings:

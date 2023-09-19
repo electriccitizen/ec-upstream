@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_toolbar_position
     - field.field.user.user.field_user_image
   module:
     - field_group
@@ -17,6 +18,7 @@ third_party_settings:
         - field_first_name
         - field_last_name
         - field_user_image
+        - field_toolbar_position
       label: 'User Personalization'
       region: content
       parent_name: ''
@@ -58,6 +60,12 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_toolbar_position:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_user_image:
     type: media_library_widget

@@ -1,0 +1,23 @@
+uuid: 3be34438-68d8-4340-9f88-c2d0145c36fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_toolbar_position
+  module:
+    - options
+    - user
+id: user.user.field_toolbar_position
+field_name: field_toolbar_position
+entity_type: user
+bundle: user
+label: 'Toolbar Position'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '1'
+default_value_callback: ''
+settings: {  }
+field_type: list_float
