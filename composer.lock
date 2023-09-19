@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ceae12a7e139f19b2d0c0d4ae05d137",
+    "content-hash": "b9625d96176bdf84e4e0b53e35f3c561",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6072,6 +6072,50 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/twig_tweak",
                 "issues": "https://www.drupal.org/project/issues/twig_tweak"
+            }
+        },
+        {
+            "name": "drupal/user_ref_field_cache_context",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/user_ref_field_cache_context.git",
+                "reference": "1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/user_ref_field_cache_context-1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": "b9139d1cca418c9d6d46c77ee317a7acef05c2a9"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0",
+                    "datestamp": "1659341133",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "mandclu",
+                    "homepage": "https://www.drupal.org/user/52136"
+                }
+            ],
+            "description": "Cache Context based on a reference field for the current user",
+            "homepage": "https://www.drupal.org/project/user_ref_field_cache_context",
+            "support": {
+                "source": "https://git.drupalcode.org/project/user_ref_field_cache_context"
             }
         },
         {

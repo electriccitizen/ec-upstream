@@ -12,7 +12,7 @@ dependencies:
 id: views_block__site_search_site_search_block
 theme: citizen_dart
 region: content
-weight: 0
+weight: -1
 provider: null
 plugin: 'views_block:site_search-site_search_block'
 settings:

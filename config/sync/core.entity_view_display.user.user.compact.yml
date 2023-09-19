@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.user.compact
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_toolbar_position
     - field.field.user.user.field_user_image
   module:
     - layout_builder
@@ -19,7 +20,17 @@ third_party_settings:
         layout_id: layout_onecol
         layout_settings:
           label: ''
-        components: {  }
+        components:
+          1f312f7b-3dd1-4bba-94e6-a8ae9db5f9ac:
+            uuid: 1f312f7b-3dd1-4bba-94e6-a8ae9db5f9ac
+            region: content
+            configuration:
+              id: 'extra_field_block:user:user:masquerade'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: JojBvjsTwE63e9rOPXnRHpXnsi6d975hfOFT9ZFqKHI
@@ -27,11 +38,17 @@ id: user.user.compact
 targetEntityType: user
 bundle: user
 mode: compact
-content: {  }
+content:
+  masquerade:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 50
+    region: content
 hidden:
   field_authored_placeholder: true
   field_first_name: true
   field_last_name: true
+  field_toolbar_position: true
   field_user_image: true
   member_for: true
   search_api_excerpt: true

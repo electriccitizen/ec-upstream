@@ -12,7 +12,7 @@ ckeditor5-stylesheets:
 base theme: stable9
 hidden: false
 regions:
-  header: Header 
+  header: Header
   content: Content
   prefooter: Pre-Footer  
   footer: Footer 

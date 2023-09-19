@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.user.field_toolbar_position
     - field.storage.user.field_user_image
   module:
+    - options
     - role_delegation
     - user
 _core:
@@ -590,6 +592,68 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_toolbar_position:
+          id: field_toolbar_position
+          table: user__field_toolbar_position
+          field: field_toolbar_position
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_key
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
         type: full
         options:
@@ -626,7 +690,8 @@ display:
         options:
           perm: 'administer users'
       cache:
-        type: tag
+        type: none
+        options: {  }
       empty:
         area_text_custom:
           id: area_text_custom
@@ -986,14 +1051,182 @@ display:
         - url.query_args
         - user.permissions
       tags:
+        - 'config:field.storage.user.field_toolbar_position'
         - 'config:field.storage.user.field_user_image'
+  block_1:
+    id: block_1
+    display_title: 'Toolbar Position Block'
+    display_plugin: block
+    position: 2
+    display_options:
+      title: 'Toolbar Position'
+      fields:
+        uid:
+          id: uid
+          table: users_field_data
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: uid
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_toolbar_position:
+          id: field_toolbar_position
+          table: user__field_toolbar_position
+          field: field_toolbar_position
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Toolbar Position'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      cache:
+        type: none
+        options: {  }
+      sorts: {  }
+      filters: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        cache: false
+        title: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user.permissions
+      tags:
+        - 'config:field.storage.user.field_toolbar_position'
   page_1:
     id: page_1
     display_title: Page
     display_plugin: page
     position: 1
     display_options:
+      cache:
+        type: tag
+        options: {  }
       defaults:
+        cache: false
         show_admin_links: false
       show_admin_links: false
       display_extenders: {  }
@@ -1020,4 +1253,5 @@ display:
         - url.query_args
         - user.permissions
       tags:
+        - 'config:field.storage.user.field_toolbar_position'
         - 'config:field.storage.user.field_user_image'

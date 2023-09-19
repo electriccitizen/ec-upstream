@@ -4,6 +4,7 @@
  * @file
  */
 
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Template\Attribute;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\image\Entity\ImageStyle;
