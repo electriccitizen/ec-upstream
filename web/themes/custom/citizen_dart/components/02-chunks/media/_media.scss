@@ -8,6 +8,10 @@ img {
 	@include imageBase;
 }
 
+figure[role=group] {
+	margin: 0;
+}
+
 figcaption {
 	@include caption;
 }
@@ -38,7 +42,6 @@ article + figcaption {
 .text-with-summary figure,
 .text-long article {
 
-	// set float props and max-widths for floated items
 	&.align-left {
 		float: none;
 
@@ -76,14 +79,22 @@ article + figcaption {
 	}
 
 	&.align-center {
+		float: none;
 
-		&.document {
-			text-align: center;
+		@include desk {
+
+			&:not(.document) {
+				margin: 0 auto $spaceMd auto;
+				float: none;
+			}
+
+			&.document {
+				text-align: center;
+			}
 		}
 	}
 
 	// control sizes for images and video
-
 	@include desk {
 
 		&.small-embed {
@@ -106,7 +117,7 @@ article + figcaption {
 	&.default {
 		@include defaultEmbed;
 	}
-}//end article
+} //end article
 
 span.file {
 

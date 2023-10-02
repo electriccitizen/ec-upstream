@@ -4,7 +4,10 @@
 
 @use '../../../00-base/base' as *;
 
-.paragraph--type--text{
+.paragraph--type--text {
 	@include textConstrain;
-}//end links-files widget
 
+   .widget-wrapper figure[role=group] {
+      margin: 0 0 $spaceMd 0;
+   }
+} //end links-files widget
