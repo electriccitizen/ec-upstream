@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - ctools_block
+    - user
   theme:
     - citizen_dart
 id: toolbarposition
@@ -25,4 +26,11 @@ settings:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-visibility: {  }
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
