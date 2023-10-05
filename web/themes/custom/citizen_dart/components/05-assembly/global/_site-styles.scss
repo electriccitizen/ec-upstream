@@ -4,25 +4,26 @@
 
 @use '../../00-base/base' as *;
 
-body {
-	width: 100%;
-
-	&.gin--vertical-toolbar {
-		width: calc(100% - 66px);
-	}
-}//end body
+[dir="ltr"]{
+	body {
+		width: 100%;
+		box-sizing: border-box;
+		&.responsive-preview-frame{
+			padding-left: 0 !important;
+		}
+	}//end body
+}
 
 .overflow-guard {
 	background: $siteBack;
 	overflow-x: hidden;
-
+	width: 100%;
 	.unpublished & {
 		background: $unpub;
 	}
 
 	div {
 		box-sizing: border-box;
-
 		* {
 			box-sizing: inherit;
 		}

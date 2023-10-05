@@ -24,7 +24,7 @@ mode: preview
 content:
   field_address:
     type: address_default
-    label: inline
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
