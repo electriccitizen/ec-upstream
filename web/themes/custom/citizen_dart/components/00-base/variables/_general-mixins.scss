@@ -295,8 +295,9 @@
 }
 
 @mixin lightBack($lightText,$lightLink) {
-	h2,h3,h4,h5,h6,p,div,.field-caption {
+	h1,h2,h3,h4,h5,h6,p,div,li,.field-caption {
 		color: $lightText;
+		-webkit-font-smoothing: subpixel-antialiased;
 	}
 	:before,:after{
 		color: $lightText;
@@ -311,8 +312,9 @@
 }//end lightBack
 
 @mixin darkBack($darkText,$darkLink) {
-	h2,h3,h4,h5,h6,p,div,.field-caption {
+	h1,h2,h3,h4,h5,h6,p,div,li,.field-caption {
 		color: $darkText;
+		-webkit-font-smoothing: subpixel-antialiased;
 	}
 	:before,:after{
 		color: $darkText;
