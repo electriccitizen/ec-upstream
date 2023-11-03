@@ -314,7 +314,7 @@
 @mixin darkBack($darkText,$darkLink) {
 	h1,h2,h3,h4,h5,h6,p,div,li,.field-caption {
 		color: $darkText;
-		-webkit-font-smoothing: subpixel-antialiased;
+		-webkit-font-smoothing: antialiased;
 	}
 	:before,:after{
 		color: $darkText;
