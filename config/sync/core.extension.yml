@@ -15,6 +15,7 @@ module:
   citizen_custom: 0
   ckeditor5: 0
   ckeditor5_fullscreen: 0
+  ckeditor5_paste_filter: 0
   config: 0
   config_filter: 0
   config_ignore: 0
