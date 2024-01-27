@@ -153,6 +153,10 @@ button[disabled]:hover,button.disabled:hover{
 	border: 1px solid #000;
 	border-radius: 5px;
 }
+.js-lpb-component.paragraph--view-mode--preview a{
+	pointer-events: none;
+	color: #676767;
+}
 .js-lpb-component.paragraph--view-mode--preview .para-preview-label{
 	margin-bottom: 5px;
 	text-transform: capitalize;
