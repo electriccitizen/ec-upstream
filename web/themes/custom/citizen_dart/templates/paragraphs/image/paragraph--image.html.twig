@@ -41,29 +41,14 @@
 
 {% block widgetContent %}
 
-	{% set size = content.field_image_size[0]['#markup'] %}
-		
-	{%- if (size == 'small') -%}
-		{% set image =  drupal_entity('media', paragraph.field_image.0.target_id, 'small') %}
-	{%- elseif (size == 'medium') -%}
-		{% set image =  drupal_entity('media', paragraph.field_image.0.target_id, 'medium') %}
-	{%- elseif (size == 'large') -%}
-		{% set image =  drupal_entity('media', paragraph.field_image.0.target_id, 'large') %}
-	{%- elseif (size == 'full') -%}
-		{% set image =  drupal_entity('media', paragraph.field_image.0.target_id, 'full') %}
-	{%- elseif (size == 'default') -%}
-		{% set image =  drupal_entity('media', paragraph.field_image.0.target_id, 'default') %}
-	{%- endif -%}
-
-	{% set maxWidth = image['#media'].field_media_image.0.width %}
 	{% set caption = content.field_caption.0['#context'].value %}
 
-	<div class="image-wrapper {{ size }}"{% if size == 'default' %}style="width:{{ maxWidth }}px; max-width: 100%;"{% endif %}>
+	<div class="image-wrapper">
 		{% if content.field_link.0 %}
 			<a href="{{ content.field_link.0['#url'] }}" aria-label="Go to {{ content.field_link.0['#title'] }}">
 		{% endif %}
 			{% block image %}
-				{{ image }}
+				{{ content.field_image }}
 				<figcaption>
 					{{ caption }}
 				</figcaption>
