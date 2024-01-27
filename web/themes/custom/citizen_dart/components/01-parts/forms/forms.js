@@ -5,16 +5,23 @@
 Drupal.behaviors.userLogin = {
 	attach: function (context, settings) {
 		$(once('showPass', '#user-login-form', context)).each(function(){
-      $('.show-password').click(function(e){
-        e.preventDefault();
-        if($(this).is('.show')){
-          $(this).removeClass('show').text('Show');
-          $('#edit-pass').attr('type', 'password');
-        }else{
-          $(this).addClass('show').text('Hide');
-          $('#edit-pass').attr('type', 'text');
-        }
-      });
+
+		  var showPasswordButton = document.querySelector('.show-password');
+		  var passwordInput = document.getElementById('edit-pass');
+		  showPasswordButton.addEventListener('click', function(e) {
+		    e.preventDefault();
+
+		    if (showPasswordButton.classList.contains('show')) {
+		      showPasswordButton.classList.remove('show');
+		      showPasswordButton.textContent = 'Show';
+		      passwordInput.type = 'password';
+		    } else {
+		      showPasswordButton.classList.add('show');
+		      showPasswordButton.textContent = 'Hide';
+		      passwordInput.type = 'text';
+		    }
+		  });
+
 		});
 	}
 };
@@ -24,18 +31,41 @@ Drupal.behaviors.userLogin = {
 Drupal.behaviors.select2 = {
   attach: function (context, settings) {
     $(once('selects', 'select', context)).each(function(){
-      $( 'form.views-exposed-form select,form.webform-submission-form select' ).select2({
-        placeholder: "Select an option"
-      });
-      $(once('selectAccessiblity', '.js-form-type-select', context)).each(function(){
-        $(document).ready(function(){
-          $('.select2-search__field').each(function(){
-            var label = $(this).closest('.select2-container').siblings('label').text();
-            $(this).attr('aria-label',label).removeAttr('role');
-            $(this).closest('.select2-selection').removeAttr('role');
-          });
+      
+    	// Helper function to mimic jQuery's $(document).ready()
+			function documentReady(callback) {
+		    if (document.readyState === 'loading') {
+		      document.addEventListener('DOMContentLoaded', callback);
+		    } else {
+		      callback();
+		    }
+			}
+
+			// Function to initialize Select2 on select elements
+			function initializeSelect2(selector) {
+		    document.querySelectorAll(selector).forEach(function (select) {
+	         $(select).select2({
+            placeholder: 'Select an option'
         });
-      });
+		    });
+			}
+
+			// Function to update accessibility attributes for Select2 search fields
+			function updateSelect2Accessibility() {
+		    document.querySelectorAll('.select2-search__field').forEach(function (searchField) {
+	        var label = searchField.closest('.select2-container').previousElementSibling.innerText;
+	        searchField.setAttribute('aria-label', label);
+	        searchField.removeAttribute('role');
+	        searchField.closest('.select2-selection').removeAttribute('role');
+		    });
+			}
+
+			// Call the initialization function on the specified select elements
+			documentReady(function () {
+			  initializeSelect2('form.views-exposed-form select, form.webform-submission-form select');
+			  updateSelect2Accessibility();
+			});
+
     });
    }
 };
