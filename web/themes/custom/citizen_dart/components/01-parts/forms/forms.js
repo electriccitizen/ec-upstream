@@ -44,9 +44,9 @@ Drupal.behaviors.select2 = {
 			// Function to initialize Select2 on select elements
 			function initializeSelect2(selector) {
 		    document.querySelectorAll(selector).forEach(function (select) {
-	         $(select).select2({
-            placeholder: 'Select an option'
-        });
+	        $(select).select2({
+	            placeholder: 'Select an option'
+	        });
 		    });
 			}
 
