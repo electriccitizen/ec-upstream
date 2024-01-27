@@ -5,7 +5,6 @@ dependencies:
   config:
     - block_content.type.basic
     - block_content.type.newsletter
-    - block_content.type.search_block
     - block_content.type.social_media_links
     - field.storage.paragraph.field_block
     - paragraphs.paragraphs_type.block_placer
@@ -27,7 +26,6 @@ settings:
     target_bundles:
       basic: basic
       newsletter: newsletter
-      search_block: search_block
       social_media_links: social_media_links
     sort:
       field: _none

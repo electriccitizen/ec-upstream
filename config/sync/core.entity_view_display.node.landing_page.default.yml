@@ -118,21 +118,22 @@ third_party_settings:
     entity_view_mode_restriction:
       allowed_layouts:
         - layout_onecol
+      denylisted_blocks: {  }
+      allowlisted_blocks:
+        'Site Search':
+          - 'views_block:site_search-site_search_block'
       restricted_categories:
         - '@entity'
         - 'Chaos Tools'
         - 'Custom block types'
         - 'Custom blocks'
         - Devel
-        - Flippy
         - Forms
         - Geolocation
         - Help
         - 'Inline blocks'
-        - 'Lists (Views)'
         - Menus
         - 'Responsive Preview'
-        - 'Site Search'
         - 'Social Share'
         - Superfish
         - System

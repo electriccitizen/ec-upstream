@@ -1,8 +1,0 @@
-uuid: e75c3221-c136-4057-baa5-f60f2c25affc
-langcode: en
-status: true
-dependencies: {  }
-id: search_block
-label: 'Search Block'
-revision: 0
-description: 'Used for embedding a search block.'

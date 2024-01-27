@@ -14,7 +14,6 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-    sections: {  }
 _core:
   default_config_hash: _x7MwhSiy9McqMBeBdb5scAV5L2USCCCPBdpGghIs0o
 id: paragraph.links_files.default
@@ -35,11 +34,11 @@ content:
     type: link
     label: hidden
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
     weight: 1
     region: content

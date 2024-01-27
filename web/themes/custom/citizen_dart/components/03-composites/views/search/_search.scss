@@ -1,0 +1,67 @@
+/* ===============
+   SEARCH
+================= */
+
+@use '../../../00-base/base' as *;
+@use '../views-mixins' as *;
+
+
+
+.block-views-exposed-filter-blocksite-search-site-search-block{
+	position: relative;
+	z-index: 2;
+	padding: $spaceLg 0 $spaceXs;
+	&::after {
+		@include fullBack($lightGrey);
+	}
+	#views-exposed-form-site-search-site-search-block{
+		@include safeFlex(row,wrap,center,start);
+		@include auto;
+		.js-form-type-textfield {
+			label {
+				@include visuallyHidden;
+			}
+		}
+		.form-actions{
+			margin: 0;
+		}
+	}
+}//end search form block
+
+.site-search {
+	.results-header {
+		h2 {
+			width: 100%;
+			max-width: $textMax;
+			@include auto;
+			padding-bottom: 1rem;
+			border-bottom: 1px solid $borderRule;
+			margin-bottom: $elementSpace;
+		}
+	}
+	.view-content,
+	.view-empty {
+		width: 100%;
+		max-width: $textMax;
+		@include auto;
+		margin-bottom: $elementSpace;
+	}
+	.views-row {
+		&:not(:last-child) {
+			margin-bottom: $elementSpace;
+		}
+		.views-field-title {
+			margin-bottom: $spaceXxs;
+		}
+		.views-field-body-1 {
+			.search-highlight {
+				font-weight: $heavy;
+				background: none;
+			}
+		}
+	}//end views row
+	.pager {
+		max-width: $textMax;
+		@include auto;
+	}
+}//site-search-block

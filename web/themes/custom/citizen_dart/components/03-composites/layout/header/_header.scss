@@ -44,7 +44,7 @@
 
 /* SEARCH BLOCK PLACEMENT
 ------------------- */
-.block-site-search:not(.block-search-block) {
+.block-site-search:not(.views-block) {
 	position: static !important;
 	display: inline-block;
 	text-align: right;
