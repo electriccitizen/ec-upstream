@@ -5,13 +5,20 @@
 		attach: function (context, settings) {
 			$(once('modalContent', '.modal', context)).each(function(){
 				//set the variable needed to keep the modal controls specific
-				var pid = $('.modal-lead', this).attr('data-attribute-id');
-				$('.modal-wrapper', this).appendTo('.overflow-guard');
+				var modalLead = this.querySelector('.modal-lead');
+				var pid = modalLead ? modalLead.getAttribute('data-attribute-id') : null;
+
+				var modalWrapper = this.querySelector('.modal-wrapper');
+				var overflowGuard = document.querySelector('.overflow-guard');
+
+				if (modalWrapper && overflowGuard) {
+				    overflowGuard.appendChild(modalWrapper);
+				}
 	
 				//load the setup
 				window.addEventListener('load', setup);
 				const get = document.getElementById.bind(document);
-		  		const query = document.querySelector.bind(document);
+		  	const query = document.querySelector.bind(document);
 	
 				function setup() {
 					//set the controls for this specific modal
@@ -58,12 +65,12 @@
 					e.stopImmediatePropagation();
 					return false;
 					}
-					$(document).keydown(function(event) { 
-						if (event.keyCode == 27) { 
-						  modalClose();
-						}
-					  });
-		  		}
+					document.addEventListener('keydown', function (event) {
+					    if (event.keyCode === 27) {
+					        modalClose();
+					    }
+					});
+				}//end setup function
 			});
 		}
 	}

@@ -81,7 +81,18 @@
 	transition: transform 0.15s ease-in 0s;
 	transition: transform 0.15s ease-in 0s, -webkit-transform 0.15s ease-in 0s;
 }
-
+@mixin showContent{
+	overflow: hidden;
+  transition: all .5s ease-in-out;
+  line-height: 0;
+  color: transparent;
+	&.show-content{
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		line-height: 1.4;
+		color: #37363b;
+	}
+}
 
 /* LAYOUT MIXINS
 ---------------------------- */
