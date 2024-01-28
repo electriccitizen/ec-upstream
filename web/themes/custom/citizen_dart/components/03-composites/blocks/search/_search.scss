@@ -108,12 +108,11 @@
 //put search form wrapper at top of screen and full width, hide for slide effect
 #search-form-wrapper {
 	width: calc(100% + $siteMarginMobile*2);
-	display: none;
 	position: absolute;
 	top: -20px;
 	left: -$siteMarginMobile;
 	z-index: 500;
-
+	@include showContent(100vh);
 	@include contentStop {
 		width: 100vw;
 		left: calc(-50vw + 600px);

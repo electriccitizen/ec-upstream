@@ -63,7 +63,6 @@ function mobileSectionNav() {
       $(sectionMenuWrapper).attr('aria-hidden', 'true');
     }
   } else {
-  	console.log('desk');
     //strip all aria roles & prevent click
     $(sectionMenuToggle).removeAttr('aria-controls aria-expanded role href');
     $(sectionMenuWrapper).removeAttr('aria-hidden');

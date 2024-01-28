@@ -55,7 +55,7 @@
 
 /* DESK FISH
 ---------------- */
-ul.sf-menu.sf-horizontal{
+.block-superfishmain ul.sf-menu.sf-horizontal{
 	@include safeFlex(row,wrap,end,null);
 	list-style-type: none;
 	//override defult floats
@@ -179,7 +179,7 @@ ul.sf-menu.sf-horizontal{
 
 /* MOBILE FISH
 ----------------- */
-ul.sf-menu.sf-accordion{
+.block-superfishmain ul.sf-menu.sf-accordion{
 	&.sf-expanded{
 		position: absolute;
 		left: -$siteMarginMobile !important;
