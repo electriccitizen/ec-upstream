@@ -2,8 +2,11 @@ uuid: 6aee2f13-d589-491f-b941-76b36da9c27b
 langcode: en
 status: true
 dependencies:
+  config:
+    - image.style.linkit_result_thumbnail
   module:
     - file
+    - image
     - node
 _core:
   default_config_hash: OGbleuOgYZQiCASrbT-9bJDKb7L4TH281LhY0p5CeBM
@@ -35,6 +38,6 @@ matchers:
       file_status: 1
       images:
         show_dimensions: false
-        show_thumbnail: false
-        thumbnail_image_style: null
+        show_thumbnail: true
+        thumbnail_image_style: linkit_result_thumbnail
     weight: 0

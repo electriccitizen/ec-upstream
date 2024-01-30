@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - field.storage.node.field_exclude_search
     - search_api.server.local
   module:
     - node
@@ -25,14 +24,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.body
-  field_exclude_search:
-    label: 'Exclude from Site Search'
-    datasource_id: 'entity:node'
-    property_path: field_exclude_search
-    type: boolean
-    dependencies:
-      config:
-        - field.storage.node.field_exclude_search
   title:
     label: Title
     datasource_id: 'entity:node'
@@ -58,7 +49,6 @@ processor_settings:
   add_url: {  }
   aggregated_field: {  }
   entity_status: {  }
-  entity_type: {  }
   html_filter:
     weights:
       preprocess_index: -46
@@ -153,5 +143,4 @@ tracker_settings:
 options:
   cron_limit: 50
   index_directly: true
-  track_changes_in_references: true
 server: local

@@ -38,13 +38,13 @@ filters:
     status: true
     weight: -48
     settings:
-      allowed_html: '<br> <p class="text-align-left text-align-center text-align-right"> <h2 class="text-align-left text-align-center text-align-right"> <h3 class="text-align-left text-align-center text-align-right"> <h4 class="text-align-left text-align-center text-align-right"> <h5 class="text-align-left text-align-center text-align-right"> <h6 class="text-align-left text-align-center text-align-right"> <strong> <em> <a href data-entity-type data-entity-uuid data-entity-substitution> <ul> <ol start> <li>'
+      allowed_html: '<br> <p class="text-align-left text-align-center text-align-right text-align-justify"> <h2 id class="text-align-left text-align-center text-align-right text-align-justify"> <h3 id class="text-align-left text-align-center text-align-right text-align-justify"> <h4 id class="text-align-left text-align-center text-align-right text-align-justify"> <h5 id class="text-align-left text-align-center text-align-right text-align-justify"> <h6 id class="text-align-left text-align-center text-align-right text-align-justify"> <cite> <dl> <dt> <dd> <blockquote cite> <ul type> <ol type start> <a hreflang title href data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <li>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
     id: filter_autop
     provider: filter
-    status: true
+    status: false
     weight: -44
     settings: {  }
   filter_align:
@@ -97,3 +97,10 @@ filters:
       local_settings:
         protocol_style: full
         local_paths: ''
+        keep_language_prefix: false
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: -45
+    settings: {  }
