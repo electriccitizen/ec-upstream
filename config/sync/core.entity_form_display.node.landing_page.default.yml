@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page.body
-    - field.field.node.landing_page.field_exclude_search
     - field.field.node.landing_page.field_image
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_paragraphs
@@ -33,13 +32,6 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  field_exclude_search:
-    type: boolean_checkbox
-    weight: 4
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   field_image:
     type: media_library_widget
     weight: 0
@@ -49,7 +41,7 @@ content:
     third_party_settings: {  }
   field_metatags:
     type: metatag_firehose
-    weight: 5
+    weight: 4
     region: content
     settings:
       sidebar: true
@@ -63,17 +55,16 @@ content:
       preview_view_mode: preview
       nesting_depth: 0
       require_layouts: 1
-      empty_message: ''
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true

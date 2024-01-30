@@ -22,7 +22,8 @@ content:
     type: address_default
     weight: 1
     region: content
-    settings: {  }
+    settings:
+      wrapper_type: details
     third_party_settings: {  }
   field_location:
     type: geolocation_googlegeocoder

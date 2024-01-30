@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page.body
-    - field.field.node.landing_page.field_exclude_search
     - field.field.node.landing_page.field_image
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_paragraphs
@@ -119,22 +118,21 @@ third_party_settings:
     entity_view_mode_restriction:
       allowed_layouts:
         - layout_onecol
-      denylisted_blocks: {  }
-      allowlisted_blocks:
-        'Site Search':
-          - 'views_block:site_search-site_search_block'
       restricted_categories:
         - '@entity'
         - 'Chaos Tools'
         - 'Custom block types'
         - 'Custom blocks'
         - Devel
+        - Flippy
         - Forms
         - Geolocation
         - Help
         - 'Inline blocks'
+        - 'Lists (Views)'
         - Menus
         - 'Responsive Preview'
+        - 'Site Search'
         - 'Social Share'
         - Superfish
         - System
@@ -176,16 +174,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
-    region: content
-  field_exclude_search:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 106
     region: content
   field_image:
     type: entity_reference_label
