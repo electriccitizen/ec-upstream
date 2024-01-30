@@ -22,7 +22,7 @@
 
 			    if (target) {
 		        setTimeout(() => {
-		            target.style.display = 'block';
+		          target.style.display = 'block';
 		        }, 300);
 			    }
 

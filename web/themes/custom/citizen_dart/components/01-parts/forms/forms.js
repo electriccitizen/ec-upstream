@@ -6,8 +6,8 @@ Drupal.behaviors.userLogin = {
 	attach: function (context, settings) {
 		$(once('showPass', '#user-login-form', context)).each(function(){
 
-		  var showPasswordButton = document.querySelector('.show-password');
-		  var passwordInput = document.getElementById('edit-pass');
+		  const showPasswordButton = document.querySelector('.show-password');
+		  const passwordInput = document.getElementById('edit-pass');
 		  showPasswordButton.addEventListener('click', function(e) {
 		    e.preventDefault();
 
@@ -53,7 +53,7 @@ Drupal.behaviors.select2 = {
 			// Function to update accessibility attributes for Select2 search fields
 			function updateSelect2Accessibility() {
 		    document.querySelectorAll('.select2-search__field').forEach(function (searchField) {
-	        var label = searchField.closest('.select2-container').previousElementSibling.innerText;
+	        const label = searchField.closest('.select2-container').previousElementSibling.innerText;
 	        searchField.setAttribute('aria-label', label);
 	        searchField.removeAttribute('role');
 	        searchField.closest('.select2-selection').removeAttribute('role');

@@ -4,15 +4,14 @@
 	Drupal.behaviors.modal = {
 		attach: function (context, settings) {
 			$(once('modalContent', '.modal', context)).each(function(){
-				//set the variable needed to keep the modal controls specific
-				var modalLead = this.querySelector('.modal-lead');
-				var pid = modalLead ? modalLead.getAttribute('data-attribute-id') : null;
-
-				var modalWrapper = this.querySelector('.modal-wrapper');
-				var overflowGuard = document.querySelector('.overflow-guard');
+				//set the variables needed to keep the modal controls specific
+				const modalLead = this.querySelector('.modal-lead');
+				const pid = modalLead ? modalLead.getAttribute('data-attribute-id') : null;
+				const modalWrapper = this.querySelector('.modal-wrapper');
+				const overflowGuard = document.querySelector('.overflow-guard');
 
 				if (modalWrapper && overflowGuard) {
-				    overflowGuard.appendChild(modalWrapper);
+				  overflowGuard.appendChild(modalWrapper);
 				}
 	
 				//load the setup
@@ -66,9 +65,9 @@
 					return false;
 					}
 					document.addEventListener('keydown', function (event) {
-					    if (event.keyCode === 27) {
-					        modalClose();
-					    }
+						if (event.keyCode === 27) {
+							modalClose();
+						}
 					});
 				}//end setup function
 			});

@@ -47,11 +47,13 @@
 
 	//accordion content
 	.field-long-text{
-		display: none;
-		padding: 2.5rem 4rem;
-		background: $accordContentBack;
-		border-left: 1px solid $accordContentBorder;
-		border-right: 1px solid $accordContentBorder;
+		@include showContent(5000px);
+		.inner-text{
+			padding: 2.5rem 4rem;
+			background: $accordContentBack;
+			border-left: 1px solid $accordContentBorder;
+			border-right: 1px solid $accordContentBorder;
+		}
 	}
 
 	//active accordion
@@ -73,15 +75,5 @@
 			}
 		}
 	}//end active
-
-	//no-js fallback
-	.no-js &{
-		&:hover,&:focus{
-			.field-long-text{
-				display: block;
-			}
-		}
-	}
-
 }//end accordion-item
 

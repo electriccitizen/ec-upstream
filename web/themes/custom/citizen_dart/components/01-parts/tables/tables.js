@@ -7,11 +7,11 @@ Drupal.behaviors.basicTable = {
 		$(once('responsive_table', '.layout-container table:not(.ui-datepicker-calendar)', context)).each(function(){
 			$(this).basictable({breakpoint: 760,});
 			
-			var theadElements = this.getElementsByTagName('thead');
-
+			const theadElements = this.getElementsByTagName('thead');
 			if (theadElements.length === 0) {
 			  this.classList.add('no-header');
 			}
+			
 		});
 	}
 };

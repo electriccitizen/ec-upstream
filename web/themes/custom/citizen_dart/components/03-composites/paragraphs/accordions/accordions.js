@@ -3,34 +3,49 @@
 Drupal.behaviors.accordion = {
     attach: function (context, settings) {
       $(once('accordion', '.accordion-item', context)).each(function(){
-        //open and shut accordions on click
-        $('.accordion-header a', this).click(function(e){
-          e.preventDefault();
-          var activeHeader = $(this).parent('.accordion-header');
-          if (activeHeader.closest('.accordion-item.accord-active').length) {
-            $('.accord-active').removeClass('accord-active');
-            activeHeader.next().slideUp(300).attr('aria-hidden', 'true').end().find('a').attr('aria-expanded', "false");
-          }
-          else {
-            accordionOpen(activeHeader);
-            //detect if accordion top is offscreen and scroll to it if it is
+        document.querySelectorAll('.accordion-header a').forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+        
+            const activeHeader = this.parentElement;
+            const currentActiveAccordion = document.querySelector('.accordion-item.accord-active');
+        
+            if (currentActiveAccordion) {
+              const activeLongText = currentActiveAccordion.querySelector('.field-long-text');
+              activeLongText.classList.remove('show-content');
+              activeLongText.setAttribute('aria-hidden', 'true');
+              currentActiveAccordion.querySelector('.accordion-header a').setAttribute('aria-expanded', 'false');
+              currentActiveAccordion.classList.remove('accord-active'); 
+              // If the clicked header is the currently open accordion, close it and return
+              if (activeHeader === currentActiveAccordion.querySelector('.accordion-header')) {
+                return;
+              }
+            }
+        
+            const openAccordion = activeHeader.closest('.accordion-item');
+            const openLongText = openAccordion.querySelector('.field-long-text');
+            const openHeader = openAccordion.querySelector('.accordion-header a');
+        
+            openLongText.classList.add('show-content');
+            openLongText.setAttribute('aria-hidden', 'false');
+            openHeader.setAttribute('aria-expanded', 'true');
+            openAccordion.classList.add('accord-active');
+
             setTimeout(function() {
-              var windowTop = $(window).scrollTop();
-              var currentAccordion = $('.accord-active').offset().top;
-              if(windowTop > currentAccordion){
-                $('html, body').animate({
-                        scrollTop: $($activeHeader).offset().top - 100
-                    });
+              const windowTop = window.scrollY;
+              const currentAccordionTop = openAccordion.getBoundingClientRect().top + windowTop;
+        
+              if (windowTop > currentAccordionTop) {
+                window.scrollTo({
+                  top: currentAccordionTop - 100,
+                  behavior: 'smooth'
+                });
               }
             }, 510);
-          }
+          });
         });
-      });
-
-      function accordionOpen($activeHeader) {
-        $('.accord-active').find('.field-long-text').slideUp(300).attr('aria-hidden', 'true').end().removeClass('accord-active').find('.accordion-header a').attr('aria-expanded', 'false');
-        $activeHeader.parent('.accordion-item').addClass('accord-active').end().next().slideDown(300).attr('aria-hidden', 'false').end().find('a').attr('aria-expanded', "true");
-      }
+        
+      }); 
     }
 }
 
