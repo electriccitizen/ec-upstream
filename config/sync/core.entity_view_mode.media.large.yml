@@ -8,5 +8,6 @@ _core:
   default_config_hash: CLlsky2uF865_Q46NdEoinajP8YlSdmIIwtVBmDbIL4
 id: media.large
 label: Large
+description: ''
 targetEntityType: media
 cache: true

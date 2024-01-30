@@ -8,5 +8,6 @@ _core:
   default_config_hash: iD2KcWzcoNl0hlw548V48C8O3B9l1CH9LQ5ALPO2w-w
 id: paragraph.token
 label: Token
+description: ''
 targetEntityType: paragraph
 cache: true

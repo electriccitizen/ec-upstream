@@ -20,6 +20,7 @@ dependencies:
     - contextual
     - file
     - filter
+    - help
     - layout_builder
     - media
     - menu_admin_per_menu
@@ -42,6 +43,7 @@ permissions:
   - 'access block content overview'
   - 'access content overview'
   - 'access contextual links'
+  - 'access help pages'
   - 'access media overview'
   - 'access responsive preview'
   - 'access site reports'
