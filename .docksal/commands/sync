@@ -98,6 +98,10 @@ fi
 echo -e "${green_bg} Drush cr ${NC}${yellow} Cache Rebuild...${NC}"
 fin drush cr
 
+# Update DB
+echo -e "${green_bg} Drush cr ${NC}${yellow} Cache Rebuild...${NC}"
+fin drush updb -y
+
 # Config Import
 echo -e "${green_bg} Drush cim -y ${NC}${yellow} Import config...${NC}"
 fin drush cim -y
