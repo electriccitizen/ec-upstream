@@ -131,6 +131,9 @@
       "drupal/focal_point": {
         "Preview modal closes media library": "https://www.drupal.org/files/issues/2020-10-06/3162210-17.patch",
         "Require jquery_ui_draggable": "https://www.drupal.org/files/issues/2023-04-03/3351521-2.patch"
+      },
+      "drupal/smart_date": {
+        "PHP 8.2 errors in smartdate - https://www.drupal.org/project/smart_date/issues/3381131": "https://git.drupalcode.org/project/smart_date/-/merge_requests/63.diff"
       }
     },
     "composer-exit-on-patch-failure": true,
