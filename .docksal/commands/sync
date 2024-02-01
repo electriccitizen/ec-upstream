@@ -62,8 +62,8 @@ if ! [ -z "$(git status --untracked-files=no --porcelain)" ]; then
 fi
 # Project Files - Pull from Github
 echo -e  "${green_bg} Get latest code ${NC}${yellow} Pulling ${REPO_BRANCH} branch from Github...${NC}"
-#git checkout ${REPO_BRANCH}
-#git pull 
+git checkout ${REPO_BRANCH}
+git pull 
 
 # Fin Restart
 echo -e  "${green_bg} Fin Restart ${NC}${yellow} Restart fin to get latest container updates...${NC}"
@@ -97,6 +97,10 @@ fi
 # Cache Rebuild
 echo -e "${green_bg} Drush cr ${NC}${yellow} Cache Rebuild...${NC}"
 fin drush cr
+
+# Update DB
+echo -e "${green_bg} Drush updb ${NC}${yellow} updatee database...${NC}"
+fin drush updb -y
 
 # Config Import
 echo -e "${green_bg} Drush cim -y ${NC}${yellow} Import config...${NC}"
