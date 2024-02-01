@@ -119,3 +119,9 @@ filters:
     settings:
       image: true
       iframe: true
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: -49
+    settings: {  }
