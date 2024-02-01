@@ -8,5 +8,6 @@ _core:
   default_config_hash: LL6Fp7aBrE5Jmyvw8QKJaAvTTi98-K-ObG8NCqFnBYA
 id: media.views_card
 label: 'Views Card'
+description: ''
 targetEntityType: media
 cache: true

@@ -8,5 +8,6 @@ _core:
   default_config_hash: ZCA2E9Cv-quzRXmaVcGR1EaT9NcWjzOns7nISwGCUpo
 id: user.compact
 label: Compact
+description: ''
 targetEntityType: user
 cache: true
