@@ -5,8 +5,6 @@
 @use '../../../00-base/base' as *;
 @use '../views-mixins' as *;
 
-
-
 .block-views-exposed-filter-blocksite-search-site-search-block{
 	position: relative;
 	z-index: 2;
@@ -14,7 +12,7 @@
 	&::after {
 		@include fullBack($lightGrey);
 	}
-	#views-exposed-form-site-search-site-search-block{
+	#views-form-wrapper{
 		@include safeFlex(row,wrap,center,start);
 		@include auto;
 		.js-form-type-textfield {

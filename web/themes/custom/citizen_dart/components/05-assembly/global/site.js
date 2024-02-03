@@ -1,39 +1,28 @@
-(function($, Drupal, once) {
+(function(Drupal, once) {
 
-/* LAYOUT 
------------------- */
-Drupal.behaviors.removeEmptyRegions = {
-  attach: function (context, settings) {
-    $(once('removeEmpty', '.layout > .layout__region:not(.layout-builder__region)', context)).each(function(){
-      if(!$(this).children().length){
-        $(this).remove();
-      }
-    });
-  }
-}
 
 /* BACK TO TOP
 ------------------ */
 Drupal.behaviors.backToTop = {
   attach: function (context, settings) {
-  	$(once('backTop', 'html.js', context)).each(function() {
-      $(window).scroll(function() {
-        var back = $(window).height() * .8;
-        if ($(this).scrollTop() > back ) {
-          $('.back-anchor').fadeIn(200);
-        }else{
-          $('.back-anchor').fadeOut(200);
+  	once('backTop', 'html.js', context).forEach(backTop => {
+      window.addEventListener('scroll', function() {
+        var back = window.innerHeight * 0.8;
+        if (window.scrollY > back) {
+          document.querySelector('.back-anchor').style.display = 'block';
+        } else {
+          document.querySelector('.back-anchor').style.display = 'none';
         }
       });
-      //scroll to toc
-      $('.back-anchor a').click(function(e) {
+      document.querySelector('.back-anchor a').addEventListener('click', function(e) {
         e.preventDefault();
-        $('html, body').animate({
-          scrollTop: $('body').offset().top - 10
+        window.scrollTo({
+          top: document.body.offsetTop - 10,
+          behavior: 'smooth'
         });
       });
     });
   }
 }
 
-})(jQuery, Drupal, once);
+})(Drupal, once);
