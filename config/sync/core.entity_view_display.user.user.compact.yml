@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.user.compact
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
-    - field.field.user.user.field_toolbar_position
     - field.field.user.user.field_user_image
   module:
     - layout_builder
@@ -48,7 +47,6 @@ hidden:
   field_authored_placeholder: true
   field_first_name: true
   field_last_name: true
-  field_toolbar_position: true
   field_user_image: true
   member_for: true
   search_api_excerpt: true

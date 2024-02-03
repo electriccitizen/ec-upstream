@@ -133,7 +133,8 @@
         "Require jquery_ui_draggable": "https://www.drupal.org/files/issues/2023-04-03/3351521-2.patch"
       },
       "drupal/smart_date": {
-        "PHP 8.2 errors in smartdate - https://www.drupal.org/project/smart_date/issues/3381131": "https://git.drupalcode.org/project/smart_date/-/merge_requests/63.diff"
+        "PHP 8.2 errors in smartdate - https://www.drupal.org/project/smart_date/issues/3381131": "https://git.drupalcode.org/project/smart_date/-/merge_requests/63.diff",
+        "10.2 List Item Deprecation warning":"https://www.drupal.org/files/issues/2023-12-18/3409287.patch"
        }
     },
     "composer-exit-on-patch-failure": true,

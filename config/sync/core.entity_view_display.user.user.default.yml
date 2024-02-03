@@ -5,12 +5,10 @@ dependencies:
   config:
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
-    - field.field.user.user.field_toolbar_position
     - field.field.user.user.field_user_image
     - views.view.user_dashboard
   module:
     - layout_builder
-    - options
     - user
     - views
   theme:
@@ -113,21 +111,6 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 4
             additional: {  }
-          b3c7a49e-8a75-4b9f-98d0-c24a2a4c4b26:
-            uuid: b3c7a49e-8a75-4b9f-98d0-c24a2a4c4b26
-            region: content
-            configuration:
-              id: 'field_block:user:user:field_toolbar_position'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: list_default
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: tabs
@@ -185,13 +168,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 8
-    region: content
-  field_toolbar_position:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 51
     region: content
   field_user_image:
     type: entity_reference_label
