@@ -1,12 +1,12 @@
-(function($, Drupal, once) {
+(function(Drupal, once) {
 
 /* DRAWERS (SHOW MORE)
 ------------------------------------ */
 
 Drupal.behaviors.drawerBelow = {
   attach: function (context, settings) {
-    $(once('modal_window', '.drawer-toggle', context)).each(function(){
-      this.addEventListener('click', function (e) {
+    once('drawer', '.drawer-toggle', context).forEach(drawer => {
+      drawer.addEventListener('click', function (e) {
 		    e.preventDefault();
 
 		    const closestField = findClosestField(this);
@@ -25,7 +25,7 @@ Drupal.behaviors.drawerBelow = {
 					this.classList.remove('active-drawer');
 					this.setAttribute('aria-expanded', 'false');
 		    }
-			});
+			});//end drawer click
 
 			function findClosestField(element) {
 				while (element && !element.classList.contains('field')) {
@@ -33,8 +33,8 @@ Drupal.behaviors.drawerBelow = {
 				}
 				return element;
 			}
-    });
+    });//end once drawers
   }
 };
 
-})(jQuery, Drupal, once);
+})(Drupal, once);

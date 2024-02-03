@@ -1,13 +1,16 @@
-(function($, Drupal, once) {
+(function($,Drupal, once) {
+
+// NOTE: Need jQuery because of select2
 
 /* USER LOGIN PASSWORD SHOW
 ------------------------------------ */
 Drupal.behaviors.userLogin = {
 	attach: function (context, settings) {
-		$(once('showPass', '#user-login-form', context)).each(function(){
+    once('showPass', '#user-login-form', context).forEach(login => {
 
-		  const showPasswordButton = document.querySelector('.show-password');
+		  const showPasswordButton = login.querySelector('.show-password');
 		  const passwordInput = document.getElementById('edit-pass');
+      
 		  showPasswordButton.addEventListener('click', function(e) {
 		    e.preventDefault();
 
@@ -22,7 +25,7 @@ Drupal.behaviors.userLogin = {
 		    }
 		  });
 
-		});
+		});//end once user login
 	}
 };
 
@@ -30,7 +33,7 @@ Drupal.behaviors.userLogin = {
 ------------------------------------ */
 Drupal.behaviors.select2 = {
   attach: function (context, settings) {
-    $(once('selects', 'select', context)).each(function(){
+    once('selects', 'select', context).forEach(fancySelect => {
       
     	// Helper function to mimic jQuery's $(document).ready()
 			function documentReady(callback) {
@@ -66,7 +69,7 @@ Drupal.behaviors.select2 = {
 			  updateSelect2Accessibility();
 			});
 
-    });
+    });//end once select
    }
 };
 

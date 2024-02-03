@@ -1,6 +1,8 @@
 
 (function($, Drupal, once) {
 
+  // NOTE: Need Jquery because both the libraries called are jquery
+
 	//Swipebox script for lightbox images.
 	Drupal.behaviors.gallery = {
 		attach: function (context, settings) {
@@ -14,7 +16,7 @@
 						openSpeed: 300
 					});
 				});
-			});
+			});// end once light boxes
 			//Slider
 			$(once('slider', '.gallery-type.slider', context)).each(function(){
 				$(document).ready(function(){
@@ -26,7 +28,7 @@
 					$('button.slick-prev').addClass('material-icons');
 					$('button.slick-next').addClass('material-icons');
 				});
-			});
+			});//end once slider
 		}
 	}
 

@@ -1,15 +1,15 @@
 
-(function($, Drupal, once) {
+(function(Drupal, once) {
 
 	// search toggle
 	Drupal.behaviors.searchToggle = {
 		attach: function (context, settings) {
-			$(once('tSearch', '.block-site-search', context)).each( () => {
+			once('tSearch', '.block-site-search', context).forEach(search => {
 
-				const openTrigger = document.querySelector(".t-search");
-				const closeTrigger = document.querySelector(".close-search");
-				const target = document.querySelector(".t-search-close");
-
+				const openTrigger = search.querySelector(".t-search");
+				const closeTrigger = search.querySelector(".close-search");
+				const target = search.querySelector(".t-search-close");
+  
 				// open search
 				const openSearchBlock = (e) => {
 			    e.preventDefault();
@@ -37,7 +37,7 @@
 	            superfishMainToggle.classList.remove('sf-expanded');
 		        }, 200);
 				  }
-				}
+				}//end open search block event
 
 				openTrigger.addEventListener('click', openSearchBlock);
 
@@ -56,14 +56,13 @@
 	            searchFormWrapper.setAttribute('aria-hidden', 'true');
 		        }, 200);
 			    }
-				}
+				}//end close search block event
 
 				closeTrigger.addEventListener('click', closeSearchBlock);
 
-
-			});
+			});//end once search
 		}
 	}
 
-})(jQuery, Drupal, once);
+})(Drupal, once);
 

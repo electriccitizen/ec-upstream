@@ -1,13 +1,13 @@
-(function($, Drupal, once) {
+(function(Drupal, once) {
 
 	//Pop-up content functionality.
 	Drupal.behaviors.modal = {
 		attach: function (context, settings) {
-			$(once('modalContent', '.modal', context)).each(function(){
+      once('modalContent', '.modal', context).forEach(modal => {
 				//set the variables needed to keep the modal controls specific
-				const modalLead = this.querySelector('.modal-lead');
+				const modalLead = modal.querySelector('.modal-lead');
 				const pid = modalLead ? modalLead.getAttribute('data-attribute-id') : null;
-				const modalWrapper = this.querySelector('.modal-wrapper');
+				const modalWrapper = modal.querySelector('.modal-wrapper');
 				const overflowGuard = document.querySelector('.overflow-guard');
 
 				if (modalWrapper && overflowGuard) {
@@ -16,6 +16,7 @@
 	
 				//load the setup
 				window.addEventListener('load', setup);
+        
 				const get = document.getElementById.bind(document);
 		  	const query = document.querySelector.bind(document);
 	
@@ -47,7 +48,7 @@
 							modal.getElementsByTagName('video')[0].pause();
 							modal.getElementsByTagName('video')[0].currentTime = 0;
 						}
-					}
+					}//end modal close
 					//open the modal
 					function openModal() {
 						modalRoot.classList.add('active-modal');
@@ -70,8 +71,8 @@
 						}
 					});
 				}//end setup function
-			});
+			});//end once modal
 		}
 	}
 	
-	})(jQuery, Drupal, once);
+	})(Drupal, once);

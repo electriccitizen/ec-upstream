@@ -1,14 +1,14 @@
-(function($, Drupal, once) {
+(function(Drupal, once) {
 
 /* LAYOUT TABS
 ------------------------------------ */
 Drupal.behaviors.layoutTabs = {
 	attach: function (context, settings) {
-		$(once('isTabs', '.layout__region--tabs:not(.layout-builder__region)', context)).each(function(){
+		once('isTabs', '.layout__region--tabs:not(.layout-builder__region)', context).forEach(tabsLayout => {
 
-      document.querySelector('.tabs-instructions').remove();
+      tabsLayout.querySelector('.tabs-instructions').remove();
 
-      const tabContainer = this;
+      const tabContainer = tabsLayout;
 			const tabItems = Array.from(tabContainer.children);
 
 			if (tabItems.length > 1) {
@@ -52,7 +52,7 @@ Drupal.behaviors.layoutTabs = {
             firstTabControl.classList.add('active-tab');
 	        }
 		    }
-			}
+			}//end if tabs
 
       const tabControls = document.querySelectorAll('.tab-control');
 
@@ -86,8 +86,8 @@ Drupal.behaviors.layoutTabs = {
 			  tabControl.addEventListener('click', tabControlClickHandler);
 			});
 
-		});
+		});//end once tabs
 	}
 };
 
-})(jQuery, Drupal, once);
+})(Drupal, once);
