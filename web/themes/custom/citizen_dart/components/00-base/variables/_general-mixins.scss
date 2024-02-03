@@ -81,13 +81,13 @@
 	transition: transform 0.15s ease-in 0s;
 	transition: transform 0.15s ease-in 0s, -webkit-transform 0.15s ease-in 0s;
 }
-@mixin showContent($maxHeight){
+@mixin showContent($maxHeight,$time){
 	max-height: 0;
-  transition: max-height 0.35s ease-out;
+  transition: max-height #{$time} ease-out;
   overflow: hidden;
 	&.show-content{
 		max-height: #{$maxHeight};
-    transition: max-height 0.5s ease-in;
+    transition: max-height #{$time} ease-in;
 	}
 }
 

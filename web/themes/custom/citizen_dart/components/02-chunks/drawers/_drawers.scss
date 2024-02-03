@@ -52,7 +52,7 @@
 }//end drawer toggle
 
 .drawer-content{
-	@include showContent(500px);
+	@include showContent(500px,.5s);
 	&.show-content{
 		&:not(.not-fade){
 			padding-bottom: $spaceMd;

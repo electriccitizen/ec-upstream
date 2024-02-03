@@ -112,7 +112,7 @@
 	top: -20px;
 	left: -$siteMarginMobile;
 	z-index: 500;
-	@include showContent(100vh);
+	@include showContent(100vh,.5s);
 	@include contentStop {
 		width: 100vw;
 		left: calc(-50vw + 600px);

@@ -47,7 +47,8 @@
 
 	//accordion content
 	.field-long-text{
-		@include showContent(5000px);
+		@include showContent(2000px,.6s);
+
 		.inner-text{
 			padding: 2.5rem 4rem;
 			background: $accordContentBack;
