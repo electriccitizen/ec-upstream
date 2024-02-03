@@ -91,6 +91,7 @@ code {
 	-moz-osx-font-smoothing: grayscale;
 	font-kerning: normal;
 	font-synthesis: none;
+  font-feature-settings: “liga” 0;
 }
 
 body {
