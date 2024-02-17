@@ -3,16 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.video.field_long_text
     - field.field.paragraph.video.field_video
     - field.field.paragraph.video.field_widget_title
     - paragraphs.paragraphs_type.video
   module:
     - layout_builder
+    - text
 third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-    sections: {  }
 _core:
   default_config_hash: pTGVPSUUi25iToqeDbNaB4lFvET4GlTV5dX1WexlT1s
 id: paragraph.video.default
@@ -20,6 +21,13 @@ targetEntityType: paragraph
 bundle: video
 mode: default
 content:
+  field_long_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_video:
     type: entity_reference_entity_view
     label: hidden

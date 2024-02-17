@@ -1,0 +1,11 @@
+uuid: 130cb316-816a-4bde-97ba-a3e73007185f
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.860x535
+label: 860x535
+description: ''
+targetEntityType: media
+cache: true

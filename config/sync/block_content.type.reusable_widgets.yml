@@ -1,0 +1,8 @@
+uuid: d50faf04-28f7-4a4c-b58a-79f3122033bf
+langcode: en
+status: true
+dependencies: {  }
+id: reusable_widgets
+label: 'Reusable Widgets'
+revision: 0
+description: ''

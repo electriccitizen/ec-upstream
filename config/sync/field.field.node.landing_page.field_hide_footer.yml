@@ -1,0 +1,21 @@
+uuid: 7e5d7998-c6df-4fce-93b9-e0b06f24cbe0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_footer
+    - node.type.landing_page
+id: node.landing_page.field_hide_footer
+field_name: field_hide_footer
+entity_type: node
+bundle: landing_page
+label: 'Hide Footer'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

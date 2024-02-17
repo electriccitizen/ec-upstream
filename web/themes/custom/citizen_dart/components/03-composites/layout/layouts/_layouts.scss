@@ -21,33 +21,9 @@
 	}
 }
 
-/* TWO COLUMN SIDEBAR LEFT */
-.layout--twocol-sideleft{
-	width: 100%;
-	max-width: $contentStop;
-	@include auto;
-	@include safeFlex(row,wrap,start,start);
-	.layout__region--first{
-		width: 100%;
-		@include desk{
-			width: $sideBar;
-		}
-	}//end layout region second
-	.layout__region--content{
-		width: 100%;
-		@include desk{
-			&:not(:only-child){
-				width: calc(100% - #{$sideBar});
-				&:not(.layout-builder__region){
-					padding-left: $sectionGutter;
-				}
-			}
-		}
-	}
-}//end layout-twocol-sideleft
 
-/* TWO COLUMN QUAD SPLIT */
-.layout--twocol-quad-split{
+/* TWO COLUMN SPLIT LEFT */
+.layout--twocol-split-left{
 	width: 100%;
 	max-width: $contentStop;
 	@include auto;
@@ -64,7 +40,7 @@
 	.layout__region--first{
 		width: 100%;
 		@include onlyMobile{
-			@include safeFlexOrder(2);
+			@include safeFlexOrder(1);
 		}
 		@include desk{
 			float: left;
@@ -74,7 +50,7 @@
 	.layout__region--second{
 		width: 100%;
 		@include onlyMobile{
-			@include safeFlexOrder(4);
+			@include safeFlexOrder(3);
 			& + .layout__region--third {
 				margin-bottom: 0 !important;
 			}
@@ -85,30 +61,10 @@
 			width: $sideBar;
 		}
 	}//end layout region second
-	.layout__region--third{
-		width: 100%;
-		@include onlyMobile{
-			@include safeFlexOrder(1);
-			&:only-child {
-				margin-bottom: $siteBottomSpace !important;
-			}
-		}
-		@include desk{
-			width: calc(100% - #{$sideBar});
-			margin-left: $sideBar;
-			padding-left: $sectionGutter;
-			&:first-child{
-				width: 100%;
-				max-width: $textMax;
-				@include auto;
-				padding-left: 0;
-			}
-		}
-	}//end layout region third
 	.layout__region--content{
 		width: 100%;
 		@include onlyMobile{
-			@include safeFlexOrder(3);
+			@include safeFlexOrder(2);
 		}
 		@include desk{
 			width: calc(100% - #{$sideBar});
@@ -122,93 +78,12 @@
 			}
 		}
 	}//end layout region content
-}//end layout-twocol-quad-split
+}//end layout-twocol-split-left
 
-/* TWO COLUMN SIDEBAR RIGHT */
-.layout--twocol-sideright{
-	width: 100%;
-	max-width: $contentStop;
-	@include auto;
-	@include safeFlex(row,wrap,start,start);
-	.layout__region--content{
-		width: 100%;
-		@include desk{
-			&:not(:only-child){
-				width: calc(100% - #{$sideBar});
-				&:not(.layout-builder__region){
-					padding-right: $sectionGutter;
-				}
-			}
-		}
-	}
-	.layout__region--second{
-		width: 100%;
-		@include desk{
-			width: $sideBar;
-		}
-	}//end layout region second
-}//end layout-twocol-sideright
 
-/* TABS */
-.layout--tabs{
-	width: 100%;
-	.layout__region--tabs{
-		.tabs-wrapper > div:not(:first-of-type){
-			display: none;
-		}
-		ul.tabs-header{
-			@include listReset;
-			@include safeFlex(row,wrap,start,start);
-			@include tab{
-				margin-left: 1px;
-			}
-			li{
-				min-width: 224px;
-				@include onlySmall{
-					width: 100%;
-				}
-				@include tab{
-					margin-right: -1px;
-				}
-			}
-			.tab-control{
-				@include outlineButton($borderRule);
-				border-radius: 0;
-				border-width: 1px;
-				width: 100%;
-				margin-bottom: -1px;
-				color: $black;
-				&:hover,&:focus,&:active{
-					border-color: $borderRule;
-				}
-				&.active-tab{
-					background: $midGrey;
-					color: $white;
-					border-color: $borderRule;
-					&:hover,&:focus{
-						background: $buttonBackHover;
-						color: $buttonTextHover;
-						border-color: $borderRule;
-					}
-					&:active{
-						background: $buttonBackActive;
-						color: $buttonTextActive;
-						border-color: $borderRule;
-					}
-				}
-			}//end tab control
-		}//end tabs header
-		.tab-item{
-			border-top: 1px solid $borderRule;
-			padding-top: 20px;
-			h2.block-title{
-				display: none;
-			}
-		}
-	}//end region--tabs
-}//end layout-tabs
 
-/* DEFAULT LAYOUTS USED FOR LAYOUT PARAGRAPHS
+/* DEFAULT CORE LAYOUTS 
+(we're retheming to use flex better with bleed for gutters)
 ------------------------------------ */
 
 /* TWO COLUMNS */

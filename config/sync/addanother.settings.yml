@@ -14,6 +14,13 @@ button:
   landing_page: false
   gather_content_node: false
   bios: false
+  student_story: false
+  spartannet: false
+  course: false
+  degree: false
+  program: false
+  campus: false
+  directory: false
 message:
   page: false
   event: false
@@ -24,6 +31,13 @@ message:
   landing_page: false
   gather_content_node: true
   bios: false
+  student_story: false
+  spartannet: false
+  course: false
+  degree: false
+  program: false
+  campus: false
+  directory: false
 tab:
   page: true
   event: true
@@ -34,6 +48,13 @@ tab:
   landing_page: true
   gather_content_node: false
   bios: true
+  student_story: true
+  spartannet: false
+  course: true
+  degree: true
+  program: true
+  campus: true
+  directory: true
 tab_edit:
   page: false
   event: false
@@ -44,3 +65,10 @@ tab_edit:
   landing_page: false
   gather_content_node: false
   bios: false
+  student_story: false
+  spartannet: false
+  course: false
+  degree: false
+  program: false
+  campus: false
+  directory: false

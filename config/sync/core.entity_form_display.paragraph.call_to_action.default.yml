@@ -1,0 +1,43 @@
+uuid: 0830a77f-98c2-4406-9ed9-b1a82ddca6f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.call_to_action.field_image
+    - field.field.paragraph.call_to_action.field_links
+    - field.field.paragraph.call_to_action.field_widget_title
+    - paragraphs.paragraphs_type.call_to_action
+  module:
+    - link
+    - media_library
+id: paragraph.call_to_action.default
+targetEntityType: paragraph
+bundle: call_to_action
+mode: default
+content:
+  field_image:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_links:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_widget_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

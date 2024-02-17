@@ -1,0 +1,25 @@
+uuid: 99838de0-61ae-4155-b49e-70bd0788fd8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.reusable_widgets
+    - field.field.block_content.reusable_widgets.field_widget
+  module:
+    - entity_reference_revisions
+id: block_content.reusable_widgets.default
+targetEntityType: block_content
+bundle: reusable_widgets
+mode: default
+content:
+  field_widget:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

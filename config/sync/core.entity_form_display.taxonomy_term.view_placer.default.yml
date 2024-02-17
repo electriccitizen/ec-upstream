@@ -1,0 +1,23 @@
+uuid: b3575698-9362-47c6-bdc6-d0969b05fb54
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.view_placer
+id: taxonomy_term.view_placer.default
+targetEntityType: taxonomy_term
+bundle: view_placer
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true
+  status: true

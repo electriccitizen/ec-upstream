@@ -1,0 +1,38 @@
+uuid: 0c200092-e711-490e-a356-46b4a523d5df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.course.field_credits
+    - field.field.node.course.field_description
+    - node.type.course
+  module:
+    - text
+    - user
+id: node.course.default
+targetEntityType: node
+bundle: course
+mode: default
+content:
+  field_credits:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

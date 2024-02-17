@@ -1,0 +1,11 @@
+uuid: c6251f8e-1f45-4327-a790-ccafdf35ff19
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.hero_tall
+label: 'Hero Tall'
+description: ''
+targetEntityType: media
+cache: true

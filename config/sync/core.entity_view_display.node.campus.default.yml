@@ -1,0 +1,20 @@
+uuid: c685ab86-636d-4ee8-ba8b-1f1029f59c01
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.campus
+  module:
+    - user
+id: node.campus.default
+targetEntityType: node
+bundle: campus
+mode: default
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

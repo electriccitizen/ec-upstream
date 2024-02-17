@@ -1,0 +1,292 @@
+uuid: d3456484-dbe0-4fac-8ac9-4b08ef7fd5c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.program.body
+    - field.field.node.program.field_career_text
+    - field.field.node.program.field_cluster
+    - field.field.node.program.field_degrees
+    - field.field.node.program.field_details
+    - field.field.node.program.field_faculty
+    - field.field.node.program.field_image
+    - field.field.node.program.field_meta_description
+    - field.field.node.program.field_overview
+    - field.field.node.program.field_paragraphs
+    - field.field.node.program.field_sample_classes
+    - field.field.node.program.field_story
+    - node.type.program
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_discovery
+    - layout_paragraphs
+    - system
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          23e23308-5f75-4bf0-a382-3533fbef0e0d:
+            uuid: 23e23308-5f75-4bf0-a382-3533fbef0e0d
+            region: content
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              label_display: '0'
+              provider: system
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          16a637b2-112d-48c9-92e7-4f28fa6f6e7a:
+            uuid: 16a637b2-112d-48c9-92e7-4f28fa6f6e7a
+            region: content
+            configuration:
+              id: 'field_block:node:program:field_image'
+              label: Hero
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: hero_tall
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          4e646ebe-135f-427a-a315-4c0b2100e2a3:
+            uuid: 4e646ebe-135f-427a-a315-4c0b2100e2a3
+            region: content
+            configuration:
+              id: 'field_block:node:program:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          ef12ed62-fb7c-4864-ba0f-5c56cd4da828:
+            uuid: ef12ed62-fb7c-4864-ba0f-5c56cd4da828
+            region: content
+            configuration:
+              id: 'field_block:node:program:body'
+              label: Intro
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          4fbdfbb2-26dd-412b-b385-c00e5ffafbdb:
+            uuid: 4fbdfbb2-26dd-412b-b385-c00e5ffafbdb
+            region: content
+            configuration:
+              id: 'field_block:node:program:field_degrees'
+              label: Degrees
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 9
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          ab6000f9-b97b-4c97-afe2-6b70976d6082:
+            uuid: ab6000f9-b97b-4c97-afe2-6b70976d6082
+            region: content
+            configuration:
+              id: 'field_block:node:program:field_paragraphs'
+              label: Sections
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: layout_paragraphs
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          5ce048e0-c06d-4ab9-b9cc-22999a073177:
+            uuid: 5ce048e0-c06d-4ab9-b9cc-22999a073177
+            region: content
+            configuration:
+              id: 'field_block:node:program:field_overview'
+              label: Overview
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts:
+        - layout_onecol
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
+id: node.program.default
+targetEntityType: node
+bundle: program
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_career_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_cluster:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_degrees:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_details:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_faculty:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: square
+      link: false
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_meta_description:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_overview:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_paragraphs:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 118
+    region: content
+  field_sample_classes:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_story:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

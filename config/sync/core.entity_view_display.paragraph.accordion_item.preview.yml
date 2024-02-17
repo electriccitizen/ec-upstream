@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.accordion_item.field_accordion_header
+    - field.field.paragraph.accordion_item.field_button
+    - field.field.paragraph.accordion_item.field_image
     - field.field.paragraph.accordion_item.field_long_text
     - paragraphs.paragraphs_type.accordion_item
   module:
@@ -29,5 +31,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_button: true
+  field_image: true
   field_long_text: true
   search_api_excerpt: true

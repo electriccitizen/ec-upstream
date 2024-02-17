@@ -70,59 +70,108 @@ function citizen_dart_form_alter(&$form, FormStateInterface $form_state) {
   }
 }
 
+/*
 // provide width and height dimensions for use in the responsive image template to prevent layout shifts
 function citizen_dart_preprocess_responsive_image(&$variables) {
   // get responsive image style in order to map hard-coded dimension values
   $style_id = $variables['responsive_image_style_id'];
 
   switch ($style_id) {
-    case 'banner':
+    case 'hero':
       $img_width = 1000;
-      $img_height = 400;
+      $img_height = 429;
       // get the url for each image style being preloaded
-      $deskURL = ImageStyle::load('banner_desk')->buildUrl($variables['uri']);
-      $midDeskURL = ImageStyle::load('banner_middesk')->buildUrl($variables['uri']);
-      $bigDeskURL = ImageStyle::load('banner_big_desk')->buildUrl($variables['uri']);
+      $deskURL = ImageStyle::load('hero_desk')->buildUrl($variables['uri']);
+      $mediumDeskURL = ImageStyle::load('hero_medium')->buildUrl($variables['uri']);
+      $largeDeskURL = ImageStyle::load('hero_large')->buildUrl($variables['uri']);
+      $xlargeDeskURL = ImageStyle::load('hero_xlarge')->buildUrl($variables['uri']);
+      $ultraDeskURL = ImageStyle::load('hero_ultra')->buildUrl($variables['uri']);
       // construct links for each image style being preloaded
       $deskLinkTag = ['#tag' => 'link','#attributes' => ['rel' => 'preload','as' => 'image','href' => $deskURL,'media' => '(min-width:896px) and (max-width:1143.9px)',],];
-      $midDeskLinkTag = ['#tag' => 'link','#attributes' => ['rel' => 'preload','as' => 'image','href' => $midDeskURL,'media' => '(min-width:1144px) and (max-width:1319.9px)',],];
-      $bigDeskLinkTag = ['#tag' => 'link','#attributes' => ['rel' => 'preload','as' => 'image','href' => $bigDeskURL,'media' => '(min-width:1320px)',],];
+      $mediumDeskLinkTag = ['#tag' => 'link','#attributes' => ['rel' => 'preload','as' => 'image','href' => $mediumDeskURL,'media' => '(min-width:1144px) and (max-width:1383.9px)',],];
+      $largeDeskLinkTag = ['#tag' => 'link','#attributes' => ['rel' => 'preload','as' => 'image','href' => $largeDeskURL,'media' => '(min-width:1383px) and (max-width:1699.9px)',],];
+      $xlargeDeskLinkTag = ['#tag' => 'link','#attributes' => ['rel' => 'preload','as' => 'image','href' => $xlargeDeskURL,'media' => '(min-width:1700px) and (max-width:1999.9px)',],];
+      $ultraDeskLinkTag = ['#tag' => 'link','#attributes' => ['rel' => 'preload','as' => 'image','href' => $ultraDeskURL,'media' => '(min-width:2000px)',],];
       // attach links for each image style being preloaded
-      $variables['#attached']['html_head'][] = [$deskLinkTag, 'preloadBannerImageDesk'];
-      $variables['#attached']['html_head'][] = [$midDeskLinkTag, 'preloadBannerImageMidDesk'];
-      $variables['#attached']['html_head'][] = [$bigDeskLinkTag, 'preloadBannerImageBigDesk'];
+      $variables['#attached']['html_head'][] = [$deskLinkTag, 'preloadHeroImageDesk'];
+      $variables['#attached']['html_head'][] = [$mediumDeskLinkTag, 'preloadHeroImageMediumDesk'];
+      $variables['#attached']['html_head'][] = [$largeDeskLinkTag, 'preloadHeroImageLargeDesk'];
+      $variables['#attached']['html_head'][] = [$xlargeDeskLinkTag, 'preloadHeroImageXlargeDesk'];
+      $variables['#attached']['html_head'][] = [$ultraDeskLinkTag, 'preloadHeroImageUltraDesk'];
       break;
-    case 'full':
-      $img_width = 1200;
+      case 'hero_tall':
+        $img_width = 1000;
+        $img_height = 541;
+        // get the url for each image style being preloaded
+        $deskURL = ImageStyle::load('hero_tall_desk')->buildUrl($variables['uri']);
+        $mediumDeskURL = ImageStyle::load('hero_tall_medium')->buildUrl($variables['uri']);
+        $largeDeskURL = ImageStyle::load('hero_tall_large')->buildUrl($variables['uri']);
+        $xlargeDeskURL = ImageStyle::load('hero_tall_xlarge')->buildUrl($variables['uri']);
+        $ultraDeskURL = ImageStyle::load('hero_tall_ultra')->buildUrl($variables['uri']);
+        // construct links for each image style being preloaded
+        $deskLinkTag = ['#tag' => 'link','#attributes' => ['rel' => 'preload','as' => 'image','href' => $deskURL,'media' => '(min-width:896px) and (max-width:1143.9px)',],];
+        $mediumDeskLinkTag = ['#tag' => 'link','#attributes' => ['rel' => 'preload','as' => 'image','href' => $mediumDeskURL,'media' => '(min-width:1144px) and (max-width:1383.9px)',],];
+        $largeDeskLinkTag = ['#tag' => 'link','#attributes' => ['rel' => 'preload','as' => 'image','href' => $largeDeskURL,'media' => '(min-width:1383px) and (max-width:1699.9px)',],];
+        $xlargeDeskLinkTag = ['#tag' => 'link','#attributes' => ['rel' => 'preload','as' => 'image','href' => $xlargeDeskURL,'media' => '(min-width:1700px) and (max-width:1999.9px)',],];
+        $ultraDeskLinkTag = ['#tag' => 'link','#attributes' => ['rel' => 'preload','as' => 'image','href' => $ultraDeskURL,'media' => '(min-width:2000px)',],];
+        // attach links for each image style being preloaded
+        $variables['#attached']['html_head'][] = [$deskLinkTag, 'preloadHeroImageDesk'];
+        $variables['#attached']['html_head'][] = [$mediumDeskLinkTag, 'preloadHeroImageMediumDesk'];
+        $variables['#attached']['html_head'][] = [$largeDeskLinkTag, 'preloadHeroImageLargeDesk'];
+        $variables['#attached']['html_head'][] = [$xlargeDeskLinkTag, 'preloadHeroImageXlargeDesk'];
+        $variables['#attached']['html_head'][] = [$ultraDeskLinkTag, 'preloadHeroImageUltraDesk'];
+        break;
+    case 'background':
+      $img_width = 1504;
+      $img_height = 1004;
+      break;
+    case 'full_non_crop':
+      $img_width = 1264;
       $img_height = 800;
-      break;
-    case 'large':
+      break;    
+    case 'large_non_crop':
       $img_width = 800;
       $img_height = 533;
       break;
-    case 'large_thumb':
-      $img_width = 240;
-      $img_height = 200;
+    case 'medium_non_crop':
+      $img_width = 504;
+      $img_height = 337;
       break;
-    case 'medium':
-      $img_width = 480;
-      $img_height = 320;
-      break;
-    case 'small':
-      $img_width = 280;
-      $img_height = 187;
+    case 'small_non_crop':
+      $img_width = 290;
+      $img_height = 184;
      break;
-    case 'square':
+    case '860x535':
+      $img_width = 860;
+      $img_height = 535;
+      break;
+    case '860x717':
+      $img_width = 860;
+      $img_height = 717;
+      break;
+    case '800x688':
+      $img_width = 800;
+      $img_height = 688;
+      break;
+    case '550x344_alt':
+      $img_width = 550;
+      $img_height = 344;
+      break;
+    case '550x344':
+      $img_width = 550;
+      $img_height = 344;
+      break;
+    case '504x420':
+      $img_width = 504;
+      $img_height = 420;
+      break;
+    case '360x360':
       $img_width = 360;
       $img_height = 360;
       break;
-    case 'thumbnail_cropped':
-      $img_width = 96;
-      $img_height = 96;
-      break;
-    case 'views_card':
-      $img_width = 400;
-      $img_height = 300;
+    case '352x264':
+      $img_width = 352;
+      $img_height = 264;
       break;
     default:
       $img_width = 'default';
@@ -134,12 +183,15 @@ function citizen_dart_preprocess_responsive_image(&$variables) {
   if (!($img_width == 'default' || $img_height == 'default' )) {
     $variables['img_element']['#attributes']['width'] = $img_width;
     $variables['img_element']['#attributes']['height'] = $img_height;
-    if ($style_id == 'banner'){
+    if ($style_id == 'hero'){
+      $variables['img_element']['#attributes']['fetchpriority'] = 'high';
+    }
+    if ($style_id == 'hero_tall'){
       $variables['img_element']['#attributes']['fetchpriority'] = 'high';
     }
   }
 }
-
+*/
 
 /**
  * Implements hook_theme_suggestions_page_alter().

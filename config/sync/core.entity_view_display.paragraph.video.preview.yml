@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.video.field_long_text
     - field.field.paragraph.video.field_video
     - field.field.paragraph.video.field_widget_title
     - image.style.paragraph_preview
@@ -34,5 +35,6 @@ content:
     weight: 0
     region: content
 hidden:
+  field_long_text: true
   field_widget_title: true
   search_api_excerpt: true

@@ -1,0 +1,30 @@
+uuid: 35e28477-c68e-4712-9441-1fe3636405f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.wysiwyg.field_body
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.wysiwyg.preview
+targetEntityType: paragraph
+bundle: wysiwyg
+mode: preview
+content:
+  field_body:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 160
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

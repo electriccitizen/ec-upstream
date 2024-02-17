@@ -1,11 +1,12 @@
-uuid: 6a4a0c29-9dd0-411d-80fb-19e057e09009
+uuid: 17cc3cb7-fb08-4292-aee1-e549b68a2b6a
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_style
     - paragraphs.paragraphs_type.layout_section
-    - taxonomy.vocabulary.section_styles
+  module:
+    - options
 id: paragraph.layout_section.field_style
 field_name: field_style
 entity_type: paragraph
@@ -16,14 +17,5 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  handler: 'default:taxonomy_term'
-  handler_settings:
-    target_bundles:
-      section_styles: section_styles
-    sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
-field_type: entity_reference
+settings: {  }
+field_type: list_string

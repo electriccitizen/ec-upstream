@@ -1,0 +1,104 @@
+uuid: 91cb7b5f-207c-421f-9746-7e1581ba36d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sections
+    - node.type.spartannet
+    - paragraphs.paragraphs_type.block_placer
+    - paragraphs.paragraphs_type.text_image
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - entity_reference_revisions
+id: node.spartannet.field_sections
+field_name: field_sections
+entity_type: node
+bundle: spartannet
+label: Sections
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      block_placer: block_placer
+      text_image: text_image
+      wysiwyg: wysiwyg
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 26
+        enabled: false
+      accordions:
+        weight: 25
+        enabled: false
+      block_placer:
+        weight: 27
+        enabled: true
+      call_to_action:
+        weight: 28
+        enabled: false
+      content_placer:
+        weight: 29
+        enabled: false
+      custom_embed:
+        weight: 30
+        enabled: false
+      form_placer:
+        weight: 31
+        enabled: false
+      gallery:
+        weight: 32
+        enabled: false
+      gallery_item:
+        weight: 33
+        enabled: false
+      horizontal_rule:
+        weight: 34
+        enabled: false
+      image:
+        weight: 35
+        enabled: false
+      layout_section:
+        weight: 36
+        enabled: false
+      layout_section_single:
+        weight: 37
+        enabled: false
+      links_files:
+        weight: 38
+        enabled: false
+      map:
+        weight: 39
+        enabled: false
+      portal:
+        weight: 40
+        enabled: false
+      portals:
+        weight: 41
+        enabled: false
+      quote:
+        weight: 42
+        enabled: false
+      stat_item:
+        weight: 44
+        enabled: false
+      stats:
+        weight: 43
+        enabled: false
+      text:
+        weight: 45
+        enabled: false
+      text_image:
+        weight: 46
+        enabled: true
+      video:
+        weight: 47
+        enabled: false
+      wysiwyg:
+        weight: 48
+        enabled: true
+field_type: entity_reference_revisions

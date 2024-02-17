@@ -1,0 +1,11 @@
+uuid: 6a0fd34b-5818-4c86-aa02-b5a4a1d602ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.860x717
+label: 860x717
+description: ''
+targetEntityType: media
+cache: true

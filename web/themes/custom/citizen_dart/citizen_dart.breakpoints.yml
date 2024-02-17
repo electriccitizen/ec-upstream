@@ -21,15 +21,27 @@ citizen_dart.desk:
   multipliers:
     - 1x
 citizen_dart.middesk:
-  label: Mid Desk
+  label: Medium
   mediaQuery: '(min-width:1144px)'
-  weight: 2
+  weight: 3
   multipliers:
     - 1x
 citizen_dart.largedesk:
-  label: Large Desk
-  mediaQuery: '(min-width:1320px)'
-  weight: 2
+  label: Large
+  mediaQuery: '(min-width:1384px)'
+  weight: 4
+  multipliers:
+    - 1x
+citizen_dart.xlargedesk:
+  label: X-Large
+  mediaQuery: '(min-width:1700px)'
+  weight: 5
+  multipliers:
+    - 1x
+citizen_dart.ultradesk:
+  label: Ultra
+  mediaQuery: '(min-width:2000px)'
+  weight: 6
   multipliers:
     - 1x
 

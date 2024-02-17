@@ -1,0 +1,145 @@
+uuid: 79ae2039-17ad-4a6c-8464-c54ab9aded4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.spartannet.body
+    - field.field.node.spartannet.field_links
+    - field.field.node.spartannet.field_sections
+    - field.field.node.spartannet.layout_builder__layout
+    - node.type.spartannet
+    - system.menu.spartannext-resources
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_discovery
+    - link
+    - menu_block
+    - text
+    - user
+  theme:
+    - citizen_dart
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: two_column_split_left
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          e79d4e12-f355-4815-b6e4-1159c1f647ab:
+            uuid: e79d4e12-f355-4815-b6e4-1159c1f647ab
+            region: first
+            configuration:
+              id: 'field_block:node:spartannet:field_links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: link
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          55ec719b-6ab6-421a-8e25-69bfc260067f:
+            uuid: 55ec719b-6ab6-421a-8e25-69bfc260067f
+            region: content
+            configuration:
+              id: 'field_block:node:spartannet:field_sections'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          1ba9afc4-9002-471d-8fa9-456dc6caa29c:
+            uuid: 1ba9afc4-9002-471d-8fa9-456dc6caa29c
+            region: second
+            configuration:
+              id: 'menu_block:spartannext-resources'
+              label: 'Other Resources'
+              label_display: visible
+              provider: menu_block
+              context_mapping: {  }
+              follow: false
+              follow_parent: child
+              label_link: false
+              label_type: block
+              level: 1
+              depth: 1
+              expand_all_items: false
+              parent: 'spartannext-resources:'
+              suggestion: spartannext_resources
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
+id: node.spartannet.default
+targetEntityType: node
+bundle: spartannet
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_links:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_sections:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  layout_builder__layout: true
+  search_api_excerpt: true

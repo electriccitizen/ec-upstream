@@ -5,9 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
-    - field.field.node.page.field_image
+    - field.field.node.page.field_key_content
+    - field.field.node.page.field_meta_description
     - field.field.node.page.field_metatags
     - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_subtitle
     - node.type.page
   module:
     - layout_builder
@@ -44,8 +46,10 @@ content:
     weight: 101
     region: content
 hidden:
-  field_image: true
+  field_key_content: true
+  field_meta_description: true
   field_metatags: true
   field_oc_widgets: true
   field_paragraphs: true
+  field_subtitle: true
   search_api_excerpt: true

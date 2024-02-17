@@ -1,0 +1,45 @@
+uuid: 6080e37a-986d-4ba0-a84c-7d20993dc425
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.860x535
+    - field.field.media.image.field_media_image
+    - image.style.860x535
+    - media.type.image
+  module:
+    - image
+    - layout_builder
+    - lazy
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: 1iCnAlf6G1vE96vB1vuUJGlz4MdnNTVZm8NhaG1lxTg
+id: media.image.860x535
+targetEntityType: media
+bundle: image
+mode: 860x535
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: 860x535
+      image_loading:
+        attribute: eager
+    third_party_settings:
+      lazy:
+        lazy_image: '0'
+        placeholder_style: ''
+        data_uri: false
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

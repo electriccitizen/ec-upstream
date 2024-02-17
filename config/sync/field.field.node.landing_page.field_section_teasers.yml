@@ -1,0 +1,100 @@
+uuid: 77d380f3-7ade-48ad-a5e9-4fba2775824a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section_teasers
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.accordion_item
+  module:
+    - entity_reference_revisions
+id: node.landing_page.field_section_teasers
+field_name: field_section_teasers
+entity_type: node
+bundle: landing_page
+label: 'Section Teasers'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      accordion_item: accordion_item
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 25
+        enabled: true
+      accordions:
+        weight: 26
+        enabled: false
+      block_placer:
+        weight: 27
+        enabled: false
+      call_to_action:
+        weight: 28
+        enabled: false
+      content_placer:
+        weight: 29
+        enabled: false
+      custom_embed:
+        weight: 30
+        enabled: false
+      form_placer:
+        weight: 31
+        enabled: false
+      gallery:
+        weight: 32
+        enabled: false
+      gallery_item:
+        weight: 33
+        enabled: false
+      horizontal_rule:
+        weight: 34
+        enabled: false
+      image:
+        weight: 35
+        enabled: false
+      layout_section:
+        weight: 36
+        enabled: false
+      layout_section_single:
+        weight: 37
+        enabled: false
+      links_files:
+        weight: 38
+        enabled: false
+      map:
+        weight: 39
+        enabled: false
+      portal:
+        weight: 40
+        enabled: false
+      portals:
+        weight: 41
+        enabled: false
+      quote:
+        weight: 42
+        enabled: false
+      stat_item:
+        weight: 43
+        enabled: false
+      stats:
+        weight: 44
+        enabled: false
+      text:
+        weight: 45
+        enabled: false
+      text_image:
+        weight: 46
+        enabled: false
+      video:
+        weight: 47
+        enabled: false
+      wysiwyg:
+        weight: 48
+        enabled: false
+field_type: entity_reference_revisions

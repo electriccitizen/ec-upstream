@@ -1,0 +1,29 @@
+uuid: fddf0b15-efe9-43d7-bf7d-71036cbcacc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_story
+    - node.type.program
+    - node.type.student_story
+id: node.program.field_story
+field_name: field_story
+entity_type: node
+bundle: program
+label: 'Student Story'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      student_story: student_story
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

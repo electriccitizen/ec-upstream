@@ -1,0 +1,33 @@
+uuid: 1fc95ece-23a3-4a0b-97ee-eb3c4bd673d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.stats.field_stats
+    - field.field.paragraph.stats.field_widget_title
+    - paragraphs.paragraphs_type.stats
+  module:
+    - entity_reference_revisions
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.stats.preview
+targetEntityType: paragraph
+bundle: stats
+mode: preview
+content:
+  field_stats:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: preview
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_widget_title: true
+  search_api_excerpt: true

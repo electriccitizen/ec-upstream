@@ -1,0 +1,19 @@
+uuid: 98686370-b27b-4d9e-b652-e21beb85eca6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_stat_text
+    - paragraphs.paragraphs_type.stat_item
+id: paragraph.stat_item.field_stat_text
+field_name: field_stat_text
+entity_type: paragraph
+bundle: stat_item
+label: 'Stat Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

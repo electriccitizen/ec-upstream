@@ -1,0 +1,24 @@
+uuid: 1e78dca0-25c8-4d01-9cdf-b639353c3cb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_details
+    - filter.format.basic_html
+    - node.type.program
+  module:
+    - text
+id: node.program.field_details
+field_name: field_details
+entity_type: node
+bundle: program
+label: 'Additional Details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

@@ -12,7 +12,7 @@ id: node.landing_page.field_image
 field_name: field_image
 entity_type: node
 bundle: landing_page
-label: Banner
+label: Hero
 description: '<strong>Optimal image size:</strong> 1600x912px'
 required: false
 translatable: true

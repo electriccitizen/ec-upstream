@@ -1,0 +1,21 @@
+uuid: 87809769-9aea-4eba-bd0b-3304905bb12f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_builder__layout
+    - node.type.spartannet
+  module:
+    - layout_builder
+id: node.spartannet.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: node
+bundle: spartannet
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

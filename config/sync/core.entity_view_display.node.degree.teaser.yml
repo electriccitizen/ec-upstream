@@ -1,0 +1,32 @@
+uuid: f1de6ff3-a5db-4c2c-ae65-c1a22e813f55
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.degree.field_campuses
+    - field.field.node.degree.field_credits
+    - node.type.degree
+  module:
+    - user
+id: node.degree.teaser
+targetEntityType: node
+bundle: degree
+mode: teaser
+content:
+  field_credits:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_campuses: true
+  search_api_excerpt: true

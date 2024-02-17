@@ -1,0 +1,21 @@
+uuid: 213f2bf2-b4cc-4d3e-8110-5abf439753a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.campus
+  module:
+    - user
+id: node.campus.teaser
+targetEntityType: node
+bundle: campus
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

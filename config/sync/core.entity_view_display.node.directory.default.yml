@@ -1,0 +1,29 @@
+uuid: 77e22576-5dab-47fc-9fa1-13f377c5b442
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.directory.body
+    - node.type.directory
+  module:
+    - text
+    - user
+id: node.directory.default
+targetEntityType: node
+bundle: directory
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

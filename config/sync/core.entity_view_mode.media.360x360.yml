@@ -1,0 +1,11 @@
+uuid: 9d8571d0-5688-4d3b-ae12-ff877d4d1fbe
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.360x360
+label: 360x360
+description: ''
+targetEntityType: media
+cache: true

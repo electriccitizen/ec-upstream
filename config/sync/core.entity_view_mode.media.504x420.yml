@@ -1,0 +1,11 @@
+uuid: 7bbf5dd7-a18c-477b-a605-e63803530c65
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.504x420
+label: 504x420
+description: ''
+targetEntityType: media
+cache: true

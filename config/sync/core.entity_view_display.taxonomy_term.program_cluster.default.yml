@@ -1,0 +1,32 @@
+uuid: 830a6c9b-d8e8-4601-bbee-33d2a48dd742
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.program_cluster.field_cluster_image
+    - taxonomy.vocabulary.program_cluster
+  module:
+    - text
+id: taxonomy_term.program_cluster.default
+targetEntityType: taxonomy_term
+bundle: program_cluster
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_cluster_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: 860x535
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

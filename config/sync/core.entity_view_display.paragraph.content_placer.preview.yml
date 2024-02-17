@@ -6,12 +6,15 @@ dependencies:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.content_placer.field_bios_list_type
     - field.field.paragraph.content_placer.field_content_type
+    - field.field.paragraph.content_placer.field_directory
+    - field.field.paragraph.content_placer.field_directory_campus
     - field.field.paragraph.content_placer.field_events_category
     - field.field.paragraph.content_placer.field_events_list_type
     - field.field.paragraph.content_placer.field_limit_list
     - field.field.paragraph.content_placer.field_link
     - field.field.paragraph.content_placer.field_news_category
     - field.field.paragraph.content_placer.field_news_list_type
+    - field.field.paragraph.content_placer.field_student_story
     - field.field.paragraph.content_placer.field_widget_title
     - paragraphs.paragraphs_type.content_placer
   module:
@@ -43,10 +46,13 @@ content:
     region: content
 hidden:
   field_bios_list_type: true
+  field_directory: true
+  field_directory_campus: true
   field_events_category: true
   field_events_list_type: true
   field_limit_list: true
   field_link: true
   field_news_category: true
   field_news_list_type: true
+  field_student_story: true
   search_api_excerpt: true

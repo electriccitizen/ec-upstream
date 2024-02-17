@@ -1,0 +1,11 @@
+uuid: 14f573bb-eb2d-417c-8b36-e7813f679a26
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.550x344_alt
+label: '550x344 Alt'
+description: ''
+targetEntityType: media
+cache: true

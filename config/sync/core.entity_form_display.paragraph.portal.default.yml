@@ -3,15 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.portal.field_additional_information
     - field.field.paragraph.portal.field_headline
     - field.field.paragraph.portal.field_image
     - field.field.paragraph.portal.field_link
-    - field.field.paragraph.portal.field_long_text
     - paragraphs.paragraphs_type.portal
   module:
     - link
     - media_library
-    - text
 _core:
   default_config_hash: '-y1GlASxPh2SdCRxQyGfiuL7b97Kd9RkULom--gH8vE'
 id: paragraph.portal.default
@@ -19,6 +18,14 @@ targetEntityType: paragraph
 bundle: portal
 mode: default
 content:
+  field_additional_information:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_headline:
     type: string_textfield
     weight: 1
@@ -36,19 +43,11 @@ content:
     third_party_settings: {  }
   field_link:
     type: link_default
-    weight: 2
+    weight: 3
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
-    third_party_settings: {  }
-  field_long_text:
-    type: text_textarea
-    weight: 3
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

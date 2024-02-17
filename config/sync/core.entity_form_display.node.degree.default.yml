@@ -1,0 +1,49 @@
+uuid: e51d2d8d-00c2-48b4-a375-4e6c418a50f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.degree.field_campuses
+    - field.field.node.degree.field_credits
+    - node.type.degree
+id: node.degree.default
+targetEntityType: node
+bundle: degree
+mode: default
+content:
+  field_campuses:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_credits:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true
+  url_redirects: true

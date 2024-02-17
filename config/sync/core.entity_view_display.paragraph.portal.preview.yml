@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.portal.field_additional_information
     - field.field.paragraph.portal.field_headline
     - field.field.paragraph.portal.field_image
     - field.field.paragraph.portal.field_link
-    - field.field.paragraph.portal.field_long_text
     - image.style.paragraph_preview
     - paragraphs.paragraphs_type.portal
   module:
@@ -42,6 +42,6 @@ content:
     weight: 0
     region: content
 hidden:
+  field_additional_information: true
   field_link: true
-  field_long_text: true
   search_api_excerpt: true

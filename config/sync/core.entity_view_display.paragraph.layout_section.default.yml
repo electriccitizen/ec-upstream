@@ -6,6 +6,8 @@ dependencies:
     - field.field.paragraph.layout_section.field_section_title
     - field.field.paragraph.layout_section.field_style
     - paragraphs.paragraphs_type.layout_section
+  module:
+    - options
 id: paragraph.layout_section.default
 targetEntityType: paragraph
 bundle: layout_section
@@ -19,6 +21,12 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_style:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
-  field_style: true
   search_api_excerpt: true

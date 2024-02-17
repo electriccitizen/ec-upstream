@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_content_type
     - paragraphs.paragraphs_type.content_placer
+    - taxonomy.vocabulary.content_placer
     - taxonomy.vocabulary.list_widget
 id: paragraph.content_placer.field_content_type
 field_name: field_content_type
@@ -20,10 +21,11 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
+      content_placer: content_placer
       list_widget: list_widget
     sort:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: content_placer
 field_type: entity_reference
