@@ -1,0 +1,8 @@
+uuid: 328e01dd-9e25-43e4-aa57-fab155662a41
+langcode: en
+status: true
+dependencies: {  }
+name: 'Content Placer'
+vid: content_placer
+description: ''
+weight: 0

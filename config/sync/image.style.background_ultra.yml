@@ -1,0 +1,15 @@
+uuid: 88e959c0-88bf-42b8-9d7f-a35733ead6bd
+langcode: en
+status: true
+dependencies: {  }
+name: background_ultra
+label: 'Background Ultra'
+effects:
+  99591be5-b727-4dd4-b4fd-7ddef6151b51:
+    uuid: 99591be5-b727-4dd4-b4fd-7ddef6151b51
+    id: image_scale
+    weight: 1
+    data:
+      width: 2200
+      height: null
+      upscale: true

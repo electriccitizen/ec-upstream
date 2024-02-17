@@ -1,0 +1,8 @@
+uuid: 2e2bdfe8-56f2-4bab-8aad-2e579238ea47
+langcode: en
+status: true
+dependencies: {  }
+name: 'View Placer'
+vid: view_placer
+description: ''
+weight: 0

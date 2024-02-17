@@ -1,0 +1,17 @@
+uuid: 194c667d-fc72-4261-904d-c3aa0ead8b81
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Campus
+type: campus
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

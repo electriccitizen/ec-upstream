@@ -1,0 +1,17 @@
+uuid: b5ef4309-55ad-4329-846a-a53cd63c7739
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: SpartanNet
+type: spartannet
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

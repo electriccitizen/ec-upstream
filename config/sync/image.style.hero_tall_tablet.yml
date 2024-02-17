@@ -1,0 +1,17 @@
+uuid: 1c0bfa0a-251f-479d-95a3-7ae0b6e13e14
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_tall_tablet
+label: 'Hero Tall Tablet'
+effects:
+  1ac86532-650c-4059-be31-0528fb409068:
+    uuid: 1ac86532-650c-4059-be31-0528fb409068
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 880
+      crop_type: focal_point

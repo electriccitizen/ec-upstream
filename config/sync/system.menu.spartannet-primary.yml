@@ -1,0 +1,8 @@
+uuid: 90131900-a2d1-4d3c-9dc5-168739120049
+langcode: en
+status: true
+dependencies: {  }
+id: spartannet-primary
+label: 'SpartanNet Primary'
+description: ''
+locked: false

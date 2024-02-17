@@ -1,0 +1,17 @@
+uuid: 03d37eaa-9108-4d94-a40d-cdfeeef35d18
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Student Story'
+type: student_story
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

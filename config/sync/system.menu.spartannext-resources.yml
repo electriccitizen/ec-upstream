@@ -1,0 +1,8 @@
+uuid: 92a8dbae-3143-4edf-a2ce-df6a8f698f04
+langcode: en
+status: true
+dependencies: {  }
+id: spartannext-resources
+label: 'SpartanNext Resources'
+description: ''
+locked: false

@@ -1,0 +1,17 @@
+uuid: 8bad06c9-085f-446e-81ff-3fe8f5db12af
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_tall_ultra
+label: 'Hero Tall Ultra'
+effects:
+  96bbb699-3b2f-4d48-9768-49b5b49e5eff:
+    uuid: 96bbb699-3b2f-4d48-9768-49b5b49e5eff
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 2200
+      height: 1190
+      crop_type: focal_point

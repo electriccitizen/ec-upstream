@@ -1,0 +1,17 @@
+uuid: f07165fb-1396-477b-8a9a-db00d926e30f
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_ultra
+label: 'Hero Ultra'
+effects:
+  19adc830-b395-4d5f-9d7f-ae8c999cada8:
+    uuid: 19adc830-b395-4d5f-9d7f-ae8c999cada8
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 2200
+      height: 764
+      crop_type: focal_point
