@@ -1,0 +1,47 @@
+mstate.mobile:
+  label: Mobile
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x
+mstate.tab:
+  label: Tablet
+  mediaQuery: '(min-width:496px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x
+mstate.desk:
+  label: Desk
+  mediaQuery: '(min-width:896px)'
+  weight: 2
+  multipliers:
+    - 1x
+mstate.middesk:
+  label: Medium
+  mediaQuery: '(min-width:1144px)'
+  weight: 3
+  multipliers:
+    - 1x
+mstate.largedesk:
+  label: Large
+  mediaQuery: '(min-width:1384px)'
+  weight: 4
+  multipliers:
+    - 1x
+mstate.xlargedesk:
+  label: X-Large
+  mediaQuery: '(min-width:1700px)'
+  weight: 5
+  multipliers:
+    - 1x
+mstate.ultradesk:
+  label: Ultra
+  mediaQuery: '(min-width:2000px)'
+  weight: 6
+  multipliers:
+    - 1x
+

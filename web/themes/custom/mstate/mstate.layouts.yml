@@ -1,6 +1,6 @@
 two_column_split_left:
   label: Two Column Split Left
-  category: Citizen Dart Layouts
+  category: MState Layouts
   path: templates/layout
   template: layout--twocol-split-left
   default_region: first
