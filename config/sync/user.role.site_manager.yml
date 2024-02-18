@@ -16,7 +16,6 @@ dependencies:
   module:
     - addanother
     - block_content_permissions
-    - citizen_custom
     - contextual
     - file
     - filter
@@ -58,8 +57,6 @@ permissions:
   - 'administer users'
   - 'administer webform element access'
   - 'administer webform submission'
-  - 'assign editor role'
-  - 'assign site_manager role'
   - 'cancel account'
   - 'change own username'
   - 'configure editable landing_page node layout overrides'
@@ -112,7 +109,6 @@ permissions:
   - 'edit any remote_video media'
   - 'edit any webform'
   - 'edit any webform submission'
-  - 'edit layout paragraphs plugin config'
   - 'edit own bios content'
   - 'edit own document media'
   - 'edit own event content'

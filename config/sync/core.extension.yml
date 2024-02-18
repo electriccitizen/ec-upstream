@@ -12,7 +12,6 @@ module:
   block_content: 0
   block_content_permissions: 0
   breakpoint: 0
-  citizen_custom: 0
   ckeditor5: 0
   ckeditor5_fullscreen: 0
   ckeditor5_paste_filter: 0
@@ -68,6 +67,7 @@ module:
   metatag: 0
   metatag_open_graph: 0
   metatag_twitter_cards: 0
+  mstate_helper: 0
   mysql: 0
   node: 0
   options: 0
