@@ -1,0 +1,36 @@
+uuid: 2b62be06-37c8-4211-8633-d21db93aa8d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.hero_medium
+    - image.style.hero_mobile
+    - image.style.hero_tablet
+    - image.style.hero_ultra
+  theme:
+    - mstate
+id: hero
+label: Hero
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_ultra
+    breakpoint_id: mstate.largedesk
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_medium
+    breakpoint_id: mstate.desk
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_tablet
+    breakpoint_id: mstate.tab
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_mobile
+    breakpoint_id: mstate.mobile
+    multiplier: 1x
+breakpoint_group: mstate
+fallback_image_style: hero_medium

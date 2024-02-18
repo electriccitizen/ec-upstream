@@ -18,6 +18,8 @@ dependencies:
     - menu_block
     - text
     - user
+  theme:
+    - mstate
 third_party_settings:
   layout_builder:
     enabled: true
@@ -28,25 +30,32 @@ third_party_settings:
         layout_settings:
           label: ''
           context_mapping: {  }
+        components: {  }
+        third_party_settings: {  }
+      -
+        layout_id: two_column_split_left
+        layout_settings:
+          label: ''
+          context_mapping: {  }
         components:
-          e79d4e12-f355-4815-b6e4-1159c1f647ab:
-            uuid: e79d4e12-f355-4815-b6e4-1159c1f647ab
-            region: content
+          1ba9afc4-9002-471d-8fa9-456dc6caa29c:
+            uuid: 1ba9afc4-9002-471d-8fa9-456dc6caa29c
+            region: second
             configuration:
-              id: 'field_block:node:spartannet:field_links'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: link
-                label: above
-                settings:
-                  trim_length: 80
-                  url_only: false
-                  url_plain: false
-                  rel: ''
-                  target: ''
-                third_party_settings: {  }
+              id: 'menu_block:spartannext-resources'
+              label: 'Other Resources'
+              label_display: visible
+              provider: menu_block
+              context_mapping: {  }
+              follow: false
+              follow_parent: child
+              label_link: false
+              label_type: block
+              level: 1
+              depth: 1
+              expand_all_items: false
+              parent: 'spartannext-resources:'
+              suggestion: spartannext_resources
             weight: 0
             additional: {  }
           55ec719b-6ab6-421a-8e25-69bfc260067f:
@@ -64,27 +73,27 @@ third_party_settings:
                   view_mode: default
                   link: ''
                 third_party_settings: {  }
-            weight: 1
+            weight: 0
             additional: {  }
-          1ba9afc4-9002-471d-8fa9-456dc6caa29c:
-            uuid: 1ba9afc4-9002-471d-8fa9-456dc6caa29c
-            region: content
+          e79d4e12-f355-4815-b6e4-1159c1f647ab:
+            uuid: e79d4e12-f355-4815-b6e4-1159c1f647ab
+            region: first
             configuration:
-              id: 'menu_block:spartannext-resources'
-              label: 'Other Resources'
-              label_display: visible
-              provider: menu_block
-              context_mapping: {  }
-              follow: false
-              follow_parent: child
-              label_link: false
-              label_type: block
-              level: 1
-              depth: 1
-              expand_all_items: false
-              parent: 'spartannext-resources:'
-              suggestion: spartannext_resources
-            weight: 2
+              id: 'field_block:node:spartannet:field_links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: link
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+            weight: 0
             additional: {  }
         third_party_settings: {  }
   layout_builder_restrictions:

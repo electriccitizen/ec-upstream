@@ -1,0 +1,20 @@
+uuid: 70a3b696-2bf6-414d-ab28-5759fb3eff1d
+langcode: en
+status: true
+dependencies:
+  module:
+    - citizen_custom
+  theme:
+    - mstate
+id: mstate_sitesearch
+theme: mstate
+region: header
+weight: -3
+provider: null
+plugin: site_search
+settings:
+  id: site_search
+  label: 'Site Search'
+  label_display: '0'
+  provider: citizen_custom
+visibility: {  }

@@ -1,0 +1,24 @@
+uuid: 3d573c98-768d-477d-83e9-14b003a80ca9
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.290x220
+    - image.style.550x344
+  theme:
+    - mstate
+id: 550x344
+label: 550x344
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: 550x344
+    breakpoint_id: mstate.tab
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 290x220
+    breakpoint_id: mstate.mobile
+    multiplier: 1x
+breakpoint_group: mstate
+fallback_image_style: 550x344

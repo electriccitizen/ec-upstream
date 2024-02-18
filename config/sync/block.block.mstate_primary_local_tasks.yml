@@ -8,15 +8,15 @@ _core:
   default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
 id: mstate_primary_local_tasks
 theme: mstate
-region: header
+region: content
 weight: -4
 provider: null
 plugin: local_tasks_block
 settings:
   id: local_tasks_block
-  label: 'Primary tabs'
+  label: Tabs
   label_display: '0'
   provider: core
   primary: true
-  secondary: false
+  secondary: true
 visibility: {  }
