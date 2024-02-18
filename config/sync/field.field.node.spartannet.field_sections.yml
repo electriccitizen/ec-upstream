@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_sections
     - node.type.spartannet
     - paragraphs.paragraphs_type.block_placer
+    - paragraphs.paragraphs_type.custom_embed
     - paragraphs.paragraphs_type.text_image
     - paragraphs.paragraphs_type.wysiwyg
   module:
@@ -25,6 +26,7 @@ settings:
   handler_settings:
     target_bundles:
       block_placer: block_placer
+      custom_embed: custom_embed
       text_image: text_image
       wysiwyg: wysiwyg
     negate: 0
@@ -46,7 +48,7 @@ settings:
         enabled: false
       custom_embed:
         weight: 30
-        enabled: false
+        enabled: true
       form_placer:
         weight: 31
         enabled: false

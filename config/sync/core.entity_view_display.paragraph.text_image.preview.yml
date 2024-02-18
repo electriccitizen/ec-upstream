@@ -8,9 +8,12 @@ dependencies:
     - field.field.paragraph.text_image.field_image_alignment
     - field.field.paragraph.text_image.field_long_text
     - field.field.paragraph.text_image.field_widget_title
+    - image.style.paragraph_preview
     - paragraphs.paragraphs_type.text_image
   module:
     - layout_builder
+    - lazy
+    - media
     - options
 third_party_settings:
   layout_builder:
@@ -22,12 +25,18 @@ bundle: text_image
 mode: preview
 content:
   field_image:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     label: hidden
     settings:
-      view_mode: 860x717
-      link: false
-    third_party_settings: {  }
+      image_link: ''
+      image_style: paragraph_preview
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      lazy:
+        lazy_image: '0'
+        placeholder_style: ''
+        data_uri: false
     weight: 0
     region: content
   field_image_alignment:

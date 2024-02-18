@@ -144,16 +144,15 @@ settings:
         - '<iframe src title frameborder aria-describedby tabindex allowtransparency width height class>'
         - '<drupal-entity data-* alt title>'
         - '<article data-* class>'
-        - '<a hreflang target id title class>'
-        - '<ul type class>'
-        - '<ol type class>'
+        - '<a hreflang target id title>'
+        - '<ul type>'
+        - '<ol type>'
         - '<h2 id class>'
         - '<h3 id class>'
         - '<h4 id class>'
         - '<h5 id class>'
         - '<h6 id class>'
         - '<p class>'
-        - '<drupal-media data-caption title>'
     ckeditor5_style:
       styles:
         -
@@ -161,7 +160,10 @@ settings:
           element: '<p class="warning">'
         -
           label: Button
-          element: '<a class="ec-button">'
+          element: '<a class="ms-button">'
+        -
+          label: arrow-link
+          element: '<a class="arrow-link">'
     linkit_extension:
       linkit_enabled: true
       linkit_profile: wysiwyg

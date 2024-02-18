@@ -336,9 +336,13 @@
 	}
 }//end lightBack
 
-@mixin setDimensions($width,$height){
-	width: #{$width};
-	height: #{$height};
+@mixin textLinkArrow{
+  -webkit-mask: url(/themes/custom/mstate/images/elements/arrow-right.svg) no-repeat 50% 50%;
+  mask: url(/themes/custom/mstate/images/elements/arrow-right.svg) no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  background-color:currentColor;
+  margin-left: .5em;
 }
 
 /* ANIMATION MIXINS

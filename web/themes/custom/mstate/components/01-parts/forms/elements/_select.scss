@@ -89,7 +89,8 @@ body,#drupal-off-canvas-wrapper-wrapper{
 			&:after{
 				content: '';
 				@include safeFlex(row,no-wrap,center,center);
-				@include setDimensions(24px,24px);
+				width: 24px;
+        height: 24px;
 				position: absolute;
 				background-image: none;
 				@include materialIconOutline(\e5cf);

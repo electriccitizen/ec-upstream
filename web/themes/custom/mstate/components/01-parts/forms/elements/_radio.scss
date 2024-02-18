@@ -38,7 +38,8 @@ form:not(.layout-builder-add-block):not(.layout-builder-update-block){
 		&.custom-options{
 			@include customOptions;
 			input {
-				@include setDimensions(22px,22px);
+				width: 22px;
+        height: 22px;
 			}
 			label:before{
 				border-radius: 50%;

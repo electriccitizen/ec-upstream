@@ -176,6 +176,15 @@ blockquote {
 	article:not(:last-child):not([data-quickedit-entity-id*=media]) {
 		margin-bottom: $spaceMd;
 	}
+  a.arrow-link{
+    &:after{
+      content: '';
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      @include textLinkArrow;
+    }
+  }
 }//end text-with-summary,text-long
 
 /* ICONS

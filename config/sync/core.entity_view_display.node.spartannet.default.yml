@@ -9,7 +9,10 @@ dependencies:
     - field.field.node.spartannet.layout_builder__layout
     - node.type.spartannet
     - system.menu.spartannext-resources
+  content:
+    - 'block_content:basic:1a6e2364-1918-43aa-8640-c5a541be4c4f'
   module:
+    - block_content
     - entity_reference_revisions
     - layout_builder
     - layout_builder_restrictions
@@ -63,15 +66,17 @@ third_party_settings:
             region: content
             configuration:
               id: 'field_block:node:spartannet:field_sections'
+              label: Sections
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: entity_reference_revisions_entity_view
-                label: above
+                label: hidden
                 settings:
                   view_mode: default
-                  link: ''
                 third_party_settings: {  }
             weight: 0
             additional: {  }
@@ -80,20 +85,37 @@ third_party_settings:
             region: first
             configuration:
               id: 'field_block:node:spartannet:field_links'
+              label: Links
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: link
-                label: above
+                label: hidden
                 settings:
-                  trim_length: 80
+                  trim_length: null
                   url_only: false
                   url_plain: false
-                  rel: ''
-                  target: ''
+                  rel: '0'
+                  target: '0'
                 third_party_settings: {  }
             weight: 0
+            additional: {  }
+          06cf9f11-b016-4597-9af9-769a40c46f2e:
+            uuid: 06cf9f11-b016-4597-9af9-769a40c46f2e
+            region: second
+            configuration:
+              id: 'block_content:1a6e2364-1918-43aa-8640-c5a541be4c4f'
+              label: 'Spartannet Star Alert'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 1
             additional: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
