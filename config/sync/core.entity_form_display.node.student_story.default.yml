@@ -10,6 +10,7 @@ dependencies:
     - node.type.student_story
   module:
     - media_library
+    - path
     - text
 id: node.student_story.default
 targetEntityType: node
@@ -47,6 +48,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     weight: 5
@@ -64,7 +71,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  path: true
   promote: true
   sticky: true
   uid: true

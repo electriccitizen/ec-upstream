@@ -1,0 +1,22 @@
+uuid: 84db67d9-553e-4ea1-a7eb-49de1ad1eceb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: spartannet
+label: SpartanNet
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  964be501-111a-460b-a6ee-196028d0daa8:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 964be501-111a-460b-a6ee-196028d0daa8
+    context_mapping:
+      node: node
+    bundles:
+      spartannet: spartannet
+selection_logic: and
+weight: -5
+relationships: {  }

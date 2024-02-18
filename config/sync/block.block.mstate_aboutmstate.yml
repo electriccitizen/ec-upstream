@@ -1,0 +1,31 @@
+uuid: e6a960ef-8af5-4374-b8a4-7d2ceca0d96f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.about-m-state
+  module:
+    - menu_block
+  theme:
+    - mstate
+id: mstate_aboutmstate
+theme: mstate
+region: prefootertwo
+weight: -5
+provider: null
+plugin: 'menu_block:about-m-state'
+settings:
+  id: 'menu_block:about-m-state'
+  label: 'About M State'
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'about-m-state:'
+  suggestion: about_m_state
+visibility: {  }

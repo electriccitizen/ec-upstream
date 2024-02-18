@@ -1,0 +1,25 @@
+uuid: 1b6314c8-e9b4-4f99-adff-d613c0ef3f06
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:75a9df84-3a0e-45c0-b99f-a2bb589f8fd9'
+  module:
+    - block_content
+  theme:
+    - mstate
+id: mstate_getintouch
+theme: mstate
+region: prefootertwo
+weight: -8
+provider: null
+plugin: 'block_content:75a9df84-3a0e-45c0-b99f-a2bb589f8fd9'
+settings:
+  id: 'block_content:75a9df84-3a0e-45c0-b99f-a2bb589f8fd9'
+  label: 'Get in Touch'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

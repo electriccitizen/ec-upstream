@@ -4,7 +4,11 @@
 
 @use '../../../00-base/base' as *;
 
-.prefooter-wrapper{
+.prefooter-one-wrapper{
+  background: $lightGrey;
+}
+
+.prefooter-two-wrapper{
 	background: $prefooterBack;
 	color: $prefooterText;
 	.modal-content{

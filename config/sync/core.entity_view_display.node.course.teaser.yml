@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.course.field_api_id
     - field.field.node.course.field_credits
     - field.field.node.course.field_description
     - node.type.course
@@ -31,5 +32,6 @@ content:
     weight: 1
     region: content
 hidden:
+  field_api_id: true
   links: true
   search_api_excerpt: true

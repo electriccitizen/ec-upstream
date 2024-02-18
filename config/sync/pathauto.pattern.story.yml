@@ -1,0 +1,22 @@
+uuid: 45b5113e-9011-4e53-8d73-0f2a7a5f6e4e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: story
+label: Story
+type: 'canonical_entities:node'
+pattern: 'stories/[node:title]'
+selection_criteria:
+  f72ab5da-3980-415b-ae7c-baf2a2285841:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: f72ab5da-3980-415b-ae7c-baf2a2285841
+    context_mapping:
+      node: node
+    bundles:
+      student_story: student_story
+selection_logic: and
+weight: -5
+relationships: {  }

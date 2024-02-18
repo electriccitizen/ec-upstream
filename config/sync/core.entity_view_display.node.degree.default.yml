@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.degree.field_api_id
     - field.field.node.degree.field_campuses
     - field.field.node.degree.field_credits
     - node.type.degree
@@ -13,6 +14,14 @@ targetEntityType: node
 bundle: degree
 mode: default
 content:
+  field_api_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
   field_campuses:
     type: entity_reference_label
     label: above

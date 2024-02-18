@@ -1,0 +1,31 @@
+uuid: bbffce22-f0e7-43fd-8f06-06d7ae10aa82
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.audience
+  module:
+    - menu_block
+  theme:
+    - mstate
+id: mstate_audience
+theme: mstate
+region: prefootertwo
+weight: -6
+provider: null
+plugin: 'menu_block:audience'
+settings:
+  id: 'menu_block:audience'
+  label: Audience
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'audience:'
+  suggestion: audience
+visibility: {  }

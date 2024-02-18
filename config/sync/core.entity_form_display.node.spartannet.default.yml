@@ -11,6 +11,7 @@ dependencies:
   module:
     - link
     - paragraphs
+    - path
     - text
 id: node.spartannet.default
 targetEntityType: node
@@ -55,6 +56,12 @@ content:
         convert: '0'
         duplicate: duplicate
     third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     weight: 4
@@ -73,7 +80,6 @@ content:
 hidden:
   created: true
   layout_builder__layout: true
-  path: true
   promote: true
   sticky: true
   uid: true

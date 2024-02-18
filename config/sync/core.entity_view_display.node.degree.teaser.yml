@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.degree.field_api_id
     - field.field.node.degree.field_campuses
     - field.field.node.degree.field_credits
     - node.type.degree
@@ -28,5 +29,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_api_id: true
   field_campuses: true
   search_api_excerpt: true

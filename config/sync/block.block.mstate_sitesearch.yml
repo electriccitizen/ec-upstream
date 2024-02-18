@@ -1,0 +1,20 @@
+uuid: 3e1a8d09-1622-40ca-ad4e-61249034e1a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - mstate_helper
+  theme:
+    - mstate
+id: mstate_sitesearch
+theme: mstate
+region: header
+weight: -3
+provider: null
+plugin: site_search
+settings:
+  id: site_search
+  label: 'Site Search'
+  label_display: '0'
+  provider: mstate_helper
+visibility: {  }

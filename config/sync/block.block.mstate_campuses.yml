@@ -1,0 +1,31 @@
+uuid: dc18b6d3-2a7f-4881-86b4-16a51a863262
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.campuses
+  module:
+    - menu_block
+  theme:
+    - mstate
+id: mstate_campuses
+theme: mstate
+region: prefootertwo
+weight: -7
+provider: null
+plugin: 'menu_block:campuses'
+settings:
+  id: 'menu_block:campuses'
+  label: Campuses
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'campuses:'
+  suggestion: campuses
+visibility: {  }

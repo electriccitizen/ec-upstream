@@ -14,5 +14,6 @@ hidden: false
 regions:
   header: Header
   content: Content
-  prefooter: Pre-Footer  
+  prefooterone: Prefooter One
+  prefootertwo: Prefooter Two
   footer: Footer 

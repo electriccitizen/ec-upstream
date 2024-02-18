@@ -1,0 +1,30 @@
+uuid: 73e1c9be-cb11-4591-a957-76309bc20805
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cta:18d8a460-94ed-4b5b-b1dc-1da66421a8b8'
+  module:
+    - block_content
+    - system
+  theme:
+    - mstate
+id: mstate_getstartedatmstate
+theme: mstate
+region: prefooterone
+weight: 0
+provider: null
+plugin: 'block_content:18d8a460-94ed-4b5b-b1dc-1da66421a8b8'
+settings:
+  id: 'block_content:18d8a460-94ed-4b5b-b1dc-1da66421a8b8'
+  label: 'Get Started at M State!'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /spartannet

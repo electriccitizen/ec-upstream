@@ -1,0 +1,30 @@
+uuid: bbea7edb-625a-4fbe-8142-402703c8c040
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:reusable_widgets:23f7ac7a-dab7-4690-bcaa-b961e61be03b'
+  module:
+    - block_content
+    - system
+  theme:
+    - mstate
+id: mstate_footercalltoaction
+theme: mstate
+region: prefooterone
+weight: 0
+provider: null
+plugin: 'block_content:23f7ac7a-dab7-4690-bcaa-b961e61be03b'
+settings:
+  id: 'block_content:23f7ac7a-dab7-4690-bcaa-b961e61be03b'
+  label: 'Footer Call to Action'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /spartannet

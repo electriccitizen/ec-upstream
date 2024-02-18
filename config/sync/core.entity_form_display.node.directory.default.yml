@@ -11,6 +11,7 @@ dependencies:
     - node.type.directory
   module:
     - media_library
+    - path
 id: node.directory.default
 targetEntityType: node
 bundle: directory
@@ -45,6 +46,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     weight: 5
@@ -63,7 +70,6 @@ content:
 hidden:
   body: true
   created: true
-  path: true
   promote: true
   sticky: true
   uid: true

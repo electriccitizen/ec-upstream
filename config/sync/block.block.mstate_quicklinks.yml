@@ -1,0 +1,31 @@
+uuid: e144d25d-0bc7-4b08-8d38-bc6dd669c5ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.quicklinks
+  module:
+    - menu_block
+  theme:
+    - mstate
+id: mstate_quicklinks
+theme: mstate
+region: header
+weight: -2
+provider: null
+plugin: 'menu_block:quicklinks'
+settings:
+  id: 'menu_block:quicklinks'
+  label: Quicklinks
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'quicklinks:'
+  suggestion: quicklinks
+visibility: {  }

@@ -74,12 +74,24 @@
 		</main>
 	{% endblock %}
 
-	{% block pagePreFooter %}
-		{% if page.prefooter %}
-			<section class="prefooter-wrapper" role="complementary" aria-labelledby="prefooter-section">
-				<div class="prefooter-inner">	
-					{% block prefooterContent %}
-						{{ page.prefooter }}
+	{% block pagePreFooterOne %}
+		{% if page.prefooterone %}
+			<section class="prefooter-one-wrapper" role="complementary" aria-labelledby="first-prefooter-section">
+				<div class="prefooter-one-inner">	
+					{% block prefooterOneContent %}
+						{{ page.prefooterone }}
+					{% endblock %}
+				</div>
+			</section>
+		{% endif %}
+	{% endblock %}
+
+  {% block pagePreFooterTwo %}
+		{% if page.prefootertwo %}
+			<section class="prefooter-two-wrapper" role="complementary" aria-labelledby="second-prefooter-section">
+				<div class="prefooter-two-inner">	
+					{% block prefooterTwoContent %}
+						{{ page.prefootertwo }}
 					{% endblock %}
 				</div>
 			</section>

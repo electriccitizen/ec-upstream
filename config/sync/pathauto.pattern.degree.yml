@@ -1,0 +1,22 @@
+uuid: bcd8b5bd-ac31-47b3-af18-a362e6e4240a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: degree
+label: Degree
+type: 'canonical_entities:node'
+pattern: 'degrees/[node:field_api_id]'
+selection_criteria:
+  140cba78-1d5c-4845-9b21-159385e26b2c:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 140cba78-1d5c-4845-9b21-159385e26b2c
+    context_mapping:
+      node: node
+    bundles:
+      degree: degree
+selection_logic: and
+weight: -5
+relationships: {  }
