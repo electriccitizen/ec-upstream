@@ -1,16 +1,16 @@
-uuid: a52faded-a8f4-4e2f-b483-a8459ff8dea0
+uuid: f1f33380-4926-4d31-a68c-3477f17de23d
 langcode: en
 status: true
 dependencies:
   module:
     - node
   theme:
-    - olivero
+    - mstate
 _core:
   default_config_hash: 0gq3VPg-_UM69FCCWurLFIrrnIjC2HLKhwo9iQNtcUo
-id: olivero_syndicate
-theme: olivero
-region: social
+id: mstate_syndicate
+theme: mstate
+region: header
 weight: 0
 provider: null
 plugin: node_syndicate_block

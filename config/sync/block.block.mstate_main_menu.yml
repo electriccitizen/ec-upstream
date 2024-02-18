@@ -1,4 +1,4 @@
-uuid: 7dd97664-bfb6-46a4-9498-d94644fb15b1
+uuid: 52a6fe37-822d-44cf-a245-3f2a64b9a6b3
 langcode: en
 status: true
 dependencies:
@@ -7,12 +7,12 @@ dependencies:
   module:
     - system
   theme:
-    - olivero
+    - mstate
 _core:
   default_config_hash: KWAiziL39uEzmOJEql_wbUP2RtqGceL3WM2CfxhMelE
-id: olivero_main_menu
-theme: olivero
-region: primary_menu
+id: mstate_main_menu
+theme: mstate
+region: header
 weight: 0
 provider: null
 plugin: 'system_menu_block:main'

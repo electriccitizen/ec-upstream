@@ -1,15 +1,15 @@
-uuid: f47e9067-30c6-4c3d-8a16-de5cbceb2609
+uuid: 3d228b49-d81e-45fa-8c68-58b8e26369cf
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - olivero
+    - mstate
 _core:
   default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
-id: olivero_content
-theme: olivero
+id: mstate_content
+theme: mstate
 region: content
 weight: 0
 provider: null

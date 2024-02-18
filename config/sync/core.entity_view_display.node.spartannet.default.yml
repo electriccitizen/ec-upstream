@@ -18,22 +18,20 @@ dependencies:
     - menu_block
     - text
     - user
-  theme:
-    - citizen_dart
 third_party_settings:
   layout_builder:
     enabled: true
     allow_custom: true
     sections:
       -
-        layout_id: two_column_split_left
+        layout_id: layout_onecol
         layout_settings:
           label: ''
           context_mapping: {  }
         components:
           e79d4e12-f355-4815-b6e4-1159c1f647ab:
             uuid: e79d4e12-f355-4815-b6e4-1159c1f647ab
-            region: first
+            region: content
             configuration:
               id: 'field_block:node:spartannet:field_links'
               label_display: '0'
@@ -70,7 +68,7 @@ third_party_settings:
             additional: {  }
           1ba9afc4-9002-471d-8fa9-456dc6caa29c:
             uuid: 1ba9afc4-9002-471d-8fa9-456dc6caa29c
-            region: second
+            region: content
             configuration:
               id: 'menu_block:spartannext-resources'
               label: 'Other Resources'
@@ -86,14 +84,8 @@ third_party_settings:
               expand_all_items: false
               parent: 'spartannext-resources:'
               suggestion: spartannext_resources
-            weight: 0
+            weight: 2
             additional: {  }
-        third_party_settings: {  }
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-        components: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }

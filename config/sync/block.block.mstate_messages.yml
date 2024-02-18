@@ -1,16 +1,16 @@
-uuid: 6b45fecf-c890-4af6-9f39-7184bc0084a5
+uuid: 3b3eb068-3c32-4687-bf68-0f5d9040b743
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - olivero
+    - mstate
 _core:
   default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
-id: olivero_messages
-theme: olivero
-region: highlighted
+id: mstate_messages
+theme: mstate
+region: header
 weight: -5
 provider: null
 plugin: system_messages_block

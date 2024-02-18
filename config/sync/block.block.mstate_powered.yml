@@ -1,16 +1,16 @@
-uuid: ba552596-a568-4995-8c31-84c666eb2ded
+uuid: 74a86b14-571f-46bf-bce2-8a3f3d35ae5e
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - olivero
+    - mstate
 _core:
   default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
-id: olivero_powered
-theme: olivero
-region: footer_bottom
+id: mstate_powered
+theme: mstate
+region: header
 weight: 0
 provider: null
 plugin: system_powered_by_block

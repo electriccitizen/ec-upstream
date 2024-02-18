@@ -1,14 +1,14 @@
-uuid: eed6765d-cacb-4bd5-80f5-2152fef553ac
+uuid: 2ea61cc1-55ab-4d78-be36-8e599c6002a8
 langcode: en
 status: true
 dependencies:
   theme:
-    - olivero
+    - mstate
 _core:
   default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
-id: olivero_primary_admin_actions
-theme: olivero
-region: highlighted
+id: mstate_primary_admin_actions
+theme: mstate
+region: header
 weight: -5
 provider: null
 plugin: local_actions_block

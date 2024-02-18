@@ -1,14 +1,14 @@
-uuid: 447ba1a6-f5ee-43f4-9809-285294fe49e7
+uuid: 368c0fbb-6eb6-493e-a17c-48ee62a52927
 langcode: en
 status: true
 dependencies:
   theme:
-    - olivero
+    - mstate
 _core:
   default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
-id: olivero_primary_local_tasks
-theme: olivero
-region: highlighted
+id: mstate_primary_local_tasks
+theme: mstate
+region: header
 weight: -4
 provider: null
 plugin: local_tasks_block
