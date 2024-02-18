@@ -1,0 +1,135 @@
+uuid: 9077e69f-63df-4828-b05b-7fdaa9b87879
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.campus
+    - field.field.node.bios.body
+    - field.field.node.bios.field_bio_order
+    - field.field.node.bios.field_email
+    - field.field.node.bios.field_first_name
+    - field.field.node.bios.field_image
+    - field.field.node.bios.field_last_name
+    - field.field.node.bios.field_list_widget
+    - field.field.node.bios.field_metatags
+    - field.field.node.bios.field_phone
+    - field.field.node.bios.field_position
+    - node.type.bios
+  module:
+    - layout_builder
+    - layout_builder_restrictions
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts:
+        - layout_onecol
+      denylisted_blocks: {  }
+      allowlisted_blocks:
+        System:
+          - system_breadcrumb_block
+      restricted_categories:
+        - '@entity'
+        - 'Chaos Tools'
+        - 'Custom block types'
+        - 'Custom blocks'
+        - Devel
+        - Forms
+        - Geolocation
+        - Help
+        - 'Inline blocks'
+        - 'Lists (Views)'
+        - Menus
+        - 'Responsive Preview'
+        - 'Site Search'
+        - Superfish
+        - User
+        - Webform
+        - core
+      blacklisted_blocks: {  }
+      whitelisted_blocks:
+        System:
+          - system_breadcrumb_block
+_core:
+  default_config_hash: 5B6kXAAmFMzavs5iFwC15pBNWviSgJjF6pIjT8MSlKI
+id: node.bios.campus
+targetEntityType: node
+bundle: bios
+mode: campus
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_bio_order:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_phone:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_position:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_list_widget: true
+  field_metatags: true
+  search_api_excerpt: true

@@ -4,26 +4,51 @@ status: true
 dependencies:
   config:
     - field.field.node.directory.body
+    - field.field.node.directory.field_campuses
+    - field.field.node.directory.field_email
+    - field.field.node.directory.field_employee_id_number
+    - field.field.node.directory.field_employee_phone
     - node.type.directory
   module:
-    - text
     - user
 id: node.directory.default
 targetEntityType: node
 bundle: directory
 mode: default
 content:
-  body:
-    type: text_default
+  field_campuses:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_email:
+    type: email_mailto
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 2
     region: content
-  links:
-    settings: {  }
+  field_employee_id_number:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: 360x360
+      link: false
     third_party_settings: {  }
-    weight: 100
+    weight: 1
+    region: content
+  field_employee_phone:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
     region: content
 hidden:
+  body: true
+  links: true
   search_api_excerpt: true

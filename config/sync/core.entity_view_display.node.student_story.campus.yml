@@ -1,53 +1,43 @@
-uuid: 44496496-084f-4cd5-b25b-1e4474e87df7
+uuid: 33e68c36-3f06-4ef5-b7b8-3bfa0c9b2356
 langcode: en
-status: true
+status: false
 dependencies:
   config:
+    - core.entity_view_mode.node.campus
     - field.field.node.student_story.body
     - field.field.node.student_story.field_first_name
     - field.field.node.student_story.field_image
     - field.field.node.student_story.field_programs
     - node.type.student_story
   module:
-    - text
     - user
-id: node.student_story.default
+id: node.student_story.campus
 targetEntityType: node
 bundle: student_story
-mode: default
+mode: campus
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_first_name:
     type: string
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 103
     region: content
   field_image:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: 860x535
-      link: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_programs:
     type: entity_reference_label
-    label: inline
+    label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
     region: content
 hidden:
-  links: true
+  body: true
+  field_programs: true
   search_api_excerpt: true

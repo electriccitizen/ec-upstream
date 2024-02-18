@@ -1,0 +1,8 @@
+uuid: e8460b8b-d444-4286-9ed8-b44b06a6b878
+langcode: en
+status: true
+dependencies: {  }
+id: campuses
+label: Campuses
+description: ''
+locked: false

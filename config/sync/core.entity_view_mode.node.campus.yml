@@ -1,0 +1,11 @@
+uuid: 7905e8e7-8054-4919-b1d3-1dc9f29b36c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.campus
+label: Campus
+description: ''
+targetEntityType: node
+cache: true

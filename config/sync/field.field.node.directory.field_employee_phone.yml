@@ -1,0 +1,19 @@
+uuid: cc9ea294-229f-426c-8d5d-54fb207b7f8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_employee_phone
+    - node.type.directory
+id: node.directory.field_employee_phone
+field_name: field_employee_phone
+entity_type: node
+bundle: directory
+label: 'Employee Phone'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

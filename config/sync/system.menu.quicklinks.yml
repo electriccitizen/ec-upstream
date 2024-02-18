@@ -1,0 +1,8 @@
+uuid: 2fed4a22-48bf-4a3b-b294-8484de6c9cfd
+langcode: en
+status: true
+dependencies: {  }
+id: quicklinks
+label: Quicklinks
+description: ''
+locked: false

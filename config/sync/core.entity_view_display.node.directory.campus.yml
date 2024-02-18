@@ -1,9 +1,9 @@
-uuid: f2505931-bb96-4db8-bbc1-7a6deed56f33
+uuid: a46814f8-00a7-4016-9352-f41d5b177b11
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.campus
     - field.field.node.directory.body
     - field.field.node.directory.field_campuses
     - field.field.node.directory.field_email
@@ -11,18 +11,31 @@ dependencies:
     - field.field.node.directory.field_employee_phone
     - node.type.directory
   module:
+    - layout_builder
     - user
-id: node.directory.teaser
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.directory.campus
 targetEntityType: node
 bundle: directory
-mode: teaser
+mode: campus
 content:
+  field_campuses:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_email:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_employee_id_number:
     type: entity_reference_entity_view
@@ -31,7 +44,7 @@ content:
       view_mode: 360x360
       link: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_employee_phone:
     type: string
@@ -39,10 +52,9 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden:
   body: true
-  field_campuses: true
   links: true
   search_api_excerpt: true

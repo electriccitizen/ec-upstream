@@ -5,6 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.student_story.body
+    - field.field.node.student_story.field_first_name
+    - field.field.node.student_story.field_image
+    - field.field.node.student_story.field_programs
     - node.type.student_story
   module:
     - text
@@ -20,12 +23,33 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
+    weight: 3
     region: content
-  links:
-    settings: {  }
+  field_first_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 100
+    weight: 1
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: 860x535
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_programs:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
+  links: true
   search_api_excerpt: true

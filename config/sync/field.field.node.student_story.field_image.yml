@@ -1,0 +1,29 @@
+uuid: 89ebcfe4-cbdb-4a12-9489-aa7ed16ade59
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - media.type.image
+    - node.type.student_story
+id: node.student_story.field_image
+field_name: field_image
+entity_type: node
+bundle: student_story
+label: Headshot
+description: '<strong>Optimal image size:</strong> 720x720px'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
