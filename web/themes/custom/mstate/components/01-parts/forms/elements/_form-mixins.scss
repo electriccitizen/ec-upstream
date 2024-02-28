@@ -136,30 +136,11 @@
 		&[type="radio"]{
 			border-radius: 50%;
 			&:checked{
-				background-color: $red;
+				background-color: $lightBlue;
 				&:hover,&:focus{
-					background-color: $midGrey;
+					background-color: $grey;
 				}
 			}
 		}
 	}
 }//end custom options
-
-///mixin - file-upload
-@mixin fileUpload{
-	.js-form-managed-file,.form-managed-file{
-		input.js-form-submit,input.form-submit{
-			@include submitButton;
-			font-size: 1.5rem;
-			padding: 1rem 4rem;
-		}
-		//allowed upload file types description
-		.description{
-			font-size: 2rem;
-			line-height: 1.25;
-			opacity: .7;
-			margin-bottom: $spaceXs;
-		}
-	}
-
-} //end file upload mixin

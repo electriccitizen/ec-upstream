@@ -24,11 +24,9 @@
 	width: calc(100% - 70px);
 	position: relative;
 	z-index: 10;
-
 	@include desk {
 		width: 240px;
 	}
-
 	a {
 		img {
 			max-width: 160px;
@@ -44,28 +42,12 @@
 
 /* SEARCH BLOCK PLACEMENT
 ------------------- */
-.block-site-search:not(.views-block) {
-	position: static !important;
-	display: inline-block;
-	text-align: right;
-
+.block-site-search {
 	@include desk {
 		width: calc(100% - 240px);
 	}
-
 	.contextual {
 		display: none !important;
-	}
-
-	//search toggler
-	.t-search {
-		position: absolute;
-		top: 18px;
-		right: 10px;
-
-		@include desk {
-			top: 0;
-		}
 	}
 }//end search block
 
@@ -73,13 +55,10 @@
 /* MAIN NAVIGATION BLOCK
 ------------------------ */
 .block-superfishmain {
-
 	@include onlyMobile {
-
 		&.contextual-region {
 			position: static;
 		}
-
 		#superfish-main-toggle {
 			height: 32px;
 			width: 32px;

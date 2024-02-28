@@ -116,16 +116,6 @@
 	}// end tabs
 }//end local tasks
 
-
-/* MODERATION SIDEBAR */
-.moderation-sidebar-actions{
-	a,input.button{
-		&:hover,&:focus{
-			text-decoration: underline !important;
-		}
-	}
-}
-
 /* DIALOGS */
 .ui-dialog .ui-dialog-title{
 	white-space: normal;
@@ -144,7 +134,6 @@
 }
 
 /* OFF CANVAS */
-
 #drupal-off-canvas-wrapper{
 	.ui-dialog-titlebar{
 		.ui-dialog-title{

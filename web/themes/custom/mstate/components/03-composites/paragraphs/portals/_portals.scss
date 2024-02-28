@@ -29,9 +29,6 @@
 		}
 		.field-image{
 			margin-bottom: $spaceXxs;
-			img{
-				border: 1px solid $offWhite;
-			}
 		}
 		.field-headline{
 			@include heading4;

@@ -27,16 +27,6 @@
 }//end search form block
 
 .site-search {
-	.results-header {
-		h2 {
-			width: 100%;
-			max-width: $textMax;
-			@include auto;
-			padding-bottom: 1rem;
-			border-bottom: 1px solid $borderRule;
-			margin-bottom: $elementSpace;
-		}
-	}
 	.view-content,
 	.view-empty {
 		width: 100%;
@@ -51,7 +41,7 @@
 		.views-field-title {
 			margin-bottom: $spaceXxs;
 		}
-		.views-field-body-1 {
+		.views-field-body {
 			.search-highlight {
 				font-weight: $heavy;
 				background: none;

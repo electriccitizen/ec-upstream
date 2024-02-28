@@ -20,10 +20,10 @@
 	&:not(:last-child){
 		margin-bottom: $spaceLg;
 	}
-	.views-field-field-image{
+	.field-image{
 		@include viewsImage;
 	}
-	.views-field-title{
+	.teaser-title{
 		@include viewsTitle;
 	}
 	.metatext{
@@ -31,12 +31,12 @@
 	}
 	@include smallTab{
 		@include safeFlex(row,wrap,start,start);
-		.views-field-field-image{
+		.field-image{
 			@include safeFlexSize(0,0,340px);
 			padding-right: 40px;
 			margin-bottom: 0;
 		}
-		.views-field-nothing{
+		.teaser-text{
 			width: calc(100% - 380px);
 		}
 	}

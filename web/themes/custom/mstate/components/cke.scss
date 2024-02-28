@@ -47,30 +47,19 @@
 	}
 
 	.small-embed{
-		width: 100%;
-		max-width: 280px;
+		@include smallEmbed;
 	}
 	.medium-embed{
-		width: 100%;
-		max-width: 480px;
+		@include mediumEmbed;
 	}
 	.large-embed{
-		width: 100%;
-		max-width: 640px;
+		@include largeEmbed;
 	}
 	.full{
-		width: 100%;
+		@include fullEmbed;
 	}
 	.default.remote-video{
 		width: 100%;
-	}
-
-	.warning {
-		border: 2px solid $red;
-		color: $red;
-		padding: 10px 40px;
-		margin-bottom: 3rem;
-		text-align: center;
 	}
 
 	a.ms-button{
@@ -134,12 +123,7 @@
 		font-size: 18px;
 		line-height: 1.5;
 	}
-
-	blockquote{
-		@include quote;
-	}
-
-
+  
 	/* DOCUMENT ICONS
 	------------------ */
 	a[href$='.pdf'],a[href$='.doc'],a[href$=".docx"],a[href$='.xls'],a[href$=".xlsx"],a[href$='.ppt'],a[href$=".pptx"]{
@@ -156,7 +140,6 @@
 			font-size: 20px;
 		}
 	}
-
 }//end CKE editor Main
 
 .cke_widget_drupalmedia{

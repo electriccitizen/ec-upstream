@@ -6,8 +6,4 @@
 
 .paragraph--type--text {
 	@include textConstrain;
-
-   .widget-wrapper figure[role=group] {
-      margin: 0 0 $spaceMd 0;
-   }
 } //end links-files widget

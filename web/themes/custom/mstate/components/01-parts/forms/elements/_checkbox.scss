@@ -25,7 +25,6 @@ form:not(.layout-builder-add-block):not(.layout-builder-update-block){
 		}
 	}
 
-
 	.js-form-type-checkbox{
 		width: auto;
 		margin-right: 3rem;
@@ -98,6 +97,5 @@ form:not(.layout-builder-add-block):not(.layout-builder-update-block){
 			outline: 3px solid transparent; /* For Windows high contrast mode. */
 			background-color: $midGrey;
 		}
-
 	}//end form type checkbox
 }//end form

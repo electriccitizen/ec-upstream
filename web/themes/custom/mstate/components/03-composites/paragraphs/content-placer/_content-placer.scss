@@ -6,9 +6,6 @@
 @use '../../../01-parts/buttons/button-mixins' as *;
 
 .paragraph--type--content-placer{
-	&.custom-views-list{
-		@include textConstrain;
-	}
 	.field-widget-title{
 		text-align: left;
 	}

@@ -1,5 +1,5 @@
 /* =============
-   BIOS NODE
+   DIRECTORY NODE
 ================== */
 
 @use '../../../00-base/base' as *;
@@ -12,7 +12,7 @@
 	}
 }
 
-.node-bios{
+.node-directory{
 
 	#node-section-1,#node-section-2{
 		max-width: $textMax;
@@ -76,4 +76,4 @@
 		}
 	}
 
-}//end news
+}//end directory

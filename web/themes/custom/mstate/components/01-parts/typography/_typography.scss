@@ -12,7 +12,6 @@ h1 {
 
 h2 {
 	@include heading2;
-	
 	.text-long &,
 	.text-with-summary & {
 		margin-bottom: $spaceLg;
@@ -21,7 +20,6 @@ h2 {
 
 h3 {
 	@include heading3;
-	
 	.text-long &,
 	.text-with-summary & {
 		margin-bottom: $spaceMd;
@@ -30,7 +28,6 @@ h3 {
 
 h4 {
 	@include heading4;
-	
 	.text-long &,
 	.text-with-summary & {
 		margin-bottom: $spaceSm;
@@ -39,7 +36,6 @@ h4 {
 
 h5 {
 	@include heading5;
-	
 	.text-long &,
 	.text-with-summary & {
 		margin-bottom: $spaceXs;
@@ -57,27 +53,12 @@ h2+ul, h3+ul, h4+ul, h5+ul, h6+ul {
 
 /* BLOCK, SECTION AND WIDGET HEADINGS
 -------------------------- */
-.block-title {
-	max-width: $textMax;
-	text-align: center;
-	@include auto;
-}
-
 h2.block-title {
 	@include blockTitle;
 }
-
-h2.section-title {
-	@include blockTitle;
-	font-size: 3rem;
-	max-width: $textMax + 40px;
-}
-
 .widget-title,
 .field-widget-title {
 	@include blockTitle;
-	letter-spacing: 0;
-	text-transform: none;
 }
 
 /* TEXT STYLES
@@ -92,6 +73,7 @@ code {
 	font-kerning: normal;
 	font-synthesis: none;
   font-feature-settings: “liga” 0;
+  font-optical-sizing: auto;
 }
 
 body {
@@ -102,7 +84,6 @@ body {
 
 p {
 	margin-top: 0;
-
 	&:not(:last-child) {
 		margin-bottom: $spaceMd;
 	}
@@ -111,18 +92,26 @@ p {
 a {
 	color: $link;
 	text-decoration: none;
-	
 	&:hover,
 	&:focus {
 		color: $hoverLink;
 		text-decoration: underline;
-		
 		.text-with-summary &,
 		.text-long & {
 			@include transAll(.3s);
 		}
 	}
-}
+  &.arrow-link{
+    text-transform: uppercase;
+    &:after{
+      content: '';
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      @include textLinkArrow;
+    }
+  }
+}//end a
 
 em {
 	font-style: italic;
@@ -136,60 +125,33 @@ small {
 	font-size: 80%;
 }
 
-.warning{
-	background: none;
-	padding: 1rem 2rem;
-	margin-bottom: $spaceMd;
-	color: $validation;
-	border: 1px solid $validation;
-	text-align: center;
-}
-
 .hr,
 hr {
 	border-style: solid;
 	border-width: 1px 0 0;
 	color: currentColor;
-
 	& + * {
 		margin-top: $spaceMd;
 	}
-}
-
-blockquote {
-	@include quote;
 }
 
 //clear floats in common long text fields, remove bottom margin from last child
 .text-with-summary,
 .text-long {
 	@include clearFix;
-
 	& > *:last-child {
 		margin-bottom: 0;
 	}
-
 	& + * {
 		clear: both;
 	}
-
 	article:not(:last-child):not([data-quickedit-entity-id*=media]) {
 		margin-bottom: $spaceMd;
 	}
-  a.arrow-link{
-    &:after{
-      content: '';
-      display: inline-block;
-      width: 11px;
-      height: 11px;
-      @include textLinkArrow;
-    }
-  }
 }//end text-with-summary,text-long
 
 /* ICONS
 --------------- */
-
 //svg icon color
 svg {
 	fill: currentColor;

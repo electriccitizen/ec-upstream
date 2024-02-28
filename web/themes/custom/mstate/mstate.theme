@@ -29,10 +29,6 @@ function mstate_preprocess_html(&$variables) {
     } else {
       $variables['attributes']['class'][] = 'unpublished';
     }
-    //check for main image
-    if (!empty($node->field_image[0])){
-      $variables['attributes']['class'][] = 'has-main-image';
-    }
   }
 }
 

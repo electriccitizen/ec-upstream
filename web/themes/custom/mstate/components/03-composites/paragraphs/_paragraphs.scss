@@ -13,11 +13,9 @@
 @forward 'image/image';
 @forward 'links-files/links-files';
 @forward 'layout-section/layout-section';
-@forward 'map/map';
 @forward 'portals/portals';
-@forward 'quote/quote';
-@forward 'text/text';
 @forward 'video/video';
+@forward 'WYSIWYG/wysiwyg';
 
 @use '../../00-base/base' as *;
 @use 'sass:math';
@@ -43,10 +41,14 @@
 		&.background{
 			padding-top: $elementSpace;
 			&.light-grey{
-				background: $offWhite;
+				background: $lightGrey;
 			}
-			&.light-blue{
-				background: $iceBlue;
+			&.blue{
+				background: $lightBlue;
+			}
+      &.navy{
+				background: $navy;
+        @include darkBack($white,$lightGrey);
 			}
 			& + .backless{
 				margin-top: $elementSpace;

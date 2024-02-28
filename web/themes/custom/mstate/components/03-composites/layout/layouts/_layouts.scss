@@ -85,7 +85,6 @@
 /* DEFAULT CORE LAYOUTS 
 (we're retheming to use flex better with bleed for gutters)
 ------------------------------------ */
-
 /* TWO COLUMNS */
 .layout.layout--twocol-section{
 	@include bleed(padding,40px);

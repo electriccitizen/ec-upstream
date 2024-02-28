@@ -23,78 +23,58 @@ $adminTransGrey : rgba(92,96,98,.92);
 
 /* TEXT
 ---------------------- */
-$baseText          : $darkGrey;
-$link              : $red;
-$activeLink        : $black;
-$hoverLink         : $midGrey;
-$breadLink         : $link;
-$breadLinkHover    : $hoverLink;
-$breadCurrent      : $darkGrey;
+$baseText          : $black;
+$link              : $blue;
+$activeLink        : $navy;
+$hoverLink         : $green;
+$breadLink         : $green;
+$breadLinkHover    : $blue;
+$breadCurrent      : $black;
 
 /* BUTTONS
 ---------------------- */
-$buttonBack        : $link;
-$buttonBackHover   : $grey;
-$buttonBackActive  : darken($grey, 5%);
-$buttonText        : $white;
+$buttonBack        : $brightGreen;
+$buttonBackHover   : $lightGrey;
+$buttonBackActive  : darken($lightGrey, 5%);
+$buttonText        : $black;
 $buttonTextHover   : $black;
 $buttonTextActive  : $black;
-$submitBack        : $link;
-$submitText        : $white;
-$submitBackHover   : $grey;
+$submitBack        : $brightGreen;
+$submitText        : $black;
+$submitBackHover   : $lightGrey;
 $submitTextHover   : $black;
-$resetBack         : $darkGrey;
+$resetBack         : $lightBlue;
 $resetText         : $white;
-$resetBackHover    : $grey;
+$resetBackHover    : $lightGrey;
 $resetTextHover    : $black;
-$cautionBack       : $midGrey;
+$cautionBack       : $navy;
 $cautionText       : $white;
-$cautionBackHover  : $grey;
+$cautionBackHover  : $lightGrey;
 $cautionTextHover  : $black;
 
 /* SYSTEM
 --------------------- */
 $siteBack                  : $white;
 $unpub                     : $adminPink;
-$headerBack                : $offWhite;
-$prefooterBack             : $darkGrey;
-$prefooterText             : $offWhite;
-$prefooterLink             : $adminGold;
-$prefooterLinkHover        : $adminWhiteGold;
-$footerBack                : $black;
-$footerText                : $offWhite;
-$footerLink                : $adminGold;
-$footerLinkHover           : $adminWhiteGold;
-$borderRule                : $black;
-$modalBack                 : $adminTransGrey;
-$modalContent              : $baseText;
-$modalContentBack          : $siteBack;
-$modalHeader               : $white;
-$modalHeaderBack           : $darkGrey;
-$modalHeaderClose          : $white;
-$modalHeaderCloseHover     : $grey;
-$modalGalButton            : $white;
-$modalGalButtonHover       : $link;
-$modalGalButtonBackHover   : transparent;
-$modalGalButtonShadow      : $transBlack;
-$modalGalButtonShadowHover : $transBlack;
+$headerBack                : $white;
+$prefooterOneBack          : $lightBlue;
+$prefooterOneText          : $white;
+$prefooterOneLink          : $white;
+$prefooterOneLinkHover     : $lightGrey;
+$prefooterTwoBack          : $darkBlue;
+$prefooterTwoText          : $white;
+$prefooterTwoLink          : $white;
+$prefooterTwoLinkHover     : $lightGrey;
+$footerBack                : $white;
+$footerText                : $black;
+$footerLink                : $link;
+$footerLinkHover           : $hoverLink;
+$borderRule                : $grey;
 $hamburger                 : $black;
 $hamburgerActive           : $black;
-$searchIcon                : $black;
+$searchIcon                : $green;
 $searchIconHover           : $link;
-$searchDropBack            : rgba(35,35,35,0.97);
-$searchDropText            : $white;
-$searchDropPlace           : $white;
-$searchDropPlaceFocus      : $white;
-$searchDropInputBorder     : $white;
-$searchDropInputFocus      : $white;
-$searchDropSearchIcon      : $white;
-$searchDropSearchIconHover : $link;
-$searchClose               : $black;
-$searchCloseHover          : $white;
-$searchCloseBack           : $white;
-$searchCloseBackHover      : $black;
-
+$searchText                : $contrastGrey;
 
 /* FORMS
 --------------------- */
@@ -103,40 +83,32 @@ $inputBorderHover         : $borderRule;
 $inputBorderFocus         : $link;
 $placeColor               : $adminGrey;
 $placeFocusColor          : $placeColor;
-$validation               : $brightRed;
+$validation               : $blue;
 $checkbox                 : $link;
 $checkboxHover            : $link;
 $checkboxBackHover        : $lightGrey;
 $checkboxChecked          : $link;
-$checkboxCheckedHover     : $midGrey;
+$checkboxCheckedHover     : $lightGrey;
 $checkboxCheckedBack      : $link;
-$checkboxCheckedBackHover : $midGrey;
-$selectArrow              : $midGrey;
-$selectHighlight          : $link;
-$progressBar              : $grey;
-$progressMarker           : $grey;
-$progressMarkerText       : $black;
-$progressMarkerActive     : $darkGrey;
-$progressMarkerActiveText : $white;
-$sliderTrack              : $grey;
-$sliderTrackHover         : $link;
-$sliderKnob               : $white;
-$datepickerHeader         : $red;
+$checkboxCheckedBackHover : $lightGrey;
+$selectArrow              : $black;
+$selectHighlight          : $lightBlue;
+$datepickerHeader         : $blue;
 $datepickerHeaderElement  : $white;
 $datepickerDays           : $black;
 $datepickerDaysBack       : $lightGrey;
-$datepickerDate           : $darkGrey;
+$datepickerDate           : $navy;
 $datepickerDateBack       : $white;
 $datepickerDateBorder     : $lightGrey;
-$datepickerCurrent        : $darkGrey;
+$datepickerCurrent        : $grey;
 $datepickerCurrentBack    : $adminWhiteGold;
 $datepickerSelected       : $black;
-$datepickerSelectedBack   : $darkIce;
-$detailsWrapperBack       : $offWhite;
+$datepickerSelectedBack   : $lightGrey;
+$detailsWrapperBack       : $lightGrey;
 
 /* TABLES
 ---------------- */
-$tableHeaderBack     : $darkGrey;
+$tableHeaderBack     : $lightBlue;
 $tableHeaderText     : $white;
 $tableRowHeaderBack  : $grey;
 $tableRowHeaderText  : $black;
@@ -150,51 +122,23 @@ $oddRowText          : $baseText;
 /* SUPERFISH
 ---------------------- */
 //desktop
-$sfTopLink            : $black;
+$sfTopLink            : $navy;
 $sfTopLinkHover       : $black;
-$sfTopBackHover       : $lightGrey;
+$sfTopBackHover       : $siteBack;
 $sfTopActive          : $link;
-$sfTopActiveHover     : $link;
+$sfTopActiveHover     : $lightBlue;
 $sfChildLink          : $link;
 $sfChildLinkHover     : $hoverLink;
-$sfChildActive        : $black;
+$sfChildActive        : $navy;
 $sfChildActiveHover   : $hoverLink;
 $sfDropdown           : $lightGrey;
 
 //mobile
 $sfMobileDrop            : $white;
-$sfMobileDropBorder      : $black;
-$sfMobileItemBorder      : $borderRule;
-$sfMobileTop             : $link;
-$sfMobileTopBack         : $white;
-$sfMobileTopExpanded     : $hoverLink;
-$sfMobileTopBackExpanded : $lightGrey;
+$sfMobileTop             : $navy;
+$sfMobileTopExpanded     : $link;
 $sfMobileChild           : $link;
-$sfMobileChildActive     : $white;
-
-
-/* MENU BLOCK (Sidebar)
---------------------- */
-$menuBlockTitle       : $black;
-$menuBlockTitleHover  : $hoverLink;
-$menuBlockTitleBack   : $lightGrey;
-$menuBack             : $siteBack;
-$menuTop              : $link;
-$menuTopHover         : $hoverLink;
-$menuTopActive        : $black;
-$menuTopActiveHover   : $hoverLink;
-$menuChild            : $link;
-$menuChildHover       : $hoverLink;
-$menuChildActive      : $link;
-$menuChildActiveHover : $hoverLink;
-
-
-/* WIDGET ANCHORS
----------------------- */
-$anchors        : $white;
-$anchorsBack    : $link;
-$anchorsHover   : $transWhite;
-$anchorsRules   : $white;
+$sfMobileChildActive     : $navy;
 
 /* PAGERS
 --------------------- */
@@ -212,30 +156,21 @@ $pagerLink                  : $link;
 $pagerLinkBack              : transparent;
 $pagerLinkHover             : $hoverLink;
 $pagerLinkBackHover         : transparent;
-$resultsText                : $baseText;
 
 
 /* ACCORDIONS
 ------------------- */
 $accordHeader             : $baseText;
 $accordHeaderHover        : $white;
-$accordHeaderBorder       : $darkGrey;
-$accordHeaderBorderHover  : $darkGrey;
+$accordHeaderBorder       : $lightBlue;
+$accordHeaderBorderHover  : $navy;
 $accordHeaderBack         : $siteBack;
-$accordHeaderBackHover    : $darkGrey;
-$accordContentBack        : $siteBack;
-$accordContentBorder      : transparent;
-$accordActive             : $white;
-$accordActiveHover        : $white;
-$accordActiveBorder       : $black;
-$accordActiveBorderHover  : $darkGrey;
-$accordActiveBack         : $black;
-$accordActiveBackHover    : $darkGrey;
+$accordHeaderBackHover    : $lightGrey;
 
 /* MESSAGES
 ------------------ */
 $messageText          : $white;
-$messageBack          : $darkGrey;
+$messageBack          : $black;
 $messageGoodBorder    : $adminGreen;
 $messageWarningBorder : $adminGold;
 $messageErrorBorder   : $adminFuchsia;
@@ -243,5 +178,5 @@ $messageErrorBorder   : $adminFuchsia;
 
 /* EMBEDDED DOC ICONS
 ------------------- */
-$fileIcon: $midGrey;
+$fileIcon : $navy;
 

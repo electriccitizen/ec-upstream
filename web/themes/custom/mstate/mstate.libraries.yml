@@ -8,7 +8,7 @@ global:
     components/05-assembly/global/site.js: {}
   dependencies:
     - core/drupal
-    - core/drupal.debounce
+    - mstate/debounce
     - core/drupalSettings
     - core/jquery
     - core/once
@@ -16,6 +16,10 @@ accordion:
   version: 1.0
   js:
     components/03-composites/paragraphs/accordions/accordions.js: {}
+debounce:
+  version: 1.0
+  js:
+    components-addons/debounce/debounce.js: {}
 drawers:
   version: 1.0
   js:
@@ -32,7 +36,7 @@ featherlight:
 fonts:
   css:
     theme:
-      https://fonts.googleapis.com/css?family=Open+Sans:ital,wght@0,400;;0,700;1,400: { type: external, preprocess: false }
+      https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Crimson+Pro:wght@800&display=swap: { type: external, preprocess: false }
 forms:
   version: 1.0
   js:
@@ -45,28 +49,10 @@ layout:
   version: 1.0
   js:
     components/03-composites/layout/layouts/layouts.js: {}
-modal:
-  version: 1.0
-  js:
-    components/02-chunks/modals/modals.js: {}
-pager:
-  version: 1.0
-  js:
-    components/02-chunks/pagers/pager.js: {}
-search-block:
-  version: 1.0
-  js:
-    components/03-composites/blocks/search/search-block.js: {}
 search-page:
   version: 1.0
   js:
     components/04-units/pages/search.js: {}
-section-menu:
-  version: 1.0
-  js:
-    components/02-chunks/navigation/section-menu/section-menu.js: {}
-  dependencies:
-    - mstate/debounce
 select:
   version: 4.0.3
   css:

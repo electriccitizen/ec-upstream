@@ -5,16 +5,13 @@
 @use '../../../00-base/base' as *;
 
 .prefooter-one-wrapper{
-  background: $lightGrey;
+  background: $prefooterOneBack;
 }
 
 .prefooter-two-wrapper{
-	background: $prefooterBack;
-	color: $prefooterText;
-	.modal-content{
-		color: $baseText;
-	}
-	.prefooter-inner{
+	background: $prefooterTwoBack;
+	color: $prefooterTwoText;
+	.prefooter-two-inner{
 		min-height: 293px;
 		padding: 32px $siteMarginMobile;
 		max-width: $contentStop + 40px;
@@ -24,7 +21,6 @@
 			padding: 40px $siteMarginMobile 50px;
 			min-height: 0;
 		}
-
 		//limit footer content to max-width and set flex parenting
 		& > div{
 			@include safeFlex(row,wrap,start,start);
@@ -42,35 +38,6 @@
 					}
 				}
 			}
-			//about
-			.block-1{
-				width: 100%;
-				@include tab{
-					width: 33.333%;
-				}
-			}
-			//newsletter
-			.block-newsletter{
-				width: 100%;
-				@include tab{
-					width: 33.33%;
-				}
-				.field.body{
-					a{
-						color: $prefooterLink;
-						&:hover,&:focus{
-							color: $prefooterLinkHover;
-						}
-					}
-				}
-			}
-			//menu
-			.block-footer-menu{
-				width: 100%;
-				@include tab{
-					width: 33.33%;
-				}
-			}
 		}//end prefooter-inner > div
 	}//end prefooter inner
 }//end prefooter-wrapper
@@ -79,9 +46,6 @@
 .site-footer{
 	background: $footerBack;
 	color: $footerText;
-	.modal-content{
-		color: $baseText;
-	}
 	//set style for footer (need inner for fixed footer script)
 	.footer-inner{
 		min-height: 204px;
@@ -130,15 +94,9 @@
 						color: $footerLinkHover;
 					}
 					.cls-1{
-						fill: $prefooterBack;
+						fill: $prefooterOneBack;
 					}
 				}
-			}
-			//copyright
-			.block-4{
-				@include onlySmall{
-					width: 100%;
-				}	
 			}
 		}//end prefooter-inner > div
 	}//end footer-inner

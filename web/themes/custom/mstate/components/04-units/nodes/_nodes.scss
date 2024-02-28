@@ -5,11 +5,10 @@
 /* NODES INDEX
 ------------------- */
 @forward 'basic-page/basic-page';
-@forward 'bio/bio';
+@forward 'directory/directory';
 @forward 'event/event';
 @forward 'landing-page/landing-page';
 @forward 'news/news';
-@forward 'support-book/support-book';
 
 @use '../../00-base/base' as *;
 @use 'node-mixins' as *;

@@ -1,7 +1,6 @@
 /* ============
 	UNIT VARIABLES
 ======================= */
-
 $em-base: 8px;
 
 /* BREAKPOINT VARIABLES
@@ -9,9 +8,9 @@ $em-base: 8px;
 $smallTab: 520px;
 $tab: 800px;
 $desk: 984px;
-$contentStop: 1200px;
+$contentStop: 1264px;
 $largeScreen: 1600px;
-$textMax: 800px;
+$textMax: 784px;
 $onlyTab: $tab $desk - 1px;
 $onlySmall: max-width $tab - 1px;
 $onlyPhone: max-width $smallTab - 1px;
@@ -38,7 +37,7 @@ $siteBottomSpace: 12rem;
 $buttonPadding: 2rem 3.5rem;
 $submitPadding: 0 2rem;
 
-$sideBar: 300px;
+$sideBar: 360px;
 $sectionGutter: 40px;
 
 /* BREAKPOINT SHORTHANDS & EDGE MIXINS

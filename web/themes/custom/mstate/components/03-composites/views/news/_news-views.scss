@@ -15,15 +15,3 @@
 	}
 }//end all news
 
-/* NEWS LIST */
-.news.news-list{
-	.views-row{
-		@include viewsRowStandard;
-		.views-field-title{
-			@include safeFlexSize(0,0,100%);
-		}
-		.metatext{
-			margin-bottom: 0;
-		}
-	}
-}//end news list

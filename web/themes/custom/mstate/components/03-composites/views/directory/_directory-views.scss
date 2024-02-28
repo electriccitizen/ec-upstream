@@ -6,7 +6,7 @@
 
 /* ALL BIOS
 ------------- */
-.bios.all-bios{
+.directory.directory{
 	.view{
 		padding-bottom: $elementSpace;
 	}
@@ -28,13 +28,6 @@
 		@include desk{
 			width: 25%;
 		}
-	}
-	.views-field-field-image{
-		margin-bottom: $spaceXs;
-	}
-	.views-field-title{
-		@include heading4;
-		margin-bottom: $spaceXxs;
 	}
 }//end bios
 

@@ -1,6 +1,7 @@
 /* ====================
    FONT VARIABLES
 ==================== */
+@use 'colors' as *;
 @use 'component-colors' as *;
 @use 'units' as *;
 
@@ -21,54 +22,50 @@
 
 /*  FAMILIES
 -------------------- */
-$header       : "Open Sans", Helvetica, Arial, sans-serif;
-$displayHeader: "Open Sans", Helvetica, Arial, sans-serif;
-$bodyFont     : "Open Sans", Helvetica, Arial, sans-serif;
-$serif        : Georgia, "Times New Roman", Times, serif;
+$header       : "Crimson Pro", serif;
+$bodyFont     : "Cabin", sans-serif;
 
 /*  WEIGHTS
 -------------------- */
-$light: 300;
 $regular: 400;
 $heavy:  700;
-$x-heavy: 900;
+$xHeavy: 800;
 
 /*  SIZES
 -------------------- */
-$baseSize: 2.25rem;
+$baseSize: 2.5rem;
 $formLabelSize: 2.5rem;
 $formLabelWeight: 700;
 $button: 2rem;
 $socialIcons: 4rem;
 
 //h1 sizes
-$h1Sm: 4rem;
-$h1Mid: 5.5rem;
-$h1Lg: 7rem;
+$h1Sm: 6rem;
+$h1Mid: 8rem;
+$h1Lg: 8rem;
 
 //h2 sizes
-$h2Sm: 3rem;
-$h2Md: 3.5rem;
+$h2Sm: 4.5rem;
+$h2Md: 6rem;
 $h2Lg: 4rem;
 
 //h3 sizes
-$h3Sm: 3rem;
-$h3Mid: 3.5rem;
+$h3Sm: 4rem;
+$h3Mid: 4.5rem;
 
 //h4 sizes
-$h4Sm: 2.75rem;
+$h4Sm: 3.5rem;
 
 //h5 sizes
-$h5Sm: 2.5rem;
+$h5Sm: 3.15rem;
 
 //h6 sizes
-$h6Sm: 2rem;
+$h6Sm: 2.75rem;
 
 /* FONT AND TYPE MIXINS
 --------------------------- */
 @mixin headerGlobals{
-	line-height: 1.15;
-	font-weight: $heavy;
+	font-weight: $xHeavy;
 	font-family: $header;
 	margin: 0;
 	font-feature-settings: "liga", "dlig";
@@ -76,10 +73,11 @@ $h6Sm: 2rem;
 
 @mixin heading1{
 	@include headerGlobals;
-	font-family: $displayHeader;
 	font-size: $h1Sm;
-	@include tab{
+  line-height: 1;
+	@include desk{
 		font-size: $h1Mid;
+    line-height: 1.0625
 	}
 	@include contentStop{
 		font-size: $h1Lg;
@@ -88,9 +86,11 @@ $h6Sm: 2rem;
 
 @mixin heading2 {
 	@include headerGlobals;
+  line-height: 1.25;
 	font-size: $h2Sm;
-	@include tab{
+	@include desk{
 		font-size: $h2Md;
+    line-height: 1.08;
 	}
 	@include contentStop{
 		font-size: $h2Lg;
@@ -99,14 +99,17 @@ $h6Sm: 2rem;
 
 @mixin heading3{
 	@include headerGlobals;
+  line-height: 1.125;
 	font-size: $h3Sm;
-	@include tab{
+	@include desk{
+    line-height: 1.22;
 		font-size: $h3Mid;
 	}
 }
 
 @mixin heading4{
 	@include headerGlobals;
+  line-height: 1.21;
 	font-size: $h4Sm;
 }
 
@@ -121,85 +124,47 @@ $h6Sm: 2rem;
 }
 
 @mixin blockTitle{
-	@include headerGlobals;
-	font-size: 2.5rem;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	text-align: center;
+	@include heading2;
 	max-width: $textMax;
-	margin-bottom: $spaceMd;
-	@include auto;
+	margin-bottom: $spaceLg;
+  padding-bottom: 3rem;
+  position: relative;
+  &:after{
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: $green;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@mixin centerBlockTitle{
+  @include blockTitle;
+  text-align: center;
+  @include auto;
+  &:after{
+    left: calc(50% - 30px);
+  }
 }
 
 @mixin inlineBlockTitle{
-	@include blockTitle;
-	margin-bottom: 0;
+	font-family: $bodyFont;
+  font-size: $baseSize;
+  font-weight: $heavy;
+	margin: 0 1rem 0 0;
 	display: inline-block;
 	& + *{
 		display: inline;
 	}
 }
 
-//H1 on banners
-@mixin bannerTitle{
-	position: relative;
-	opacity: 0;
-	@include animation('fadeIn 1.2s 1 forwards');
-	.block-field-image{
-		position: relative;
-		@include overlay;
-		@include edgeToEdge;
-	}
-	.block-title{
-		@include tab{
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			z-index: 2;
-			@include translate(-50%,-50%);
-			h1{
-				color: $white;
-			}
-		}
-	}
-}//end banner title
-
 @mixin metaText{
 	font-size: 2rem;
 	font-style: italic;
-	font-family: $serif;
 }
-
-@mixin quote{
-	margin: 0 0 $spaceXs;
-	position: relative;
-	font-family: $serif;
-	font-style: italic;
-	font-size: 3rem;
-	padding-bottom: $spaceXs;
-	@include tab{
-		font-size: 4.5rem;
-		padding-bottom: 0;
-	}
-	p{
-		display: inline;
-	}
-	.quote-pre{
-		color: $transBlack;
-		font-size: 14rem;
-		line-height: .1rem;
-		margin-right: 2rem;
-		vertical-align: -6.4rem;
-	}
-	.quote-post{
-		color: $transBlack;
-		content: "”";
-		font-size: 8rem;
-		line-height: .1rem;
-		vertical-align: -3.2rem;
-		display: inline-block;
-	}
-}//end quote
 
 %materialSetup{
 	font-style: normal;

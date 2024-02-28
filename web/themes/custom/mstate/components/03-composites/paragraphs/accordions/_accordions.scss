@@ -48,33 +48,9 @@
 	//accordion content
 	.field-long-text{
 		@include showContent(2000px,.6s);
-
 		.inner-text{
 			padding: 2.5rem 4rem;
-			background: $accordContentBack;
-			border-left: 1px solid $accordContentBorder;
-			border-right: 1px solid $accordContentBorder;
 		}
 	}
-
-	//active accordion
-	&.accord-active{
-		.accordion-header{
-			a{
-				color: $accordActive;
-				background: $accordActiveBack;
-				border-color: $accordActiveBorder;
-				border-bottom: 0;
-				&:after{
-					content: "–";
-				}
-				&:hover,&:focus{
-					color: $accordActiveHover;
-					background: $accordActiveBackHover;
-					border-color: $accordActiveBorderHover;
-				}
-			}
-		}
-	}//end active
 }//end accordion-item
 

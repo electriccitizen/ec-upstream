@@ -188,7 +188,6 @@
 		width: calc(100% + $siteMarginMobile*2);
 		overflow: hidden;
 		background: $sfMobileDrop;
-		border-bottom: 8px solid $sfMobileDropBorder;
 	}
 
 	// global mobile links
@@ -234,7 +233,6 @@
 		}//end menupareny
 		&.sf-expanded > .sf-accordion-button{
 			background: transparent;
-
 			&:after{
 				@include rotate(180);
 				@include materialIconOutline(\e5cf);
@@ -243,8 +241,6 @@
 				width: 60px;
         height: 60px;
 				text-indent: 0;
-
-
 			}
 		}
 	}//end li
@@ -257,15 +253,10 @@
 	li.sf-depth-1{
 		& > a{
 			color: $sfMobileTop;
-			background: $sfMobileTopBack;
-		}
-		&:not(:last-child){
-			border-bottom: 1px solid $sfMobileItemBorder
 		}
 		&.sf-expanded{
 			& > a{
 				color: $sfMobileTopExpanded;
-				background: $sfMobileTopBackExpanded;
 				&:not(.sf-accordion-button){
 					border-bottom: 3px solid $transBlack;
 				}
@@ -298,7 +289,6 @@
 			}
 		}
 	}//end level 2
-
 
 	//level 3
 	li.sf-depth-3{

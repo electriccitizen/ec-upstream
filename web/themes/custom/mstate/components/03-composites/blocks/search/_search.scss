@@ -7,130 +7,29 @@
 %searchBlockPlaceholder {
 	$placeTint: 1;
 
-	&::-webkit-placeholder {
+	&::-webkit-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder,
+  &::-webkit-input-placeholder {
 		opacity: $placeTint;
-		color: $searchDropPlace;
-	}
-
-	&::-moz-placeholder {
-		opacity: $placeTint;
-		color: $searchDropPlace;
-	}
-
-	&:-ms-input-placeholder {
-		opacity: $placeTint;
-		color: $searchDropPlace;
-	}
-
-	&::-webkit-input-placeholder {
-		opacity: $placeTint;
-		color: $searchDropPlace;
+		color: $searchText;
 	}
 }
 
 ///mixin - placeholderFocus
 %searchBlockPlaceholderFocus {
 	$placeFocusTint: .2;
-
-	&::-webkit-placeholder {
+	&::-webkit-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder,
+  &::-webkit-input-placeholder {
 		opacity: $placeFocusTint;
-		color: $searchDropPlaceFocus;
-	}
-
-	&::-moz-placeholder {
-		opacity: $placeFocusTint;
-		color: $searchDropPlaceFocus;
-	}
-
-	&:-ms-input-placeholder {
-		opacity: $placeFocusTint;
-		color: $searchDropPlaceFocus;
-	}
-
-	&::-webkit-input-placeholder {
-		opacity: $placeFocusTint;
-		color: $searchDropPlaceFocus;
+		color: $searchText;
 	}
 }
 
-//search icon
-.t-search-wrapper {
-
-	.t-search {
-		border: $inputBorderWidth solid transparent;
-		color: $searchIcon;
-
-		&:hover,
-		&:focus {
-			color: $searchIconHover;
-			outline: none;
-			text-decoration: none;
-		}
-
-		.material-icons {
-			font-size: 24px;
-		}
-	}
-}//end t-search-wrapper
-
-//close search
-.t-search-close {
-	height: 48px;
-	width: 48px;
-	display: none;
-	position: absolute;
-	top: -20px;
-	right: 0;
-	z-index: 502;
-
-	.close-search {
-		height: 100%;
-		width: 100%;
-		background: $searchCloseBack;
-		color: $searchClose;
-		font-family: $header;
-		font-size: 24px;
-		display: block;
-		cursor: pointer;
-		@include safeFlex(column,null,center,center);
-		transition: all 0.15s ease-out;
-
-		&:hover,
-		&:focus {
-			background: $searchCloseBackHover;
-			color: $searchCloseHover;
-			text-decoration: none;
-		}
-	}
-}//end search close
-
-
-//put search form wrapper at top of screen and full width, hide for slide effect
-#search-form-wrapper {
-	width: calc(100% + $siteMarginMobile*2);
-	position: absolute;
-	top: -20px;
-	left: -$siteMarginMobile;
-	z-index: 500;
-	@include showContent(100vh,.5s);
-	@include contentStop {
-		width: 100vw;
-		left: calc(-50vw + 600px);
-	}
-}//end search-form-wrapper
-
 
 #site-search-form {
-	position: relative;
-	width: 100%;
-	padding: 80px $siteMarginMobile;
-	text-align: center;
-	background: $searchDropBack;
-
-	@include desk {
-		padding: 160px $siteMarginMobile;
-	}
-
 	//search box input
 	.js-form-item-site-search-api-fulltext {
 		padding: 1.5 0;
@@ -138,36 +37,28 @@
 		margin-bottom: 0;
 		max-width: 800px;
 		@include auto;
-
 		label {
 			@include visuallyHidden;
 		}
-
 		input {
 			width: 100%;
 			background: transparent;
 			padding: 8px 4px;
 			border: none;
-			color: $searchDropText;
-			border: $inputBorderWidth solid transparent;
-			border-bottom-color: $searchDropInputBorder;
+			color: $searchText;
+			border: 1px solid $borderRule;
 			border-radius: 0;
 			@extend %searchBlockPlaceholder;
 			//prevent yellow chrome autofill inset
-
 			&:-webkit-autofill {
-				-webkit-box-shadow: 0 0 0 1000px $searchDropInputFocus inset;
+				-webkit-box-shadow: 0 0 0 1000px $borderRule inset;
 			}
-
 			@include tab {
 				font-size: 2.5rem;
 			}
-
 			&:hover {
-				border-color: $searchDropInputFocus;
-				box-shadow: inset 0 0 0 1px $searchDropInputFocus;
+				box-shadow: inset 0 0 0 1px $borderRule;
 			}
-
 			&:focus {
 				outline: none;
 				border-color: $inputBorderFocus;
@@ -182,7 +73,6 @@
 		max-width: 800px;
 		@include auto;
 		position: relative;
-
 		.form-submit.button {
 			position: absolute;
 			top: -46px;
@@ -196,31 +86,27 @@
 			padding: 0;
 			min-width: 0;
 			border: 0;
-
 			@include tab {
 				top: -48px;
 				right: 12px;
 			}
-
 			&:focus,
 			&:hover {
 				border: 0;
 				box-shadow: none;
 				outline: none;
-
 				& + .material-icons {
-					color: $searchDropSearchIconHover;
+					color: $searchIconHover;
 				}
 			}
 		}//end form submit
 		.material-icons {
-			color: $searchDropSearchIcon;
+			color: $searchIcon;
 			font-size: 3rem;
 			position: absolute;
 			top: -45px;
 			right: 8px;
 			cursor: pointer;
-
 			@include tab {
 				font-size: 3.5rem;
 				top: -48px;

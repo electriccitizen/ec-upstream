@@ -5,7 +5,6 @@
 /* ADD SUB BLOCKS
 ------------------- */
 @forward 'branding/branding';
-@forward 'newsletter/newsletter';
 @forward 'search/search';
 @forward 'social-links/social-links';
 @forward 'social-share/social-share';
@@ -22,38 +21,13 @@
 			position: relative;
 			a{
 				display: block;
-				color: $prefooterLink;
-				.footer-v1 &{
-					text-decoration: underline;
-				}
+				color: $prefooterTwoLink;
 				&:hover,&:focus{
-					color: $prefooterLinkHover;
+					color: $prefooterTwoLinkHover;
 					@include transAll(.3s);
-					.footer-v1 &{
-						text-decoration: none;
-					}
 				}
 			}
 		}//end li
 	}//end ul
 }//end footer-menu
 
-//COPYRIGHT
-.block-4{
-	.copyright{
-		text-align: center;
-		font-size: 2rem;
-		@include tab{
-			text-align: left;
-		}
-		& > span:first-child{
-			padding-right: .25em;
-			& + *{
-				display: inline;
-			}
-		}
-		p{
-			margin: 0;
-		}
-	}
-}//end footer-copyright
