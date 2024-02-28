@@ -62,7 +62,7 @@ function mstate_preprocess_paragraph__form_placer(&$variables) {
  */
 function mstate_form_alter(&$form, FormStateInterface $form_state) {
   if($form['#id'] == 'site-search-form'){
-    $form['actions']['submit']['#suffix'] = '<span class="material-icons">search</span>';
+    $form['actions']['submit']['#suffix'] = '<span class="search-icon">Search</span>';
   }
 }
 

@@ -21,3 +21,9 @@ html > body:not(.is-front):not(.path-node) {
 	}
 }//system pages
 
+.is-front{
+  .layout-container{
+    background-image: url(../images/logos-badges/m-grey.svg);
+    background-repeat: no-repeat;
+  }
+}

@@ -1,0 +1,54 @@
+/* ==============
+	 QUICKLINKS
+================ */
+@use '../../../00-base/base' as *;
+
+#block-quicklinks-menu{
+  .quicklinks-trigger{
+    background: $yellow;
+    width: 150px;
+    height: 48px;
+    @include safeFlex(row,nowrap,center,center);
+    font-size: 13px;
+    line-height: 1.21;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: $black;
+    padding-right: 0;
+    border-radius: 0 8px 0 8px;
+    margin-top: 0;
+    &:hover,&:focus{
+      background: darken($yellow,5%);
+    }
+    &:after{
+      position: static;
+      width: 3rem;
+      height: 3rem;
+    }
+  }//end quicklinks trigger
+  .quicklinks-drawer{
+    @include showContent(500px,.6s);
+    position: absolute;
+    top: 100px;
+    right: 0;
+  }
+}//end quicklinks menu block
+
+/* MOBILE QUICKLINKS
+------------------ */
+ul.sf-menu.sf-accordion .mobile-quicklinks-container{
+  margin: 12px $siteMarginMobile;
+  border-top: 1px solid $borderRule;
+  padding: $spaceSm 0;
+  width: calc(100% - 4rem);
+  .mobile-quicklinks{
+    position: static;
+    li{
+      a{
+        padding: 1.25rem 0;
+        font-size: 2.25rem;
+        line-height: 1.33;
+      }
+    }
+  }//end mobile quicklinks
+}//end mobile quicklinks container

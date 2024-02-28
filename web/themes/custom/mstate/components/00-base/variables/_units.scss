@@ -8,6 +8,7 @@ $em-base: 8px;
 $smallTab: 520px;
 $tab: 800px;
 $desk: 984px;
+$menuBreak: 1160px;
 $contentStop: 1264px;
 $largeScreen: 1600px;
 $textMax: 784px;
@@ -15,19 +16,20 @@ $onlyTab: $tab $desk - 1px;
 $onlySmall: max-width $tab - 1px;
 $onlyPhone: max-width $smallTab - 1px;
 $onlyMobile: max-width $desk - 1px;
+$mobileMenu: max-width $menuBreak - 1px;
 
 
 /* SPACING & LAYOUT VARIABLES
 ----------------------------- */
-$spaceXxs: 1rem;
-$spaceXs : 2rem;
-$spaceSm : 3rem;
-$spaceMd : 4rem;
-$spaceLg : 6rem;
-$spaceXl : 9rem;
+$spaceXxs : 1rem;
+$spaceXs  : 2rem;
+$spaceSm  : 3rem;
+$spaceMd  : 4rem;
+$spaceLg  : 6rem;
+$spaceXl  : 9rem;
 
-$siteMarginMobile: 3rem;
-$siteMarginDesk: 6rem;
+$siteMarginMobile: 2rem;
+$siteMarginDesk: 5rem;
 
 $formElementSpace: $spaceMd;
 $inputBorderWidth: 1px;
@@ -56,6 +58,12 @@ $sectionGutter: 40px;
 
 @mixin desk {
 	@media screen and (min-width: $desk) {
+		@content;
+	}
+}
+
+@mixin menuBreak {
+	@media screen and (min-width: $menuBreak) {
 		@content;
 	}
 }
@@ -92,6 +100,12 @@ $sectionGutter: 40px;
 
 @mixin onlyPhone {
 	@media screen and (max-width: $smallTab) {
+		@content;
+	}
+}
+
+@mixin mobileMenu {
+	@media screen and (max-width: $mobileMenu) {
 		@content;
 	}
 }

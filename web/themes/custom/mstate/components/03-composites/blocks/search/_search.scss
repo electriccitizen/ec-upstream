@@ -6,11 +6,19 @@
 ///mixin placeholder
 %searchBlockPlaceholder {
 	$placeTint: 1;
-
-	&::-webkit-placeholder,
-  &::-moz-placeholder,
-  &:-ms-input-placeholder,
-  &::-webkit-input-placeholder {
+	&::-webkit-placeholder{
+		opacity: $placeTint;
+		color: $searchText;
+	}
+	&::-moz-placeholder{
+		opacity: $placeTint;
+		color: $searchText;
+	}
+	&:-ms-input-placeholder{
+		opacity: $placeTint;
+		color: $searchText;
+	}
+	&::-webkit-input-placeholder{
 		opacity: $placeTint;
 		color: $searchText;
 	}
@@ -19,10 +27,19 @@
 ///mixin - placeholderFocus
 %searchBlockPlaceholderFocus {
 	$placeFocusTint: .2;
-	&::-webkit-placeholder,
-  &::-moz-placeholder,
-  &:-ms-input-placeholder,
-  &::-webkit-input-placeholder {
+	&::-webkit-placeholder{
+		opacity: $placeFocusTint;
+		color: $searchText;
+	}
+	&::-moz-placeholder{
+		opacity: $placeFocusTint;
+		color: $searchText;
+	}
+	&:-ms-input-placeholder{
+		opacity: $placeFocusTint;
+		color: $searchText;
+	}
+	&::-webkit-input-placeholder{
 		opacity: $placeFocusTint;
 		color: $searchText;
 	}
@@ -30,31 +47,37 @@
 
 
 #site-search-form {
+  @include desk{
+    width: 352px;
+  }
 	//search box input
 	.js-form-item-site-search-api-fulltext {
-		padding: 1.5 0;
+		padding: 1.5rem 0;
 		width: 100%;
 		margin-bottom: 0;
-		max-width: 800px;
-		@include auto;
+    @include desk{
+      padding: 0;
+    }
 		label {
 			@include visuallyHidden;
 		}
 		input {
 			width: 100%;
-			background: transparent;
-			padding: 8px 4px;
+			background: $white;
+			padding: 12px 16px;
 			border: none;
 			color: $searchText;
 			border: 1px solid $borderRule;
 			border-radius: 0;
+      font-style: italic;
+      font-family: $system;
 			@extend %searchBlockPlaceholder;
+      @include desk{
+        padding: 14px 16px 10px;
+      }
 			//prevent yellow chrome autofill inset
 			&:-webkit-autofill {
 				-webkit-box-shadow: 0 0 0 1000px $borderRule inset;
-			}
-			@include tab {
-				font-size: 2.5rem;
 			}
 			&:hover {
 				box-shadow: inset 0 0 0 1px $borderRule;
@@ -70,15 +93,13 @@
 
 	//search submit button
 	.form-actions {
-		max-width: 800px;
-		@include auto;
 		position: relative;
 		.form-submit.button {
 			position: absolute;
-			top: -46px;
-			right: 5px;
-			height: 32px;
-			width: 32px;
+			top: -57px;
+			right: 8px;
+			height: 40px;
+			width: 40px;
 			background: transparent;
 			z-index: 2;
 			text-indent: -9000px;
@@ -86,32 +107,43 @@
 			padding: 0;
 			min-width: 0;
 			border: 0;
-			@include tab {
-				top: -48px;
-				right: 12px;
-			}
+      @include desk{
+        top: -44px;
+      }
 			&:focus,
 			&:hover {
 				border: 0;
 				box-shadow: none;
 				outline: none;
-				& + .material-icons {
-					color: $searchIconHover;
+				& + .search-icon {
+					background-image: url(../images/elements/search-hover.svg);
 				}
 			}
 		}//end form submit
-		.material-icons {
-			color: $searchIcon;
-			font-size: 3rem;
+	  .search-icon {
+      display: block;
+      width: 20px;
+      height: 20px;
+			text-indent: -9000px;
 			position: absolute;
-			top: -45px;
-			right: 8px;
+			top: -46px;
+			right: 16px;
 			cursor: pointer;
-			@include tab {
-				font-size: 3.5rem;
-				top: -48px;
-				right: 12px;
-			}
+      background-image: url(../images/elements/search.svg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      @include desk{
+        top: -35px;
+      }
 		}//end i
 	}//end form-actions
 }//end search block form
+
+/* MOBILE SEARCH
+-------------------- */
+.mobile-search-container{
+  ul.sf-menu.menu &{
+    padding: 10px $siteMarginMobile 24px;
+  }
+}//nd mobile search

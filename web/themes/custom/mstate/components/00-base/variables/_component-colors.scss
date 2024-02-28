@@ -25,7 +25,7 @@ $adminTransGrey : rgba(92,96,98,.92);
 ---------------------- */
 $baseText          : $black;
 $link              : $blue;
-$activeLink        : $navy;
+$activeLink        : $darkBlue;
 $hoverLink         : $green;
 $breadLink         : $green;
 $breadLinkHover    : $blue;
@@ -47,7 +47,7 @@ $resetBack         : $lightBlue;
 $resetText         : $white;
 $resetBackHover    : $lightGrey;
 $resetTextHover    : $black;
-$cautionBack       : $navy;
+$cautionBack       : $darkBlue;
 $cautionText       : $white;
 $cautionBackHover  : $lightGrey;
 $cautionTextHover  : $black;
@@ -122,23 +122,23 @@ $oddRowText          : $baseText;
 /* SUPERFISH
 ---------------------- */
 //desktop
-$sfTopLink            : $navy;
-$sfTopLinkHover       : $black;
+$sfTopLink            : $darkBlue;
+$sfTopLinkHover       : $link;
 $sfTopBackHover       : $siteBack;
 $sfTopActive          : $link;
 $sfTopActiveHover     : $lightBlue;
-$sfChildLink          : $link;
-$sfChildLinkHover     : $hoverLink;
-$sfChildActive        : $navy;
-$sfChildActiveHover   : $hoverLink;
-$sfDropdown           : $lightGrey;
+$sfChildLink          : $darkBlue;
+$sfChildLinkHover     : $link;
+$sfChildActive        : $link;
+$sfChildActiveHover   : $darkBlue;
+$sfDropdown           : $siteBack;
 
 //mobile
 $sfMobileDrop            : $white;
-$sfMobileTop             : $navy;
+$sfMobileTop             : $darkBlue;
 $sfMobileTopExpanded     : $link;
-$sfMobileChild           : $link;
-$sfMobileChildActive     : $navy;
+$sfMobileChild           : $darkBlue;
+$sfMobileChildActive     : $link;
 
 /* PAGERS
 --------------------- */
@@ -163,7 +163,7 @@ $pagerLinkBackHover         : transparent;
 $accordHeader             : $baseText;
 $accordHeaderHover        : $white;
 $accordHeaderBorder       : $lightBlue;
-$accordHeaderBorderHover  : $navy;
+$accordHeaderBorderHover  : $darkBlue;
 $accordHeaderBack         : $siteBack;
 $accordHeaderBackHover    : $lightGrey;
 
@@ -178,5 +178,5 @@ $messageErrorBorder   : $adminFuchsia;
 
 /* EMBEDDED DOC ICONS
 ------------------- */
-$fileIcon : $navy;
+$fileIcon : $darkBlue;
 
