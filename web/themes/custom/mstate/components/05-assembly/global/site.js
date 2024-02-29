@@ -36,7 +36,26 @@ function mobileMenuInsert() {
 	}
 }//end mobile menu function
 
-
+Drupal.behaviors.quickLinks = {
+  attach: function (context, settings) {
+    once('quicklinks', '.quicklinks-trigger', context).forEach(quicklinks => {
+      quicklinks.addEventListener('click', function (e) {
+		    e.preventDefault();
+		    if (!this.classList.contains('active-drawer')) {
+					this.nextElementSibling.setAttribute('aria-hidden', 'false');
+					this.nextElementSibling.classList.add('show-content');
+					this.classList.add('active-drawer');
+					this.setAttribute('aria-expanded', 'true');
+		    } else {
+					this.nextElementSibling.setAttribute('aria-hidden', 'true');
+					this.nextElementSibling.classList.remove('show-content');
+					this.classList.remove('active-drawer');
+					this.setAttribute('aria-expanded', 'false');
+		    }
+			});//end trigger click
+    });//end once quicklinks
+  }
+};
 
 /* BACK TO TOP
 ------------------ */

@@ -16,7 +16,7 @@
     padding: 58px $siteMarginDesk 20px;
   }
 	& > div {
-		max-width: $contentStop;
+		max-width: $ultraScreen - 80px;
 		@include auto;
 		@include safeFlex(row,wrap,justify,center);
 		position: relative;

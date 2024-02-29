@@ -22,9 +22,8 @@
 {% extends 'menu--main.html.twig' %}
 
 {% block menuWhole %}
-  {{ attach_library('mstate/drawers') }}
-  <a class="quicklinks-trigger drawer-toggle">Quick Links</a>
-  <div class="quicklinks-drawer">
-  {{ parent() }}
+  <a href="#" class="quicklinks-trigger drawer-toggle">Quick Links</a>
+  <div class="quicklinks-drawer drawer-content">
+    {{ parent() }}
   </div>
 {% endblock %}

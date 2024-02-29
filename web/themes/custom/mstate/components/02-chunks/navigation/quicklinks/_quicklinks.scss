@@ -19,6 +19,10 @@
     margin-top: 0;
     &:hover,&:focus{
       background: darken($yellow,5%);
+      text-decoration: none;
+      &:after{
+        color: $black;
+      }
     }
     &:after{
       position: static;
@@ -29,9 +33,23 @@
   .quicklinks-drawer{
     @include showContent(500px,.6s);
     position: absolute;
-    top: 100px;
+    top: 100%;
     right: 0;
-  }
+    z-index: 502;
+    & > ul{
+      @include listReset;
+      background: $white;
+      padding: 2rem 2rem;
+      width: 200px;
+      boder-bottom: 1px solid $borderRule;
+      li{
+        padding: .75rem 0;
+        a{
+          font-size: 2.25rem;
+        }
+      }
+    }
+  }//end quicklinks drawer
 }//end quicklinks menu block
 
 /* MOBILE QUICKLINKS
