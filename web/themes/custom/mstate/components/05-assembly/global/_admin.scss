@@ -60,7 +60,8 @@
 /* ADMIN NODE EDIT TABS
 ----------------- */
 .block-local-tasks-block{
-	max-width: $contentStop;
+	max-width: $ultraScreen;
+  background: $siteBack;
 	padding: $spaceMd 0 $spaceSm;
 	position: relative;
 	@include auto;

@@ -53,7 +53,7 @@
 	@include menuBreak {
     display: block;
 		width: 352px;
-    position: absolute;
+    position: absolute !important;
     top: -35px;
     right: 166px;
 	}
@@ -65,7 +65,7 @@
 /* QUICKLINKS
 ----------------- */
 .block-quicklinks-menu{
-  position: absolute;
+  position: absolute !important;
   top: -35px;
   right: 0;
   display: none;
@@ -91,7 +91,7 @@
 	}
 	@include menuBreak {
 		width: calc(100% - 250px);
-		position: absolute;
+		position: absolute !important;
 		bottom: -20px;
 		right: -5px;
 	}//end menubreak
