@@ -36,7 +36,7 @@ featherlight:
 fonts:
   css:
     theme:
-      https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Crimson+Pro:wght@800&family=Inter:ital&display=swap: { type: external, preprocess: false }
+      https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Crimson+Pro:wght@800&family=Inter:slnt@-10&display=swap: { type: external, preprocess: false }
 forms:
   version: 1.0
   js:

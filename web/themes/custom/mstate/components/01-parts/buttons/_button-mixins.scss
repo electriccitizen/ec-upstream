@@ -31,23 +31,24 @@
 ///mixin - button
 @mixin button{
 	background-color: $buttonBack;
-	border: 1px solid $buttonBack;
+	border: none;
 	color: $buttonText;
-	line-height: 1.15;
+	line-height: 1.25;
 	padding: $buttonPadding;
 	display: inline-block;
 	vertical-align: top;
 	text-decoration: none;
 	text-align: center;
 	text-transform: uppercase;
-	font-family: $header;
+	font-family: $bodyFont;
 	font-weight: $heavy;
 	font-size: $button;
 	margin-bottom: $spaceMd;
+  letter-spacing: .005em;
+  border-radius: 0 16px 0 16px;
 	&:hover,&:focus {
 		color: $buttonTextHover;
 		background-color: $buttonBackHover;
-		border-color: $buttonBackHover;
 		@include transAll(.3s);
 		text-decoration: none;
 		outline: 0;
@@ -55,7 +56,6 @@
 	&:active{
 		color: $buttonTextActive;
 		background-color: $buttonBackActive;
-		border-color: $buttonBackActive;
 	}
 	.text-with-summary &,.text-long &{
 		& + .ec-button,& + .ec-button-outline{

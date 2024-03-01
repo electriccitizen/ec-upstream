@@ -33,8 +33,8 @@
     {% set pluginClass = 'block-' ~ plugin_id|clean_class %}
   {% endif %}
 {% endif %}
-{% if content['#block_content'].bundle %}
-  {% set bundleClass = 'block-' ~ content['#block_content'].bundle|clean_class %}
+{% if content['#block_content'].type %}
+  {% set bundleClass = 'block-' ~ content['#block_content'].type.0.target_id|clean_class %}
 {% endif %}
 {% if content['#block_content'].info.0.value %}
   {% set titleClass = 'block-' ~ content['#block_content'].info.0.value|clean_class %}

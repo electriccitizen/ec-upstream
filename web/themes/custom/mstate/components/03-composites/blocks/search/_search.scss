@@ -69,8 +69,8 @@
 			color: $searchText;
 			border: 1px solid $borderRule;
 			border-radius: 0;
-      font-style: italic;
       font-family: $system;
+      font-variation-settings: "slnt" -10;
 			@extend %searchBlockPlaceholder;
       @include desk{
         padding: 14px 16px 10px;

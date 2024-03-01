@@ -6,14 +6,22 @@
 
 .prefooter-one-wrapper{
   background: $prefooterOneBack;
-}
+  .paragraph--type--call-to-action{
+    padding-bottom: 140px;
+  }
+  .block-cta{
+    position: relative;
+    z-index: 3;
+    margin: -82px 16px -62px;
+  }
+}//end prefooter-one wrapper
 
 .prefooter-two-wrapper{
 	background: $prefooterTwoBack;
 	color: $prefooterTwoText;
 	.prefooter-two-inner{
 		min-height: 293px;
-		padding: 32px $siteMarginMobile;
+		padding: 130px $siteMarginMobile 40px;
 		max-width: $contentStop + 40px;
 		@include auto;
 		position: relative;

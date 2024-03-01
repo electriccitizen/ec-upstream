@@ -1,0 +1,66 @@
+/* =============
+  CTA
+================ */
+@use '../../../00-base/base' as *;
+@use '../../../01-parts/buttons/button-mixins' as *;
+
+.paragraph--type--call-to-action{
+  padding: 40px $siteMarginMobile;
+  position: relative;
+  .widget-title{
+    @include centerBlockTitle;
+    color: $white;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+    &:after{
+      background: $yellow;
+    }
+  }
+  .field-links{
+    @include safeFlex(row,wrap,center,center);
+    position: relative;
+    z-index: 1;
+    a{
+      @include button;
+      padding-right: 48px;
+      position: relative;
+      width: 256px;
+      margin: 0 1rem 1rem;
+      &:after{
+        content: '';
+        display: block;
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: calc(50% - 6px);
+        right: 28px;
+        @include textLinkArrow;
+      }
+    }//end a
+  }//end field links
+  article{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .field-media-image{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+      @include overlay(rgba($lightBlue,.9));
+      img{
+        width: 100%;
+        height: 100%; 
+        filter: grayscale(100%);
+        position: relative;
+        z-index: -1;
+        object-fit: cover;
+      }
+    }//end field media image
+  }//end article
+}//end paragraph-block-placer
+

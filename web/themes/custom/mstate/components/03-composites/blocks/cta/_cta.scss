@@ -1,0 +1,59 @@
+/* =================
+   CTA BLOCK
+=================== */
+@use '../../../00-base/base' as *;
+@use '../../../01-parts/buttons/button-mixins' as *;
+
+.block-cta{
+	background: $yellow;
+  border-radius: 0 24px 0 24px;
+	padding: 40px 32px;
+  h2.block-title{
+    @include heading3;
+    color: $darkBlue;
+    text-align: center;
+    &:after{
+      content: none;
+    }
+  }//end h2 block title
+  .field-links{
+    @include safeFlex(row,wrap,center,center);
+    margin: 0 auto -1rem;
+    max-width: 250px;
+    div{
+      &:nth-child(odd){
+        a{
+          background-color: $darkBlue;
+          color: $white;
+          &:hover,&:focus{
+            background-color: $buttonBackHover;
+            color: $buttonTextHover;
+          }
+          &:active{
+            background-color: $buttonBackActive;
+            color: $buttonTextActive;
+          }
+        }//end a
+      }//end odd button divs
+      &:nth-child(even){
+        a{
+          background-color: $lightBlue;
+          color: $white;
+          &:hover,&:focus{
+            background-color: $buttonBackHover;
+            color: $buttonTextHover;
+          }
+          &:active{
+            background-color: $buttonBackActive;
+            color: $buttonTextActive;
+          }
+        }//end a
+      }
+      a{
+        @include button;
+        width: 224px;
+        margin: 0 1rem 1rem;
+      }
+    }//end div
+  }//end field links
+}//end cta block
