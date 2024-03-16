@@ -16,6 +16,10 @@ accordion:
   version: 1.0
   js:
     components/03-composites/paragraphs/accordions/accordions.js: {}
+call-to-action:
+  version: 1.0
+  js:
+    components/03-composites/paragraphs/call-to-action/call-to-action.js: {}
 debounce:
   version: 1.0
   js:
