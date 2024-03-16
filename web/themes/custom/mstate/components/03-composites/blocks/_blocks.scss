@@ -2,8 +2,6 @@
 	BLOCKS INDEX
 =================== */
 
-/* ADD SUB BLOCKS
-------------------- */
 @forward 'branding/branding';
 @forward 'cta/cta';
 @forward 'search/search';
@@ -12,14 +10,49 @@
 
 @use '../../00-base/base' as *;
 
-/* MISC BLOCKS
--------------- */
-.block-footer-menu{
-	
+//footer get in touch
+.block-9{
+  .mstate-logo-white{
+    margin-bottom: $spaceXs;
+  }
+  .body{
+    margin-bottom: $spaceSm;
+  }
+  //social links
+  .field-platforms{
+    .platform-links{
+      li{
+        margin-bottom: 0;
+      }
+      a{
+        display: block;
+        &:hover,&:focus{
+          @include animation('breathe .75s 1');
+          .cls-1{
+            fill: $grey;
+          }
+        }
+        svg{
+          width: 48px;
+          height: 48px;
+          .cls-1{
+            fill: $prefooterTwoLink;
+          }
+          path{
+            fill: $prefooterTwoBack;
+          }
+        }
+      }//end a
+    }//end platform links
+  }//end field platforms
+}//end block 9
+
+.block-campuses-menu{
 	ul:not(.contextual-links){
 		@include listReset;
 		li{
 			position: relative;
+      margin-bottom: $spaceXxs;
 			a{
 				display: block;
 				color: $prefooterTwoLink;
@@ -32,3 +65,27 @@
 	}//end ul
 }//end footer-menu
 
+.block-audience-menu{
+  @extend .block-campuses-menu;
+}
+
+.block-about-m-state-menu{
+  @extend .block-campuses-menu;
+}
+
+.block-ancillary-menu{
+  @extend .block-campuses-menu;
+}
+
+//footer badge block
+.block-4{
+  margin-bottom: $spaceXxs;
+  .mstate-badge-stacked{
+    margin-bottom: 1.5rem;
+  }
+  p{
+    &:not(:last-child){
+      margin-bottom: 1.5rem;
+    }
+  }
+}//end clobk 4

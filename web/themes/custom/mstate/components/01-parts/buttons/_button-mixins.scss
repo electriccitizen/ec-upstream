@@ -52,6 +52,7 @@
 		@include transAll(.3s);
 		text-decoration: none;
 		outline: 0;
+    @include animation('breathe .75s 1');
 	}
 	&:active{
 		color: $buttonTextActive;
