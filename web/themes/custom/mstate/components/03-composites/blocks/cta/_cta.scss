@@ -8,10 +8,23 @@
 	background: $yellow;
   border-radius: 0 24px 0 24px;
 	padding: 40px 32px;
+  @media screen and (min-width: 1136px){
+    @include safeFlex(row,nowrap,center,center);
+    max-width: 1104px;
+    @include auto;
+    padding: 50px 48px;
+  }
   h2.block-title{
     @include heading3;
     color: $darkBlue;
     text-align: center;
+    @include auto;
+    @media screen and (min-width: 1136px){
+      margin: 0;
+      flex: 1 1 384px;
+      padding-right: 32px;
+      padding-bottom: 0;
+    }
     &:after{
       content: none;
     }
@@ -20,6 +33,9 @@
     @include safeFlex(row,wrap,center,center);
     margin: 0 auto -1rem;
     max-width: 250px;
+    @include largeTab{
+      max-width: 100%;
+    }
     div{
       &:nth-child(odd){
         a{
@@ -53,6 +69,10 @@
         @include button;
         width: 224px;
         margin: 0 1rem 1rem;
+        @media screen and (min-width: 1136px){
+          width: 200px;
+          margin: 0 .5rem;
+        }
       }
     }//end div
   }//end field links

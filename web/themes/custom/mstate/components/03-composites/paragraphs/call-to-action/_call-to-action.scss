@@ -7,10 +7,14 @@
 .paragraph--type--call-to-action{
   padding: 40px $siteMarginMobile;
   position: relative;
+  @include largeTab{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
   .widget-title{
     @include centerBlockTitle;
     color: $white;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     position: relative;
     z-index: 1;
     &:after{

@@ -7,6 +7,7 @@ $em-base: 8px;
 ------------------------ */
 $smallTab: 520px;
 $tab: 800px;
+$largeTab: 876px;
 $desk: 984px;
 $menuBreak: 1160px;
 $contentStop: 1264px;
@@ -30,7 +31,7 @@ $spaceLg  : 6rem;
 $spaceXl  : 9rem;
 
 $siteMarginMobile: 2rem;
-$siteMarginDesk: 5rem;
+$siteMarginDesk: 10rem;
 
 $formElementSpace: $spaceMd;
 $inputBorderWidth: 1px;
@@ -53,6 +54,12 @@ $sectionGutter: 40px;
 
 @mixin tab {
 	@media screen and (min-width: $tab) {
+		@content;
+	}
+}
+
+@mixin largeTab {
+	@media screen and (min-width: $largeTab) {
 		@content;
 	}
 }

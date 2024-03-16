@@ -12,8 +12,14 @@
 
 //footer get in touch
 .block-9{
+  @include largeTab{
+    width: 34%;
+  }
   .mstate-logo-white{
     margin-bottom: $spaceXs;
+    @include largeTab{
+      margin-bottom: 2.5rem;
+    }
   }
   .body{
     margin-bottom: $spaceSm;
@@ -48,6 +54,9 @@
 }//end block 9
 
 .block-campuses-menu{
+  @include largeTab{
+    width: 22%;
+  }
 	ul:not(.contextual-links){
 		@include listReset;
 		li{
@@ -75,6 +84,15 @@
 
 .block-ancillary-menu{
   @extend .block-campuses-menu;
+  @include largeTab{
+    width: 100%;
+  }
+  ul{
+    @include largeTab{
+      @include safeFlex(row,nowrap,start,start);
+      @include bleed(padding,12px);
+    }
+  }
 }
 
 //footer badge block
