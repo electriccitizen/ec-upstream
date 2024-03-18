@@ -94,6 +94,9 @@ settings:
       video:
         weight: 47
         enabled: false
+      view_placer:
+        weight: 26
+        enabled: false
       wysiwyg:
         weight: 48
         enabled: false

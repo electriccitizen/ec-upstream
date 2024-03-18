@@ -77,3 +77,79 @@
     }//end div
   }//end field links
 }//end cta block
+
+/* HOME PAGE INTRO CTA BLOCK
+------------------------- */
+.is-front #node-section-2 .block-cta{
+  background-color: $darkBlue;
+  margin-top: -136px;
+  margin-bottom: 200px;
+  padding-bottom: 80px;
+  position: relative;
+  color: $white;
+  background-image: url('../images/logos-badges/m-navy.svg');
+  background-repeat: no-repeat;
+  background-size: 250px;
+  background-position: top -10px right -95px;
+  text-align: center;;
+  @include largeTab{
+    margin-top: -108px;
+    margin-bottom: 80px;
+    background-position: top -5px right -30px;
+  }
+  @include desk{
+    padding-top: 60px;
+    background-size: 392px;
+    background-position: top -15px right -50px;
+  }
+  @media screen and (min-width: 1136px){
+    display: block;
+    margin-top: -140px;
+    background-size: 420px;
+    background-position: top -15px right -40px;
+  }
+  .block-title{
+    margin: 0 auto $spaceSm;
+    max-width: 540px;
+    @include contentStop{
+      max-width: 734px;
+      font-size: 11.5rem;
+      line-height: .934;
+    }
+  }
+  .body{
+    @include auto;
+    max-width: 600px;
+  }
+  .field-links{
+    position: absolute;
+    top: calc(100% - 26px); 
+    left: 50%;
+    @include translateX(-50%);
+    @include largeTab{
+      width: 100%;
+    }
+    div{
+      &:nth-child(odd){
+        a{
+          background-color: $brightGreen;
+          color: $black;
+          &:hover,&:focus{
+            background-color: $buttonBackHover;
+            color: $buttonTextHover;
+          }
+          &:active{
+            background-color: $buttonBackActive;
+            color: $buttonTextActive;
+          }
+        }//end a
+      }//end odd button divs
+      a{
+        @include desk{
+          padding-top: 2.4rem;
+          padding-bottoM: 2.1rem;
+        }
+      }
+    }//end div
+  }//end field links
+}//end is front section 2 cta

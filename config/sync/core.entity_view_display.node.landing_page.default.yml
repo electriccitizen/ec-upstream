@@ -157,8 +157,6 @@ third_party_settings:
     entity_view_mode_restriction:
       allowed_layouts:
         - layout_onecol
-        - two_column_sidebar_left
-        - two_column_sidebar_right
       denylisted_blocks: {  }
       allowlisted_blocks:
         'Site Search':
@@ -166,8 +164,6 @@ third_party_settings:
       restricted_categories:
         - '@entity'
         - 'Chaos Tools'
-        - 'Custom block types'
-        - 'Custom blocks'
         - Devel
         - Forms
         - Geolocation

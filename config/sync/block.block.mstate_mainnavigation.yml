@@ -20,7 +20,7 @@ settings:
   label_display: '0'
   provider: superfish
   level: 1
-  depth: 3
+  depth: 2
   expand_all_items: false
   menu_type: horizontal
   style: none
@@ -32,13 +32,13 @@ settings:
   supposition: 1
   hoverintent: 1
   touch: 3
-  touchbh: 0
+  touchbh: 2
   touchbp: 768
   touchua: 0
   touchual: ''
   touchuam: 0
   small: 2
-  smallbp: 984
+  smallbp: 1160
   smallua: 0
   smallual: ''
   smalluam: 0
@@ -52,7 +52,7 @@ settings:
   smallicm: ''
   smallich: ''
   smallamt: ''
-  smallabt: 1
+  smallabt: 2
   supersubs: 0
   minwidth: 12
   maxwidth: 27

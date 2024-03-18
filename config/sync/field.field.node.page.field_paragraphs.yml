@@ -6,17 +6,19 @@ dependencies:
     - field.storage.node.field_paragraphs
     - node.type.page
     - paragraphs.paragraphs_type.accordions
+    - paragraphs.paragraphs_type.content_placer
     - paragraphs.paragraphs_type.custom_embed
     - paragraphs.paragraphs_type.form_placer
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.horizontal_rule
     - paragraphs.paragraphs_type.image
-    - paragraphs.paragraphs_type.layout_section_single
+    - paragraphs.paragraphs_type.layout_section
     - paragraphs.paragraphs_type.links_files
     - paragraphs.paragraphs_type.map
     - paragraphs.paragraphs_type.quote
-    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.stats
     - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.wysiwyg
   module:
     - entity_reference_revisions
 _core:
@@ -36,6 +38,7 @@ settings:
   handler_settings:
     target_bundles:
       accordions: accordions
+      content_placer: content_placer
       custom_embed: custom_embed
       form_placer: form_placer
       gallery: gallery
@@ -44,63 +47,85 @@ settings:
       links_files: links_files
       map: map
       quote: quote
-      text: text
+      stats: stats
+      wysiwyg: wysiwyg
       video: video
-      layout_section_single: layout_section_single
+      layout_section: layout_section
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
-        weight: -38
+        weight: -50
         enabled: false
       accordions:
-        weight: -39
+        weight: -51
         enabled: true
       block_placer:
-        weight: -36
+        weight: -47
+        enabled: false
+      call_to_action:
+        weight: -32
         enabled: false
       content_placer:
-        weight: 21
-        enabled: false
+        weight: -49
+        enabled: true
       custom_embed:
-        weight: -37
+        weight: -48
         enabled: true
       form_placer:
-        weight: -33
+        weight: -46
         enabled: true
       gallery:
-        weight: -31
+        weight: -45
         enabled: true
+      gallery_item:
+        weight: -29
+        enabled: false
       horizontal_rule:
-        weight: -30
+        weight: -44
         enabled: true
       image:
-        weight: -29
+        weight: -43
         enabled: true
       layout_section:
-        weight: 29
-        enabled: false
-      layout_section_single:
-        weight: 29
+        weight: -34
         enabled: true
+      layout_section_single:
+        weight: -33
+        enabled: false
       links_files:
-        weight: -27
+        weight: -42
         enabled: true
       map:
-        weight: -26
+        weight: -41
         enabled: true
       portal:
-        weight: 33
+        weight: -31
         enabled: false
       portals:
-        weight: 34
+        weight: -30
         enabled: false
       quote:
-        weight: -24
+        weight: -40
+        enabled: true
+      stat_item:
+        weight: -28
+        enabled: false
+      stats:
+        weight: -39
         enabled: true
       text:
-        weight: -23
-        enabled: true
+        weight: -38
+        enabled: false
+      text_image:
+        weight: -27
+        enabled: false
       video:
-        weight: -22
+        weight: -36
+        enabled: true
+      view_placer:
+        weight: -35
+        enabled: false
+      wysiwyg:
+        weight: -37
         enabled: true
 field_type: entity_reference_revisions

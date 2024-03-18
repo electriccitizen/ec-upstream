@@ -15,6 +15,7 @@ dependencies:
     - paragraphs.paragraphs_type.stats
     - paragraphs.paragraphs_type.text_image
     - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.view_placer
     - paragraphs.paragraphs_type.wysiwyg
   module:
     - entity_reference_revisions
@@ -44,79 +45,83 @@ settings:
       stats: stats
       text_image: text_image
       video: video
+      view_placer: view_placer
       wysiwyg: wysiwyg
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
-        weight: -49
+        weight: -51
         enabled: false
       accordions:
-        weight: -48
+        weight: -50
         enabled: true
       block_placer:
-        weight: -47
+        weight: -49
         enabled: true
       call_to_action:
-        weight: -46
+        weight: -48
         enabled: true
       content_placer:
-        weight: -45
+        weight: -47
         enabled: true
       custom_embed:
-        weight: -44
+        weight: -46
         enabled: false
       form_placer:
-        weight: -43
+        weight: -45
         enabled: false
       gallery:
-        weight: -42
+        weight: -44
         enabled: false
       gallery_item:
-        weight: -28
+        weight: -29
         enabled: false
       horizontal_rule:
-        weight: -41
+        weight: -43
         enabled: false
       image:
-        weight: -40
+        weight: -42
         enabled: true
       layout_section:
-        weight: -39
+        weight: -41
         enabled: true
       layout_section_single:
-        weight: -27
+        weight: -28
         enabled: false
       links_files:
-        weight: -38
+        weight: -40
         enabled: false
       map:
-        weight: -37
+        weight: -39
         enabled: false
       portal:
-        weight: -36
+        weight: -38
         enabled: false
       portals:
-        weight: -35
+        weight: -37
         enabled: true
       quote:
-        weight: -34
+        weight: -36
         enabled: false
       stat_item:
-        weight: -26
+        weight: -27
         enabled: false
       stats:
-        weight: -32
+        weight: -34
         enabled: true
       text:
-        weight: -33
+        weight: -35
         enabled: false
       text_image:
-        weight: -31
+        weight: -33
         enabled: true
       video:
-        weight: -30
+        weight: -32
+        enabled: true
+      view_placer:
+        weight: -31
         enabled: true
       wysiwyg:
-        weight: -29
+        weight: -30
         enabled: true
 field_type: entity_reference_revisions

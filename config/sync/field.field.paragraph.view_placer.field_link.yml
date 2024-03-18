@@ -1,17 +1,17 @@
-uuid: ef034794-fd1f-4168-85d5-fe6f9cff5acf
+uuid: ec7254c0-8f15-466a-8e80-408b94ee3b7c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_button
-    - paragraphs.paragraphs_type.accordion_item
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.view_placer
   module:
     - link
-id: paragraph.accordion_item.field_button
-field_name: field_button
+id: paragraph.view_placer.field_link
+field_name: field_link
 entity_type: paragraph
-bundle: accordion_item
-label: Button
+bundle: view_placer
+label: 'More Link'
 description: ''
 required: false
 translatable: false

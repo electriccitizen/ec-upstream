@@ -12,6 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.portals
     - paragraphs.paragraphs_type.stats
     - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.wysiwyg
   module:
     - entity_reference_revisions
 id: node.program.field_paragraphs
@@ -35,6 +36,7 @@ settings:
       portals: portals
       stats: stats
       video: video
+      wysiwyg: wysiwyg
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
@@ -108,5 +110,5 @@ settings:
         enabled: true
       wysiwyg:
         weight: -29
-        enabled: false
+        enabled: true
 field_type: entity_reference_revisions

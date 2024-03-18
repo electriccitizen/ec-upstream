@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.accordions.field_accordion_items
+    - field.field.paragraph.accordions.field_numbers
     - field.field.paragraph.accordions.field_widget_title
     - paragraphs.paragraphs_type.accordions
   module:
@@ -23,6 +24,16 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_numbers:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_widget_title:
     type: string
