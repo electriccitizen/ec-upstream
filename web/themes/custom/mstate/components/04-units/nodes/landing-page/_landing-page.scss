@@ -7,11 +7,27 @@
 .node-landing-page{
 	.block-field-image{
 		@include edgeToEdge;
+    @include animation('fadeIn 2s 1');
     @include ultraScreen{
       @include auto;
       max-width: $ultraScreen;
     }
 	}
+  .block-field.block-title{
+    background: $yellow;
+    border-top-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+    padding: 24px 32px;
+    text-align: center;
+    margin: -84px auto 60px;
+    position: relative;
+    z-index: 1;
+    max-width: 784px;
+    @include tab{
+      padding: 40px;
+      margin-top: -105px;
+    }
+  }
 	.block-field.block-body{
 		max-width: $textMax;
 		@include auto;

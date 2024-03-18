@@ -383,7 +383,10 @@
 	from{
 		opacity: 0;
 	}
-	50%{
+  40%{
+    opacity: 0;
+  }
+	70%{
 		opacity: .5;
 	}
 	100%{
