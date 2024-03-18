@@ -88,6 +88,12 @@ $sectionGutter: 40px;
 	}
 }
 
+@mixin ultraScreen {
+	@media screen and (min-width: $ultraScreen) {
+		@content;
+	}
+}
+
 @mixin onlyMobile {
 	@media screen and (max-width: $desk) {
 		@content;

@@ -7,6 +7,10 @@
 .node-landing-page{
 	.block-field-image{
 		@include edgeToEdge;
+    @include ultraScreen{
+      @include auto;
+      max-width: $ultraScreen;
+    }
 	}
 	.block-field.block-body{
 		max-width: $textMax;
