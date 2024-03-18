@@ -19,13 +19,19 @@
     border-bottom-left-radius: 24px;
     padding: 24px 32px;
     text-align: center;
-    margin: -84px auto 60px;
+    @include auto;
     position: relative;
     z-index: 1;
     max-width: 784px;
+    .has-main-image &{
+      margin-top: -84px;
+      margin-bottom: 60px;
+    }
     @include tab{
       padding: 40px;
-      margin-top: -105px;
+      .has-main-image &{
+        margin-top: -105px;
+      }
     }
   }
 	.block-field.block-body{

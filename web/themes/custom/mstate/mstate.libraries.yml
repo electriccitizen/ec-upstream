@@ -73,6 +73,10 @@ slick:
       components-addons/slick/slick-theme.css: {}
   js:
     components-addons/slick/slick.min.js: { minified: true }
+stats:
+  version: 1.0
+  js:
+    components/03-composites/paragraphs/stats/stats.js: {}
 table:
   version: 1.0
   css:

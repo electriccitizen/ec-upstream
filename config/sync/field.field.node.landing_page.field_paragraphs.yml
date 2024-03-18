@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.block_placer
     - paragraphs.paragraphs_type.call_to_action
     - paragraphs.paragraphs_type.content_placer
+    - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.layout_section
     - paragraphs.paragraphs_type.portals
@@ -39,6 +40,7 @@ settings:
       block_placer: block_placer
       call_to_action: call_to_action
       content_placer: content_placer
+      gallery: gallery
       image: image
       layout_section: layout_section
       portals: portals
@@ -72,7 +74,7 @@ settings:
         enabled: false
       gallery:
         weight: -44
-        enabled: false
+        enabled: true
       gallery_item:
         weight: -29
         enabled: false

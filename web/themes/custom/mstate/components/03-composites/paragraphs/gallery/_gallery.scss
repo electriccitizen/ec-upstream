@@ -32,19 +32,18 @@
 		}//end gallery-wrapper
 	}//end lightbox
 	.slider {
-		@include textConstrain;
+		@include desk{
+      @include auto;
+      max-width: 964px;
+      padding-left: 90px;
+      padding-right: 90px;
+    }
 		//slider container overrides layout padding on mobile
-		.field-image-multi {
-			@include edgeToEdge;
-			width: calc(100% + 40px);
-			@include tab {
-				@include edgeReset;
-				width: 100%;
-			}
-			img {
-				width: 100%;
-			}
-		}
+		.field-caption{
+      margin-top: $spaceXxs;
+      font-size: 2rem;
+      font-style: italic;
+    }
 	}//end slider
 }//end gallery paragraph
 

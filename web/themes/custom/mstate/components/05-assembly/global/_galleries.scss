@@ -4,43 +4,6 @@
 
 @use '../../00-base/base' as *;
 
-@mixin outsideSliderArrows($arrowSpace,$arrowColor,$arrowHover) {
-	padding-left: $arrowSpace;
-	padding-right: $arrowSpace;
-
-	// override arrow padding then there are not enough slick items to have slider / have buttons
-	.slick-list:only-child {
-		@include edgeToEdge;
-	}
-
-	.slick-arrow {
-
-		&.slick-prev {
-			left: 0;
-		
-			&:before {
-				border-right-color: $arrowColor;
-			}
-		
-			&:hover:before {
-				border-right-color: $arrowHover;
-			}
-		}
-		
-		&.slick-next {
-			right: 0;
-		
-			&:before {
-				border-left-color: $arrowColor;
-			}
-		
-			&:hover:before {
-				border-left-color: $arrowHover;
-			}
-		}
-	}
-}//end outside slider arrows
-
 /* FEATHERLIGHT
 ------------------- */
 .featherlight {
@@ -147,46 +110,51 @@
 
 	.slick-arrow {
 		z-index: 1;
-		height: 100%;
-		top: 0;
-		@include translate(0,0);
-		width: 15%;
-		min-width: 60px;
-		&:before {
-			content: '';
-			display: block;
-			position: absolute;
-			top: calc(50% - 10px);
-		}
-
+		height: 50px;
+    width: 50px;
+		top: 50%;
+    border-radius: 50%;
+    &:before{
+      content: none;
+    }
 		&.slick-prev {
-			left: 0;
-			&:before {
-				left: 20px;
-				@include materialIcon('arrow_back');
-			}
+			left: 10px;
+      background-image: url('../images/elements/arrow-circle-left-white.svg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
 			&:hover,
 			&:focus {
-				&:before {
-					border-right-color: $link;
-					@include transition(border-right-color, 0.3s, ease);
-				}
+        background-color: $darkBlue;
 			}
+      @include desk{
+        left: -90px;
+        background-image: url('../images/elements/arrow-circle-left.svg');
+        &:hover,
+			  &:focus {
+          background-color: rgba($lightBlue,.2);
+        }
+      }
 		}//end slick prev
 
 		&.slick-next {
-			right: 0;
-			&:before {
-				right: 20px;
-				@include materialIcon('arrow_forward');
-			}
+			right: 10px;
+      background-image: url('../images/elements/arrow-circle-right-white.svg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
 			&:hover,
-			&:focus {	
-				&:before {
-					border-left-color: $link;
-					@include transition(border-left-color, 0.3s, ease);
-				}
+			&:focus {
+        background-color: $darkBlue;
 			}
+      @include desk{
+        right: -90px;
+        background-image: url('../images/elements/arrow-circle-right.svg');
+        &:hover,
+			  &:focus {
+          background-color: rgba($lightBlue,.2);
+        }
+      }
 		}//end slick next
 	}//end slick arrow
 }//end slick-slider

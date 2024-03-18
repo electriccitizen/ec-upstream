@@ -89,6 +89,7 @@ $h6Sm: 2.75rem;
 	@include headerGlobals;
   line-height: 1.25;
 	font-size: $h2Sm;
+  color: $darkBlue;
 	@include desk{
 		font-size: $h2Md;
     line-height: 1.08;
@@ -127,7 +128,7 @@ $h6Sm: 2.75rem;
 @mixin blockTitle{
 	@include heading2;
 	max-width: $textMax;
-	margin-bottom: $spaceLg;
+	margin-bottom: $spaceMd;
   padding-bottom: 3rem;
   position: relative;
   &:after{

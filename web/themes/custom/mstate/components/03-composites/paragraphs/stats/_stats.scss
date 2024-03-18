@@ -1,0 +1,58 @@
+/* ===============
+   PORTALS WIDGET
+================= */
+
+@use '../../../00-base/base' as *;
+
+.paragraph--type--stats{
+  max-width: 1104px;
+  @include auto;
+  @include desk{
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+  .widget-title{
+    @include centerBlockTitle;
+  }
+	.field-stats{
+    @include onlyMobile{
+      margin-bottom: -$spaceSm;
+      @include safeFlex(row,wrap,center,stretch);
+      @include bleed(padding,32px);
+      & > div{
+        margin-bottom: $spaceSm;
+        max-width: 308px;
+        width: 100%;
+      }
+    }
+	}//end field stats
+  .slick-track{
+    display: flex !important;
+  }
+  .slick-slide{
+    height: inherit !important;
+  }
+}//end stats
+
+.paragraph--type--stat-item{
+  background: $lightBlue;
+  color: $white;
+  border-radius: 0 24px 0 24px;
+  padding: 24px 26px 40px;
+  @include safeFlex(column,nowrap,center,center);
+  text-align: center;
+  height: 100%;
+  @include desk{
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  .field-stat{
+    font-family: $header;
+    font-size: 92px;
+    line-height: 1;
+    margin-bottom: $spaceXxs;
+  }
+  .field-stat-text{
+
+  }
+}//end stat item
