@@ -63,12 +63,14 @@
   ----------------------- */
   Drupal.behaviors.previewLabel = {
     attach: function (context, settings) {
-    	$(once('isParaPreview', '.lp-builder .paragraph--view-mode--preview', context)).each(function(){
-    		var label = $(this).attr('data-type');
-    		if (typeof label !== 'undefined') {
-	    		$(this).prepend('<div class="para-preview-label">' + label.replace(/_/g, ' ') + ' widget</div>');
-	    	}
-    	});
+      once('isParaPreview', '.lp-builder .paragraph--view-mode--preview', context).forEach((element) => {
+        if (typeof element.dataset.type !== 'undefined') {
+          const label = document.createElement('div');
+          label.className = "para-preview-label";
+          label.innerHTML = element.dataset.type.replace(/_/g, ' ') + " widget";
+          element.prepend(label);
+        }
+      });
     }
   };
 
