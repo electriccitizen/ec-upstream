@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.bios.field_image
     - field.field.node.bios.field_last_name
     - field.field.node.bios.field_list_widget
+    - field.field.node.bios.field_meta_description
     - field.field.node.bios.field_metatags
     - field.field.node.bios.field_phone
     - field.field.node.bios.field_position
@@ -40,6 +41,21 @@ third_party_settings:
               provider: system
               context_mapping: {  }
             weight: 0
+            additional: {  }
+          1c1fab17-cc0b-4236-8b65-3aecdb67ca50:
+            uuid: 1c1fab17-cc0b-4236-8b65-3aecdb67ca50
+            region: content
+            configuration:
+              id: 'field_block:node:bios:field_meta_description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: basic_string
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -
@@ -214,6 +230,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 104
+    region: content
+  field_meta_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
     region: content
   field_phone:
     type: basic_string

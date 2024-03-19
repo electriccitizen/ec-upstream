@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.event.field_event_location
     - field.field.node.event.field_image
     - field.field.node.event.field_list_widget
+    - field.field.node.event.field_meta_description
     - field.field.node.event.field_metatags
     - node.type.event
   module:
@@ -41,6 +42,21 @@ third_party_settings:
               provider: system
               context_mapping: {  }
             weight: 0
+            additional: {  }
+          cec4ed87-c7f6-4ae9-b9c1-930df5dededd:
+            uuid: cec4ed87-c7f6-4ae9-b9c1-930df5dededd
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_meta_description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: basic_string
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -
@@ -475,6 +491,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_meta_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
     region: content
   links:
     settings: {  }
