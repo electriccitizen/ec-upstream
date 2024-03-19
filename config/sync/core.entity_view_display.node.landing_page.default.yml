@@ -13,7 +13,6 @@ dependencies:
   module:
     - entity_reference_revisions
     - layout_builder
-    - layout_builder_restrictions
     - layout_discovery
     - metatag
     - text
@@ -115,54 +114,6 @@ third_party_settings:
             additional: {  }
         third_party_settings: {  }
     is_enabled: true
-  layout_builder_restrictions:
-    entity_view_mode_restriction:
-      allowed_layouts:
-        - layout_onecol
-      denylisted_blocks: {  }
-      allowlisted_blocks:
-        'Site Search':
-          - 'views_block:site_search-site_search_block'
-      restricted_categories:
-        - '@entity'
-        - 'Chaos Tools'
-        - 'Custom block types'
-        - 'Custom blocks'
-        - Devel
-        - Forms
-        - Geolocation
-        - Help
-        - 'Inline blocks'
-        - Menus
-        - 'Responsive Preview'
-        - 'Social Share'
-        - Superfish
-        - System
-        - User
-        - Webform
-        - core
-      blacklisted_blocks: {  }
-      whitelisted_blocks: {  }
-      allowed_blocks:
-        AddToAny: {  }
-        'Chaos Tools': {  }
-        Content: {  }
-        Devel: {  }
-        Flippy: {  }
-        Forms: {  }
-        Help: {  }
-        'Inline blocks': {  }
-        Menus: {  }
-        'Site Search': {  }
-        Superfish: {  }
-        System:
-          - system_breadcrumb_block
-        User: {  }
-        'User fields': {  }
-        Webform:
-          - webform_block
-        core: {  }
-    allowed_block_categories: {  }
 _core:
   default_config_hash: JfbxBjB9__O1weDCyVcnK1CwAh5sXem9AUKWIFqNlk8
 id: node.landing_page.default

@@ -16,7 +16,6 @@ dependencies:
     - node.type.bios
   module:
     - layout_builder
-    - layout_builder_restrictions
     - layout_discovery
     - system
     - text
@@ -162,37 +161,6 @@ third_party_settings:
             weight: 1
             additional: {  }
         third_party_settings: {  }
-  layout_builder_restrictions:
-    allowed_block_categories: {  }
-    entity_view_mode_restriction:
-      allowed_layouts:
-        - layout_onecol
-      denylisted_blocks: {  }
-      allowlisted_blocks:
-        System:
-          - system_breadcrumb_block
-      restricted_categories:
-        - '@entity'
-        - 'Chaos Tools'
-        - 'Custom block types'
-        - 'Custom blocks'
-        - Devel
-        - Forms
-        - Geolocation
-        - Help
-        - 'Inline blocks'
-        - 'Lists (Views)'
-        - Menus
-        - 'Responsive Preview'
-        - 'Site Search'
-        - Superfish
-        - User
-        - Webform
-        - core
-      blacklisted_blocks: {  }
-      whitelisted_blocks:
-        System:
-          - system_breadcrumb_block
 _core:
   default_config_hash: 5B6kXAAmFMzavs5iFwC15pBNWviSgJjF6pIjT8MSlKI
 id: node.bios.default
