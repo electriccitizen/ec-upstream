@@ -50,7 +50,6 @@ dependencies:
   - inline_form_errors
   - jquery_ui_draggable
   - layout_builder
-  - layout_builder_restrictions
   - layout_discovery
   - layout_paragraphs
   - lazy
