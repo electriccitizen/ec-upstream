@@ -20,23 +20,27 @@ class SocialShare extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
+
+    // Set defaults. If $node is not set, this block is either improperly placed
+    // or is being previewed.
+    $data = [
+      'url' => 'example_url',
+      'title' => $this->t("Example Node Title"),
+      'base_url' => $GLOBALS['base_url'],
+    ];
+
     // Get the current node.
     $node = \Drupal::routeMatch()->getParameter('node');
-    if ($node instanceof NodeInterface) {
 
+    if ($node instanceof NodeInterface) {
       // Get the variables we need to pass to twig.
-      $base_url = $GLOBALS['base_url'];
-      $full_url = $node->toUrl()->toString();
-      $title = $node->getTitle();
+      $data['url'] = $node->toUrl()->toString();
+      $data['title'] = $node->getTitle();
     }
 
     return [
       '#theme' => 'social_share_block',
-      '#data' => [
-        'url' => $full_url,
-        'title' => $title,
-        'base_url' => $base_url,
-      ],
+      '#data' => $data,
     ];
   }
 
