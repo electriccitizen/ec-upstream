@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.news.field_category
     - field.field.node.news.field_image
     - field.field.node.news.field_list_widget
-    - field.field.node.news.field_meta_description
     - field.field.node.news.field_metatags
     - node.type.news
   module:
@@ -39,21 +38,6 @@ third_party_settings:
               provider: system
               context_mapping: {  }
             weight: 0
-            additional: {  }
-          1a31ed2e-09b7-4870-997d-1fb2accb8a87:
-            uuid: 1a31ed2e-09b7-4870-997d-1fb2accb8a87
-            region: content
-            configuration:
-              id: 'field_block:node:news:field_meta_description'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: basic_string
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-            weight: 1
             additional: {  }
         third_party_settings: {  }
       -
@@ -172,13 +156,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 101
-    region: content
-  field_meta_description:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 102
     region: content
   links:
     settings: {  }

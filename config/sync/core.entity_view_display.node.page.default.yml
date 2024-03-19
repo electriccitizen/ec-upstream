@@ -78,21 +78,6 @@ third_party_settings:
               context_mapping: {  }
             weight: 2
             additional: {  }
-          f8b76e4f-78db-438b-8663-ad351b84f067:
-            uuid: f8b76e4f-78db-438b-8663-ad351b84f067
-            region: content
-            configuration:
-              id: 'field_block:node:page:field_meta_description'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: basic_string
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-            weight: 4
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: two_column_sidebar_left

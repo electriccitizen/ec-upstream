@@ -42,21 +42,6 @@ third_party_settings:
               context_mapping: {  }
             weight: 0
             additional: {  }
-          1c1fab17-cc0b-4236-8b65-3aecdb67ca50:
-            uuid: 1c1fab17-cc0b-4236-8b65-3aecdb67ca50
-            region: content
-            configuration:
-              id: 'field_block:node:bios:field_meta_description'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: basic_string
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_onecol
