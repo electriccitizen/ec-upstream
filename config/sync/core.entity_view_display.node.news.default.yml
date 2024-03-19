@@ -166,5 +166,6 @@ hidden:
   body: true
   field_category: true
   field_image: true
+  field_meta_description: true
   field_metatags: true
   search_api_excerpt: true
