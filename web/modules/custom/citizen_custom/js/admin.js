@@ -79,39 +79,39 @@
     }
   };
 
-})(Drupal, once);
-
-/**
- * Generates a machine name based on the selected option in a select element.
- * @param {HTMLSelectElement} selectTarget
- * @returns {string}
- */
-function getTypeString(selectTarget) {
-  let returnString = null;
-  if (selectTarget?.options && selectTarget.options[selectTarget.selectedIndex]) {
-    returnString = selectTarget.options[selectTarget.selectedIndex].text.toLowerCase().replace(/_/g, '-');
-  }
-  return returnString;
-}
-
-/**
- * Hides all Nodes meeting hideSelector within a context, except for keepNode.
- * @param {string} hideSelector: a jQuery-style selector of HTMLNodes to hide.
- * @param {HTMLElement} keepNode: a Node that should not be hidden.
- * @param {Document} context: a DOM Node that the query is restricted to.
- * @param {boolean} unset: set all select boxes to the "_none" option as well.
- **/
-function hideAllBut(hideSelector, keepNode, context, unset = false) {
-  context.querySelectorAll(hideSelector).forEach(hideNode => {
-    if (hideNode !== keepNode) {
-      // Reset selected options to the default value, if unset is selected.
-      if (unset) {
-        const select = hideNode.querySelector("select");
-        if (select) {
-          select.selectedIndex = "_none";
-        }
-      }
-      hideNode.style.display = 'none';
+  /**
+   * Generates a machine name based on the selected option in a select element.
+   * @param {HTMLSelectElement} selectTarget
+   * @returns {string}
+   */
+  function getTypeString(selectTarget) {
+    let returnString = null;
+    if (selectTarget?.options && selectTarget.options[selectTarget.selectedIndex]) {
+      returnString = selectTarget.options[selectTarget.selectedIndex].text.toLowerCase().replace(/_/g, '-');
     }
-  });
-}
+    return returnString;
+  }
+
+  /**
+   * Hides all Nodes meeting hideSelector within a context, except for keepNode.
+   * @param {string} hideSelector: a jQuery-style selector of HTMLNodes to hide.
+   * @param {HTMLElement} keepNode: a Node that should not be hidden.
+   * @param {Document} context: a DOM Node that the query is restricted to.
+   * @param {boolean} unset: set all select boxes to the "_none" option as well.
+   **/
+  function hideAllBut(hideSelector, keepNode, context, unset = false) {
+    context.querySelectorAll(hideSelector).forEach(hideNode => {
+      if (hideNode !== keepNode) {
+        // Reset selected options to the default value, if unset is selected.
+        if (unset) {
+          const select = hideNode.querySelector("select");
+          if (select) {
+            select.selectedIndex = "_none";
+          }
+        }
+        hideNode.style.display = 'none';
+      }
+    });
+  }
+
+})(Drupal, once);
