@@ -4,9 +4,11 @@
     attach: function (context) {
       once('section-menu', '#block-section-menu', context).forEach(sectionMenu => {
         const sectionMenuWrapper = sectionMenu.querySelector('#section-menu-wrapper');
-        //mobile toggle
+
         sectionMenu.querySelector('.section-menu-toggle').addEventListener('click', event => {
           event.preventDefault();
+          // Only allow the menu to be expanded or collapsed when at mobile
+          // sizes.
           if (window.outerWidth < 980) {
             if (event.target.classList.contains('active-nav')) {
               event.target.setAttribute('aria-expanded', false);
@@ -33,6 +35,8 @@
             if (childList && !menuList.querySelector(".expander")) {
               menuList.classList.add('parent');
 
+              // Create the "expander" button that reveals/hides the nested
+              // menu items.
               const expander = document.createElement("a");
               expander.classList.add('expander');
               expander.setAttribute('href', '#');
@@ -40,9 +44,7 @@
               expander.setAttribute('aria-label', Drupal.t('Section Submenu Expander'));
               expander.addEventListener('click', event => {
                 event.preventDefault();
-                console.log('clicked');
                 if (menuList.classList.contains('expanded')) {
-                  console.log('menu list expanded');
                   // Collapse nested list.
                   menuList.classList.remove('expanded');
                   event.target.setAttribute('aria-expanded', false);
@@ -83,7 +85,7 @@
         };
       });
     }
-  }//end section menu function
+  }
 
 })(Drupal, once);
 
