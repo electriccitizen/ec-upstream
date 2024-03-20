@@ -1,60 +1,65 @@
-(function ($, Drupal, once) {
+(function (Drupal, once) {
 
   /* CONTENT PLACER PARAGRAPH SELECT LIST FUNCTIONALITY
   ----------------------- */
   Drupal.behaviors.contentPlacer = {
-    attach: function (context, settings) {
+    attach: function (context) {
     	once('isContentPlacer', '.field--name-field-content-type', context).forEach(contentTypeField => {
-        // Hide select fields that are not the content type (taxonomy) field.
-        // These get displayed later depending on which content type is
+        // Hide select and limit fields that are not the content type (taxonomy)
+        // field. These get displayed later depending on which content type is
         // selected.
-        hideAllBut('.field--widget-options-select', contentTypeField, context);
-        // Hide limit field.
-        context.querySelector('.field--name-field-limit-list').style.display = 'none';
+        hideAllBut('.field--widget-options-select, .field--name-field-limit-list', contentTypeField, context);
+        const contentTypeSelect =  contentTypeField.querySelector("select");
+        // Store the "machine name" of the currently selected Content type.
+        let typeName = getTypeString(contentTypeSelect);
 
+        // If the Content Placer has already had options set, make sure the
+        // appropriate fields are shown.
+        if (typeName && contentTypeSelect.selectedIndex != "_none") {
+          context.querySelectorAll('.field--name-field-' + typeName + '-list-type').forEach(taxonomyListType => {
+            taxonomyListType.style.display = 'block';
+            taxonomyListSelect = taxonomyListType.querySelector("select");
+            if (taxonomyListSelect.selectedIndex != "_none" && getTypeString(taxonomyListSelect) == 'custom') {
+              context.querySelectorAll('.field--name-field-' + typeName + '-category, .field--name-field-limit-list').forEach(element => {
+                element.style.display = 'block';
+              });
+            }
+          });
+        }
+
+        // Assign onchange events to various fields to hide and show related
+        // fields.
         contentTypeField.addEventListener("change", event => {
           // Re-hide any fields that may have been unhidden since the last
           // change.
-          hideAllBut('.field--widget-options-select', contentTypeField, context);
-          console.log(event.target.options);
+          hideAllBut('.field--widget-options-select, .field--name-field-limit-list', contentTypeField, context, true);
 
-          const typeName = event.target.options[event.target.selectedIndex].text.toLowerCase().replace(/_/g, '-');
-          context.querySelector('.field--name-field-' + typeName + '-list-type').style.display = 'block';
-          context.querySelector('.field--name-field-limit-list').style.display = 'none';
-
+          typeName = getTypeString(event.target);
+          if (typeName) {
+            context.querySelector('.field--name-field-' + typeName + '-list-type').style.display = 'block';
+          }
         });
 
-        // for each selected display show or hide the categories and limit list fields if a custom field is used
-        $( "div[class*='-list-type']").each(function () {
-            //when one of the list type fields selects are changed
-            $(this).find('select').change(function () {
-                //get the content type again
-                var chosen = $('.field--name-field-content-type select').find("option:selected").text().toLowerCase().replace(/_/g, '-');
-                //get the list type
-                var typeChosen = $(this).find("option:selected").val().replace(/_/g, '-');
+        // Show or hide additional options when "Custom" is selected.
+        context.querySelectorAll("div[class*='-list-type']").forEach((taxonomyListType) => {
+          //when one of the list type fields selects are changed
+          taxonomyListType.querySelector('select').addEventListener("change", event => {
 
-                //if the list type is custom, show the category field for that content type
-                if(typeChosen == 'custom') {
-                    $('.field--name-field-content-type').siblings('.field--name-field-' + chosen + '-category').show();
-                    $('.field--name-field-limit-list').show();
-                } else {
-                    $('.field--name-field-content-type').siblings('.field--name-field-' + chosen + '-category').hide();
-                    $('.field--name-field-limit-list').hide();
-                }
-            });
+            if (typeName) {
+              // If the list type is custom, show the matching category field.
+              if (getTypeString(event.target) == 'custom') {
+                context.querySelectorAll('.field--name-field-' + typeName + '-category, .field--name-field-limit-list').forEach(element => {
+                  element.style.display = 'block';
+                });
+              }
+              else {
+                context.querySelectorAll('.field--name-field-' + typeName + '-category, .field--name-field-limit-list').forEach(element => {
+                  element.style.display = 'none';
+                });
+              }
+            }
+          });
         });
-        //when an existing content placer is opened, if the content type select has a value, show the appropriate field and if a custom display is selected show those related fields
-        if($('.field--name-field-content-type select').val()){
-            var chosen = $('.field--name-field-content-type select').find("option:selected").text().toLowerCase().replace(/_/g, '-');
-            $('.field--name-field-content-type').siblings('.field--name-field-' + chosen + '-list-type').show();
-            if($('.field--name-field-' + chosen + '-list-type select').val()){
-                var typeChosen = $('.field--name-field-' + chosen + '-list-type select').val().replace(/_/g, '-');
-            }
-            if(typeChosen == 'custom') {
-                $('.field--name-field-content-type').siblings('.field--name-field-' + chosen + '-category').show();
-                $('.field--name-field-limit-list').show();
-            }
-        }
       });
     }
   };
@@ -62,7 +67,7 @@
   /* Add paragraph preview labels
   ----------------------- */
   Drupal.behaviors.previewLabel = {
-    attach: function (context, settings) {
+    attach: function (context) {
       once('isParaPreview', '.lp-builder .paragraph--view-mode--preview', context).forEach((element) => {
         if (typeof element.dataset.type !== 'undefined') {
           const label = document.createElement('div');
@@ -74,18 +79,38 @@
     }
   };
 
-})(jQuery, Drupal, once);
+})(Drupal, once);
+
+/**
+ * Generates a machine name based on the selected option in a select element.
+ * @param {HTMLSelectElement} selectTarget
+ * @returns {string}
+ */
+function getTypeString(selectTarget) {
+  let returnString = null;
+  if (selectTarget?.options && selectTarget.options[selectTarget.selectedIndex]) {
+    returnString = selectTarget.options[selectTarget.selectedIndex].text.toLowerCase().replace(/_/g, '-');
+  }
+  return returnString;
+}
 
 /**
  * Hides all Nodes meeting hideSelector within a context, except for keepNode.
- * @params:
- *   hideSelector (string): a jQuery-style selector of HTMLNodes to hide.
- *   keepNode (HTMLNode): a Node that should not be hidden.
- *   context (Document): a DOM Node that the query is restricted to.
+ * @param {string} hideSelector: a jQuery-style selector of HTMLNodes to hide.
+ * @param {HTMLElement} keepNode: a Node that should not be hidden.
+ * @param {Document} context: a DOM Node that the query is restricted to.
+ * @param {boolean} unset: set all select boxes to the "_none" option as well.
  **/
-function hideAllBut(hideSelector, keepNode, context) {
+function hideAllBut(hideSelector, keepNode, context, unset = false) {
   context.querySelectorAll(hideSelector).forEach(hideNode => {
     if (hideNode !== keepNode) {
+      // Reset selected options to the default value, if unset is selected.
+      if (unset) {
+        const select = hideNode.querySelector("select");
+        if (select) {
+          select.selectedIndex = "_none";
+        }
+      }
       hideNode.style.display = 'none';
     }
   });
