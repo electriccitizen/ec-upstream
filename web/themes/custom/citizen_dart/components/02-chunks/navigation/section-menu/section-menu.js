@@ -135,6 +135,7 @@ function animateSlide(element, startHeight, endHeight, duration, timestamp, star
       element.style.display = 'none';
     }
     element.style.overflow = 'visible';
+    element.style.height = 'auto';
   }
 }
 
