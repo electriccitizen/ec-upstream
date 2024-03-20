@@ -10,7 +10,7 @@ Drupal.behaviors.userLogin = {
 
 		  const showPasswordButton = login.querySelector('.show-password');
 		  const passwordInput = document.getElementById('edit-pass');
-      
+
 		  showPasswordButton.addEventListener('click', function(e) {
 		    e.preventDefault();
 
@@ -33,8 +33,8 @@ Drupal.behaviors.userLogin = {
 ------------------------------------ */
 Drupal.behaviors.select2 = {
   attach: function (context, settings) {
-    once('selects', 'select', context).forEach(fancySelect => {
-      
+    once('selects', 'select', context).forEach(() => {
+
     	// Helper function to mimic jQuery's $(document).ready()
 			function documentReady(callback) {
 		    if (document.readyState === 'loading') {

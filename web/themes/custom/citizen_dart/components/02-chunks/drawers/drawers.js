@@ -15,13 +15,13 @@ Drupal.behaviors.drawerBelow = {
 		    if (!this.classList.contains('active-drawer')) {
 					this.nextElementSibling.setAttribute('aria-hidden', 'false');
 					this.nextElementSibling.classList.add('show-content');
-					this.textContent = `See fewer ${toggleText}`;
+          this.textContent = Drupal.t('See fewer @toggle', {'@toggle': toggleText});
 					this.classList.add('active-drawer');
 					this.setAttribute('aria-expanded', 'true');
 		    } else {
 					this.nextElementSibling.setAttribute('aria-hidden', 'true');
 					this.nextElementSibling.classList.remove('show-content');
-					this.textContent = `See all ${toggleText}`;
+          this.textContent = Drupal.t('See all @toggle', {'@toggle': toggleText});
 					this.classList.remove('active-drawer');
 					this.setAttribute('aria-expanded', 'false');
 		    }
