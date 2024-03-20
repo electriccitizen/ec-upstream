@@ -117,7 +117,6 @@ function animateSlide(element, startHeight, endHeight, duration, timestamp, star
  * @returns {number}
  */
 function animateEasing(timepassed, start, end, duration) {
-  // Use a bezier curve for a nice ease in-out.
   const difference = timepassed / duration;
   return -end * difference * (difference - 2) + start;
 }
@@ -131,17 +130,21 @@ function mobileSectionNav() {
   const sectionMenuWrapper = document.querySelector("#section-menu-wrapper");
 
   if (window.outerWidth < 980) {
-    //add aria roles to menu title and wrapper if not already set by click above
-    if ( !$(sectionMenuToggle).attr('aria-controls') ) {
-      $(sectionMenuToggle).attr({
-        'aria-controls': 'section-menu-wrapper',
-        'aria-expanded': 'false'
-      });
-      $(sectionMenuWrapper).attr('aria-hidden', 'true');
+    // If ARIA settings not already on the toggle due to the user clicking it,
+    // add them.
+    if (!sectionMenuToggle.hasAttribute('aria-controls')) {
+      sectionMenuToggle.setAttribute('href', '#');
+      sectionMenuToggle.setAttribute('aria-controls', 'section-menu-wrapper');
+      sectionMenuToggle.setAttribute('aria-expanded', false);
+      sectionMenuWrapper.setAttribute('aria-hidden', true);
     }
-  } else {
-    //strip all aria roles & prevent click
-    $(sectionMenuToggle).removeAttr('aria-controls aria-expanded role href');
-    $(sectionMenuWrapper).removeAttr('aria-hidden');
+  }
+  else {
+    // Strip all ARIA attributes and prevent clicking it.
+    sectionMenuToggle.removeAttribute('aria-controls');
+    sectionMenuToggle.removeAttribute('aria-expanded');
+    sectionMenuToggle.removeAttribute('role');
+    sectionMenuToggle.removeAttribute('href');
+    sectionMenuWrapper.removeAttribute('aria-hidden');
   }
 }
