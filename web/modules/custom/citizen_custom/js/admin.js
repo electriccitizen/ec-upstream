@@ -9,7 +9,7 @@
         // field. These get displayed later depending on which content type is
         // selected.
         hideAllBut('.field--widget-options-select, .field--name-field-limit-list', contentTypeField, context);
-        const contentTypeSelect =  contentTypeField.querySelector("select");
+        const contentTypeSelect = contentTypeField.querySelector("select");
         // Store the "machine name" of the currently selected Content type.
         let typeName = getTypeString(contentTypeSelect);
 
