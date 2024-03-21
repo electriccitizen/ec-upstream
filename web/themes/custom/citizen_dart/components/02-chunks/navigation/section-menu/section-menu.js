@@ -71,8 +71,8 @@
               }
               parentsUntil(siblingList, '#section-menu-wrapper > ul', (element) => {
                 element.classList.add('active-trail', 'expanded');
-                const parentExpander = element.querySelector(" > .expander");
-                const parentList = element.querySelector('> ul');
+                const parentExpander = element.querySelector(":scope > .expander");
+                const parentList = element.querySelector(':scope > li > ul');
                 if (parentExpander) {
                   parentExpander.setAttribute("aria-expanded", true);
                 }
