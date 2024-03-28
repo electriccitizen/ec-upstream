@@ -48,7 +48,7 @@ $h1Lg: 8rem;
 //h2 sizes
 $h2Sm: 4.5rem;
 $h2Md: 6rem;
-$h2Lg: 4rem;
+$h2Lg: 6rem;
 
 //h3 sizes
 $h3Sm: 4rem;
@@ -103,6 +103,7 @@ $h6Sm: 2.75rem;
 	@include headerGlobals;
   line-height: 1.125;
 	font-size: $h3Sm;
+  color: $darkBlue;
 	@include desk{
     line-height: 1.22;
 		font-size: $h3Mid;

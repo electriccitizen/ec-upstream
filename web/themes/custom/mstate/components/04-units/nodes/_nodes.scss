@@ -9,6 +9,7 @@
 @forward 'event/event';
 @forward 'landing-page/landing-page';
 @forward 'news/news';
+@forward 'student-story/student-story';
 
 @use '../../00-base/base' as *;
 @use 'node-mixins' as *;

@@ -40,18 +40,22 @@
 {% extends 'paragraph.html.twig' %}
 
 {% block widget %}
+  <div class="content-placer-wrapper{% if content.field_link.0 %} has-link{% endif %}">
 
-  {{ content.field_widget_title }}
+    {{ content.field_widget_title }}
+        
+    <div class="content-placer-content">
+      {{ content.field_student_story }}
       
-  {{ content.field_student_story }}
-  
-  {% for profile in content.field_directory['#items'] %}
-    {% if content.field_directory_campus.0['#markup'] == 'On'%}
-      {{ drupal_entity('node',profile.target_id,'campus') }}
-    {% else %}
-    {{ drupal_entity('node',profile.target_id,'teaser') }}
-    {% endif %}
-  {% endfor %}
+      {% for profile in content.field_directory['#items'] %}
+        {% if content.field_directory_campus.0['#markup'] == 'On'%}
+          {{ drupal_entity('node',profile.target_id,'campus') }}
+        {% else %}
+        {{ drupal_entity('node',profile.target_id,'teaser') }}
+        {% endif %}
+      {% endfor %}
+    </div>
 
-  {{ content.field_link }}
+    {{ content.field_link }}
+  </div>
 {% endblock %}

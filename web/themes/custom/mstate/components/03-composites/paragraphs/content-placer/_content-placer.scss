@@ -6,6 +6,25 @@
 @use '../../../01-parts/buttons/button-mixins' as *;
 
 .paragraph--type--content-placer{
+  .content-placer-wrapper{
+    &.has-link{
+      @include tab{
+        @include safeFlex(row,wrap,justify,end);
+        .field-widget-title{
+          width: calc(100% - 310px);
+        }
+        .content-placer-content{
+          order: 99;
+          width: 100%;
+        }
+        .field-link{
+          margin-top: 0;
+          margin-bottom: $spaceMd;
+        }
+      }//end tab
+    }//end has link
+  }//end content placer wrapper
+
 	.field-widget-title{
 		text-align: left;
 	}

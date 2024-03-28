@@ -1,0 +1,37 @@
+/* =============
+   STUDENT STORY NODE
+================ */
+
+@use '../../../00-base/base' as *;
+
+.node-student-story{
+	
+}//end student story
+
+.teaser-student-story{
+  @include tab{
+    @include safeFlex(row,nowrap,start,center);
+    gap: 32px;
+  }
+  @include desk{
+    gap: 64px;
+  }
+  .field-image{
+    margin-bottom: $spaceSm;
+    max-width: 544px;
+    @include tab{
+      flex: 0 0 52%;
+      margin-bottom: 0;
+    }
+  }
+  .teaser-title{
+    @include heading3;
+    margin-bottom: $spaceSm;
+  }
+  .teaser-programs{
+    margin-bottom: $spaceXs;
+  }
+  .field.body{
+    margin-bottom: $spaceSm;
+  }
+}//end student story teaser

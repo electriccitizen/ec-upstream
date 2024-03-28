@@ -81,7 +81,7 @@
     <div class="teaser-title"{{ title_attributes }}>
       Meet {{ content.field_first_name.0['#context'].value -}}
     </div>
-    <div class="teaser-programs"></div>
+    <div class="teaser-programs">
       {% for program in content.field_programs['#items'] %}
         <strong class="program-name">{{ program.entity.title.0.value }}</strong>{%- if not loop.last -%}, {% endif -%}
       {%- endfor -%}
