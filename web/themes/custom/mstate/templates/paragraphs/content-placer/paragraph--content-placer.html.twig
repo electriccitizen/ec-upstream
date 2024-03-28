@@ -37,34 +37,21 @@
  */
 #}
 
+{% extends 'paragraph.html.twig' %}
 
-{% set contentType = content.field_content_type.0['#title']|lower %}
-{% set listType = attribute(content, "field_" ~ contentType ~ "_list_type").0["#markup"] %}
+{% block widget %}
 
-{# check for a paragraph id #}
-{% if paragraph.id.value %}
-	{# check if we need a custom list #}
-  {% if listType == 'custom'%}
-  	{# render the custom list view only if there are results form the views pre_render_hook #}
-		{% if drupal_view(contentType,contentType~'_list', paragraph.id.value)|render|striptags|trim|length > 0 %}
-			<div class="paragraph paragraph--type--content-placer content-{{ contentType ~ '-list'}} custom-views-list" data-quickedit-entity-id="paragraph/{{ paragraph.id.value }}">
-				{{ content.field_widget_title }}
-				{{ drupal_view(contentType,contentType~'_list', paragraph.id.value) }}
-				{{ content.field_link }}
-			</div>
-		{% endif %}
-	{# if not just render the view using the view and display selected but only if there is something to render #}
-  {% else %}
-  	{% if drupal_view(contentType,listType)|render|striptags|trim|length > 0 %}
-  		<div class="paragraph paragraph--type--content-placer content-{{ contentType }}-{{ listType }}" data-quickedit-entity-id="paragraph/{{ paragraph.id.value }}">
-	  		{{ content.field_widget_title }}
-		  	{{ drupal_view(contentType,listType) }} 
-		  	{{ content.field_link }}
-		  </div>
-	  {% endif %}
-  {% endif %}
-{# if no idea because the node has not yet been saved, spit out a preview message #}
-{% else %}
-	<p><strong>Content placer widgets are not available in preview until the node is saved after they have been added.</strong></p>
-{% endif %}
+  {{ content.field_widget_title }}
+      
+  {{ content.field_student_story }}
+  
+  {% for profile in content.field_directory['#items'] %}
+    {% if content.field_directory_campus.0['#markup'] == 'On'%}
+      {{ drupal_entity('node',profile.target_id,'campus') }}
+    {% else %}
+    {{ drupal_entity('node',profile.target_id,'teaser') }}
+    {% endif %}
+  {% endfor %}
 
+  {{ content.field_link }}
+{% endblock %}
