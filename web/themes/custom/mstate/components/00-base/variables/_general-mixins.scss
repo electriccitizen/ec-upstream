@@ -333,6 +333,9 @@
 			opacity: .6;
 			@include transAll(.3s);
 		}
+    &.arrow-link:after{
+      background-color: $darkLink;
+    }
 	}
 }//end lightBack
 

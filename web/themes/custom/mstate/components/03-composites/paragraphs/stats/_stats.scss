@@ -5,54 +5,96 @@
 @use '../../../00-base/base' as *;
 
 .paragraph--type--stats{
-  max-width: 1104px;
+  max-width: 420px;
   @include auto;
-  @include desk{
+  @include tab{
+    max-width: 624px;
+    width: calc(100% - 104px);
+  }
+  @include contentStop{
+    max-width: 1104px;
     padding-left: 90px;
     padding-right: 90px;
   }
   .widget-title{
     @include centerBlockTitle;
   }
-	.field-stats{
-    @include onlyMobile{
-      margin-bottom: -$spaceSm;
-      @include safeFlex(row,wrap,center,stretch);
-      @include bleed(padding,32px);
-      & > div{
-        margin-bottom: $spaceSm;
-        max-width: 308px;
-        width: 100%;
-      }
+  .slick-slider{
+    .slick-track{
+      display: flex !important;
     }
-	}//end field stats
-  .slick-track{
-    display: flex !important;
-  }
-  .slick-slide{
-    height: inherit !important;
-  }
+    .slick-slide{
+      height: inherit !important;
+    }
+    .slick-arrow{
+      width: 32px;
+      height: 32px;
+      @include desk{
+        height: 50px;
+        width: 50px;
+      }
+      &.slick-prev {
+        left: 15px;
+        background-image: url('../images/elements/arrow-circle-left.svg');
+        &:hover,
+			  &:focus {
+          background-color: rgba($lightBlue,.2);
+        }
+        @include smallTab{
+          left: 0;
+        }
+        @include tab{
+          left: -47px;
+        }
+        @include desk{
+          left: -90px;
+        }
+      }
+      &.slick-next {
+        right: 15px;
+        background-image: url('../images/elements/arrow-circle-right.svg');
+        &:hover,
+			  &:focus {
+          background-color: rgba($lightBlue,.2);
+        }
+        @include smallTab{
+          right: 0;
+        }
+        @include tab{
+          right: -47px;
+        }
+        @include desk{
+          right: -90px;
+        }
+      }
+    }//end slick arrow
+  }//edn slick slider
 }//end stats
 
 .paragraph--type--stat-item{
-  background: $lightBlue;
-  color: $white;
-  border-radius: 0 24px 0 24px;
-  padding: 24px 26px 40px;
-  @include safeFlex(column,nowrap,center,center);
-  text-align: center;
   height: 100%;
-  @include desk{
-    margin-left: 12px;
-    margin-right: 12px;
+  @include tab{
+    padding-left: 12px;
+    padding-right: 12px;
   }
-  .field-stat{
-    font-family: $header;
-    font-size: 92px;
-    line-height: 1;
-    margin-bottom: $spaceXxs;
-  }
-  .field-stat-text{
-
+  .widget-wrapper{
+    margin-bottom: $spaceSm;
+    max-width: 308px;
+    width: 100%;
+    background: $lightBlue;
+    color: $white;
+    border-radius: 0 24px 0 24px;
+    padding: 24px 26px 40px;
+    @include safeFlex(column,nowrap,center,center);
+    text-align: center;
+    height: 100%;
+    min-width: 288px;
+    @include auto;
+    .field-stat{
+      font-family: $header;
+      font-size: 92px;
+      line-height: 1;
+      margin-bottom: $spaceXxs;
+    }
   }
 }//end stat item

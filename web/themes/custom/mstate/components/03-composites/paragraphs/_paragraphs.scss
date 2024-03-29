@@ -17,6 +17,7 @@
 @forward 'portals/portals';
 @forward 'stats/stats';
 @forward 'video/video';
+@forward 'view-placer/view-placer';
 @forward 'WYSIWYG/wysiwyg';
 
 @use '../../00-base/base' as *;
@@ -47,6 +48,7 @@
 			}
 			&.blue{
 				background: $lightBlue;
+        @include darkBack($white,$lightGrey);
 			}
       &.navy{
 				background: $navy;

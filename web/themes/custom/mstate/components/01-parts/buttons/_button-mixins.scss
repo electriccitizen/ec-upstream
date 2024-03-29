@@ -57,7 +57,18 @@
 	&:active{
 		color: $buttonTextActive;
 		background-color: $buttonBackActive;
+    transform: scale(.95);
+    transition: all .3s ease-out;
 	}
+  .blue &,.navy &{
+    color: $buttonText !important;
+    &:hover,&:focus {
+      color: $buttonTextHover !important;
+    }
+    &:active{
+      color: $buttonTextActive !important;
+    }
+  }
 	.text-with-summary &,.text-long &{
 		& + .ec-button,& + .ec-button-outline{
 			margin-left: 1.5rem;

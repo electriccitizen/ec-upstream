@@ -1,0 +1,42 @@
+/* ===============
+  CONTENT PLACER WIDGET
+================= */
+
+@use '../../../00-base/base' as *;
+@use '../../../01-parts/buttons/button-mixins' as *;
+
+.paragraph--type--view-placer{
+  .view-placer-wrapper{
+    &.has-link{
+      @include tab{
+        @include safeFlex(row,wrap,justify,end);
+        .field-widget-title{
+          width: calc(100% - 310px);
+        }
+        .views-element-container{
+          order: 99;
+          width: 100%;
+        }
+        .field-link{
+          margin-top: 0;
+          margin-bottom: $spaceMd;
+        }
+      }//end tab
+    }//end has link
+  }//end content placer wrapper
+
+	.field-widget-title{
+		text-align: left;
+    padding-bottom: 0;
+    &:after{
+      content: none;
+    }
+	}
+	.field-link{
+		margin-top: $spaceLg;
+		a{
+			@include button;
+			margin-bottom: 0;
+		}
+	}
+}//end social media
