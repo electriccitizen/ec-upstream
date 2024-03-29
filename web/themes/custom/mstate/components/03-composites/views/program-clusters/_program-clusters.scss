@@ -1,0 +1,17 @@
+/* ==================
+		NEWS VIEWS
+==================== */
+
+@use '../../../00-base/base' as *;
+@use '../views-mixins' as *;
+
+/* ALL NEWS */
+.news.all-news{
+	.view{
+		padding-bottom: $elementSpace;
+	}
+	.views-row{
+		@include viewsRowStandard;
+	}
+}//end all news
+

@@ -37,6 +37,10 @@ featherlight:
   js:
     components-addons/featherlight/featherlight.min.js: { minified: true }
     components-addons/featherlight/featherlight.gallery.min.js: { minified: true }
+program-clusters:
+  version: 1.0
+  js:
+    components/03-composites/views/program-clusters/program-clusters.js: {}
 fonts:
   css:
     theme:
