@@ -71,57 +71,19 @@
  */
 #}
 
-{% set classes = [
-  'node-content',
-  'node-' ~ node.type.0.target_id|clean_class,
-  'node-' ~ node.id,
-  'node-' ~ view_mode|clean_class,
-] %}
+{% extends 'node.html.twig' %}
 
-<article{{ attributes.addClass(classes) }}>
-	{% block nodeMeta %}
-	  {{ title_prefix }}
-	  {% if not page and (view_mode != 'full') %}
-	    {% block nodeTitle %}
-	      <h2{{ title_attributes }}>
-	        <a href="{{- url -}}" rel="bookmark">{{- label.0['#context'].value -}}</a>
-	      </h2>
-	    {% endblock %}
-	  {%- endif -%}
-	  {{ title_suffix }}
-	  {%- if display_submitted -%}
-	    <footer>
-	      {% block footerContent %}
-	        {{- author_picture -}}
-	        <div{{ author_attributes }}>
-	          {%- trans -%}Submitted by {{- author_name -}} on {{- date -}}{%- endtrans -%}
-	          {{- metadata -}}
-	        </div>
-	      {% endblock %}
-	    </footer>
-	  {%- endif -%}
-	{% endblock %}
-  {% block node %}
-	  <div class="main-node-content">
-		  {%- if content._layout_builder -%}
-		    {% if content._layout_builder.0 %}
-		      {%- for key, layoutSection in content._layout_builder -%}
-		      	{% if key|first != "#" %}
-			        {% block layoutSectionContent %}
-			          <section id="node-section-{{ loop.index }}" class="node-section">
-			            {{- layoutSection -}}
-			          </section>
-			        {% endblock %}
-			      {% endif %}
-		      {%- endfor -%}
-		    {% else %}
-		      {% block nodeContent %}
-		      {{- content -}}
-		    {% endblock %}
-		    {% endif %}
-		  {%- else -%}
-		    {{- content -}}
-		  {%- endif -%}
-	  </div>
+{% set date = node.getCreatedTime() %}
+
+{% block nodeMeta %}
+  {% block nodeTitle %}
+    <h2{{ title_attributes.addClass("node-field-title") }}>
+      <a href="{{- url -}}" rel="bookmark">{{- label.0['#context'].value -}}</a>
+    </h2>
   {% endblock %}
-</article>
+  <div class="metatext">
+    <time datetime="{{- date|date('c') -}}">{{- date|date('U')|format_date("number_date_short") -}}</time>
+  </div>
+  {{- content -}}
+{% endblock %}
+{% block node %}{% endblock %}

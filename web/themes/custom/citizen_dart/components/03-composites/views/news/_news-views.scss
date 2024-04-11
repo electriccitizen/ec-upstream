@@ -10,20 +10,14 @@
 	.view{
 		padding-bottom: $elementSpace;
 	}
-	.views-row{
-		@include viewsRowStandard;
+	.views-row:not(:last-child){
+    margin-bottom: $spaceLg;
 	}
 }//end all news
 
 /* NEWS LIST */
 .news.news-list{
-	.views-row{
-		@include viewsRowStandard;
-		.views-field-title{
-			@include safeFlexSize(0,0,100%);
-		}
-		.metatext{
-			margin-bottom: 0;
-		}
+	.views-row:not(:last-child){
+    margin-bottom: $spaceLg;
 	}
 }//end news list
