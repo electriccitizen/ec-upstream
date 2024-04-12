@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.storage.node.field_image
     - field.storage.node.field_position
     - node.type.bios
   module:
     - node
-    - taxonomy
     - user
 _core:
   default_config_hash: 3ycpVvTNgbzBcmj1Md6ICUCn9BIpeWapPAlO7M7WDhI
@@ -408,12 +408,10 @@ display:
           row_class: vertical
           default_row_class: true
       row:
-        type: fields
+        type: 'entity:node'
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          relationship: none
+          view_mode: teaser
       query:
         type: views_query
         options:
