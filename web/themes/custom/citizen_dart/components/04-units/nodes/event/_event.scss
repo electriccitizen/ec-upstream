@@ -24,4 +24,11 @@
 			}
 		}
 	}//end event location
+  &.node-teaser,
+  &.node-listing {
+    .field-dates {
+      @include metaText;
+      margin-bottom: $spaceSm;
+    }
+  }
 }//end event

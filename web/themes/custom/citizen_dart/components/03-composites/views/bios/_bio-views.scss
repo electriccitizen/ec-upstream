@@ -29,12 +29,14 @@
 			width: 25%;
 		}
 	}
-	.views-field-field-image{
+  .node-teaser {
+    display: block;
+  }
+	.node-field-image {
 		margin-bottom: $spaceXs;
 	}
-	.views-field-title{
+	.node-field-title {
 		@include heading4;
 		margin-bottom: $spaceXxs;
 	}
 }//end bios
-
