@@ -110,6 +110,7 @@ body .layout-content{
 }
 
 .node-listing {
+  width: 100%;
 	.node-field-title {
     @include heading4;
     margin-bottom: $spaceXxs;

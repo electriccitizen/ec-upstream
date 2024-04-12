@@ -16,6 +16,7 @@ dependencies:
     - node.type.event
   module:
     - layout_builder
+    - smart_date
     - user
 third_party_settings:
   layout_builder:
@@ -26,26 +27,37 @@ targetEntityType: node
 bundle: event
 mode: listing
 content:
-  field_list_widget:
-    type: entity_reference_label
-    label: above
+  field_dates:
+    type: smartdate_default
+    label: hidden
     settings:
-      link: true
+      timezone_override: ''
+      format_type: medium
+      format: compact
+      force_chronological: false
+      add_classes: false
+      time_wrapper: true
+      localize: false
+      parts:
+        start: start
+        end: end
+        duration: '0'
+      duration:
+        separator: ' | '
+        unit: ''
+        decimals: 2
+        suffix: h
     third_party_settings: {  }
-    weight: 101
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   body: true
   field_address: true
   field_category: true
-  field_dates: true
   field_event_location: true
   field_image: true
+  field_list_widget: true
   field_meta_description: true
   field_metatags: true
+  links: true
   search_api_excerpt: true
