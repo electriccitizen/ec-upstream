@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.listing
     - core.entity_view_mode.node.teaser
-    - core.entity_view_mode.node.token
     - field.storage.node.body
     - node.type.news
     - taxonomy.vocabulary.news_categories
@@ -1108,7 +1108,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: token
+          view_mode: listing
       defaults:
         empty: false
         pager: false

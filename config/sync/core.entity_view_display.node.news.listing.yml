@@ -1,9 +1,9 @@
-uuid: 3ea41525-62d1-4bec-9126-834db38c0e97
+uuid: af405224-751b-42ba-8997-c8932c4b2c84
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.token
+    - core.entity_view_mode.node.listing
     - field.field.node.news.body
     - field.field.node.news.field_category
     - field.field.node.news.field_image
@@ -18,10 +18,10 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: node.news.token
+id: node.news.listing
 targetEntityType: node
 bundle: news
-mode: token
+mode: listing
 content: {  }
 hidden:
   body: true
