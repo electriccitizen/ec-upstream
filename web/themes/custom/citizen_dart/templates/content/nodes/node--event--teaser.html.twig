@@ -71,9 +71,7 @@
  */
 #}
 
-{% extends 'node.html.twig' %}
-
-{% set date = node.getCreatedTime() %}
+{% extends 'node--teaser.html.twig' %}
 
 {% block nodeMeta %}
   <div class="node-field-image">
@@ -90,4 +88,3 @@
     {{- content|without("field_image") -}}
   </div>
 {% endblock %}
-{% block node %}{% endblock %}
