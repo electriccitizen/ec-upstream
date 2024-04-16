@@ -34,6 +34,7 @@
   }
 	.node-field-image {
 		margin-bottom: $spaceXs;
+    padding-right: 0;
 	}
 	.node-field-title {
 		@include heading4;
