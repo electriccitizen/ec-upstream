@@ -6,6 +6,8 @@
 @use '../../../01-parts/buttons/button-mixins' as *;
 
 .paragraph--type--content-placer{
+  max-width: 1700px;
+  @include auto;
   .content-placer-wrapper{
     &.has-link{
       @include tab{

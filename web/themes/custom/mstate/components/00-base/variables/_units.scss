@@ -11,6 +11,7 @@ $largeTab: 876px;
 $desk: 984px;
 $menuBreak: 1160px;
 $contentStop: 1264px;
+$midScreen: 1520px;
 $largeScreen: 1600px;
 $ultraScreen: 2200px;
 $textMax: 784px;
@@ -78,6 +79,12 @@ $sectionGutter: 40px;
 
 @mixin contentStop {
 	@media screen and (min-width: $contentStop) {
+		@content;
+	}
+}
+
+@mixin midScreen {
+	@media screen and (min-width: $midScreen) {
 		@content;
 	}
 }

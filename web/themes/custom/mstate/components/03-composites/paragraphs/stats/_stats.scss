@@ -16,6 +16,9 @@
     padding-left: 90px;
     padding-right: 90px;
   }
+  @include midScreen{
+    max-width: 1640px;
+  }
   .widget-title{
     @include centerBlockTitle;
   }
@@ -95,6 +98,12 @@
       font-size: 92px;
       line-height: 1;
       margin-bottom: $spaceXxs;
+      @include midScreen{
+        font-size: 162px;
+      }
     }
-  }
+    @include midScreen{
+      max-width: 100%;
+    }
+  }//edn widget wrapper
 }//end stat item

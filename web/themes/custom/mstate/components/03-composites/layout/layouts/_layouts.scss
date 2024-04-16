@@ -11,7 +11,10 @@
 }
 .layout__region{
 	& > *{
-		margin-bottom: $elementSpace;
+		margin-bottom: 10rem;
+    @include midScreen{
+      margin-bottom: 12rem;
+    }
 	}
 }
 
