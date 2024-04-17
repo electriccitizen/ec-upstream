@@ -14,6 +14,9 @@
   max-width: 1104px;
   @include auto;
   border-bottom: 1px solid $accordHeaderBorder ;
+  .navy &,.blue &{
+    border-bottom-color: $white;
+  }
   &.accord-active{
     .accordion-header{
       a{
@@ -52,12 +55,22 @@
         mask-size: 32px;
         background-color: $lightBlue;
         transition: transform .3s ease-out;
+        .navy &,.blue &{
+          background-color: $white;
+        }
 			}
 			&:hover,&:focus{
 				color: $accordHeaderHover;
 				background: $accordHeaderBackHover;
 				border-color: $accordHeaderBorderHover;
 				@include transAll(.3s);
+        .light-gray &{
+          background: darken($lightGrey,5%);
+        }
+        .blue &,.navy &{
+          opacity: 1 !important;
+          background: rgba($white, .2);
+        }
 			}
 		}//end a
 	}//end accordion header
@@ -97,6 +110,9 @@
         @include button;
         background-color: $lightBlue;
         color: $white;
+        .blue &,.navy &{
+          background-color: $buttonBack;
+        }
         &:after{
           content: '';
           display: inline-block;
@@ -106,6 +122,9 @@
           position: relative;
           right: 0;
           margin-left: .75em;
+          .blue &,.navy &{
+            color: $black;
+          }
         }
       }
 		}//end inner text

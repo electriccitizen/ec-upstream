@@ -61,6 +61,9 @@
         bottom: 0;
         left: 0;
         border-radius: 0 40px 0 40px;
+        .navy &,.blue &{
+          background-color: $white;
+        }
         @include tab{
           width: 90px;
         }
@@ -78,7 +81,18 @@
     .field-link{
       a{
         @include arrowLink;
-      }
-    }
+        &:hover,&:focus{
+          text-decoration: underline;
+        }
+        .blue &,.navy &{
+          color: $white !important;
+          &:hover,&:focus{
+            &:after{
+              background-color: $white;
+            }
+          }
+        }
+      }//end a
+    }//end field link
 	}//end field portals
 }//end portals

@@ -35,7 +35,7 @@
         &:hover,&:focus{
           @include animation('breathe .75s 1');
           .cls-1{
-            fill: $grey;
+            fill: $prefooterTwoLinkHover;
           }
         }
         svg{

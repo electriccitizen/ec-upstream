@@ -6,7 +6,9 @@
 
 
 .paragraph--type--video{
-	@include textConstrain;
+  .field-long-text{
+    margin-bottom: $spaceMd;
+  }
 	article{
 		@include animation('fadeIn 1.5s 1');
 	}

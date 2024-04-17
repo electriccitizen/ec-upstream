@@ -46,19 +46,23 @@
 	&.layout-section{
 		&.background{
 			padding-top: $elementSpace;
-			&.light-grey{
+      padding-bottom: 1px;
+			&.light-gray{
 				background: $lightGrey;
 			}
 			&.blue{
 				background: $lightBlue;
-        @include darkBack($white,$lightGrey);
+        @include darkBack($white,$yellow);
 			}
       &.navy{
 				background: $navy;
-        @include darkBack($white,$lightGrey);
+        @include darkBack($white,$yellow);
 			}
 			& + .backless{
-				margin-top: $elementSpace;
+				margin-top: 10rem;
+        @include midScreen{
+          margin-top: 12rem;
+        }
 			}
 			&:last-child{
 				margin-bottom: -$siteBottomSpace;

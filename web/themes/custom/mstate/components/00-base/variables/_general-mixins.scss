@@ -274,43 +274,6 @@
 	}
 }
 
-@mixin lightBack($lightText,$lightLink) {
-	h1,h2,h3,h4,h5,h6,p,div,li,.field-caption {
-		color: $lightText;
-		-webkit-font-smoothing: subpixel-antialiased;
-	}
-	:before,:after{
-		color: $lightText;
-	}
-	a{
-		color: $lightLink;
-		&:hover,&:focus{
-			opacity: .6;
-			@include transAll(.3s);
-		}
-	}
-}//end lightBack
-
-@mixin darkBack($darkText,$darkLink) {
-	h1,h2,h3,h4,h5,h6,p,div,li,.field-caption {
-		color: $darkText;
-		-webkit-font-smoothing: antialiased;
-	}
-	:before,:after{
-		color: $darkText;
-	}
-	a{
-		color: $darkLink;
-		&:hover,&:focus{
-			opacity: .6;
-			@include transAll(.3s);
-		}
-    &.arrow-link:after{
-      background-color: $darkLink;
-    }
-	}
-}//end lightBack
-
 @mixin textLinkArrow{
   -webkit-mask: url(/themes/custom/mstate/images/elements/arrow-right.svg) no-repeat 50% 50%;
   mask: url(/themes/custom/mstate/images/elements/arrow-right.svg) no-repeat 50% 50%;
@@ -345,6 +308,47 @@
     right: 0;
   }
 }
+
+@mixin lightBack($lightText,$lightLink) {
+	h1,h2,h3,h4,h5,h6,p,div,li,.field-caption {
+		color: $lightText;
+		-webkit-font-smoothing: subpixel-antialiased;
+	}
+	:before,:after{
+		color: $lightText;
+	}
+	a{
+		color: $lightLink;
+		&:hover,&:focus{
+			opacity: .6;
+			@include transAll(.3s);
+		}
+	}
+}//end lightBack
+
+@mixin darkBack($darkText,$darkLink) {
+	h1,h2,h3,h4,h5,h6,p,div,li,.field-caption {
+		color: $darkText;
+		-webkit-font-smoothing: antialiased;
+	}
+	:before,:after{
+		color: $darkText;
+	}
+	a{
+		color: $darkLink;
+		&:hover,&:focus{
+			opacity: .6;
+			@include transAll(.3s);
+		}
+    &.arrow-link{
+      color: cc.$white;
+      &:after{
+        background-color: cc.$white;
+      }
+    }
+	}
+}//end lightBack
+
 
 /* ANIMATION MIXINS
 --------------------- */

@@ -51,6 +51,9 @@
         top: calc(50% - 6px);
         right: 28px;
         @include textLinkArrow;
+        .navy &,.blue &{
+          color: $black !important;
+        }
       }
     }//end a
   }//end field links
@@ -68,6 +71,9 @@
       overflow: hidden;
       z-index: 0;
       @include overlay(rgba($lightBlue,.9));
+      .blue &{
+        @include overlay(rgba($navy,.7));
+      }
       img{
         width: 100%;
         height: 100%; 

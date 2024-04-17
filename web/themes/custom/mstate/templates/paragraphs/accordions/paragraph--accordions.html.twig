@@ -57,8 +57,10 @@
 						<a href="#" role="button" aria-controls="{{ controlParent }}" aria-expanded="false">{{ accordion['#paragraph'].field_accordion_header.0.value }}</a>
 					</div>
 					<div class="field field-long-text text-long" id="{{ controlParent }}" aria-hidden="true">
+            {{ drupal_field('field_image','paragraph',accordion['#paragraph'].id.0.value) }}
 						<div class="inner-text">
 							{{ text }}
+              {{ drupal_field('field_button','paragraph',accordion['#paragraph'].id.0.value) }}
 						</div>
 					</div>
 				</div>

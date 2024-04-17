@@ -53,6 +53,9 @@
 		text-decoration: none;
 		outline: 0;
     @include animation('breathe .75s 1');
+    .light-gray &{
+      background-color: $grey;
+    }
 	}
 	&:active{
 		color: $buttonTextActive;
@@ -60,13 +63,24 @@
     transform: scale(.95);
     transition: all .3s ease-out;
 	}
+  .light-gray &{
+    &:hover,&:focus {
+      background-color: darken($buttonBackHover,7%) !important;
+    }
+    &:active{
+      background-color: darken($buttonBackActive,7%) !important;
+    }
+  }
   .blue &,.navy &{
     color: $buttonText !important;
     &:hover,&:focus {
+      opacity: 1 !important;
       color: $buttonTextHover !important;
+      background-color: $buttonBackHover !important;
     }
     &:active{
       color: $buttonTextActive !important;
+      background-color: $buttonBackActive !important;
     }
   }
 	.text-with-summary &,.text-long &{
