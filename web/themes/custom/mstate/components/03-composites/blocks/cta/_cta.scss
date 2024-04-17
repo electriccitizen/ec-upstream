@@ -10,7 +10,7 @@
 	padding: 40px 32px;
   @media screen and (min-width: 1136px){
     @include safeFlex(row,nowrap,center,center);
-    max-width: 1104px;
+    max-width: $contentConstrain;
     @include auto;
     padding: 50px 48px;
   }

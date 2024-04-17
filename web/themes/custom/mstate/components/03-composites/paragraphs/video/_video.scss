@@ -6,8 +6,11 @@
 
 
 .paragraph--type--video{
+  max-width: $contentConstrain;
+  @include auto;
   .field-long-text{
     margin-bottom: $spaceMd;
+    max-width: $textMax;
   }
 	article{
 		@include animation('fadeIn 1.5s 1');

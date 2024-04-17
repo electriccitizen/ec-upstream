@@ -36,7 +36,7 @@
   }
   .block-field-subtitle{
     margin-bottom: 0;
-    max-width: 1104px;
+    max-width: $contentConstrain;
     @include auto;
     h2{
       @include blockTitle;
@@ -45,14 +45,13 @@
     }
   }
 	.block-field.block-body{
-		max-width: 1104px;
+		max-width: $contentConstrain;
 		@include auto;
     margin-bottom: $spaceSm;
     .field.body{
       max-width: $textMax;
     }
 	}
-
 
 }//end landing-page
 

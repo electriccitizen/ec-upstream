@@ -11,7 +11,7 @@
 /* ITEM STYLING
 ------------------- */
 .accordion-item{
-  max-width: 1104px;
+  max-width: $contentConstrain;
   @include auto;
   border-bottom: 1px solid $accordHeaderBorder ;
   .navy &,.blue &{

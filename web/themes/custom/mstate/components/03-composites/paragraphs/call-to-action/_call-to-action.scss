@@ -7,6 +7,11 @@
 .paragraph--type--call-to-action{
   padding: 40px $siteMarginMobile;
   position: relative;
+  @include edgeToEdge;
+  @include contentStop{
+    margin-left: -10rem;
+    margin-right: -10rem;
+  }
   &.cta-visible{
     article{
       .field-media-image{
