@@ -81,4 +81,23 @@ Drupal.behaviors.backToTop = {
   }
 }
 
+Drupal.behaviors.footerAnimate = {
+  attach: function (context, settings) {
+    once('footerAnimate','footer.site-footer', context).forEach(footerAnimate => {
+      function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            //add class when target is visible
+            entry.target.classList.add('footer-visible');
+            observer.unobserve(entry.target); 
+          }
+        });
+      }
+      const observer = new IntersectionObserver(handleIntersection, { threshold: 0.15 });
+      observer.observe(footerAnimate);
+
+    });//end once footerAnimate
+  }
+}
+
 })(jQuery, Drupal, once);

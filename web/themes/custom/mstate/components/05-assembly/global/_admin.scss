@@ -62,7 +62,7 @@
 .block-local-tasks-block{
 	max-width: $ultraScreen;
   background: $siteBack;
-	padding: $spaceMd 0 $spaceSm;
+	padding: $spaceMd $spaceSm $spaceSm;
 	position: relative;
 	@include auto;
 	body:not(.logged-in) &{

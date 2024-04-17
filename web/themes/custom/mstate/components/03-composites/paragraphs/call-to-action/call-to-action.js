@@ -22,5 +22,5 @@
     }
   }
   
-  })(Drupal, once);
+})(Drupal, once);
   

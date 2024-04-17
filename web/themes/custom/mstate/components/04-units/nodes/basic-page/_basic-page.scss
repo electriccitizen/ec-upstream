@@ -4,25 +4,46 @@
 
 @use '../../../00-base/base' as *;
 
+@keyframes backgroundSlide {
+  from {
+    left: 200vw;
+  }
+  to {
+    left: 0;
+  }
+}
+
 .node-page{
-  background-image: url(../images/logos-badges/m-blue.svg);
-  background-repeat: no-repeat;
-  background-size: calc(400px + 20vw);
-  background-position: 45vw 50px;
-  @include tab{
-    background-size: calc(500px + 10vw);
+  position: relative;
+  &:before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../images/logos-badges/m-blue.svg);
+    background-repeat: no-repeat;
+    background-size: calc(400px + 20vw);
     background-position: 45vw 50px;
-  }
-  @include desk{
-    background-size: 698px;
-    background-position: 55vw 50px;
-  }
-  @include contentStop{
-    background-position: calc(100vw - 600px) 50px;
-  }
-  @include largeScreen{
-    background-size: 800px;
-    background-position: calc(100vw - 700px) 50px;
+    animation: backgroundSlide 1.5s forwards;
+    @include tab{
+      background-size: calc(500px + 10vw);
+      background-position: 45vw 50px;
+    }
+    @include desk{
+      background-size: 698px;
+      background-position: 55vw 50px;
+    }
+    @include contentStop{
+      background-position: calc(100vw - 600px) 50px;
+    }
+    @include largeScreen{
+      background-size: 800px;
+      background-position: calc(100vw - 700px) 50px;
+    }
   }
 	.block-field.block-title{
     max-width: $contentConstrain;
