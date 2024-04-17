@@ -40,11 +40,10 @@
 
 {% block widgetContent %}
 	<div class="portal-item">
-		<a href="{{ content.field_link.0['#plain_text'] }}" class="portal-link">
-			{{ content.field_image }}
-			{{ content.field_headline }}
-		</a>
-		{{ content.field_long_text }}
+    {{ content.field_image }}
+    {{ content.field_headline }}
+		{{ content.field_additional_information }}
+    {{ content.field_link }}
 	</div>
 {% endblock %}
 

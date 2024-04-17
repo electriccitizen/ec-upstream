@@ -5,14 +5,26 @@
 @use '../../../00-base/base' as *;
 
 .paragraph--type--portals{
+  max-width: 1700px;
+  @include auto;
+  .widget-title{
+    text-align: center;
+    @include auto;
+    &:after{
+      left: calc(50% - 30px);
+    }
+  }
 	.field-portals{
 		margin-bottom: -$spaceMd;
 		@include safeFlex(row,wrap,center,start);
-		@include bleed(padding,32px);
+		@include bleed(padding,24px);
 		& > div{
 			margin-bottom: $spaceMd;
-			max-width: 308px;
+			max-width: 320px;
 			width: 100%;
+      @include desk{
+        max-width: 33.3%;
+      }
 		}
 		a{
 			text-decoration: none;
@@ -26,17 +38,47 @@
 					text-decoration: underline;
 				}
 			}
-		}
+		}//end a
 		.field-image{
-			margin-bottom: $spaceXxs;
+			margin-bottom: $spaceXs;
 		}
 		.field-headline{
 			@include heading4;
-			text-align: center;
+      margin-bottom: $spaceXs;
+      padding-bottom: $spaceXs;
+      position: relative;
+      color: $darkBlue;
+      @include contentStop{
+        font-size: 4.5rem;
+      }
+      &:after{
+        content: '';
+        display: block;
+        width: 60px;
+        height: 2px;
+        background-color: $green;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 0 40px 0 40px;
+        @include tab{
+          width: 120px;
+        }
+        @include desk{
+          width: 120px;
+        }
+      }//end after
+		}//end field headline
+		.field-additional-information{
+      font-size: 2rem;
+      &:not(:last-child){
+        margin-bottom: $spaceXs;
+      }
 		}
-		.field-long-text{
-			margin-top: $spaceXxs;
-			font-size: 2rem;
-		}
+    .field-link{
+      a{
+        @include arrowLink;
+      }
+    }
 	}//end field portals
 }//end portals

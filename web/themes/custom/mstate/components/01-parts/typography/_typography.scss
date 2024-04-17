@@ -102,29 +102,7 @@ a {
 		}
 	}
   &.arrow-link{
-    text-transform: uppercase;
-    font-size: 2rem;
-    line-height: 1.5;
-    letter-spacing: .05em;
-    color: $hoverLink;
-    font-weight: $heavy;
-    &:hover,&:focus{
-     color: $link;
-     &:after{
-      background-color: $link;
-      right: -5px;
-      transition: all .3s ease-in-out;
-     } 
-    }
-    &:after{
-      content: '';
-      display: inline-block;
-      width: 11px;
-      height: 11px;
-      @include textLinkArrow;
-      position: relative;
-      right: 0;
-    }
+    @include arrowLink;
   }
 }//end a
 

@@ -2,10 +2,10 @@
 	MIXINS
 ======================= */
 
-@use 'colors';
-@use 'component-colors';
-@use 'fonts';
-@use 'units';
+@use 'colors' as c;
+@use 'component-colors' as cc;
+@use 'fonts' as f;
+@use 'units' as u;
 @use 'sass:math';
 
 /* TRANSFORM & TRANSITION MIXINS
@@ -272,34 +272,6 @@
 	}@else if $grad-direction == 'right'{
 		background: linear-gradient(to left, $grad-start $gradStartPercent,$grad-stop 100%); /* W3C */
 	}
-
-}
-
-@mixin triangle($triDirection,$triHeight,$triWidth,$triColor){
-	width: 0;
-	height: 0;
-	-webkit-transform: rotate(0.05deg);
-	-moz-transform: scale(1.1);
-	transform: rotate(0.05deg);
-	$actualWidth: math.div($triWidth, 2);
-	$actualHeight: math.div($triWidth, 2);
-	@if $triDirection == 'up'{
-		border-right: $actualWidth double rgba(0,0,0,0);
-		border-left: $actualWidth double rgba(0,0,0,0);
-		border-bottom: $triHeight solid $triColor;
-	}@else if $triDirection == 'down'{
-		border-right: $actualWidth double rgba(0,0,0,0);
-		border-left: $actualWidth double rgba(0,0,0,0);
-		border-top: $triHeight solid $triColor;
-	}@else if $triDirection == 'left'{
-		border-top: $actualHeight double rgba(0,0,0,0);
-		border-bottom: $actualHeight double rgba(0,0,0,0);
-		border-right: $triWidth solid $triColor;
-	}@else if $triDirection == 'right'{
-		border-top: $actualHeight double rgba(0,0,0,0);
-		border-bottom: $actualHeight double rgba(0,0,0,0);
-		border-left: $triWidth solid $triColor;
-	}
 }
 
 @mixin lightBack($lightText,$lightLink) {
@@ -338,6 +310,32 @@
     }
 	}
 }//end lightBack
+
+@mixin arrowLink{
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 1.5;
+  letter-spacing: .05em;
+  color: cc.$hoverLink;
+  font-weight: f.$heavy;
+  &:hover,&:focus{
+    color: cc.$link;
+    &:after{
+    background-color: cc.$link;
+    right: -5px;
+    transition: all .3s ease-in-out;
+    } 
+  }
+  &:after{
+    content: '';
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    @include textLinkArrow;
+    position: relative;
+    right: 0;
+  }
+}
 
 @mixin textLinkArrow{
   -webkit-mask: url(/themes/custom/mstate/images/elements/arrow-right.svg) no-repeat 50% 50%;

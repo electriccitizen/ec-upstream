@@ -35,6 +35,10 @@
   }//end cluster name
   .description{
     margin-bottom: $spaceXs;
+    font-size: 2rem;
+    @include contentStop{
+      font-size: 2.25rem;
+    }
   }
 }//end cluster term teaser
 
