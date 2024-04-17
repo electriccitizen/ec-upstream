@@ -30,8 +30,16 @@
   }
   .ti-wrapper{
     background: $lightGrey;
+    .light-gray &{
+      background: $white;
+    }
+    .blue &{
+      background: $darkBlue;
+    }
+    .navy &{
+      background: $navy;
+    }
     @include tab{
-      
       @include safeFlex(row,nowrap,start,stretch);
     }
     &.ti-right{
