@@ -6,6 +6,8 @@
 @use '../../../01-parts/buttons/button-mixins' as *;
 
 .paragraph--type--view-placer{
+  max-width: 1700px;
+  @include auto;
   .view-placer-wrapper{
     &.has-link{
       @include tab{
@@ -33,10 +35,27 @@
     }
 	}
 	.field-link{
-		margin-top: $spaceLg;
-		a{
-			@include button;
-			margin-bottom: 0;
-		}
+    text-align: center;
+    a{
+      @include button;
+      margin-bottom: $elementSpace;
+      @include onlyPhone{
+        width: 288px;
+      }
+      @include tab{
+        margin-bottom: 0;
+      }
+      &:after{
+        content: '';
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        @include textLinkArrow;
+        color: inherit !important;
+        position: relative;
+        right: 0;
+        margin-left: .75em;
+      }
+    }//end a
 	}
 }//end social media

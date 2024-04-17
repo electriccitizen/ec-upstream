@@ -7,6 +7,7 @@
 @forward 'directory/directory-views';
 @forward 'events/event-views';
 @forward 'news/news-views';
+@forward 'program-clusters/program-clusters';
 @forward 'search/search';
 
 @use '../../00-base/base' as *;

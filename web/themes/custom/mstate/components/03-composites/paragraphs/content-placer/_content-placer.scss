@@ -32,9 +32,23 @@
 	}
 	.field-link{
 		margin-top: $spaceLg;
+    text-align: center;
 		a{
 			@include button;
 			margin-bottom: 0;
-		}
-	}
+      @include onlyPhone{
+        width: 288px;
+      }
+      &:after{
+        content: '';
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        @include textLinkArrow;
+        position: relative;
+        right: 0;
+        margin-left: .75em;
+      }
+		}//end a
+	}//end field link
 }//end social media

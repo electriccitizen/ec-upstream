@@ -1,0 +1,40 @@
+/* ===============
+   PROGRAM CLUSTER TERMS
+================= */
+
+@use '../../00-base/base' as *;
+
+
+.vocab-program-cluster.term-teaser{
+  .field-cluster-image{
+    margin-bottom: $spaceXs;
+  }
+  .cluster-name{
+    @include heading3;
+    color: $white;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    position: relative;
+    &:after{
+      content: '';
+      display: block;
+      width: 60px;
+      height: 2px;
+      background-color: $white;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-radius: 0 40px 0 40px;
+      @include tab{
+        width: 120px;
+      }
+      @include desk{
+        width: 120px;
+      }
+    }
+  }//end cluster name
+  .description{
+    margin-bottom: $spaceXs;
+  }
+}//end cluster term teaser
+

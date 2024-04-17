@@ -1,17 +1,104 @@
 /* ==================
-		NEWS VIEWS
+		PROGRAM CLUSTERS VIEWS
 ==================== */
 
 @use '../../../00-base/base' as *;
 @use '../views-mixins' as *;
 
-/* ALL NEWS */
-.news.all-news{
-	.view{
-		padding-bottom: $elementSpace;
-	}
-	.views-row{
-		@include viewsRowStandard;
-	}
-}//end all news
+/* FEATURED CLUSTERS */
+.program-clusters.featured-clusters{
+	max-width: 420px;
+  @include auto;
+  @include tab{
+    max-width: 100%;
+    margin: $spaceSm 0;
+  }
+  .view-content{
+    position: relative;
+    @include tab{
+      right: -47px;
+      width: calc(100vw + 200px);
+      max-width: 1950px;
+    }
+    @include desk{
+      right: -90px;
+    }
+    @media screen and (min-width: 1880px){
+      &:before{
+        content: '';
+        display: block;
+        height: calc(100% + 2px);
+        width: 400px;
+        background: $lightBlue;
+        position: absolute;
+        top: -1px;
+        right: -200px;
+        z-index: 1;
+      }
+    }
+  }
+  .views-row{
+    @include tab{
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    .term-teaser{
+      margin-bottom: $spaceSm;
+      max-width: 308px;
+      width: 100%;
+      @include auto;
+      @include tab{
+        max-width: 100%;
+      }
+    }
+  }//end views row
+  .slick-slider{
+    .slick-arrow{
+      width: 32px;
+      height: 32px;
+      @include desk{
+        height: 50px;
+        width: 50px;
+      }
+      &.slick-prev {
+        left: 15px;
+        background-image: url('../images/elements/arrow-circle-left-white.svg');
+        &:hover,
+			  &:focus {
+          background-color: rgba($navy,.2);
+        }
+        @include smallTab{
+          left: 0;
+        }
+        @include tab{
+          left: -47px;
+          top: 15px;
+        }
+        @include desk{
+          left: -90px;
+        }
+      }
+      &.slick-next {
+        right: 15px;
+        background-image: url('../images/elements/arrow-circle-right-white.svg');
+        &:hover,
+			  &:focus {
+          background-color: rgba($navy,.2);
+        }
+        @include smallTab{
+          right: 0;
+        }
+        @include tab{
+          right: auto;
+          left: -47px;
+          top: 71px;
+        }
+        @include desk{
+          left: -90px;
+          top: 85px;
+        }
+      }
+    }//end slick arrow
+  }//edn slick slider
+}//end featured clusters
 
