@@ -25,5 +25,15 @@ html > body:not(.is-front):not(.path-node) {
   .layout-container{
     background-image: url(../images/logos-badges/m-grey.svg);
     background-repeat: no-repeat;
+    background-size: 2468px;
+    background-position: 50% 0;
+    @include desk{
+      background-size: 2810px;
+      background-position: 50% 42%;
+    }
+    @include midScreen{
+      background-size: 4000px;
+      background-position: 50% 71%;
+    }
   }
 }
