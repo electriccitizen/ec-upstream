@@ -15,6 +15,9 @@
 
 .node-page{
   position: relative;
+  @include edgeToEdge;
+  padding-left: $siteMarginMobile;
+  padding-right: $siteMarginMobile;
   &:before{
     content: '';
     display: block;

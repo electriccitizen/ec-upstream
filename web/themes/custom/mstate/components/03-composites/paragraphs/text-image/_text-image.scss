@@ -8,8 +8,8 @@
   @include edgeToEdge;
   @include contentStop{
     @include edgeReset;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 65px;
+    padding-right: 65px;
   }
   &.ti-visible{
     .field-image{

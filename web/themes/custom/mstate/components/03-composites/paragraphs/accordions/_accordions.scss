@@ -5,7 +5,8 @@
 @use '../../../01-parts/buttons/button-mixins' as *;
 
 .paragraph--type--accordions{
-	@include textConstrain;
+	max-width: $contentConstrain;
+  @include auto;
 }
 
 /* ITEM STYLING
@@ -58,7 +59,7 @@
         .navy &,.blue &{
           background-color: $white;
         }
-			}
+			}//end after
 			&:hover,&:focus{
 				color: $accordHeaderHover;
 				background: $accordHeaderBackHover;
@@ -71,7 +72,10 @@
           opacity: 1 !important;
           background: rgba($white, .2);
         }
-			}
+			}//end hover/focus
+      .checklist-number{
+        margin-right: .25em;
+      }
 		}//end a
 	}//end accordion header
 
