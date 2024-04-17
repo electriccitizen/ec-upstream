@@ -4,9 +4,12 @@
 @use '../../../00-base/base' as *;
 
 .breadcrumb{
-	max-width: $contentStop;
+	max-width: $ultraScreen - 40px;
 	@include auto;
 	padding: $spaceMd 0 0;
+  @include menuBreak{
+    padding-left: 3rem;
+  }
 	ol {
 		@include listReset;
 	}
@@ -25,7 +28,7 @@
 		}
 		&:not(:last-of-type){
 			&:after{
-				content: "\00BB";
+				content: ":";
 			}
 		}
 	}

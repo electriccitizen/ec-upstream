@@ -1,0 +1,70 @@
+/* ===============
+   TEXT & IMAGE WIDGET
+================= */
+
+@use '../../../00-base/base' as *;
+
+.paragraph--type--text-image{
+  @include edgeToEdge;
+  @include contentStop{
+    @include edgeReset;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  &.ti-visible{
+    .field-image{
+      opacity: 1;
+      transition: opacity 1s ease-out;
+      transition-delay: .75s;
+    }
+  }
+  .widget-wrapper{
+    max-width: $contentConstrainMax;
+    @include auto;
+    border-top-right-radius: 40px;    
+    overflow: hidden;
+    @include tab{
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 40px;    
+    }
+  }
+  .ti-wrapper{
+    background: $lightGrey;
+    @include tab{
+      
+      @include safeFlex(row,nowrap,start,stretch);
+    }
+    &.ti-right{
+      .field-image{
+        order: 2;
+      }
+    }
+  }//end  ti-wrapper
+  .field-image{
+    opacity: 0;
+    @include tab{
+      flex: 0 0 45.6%;
+      border-top-right-radius: 40px;
+      overflow: hidden;
+      *{
+        height: 100%;
+      }
+      img{
+        object-fit: cover;
+      }
+    }
+  }//end field image
+  .text-wrapper{
+    padding: 20px $siteMarginMobile 60px;
+    @include safeFlex(column,nowrap,center,start);
+    @include tab{
+      padding-left: $spaceXl;
+      padding-right: $spaceXl;
+    }
+    .widget-title{
+      &:after{
+        background-color: $lightBlue;
+      }
+    }
+  }
+}//end text & image

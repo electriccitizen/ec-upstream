@@ -89,6 +89,10 @@ table:
   js:
     components/01-parts/tables/tables.js: {}
     components-addons/basictable/jquery.basictable.min.js: { minified: true }
+text-image:
+  version: 1.0
+  js:
+    components/03-composites/paragraphs/text-image/text-image.js: {}
 views:
   version: 1.0
   js:

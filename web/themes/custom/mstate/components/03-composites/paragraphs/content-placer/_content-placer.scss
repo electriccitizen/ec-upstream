@@ -6,7 +6,7 @@
 @use '../../../01-parts/buttons/button-mixins' as *;
 
 .paragraph--type--content-placer{
-  max-width: 1700px;
+  max-width: $contentConstrainMax;
   @include auto;
   .content-placer-wrapper{
     &.has-link{

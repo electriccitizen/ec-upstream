@@ -8,7 +8,7 @@
 	.widget-section{
 		position: relative;
 		z-index: 4;
-		max-width: 1700px;
+		max-width: $contentConstrainMax;
 		@include auto;
 	}
 }//end layout section paragraph

@@ -5,13 +5,38 @@
 @use '../../../00-base/base' as *;
 
 .node-page{
-	.breadcrumb{
-		padding: 0;
-	}
-	.block-field-image{
-		@include edgeToEdge;
-	}
-	.block-field.block-body{
-		max-width: 100%;
-	}
+	.block-field.block-title{
+    max-width: $contentConstrain;
+    @include auto;
+    margin-bottom: $spaceMd;
+    h1{
+      color: $darkBlue;
+      max-width: $textMax;
+    }
+  }
+  .block-field-subtitle{
+    max-width: $contentConstrain;
+    @include auto;
+    margin-top: -1rem;
+    margin-bottom: $spaceMd;
+    h2{
+      max-width: $textMax;
+      font-family: $bodyFont;
+      font-size: 2.5rem;
+      font-weight: $regular;
+      line-height: 1.16;
+      color: $baseText;
+      @include tab{
+        fonts-size: 3rem;
+      }
+    }
+  }//end block field subtitle
+  .block-field.block-body{
+    max-width: $contentConstrain;
+    @include auto;
+    margin-bottom: $spaceMd;
+    .field.body{
+      max-width: $textMax;
+    }
+  }
 }//end basic page
