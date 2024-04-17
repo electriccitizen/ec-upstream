@@ -40,7 +40,7 @@
 {% extends 'paragraph.html.twig' %}
 
 {% block widget %}
-  <div class="content-placer-wrapper{% if content.field_link.0 %} has-link{% endif %}">
+  <div class="content-placer-wrapper{% if content.field_link.0 %} has-link{% endif %} {{ paragraph.field_content_type.0.entity.name.0.value|clean_class }}">
 
     {{ content.field_widget_title }}
         

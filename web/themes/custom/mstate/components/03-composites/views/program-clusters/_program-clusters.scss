@@ -11,7 +11,7 @@
   @include auto;
   @include tab{
     max-width: 100%;
-    margin: $spaceSm 0;
+    margin-top: $spaceSm;
   }
   .view-content{
     position: relative;

@@ -77,3 +77,71 @@
 	}
 
 }//end directory
+
+/* DIRECTORY TEASER
+----------------- */
+.teaser-directory{
+  width: 341px;
+  margin-bottom: $spaceMd;
+  background: $white;
+  border-top-right-radius: 24px;
+  border-bottom-left-radius: 24px;
+  overflow: hidden;
+  padding-bottom: 5rem;
+  .field-campuses{
+    background: $lightBlue;
+    padding: 15px 20px;
+    font-weight: $heavy;
+    text-align: center;
+    @include safeFlex(row,wrap,center,start);
+    & > div:not(:last-child){
+      &:after{
+        content: '|';
+        margin: 0 .35em 0 .25em;
+        font-weight: $regular;
+        position: relative;
+        top: -1px;
+      }
+    }
+  }//end field campuses
+  .field-employee-id-number{
+    width: 256px;
+    margin: $spaceMd auto;
+    img{
+      border-radius: 50%;
+    }
+  }//end field image
+  .teaser-title{
+    width: 256px;
+    margin: 0 auto $spaceXxs;
+    &:first-child{
+      margin-top: 20px;
+    }
+    a{
+      @include heading4;
+      color: $darkBlue !important;
+      &:hover,&:focus{
+        opacity: 1 !important;
+        color: $hoverLink !important;
+      }
+    }//end a
+  }//end teaser title
+  .field-employee-phone,.field-email{
+    width: 256px;
+    margin: 0 auto .5rem;
+    font-size: 16px;
+    line-height: 1.4;
+    color: $navy !important;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    // for when devices automatically turn these into links
+    a{
+      color: $darkBlue !important;
+      &:hover,&:focus{
+        opacity: 1 !important;
+        color: $hoverLink !important;
+      }
+    }
+  }//end email/phone
+}//end directory teaser

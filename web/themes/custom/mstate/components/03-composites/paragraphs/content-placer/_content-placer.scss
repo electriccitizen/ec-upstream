@@ -25,6 +25,26 @@
         }
       }//end tab
     }//end has link
+    &.directory{
+      .field-widget-title{
+        @include centerBlockTitle;
+      }
+      .content-placer-content{
+        @include safeFlex(row,wrap,center,start);
+        max-width: $contentConstrain;
+        @include auto;
+        @media screen and (min-width: 702px){
+          justify-content: flex-start;
+          gap: 20px;
+        }
+        @include contentStop{
+          gap: 40px;
+        }
+        @include midScreen{
+          max-width: 1484px;
+        }
+      }
+    }//end directory placer
   }//end content placer wrapper
 
 	.field-widget-title{
@@ -51,4 +71,6 @@
       }
 		}//end a
 	}//end field link
-}//end social media
+
+
+}//end content placer

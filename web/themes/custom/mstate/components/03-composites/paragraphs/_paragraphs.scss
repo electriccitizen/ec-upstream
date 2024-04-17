@@ -46,7 +46,7 @@
 	//layout-sections
 	&.layout-section{
 		&.background{
-			padding-top: $elementSpace;
+			padding-top: 10rem;
       padding-bottom: 1px;
 			&.light-gray{
 				background: $lightGrey;
@@ -56,8 +56,13 @@
         @include darkBack($white,$yellow);
 			}
       &.navy{
-				background: $navy;
+				background: $darkBlue;
         @include darkBack($white,$yellow);
+        .field-widget-title{
+          &:after{
+            background-color: $yellow;
+          }
+        }
 			}
 			& + .backless{
 				margin-top: 10rem;
