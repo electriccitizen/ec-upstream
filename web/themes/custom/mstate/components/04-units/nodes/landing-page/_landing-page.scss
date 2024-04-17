@@ -24,7 +24,7 @@
     z-index: 1;
     max-width: 784px;
     .has-main-image &{
-      margin-top: -84px;
+      margin-top: -110px;
       margin-bottom: 60px;
     }
     @include tab{
@@ -34,10 +34,26 @@
       }
     }
   }
+  .block-field-subtitle{
+    margin-bottom: 0;
+    max-width: 1104px;
+    @include auto;
+    h2{
+      @include blockTitle;
+      margin-bottom: $spaceSm;
+      max-width: $textMax;
+    }
+  }
 	.block-field.block-body{
-		max-width: $textMax;
+		max-width: 1104px;
 		@include auto;
+    margin-bottom: $spaceSm;
+    .field.body{
+      max-width: $textMax;
+    }
 	}
+
+
 }//end landing-page
 
 

@@ -311,6 +311,15 @@
 	}
 }//end lightBack
 
+@mixin textLinkArrow{
+  -webkit-mask: url(/themes/custom/mstate/images/elements/arrow-right.svg) no-repeat 50% 50%;
+  mask: url(/themes/custom/mstate/images/elements/arrow-right.svg) no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  background-color:currentColor;
+  margin-left: .5em;
+}
+
 @mixin arrowLink{
   text-transform: uppercase;
   font-size: 2rem;
@@ -335,15 +344,6 @@
     position: relative;
     right: 0;
   }
-}
-
-@mixin textLinkArrow{
-  -webkit-mask: url(/themes/custom/mstate/images/elements/arrow-right.svg) no-repeat 50% 50%;
-  mask: url(/themes/custom/mstate/images/elements/arrow-right.svg) no-repeat 50% 50%;
-  -webkit-mask-size: cover;
-  mask-size: cover;
-  background-color:currentColor;
-  margin-left: .5em;
 }
 
 /* ANIMATION MIXINS

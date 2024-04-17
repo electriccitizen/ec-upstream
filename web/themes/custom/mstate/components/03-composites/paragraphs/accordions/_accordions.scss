@@ -2,6 +2,7 @@
    ACCORDIONS
 ================= */
 @use '../../../00-base/base' as *;
+@use '../../../01-parts/buttons/button-mixins' as *;
 
 .paragraph--type--accordions{
 	@include textConstrain;
@@ -10,31 +11,47 @@
 /* ITEM STYLING
 ------------------- */
 .accordion-item{
-
+  max-width: 1104px;
+  @include auto;
+  border-bottom: 1px solid $accordHeaderBorder ;
+  &.accord-active{
+    .accordion-header{
+      a{
+        &:after{
+          @include rotate(180);
+        }
+      }
+    }
+  }//end active accordion
 	//accordion header bar
 	.accordion-header{
 		a{
-			padding: 1rem 3rem 1rem 2.5rem;
+			padding: 2.5rem 0 2.5rem 60px;
 			display: block;
 			color: $accordHeader;
 			font-weight: $heavy;
 			position: relative;
-			font-size: 2.5rem;
-			border: 2px solid $accordHeaderBorder;
-			margin-top: -2px;
+			font-size: 4rem;
+      line-height: 1.1;
+      font-family: $header;
 			background: $accordHeaderBack;
 			@include tab{
-				padding: 1rem 4rem 1rem 3.5rem;
-				font-size: 2.75rem;
+				padding-left: 72px;
 			}
 			&:after{
 				position: absolute;
-				right: 2.5rem;
-				top: 1rem;
-				content: "+";
-				@include tab{
-					right: 3.5rem;
-				}
+				left: 0;
+				top: 2.5rem;
+				content: "";
+        display: block;
+        width: 32px;
+        height: 32px;
+        -webkit-mask: url(../images/elements/caret-down.svg) no-repeat 50% 50%;
+        mask: url(../images/elements/caret-down.svg) no-repeat 50% 50%;
+        -webkit-mask-size: 32px;
+        mask-size: 32px;
+        background-color: $lightBlue;
+        transition: transform .3s ease-out;
 			}
 			&:hover,&:focus{
 				color: $accordHeaderHover;
@@ -42,15 +59,56 @@
 				border-color: $accordHeaderBorderHover;
 				@include transAll(.3s);
 			}
-		}
-	}
+		}//end a
+	}//end accordion header
 
 	//accordion content
 	.field-long-text{
 		@include showContent(2000px,.6s);
+    @include tab{
+      @include safeFlex(row,nowrap,start,start);
+      gap: 40px;
+    }
+    @include desk{
+      gap: 70px;
+    }
+    @include contentStop{
+      gap: 100px;
+    }
+    .field-image{
+      max-width: 550px;
+      margin-bottom: 5rem;
+      @include tab{
+        flex: 0 0 352px;
+        order: 2;
+      }
+    }
 		.inner-text{
-			padding: 2.5rem 4rem;
-		}
-	}
+			padding: 2.5rem 0;
+      max-width: $textMax;
+      @include desk{
+        padding-top: 1rem;
+        padding-left: 72px;
+      }
+      p{
+        margin-bottom: $spaceXs;
+      }
+      .field-button a{
+        @include button;
+        background-color: $lightBlue;
+        color: $white;
+        &:after{
+          content: '';
+          display: inline-block;
+          width: 11px;
+          height: 11px;
+          @include textLinkArrow;
+          position: relative;
+          right: 0;
+          margin-left: .75em;
+        }
+      }
+		}//end inner text
+	}//end field long text
 }//end accordion-item
 
