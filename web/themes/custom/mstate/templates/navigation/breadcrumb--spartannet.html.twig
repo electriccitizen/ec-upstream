@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+
+{% extends 'breadcrumb.html.twig' %}
+
+{% block trail %}
+  {{ parent() }}
+  <li>SpartanNet</li>
+{% endblock %}
+

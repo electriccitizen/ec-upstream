@@ -1,0 +1,225 @@
+/* =============
+   SPARTANNET NODE
+================ */
+
+@use '../../../00-base/base' as *;
+@use '../../../01-parts/buttons/button-mixins' as *;
+
+.node-spartannet{
+  .block-system-breadcrumb-block{
+    margin-bottom: $spaceMd;
+  }
+
+  .layout--twocol-split-left{
+    .layout__region--second{
+      @include desk{
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    }
+    .layout__region--content{
+      @include onlyMobile{
+        margin-bottom: 0 !important;
+      }
+      @include desk{
+        border-left: 1px solid $lightGrey;
+      }
+    }
+  }
+
+  .block-field-links{
+    max-width: 280px;
+    margin: 0 auto $spaceLg;
+    @include safeFlex(column,nowrap,start,center);
+    .spartannet-logo{
+      margin-bottom: $spaceSm;
+    }
+    & *{
+      width: 100%;
+    }
+    a{
+      @include button;
+      display: block;
+      background-color: $darkBlue;
+      color: $white;
+      margin-bottom: $spaceXxs;
+      &:after{
+        content: '';
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        @include textLinkArrow;
+        position: relative;
+        right: 0;
+      }
+      &[href="/user/logout"]{
+        background-color: $buttonBackHover;
+        color: $buttonTextHover;
+        &:hover,&:focus{
+          background-color: darken($buttonBackHover,7%);
+        }
+        &:active{
+          background-color: darken($buttonBackHover,9%);
+        }
+      }
+    }//end a
+  }//end block field links
+
+  .block-field-sections{
+    margin-bottom: $elementSpace;
+    .field-sections{
+      & > div{
+        &:not(:last-child){
+          margin-bottom: $spaceMd;
+        }
+      }
+    }//end field sections
+  }//end block field sections
+
+  .field-embed-content,.text-long{
+    a{
+      &:not(.arrow-link){
+        text-decoration: underline;
+      }
+      &.arrow-link{
+        color: $link;
+        &:hover,&:focus{
+          color: $hoverLink;
+        }
+      }
+    }//end a
+  }//end field embed content
+
+  //alter text & image for spartannet
+  .paragraph--type--text-image{
+    @include edgeReset;
+    margin-bottom: 7rem;
+    @include contentStop{
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .widget-wrapper{
+      .ti-wrapper{
+        background: $blue;
+        @include darkBack($white,$white);
+        @include tab{
+          border-top-right-radius: 40px;
+        }
+        .widget-title{
+          &:after{
+            background-color: $white;
+          }
+        }
+        .field-image{
+          @include tab{
+            border-top-right-radius: 0;
+          }
+        }
+      }//end ti wrapper
+    }//end widget wrapper
+  }//end paragraph text & image
+  .spartannet-welcome.block-spartannet{
+    .welcome-message{
+      h2{
+        @include blockTitle;
+        @include heading1;
+        margin-bottom: $spaceSm;
+      }//end h2
+    }//end welcome message
+    .your-info{
+      .info-label{
+        display: block;
+        font-weight: $heavy;
+        @include tab{
+          display: inline-block;
+          width: 170px;
+        }
+      }
+      .info-content{
+        display: block;
+        margin-bottom: $spaceXs;
+        @include tab{
+          display: inline-block;
+          width: calc(100% - 170px);
+        }
+      }
+    }
+  }//end spartannet welcome
+
+  .paragraph--type--wysiwyg,.block-printing-block,.block-schedule{
+    background: $lightGrey;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    padding: 24px 24px 40px;
+    h2{
+      @include blockTitle;
+      &:after{
+        background-color: $lightBlue;
+      }
+    }
+    .inline-links{
+      @include onlyPhone{
+        @include safeFlex(column,nowrap,start,start);
+        
+      }
+      a.arrow-link{
+        display: inline-block;
+        margin-bottom: $spaceXs;
+        @include smallTab{
+          margin-right: 30px;
+        }
+      }
+    }//end inline links
+    ul{
+      @include listReset;
+      li{
+        margin-bottom: $spaceXxs;
+      }
+    }
+    small{
+      font-size: 2rem;
+      font-style: italic;
+    }
+  }//end gray content blocks (WYSIWYG, printing, schedule)
+  .block-schedule{
+    .course-title{
+      font-weight: $heavy;
+    }
+  }
+
+  .block-spartannext-resources-menu{
+    h2.block-title{
+      padding-bottom: 0;
+      font-family: $bodyFont;
+      font-size: $baseSize;
+      line-height: 1.4;
+      margin-bottom: $spaceXs;
+      &:after{
+        content: none;
+      }
+    }
+    ul{
+      @include listReset;
+      li{
+        margin-bottom: $spaceXs;
+        a{
+          font-size: 2rem;
+          line-height: 1.21;
+          color: $darkBlue;
+          &:hover,&:focus{
+            color: $hoverLink;
+          }
+        }
+      }
+    }
+  }//end resources menu
+
+  //star alert
+  .block-11{
+    .star-alert-badge{
+      margin-bottom: $spaceXxs;
+    }
+    font-size: 1.75rem;
+    line-height: 1.22;
+  }
+}//end spartannet
