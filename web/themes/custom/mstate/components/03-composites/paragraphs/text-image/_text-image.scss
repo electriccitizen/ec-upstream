@@ -23,11 +23,21 @@
     @include auto;
     border-top-right-radius: 40px;    
     overflow: hidden;
+    border-bottom-left-radius: 40px;
     @include tab{
       border-top-right-radius: 0;
-      border-bottom-left-radius: 40px;    
     }
-  }
+    &.ti-right{
+      @include tab{
+        border-top-right-radius: 40px;
+        .ti-wrapper{
+          .field-image{
+            order: 2;
+          }
+        }
+      }
+    }//end ti right
+  }//end widget wrapper
   .ti-wrapper{
     background: $lightGrey;
     .light-gray &{

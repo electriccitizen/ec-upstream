@@ -69,7 +69,7 @@ function mstate_form_alter(&$form, FormStateInterface $form_state) {
   }
 }
 
-/*
+/* NOTE: DO NOT UNCOMMENT THIS OUT UNTIL ALL IMAGE STYLES AND RESPONSIVE IMAGES HAVE BEEN BUILT AND ASSIGNED TO MEDIA VIEW MODES, OTHERWISE YOU WILL GET A FATAL ERROR WHEN VIEWING THE SITE 
 // provide width and height dimensions for use in the responsive image template to prevent layout shifts
 function mstate_preprocess_responsive_image(&$variables) {
   // get responsive image style in order to map hard-coded dimension values

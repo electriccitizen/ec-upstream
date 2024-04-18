@@ -22,6 +22,15 @@
   .widget-title{
     @include centerBlockTitle;
   }
+  .widget-wrapper{
+    @include contentStop{
+      margin-left: -50px;
+      margin-right: -50px;
+    }
+    @media screen and (min-width: 1364px){
+      @include edgeReset;
+    }
+  }
   .slick-slider{
     .slick-track{
       display: flex !important;
@@ -93,6 +102,9 @@
     height: 100%;
     min-width: 288px;
     @include auto;
+    @include midScreen{
+      max-width: 100%;
+    }
     .field-stat{
       font-family: $header;
       font-size: 92px;
@@ -101,9 +113,6 @@
       @include midScreen{
         font-size: 162px;
       }
-    }
-    @include midScreen{
-      max-width: 100%;
     }
   }//edn widget wrapper
 }//end stat item

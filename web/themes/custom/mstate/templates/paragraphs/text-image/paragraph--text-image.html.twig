@@ -42,8 +42,8 @@
 
 {% block widget %}
   {{ attach_library('mstate/text-image') }}
-  <div class="widget-wrapper">
-    <div class="ti-wrapper ti-{{ content.field_image_alignment.0['#markup'] }}">
+  <div class="widget-wrapper ti-{{ content.field_image_alignment.0['#markup'] }}">
+    <div class="ti-wrapper">
       {{ content.field_image}}
       <div class="text-wrapper">
         <div class="widget-title">{{- content.field_widget_title.0['#context'].value -}}</div>
