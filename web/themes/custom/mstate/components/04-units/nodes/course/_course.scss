@@ -1,0 +1,49 @@
+/* =============
+   DIRECTORY NODE
+================== */
+
+@use '../../../00-base/base' as *;
+
+.node-course{
+
+}//end course
+
+/* COURSE TEASER
+----------------- */
+.teaser-course{
+  background: $lightGrey;
+  border-top-right-radius: 24px;
+  border-bottom-left-radius: 24px;
+  overflow: hidden;
+  padding: 40px;
+  .teaser-title{
+    margin-bottom: $spaceXs;
+    a{
+      @include heading4;
+      color: $darkBlue !important;
+      &:hover,&:focus{
+        opacity: 1 !important;
+        color: $hoverLink !important;
+      }
+    }//end a
+  }//end teaser title
+  .field-credits{
+    @include safeFlex(row,nowrap,start,start);
+    margin-bottom: $spaceXs;
+    .label{
+      flex: 0 0 70px;
+      font-weight: $heavy;
+      &:after{
+        content: ':';
+      }
+    }
+  }//end field credits
+  .field-description{
+    .label{
+      font-weight: $heavy;
+      &:after{
+        content: ':';
+      }
+    }
+  }//end description
+}//end directory teaser

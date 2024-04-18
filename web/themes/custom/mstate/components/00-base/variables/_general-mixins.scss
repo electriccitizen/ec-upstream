@@ -349,6 +349,20 @@
 	}
 }//end lightBack
 
+@mixin teaserGrid{
+  @include safeFlex(row,wrap,center,start);
+  & > *{
+    margin-bottom: u.$spaceMd;
+  }
+  @media screen and (min-width: 734px){
+    justify-content: flex-start;
+    gap: 20px;
+    & > *{
+      margin-bottom: u.$spaceXs;
+    }
+  }
+}//end teaser grid
+
 
 /* ANIMATION MIXINS
 --------------------- */

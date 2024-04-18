@@ -7,6 +7,10 @@
 .node-program{
 	#node-section-1{
     @include edgeToEdge;
+    @include ultraScreen{
+      @include auto;
+      max-width: $ultraScreen;
+    }
     .block-system-breadcrumb-block{
       position: absolute;
       top: 0;
@@ -30,6 +34,10 @@
     .block-field-image{
       position: relative;
       margin-bottom: 0;
+      @include animation('fadeIn 2s 1');
+      @include tab{
+        margin-bottom: 10rem;
+      }
       &:before{
         content: '';
         display: block;
@@ -43,6 +51,13 @@
     }
     .block-field.block-title{
       margin: -36px $siteMarginMobile 10rem;
+      @include tab{
+        position: absolute;
+        bottom: -24px;
+        left: 0;
+        margin: 0;
+        max-width: $contentConstrain;
+      }
       .field.title{
         background: $lightBlue;
         border-top-right-radius: 24px;
@@ -53,24 +68,46 @@
         position: relative;
         z-index: 1;
         max-width: 784px;
+        @include tab{
+          border-bottom-left-radius: 0;
+        }
+        @include desk{
+          border-top-right-radius: 36px;
+          padding: 36px 60px;
+        }
+        @include contentStop{
+          border-top-right-radius: 48px;
+          padding: 48px 80px;
+        }
         .page-title{
           color: $white;
         }
-      }
+      }//end field title
     }//end block field block title
   }//end node section one
 
-  .block-field.block-nid{
-    margin-bottom: 0;
-    .program-subtitle{
-      @include blockTitle;
+  #node-section-2{
+    max-width: $contentConstrain;
+    @include auto;
+    .layout{
+      max-width: $textMax;
     }
-  }
+    .block-field.block-nid{
+      margin-bottom: 0;
+      .program-subtitle{
+        @include blockTitle;
+      }
+    }
+    .block-field.block-body{
+      margin-bottom: $spaceSm;
+    }
+  }//end section 2
 
   .block-field-degrees{
     background: $lightGrey;
     padding: 20px;
     max-width: $contentConstrain;
+    margin-bottom: $spaceSm;
     @include auto;
     @include tab{
       @include safeFlex(row,nowrap,start,start);
@@ -116,4 +153,36 @@
       }
     }
   }//end field degrees
+
+  /* PROGRAM ACCORDIONS */
+  #possibilities{
+    .career-text{
+      margin-bottom: $elementSpace;
+    }
+  }//end # possiblities
+  #sample-classes{
+    .teasers-grid{
+      @include teaserGrid;
+      .teaser-course{
+        max-width: 470px;
+        @media screen and (min-width: 734px){
+          max-width: calc(50% - 10px);
+        }
+      }
+    }//end teasers grid
+  }//end sample classes
+  #faculty{
+    .teasers-grid{
+      @include teaserGrid;
+      .teaser-directory{
+        width: 360px;
+        @media screen and (min-width: 734px){
+          max-width: calc(50% - 10px);
+        }
+        @include menuBreak{
+          max-width: calc(33.3% - 14px);
+        }
+      }
+    }//end teasers grid
+  }//end faculty
 }//end program

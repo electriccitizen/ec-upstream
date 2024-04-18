@@ -82,11 +82,14 @@
 ----------------- */
 .teaser-directory{
   width: 341px;
-  background: $white;
+  background: $lightGrey;
   border-top-right-radius: 24px;
   border-bottom-left-radius: 24px;
   overflow: hidden;
   padding-bottom: 5rem;
+  .light-gray &,.blue &,.navy &{
+    background: $white;
+  }
   .field-campuses{
     background: $lightBlue;
     padding: 15px 20px;

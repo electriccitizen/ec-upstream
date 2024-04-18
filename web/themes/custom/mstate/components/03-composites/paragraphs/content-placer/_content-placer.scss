@@ -30,19 +30,9 @@
         @include centerBlockTitle;
       }
       .content-placer-content{
-        @include safeFlex(row,wrap,center,start);
         max-width: $contentConstrain;
         @include auto;
-        & > *{
-          margin-bottom: $spaceMd;
-        }
-        @media screen and (min-width: 734px){
-          justify-content: flex-start;
-          gap: 20px;
-          & > *{
-            margin-bottom: $spaceXs;
-          }
-        }
+        @include teaserGrid;
         @include contentStop{
           gap: 40px;
           & > *{

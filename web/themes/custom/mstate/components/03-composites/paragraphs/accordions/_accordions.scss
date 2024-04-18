@@ -81,7 +81,7 @@
 
 	//accordion content
 	.field-long-text{
-		@include showContent(2000px,.6s);
+		@include showContent(5000px,.6s);
     @include tab{
       @include safeFlex(row,nowrap,start,start);
       gap: 40px;
@@ -92,20 +92,23 @@
     @include contentStop{
       gap: 100px;
     }
-    .field-image{
+    & > .field-image{
       max-width: 550px;
-      margin-bottom: 5rem;
       @include tab{
         flex: 0 0 352px;
         order: 2;
+        margin-bottom: $spaceLg;
       }
     }
 		.inner-text{
 			padding: 2.5rem 0;
-      max-width: $textMax;
+      width: 100%;
       @include desk{
         padding-top: 1rem;
         padding-left: 72px;
+      }
+      & > *:not(.teasers-grid){
+        max-width: $textMax;
       }
       p{
         margin-bottom: $spaceXs;

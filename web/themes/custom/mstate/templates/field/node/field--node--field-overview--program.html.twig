@@ -69,9 +69,11 @@
         </div>
         <div class="field field-long-text text-long" id="sample-classes" aria-hidden="true">
           <div class="inner-text">
-            {% for sampleClass in  element['#object'].field_sample_classes %}
-              {{ drupal_entity('node',sampleClass.target_id,'teaser') }}
-            {% endfor %}
+            <div class="course-teasers-wrapper teasers-grid">
+              {% for sampleClass in  element['#object'].field_sample_classes %}
+                {{ drupal_entity('node',sampleClass.target_id,'teaser') }}
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
@@ -83,9 +85,11 @@
         </div>
         <div class="field field-long-text text-long" id="faculty" aria-hidden="true">
           <div class="inner-text">
-            {% for faculty in  element['#object'].field_faculty %}
-              {{ drupal_entity('node',faculty.target_id,'teaser') }}
-            {% endfor %}
+            <div class="directory-teasers-wrapper teasers-grid">
+              {% for faculty in  element['#object'].field_faculty %}
+                {{ drupal_entity('node',faculty.target_id,'teaser') }}
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
