@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * Theme override for the node title field.
+ *
+ * This is an override of field.html.twig for the node title field. See that
+ * template for documentation about its details and overrides.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing span element.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see field.html.twig
+ */
+#}
+
+{% extends 'field.html.twig' %}
+
+{% block fieldMultiNoClasses %}
+	<div class="degree-types">
+    <div class="label-inline">Degree Type:</div>
+    <ul class="types-list">
+      {% for degreeType in items %}
+        <li>
+          <a href="{{ path('entity.node.canonical',{'node': degreeType.content['#node'].nid.0.value}) }}">{{ degreeType.content['#node'].title.0.value }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="degree-campuses">
+    <div class="label-inline">Campus:</div>
+    <div class="campus-list">
+      {% for degreeType in items %}
+        <span>
+          {% for campus in degreeType.content['#node'].field_campuses %}
+            <span>{{ campus.entity.title.0.value }}{%- if not loop.last -%}, {% endif %}</span>
+          {%- endfor -%}
+          {%- if not loop.last -%}, {% endif %}
+        </span>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="degree-credits">
+    <div class="label-inline">Credits:</div>
+    <div class="credits-list">
+      {% for degreeType in items %}
+        <span>
+          {{ degreeType.content['#node'].field_credits.0.value }}{% if not loop.last %}, {% endif %}
+        </span>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

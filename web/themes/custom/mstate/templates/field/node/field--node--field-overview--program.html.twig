@@ -1,0 +1,111 @@
+{#
+/**
+ * @file
+ * Theme override for the node title field.
+ *
+ * This is an override of field.html.twig for the node title field. See that
+ * template for documentation about its details and overrides.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing span element.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see field.html.twig
+ */
+#}
+
+{% extends 'field.html.twig' %}
+
+{% block fieldSingleNoClasses %}
+{{ attach_library('mstate/accordion') }}
+  <div class="field field-accordion-items">
+    <div class="accordion-item" data-accordion-id="1">
+      {% set overviewText = {
+        '#type': 'processed_text',
+        '#text': element.0['#paragraph'].field_long_text.0.value,
+        '#format': element.0['#paragraph'].field_long_text.0.format
+      } %}
+      <div class="accordion-header">
+        <a href="#" role="button" aria-controls="overview" aria-expanded="false">{{ element.0['#paragraph'].field_accordion_header.0.value }}</a>
+      </div>
+      <div class="field field-long-text text-long" id="overview" aria-hidden="true">
+        {{ drupal_field('field_image','paragraph',element.0['#paragraph'].id.0.value) }}
+        <div class="inner-text">
+          {{ overviewText }}
+          {{ drupal_field('field_button','paragraph',element.0['#paragraph'].id.0.value) }}
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item" data-accordion-id="2">
+      <div class="accordion-header">
+        <a href="#" role="button" aria-controls="possiblities" aria-expanded="false">Career Possibilities</a>
+      </div>
+      <div class="field field-long-text text-long" id="possibilities" aria-hidden="true">
+        <div class="inner-text">
+          <div class="career-text">
+            {% set careerText = {
+              '#type': 'processed_text',
+              '#text': element['#object'].field_career_text.0.value,
+              '#format': element['#object'].field_career_text.0.format
+            } %}
+            {{ careerText }}
+          </div>
+          {% if element['#object'].field_story.0 %}
+            {{ drupal_entity('node',element['#object'].field_story.0.target_id,'teaser') }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% if element['#object'].field_sample_classes.0 %}
+      <div class="accordion-item" data-accordion-id="3">
+        <div class="accordion-header">
+          <a href="#" role="button" aria-controls="sample-classes" aria-expanded="false">Sample Classes</a>
+        </div>
+        <div class="field field-long-text text-long" id="sample-classes" aria-hidden="true">
+          <div class="inner-text">
+            {% for sampleClass in  element['#object'].field_sample_classes %}
+              {{ drupal_entity('node',sampleClass.target_id,'teaser') }}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% if element['#object'].field_faculty.0 %}
+      <div class="accordion-item" data-accordion-id="4">
+        <div class="accordion-header">
+          <a href="#" role="button" aria-controls="faculty" aria-expanded="false">Meet the Faculty</a>
+        </div>
+        <div class="field field-long-text text-long" id="faculty" aria-hidden="true">
+          <div class="inner-text">
+            {% for faculty in  element['#object'].field_faculty %}
+              {{ drupal_entity('node',faculty.target_id,'teaser') }}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% if element['#object'].field_details.0 %}
+      <div class="accordion-item" data-accordion-id="5">
+        <div class="accordion-header">
+          <a href="#" role="button" aria-controls="details" aria-expanded="false">Additional Details</a>
+        </div>
+        <div class="field field-long-text text-long" id="details" aria-hidden="true">
+          <div class="inner-text">
+            {% set detailsText = {
+              '#type': 'processed_text',
+              '#text': element['#object'].field_details.0.value,
+              '#format': element['#object'].field_details.0.format
+            } %}
+            {{ detailsText }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

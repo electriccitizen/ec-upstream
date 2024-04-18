@@ -247,3 +247,20 @@ function mstate_theme_suggestions_paragraph_alter(array &$suggestions, array $va
   // array_push($suggestions, 'paragraph__' . $paragraph->getType() . '__' . $id);
   array_push($suggestions, 'paragraph__' . $paragraph->getType() . '__' . $id);
 }
+
+/**
+ * Implements hook_theme_suggestions_paragraph_alter.
+ */
+function mstate_theme_suggestions_breadcrumb_alter(array &$suggestions, array $variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $node_revision = \Drupal::routeMatch()->getParameter('node_revision');
+  if($node_revision){
+    $vid = $node_revision->getRevisionId();
+  }
+  if ((!$node instanceof NodeInterface) && (isset($vid))) {
+    $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($vid);
+  }
+  if ($node){
+    array_push($suggestions, 'breadcrumb__' . $node->getType());
+  }
+}

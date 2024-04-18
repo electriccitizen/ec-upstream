@@ -29,6 +29,7 @@
 		&:not(:last-of-type){
 			&:after{
 				content: ":";
+        margin-right: .25em;
 			}
 		}
 	}

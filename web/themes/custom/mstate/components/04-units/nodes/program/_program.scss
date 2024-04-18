@@ -1,0 +1,119 @@
+/* =============
+   PROGRAM NODE
+================ */
+
+@use '../../../00-base/base' as *;
+
+.node-program{
+	#node-section-1{
+    @include edgeToEdge;
+    .block-system-breadcrumb-block{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      padding-left: $siteMarginMobile;
+      padding-right: $siteMarginMobile;
+      .breadcrumb{
+        padding-top: 2rem;
+        li{
+          color: $white;
+          a{
+            color: $white;
+            &:hover,&:focus{
+              color: $yellow;
+            }
+          }  
+        }//end li
+      }//end padding top
+    }//end breadcrumbs block
+    .block-field-image{
+      position: relative;
+      margin-bottom: 0;
+      &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 25%;
+        @include gradient('top', rgba(0,0,0,.8), 0, transparent);
+      }
+    }
+    .block-field.block-title{
+      margin: -36px $siteMarginMobile 10rem;
+      .field.title{
+        background: $lightBlue;
+        border-top-right-radius: 24px;
+        border-bottom-left-radius: 24px;
+        padding: 24px 32px;
+        text-align: center;
+        @include auto;
+        position: relative;
+        z-index: 1;
+        max-width: 784px;
+        .page-title{
+          color: $white;
+        }
+      }
+    }//end block field block title
+  }//end node section one
+
+  .block-field.block-nid{
+    margin-bottom: 0;
+    .program-subtitle{
+      @include blockTitle;
+    }
+  }
+
+  .block-field-degrees{
+    background: $lightGrey;
+    padding: 20px;
+    max-width: $contentConstrain;
+    @include auto;
+    @include tab{
+      @include safeFlex(row,nowrap,start,start);
+      gap: 20px;
+    }
+    .degree-types,.degree-campuses,.degree-credits{
+      @include safeFlex(row,nowrap,start,start);
+      &:not(:last-child){
+        margin-bottom: $spaceXxs;
+        @include tab{
+          margin-bottom: 0;
+        }
+      }
+      .label-inline{
+        font-weight: $heavy;
+      }
+    }
+    .degree-types{
+      @include tab{
+        min-width: 40%;
+      }
+      .label-inline{
+        flex: 0 0 120px;
+      }
+      ul{
+        @include listReset;
+        a{
+          color: $hoverLink;
+          &:hover,&:focus{
+            color: $link;
+          }
+        }
+      }
+    }
+    .degree-campuses{
+      .label-inline{
+        flex: 0 0 82px;
+      }
+    }
+    .degree-credits{
+      .label-inline{
+        flex: 0 0 70px;
+      }
+    }
+  }//end field degrees
+}//end program
