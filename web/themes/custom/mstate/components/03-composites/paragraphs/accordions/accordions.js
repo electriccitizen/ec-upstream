@@ -29,20 +29,7 @@
             openLongText.classList.add('show-content');
             openLongText.setAttribute('aria-hidden', 'false');
             openHeader.setAttribute('aria-expanded', 'true');
-            openAccordion.classList.add('accord-active');
-
-            setTimeout(function() {
-              const windowTop = window.scrollY;
-              const currentAccordionTop = openAccordion.getBoundingClientRect().top + windowTop;
-        
-              if (windowTop > currentAccordionTop) {
-                window.scrollTo({
-                  top: currentAccordionTop - 100,
-                  behavior: 'smooth'
-                });
-              }
-            }, 510);
-            
+            openAccordion.classList.add('accord-active');            
           });//end link
         });//end each accordion header a
       });//end once accorions

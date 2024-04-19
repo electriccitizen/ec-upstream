@@ -38,7 +38,7 @@
     text-align: center;
     a{
       @include button;
-      margin-bottom: $elementSpace;
+      margin-bottom: 0;
       @include onlyPhone{
         width: 288px;
       }
