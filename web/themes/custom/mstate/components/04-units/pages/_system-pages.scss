@@ -27,13 +27,19 @@ html > body:not(.is-front):not(.path-node) {
     background-repeat: no-repeat;
     background-size: 2468px;
     background-position: 50% 0;
+    //added this because it gave a nicce depth effect, remove if you don't like it
+    background-attachment: fixed;
     @include desk{
       background-size: 2810px;
-      background-position: 50% 42%;
+      background-position: 3% 42%;
+      //use the position below if you do not like the fixed background
+      //background-position: 50% 42%;
     }
     @include midScreen{
       background-size: 4000px;
-      background-position: 50% 71%;
+      background-position: 3% 52%;
+      //use the position below if you do not like the fixed background
+      //background-position: 50% 71%;
     }
   }
 }
