@@ -99,7 +99,10 @@
 .block-4{
   margin-bottom: $spaceXxs;
   .mstate-badge-stacked{
-    margin-bottom: 1.5rem;
+    margin-bottom: $spaceXs;
+    width: 224px;
+    max-width: 100%;
+    @include auto;
     .footer-visible &{
       @include animation('flipRight .5s 1 forwards');
     }

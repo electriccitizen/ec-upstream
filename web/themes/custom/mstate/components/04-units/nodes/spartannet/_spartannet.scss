@@ -31,11 +31,13 @@
     max-width: 280px;
     margin: 0 auto $spaceLg;
     @include safeFlex(column,nowrap,start,center);
-    .spartannet-logo{
-      margin-bottom: $spaceSm;
-    }
     & *{
       width: 100%;
+    }
+    .spartannet-logo{
+      margin-bottom: $spaceSm;
+      width: 178px;
+      @include auto;
     }
     a{
       @include button;
@@ -119,11 +121,18 @@
     }//end widget wrapper
   }//end paragraph text & image
   .spartannet-welcome.block-spartannet{
+    @include desk{
+      padding: 10px 40px 30px;
+    }
     .welcome-message{
       h2{
         @include blockTitle;
-        @include heading1;
+        font-size: 6rem;
+        line-height: 1.1;
         margin-bottom: $spaceSm;
+        &:after{
+          background-color: $blue;
+        }
       }//end h2
     }//end welcome message
     .your-info{
@@ -151,6 +160,9 @@
     border-top-right-radius: 40px;
     border-bottom-left-radius: 40px;
     padding: 24px 24px 40px;
+    @include desk{
+      padding: 40px;
+    }
     h2{
       @include blockTitle;
       &:after{
@@ -188,6 +200,9 @@
   }
 
   .block-spartannext-resources-menu{
+    @include desk{
+      margin-bottom: $spaceMd;
+    }
     h2.block-title{
       padding-bottom: 0;
       font-family: $bodyFont;
@@ -218,6 +233,7 @@
   .block-11{
     .star-alert-badge{
       margin-bottom: $spaceXxs;
+      width: 43px;
     }
     font-size: 1.75rem;
     line-height: 1.22;
