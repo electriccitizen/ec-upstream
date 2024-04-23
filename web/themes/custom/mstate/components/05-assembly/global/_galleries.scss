@@ -119,7 +119,7 @@
     }
 		&.slick-prev {
 			left: 10px;
-      background-image: url('../images/elements/arrow-circle-left-white.svg');
+      background-image: url(../images/elements/arrow-circle-left-white.svg);
       background-repeat: no-repeat;
       background-size: 100%;
       background-position: center;
@@ -129,7 +129,7 @@
 			}
       @include desk{
         left: -90px;
-        background-image: url('../images/elements/arrow-circle-left.svg');
+        background-image: url(../images/elements/arrow-circle-left.svg);
         &:hover,
 			  &:focus {
           background-color: rgba($lightBlue,.2);
@@ -139,7 +139,7 @@
 
 		&.slick-next {
 			right: 10px;
-      background-image: url('../images/elements/arrow-circle-right-white.svg');
+      background-image: url(../images/elements/arrow-circle-right-white.svg);
       background-repeat: no-repeat;
       background-size: 100%;
       background-position: center;
@@ -149,7 +149,7 @@
 			}
       @include desk{
         right: -90px;
-        background-image: url('../images/elements/arrow-circle-right.svg');
+        background-image: url(../images/elements/arrow-circle-right.svg);
         &:hover,
 			  &:focus {
           background-color: rgba($lightBlue,.2);

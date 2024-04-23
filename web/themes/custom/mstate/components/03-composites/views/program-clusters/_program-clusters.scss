@@ -62,7 +62,9 @@
       }
       &.slick-prev {
         left: 15px;
-        background-image: url('../images/elements/arrow-circle-left-white.svg');
+        background-image: url(../images/elements/arrow-circle-left-white.svg);
+        //use the below for Drupal
+        //background-image: url(../images/elements/arrow-circle-left-white.svg);
         &:hover,
 			  &:focus {
           background-color: rgba($navy,.2);
@@ -80,7 +82,7 @@
       }
       &.slick-next {
         right: 15px;
-        background-image: url('../images/elements/arrow-circle-right-white.svg');
+        background-image: url(../images/elements/arrow-circle-right-white.svg);
         &:hover,
 			  &:focus {
           background-color: rgba($navy,.2);

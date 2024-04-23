@@ -275,8 +275,8 @@
 }
 
 @mixin textLinkArrow{
-  -webkit-mask: url(/themes/custom/mstate/images/elements/arrow-right.svg) no-repeat 50% 50%;
-  mask: url(/themes/custom/mstate/images/elements/arrow-right.svg) no-repeat 50% 50%;
+  -webkit-mask: url(../images/elements/arrow-right.svg) no-repeat 50% 50%;
+  mask: url(../images/elements/arrow-right.svg) no-repeat 50% 50%;
   -webkit-mask-size: cover;
   mask-size: cover;
   background-color:currentColor;

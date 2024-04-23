@@ -6,7 +6,6 @@
 	Drupal.behaviors.featuredClusters = {
 		attach: function (context, settings) {
 			$(once('clusters', '.program-clusters.featured-clusters', context)).each(function(){
-        console.log('clusters');
 				$(document).ready(function(){
 					$('.program-clusters.featured-clusters .view-content').slick({
 						adaptiveHeight: false,
@@ -33,8 +32,8 @@
             ]
 					});
 				});//end doc ready
-			});//end once stats
+			});//end once clusters
 		}
-	}//end stats
+	}//end featured clusters
 
 })(jQuery, Drupal, once);

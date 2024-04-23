@@ -110,7 +110,7 @@
     margin-bottom: $spaceSm;
     @include auto;
     @include tab{
-      @include safeFlex(row,nowrap,start,start);
+      @include safeFlex(row,nowrap,justify,start);
       gap: 20px;
     }
     .degree-types,.degree-campuses,.degree-credits{
@@ -148,6 +148,7 @@
       }
     }
     .degree-credits{
+      min-width: 180px;
       .label-inline{
         flex: 0 0 70px;
       }
