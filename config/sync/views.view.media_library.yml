@@ -477,7 +477,7 @@ display:
       footer: {  }
       display_extenders: {  }
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_interface'
         - url
@@ -489,7 +489,6 @@ display:
         - 'config:core.entity_view_display.media.document.banner'
         - 'config:core.entity_view_display.media.document.default'
         - 'config:core.entity_view_display.media.document.full'
-        - 'config:core.entity_view_display.media.document.full_embed'
         - 'config:core.entity_view_display.media.document.large'
         - 'config:core.entity_view_display.media.document.large_embed'
         - 'config:core.entity_view_display.media.document.media_library'
@@ -500,11 +499,9 @@ display:
         - 'config:core.entity_view_display.media.image.banner'
         - 'config:core.entity_view_display.media.image.default'
         - 'config:core.entity_view_display.media.image.full'
-        - 'config:core.entity_view_display.media.image.full_embed'
         - 'config:core.entity_view_display.media.image.large'
         - 'config:core.entity_view_display.media.image.large_embed'
         - 'config:core.entity_view_display.media.image.large_thumb'
-        - 'config:core.entity_view_display.media.image.media_browser_thumbnails'
         - 'config:core.entity_view_display.media.image.media_library'
         - 'config:core.entity_view_display.media.image.medium'
         - 'config:core.entity_view_display.media.image.medium_embed'
@@ -526,6 +523,139 @@ display:
     position: 1
     display_options:
       fields:
+        thumbnail__width:
+          id: thumbnail__width
+          table: media_field_data
+          field: thumbnail__width
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: media
+          entity_field: thumbnail
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '{{ thumbnail__width__width }}x{{ thumbnail__width__height }}px'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_link: ''
+            image_style: ''
+            image_loading:
+              attribute: lazy
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        bundle:
+          id: bundle
+          table: media_field_data
+          field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: media
+          entity_field: bundle
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         name:
           id: name
           table: media_field_data
@@ -709,8 +839,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "{{ rendered_entity }} \r\n{% if bundle == 'Image' %}<span class=\"dimensions\">{{ thumbnail__width }}</span>{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -788,7 +918,6 @@ display:
         - 'config:core.entity_view_display.media.document.banner'
         - 'config:core.entity_view_display.media.document.default'
         - 'config:core.entity_view_display.media.document.full'
-        - 'config:core.entity_view_display.media.document.full_embed'
         - 'config:core.entity_view_display.media.document.large'
         - 'config:core.entity_view_display.media.document.large_embed'
         - 'config:core.entity_view_display.media.document.media_library'
@@ -799,11 +928,9 @@ display:
         - 'config:core.entity_view_display.media.image.banner'
         - 'config:core.entity_view_display.media.image.default'
         - 'config:core.entity_view_display.media.image.full'
-        - 'config:core.entity_view_display.media.image.full_embed'
         - 'config:core.entity_view_display.media.image.large'
         - 'config:core.entity_view_display.media.image.large_embed'
         - 'config:core.entity_view_display.media.image.large_thumb'
-        - 'config:core.entity_view_display.media.image.media_browser_thumbnails'
         - 'config:core.entity_view_display.media.image.media_library'
         - 'config:core.entity_view_display.media.image.medium'
         - 'config:core.entity_view_display.media.image.medium_embed'
@@ -825,6 +952,139 @@ display:
     position: 2
     display_options:
       fields:
+        thumbnail__width:
+          id: thumbnail__width
+          table: media_field_data
+          field: thumbnail__width
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: media
+          entity_field: thumbnail
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '{{ thumbnail__width__width }}x{{ thumbnail__width__height }}px '
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_link: ''
+            image_style: ''
+            image_loading:
+              attribute: lazy
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        bundle:
+          id: bundle
+          table: media_field_data
+          field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: media
+          entity_field: bundle
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         media_library_select_form:
           id: media_library_select_form
           table: media
@@ -887,8 +1147,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "{{ rendered_entity }} \r\n{% if bundle == 'Image' %}<span class=\"dimensions\">{{ thumbnail__width }}</span>{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -1162,7 +1422,6 @@ display:
         - 'config:core.entity_view_display.media.document.banner'
         - 'config:core.entity_view_display.media.document.default'
         - 'config:core.entity_view_display.media.document.full'
-        - 'config:core.entity_view_display.media.document.full_embed'
         - 'config:core.entity_view_display.media.document.large'
         - 'config:core.entity_view_display.media.document.large_embed'
         - 'config:core.entity_view_display.media.document.media_library'
@@ -1173,11 +1432,9 @@ display:
         - 'config:core.entity_view_display.media.image.banner'
         - 'config:core.entity_view_display.media.image.default'
         - 'config:core.entity_view_display.media.image.full'
-        - 'config:core.entity_view_display.media.image.full_embed'
         - 'config:core.entity_view_display.media.image.large'
         - 'config:core.entity_view_display.media.image.large_embed'
         - 'config:core.entity_view_display.media.image.large_thumb'
-        - 'config:core.entity_view_display.media.image.media_browser_thumbnails'
         - 'config:core.entity_view_display.media.image.media_library'
         - 'config:core.entity_view_display.media.image.medium'
         - 'config:core.entity_view_display.media.image.medium_embed'
@@ -1289,6 +1546,74 @@ display:
           type: string
           settings:
             link_to_entity: false
+        thumbnail__width:
+          id: thumbnail__width
+          table: media_field_data
+          field: thumbnail__width
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: media
+          entity_field: thumbnail
+          plugin_id: field
+          label: Dimensions
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{{ thumbnail__width__width }}x{{ thumbnail__width__height }}px'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_link: ''
+            image_style: ''
+            image_loading:
+              attribute: lazy
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         uid:
           id: uid
           table: media_field_revision
