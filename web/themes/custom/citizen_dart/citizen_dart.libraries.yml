@@ -57,10 +57,6 @@ search-block:
   version: 1.0
   js:
     components/03-composites/blocks/search/search-block.js: {}
-search-page:
-  version: 1.0
-  js:
-    components/04-units/pages/search.js: {}
 section-menu:
   version: 1.0
   js:

@@ -47,7 +47,7 @@ Drupal.behaviors.searchHighlight = {
           element.innerHTML = element.textContent.replace(regex, replacement);
         }
 
-        const bodyElements = document.querySelectorAll('.views-field-body');
+        const bodyElements = document.querySelectorAll('.views-field-field-meta-description');
 
         if (bodyElements.length > 0) {
           bodyElements.forEach(function (element) {

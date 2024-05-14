@@ -3,11 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
+    - field.storage.node.field_meta_description
     - search_api.index.nodes
   module:
     - search_api
-    - text
 _core:
   default_config_hash: ND6HV5UrSahpiDK_bxNu7tzOfwvDHi2ChgR92Uud5wM
 id: site_search
@@ -96,10 +95,10 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-        body:
-          id: body
+        field_meta_description:
+          id: field_meta_description
           table: search_api_index_nodes
-          field: body
+          field: field_meta_description
           relationship: none
           group_type: group
           admin_label: ''
@@ -146,7 +145,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: text_default
+          type: basic_string
           settings: {  }
           group_column: value
           group_columns: {  }
@@ -325,7 +324,7 @@ display:
         - url.query_args
         - 'user.node_grants:view'
       tags:
-        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_meta_description'
         - 'config:search_api.index.nodes'
         - 'search_api_list:nodes'
   site_search_block:
@@ -459,6 +458,6 @@ display:
         - url.query_args
         - 'user.node_grants:view'
       tags:
-        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_meta_description'
         - 'config:search_api.index.nodes'
         - 'search_api_list:nodes'

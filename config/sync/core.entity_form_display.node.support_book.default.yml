@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.support_book.field_paragraphs
     - node.type.support_book
   module:
+    - allowed_formats
     - layout_paragraphs
     - text
 _core:
@@ -25,7 +26,10 @@ content:
       summary_rows: 3
       placeholder: ''
       show_summary: false
-    third_party_settings: {  }
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
   field_paragraphs:
     type: layout_paragraphs
     weight: 2
@@ -34,6 +38,7 @@ content:
       preview_view_mode: preview
       nesting_depth: 0
       require_layouts: 0
+      empty_message: ''
     third_party_settings: {  }
   status:
     type: boolean_checkbox
