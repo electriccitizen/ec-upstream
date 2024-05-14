@@ -41,7 +41,7 @@ article + figcaption {
 .text-with-summary article.media-item,
 .text-with-summary figure,
 .text-long article {
-
+  margin-bottom: $spaceMd;
 	&.align-left {
 		float: none;
 

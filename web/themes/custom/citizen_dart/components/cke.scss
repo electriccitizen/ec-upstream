@@ -15,6 +15,14 @@
 	}
 
 	.ck-content{
+    figure.drupal-media{
+      margin: 0 0 $spaceSm;
+      .image.default{
+        img{
+          min-width: unset;
+        }
+      }
+    }
 		.drupal-media.ck-widget{
 			width: 100%;
 			.document{
