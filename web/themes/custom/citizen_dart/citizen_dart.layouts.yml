@@ -42,14 +42,3 @@ two_column_sidebar_right:
       label: Content
     second:
       label: Second
-tabs:
-  label: Tabs
-  category: Citizen Dart Layouts
-  path: templates/layout
-  template: layout--tabs
-  default_region: tabs
-  icon_map:
-    - [tabs]
-  regions:
-    tabs:
-      label: Tabs

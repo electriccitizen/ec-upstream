@@ -136,13 +136,18 @@ small {
 	font-size: 80%;
 }
 
-.warning{
+p.warning{
 	background: none;
 	padding: 1rem 2rem;
 	margin-bottom: $spaceMd;
 	color: $validation;
 	border: 1px solid $validation;
 	text-align: center;
+}
+span.highlight{
+  background-color: $highlight;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .hr,
