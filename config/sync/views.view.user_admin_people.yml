@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_user_image
+    - field.storage.user.field_image
+    - image.style.thumbnail_cropped
   module:
+    - image
     - role_delegation
     - user
 _core:
@@ -141,10 +143,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_user_image:
-          id: field_user_image
-          table: user__field_user_image
-          field: field_user_image
+        field_image:
+          id: field_image
+          table: user__field_image
+          field: field_image
           relationship: none
           group_type: group
           admin_label: ''
@@ -191,10 +193,13 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_entity_view
+          type: image
           settings:
-            view_mode: thumbnail_cropped
-          group_column: target_id
+            image_link: ''
+            image_style: thumbnail_cropped
+            image_loading:
+              attribute: lazy
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -987,7 +992,7 @@ display:
         - url.query_args
         - user.permissions
       tags:
-        - 'config:field.storage.user.field_user_image'
+        - 'config:field.storage.user.field_image'
   page_1:
     id: page_1
     display_title: Page
@@ -1025,4 +1030,4 @@ display:
         - url.query_args
         - user.permissions
       tags:
-        - 'config:field.storage.user.field_user_image'
+        - 'config:field.storage.user.field_image'

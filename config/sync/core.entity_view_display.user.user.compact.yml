@@ -1,12 +1,12 @@
 uuid: 73b42e6d-7515-4730-bc61-739dfcbe342d
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.user.compact
     - field.field.user.user.field_first_name
+    - field.field.user.user.field_image
     - field.field.user.user.field_last_name
-    - field.field.user.user.field_user_image
   module:
     - layout_builder
     - layout_discovery
@@ -46,7 +46,7 @@ content:
 hidden:
   field_authored_placeholder: true
   field_first_name: true
+  field_image: true
   field_last_name: true
-  field_user_image: true
   member_for: true
   search_api_excerpt: true
