@@ -6,7 +6,6 @@ dependencies:
     - block_content.type.basic
     - block_content.type.newsletter
     - block_content.type.social_media_links
-    - core.entity_view_display.node.landing_page.default
     - filter.format.limited_html
     - filter.format.webform_default
     - media.type.document
@@ -25,7 +24,6 @@ dependencies:
     - file
     - filter
     - help
-    - layout_builder
     - media
     - menu_admin_per_menu
     - node
@@ -66,7 +64,6 @@ permissions:
   - 'assign site_manager role'
   - 'cancel account'
   - 'change own username'
-  - 'configure editable landing_page node layout overrides'
   - 'create basic block content'
   - 'create bios content'
   - 'create document media'
