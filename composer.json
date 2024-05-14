@@ -27,7 +27,6 @@
     "drupal/allowed_formats": "^3.0",
     "drupal/antibot": "^2.0",
     "drupal/auto_entitylabel": "^3.0@beta",
-    "drupal/block_content_permissions": "^1.11",
     "drupal/ckeditor5_fullscreen": "^1.0@beta",
     "drupal/ckeditor5_paste_filter": "^1.0",
     "drupal/config_filter": "^2.0",
@@ -123,9 +122,6 @@
       "drupal/core": {
       	"Media library won't allow media in two fields with the same name on nodes": "https://www.drupal.org/files/issues/2023-02-28/3345064.patch",
         "Update module can get 'stuck' with 'no releases available', https://www.drupal.org/project/drupal/issues/2920285": "https://www.drupal.org/files/issues/2920285-update-status.patch"
-      },
-      "drupal/block_content_permissions": {
-        "Allow custom block library access without administering blocks": "https://www.drupal.org/files/issues/2023-01-09/block_content_permissions-access_listing_page-2920739-59.patch"
       },
       "drupal/focal_point": {
         "Preview modal closes media library": "https://www.drupal.org/files/issues/2020-10-06/3162210-17.patch",
