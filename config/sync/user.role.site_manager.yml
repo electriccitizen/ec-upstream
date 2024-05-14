@@ -3,8 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - block_content.type.basic
+    - block_content.type.newsletter
+    - block_content.type.social_media_links
     - core.entity_view_display.node.landing_page.default
     - filter.format.limited_html
+    - filter.format.webform_default
     - media.type.document
     - media.type.image
     - media.type.remote_video
@@ -15,7 +19,7 @@ dependencies:
     - node.type.page
   module:
     - addanother
-    - block_content_permissions
+    - block_content
     - citizen_custom
     - contextual
     - file
@@ -40,7 +44,7 @@ weight: 5
 is_admin: null
 permissions:
   - 'access administration pages'
-  - 'access block content overview'
+  - 'access block library'
   - 'access content overview'
   - 'access contextual links'
   - 'access help pages'
@@ -63,7 +67,6 @@ permissions:
   - 'cancel account'
   - 'change own username'
   - 'configure editable landing_page node layout overrides'
-  - 'create basic block content'
   - 'create bios content'
   - 'create document media'
   - 'create event content'
@@ -71,22 +74,20 @@ permissions:
   - 'create landing_page content'
   - 'create media'
   - 'create news content'
-  - 'create newsletter block content'
   - 'create page content'
   - 'create remote_video media'
-  - 'create social_media_links block content'
   - 'create url aliases'
   - 'create webform'
   - 'customize shortcut links'
   - 'delete all revisions'
-  - 'delete any basic block content'
+  - 'delete any basic block content revisions'
   - 'delete any bios content'
   - 'delete any event content'
   - 'delete any landing_page content'
   - 'delete any news content'
-  - 'delete any newsletter block content'
+  - 'delete any newsletter block content revisions'
   - 'delete any page content'
-  - 'delete any social_media_links block content'
+  - 'delete any social_media_links block content revisions'
   - 'delete any webform'
   - 'delete any webform submission'
   - 'delete bios revisions'
@@ -102,14 +103,17 @@ permissions:
   - 'delete own webform'
   - 'delete own webform submission'
   - 'delete page revisions'
+  - 'edit any basic block content'
   - 'edit any bios content'
   - 'edit any document media'
   - 'edit any event content'
   - 'edit any image media'
   - 'edit any landing_page content'
   - 'edit any news content'
+  - 'edit any newsletter block content'
   - 'edit any page content'
   - 'edit any remote_video media'
+  - 'edit any social_media_links block content'
   - 'edit any webform'
   - 'edit any webform submission'
   - 'edit layout paragraphs plugin config'
@@ -124,21 +128,25 @@ permissions:
   - 'edit own webform'
   - 'edit own webform submission'
   - 'revert all revisions'
+  - 'revert any basic block content revisions'
+  - 'revert any newsletter block content revisions'
+  - 'revert any social_media_links block content revisions'
   - 'revert bios revisions'
   - 'revert event revisions'
   - 'revert landing_page revisions'
   - 'revert news revisions'
   - 'revert page revisions'
   - 'switch shortcut sets'
-  - 'update any basic block content'
   - 'update any media'
-  - 'update any newsletter block content'
-  - 'update any social_media_links block content'
   - 'update media'
   - 'use add another'
   - 'use text format limited_html'
+  - 'use text format webform_default'
   - 'view all media revisions'
   - 'view all revisions'
+  - 'view any basic block content history'
+  - 'view any newsletter block content history'
+  - 'view any social_media_links block content history'
   - 'view any webform submission'
   - 'view bios revisions'
   - 'view event revisions'

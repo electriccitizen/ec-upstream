@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.limited_html
+    - filter.format.webform_default
     - media.type.document
     - media.type.image
     - media.type.remote_video
@@ -106,6 +107,7 @@ permissions:
   - 'update media'
   - 'use add another'
   - 'use text format limited_html'
+  - 'use text format webform_default'
   - 'view all revisions'
   - 'view any webform submission'
   - 'view bios revisions'
