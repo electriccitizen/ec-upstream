@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_list_widget
     - field.field.node.news.field_meta_description
-    - field.field.node.news.field_metatags
     - node.type.news
   module:
     - citizen_custom
@@ -168,5 +167,4 @@ hidden:
   field_category: true
   field_image: true
   field_meta_description: true
-  field_metatags: true
   search_api_excerpt: true

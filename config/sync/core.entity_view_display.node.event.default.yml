@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.event.field_image
     - field.field.node.event.field_list_widget
     - field.field.node.event.field_meta_description
-    - field.field.node.event.field_metatags
     - node.type.event
   module:
     - citizen_custom
@@ -490,5 +489,4 @@ hidden:
   field_event_location: true
   field_image: true
   field_meta_description: true
-  field_metatags: true
   search_api_excerpt: true

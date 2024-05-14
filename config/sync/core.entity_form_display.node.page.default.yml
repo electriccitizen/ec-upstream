@@ -6,14 +6,12 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_image
     - field.field.node.page.field_meta_description
-    - field.field.node.page.field_metatags
     - field.field.node.page.field_paragraphs
     - node.type.page
   module:
     - allowed_formats
     - layout_paragraphs
     - media_library
-    - metatag
     - path
     - text
 _core:
@@ -50,14 +48,6 @@ content:
     settings:
       rows: 5
       placeholder: ''
-    third_party_settings: {  }
-  field_metatags:
-    type: metatag_firehose
-    weight: 5
-    region: content
-    settings:
-      sidebar: true
-      use_details: true
     third_party_settings: {  }
   field_paragraphs:
     type: layout_paragraphs

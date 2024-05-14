@@ -8,12 +8,10 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_list_widget
     - field.field.node.news.field_meta_description
-    - field.field.node.news.field_metatags
     - node.type.news
   module:
     - allowed_formats
     - media_library
-    - metatag
     - text
 _core:
   default_config_hash: Iq3XY-ukBPCbRmU85Iae8of6Ds4UXrvg7dcmav7qjaM
@@ -55,14 +53,6 @@ content:
     settings:
       rows: 5
       placeholder: ''
-    third_party_settings: {  }
-  field_metatags:
-    type: metatag_firehose
-    weight: 5
-    region: content
-    settings:
-      sidebar: true
-      use_details: true
     third_party_settings: {  }
   promote:
     type: boolean_checkbox

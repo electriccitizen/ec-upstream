@@ -10,7 +10,7 @@ field_name: field_meta_description
 entity_type: node
 bundle: landing_page
 label: 'Meta Description'
-description: 'The text displayed when this page appears in search engine results.'
+description: 'The text displayed when this page appears in search engine results or internal lists. The description should be one to two short sentences summarizing the page and should be less than 240 characters (less than 60ish words).'
 required: true
 translatable: false
 default_value: {  }

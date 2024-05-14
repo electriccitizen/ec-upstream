@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.bios.field_last_name
     - field.field.node.bios.field_list_widget
     - field.field.node.bios.field_meta_description
-    - field.field.node.bios.field_metatags
     - field.field.node.bios.field_phone
     - field.field.node.bios.field_position
     - node.type.bios
@@ -245,5 +244,4 @@ content:
     region: content
 hidden:
   field_list_widget: true
-  field_metatags: true
   search_api_excerpt: true

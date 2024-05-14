@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_image
     - field.field.node.page.field_meta_description
-    - field.field.node.page.field_metatags
     - field.field.node.page.field_paragraphs
     - node.type.page
   module:
@@ -47,7 +46,6 @@ content:
 hidden:
   field_image: true
   field_meta_description: true
-  field_metatags: true
   field_oc_widgets: true
   field_paragraphs: true
   search_api_excerpt: true
