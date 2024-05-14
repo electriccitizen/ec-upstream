@@ -10,7 +10,6 @@
 	ol {
 		@include listReset;
 	}
-
 	li{
 		display: inline-block;
 		color: $breadCurrent;
@@ -28,6 +27,5 @@
 				content: "\00BB";
 			}
 		}
-	}
-
+	}//end li
 }//end breadcrumb 

@@ -56,7 +56,7 @@
 			&:hover {
 				color: #bf0e0e;
 			}
-		}
+		}//end modal close inner
 	} //end modal-inner
 	.modal-header {
 		position: relative;
@@ -83,38 +83,32 @@
 				border-color: $white;
 				outline: none;
 			}
-		}
+		}//end modal header close
 	} //end modal-header
 	.modal-content {
 		overflow-y: scroll;
 		overflow-x: hidden;
 		color: $modalContent;
-
 		.modal-intro {
 			margin-bottom: $spaceMd;
-
 			&>*:last-child {
 				margin-bottom: 0;
 			}
 		}
-
 		input:focus {
 			cursor: pointer;
 		}
 	} //end modal-content
 	&.active-modal {
 		display: block;
-
 		.modal-inner {
 			display: block;
 		}
 	}
 	&.close-modal {
 		display: none;
-
-		modal-inner {
+		.modal-inner {
 			display: none;
 		}
 	}
-}
-//end modal-wrapper
+}//end modal-wrapper

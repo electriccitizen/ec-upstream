@@ -42,8 +42,8 @@
 				border-color: $accordHeaderBorderHover;
 				@include transAll(.3s);
 			}
-		}
-	}
+		}//end accord header a
+	}//end accordion header
 
 	//accordion content
 	.field-long-text{

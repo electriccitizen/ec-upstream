@@ -97,11 +97,10 @@
 				}
 			}
 		}
-	}
+	}//end top level li
 
 	//top level dropdowns
 	& > li.sf-depth-1{
-
 		//dropdown wrapper
 		& > ul{
 			padding: 2.5rem 0 0;
@@ -114,8 +113,7 @@
 					padding: 0 0 2.5rem;
 				}
 			}
-		}
-
+		}//end dropdown wrapper ul
 	}//end main dropdown
 
 	//level 2 links
@@ -148,7 +146,7 @@
 					color: $buttonBackHover;
 				}
 			}
-		}
+		}//end a menuparent
 	}//end menu toggles
 
 	//level 2 dropdowns
@@ -159,7 +157,7 @@
 			top: 0px;
 			min-width: 240px;
 		}
-	}
+	}//end level 2
 
 	//level 3 links
 	li.sf-depth-3{
@@ -172,8 +170,7 @@
 				padding: 1rem 5rem;
 			}
 		}
-	}//end level 2
-
+	}//end level 3
 
 }//sf-horizontal
 
@@ -189,7 +186,7 @@
 		overflow: hidden;
 		background: $sfMobileDrop;
 		border-bottom: 8px solid $sfMobileDropBorder;
-	}
+	}//end expanded sf mobile wrapper
 
 	// global mobile links
 	a{
@@ -233,7 +230,6 @@
 		}//end menupareny
 		&.sf-expanded > .sf-accordion-button{
 			background: transparent;
-
 			&:after{
 				@include rotate(180);
 				@include materialIconOutline(\e5cf);
@@ -241,8 +237,6 @@
 				@include safeFlex(row,no-wrap,center,center);
 				@include setDimensions(60px,60px);
 				text-indent: 0;
-
-
 			}
 		}
 	}//end li

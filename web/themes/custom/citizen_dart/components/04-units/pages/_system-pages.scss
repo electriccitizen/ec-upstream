@@ -5,7 +5,6 @@
 @use '../../00-base/base' as *;
 
 html > body:not(.is-front):not(.path-node) {
-
 	.layout-content {
 		max-width: $contentStop + px(40);
 		@include auto;
@@ -19,5 +18,5 @@ html > body:not(.is-front):not(.path-node) {
 	.block-page-title-block {
 		margin-bottom: $elementSpace;
 	}
-}//system pages
+}//end non-node system pages
 

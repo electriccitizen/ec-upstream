@@ -65,11 +65,12 @@
             // active.
             menuList.querySelectorAll('.is-active').forEach(activeItem => {
               activeItem.removeAttribute('href');
-              const siblingList = menuList.parentNode.querySelector('ul');
-              if (siblingList) {
-                slideDown(siblingList, 200);
+              console.log(activeItem);
+              const activeList = activeItem.nextElementSibling;
+              if (activeList) {
+                slideDown(activeList, 200);
               }
-              parentsUntil(siblingList, '#section-menu-wrapper > ul', (element) => {
+              parentsUntil(activeList, '#section-menu-wrapper > ul', (element) => {
                 element.classList.add('active-trail', 'expanded');
                 const parentExpander = element.querySelector(":scope > .expander");
                 const parentList = element.querySelector(':scope > li > ul');

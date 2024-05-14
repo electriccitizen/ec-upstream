@@ -13,7 +13,6 @@
 }
 
 .node-bios{
-
 	#node-section-1,#node-section-2{
 		max-width: $textMax;
 		.has-main-image &{
@@ -22,7 +21,7 @@
 		@include auto;
 		@include clearFix;
 	}
-	
+
 	.block-field-image{
 		max-width: 320px;
 		@include auto;
@@ -76,4 +75,4 @@
 		}
 	}
 
-}//end news
+}//end bios

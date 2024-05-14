@@ -144,18 +144,21 @@ settings:
         - '<iframe src title frameborder aria-describedby tabindex allowtransparency width height class>'
         - '<drupal-entity data-* alt title>'
         - '<article data-* class>'
-        - '<a hreflang target id title class>'
-        - '<ul type class>'
-        - '<ol type class>'
+        - '<a hreflang target id title>'
+        - '<ul type>'
+        - '<ol type>'
         - '<h2 id class>'
         - '<h3 id class>'
         - '<h4 id class>'
         - '<h5 id class>'
         - '<h6 id class>'
         - '<p class>'
-        - '<drupal-media data-caption title>'
+        - '<drupal-media title>'
     ckeditor5_style:
       styles:
+        -
+          label: Highlight
+          element: '<span class="highlight">'
         -
           label: Warning
           element: '<p class="warning">'

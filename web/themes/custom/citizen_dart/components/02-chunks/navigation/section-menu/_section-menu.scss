@@ -52,8 +52,8 @@
 				display: none;
 				pointer-events: none;
 			}
-		}
-	}
+		}//end a section menu toggle
+	}//end block title
 }//end section menu block
 
 
@@ -77,7 +77,6 @@
 
 	& > ul:not(.contextual-links) {
 		@include listReset;
-		//max-width: 300px;
 		@include auto;
 
 		//child menus
@@ -85,7 +84,6 @@
 			margin: .5rem 0;
 			display: none;
 			padding-left: 2.5rem;
-
 			&.expanded {
 				display: block;
 			}
@@ -96,18 +94,15 @@
 			list-style: none;
 			padding: .5rem 3.5rem;
 			position: relative;
-
 			//active link
 			a {
 				color: $menuTop;
 				text-decoration: none;
 				display: block;
-
 				&:hover,
 				&:focus {
 					color: $menuTopHover;
 				}
-
 				&.is-active {
 					color: $menuTopActive;
 					pointer-events: none;
@@ -115,7 +110,6 @@
 			}//end a
 			//parents
 			&.parent {
-
 				& > .expander {
 					width: 3.75rem;
 					font-size: 3rem;
@@ -124,7 +118,6 @@
 					position: absolute;
 					top: 5px;
 					left: 0;
-
 					&::before {
 						content: "+";
 					}
@@ -132,7 +125,6 @@
 
 				&.expanded > .expander {
 					top: 3px;
-
 					&::before {
 						content: "–";
 					}
@@ -141,10 +133,8 @@
 
 			li {
 				padding: .5rem 0;
-
 				a {
 					color: $menuChild;
-
 					&:hover,
 					&:focus {
 						color: $menuChildHover;

@@ -21,11 +21,10 @@ $pagerLine: 3rem;
 		text-decoration: none;
 		@include transAll(.3s);
 	}
-}
+}//end pager item style
 
 /* RESULTS (PAGE X OF & RESULTS X-X OF)
 ------------------------- */
-
 .results-count,.count-shim{
 	display: none;
 }
@@ -58,7 +57,7 @@ $pagerLine: 3rem;
 			margin: 0 .5rem;
 		}
 	}
-}
+}//end js pager items
 
 /* FULL PAGER
 ---------------- */
@@ -82,7 +81,7 @@ $pagerLine: 3rem;
 					background: $pagerNumberActiveBackHover;
 				}
 			}
-		}
+		}//end active pager item
 		@include onlySmall{
 			&.pager__item--first{
 				display: none;
@@ -151,7 +150,7 @@ $pagerLine: 3rem;
 				}
 			}
 		}
-	}
+	}//end results wrapper
 }//end full .pager
 
 
@@ -174,18 +173,4 @@ nav:not(.pager){
 	}//end js-pager-items
 }//end mini pager
 
-
-/* FLIPPY PAGER
-------------------- */
-ul.flippy{
-	@include listReset;
-	@include safeFlex(row,wrap,null,null);
-	li{
-		padding: 2rem 0;
-		width: 50%;
-		&.flippy-next{
-			text-align: right;
-		}
-	}
-}//end flippy
 
