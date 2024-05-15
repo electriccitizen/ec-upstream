@@ -16,7 +16,6 @@ dependencies:
   module:
     - layout_builder
     - smart_date
-    - text
     - user
 third_party_settings:
   layout_builder:
@@ -29,14 +28,6 @@ targetEntityType: node
 bundle: event
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_dates:
     type: smartdate_default
     label: hidden
@@ -69,12 +60,19 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_meta_description:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
   addtoany: true
+  body: true
   field_address: true
   field_category: true
   field_event_location: true
   field_list_widget: true
-  field_meta_description: true
   links: true
   search_api_excerpt: true

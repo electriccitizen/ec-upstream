@@ -17,3 +17,17 @@
 		@include metaText;
 	}
 }//end news
+
+.node-news.node-teaser{
+  .date{
+    @include metaText;
+    margin-bottom: $spaceXxs;
+  }
+}
+
+.node-news.node-listing{
+  .date{
+    @include metaText;
+    margin-bottom: $spaceXxs;
+  }
+}

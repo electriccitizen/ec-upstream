@@ -28,17 +28,32 @@ id: node.bios.listing
 targetEntityType: node
 bundle: bios
 mode: listing
-content: {  }
+content:
+  field_image:
+    type: entity_reference_entity_view
+    label: visually_hidden
+    settings:
+      view_mode: square
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_position:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   body: true
   field_bio_order: true
   field_email: true
   field_first_name: true
-  field_image: true
   field_last_name: true
   field_list_widget: true
   field_meta_description: true
   field_phone: true
-  field_position: true
   links: true
   search_api_excerpt: true

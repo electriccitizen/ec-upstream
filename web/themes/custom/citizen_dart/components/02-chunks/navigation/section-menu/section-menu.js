@@ -65,7 +65,6 @@
             // active.
             menuList.querySelectorAll('.is-active').forEach(activeItem => {
               activeItem.removeAttribute('href');
-              console.log(activeItem);
               const activeList = activeItem.nextElementSibling;
               if (activeList) {
                 slideDown(activeList, 200);
