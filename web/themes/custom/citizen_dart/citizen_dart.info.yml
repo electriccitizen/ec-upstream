@@ -10,9 +10,8 @@ libraries:
 ckeditor5-stylesheets:
   - dist/cke.css
 base theme: stable9
-hidden: false
 regions:
   header: Header
   content: Content
-  prefooter: Pre-Footer  
-  footer: Footer 
+  prefooter: Pre-Footer
+  footer: Footer
