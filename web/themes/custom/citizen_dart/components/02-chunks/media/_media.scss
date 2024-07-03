@@ -32,7 +32,7 @@ article + figcaption {
 .text-with-summary article.media-item,
 .text-with-summary figure {
 	margin: 0 0 $spaceMd 0;
-	
+
 	@include desk {
 		margin: 0;
 	}
@@ -117,12 +117,16 @@ article + figcaption {
 	&.default {
 		@include defaultEmbed;
 	}
-} //end article
+}
+.text-with-summary ul article.media-item,
+.text-with-summary ul figure,
+.text-long ul article {
+  margin-bottom: 0;
+}
+//end article
 
 span.file {
 	a {
 		@include docIcon;
 	}
 }
-
-
