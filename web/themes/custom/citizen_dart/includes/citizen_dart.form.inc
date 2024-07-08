@@ -5,6 +5,8 @@
  * Includes all preprocess and alter hooks related to forms.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * Implements hook_preprocess_webform().
  *
