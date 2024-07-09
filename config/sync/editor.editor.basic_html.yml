@@ -35,6 +35,7 @@ settings:
       - removeFormat
       - undo
       - redo
+      - openai
   plugins:
     ckeditor5_alignment:
       enabled_alignments:
@@ -170,6 +171,12 @@ settings:
       linkit_profile: wysiwyg
     media_media:
       allow_view_mode_override: true
+    openai_ckeditor_openai:
+      completion:
+        enabled: true
+        model: gpt-3.5-turbo
+        temperature: 0.2
+        max_tokens: 512
 image_upload:
   status: true
   scheme: public
