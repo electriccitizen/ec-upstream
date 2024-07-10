@@ -27,6 +27,7 @@
     "drupal/allowed_formats": "^3.0",
     "drupal/antibot": "^2.0",
     "drupal/augmentor": "^1.1",
+    "drupal/augmentor_chatgpt": "^1.0@alpha",
     "drupal/auto_entitylabel": "^3.0@beta",
     "drupal/ckeditor5_fullscreen": "^1.0@beta",
     "drupal/ckeditor5_paste_filter": "^1.0",

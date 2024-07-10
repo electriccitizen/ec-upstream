@@ -1,0 +1,21 @@
+uuid: d0240178-4949-4020-80db-df17a52ff0f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_suggest_a_title
+    - node.type.page
+  module:
+    - augmentor
+id: node.page.field_suggest_a_title
+field_name: field_suggest_a_title
+entity_type: node
+bundle: page
+label: 'Suggest a Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_augmentor_type

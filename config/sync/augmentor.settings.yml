@@ -1,3 +1,69 @@
 _core:
   default_config_hash: 51ghAGK7M2JjBgvporrHodLbCLCjJxqMPzS_vySJMOU
-augmentors: {  }
+augmentors:
+  ddfd2070-9387-4287-8aa5-158fe0182155:
+    label: 'Title Options - Single multivalued result'
+    weight: 0
+    debug: null
+    type: chatgpt
+    configuration:
+      label: 'Title Options - Single multivalued result'
+      uuid: ddfd2070-9387-4287-8aa5-158fe0182155
+      id: chatgpt
+      weight: ''
+      key: openai
+      debug: 0
+      settings:
+        label: 'Title Options - Single multivalued result'
+        key: openai
+        debug: 0
+        sdk: orhanerday
+        model: gpt-3.5-turbo
+        messages:
+          0:
+            role: system
+            content: 'You are a helpful assistant.'
+          1:
+            role: user
+            content: "Suggest five SEO friendly titles for this page based off of the following content in 10 words or less, in the same language as the input, enclosing the titles in quotes:\r\n\r\n{input}"
+          actions: {  }
+        temperature: '1'
+        max_tokens: '100'
+        top_p: '0'
+        'n': '1'
+        frequency_penalty: '0'
+        presence_penalty: '0'
+        user_tracking: 1
+  76cc3de4-0423-48a6-a7cf-159497d4cbc6:
+    label: Summarize
+    weight: 1
+    debug: null
+    type: chatgpt
+    configuration:
+      label: ''
+      uuid: ''
+      id: chatgpt
+      weight: 1
+      key: ''
+      debug: false
+      settings:
+        label: Summarize
+        key: openai
+        debug: 0
+        sdk: orhanerday
+        model: null
+        messages:
+          0:
+            role: system
+            content: 'You are a helpful assistant.'
+          1:
+            role: user
+            content: "Summarize the content to a single paragraph that is a maximum of 8 sentences.\r\n\r\n{input}"
+          actions: {  }
+        temperature: '1'
+        max_tokens: '100'
+        top_p: '0'
+        'n': '1'
+        frequency_penalty: '0'
+        presence_penalty: '0'
+        user_tracking: 1

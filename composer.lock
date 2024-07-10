@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43c038e0ff2753d42c66da9a83dc1788",
+    "content-hash": "3258a102770dfe45b74ec14c0bc78b64",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2428,6 +2428,61 @@
             "homepage": "https://www.drupal.org/project/augmentor",
             "support": {
                 "source": "https://git.drupalcode.org/project/augmentor"
+            }
+        },
+        {
+            "name": "drupal/augmentor_chatgpt",
+            "version": "1.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/augmentor_chatgpt.git",
+                "reference": "1.0.0-alpha2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/augmentor_chatgpt-1.0.0-alpha2.zip",
+                "reference": "1.0.0-alpha2",
+                "shasum": "c6e10dbbeca408cfdcbb9baf319625dca19b6df9"
+            },
+            "require": {
+                "drupal/augmentor": "^1.1",
+                "drupal/core": "^10.2 || ^11",
+                "openai-php/client": ">=0.10",
+                "orhanerday/open-ai": "^5.2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-alpha2",
+                    "datestamp": "1720095698",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "eleonel",
+                    "homepage": "https://www.drupal.org/user/440810"
+                },
+                {
+                    "name": "murrayw",
+                    "homepage": "https://www.drupal.org/user/595658"
+                },
+                {
+                    "name": "naveenvalecha",
+                    "homepage": "https://www.drupal.org/user/2665733"
+                }
+            ],
+            "description": "Provides Augmentor integration with the ChatGPT API.",
+            "homepage": "http://drupal.org/project/augmentor_chatgpt",
+            "support": {
+                "source": "https://git.drupalcode.org/project/augmentor_chatgpt"
             }
         },
         {
@@ -8089,6 +8144,65 @@
                 }
             ],
             "time": "2024-06-06T20:27:51+00:00"
+        },
+        {
+            "name": "orhanerday/open-ai",
+            "version": "5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/orhanerday/open-ai.git",
+                "reference": "d8c78fe2f5fed59e0ba458f90b5589ed9f13a367"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/orhanerday/open-ai/zipball/d8c78fe2f5fed59e0ba458f90b5589ed9f13a367",
+                "reference": "d8c78fe2f5fed59e0ba458f90b5589ed9f13a367",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "pestphp/pest": "^1.20",
+                "spatie/ray": "^1.28"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Orhanerday\\OpenAi\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Orhan Erday",
+                    "email": "orhanerday@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "OpenAI GPT-3 Api Client in PHP",
+            "homepage": "https://github.com/orhanerday/open-ai",
+            "keywords": [
+                "open-ai",
+                "orhanerday"
+            ],
+            "support": {
+                "issues": "https://github.com/orhanerday/open-ai/issues",
+                "source": "https://github.com/orhanerday/open-ai/tree/5.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/orhanerday",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-05-29T12:31:54+00:00"
         },
         {
             "name": "pantheon-systems/drupal-integrations",
@@ -15206,6 +15320,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/augmentor_chatgpt": 15,
         "drupal/auto_entitylabel": 10,
         "drupal/ckeditor5_fullscreen": 10,
         "drupal/drupal-extension": 5,
