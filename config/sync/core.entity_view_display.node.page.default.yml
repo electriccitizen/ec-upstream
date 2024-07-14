@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.page.field_image
     - field.field.node.page.field_meta_description
     - field.field.node.page.field_paragraphs
-    - field.field.node.page.field_suggest_a_title
+    - field.field.node.page.field_suggest_a_meta_description
     - node.type.page
     - system.menu.main
   module:
@@ -78,22 +78,6 @@ third_party_settings:
               provider: system
               context_mapping: {  }
             weight: 2
-            additional: {  }
-          6a5a002a-3895-4db8-9cdb-aedc27789e87:
-            uuid: 6a5a002a-3895-4db8-9cdb-aedc27789e87
-            region: content
-            configuration:
-              id: 'field_block:node:page:field_suggest_a_title'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: field_augmentor_formatter
-                label: above
-                settings:
-                  debug: false
-                third_party_settings: {  }
-            weight: 4
             additional: {  }
         third_party_settings: {  }
       -
@@ -179,13 +163,13 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  field_suggest_a_title:
+  field_suggest_a_meta_description:
     type: field_augmentor_formatter
     label: above
     settings:
       debug: false
     third_party_settings: {  }
-    weight: 102
+    weight: 103
     region: content
   links:
     settings: {  }

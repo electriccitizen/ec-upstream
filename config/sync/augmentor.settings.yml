@@ -36,29 +36,29 @@ augmentors:
         user_tracking: 1
   76cc3de4-0423-48a6-a7cf-159497d4cbc6:
     label: Summarize
-    weight: 1
+    weight: null
     debug: null
     type: chatgpt
     configuration:
-      label: ''
-      uuid: ''
+      label: Summarize
+      uuid: 76cc3de4-0423-48a6-a7cf-159497d4cbc6
       id: chatgpt
-      weight: 1
-      key: ''
-      debug: false
+      weight: ''
+      key: openai
+      debug: 0
       settings:
         label: Summarize
         key: openai
         debug: 0
         sdk: orhanerday
-        model: null
+        model: gpt-3.5-turbo
         messages:
           0:
             role: system
             content: 'You are a helpful assistant.'
           1:
             role: user
-            content: "Summarize the content to a single paragraph that is a maximum of 8 sentences.\r\n\r\n{input}"
+            content: "Summarize the content to a single paragraph that is one to two short sentences that's less than 240 characters or about 60 words.\r\n\r\n{input}"
           actions: {  }
         temperature: '1'
         max_tokens: '100'

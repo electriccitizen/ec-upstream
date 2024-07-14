@@ -1,12 +1,12 @@
-uuid: 90d00112-bab2-4577-9a43-491b5d58caed
+uuid: a2bcf31f-c830-4566-a909-51e1d1a5982b
 langcode: en
 status: true
 dependencies:
   module:
     - augmentor
     - node
-id: node.field_suggest_a_title
-field_name: field_suggest_a_title
+id: node.field_suggest_a_meta_description
+field_name: field_suggest_a_meta_description
 entity_type: node
 type: field_augmentor_type
 settings: {  }
