@@ -8,8 +8,10 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_list_widget
     - field.field.node.news.field_meta_description
+    - field.field.node.news.field_suggest_a_meta_description
     - node.type.news
   module:
+    - augmentor
     - citizen_custom
     - layout_builder
     - layout_discovery
@@ -156,6 +158,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_suggest_a_meta_description:
+    type: field_augmentor_formatter
+    label: above
+    settings:
+      debug: false
+    third_party_settings: {  }
+    weight: 103
     region: content
   links:
     settings: {  }
