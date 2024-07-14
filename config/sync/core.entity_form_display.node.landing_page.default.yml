@@ -8,10 +8,12 @@ dependencies:
     - field.field.node.landing_page.field_image
     - field.field.node.landing_page.field_meta_description
     - field.field.node.landing_page.field_paragraphs
+    - field.field.node.landing_page.field_suggest_a_meta_description
     - field.field.node.landing_page.layout_builder__layout
     - node.type.landing_page
   module:
     - allowed_formats
+    - augmentor
     - layout_paragraphs
     - media_library
     - path
@@ -25,7 +27,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 3
+    weight: 4
     region: content
     settings:
       rows: 9
@@ -38,7 +40,7 @@ content:
         hide_guidelines: '1'
   field_exclude_search:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -60,13 +62,32 @@ content:
     third_party_settings: {  }
   field_paragraphs:
     type: layout_paragraphs
-    weight: 4
+    weight: 5
     region: content
     settings:
       preview_view_mode: preview
       nesting_depth: 0
       require_layouts: 1
       empty_message: ''
+    third_party_settings: {  }
+  field_suggest_a_meta_description:
+    type: augmentor_default_widget
+    weight: 3
+    region: content
+    settings:
+      source_fields:
+        - body
+      targets:
+        0:
+          target_field: field_meta_description
+          key: default
+        actions:
+          add_target: 'Add one more target'
+      augmentor: 76cc3de4-0423-48a6-a7cf-159497d4cbc6
+      action: replace
+      button_label: 'Suggest a Meta Description'
+      rows: '5'
+      placeholder: ''
     third_party_settings: {  }
   path:
     type: path

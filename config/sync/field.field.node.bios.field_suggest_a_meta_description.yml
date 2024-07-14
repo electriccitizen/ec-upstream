@@ -1,0 +1,21 @@
+uuid: 1d8f9b75-9b5c-4771-8ca3-17b66fa53200
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_suggest_a_meta_description
+    - node.type.bios
+  module:
+    - augmentor
+id: node.bios.field_suggest_a_meta_description
+field_name: field_suggest_a_meta_description
+entity_type: node
+bundle: bios
+label: 'Suggest a Meta Description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_augmentor_type

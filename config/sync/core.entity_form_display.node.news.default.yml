@@ -8,9 +8,11 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_list_widget
     - field.field.node.news.field_meta_description
+    - field.field.node.news.field_suggest_a_meta_description
     - node.type.news
   module:
     - allowed_formats
+    - augmentor
     - media_library
     - text
 _core:
@@ -22,7 +24,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 4
+    weight: 5
     region: content
     settings:
       rows: 9
@@ -35,7 +37,7 @@ content:
         hide_guidelines: '1'
   field_category:
     type: options_select
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -52,6 +54,25 @@ content:
     region: content
     settings:
       rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_suggest_a_meta_description:
+    type: augmentor_default_widget
+    weight: 3
+    region: content
+    settings:
+      source_fields:
+        - body
+      targets:
+        0:
+          target_field: field_meta_description
+          key: default
+        actions:
+          add_target: 'Add one more target'
+      augmentor: 76cc3de4-0423-48a6-a7cf-159497d4cbc6
+      action: replace
+      button_label: 'Suggest a Meta Description'
+      rows: '5'
       placeholder: ''
     third_party_settings: {  }
   promote:
