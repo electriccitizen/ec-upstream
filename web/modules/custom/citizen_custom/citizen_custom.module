@@ -200,7 +200,7 @@ function citizen_custom_field_widget_single_element_form_alter(&$element, FormSt
     }
   }
   // Add custom link help text for emails.
-  if ($field_definition->getType() == 'link') { 
+  if ($field_definition->getType() == 'link') {
     if ($element['uri']['#description'] && ($field_definition->getUniqueIdentifier() == "menu_link_content-link")) {
       $linkHelp = $element['uri']['#description'];
       $element['uri']['#description']['#items'][] = t('To create an email link, enter "<strong>mailto:</strong>example@email.com".');
@@ -212,72 +212,95 @@ function citizen_custom_field_widget_single_element_form_alter(&$element, FormSt
  * Implements views_pre_view().
  */
 function citizen_custom_views_pre_view($view, $display_id, &$args) {
+
+  // List of valid views for the Content Placer paragraph, by name => displays.
+  $content_placer_views = [
+    "events" => ["events_list"],
+    "news" => ["news_list"],
+  ];
+
+  $is_valid_view = FALSE;
+  $view_name = '';
+  $view_display = '';
+
 	// Alters views to accept fields from related paragraphs to be used for filters.
-  if(isset($view->element['#name'])) {
-    if (($view->element['#name'] == 'events') && ($view->current_display === 'events_list')) {
+  if (isset($view->element['#name'])) {
+    foreach ($content_placer_views as $view_name => $view_displays) {
+      foreach ($view_displays as $view_display) {
+        if ($view->element['#name'] === $view_name && $view->current_display === $view_display) {
+          $is_valid_view = TRUE;
+          break;
+        }
+      }
+      if ($is_valid_view) {
+        break;
+      }
+    }
+    // If a valid view was found, $view_name and $view_display should contain
+    // the name and display, respectively.
+    if ($is_valid_view && $view->args[0]) {
       $filters = $view->display_handler->getOption('filters');
-      $paragraph_id = $view->args[0];
-      if ($paragraph_id){
-        $paragraph = Paragraph::load($paragraph_id);
-        //unset or alter categories filter
-        if($paragraph->field_events_category[0]){
-          //make an array out of the category set in the paragraph
-          $categories = [];
-          foreach ($paragraph->field_events_category as $delta => $category) {
-            $categories[] = $category->target_id;
+      $paragraph = Paragraph::load($view->args[0]);
+      switch ($view_name) {
+        case "events":
+          switch ($view_display) {
+            case "events_list":
+              //unset or alter categories filter
+              if ($paragraph->field_events_category[0]) {
+                //make an array out of the category set in the paragraph
+                $categories = [];
+                foreach ($paragraph->field_events_category as $delta => $category) {
+                  $categories[] = $category->target_id;
+                }
+                // replace the category_tid filter with the paragraph category
+                $filters['field_category_target_id']['value'] = $categories;
+              }
+              else if ($filters['field_category_target_id']) {
+                //if the category field is not used, then unset the category filter
+                  unset($filters['field_category_target_id']);
+              }//end category filter
+
+              break;
+
           }
-          // replace the category_tid filter with the paragraph category
-          $filters['field_category_target_id']['value'] = $categories;
-        } else {
-          //if the category field is not used, then unset the category filter
-          if ($filters['field_category_target_id']) {
-            unset($filters['field_category_target_id']);
+          break;
+
+        case "news":
+          switch ($view_display) {
+            case "news_list":
+              //unset or alter categories filter
+              if ($paragraph->field_news_category[0]){
+                //make an array out of the category set in the paragraph
+                $categories = [];
+                foreach ($paragraph->field_news_category as $delta => $category) {
+                  $categories[] = $category->target_id;
+                }
+                // replace the category_tid filter with the paragraph category
+                $filters['field_category_target_id']['value'] = $categories;
+              }
+              else if ($filters['field_category_target_id']) {
+                //if the category field is not used, then unset the category filter
+                unset($filters['field_category_target_id']);
+              }//end category filter
+              break;
+
           }
-        }//end category filter
+          break;
+
         $view->display_handler->setOption('filters', $filters);
-        if(isset($paragraph->field_limit_list[0])){
+        $pager = $view->display_handler->getOption('pager');
+        if (isset($paragraph->field_limit_list[0])){
           $per_page = $paragraph->field_limit_list[0]->value;
-          $pager = $view->display_handler->getOption('pager');
           $pager['type'] = 'some';
           $view->setItemsPerPage($per_page);
-        } else {
+        }
+        else {
           $pager['type'] = 'none';
         }
         $view->display_handler->setOption('pager', $pager);
       }
+
     }
-    if (($view->element['#name'] === 'news') && ($view->current_display === 'news_list')) {
-      $filters = $view->display_handler->getOption('filters');
-      $paragraph_id = $view->args[0];
-      if ($paragraph_id){
-        $paragraph = Paragraph::load($paragraph_id);
-        //unset or alter categories filter
-        if($paragraph->field_news_category[0]){
-          //make an array out of the category set in the paragraph
-          $categories = [];
-          foreach ($paragraph->field_news_category as $delta => $category) {
-            $categories[] = $category->target_id;
-          }
-          // replace the category_tid filter with the paragraph category
-          $filters['field_category_target_id']['value'] = $categories;
-        } else {
-          //if the category field is not used, then unset the category filter
-          if ($filters['field_category_target_id']) {
-            unset($filters['field_category_target_id']);
-          }
-        }//end category filter
-        $view->display_handler->setOption('filters', $filters);
-        if(isset($paragraph->field_limit_list[0])){
-          $per_page = $paragraph->field_limit_list[0]->value;
-          $pager = $view->display_handler->getOption('pager');
-          $pager['type'] = 'some';
-          $view->setItemsPerPage($per_page);
-        } else {
-          $pager['type'] = 'none';
-        }
-        $view->display_handler->setOption('pager', $pager);
-      }
-    }
+
   }
 }
-
