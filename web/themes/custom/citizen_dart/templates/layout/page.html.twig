@@ -70,14 +70,14 @@
 					{% endblock %}
 				</div>{# /.layout-content #}
 			{% endblock %}
-
+			
 		</main>
 	{% endblock %}
 
 	{% block pagePreFooter %}
 		{% if page.prefooter %}
-			<section class="prefooter-wrapper" role="complementary" aria-label="{% trans %}Prefooter section{% endtrans %}">
-				<div class="prefooter-inner">
+			<section class="prefooter-wrapper" role="complementary" aria-labelledby="prefooter-section">
+				<div class="prefooter-inner">	
 					{% block prefooterContent %}
 						{{ page.prefooter }}
 					{% endblock %}
@@ -89,7 +89,7 @@
 	{% block pageFooter %}
 		{% if page.footer %}
 			<footer role="contentinfo" class="site-footer">
-			<div class="footer-inner">
+			<div class="footer-inner">	
 				{% block footerContent %}
 					{{ page.footer }}
 				{% endblock %}

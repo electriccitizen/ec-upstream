@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.page.field_image
     - field.field.node.page.field_meta_description
     - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_suggest_a_meta_description
     - node.type.page
   module:
     - layout_builder
@@ -48,4 +49,5 @@ hidden:
   field_meta_description: true
   field_oc_widgets: true
   field_paragraphs: true
+  field_suggest_a_meta_description: true
   search_api_excerpt: true

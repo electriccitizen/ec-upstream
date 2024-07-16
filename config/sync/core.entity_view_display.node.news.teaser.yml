@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_list_widget
     - field.field.node.news.field_meta_description
+    - field.field.node.news.field_suggest_a_meta_description
     - node.type.news
   module:
     - layout_builder
@@ -45,5 +46,6 @@ hidden:
   body: true
   field_category: true
   field_list_widget: true
+  field_suggest_a_meta_description: true
   links: true
   search_api_excerpt: true
