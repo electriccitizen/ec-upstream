@@ -35,7 +35,7 @@
 {{ attach_library('citizen_dart/pager') }}
 
 {% if items %}
-  <nav class="pager" aria-labelledby="pagination-heading">
+  <nav class="pager" aria-label="{{ 'Pagination'|t }}">
     <div id="pagination-heading" class="visually-hidden">{{ 'Pagination'|t }}</div>
 
     {% block pager %}

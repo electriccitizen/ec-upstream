@@ -9,7 +9,7 @@
 #}
 
 {% if breadcrumb %}
-  <nav class="breadcrumb" aria-labelledby="system-breadcrumb">
+  <nav class="breadcrumb" aria-label="{{ 'Breadcrumb'|t }}">
     <span class="visually-hidden">{{ 'Breadcrumb'|t }}</span>
     <ol class="breadcrumb-list">
       {% block trail %}
