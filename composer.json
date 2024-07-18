@@ -67,6 +67,7 @@
     "drupal/metatag": "^2.0",
     "drupal/openai": "^1.0@beta",
     "drupal/paragraphs": "^1.12",
+    "drupal/password_policy": "^4.0",
     "drupal/pathauto": "^1.8",
     "drupal/pathologic": "^2.0",
     "drupal/quicklink": "^2.0",

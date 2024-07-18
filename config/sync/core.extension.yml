@@ -79,6 +79,8 @@ module:
   openai_dalle: 0
   options: 0
   page_cache: 0
+  password_policy_character_types: 0
+  password_policy_username: 0
   path: 0
   path_alias: 0
   pathologic: 0
@@ -114,6 +116,7 @@ module:
   extlink: 1
   menu_admin_per_menu: 1
   pathauto: 1
+  password_policy: 10
   views: 10
   paragraphs: 11
   citizen: 1000
