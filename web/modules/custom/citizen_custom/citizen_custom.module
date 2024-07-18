@@ -145,7 +145,7 @@ function citizen_custom_form_site_search_form_alter(&$form, FormStateInterface $
 }
 
 /**
- * Implements hook_field_widget_single_element_form_alter()).
+ * Implements hook_field_widget_single_element_form_alter().
  */
 function citizen_custom_field_widget_single_element_form_alter(&$element, FormStateInterface $form_state, $context) {
   $field_definition = $context['items']->getFieldDefinition();
