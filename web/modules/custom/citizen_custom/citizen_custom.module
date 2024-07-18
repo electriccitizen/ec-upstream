@@ -73,46 +73,6 @@ function citizen_custom_preprocess_block(&$variables) {
   if ($variables['plugin_id'] == 'site_search') {
     $variables['attributes']['role'] = 'search';
   }
-  // Set custom help text.
-  if ($variables['plugin_id'] == 'help_block') {
-    $route_name = \Drupal::routeMatch()->getRouteName();
-    $parameters = \Drupal::routeMatch()->getCurrentRouteMatch()->getParameters();
-    if (isset($variables['content'][0]['#markup'])){
-      switch ($route_name) {
-        case 'layout_builder.defaults.node.view':
-          if($parameters->get('node_type')){
-            $nodeType = $parameters->get('node_type');
-            $cleanType = ucwords(str_replace("_"," ",$nodeType)) . ' ';
-          }
-          $output = '';
-          $output .= '<h2>' . $cleanType . t('Layout Builder') . '</h2>';
-          $output .= '<p><strong>' . t('WARNING: ') . '</strong>'. t('Changes to this layout will affect all non-customized ') . str_replace("_"," ",$nodeType) . t(' nodes.') . '</p>';
-          $output .= '<p><small>' . t('Forms and links inside the content of the layout builder tool have been disabled.') . '</small></p>';
-          $variables['content'][0]['#markup'] = $output;
-          break;
-        case 'layout_builder.overrides.node.view':
-          $output = '';
-          $output .= '<h2>' . t('Customize This Layout') . '</h2>';
-          $output .= '<p><strong>' . t('WARNING: ') . '</strong>'. t('Saving this layout (even without making changes) will turn this into a custom node. Custom nodes will not reflect any future global changes to the content type. If you are here in error, click "View" or "Edit" above to exit.') . '</p>';
-          $output .= '<p><small>' . t('Forms and links inside the content of the layout builder tool have been disabled.') . '</small></p>';
-          $variables['content'][0]['#markup'] = $output;
-          break;
-        case 'layout_builder.overrides.node.discard_changes':
-          $output = '';
-          $output .= '<h2>' . t('Discard Changes') . '</h2>';
-          $output .= '<p>' . t('Remove any non-saved changes made in layout customization.') . '</p>';
-          $variables['content'][0]['#markup'] = $output;
-          break;
-        case 'layout_builder.overrides.node.revert':
-          $output = '';
-          $output .= '<h2>' . t('Revert Custom Layout') . '</h2>';
-          $output .= '<p>' . t('Revert this layout to the default layout for this content type.') . '</p>';
-          $variables['content'][0]['#markup'] = $output;
-          break;
-      }
-
-    }
-  }
 }
 
 /**
