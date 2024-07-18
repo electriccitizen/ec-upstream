@@ -158,6 +158,12 @@
 					border-bottom: 1px solid $borderRule;
 				}
 			}
+      tr:nth-of-type(odd){
+        background: $evenRowBack;
+        td{
+          color: $evenRowText;
+        }
+      }
 			td{
 				padding: 0 !important;
 				&:before{

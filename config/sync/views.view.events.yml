@@ -8,6 +8,7 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.field_dates
     - field.storage.node.field_image
+    - field.storage.node.field_meta_description
     - node.type.event
     - taxonomy.vocabulary.event_categories
   content:
@@ -714,6 +715,68 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_meta_description:
+          id: field_meta_description
+          table: node__field_meta_description
+          field: field_meta_description
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       sorts:
         field_dates_value:
           id: field_dates_value
@@ -784,8 +847,8 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-              senior_editor: '0'
               editor: '0'
+              site_manager: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -802,6 +865,7 @@ display:
           fields:
             title: title
             body: body
+            field_meta_description: field_meta_description
         field_category_target_id:
           id: field_category_target_id
           table: node__field_category
@@ -982,6 +1046,7 @@ display:
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_dates'
+        - 'config:field.storage.node.field_meta_description'
   events_list:
     id: events_list
     display_title: 'Events List'
