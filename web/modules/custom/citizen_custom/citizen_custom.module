@@ -142,6 +142,7 @@ function citizen_custom_form_site_search_form_alter(&$form, FormStateInterface $
   $form['form_build_id']['#access'] = FALSE;
   $form['form_token']['#access'] = FALSE;
   $form['form_id']['#access'] = FALSE;
+
 }
 
 /**
