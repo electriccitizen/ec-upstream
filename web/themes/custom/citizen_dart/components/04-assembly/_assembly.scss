@@ -1,5 +1,5 @@
 /* ==================
-	ASSEMBY INDEX
+	CHUNKS INDEX
 =================== */
 
 @forward 'global/admin';
@@ -7,4 +7,7 @@
 @forward 'global/misc';
 @forward 'global/preview';
 @forward 'global/site-styles';
+@forward 'pages/system-pages';
 @forward 'print/print';
+@forward 'dashboard/dashboard';
+@forward 'taxonomy/taxonomy';
