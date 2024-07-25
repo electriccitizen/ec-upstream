@@ -81,9 +81,8 @@
       <a href="{{- url -}}" rel="bookmark">{{- label.0['#context'].value -}}</a>
     </h2>
   {% endblock %}
-  <div class="metatext">
-    <time datetime="{{- date|date('c') -}}">{{- date|date('U')|format_date("number_date_short") -}}</time>
-  </div>
+
+{% endblock %}
+{% block node %}
   {{- content -}}
 {% endblock %}
-{% block node %}{% endblock %}
