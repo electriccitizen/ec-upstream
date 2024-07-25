@@ -73,18 +73,4 @@
 
 {% extends 'node--teaser.html.twig' %}
 
-{% block nodeMeta %}
-  <div class="node-field-image">
-    {% if content.field_image %}
-      {{ content.field_image }}
-    {% endif %}
-  </div>
-  <div class="node-field-nothing">
-    {% block nodeTitle %}
-      <h2{{ title_attributes.addClass("node-field-title") }}>
-        <a href="{{- url -}}" rel="bookmark">{{- label.0['#context'].value -}}</a>
-      </h2>
-    {% endblock %}
-    {{- content|without("field_image") -}}
-  </div>
-{% endblock %}
+{% block nodeDate %}{% endblock %}

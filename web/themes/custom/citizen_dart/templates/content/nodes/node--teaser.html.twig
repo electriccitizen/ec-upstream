@@ -81,16 +81,15 @@
       {{ content.field_image }}
     {% endif %}
   </div>
-  <div class="node-field-nothing">
-    {% block nodeTitle %}
-      <h2{{ title_attributes.addClass("node-field-title") }}>
-        <a href="{{- url -}}" rel="bookmark">{{- label.0['#context'].value -}}</a>
-      </h2>
-    {% endblock %}
+{% endblock %}
+{% block node %}
+  <h2{{ title_attributes.addClass("node-field-title") }}>
+    <a href="{{- url -}}" rel="bookmark">{{- label.0['#context'].value -}}</a>
+  </h2>
+  {% block nodeDate %}
     <div class="metatext">
       <time datetime="{{- date|date('c') -}}">{{- date|date('U')|format_date("number_date_short") -}}</time>
     </div>
-    {{- content|without("field_image") -}}
-  </div>
+  {% endblock %}
+  {{- content|without("field_image") -}}
 {% endblock %}
-{% block node %}{% endblock %}

@@ -101,8 +101,8 @@
 	    </footer>
 	  {%- endif -%}
 	{% endblock %}
-  {% block node %}
-	  <div class="main-node-content">
+  <div class="main-node-content">
+    {% block node %}
 		  {%- if content._layout_builder -%}
 		    {% if content._layout_builder.0 %}
 		      {%- for key, layoutSection in content._layout_builder -%}
@@ -116,12 +116,12 @@
 		      {%- endfor -%}
 		    {% else %}
 		      {% block nodeContent %}
-		      {{- content -}}
-		    {% endblock %}
+            {{- content -}}
+          {% endblock %}
 		    {% endif %}
 		  {%- else -%}
 		    {{- content -}}
 		  {%- endif -%}
-	  </div>
-  {% endblock %}
+    {% endblock %}
+  </div>
 </article>
