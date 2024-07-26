@@ -5,313 +5,336 @@
 
 /* PLACEHOLDERS
 ------------ */
-%menuDropdown{
-	background: $sfDropdown;
+%menuDropdown {
+  background: $sfDropdown;
 }
 
 /* SUPERFISH BLOCK
 ------------------------ */
-#superfish-main-toggle{
-	display: block;
-	span{
-		display: none;
-	}
-	&:before{
-		@include materialIcon(\e5d2);
-		display: block;
-		position: absolute;
-		top: 0;
-		right: 0;
-		color: $hamburger;
-		line-height: 28px;
-	}
-	&.sf-expanded{
-		&:before{
-			@include materialIcon(\e5cd);
-			color: $hamburgerActive;
-		}
-	}
-}//end superfish-main-toggle
+#superfish-main-toggle {
+  display: block;
+
+  span {
+    display: none;
+  }
+
+  &:before {
+    @include materialIcon(\e5d2);
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $hamburger;
+    line-height: 28px;
+  }
+
+  &.sf-expanded {
+    &:before {
+      @include materialIcon(\e5cd);
+      color: $hamburgerActive;
+    }
+  }
+}
 
 /* GLOBAL COLORS
 	----------------- */
-.sf-main li{
-	a{
-		color: $sfChildLink;
-		text-align: left;
-		&:hover,&:focus{
-			color: $sfChildLinkHover;
-		}
-	}
-	&.active-trail > a{
-		color: $sfChildActive;
-		&:hover,&:focus{
-			color: $sfChildActiveHover;
-		}
-	}
-}//end sf-main li
+.sf-main li {
+  a {
+    color: $sfChildLink;
+    text-align: left;
 
+    &:hover,
+    &:focus {
+      color: $sfChildLinkHover;
+    }
+  }
 
+  &.active-trail>a {
+    color: $sfChildActive;
+
+    &:hover,
+    &:focus {
+      color: $sfChildActiveHover;
+    }
+  }
+}
 
 /* DESK FISH
 ---------------- */
-.block-superfishmain ul.sf-menu.sf-horizontal{
-	@include safeFlex(row,wrap,end,null);
-	list-style-type: none;
-	//override defult floats
-	li{
-		float: none;
-	}
-	//top level links
-	& > li{
-		&:not(.sfHover){
-			& > ul{
-				display: none !important;
-			}
-		}
-		&:hover{
-			& > a{
-				background: $sfTopBackHover;
-				color: $sfTopLinkHover;
-			}
-		}
-		& > a,& > span.nolink{
-			color: $sfTopLink;
-			padding: 2.5rem 1.5rem !important;
-			font-size: 2.5rem;
-			display: block;
-			position: relative;
-			&:hover,&:focus{
-				background: $sfTopBackHover;
-				color: $sfTopLinkHover;
-			}
-		}
-		&.active-trail{
-			&:hover > a{
-				color: $sfTopActiveHover;
-			}
-			& > a{
-				color: $sfTopActive;
-				&:hover,&:focus{
-					color: $sfTopActiveHover;
-				}
-			}
-		}
-	}//end top level li
+.block-superfishmain ul.sf-menu.sf-horizontal {
+  @include safeFlex(row, wrap, end, null);
+  list-style-type: none;
 
-	//top level dropdowns
-	& > li.sf-depth-1{
-		//dropdown wrapper
-		& > ul{
-			padding: 2.5rem 0 0;
-			top: 100%;
-			min-width: 280px;
-			@extend %menuDropdown;
-			& > li{
-				padding: 0;
-				&:last-of-type{
-					padding: 0 0 2.5rem;
-				}
-			}
-		}//end dropdown wrapper ul
-	}//end main dropdown
+  li {
+    float: none;
+  }
 
-	//level 2 links
-	a.sf-depth-2{
-		line-height: 1;
-		padding: 1.5rem 2.5rem;
-	}
+  & > li {
+    &:not(.sfHover) {
+      & > ul {
+        display: none !important;
+      }
+    }
 
-	// sub menu toggles
-	.sf-depth-2 {
-		//global toggles
-		a.menuparent{
-			&:after{
-				content: '';
-				display: inline-block;
-				padding: 0;
-				position: relative;
-				right: -7px;
-				top: 0.6rem;
-				opacity: 1;
-				height: 18px;
-				width: 18px;
-				background-image: none;
-				@include materialIconOutline(\e5e1);
-				font-size: 18px;
-				@include transFormAnimate;
-			}
-			&:hover,&:focus{
-				&:after{
-					color: $buttonBackHover;
-				}
-			}
-		}//end a menuparent
-	}//end menu toggles
+    &:hover {
+      & > a {
+        background: $sfTopBackHover;
+        color: $sfTopLinkHover;
+      }
+    }
 
-	//level 2 dropdowns
-	.sf-depth-2{
-		ul{
-			@extend %menuDropdown;
-			left: 100%;
-			top: 0px;
-			min-width: 240px;
-		}
-	}//end level 2
+    & > a,
+    & > span.nolink {
+      color: $sfTopLink;
+      padding: 2.5rem 1.5rem !important;
+      font-size: 2.5rem;
+      display: block;
+      position: relative;
 
-	//level 3 links
-	li.sf-depth-3{
-		font-size: 1.7rem;
-		line-height: 1;
-		& > a{
-			padding-left: 40px;
-			padding: 1rem 2.5rem 1rem 5rem;
-			&.menuparent{
-				padding: 1rem 5rem;
-			}
-		}
-	}//end level 3
+      &:hover,
+      &:focus {
+        background: $sfTopBackHover;
+        color: $sfTopLinkHover;
+      }
+    }
 
-}//sf-horizontal
+    &.active-trail {
+      &:hover > a {
+        color: $sfTopActiveHover;
+      }
+
+      & > a {
+        color: $sfTopActive;
+
+        &:hover,
+        &:focus {
+          color: $sfTopActiveHover;
+        }
+      }
+    }
+  }
+
+  & > li.sf-depth-1 {
+
+    & > ul {
+      padding: 2.5rem 0 0;
+      top: 100%;
+      min-width: 280px;
+      @extend %menuDropdown;
+
+      & > li {
+        padding: 0;
+
+        &:last-of-type {
+          padding: 0 0 2.5rem;
+        }
+      }
+    }
+
+  }
+
+  a.sf-depth-2 {
+    line-height: 1;
+    padding: 1.5rem 2.5rem;
+  }
+
+  .sf-depth-2 {
+
+    a.menuparent {
+      &:after {
+        content: '';
+        display: inline-block;
+        padding: 0;
+        position: relative;
+        right: -7px;
+        top: 0.6rem;
+        opacity: 1;
+        height: 18px;
+        width: 18px;
+        background-image: none;
+        @include materialIconOutline(\e5e1);
+        font-size: 18px;
+        @include transFormAnimate;
+      }
+
+      &:hover,
+      &:focus {
+        &:after {
+          color: $buttonBackHover;
+        }
+      }
+    }
+
+  }
+
+  .sf-depth-2 {
+    ul {
+      @extend %menuDropdown;
+      left: 100%;
+      top: 0px;
+      min-width: 240px;
+    }
+  }
+
+  li.sf-depth-3 {
+    font-size: 1.7rem;
+    line-height: 1;
+
+    & > a {
+      padding-left: 40px;
+      padding: 1rem 2.5rem 1rem 5rem;
+
+      &.menuparent {
+        padding: 1rem 5rem;
+      }
+    }
+  }
+}
 
 /* MOBILE FISH
 ----------------- */
-.block-superfishmain ul.sf-menu.sf-accordion{
-	&.sf-expanded{
-		position: absolute;
-		left: -$siteMarginMobile !important;
-		top: calc(100% + 20px) !important;
-		text-align: left;
-		width: calc(100% + $siteMarginMobile*2);
-		overflow: hidden;
-		background: $sfMobileDrop;
-		border-bottom: 8px solid $sfMobileDropBorder;
-	}//end expanded sf mobile wrapper
+.block-superfishmain ul.sf-menu.sf-accordion {
+  &.sf-expanded {
+    position: absolute;
+    left: -$siteMarginMobile !important;
+    top: calc(100% + 20px) !important;
+    text-align: left;
+    width: calc(100% + $siteMarginMobile*2);
+    overflow: hidden;
+    background: $sfMobileDrop;
+    border-bottom: 8px solid $sfMobileDropBorder;
+  }
 
-	// global mobile links
-	a{
-		padding: 2.5rem 4rem;
-		line-height: 1.15;
-	}
+  a {
+    padding: 2.5rem 4rem;
+    line-height: 1.15;
+  }
 
-	//parents, expanders & dropdowns
-	&.sf-accordion-with-buttons li{
-		position: relative;
-		& > .sf-accordion-button{
-			width: 60px;
-			height: 60px;
-			padding: 0;
-			text-indent: 9000px;
-			position: absolute;
-			top: 0;
-			right: 0;
-			z-index: 1;
-			background: transparent;
-			//expander toggle
-			&:after{
-				@include materialIconOutline(\e5cf);
-				position: absolute;
-				right: 10px;
-				top: 0;
-				@include safeFlex(row,no-wrap,center,center);
-				@include setDimensions(60px,60px);
-				text-indent: 0;
-				@include transFormAnimate;
-			}
-		}//end accordion button
+  &.sf-accordion-with-buttons li {
+    position: relative;
 
-		&.menuparent{;
-			a{
-				display: block;
-				&:not(.sf-accordion-button){
-					width: 100%;
-				}
-			}
-		}//end menupareny
-		&.sf-expanded > .sf-accordion-button{
-			background: transparent;
-			&:after{
-				@include rotate(180);
-				@include materialIconOutline(\e5cf);
-				position: absolute;
-				@include safeFlex(row,no-wrap,center,center);
-				@include setDimensions(60px,60px);
-				text-indent: 0;
-			}
-		}
-	}//end li
+    & > .sf-accordion-button {
+      width: 60px;
+      height: 60px;
+      padding: 0;
+      text-indent: 9000px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      background: transparent;
 
-	li.sf-expanded > ul{
-		padding: 0 0 2.5rem;
-	}
+      &:after {
+        @include materialIconOutline(\e5cf);
+        position: absolute;
+        right: 10px;
+        top: 0;
+        @include safeFlex(row, no-wrap, center, center);
+        @include setDimensions(60px, 60px);
+        text-indent: 0;
+        @include transFormAnimate;
+      }
+    }
 
-	// top level
-	li.sf-depth-1{
-		& > a{
-			color: $sfMobileTop;
-			background: $sfMobileTopBack;
-		}
-		&:not(:last-child){
-			border-bottom: 1px solid $sfMobileItemBorder
-		}
-		&.sf-expanded{
-			& > a{
-				color: $sfMobileTopExpanded;
-				background: $sfMobileTopBackExpanded;
-				&:not(.sf-accordion-button){
-					border-bottom: 3px solid $transBlack;
-				}
-			}
-			& > ul{
-				padding: 1.5rem 0;
-			}
-		}
-	}//end level 1
+    &.menuparent a {
+      display: block;
 
-	//level 2
-	li.sf-depth-2{
-		&:first-of-type.sf-expanded{
-			border-top: 0;
-		}
-		&:last-of-type.sf-expanded{
-			border-bottom: 0;
-		}
-		&.active-trail > a{
-			color: $sfMobileChildActive;
-		}
-		//inset level2 and those below
-		& > a{
-			color: $sfMobileChild;
-			&.sf-accordion-button{
-				height: 40px;
-			}
-			&:not(.sf-accordion-button){
-				padding: 10px 30px 10px 40px;
-			}
-		}
-	}//end level 2
+      &:not(.sf-accordion-button) {
+        width: 100%;
+      }
+    }
 
+    &.sf-expanded > .sf-accordion-button {
+      background: transparent;
 
-	//level 3
-	li.sf-depth-3{
-		//font size for level 3 and those below
-		&.active-trail > a{
-			color: $sfMobileChildActive;
-		}
-		a{
-			color: $sfMobileChild;
-			font-size: 2rem;
-			padding: 10px 30px;
-			&.sf-accordion-button{
-				&:after{
-					font-size: 2.75rem;
-				}
-			}
-			&:not(.sf-accordion-button){
-				padding: 10px 30px 10px 50px;
-			}
-		}
-	}//end level 3
+      &:after {
+        @include rotate(180);
+        @include materialIconOutline(\e5cf);
+        position: absolute;
+        @include safeFlex(row, no-wrap, center, center);
+        @include setDimensions(60px, 60px);
+        text-indent: 0;
+      }
+    }
+  }
 
-}//end sf-menu.sf-accordion
+  li.sf-expanded > ul {
+    padding: 0 0 2.5rem;
+  }
 
+  li.sf-depth-1 {
+    & > a {
+      color: $sfMobileTop;
+      background: $sfMobileTopBack;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $sfMobileItemBorder
+    }
+
+    &.sf-expanded {
+      & > a {
+        color: $sfMobileTopExpanded;
+        background: $sfMobileTopBackExpanded;
+
+        &:not(.sf-accordion-button) {
+          border-bottom: 3px solid $transBlack;
+        }
+      }
+
+      & > ul {
+        padding: 1.5rem 0;
+      }
+    }
+  }
+
+  li.sf-depth-2 {
+    &:first-of-type.sf-expanded {
+      border-top: 0;
+    }
+
+    &:last-of-type.sf-expanded {
+      border-bottom: 0;
+    }
+
+    &.active-trail > a {
+      color: $sfMobileChildActive;
+    }
+
+    & > a {
+      color: $sfMobileChild;
+
+      &.sf-accordion-button {
+        height: 40px;
+      }
+
+      &:not(.sf-accordion-button) {
+        padding: 10px 30px 10px 40px;
+      }
+    }
+  }
+
+  li.sf-depth-3 {
+
+    &.active-trail > a {
+      color: $sfMobileChildActive;
+    }
+
+    a {
+      color: $sfMobileChild;
+      font-size: 2rem;
+      padding: 10px 30px;
+
+      &.sf-accordion-button {
+        &:after {
+          font-size: 2.75rem;
+        }
+      }
+
+      &:not(.sf-accordion-button) {
+        padding: 10px 30px 10px 50px;
+      }
+    }
+  }
+
+}

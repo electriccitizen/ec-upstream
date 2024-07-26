@@ -5,128 +5,129 @@
 @use 'media-mixins' as *;
 
 img {
-	@include imageBase;
+  @include imageBase;
 }
 
 figure[role=group] {
-	margin: 0;
+  margin: 0;
 }
 
 figcaption {
-	@include caption;
+  @include caption;
 }
 
-article + figcaption {
-	margin-top: $spaceXs;
+article+figcaption {
+  margin-top: $spaceXs;
 }
 
 
 /* EMBEDDED VIDEO
 ------------------ */
 .field-media-oembed-video {
-	@include responsiveVideo;
+  @include responsiveVideo;
 }
 
 /* EMBEDDED MEDIA
 ------------------- */
 .text-with-summary article.media-item,
 .text-with-summary figure {
-	margin: 0 0 $spaceMd 0;
+  margin: 0 0 $spaceMd 0;
 
-	@include desk {
-		margin: 0;
-	}
+  @include desk {
+    margin: 0;
+  }
 }
 
 .text-with-summary article.media-item,
 .text-with-summary figure,
 .text-long article {
   margin-bottom: $spaceMd;
-	&.align-left {
-		float: none;
 
-		@include desk {
+  &.align-left {
+    float: none;
 
-			&:not(.document) {
-				max-width: 50% !important;
-				margin: 0 $spaceMd $spaceMd 0;
-				float: left;
-			}
+    @include desk {
 
-			&.document {
-				width: 100%;
-				text-align: left;
-			}
-		}
-	}
+      &:not(.document) {
+        max-width: 50% !important;
+        margin: 0 $spaceMd $spaceMd 0;
+        float: left;
+      }
 
-	&.align-right {
-		float: none;
+      &.document {
+        width: 100%;
+        text-align: left;
+      }
+    }
+  }
 
-		@include desk {
+  &.align-right {
+    float: none;
 
-			&:not(.document) {
-				max-width: 50%;
-				margin: 0 0 $spaceMd $spaceMd;
-				float: right;
-			}
+    @include desk {
 
-			&.document {
-				width: 100%;
-				text-align: right;
-			}
-		}
-	}
+      &:not(.document) {
+        max-width: 50%;
+        margin: 0 0 $spaceMd $spaceMd;
+        float: right;
+      }
 
-	&.align-center {
-		float: none;
+      &.document {
+        width: 100%;
+        text-align: right;
+      }
+    }
+  }
 
-		@include desk {
+  &.align-center {
+    float: none;
 
-			&:not(.document) {
-				margin: 0 auto $spaceMd auto;
-				float: none;
-			}
+    @include desk {
 
-			&.document {
-				text-align: center;
-			}
-		}
-	}
+      &:not(.document) {
+        margin: 0 auto $spaceMd auto;
+        float: none;
+      }
 
-	// control sizes for images and video
-	@include desk {
+      &.document {
+        text-align: center;
+      }
+    }
+  }
 
-		&.small-embed {
-			@include smallEmbed;
-		}
+  // Control sizes for images and video.
+  @include desk {
 
-		&.medium-embed {
-			@include mediumEmbed;
-		}
+    &.small-embed {
+      @include smallEmbed;
+    }
 
-		&.large-embed {
-			@include largeEmbed;
-		}
-	}
+    &.medium-embed {
+      @include mediumEmbed;
+    }
 
-	&.full {
-		@include fullEmbed;
-	}
+    &.large-embed {
+      @include largeEmbed;
+    }
+  }
 
-	&.default {
-		@include defaultEmbed;
-	}
+  &.full {
+    @include fullEmbed;
+  }
+
+  &.default {
+    @include defaultEmbed;
+  }
 }
+
 .text-with-summary ul article.media-item,
 .text-with-summary ul figure,
 .text-long ul article {
   margin-bottom: 0;
 }
-//end article
 
 span.file {
-	a {
-		@include docIcon;
-	}
+  a {
+    @include docIcon;
+  }
 }

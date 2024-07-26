@@ -3,7 +3,7 @@ EC-Upstream Local Development
 Reviewed by Wilbur, 2022-10-21
 
 # Project Details
-- **NAME:** ec-upstream 
+- **NAME:** ec-upstream
 - **URL:** http://dev-ec-upstream.pantheonsite.io/
 - **LOCAL URL:** http://ec-upstream.docksal.site
 - **BRANCH:** main
@@ -76,6 +76,22 @@ End DB Pull
 
 Open the generated login URL and you should be set to go.
 
+# Code Standards
+This project will automatically check any committed code to ensure that it
+aligns with [Drupal Coding Standards](https://www.drupal.org/docs/develop/standards/php/php-coding-standards)
+and will reject any commit that does not follow these standards.
+
+There are many ways to configure your IDE to hint, format, and detect errors in
+your Drupal code:
+
+* [VSCode](https://marketplace.visualstudio.com/items?itemName=Stanislav.vscode-drupal)
+* [PHPStorm](https://www.jetbrains.com/help/phpstorm/drupal-support.html)
+* [Sublime Text](https://github.com/enzolutions/sublime-drupal)
+
+To manually check from the command line, run the following command:
+
+`composer run code-sniff`
+
 # Theming
 The active theme for this project is **citizen_patterns**:
 `~/Projects/ec-upstream/web/themes/citizen_patterns`
@@ -99,7 +115,7 @@ These aliases are always available via:
 ```
 Note that not all projects will have all environments enabled.
 
-**PR-NNN** (Multidevs) 
+**PR-NNN** (Multidevs)
 
 Whenever you create a Github pull request, a new Pantheon multidev is created in the format `PR-NNN`  (e.g. PR-123) You can interact with this environment via:
 
@@ -147,4 +163,4 @@ Run `fin restart` to restart the Docksal project.
 
 # Backstop Testing
 
-Refer to [EC-BACKSTOP.md](/tests/backstop/EC-BACKSTOP.md) for complete instructions for Visual Regression Testing using Backstop JS. 
+Refer to [EC-BACKSTOP.md](/tests/backstop/EC-BACKSTOP.md) for complete instructions for Visual Regression Testing using Backstop JS.
