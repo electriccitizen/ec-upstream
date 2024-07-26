@@ -2,8 +2,11 @@
 
 namespace Drupal\citizen_custom\Plugin\Block;
 
-use Drupal\node\NodeInterface;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Routing\CurrentRouteMatch;
+use Drupal\node\NodeInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a 'Social Share' block.
@@ -14,7 +17,34 @@ use Drupal\Core\Block\BlockBase;
  *   category = @Translation("Social Share"),
  * )
  */
-class SocialShare extends BlockBase {
+class SocialShare extends BlockBase implements ContainerFactoryPluginInterface {
+
+  /**
+   * The node from the routematch.
+   *
+   * @var node \Drupal\node\NodeInterface
+   */
+  protected $node;
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('current_route_match')
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $route) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->node = $route->getParameter('node');
+  }
 
   /**
    * {@inheritdoc}
@@ -29,13 +59,10 @@ class SocialShare extends BlockBase {
       'base_url' => $GLOBALS['base_url'],
     ];
 
-    // Get the current node.
-    $node = \Drupal::routeMatch()->getParameter('node');
-
-    if ($node instanceof NodeInterface) {
+    if ($this->node instanceof NodeInterface) {
       // Get the variables we need to pass to twig.
-      $data['url'] = $node->toUrl()->toString();
-      $data['title'] = $node->getTitle();
+      $data['url'] = $this->node->toUrl()->toString();
+      $data['title'] = $this->node->getTitle();
     }
 
     return [

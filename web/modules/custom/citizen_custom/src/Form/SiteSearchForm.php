@@ -2,11 +2,6 @@
 
 namespace Drupal\citizen_custom\Form;
 
-/**
- * @file
- * Custom Site Search Form for citizen_custom.
- */
-
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteProvider;
