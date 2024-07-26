@@ -1,15 +1,13 @@
 <?php
 
-use Drupal\paragraphs\Entity\Paragraph;
 /**
  * @file
- * Contains citizen_custom.module.
+ * Custom hooks and preprocesses for Citizen Custom module.
  */
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\Core\Site\Settings;
-use Drupal\Component\Utility\Html;
+use Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * Implements hook_help().
@@ -22,6 +20,7 @@ function citizen_custom_help($route_name, RouteMatchInterface $route_match) {
       $output .= '<h3>' . t('About') . '</h3>';
       $output .= '<p>' . t('Custom glue module for Electric Citizen sites') . '</p>';
       return $output;
+
     default:
   }
 }
@@ -40,10 +39,10 @@ function citizen_custom_theme() {
         'title' => 'Site Search',
       ],
     ],
-		'social_share_block' => [
+    'social_share_block' => [
       'variables' => [
         'title' => 'Social Share',
-		'data' => [],
+        'data' => [],
       ],
     ],
   ];
@@ -52,16 +51,16 @@ function citizen_custom_theme() {
 /**
  * Implements hook_preprocess_html().
  */
-function citizen_custom_preprocess_html(&$variables){
- 	// Add role classes for current user to body.
+function citizen_custom_preprocess_html(&$variables) {
+  // Add role classes for current user to body.
   $user = \Drupal::currentUser();
   $userRole = $user->getRoles();
-  foreach($userRole as $role ){
-    if($role != 'authenticated'){
+  foreach ($userRole as $role) {
+    if ($role != 'authenticated') {
       $variables['attributes']['class'][] = 'role-' . $role;
     }
-    if($user->id() == '1'){
-    	$variables['attributes']['class'][] = 'role-super-user';
+    if ($user->id() == '1') {
+      $variables['attributes']['class'][] = 'role-super-user';
     }
   }
 }
@@ -79,7 +78,7 @@ function citizen_custom_preprocess_block(&$variables) {
  * Implements hook_page_attachments().
  */
 function citizen_custom_page_attachments(array &$attachments) {
-	// Add custom admin theme files to admin pages.
+  // Add custom admin theme files to admin pages.
   if (\Drupal::service('router.admin_context')->isAdminRoute()) {
     $attachments['#attached']['library'][] = 'citizen_custom/admin-global';
   }
@@ -89,10 +88,8 @@ function citizen_custom_page_attachments(array &$attachments) {
  * Implements hook_form_alter().
  */
 function citizen_custom_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $formId = $form['#id'];
-  $user = \Drupal::currentUser();
-  $userRole = $user->getRoles();
-  // Remove layout builder revision info access (to hide unneeded revision field).
+  // Remove layout builder revision info access (to hide unneeded revision
+  // field).
   if (strpos($form_id, 'layout_builder_form') > 0) {
     $form['advanced']['#access'] = FALSE;
     $form['revision_information']['#access'] = FALSE;
@@ -106,13 +103,18 @@ function citizen_custom_form_alter(&$form, FormStateInterface $form_state, $form
 function citizen_custom_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $node = $form_state->getFormObject()->getEntity();
   // Change promotion text to something more contextual.
-  if ($node->getType() == 'news') {
-    $form['promote']['widget']['value']['#title'] = 'Add to Featured News';
-    $form['promote']['widget']['value']['#description'] = 'Should have a news image.';
-  }
-  if ($node->getType() == 'event') {
-    $form['promote']['widget']['value']['#title'] = 'Add to Featured Events';
-    $form['promote']['widget']['value']['#description'] = 'Should have a news image.';
+  switch ($node->getType()) {
+    case 'news':
+      $form['promote']['widget']['value']['#title'] = 'Add to Featured News';
+      $form['promote']['widget']['value']['#description'] = t('Should have a news image.');
+
+      break;
+
+    case 'event':
+      $form['promote']['widget']['value']['#title'] = 'Add to Featured Events';
+      $form['promote']['widget']['value']['#description'] = t('Should have a news image.');
+
+      break;
   }
 }
 
@@ -123,11 +125,11 @@ function citizen_custom_local_tasks_alter(&$local_tasks) {
   // Hide redirects settings from non admins.
   $user = \Drupal::currentUser();
   $userRole = $user->getRoles();
-  if(!in_array('administrator', $userRole)){
-    if(isset($local_tasks['redirect.list'])){
+  if (!in_array('administrator', $userRole)) {
+    if (isset($local_tasks['redirect.list'])) {
       unset($local_tasks['redirect.list']);
     }
-    if(isset($local_tasks['redirect.settings'])){
+    if (isset($local_tasks['redirect.settings'])) {
       unset($local_tasks['redirect.settings']);
     }
   }
@@ -142,7 +144,6 @@ function citizen_custom_form_site_search_form_alter(&$form, FormStateInterface $
   $form['form_build_id']['#access'] = FALSE;
   $form['form_token']['#access'] = FALSE;
   $form['form_id']['#access'] = FALSE;
-
 }
 
 /**
@@ -154,8 +155,8 @@ function citizen_custom_field_widget_single_element_form_alter(&$element, FormSt
   if ($field_definition->getType() == 'entity_reference_revisions') {
     if (isset($element['#paragraph_type'])) {
       $type = $element['#paragraph_type'];
-      $element['top']['type']['#attributes']['class'][] = str_replace('_','-',$type);
-      if(isset($element['top']['type']['icon'])){
+      $element['top']['type']['#attributes']['class'][] = str_replace('_', '-', $type);
+      if (isset($element['top']['type']['icon'])) {
         unset($element['top']['type']['icon']);
       }
     }
@@ -163,7 +164,6 @@ function citizen_custom_field_widget_single_element_form_alter(&$element, FormSt
   // Add custom link help text for emails.
   if ($field_definition->getType() == 'link') {
     if ($element['uri']['#description'] && ($field_definition->getUniqueIdentifier() == "menu_link_content-link")) {
-      $linkHelp = $element['uri']['#description'];
       $element['uri']['#description']['#items'][] = t('To create an email link, enter "<strong>mailto:</strong>example@email.com".');
     }
   }
@@ -184,7 +184,8 @@ function citizen_custom_views_pre_view($view, $display_id, &$args) {
   $view_name = '';
   $view_display = '';
 
-	// Alters views to accept fields from related paragraphs to be used for filters.
+  // Alters views to accept fields from related paragraphs to be used for
+  // filters.
   if (isset($view->element['#name'])) {
     foreach ($content_placer_views as $view_name => $view_displays) {
       foreach ($view_displays as $view_display) {
@@ -206,20 +207,21 @@ function citizen_custom_views_pre_view($view, $display_id, &$args) {
         case "events":
           switch ($view_display) {
             case "events_list":
-              //unset or alter categories filter
+              // Unset or alter categories filter.
               if ($paragraph->field_events_category[0]) {
-                //make an array out of the category set in the paragraph
+                // Make an array out of the category set in the paragraph.
                 $categories = [];
-                foreach ($paragraph->field_events_category as $delta => $category) {
+                foreach ($paragraph->field_events_category as $category) {
                   $categories[] = $category->target_id;
                 }
-                // replace the category_tid filter with the paragraph category
+                // Replace the category_tid filter with the paragraph category.
                 $filters['field_category_target_id']['value'] = $categories;
               }
-              else if ($filters['field_category_target_id']) {
-                //if the category field is not used, then unset the category filter
-                  unset($filters['field_category_target_id']);
-              }//end category filter
+              elseif ($filters['field_category_target_id']) {
+                // If the category field is not used, then unset the category
+                // filter.
+                unset($filters['field_category_target_id']);
+              }
 
               break;
 
@@ -229,37 +231,39 @@ function citizen_custom_views_pre_view($view, $display_id, &$args) {
         case "news":
           switch ($view_display) {
             case "news_list":
-              //unset or alter categories filter
-              if ($paragraph->field_news_category[0]){
-                //make an array out of the category set in the paragraph
+              // Unset or alter categories filter.
+              if ($paragraph->field_news_category[0]) {
+                // Make an array out of the category set in the paragraph.
                 $categories = [];
-                foreach ($paragraph->field_news_category as $delta => $category) {
+                foreach ($paragraph->field_news_category as $category) {
                   $categories[] = $category->target_id;
                 }
-                // replace the category_tid filter with the paragraph category
+                // Replace the category_tid filter with the paragraph category.
                 $filters['field_category_target_id']['value'] = $categories;
               }
-              else if ($filters['field_category_target_id']) {
-                //if the category field is not used, then unset the category filter
+              elseif ($filters['field_category_target_id']) {
+                // If the category field is not used, then unset the category
+                // filter.
                 unset($filters['field_category_target_id']);
-              }//end category filter
+              }
               break;
 
           }
           break;
 
-        $view->display_handler->setOption('filters', $filters);
-        $pager = $view->display_handler->getOption('pager');
-        if (isset($paragraph->field_limit_list[0])){
-          $per_page = $paragraph->field_limit_list[0]->value;
-          $pager['type'] = 'some';
-          $view->setItemsPerPage($per_page);
-        }
-        else {
-          $pager['type'] = 'none';
-        }
-        $view->display_handler->setOption('pager', $pager);
       }
+
+      $view->display_handler->setOption('filters', $filters);
+      $pager = $view->display_handler->getOption('pager');
+      if (isset($paragraph->field_limit_list[0])) {
+        $per_page = $paragraph->field_limit_list[0]->value;
+        $pager['type'] = 'some';
+        $view->setItemsPerPage($per_page);
+      }
+      else {
+        $pager['type'] = 'none';
+      }
+      $view->display_handler->setOption('pager', $pager);
 
     }
 
