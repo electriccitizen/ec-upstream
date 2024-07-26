@@ -4,7 +4,7 @@
   ----------------------- */
   Drupal.behaviors.contentPlacer = {
     attach: function (context) {
-    	once('isContentPlacer', '.field--name-field-content-type', context).forEach(contentTypeField => {
+      once('isContentPlacer', '.field--name-field-content-type', context).forEach(contentTypeField => {
         // Hide select and limit fields that are not the content type (taxonomy)
         // field. These get displayed later depending on which content type is
         // selected.
