@@ -5,9 +5,9 @@
 @use '../../../00-base/base' as *;
 
 .paragraph--type--text {
-	@include textConstrain;
+  @include textConstrain;
 
-   .widget-wrapper figure[role=group] {
-      margin: 0 0 $spaceMd 0;
-   }
-} //end text widget
+  .widget-wrapper figure[role=group] {
+    margin: 0 0 $spaceMd 0;
+  }
+}

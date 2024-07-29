@@ -4,29 +4,32 @@
 
 @use '../../../00-base/base' as *;
 
-.node-news{
-	max-width: $contentStop;
-	@include auto;
-	.block-field.block-title{
-		max-width: 100%;
-		h1{
-			text-align: left;
-		}
-	}
-	.block-created{
-		@include metaText;
-	}
-}//end news
+.node-news {
+  @include auto;
+  max-width: $contentStop;
 
-.node-news.node-teaser{
-  .date{
+  .block-field.block-title {
+    max-width: 100%;
+
+    h1 {
+      text-align: left;
+    }
+  }
+
+  .block-created {
+    @include metaText;
+  }
+}
+
+.node-news.node-teaser {
+  .date {
     @include metaText;
     margin-bottom: $spaceXxs;
   }
 }
 
-.node-news.node-listing{
-  .date{
+.node-news.node-listing {
+  .date {
     @include metaText;
     margin-bottom: $spaceXxs;
   }

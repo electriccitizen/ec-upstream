@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file citizen_dart.views.inc
+ * @file
  * Includes all preprocess and alter hooks related to views.
  */
 

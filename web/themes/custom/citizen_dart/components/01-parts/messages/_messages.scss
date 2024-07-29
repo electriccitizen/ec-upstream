@@ -4,61 +4,61 @@
 @use '../../00-base/base' as *;
 
 .drupal-message {
-	padding: $spaceMd 2.5rem $spaceMd 5.5rem;
-	margin: $spaceMd 0;
-	background-image: none;
-	font-size: 2.25rem;
-	background-color: $messageBack;
-	color: $messageText;
-	border-left: 1rem solid;
-	box-shadow: none;
-	max-width: $contentStop;
-	@include auto;
+  padding: $spaceMd 2.5rem $spaceMd 5.5rem;
+  margin: $spaceMd 0;
+  background-image: none;
+  font-size: 2.25rem;
+  background-color: $messageBack;
+  color: $messageText;
+  border-left: 1rem solid;
+  box-shadow: none;
+  max-width: $contentStop;
+  @include auto;
 
-	a {
-		color: $adminGold;
-		
-		&:hover,
-		&:focus {
-			opacity: .6;
-		}
-	}
-	
-	&.error-message,
-	&.warning-message,
-	&.status-message {
-		
-		&:before {
-			position: relative;
-			top: 0.7rem;
-		}
-	}
+  a {
+    color: $adminGold;
 
-	&.error-message {
-		border-color: $messageErrorBorder;
-	
-		&:before {
-			@include materialIconOutline(\e888);
-			color: $messageErrorBorder;
+    &:hover,
+    &:focus {
+      opacity: .6;
+    }
+  }
 
-		}
-	}
+  &.error-message,
+  &.warning-message,
+  &.status-message {
 
-	&.warning-message {
-		border-color: $messageWarningBorder;
-	
-		&:before {
-			@include materialIconOutline(\e002);
-			color: $messageWarningBorder;
-		}
-	}
+    &:before {
+      position: relative;
+      top: 0.7rem;
+    }
+  }
 
-	&.status-message {
-		border-color: $messageGoodBorder;
-	
-		&:before {
-			@include materialIconOutline(\e5ca);
-			color: $messageGoodBorder;
-		}
-	}
-}//end drupal message
+  &.error-message {
+    border-color: $messageErrorBorder;
+
+    &:before {
+      @include materialIconOutline(\e888);
+      color: $messageErrorBorder;
+
+    }
+  }
+
+  &.warning-message {
+    border-color: $messageWarningBorder;
+
+    &:before {
+      @include materialIconOutline(\e002);
+      color: $messageWarningBorder;
+    }
+  }
+
+  &.status-message {
+    border-color: $messageGoodBorder;
+
+    &:before {
+      @include materialIconOutline(\e5ca);
+      color: $messageGoodBorder;
+    }
+  }
+}

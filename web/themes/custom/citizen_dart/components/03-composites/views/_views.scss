@@ -14,60 +14,66 @@
 @use '../../01-parts/forms/elements/form-mixins' as *;
 
 #views-form-wrapper {
-	@include safeFlex(row,wrap,start,center);
-	@include bleed(padding,20px);
+  @include safeFlex(row, wrap, start, center);
+  @include bleed(padding, 20px);
 
-	.form-item {
-		width: 100%;
+  .form-item {
+    width: 100%;
+
     @include smallTab {
-			width: 50%;
-			max-width: 300px;
-		}
-		label {
-			@include formLabel;
-			margin-bottom: $spaceXxs;
-		}
-		.select2-container--default {
-			max-width: 100%;
+      width: 50%;
+      max-width: 300px;
+    }
 
-			.select2-selection__choice {
-				margin-top: .5rem;
-			}
-		}
-	}//end form item
+    label {
+      @include formLabel;
+      margin-bottom: $spaceXxs;
+    }
 
-	.form-actions {
-		@include auto;
-		@include safeFlex(row,wrap,start,start);
-    @include smallTab{
+    .select2-container--default {
+      max-width: 100%;
+
+      .select2-selection__choice {
+        margin-top: .5rem;
+      }
+    }
+  }
+
+  .form-actions {
+    @include auto;
+    @include safeFlex(row, wrap, start, start);
+
+    @include smallTab {
       @include edgeReset;
     }
-		input.form-submit.button{
-			@include submitButton;
-			margin: 0 10px;
-			&[data-drupal-selector='edit-reset']{
-				@include warningButton;
-				margin: 0 10px;
-			}
-		}
-	}//end form actions
 
-	& + .view-content{
-		margin-top: 5rem;
-	}
-}//end views exposed form
+    input.form-submit.button {
+      @include submitButton;
+      margin: 0 10px;
 
-.view-content{
-	@include safeFlex(row,wrap,start,start);
-	& > *{
-		width: 100%;
-	}
-}//end view content
+      &[data-drupal-selector='edit-reset'] {
+        @include warningButton;
+        margin: 0 10px;
+      }
+    }
+  }
 
-.view-empty{
-	margin-bottom: $spaceLg;
-	max-width: $textMax;
-	@include auto;
-	text-align: center;
+  & + .view-content {
+    margin-top: 5rem;
+  }
 }
 
+.view-content {
+  @include safeFlex(row, wrap, start, start);
+
+  & > * {
+    width: 100%;
+  }
+}
+
+.view-empty {
+  margin-bottom: $spaceLg;
+  max-width: $textMax;
+  @include auto;
+  text-align: center;
+}

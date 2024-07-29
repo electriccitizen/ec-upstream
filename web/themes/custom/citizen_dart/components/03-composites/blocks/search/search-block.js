@@ -1,68 +1,66 @@
 
-(function(Drupal, once) {
+(function (Drupal, once) {
 
-	// search toggle
-	Drupal.behaviors.searchToggle = {
-		attach: function (context, settings) {
-			once('tSearch', '.block-site-search', context).forEach(search => {
+  Drupal.behaviors.searchToggle = {
+    attach: function (context, settings) {
+      once('tSearch', '.block-site-search', context).forEach(search => {
 
-				const openTrigger = search.querySelector(".t-search");
-				const closeTrigger = search.querySelector(".close-search");
-				const target = search.querySelector(".t-search-close");
-  
-				// open search
-				const openSearchBlock = (e) => {
-			    e.preventDefault();
-			    const searchFormWrapper = document.getElementById("search-form-wrapper");
+        const openTrigger = search.querySelector(".t-search");
+        const closeTrigger = search.querySelector(".close-search");
+        const target = search.querySelector(".t-search-close");
 
-			    if (searchFormWrapper) {
-		        searchFormWrapper.classList.add('show-content');
-		        searchFormWrapper.setAttribute('aria-hidden', 'false');
-			    }
+        // Open search.
+        const openSearchBlock = (e) => {
+          e.preventDefault();
+          const searchFormWrapper = document.getElementById("search-form-wrapper");
 
-			    if (target) {
-		        setTimeout(() => {
-		          target.style.display = 'block';
-		        }, 300);
-			    }
+          if (searchFormWrapper) {
+            searchFormWrapper.classList.add('show-content');
+            searchFormWrapper.setAttribute('aria-hidden', 'false');
+          }
 
-			    // close main menu if open when search is clicked
-			    const superfishMainAccordion = document.getElementById("superfish-main-accordion");
-			    const superfishMainToggle = document.getElementById("superfish-main-toggle");
+          if (target) {
+            setTimeout(() => {
+              target.style.display = 'block';
+            }, 300);
+          }
 
-			    if (superfishMainAccordion && superfishMainAccordion.classList.contains('sf-expanded')) {
-		        superfishMainAccordion.style.display = 'none';
-		        setTimeout(() => {
-	            superfishMainAccordion.classList.remove('sf-expanded');
-	            superfishMainToggle.classList.remove('sf-expanded');
-		        }, 200);
-				  }
-				}//end open search block event
+          // Close main menu if open when search is clicked.
+          const superfishMainAccordion = document.getElementById("superfish-main-accordion");
+          const superfishMainToggle = document.getElementById("superfish-main-toggle");
 
-				openTrigger.addEventListener('click', openSearchBlock);
+          if (superfishMainAccordion && superfishMainAccordion.classList.contains('sf-expanded')) {
+            superfishMainAccordion.style.display = 'none';
+            setTimeout(() => {
+              superfishMainAccordion.classList.remove('sf-expanded');
+              superfishMainToggle.classList.remove('sf-expanded');
+            }, 200);
+          }
+        }
 
-				// close search
-				const closeSearchBlock = (e) => {
-			    e.preventDefault();
-			    if (target) {
-			      target.style.display = 'none';
-			    }
+        openTrigger.addEventListener('click', openSearchBlock);
 
-			    const searchFormWrapper = document.getElementById("search-form-wrapper");
+        // Close search.
+        const closeSearchBlock = (e) => {
+          e.preventDefault();
+          if (target) {
+            target.style.display = 'none';
+          }
 
-			    if (searchFormWrapper) {
-		        setTimeout(() => {
-	            searchFormWrapper.classList.remove('show-content');
-	            searchFormWrapper.setAttribute('aria-hidden', 'true');
-		        }, 200);
-			    }
-				}//end close search block event
+          const searchFormWrapper = document.getElementById("search-form-wrapper");
 
-				closeTrigger.addEventListener('click', closeSearchBlock);
+          if (searchFormWrapper) {
+            setTimeout(() => {
+              searchFormWrapper.classList.remove('show-content');
+              searchFormWrapper.setAttribute('aria-hidden', 'true');
+            }, 200);
+          }
+        }
 
-			});//end once search
-		}
-	}
+        closeTrigger.addEventListener('click', closeSearchBlock);
+
+      });
+    }
+  }
 
 })(Drupal, once);
-

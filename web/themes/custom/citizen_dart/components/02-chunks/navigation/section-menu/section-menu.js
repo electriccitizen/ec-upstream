@@ -1,4 +1,4 @@
-(function(Drupal, once) {
+(function (Drupal, once) {
 
   Drupal.behaviors.sectionMenu = {
     attach: function (context) {

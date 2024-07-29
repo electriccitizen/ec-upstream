@@ -4,18 +4,22 @@
 
 @use '../../../00-base/base' as *;
 
-.node-event{
-	max-width: $contentStop;
-	@include auto;
-	.block-field.block-title{
-		max-width: 100%;
-		h1{
-			text-align: left;
-		}
-	}
-	.block-field-dates{
-		@include metaText;
-	}
+.node-event {
+  max-width: $contentStop;
+  @include auto;
+
+  .block-field.block-title {
+    max-width: 100%;
+
+    h1 {
+      text-align: left;
+    }
+  }
+
+  .block-field-dates {
+    @include metaText;
+  }
+
   &.node-teaser,
   &.node-listing {
     .field-dates {
@@ -23,4 +27,4 @@
       margin-bottom: $spaceSm;
     }
   }
-}//end event
+}

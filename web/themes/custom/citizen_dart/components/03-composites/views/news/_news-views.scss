@@ -5,19 +5,22 @@
 @use '../../../00-base/base' as *;
 @use '../views-mixins' as *;
 
-/* ALL NEWS */
-.news.all-news{
-	.view{
-		padding-bottom: $elementSpace;
-	}
-	.views-row:not(:last-child){
-    margin-bottom: $spaceLg;
-	}
-}//end all news
+/* ALL NEWS
+------------- */
+.news.all-news {
+  .view {
+    padding-bottom: $elementSpace;
+  }
 
-/* NEWS LIST */
-.news.news-list{
-	.views-row:not(:last-child){
+  .views-row:not(:last-child) {
     margin-bottom: $spaceLg;
-	}
-}//end news list
+  }
+}
+
+/* NEWS LIST
+------------- */
+.news.news-list {
+  .views-row:not(:last-child) {
+    margin-bottom: $spaceLg;
+  }
+}

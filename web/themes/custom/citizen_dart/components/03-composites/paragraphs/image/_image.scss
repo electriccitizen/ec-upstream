@@ -7,17 +7,16 @@
 
 .paragraph--type--image {
 
-	.image-wrapper {
-		@include auto;
-	}
-	
-	a {
-		color: $baseText;
-		text-decoration: none;
-		
-		img {
-			@include imageHover;
-		}
-	}
-} //end image widget
+  .image-wrapper {
+    @include auto;
+  }
 
+  a {
+    color: $baseText;
+    text-decoration: none;
+
+    img {
+      @include imageHover;
+    }
+  }
+}

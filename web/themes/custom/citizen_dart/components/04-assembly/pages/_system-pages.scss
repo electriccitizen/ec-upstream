@@ -5,18 +5,17 @@
 @use '../../00-base/base' as *;
 
 html > body:not(.is-front):not(.path-node) {
-	.layout-content {
-		max-width: $contentStop + px(40);
-		@include auto;
-		padding: 0 $siteMarginMobile $siteBottomSpace;
-	}
+  .layout-content {
+    @include auto;
+    max-width: $contentStop + px(40);
+    padding: 0 $siteMarginMobile $siteBottomSpace;
+  }
 
-	#block-citizen-dart-content {
-		padding-top: $elementSpace;
-	}
+  #block-citizen-dart-content {
+    padding-top: $elementSpace;
+  }
 
-	.block-page-title-block {
-		margin-bottom: $elementSpace;
-	}
-}//end non-node system pages
-
+  .block-page-title-block {
+    margin-bottom: $elementSpace;
+  }
+}
