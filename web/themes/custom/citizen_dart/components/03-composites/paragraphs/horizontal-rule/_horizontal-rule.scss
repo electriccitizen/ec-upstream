@@ -4,11 +4,12 @@
 
 @use '../../../00-base/base' as *;
 
-.paragraph--type--horizontal-rule{
-	.text{
-		@include textConstrain;
-	}
-	hr{
-		border-top: 1px solid $borderRule;
-	}
-}//end hr widget
+.paragraph--type--horizontal-rule {
+  .text {
+    @include textConstrain;
+  }
+
+  hr {
+    border-top: 1px solid $borderRule;
+  }
+}
