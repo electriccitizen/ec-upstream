@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file citizen_dart.field.inc
+ * @file
  * Includes all preprocess and alter hooks related to fields.
  */
 

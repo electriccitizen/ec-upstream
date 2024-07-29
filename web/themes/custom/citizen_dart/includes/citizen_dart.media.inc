@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file citizen_dart.media.inc
+ * @file
  * Includes all preprocess and alter hooks related to media entities.
  */
 
@@ -26,9 +26,33 @@ function citizen_dart_preprocess_responsive_image(&$variables) {
       $midDeskURL = ImageStyle::load('banner_middesk')->buildUrl($variables['uri']);
       $bigDeskURL = ImageStyle::load('banner_big_desk')->buildUrl($variables['uri']);
       // Construct links for each image style being preloaded.
-      $deskLinkTag = ['#tag' => 'link','#attributes' => ['rel' => 'preload','as' => 'image','href' => $deskURL,'media' => '(min-width:896px) and (max-width:1143.9px)',],];
-      $midDeskLinkTag = ['#tag' => 'link','#attributes' => ['rel' => 'preload','as' => 'image','href' => $midDeskURL,'media' => '(min-width:1144px) and (max-width:1319.9px)',],];
-      $bigDeskLinkTag = ['#tag' => 'link','#attributes' => ['rel' => 'preload','as' => 'image','href' => $bigDeskURL,'media' => '(min-width:1320px)',],];
+      $deskLinkTag = [
+        '#tag' => 'link',
+        '#attributes' => [
+          'rel' => 'preload',
+          'as' => 'image',
+          'href' => $deskURL,
+          'media' => '(min-width:896px) and (max-width:1143.9px)',
+        ],
+      ];
+      $midDeskLinkTag = [
+        '#tag' => 'link',
+        '#attributes' => [
+          'rel' => 'preload',
+          'as' => 'image',
+          'href' => $midDeskURL,
+          'media' => '(min-width:1144px) and (max-width:1319.9px)',
+        ],
+      ];
+      $bigDeskLinkTag = [
+        '#tag' => 'link',
+        '#attributes' => [
+          'rel' => 'preload',
+          'as' => 'image',
+          'href' => $bigDeskURL,
+          'media' => '(min-width:1320px)',
+        ],
+      ];
       // Attach links for each image style being preloaded.
       $variables['#attached']['html_head'][] = [$deskLinkTag, 'preloadBannerImageDesk'];
       $variables['#attached']['html_head'][] = [$midDeskLinkTag, 'preloadBannerImageMidDesk'];
@@ -83,10 +107,10 @@ function citizen_dart_preprocess_responsive_image(&$variables) {
   }
 
   // Set responsive fallback image attributes for width, height, fetchpriority.
-  if (!($img_width == 'default' || $img_height == 'default' )) {
+  if (!($img_width == 'default' || $img_height == 'default')) {
     $variables['img_element']['#attributes']['width'] = $img_width;
     $variables['img_element']['#attributes']['height'] = $img_height;
-    if ($style_id == 'banner'){
+    if ($style_id == 'banner') {
       $variables['img_element']['#attributes']['fetchpriority'] = 'high';
     }
   }
