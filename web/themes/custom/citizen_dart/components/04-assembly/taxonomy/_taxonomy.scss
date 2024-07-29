@@ -4,37 +4,43 @@
 
 @use '../../00-base/base' as *;
 
+.path-taxonomy {
+  .term-title {
+    margin-bottom: $elementSpace;
+  }
 
-.path-taxonomy{
-	.term-title{
-		margin-bottom: $elementSpace;
-	}
-	.taxonomy-term{
-		max-width: $textMax;
-		@include auto;
-		.view-header{
-			.block-title{
-				padding-top: $spaceMd;
-			}
-		}
-		.view-content{
-			@include tab{
-				width: 100%;
-			}
-			.views-row{
-				margin-bottom: $spaceSm;	
-        h3{
+  .taxonomy-term {
+    @include auto;
+    max-width: $textMax;
+
+    .view-header {
+      .block-title {
+        padding-top: $spaceMd;
+      }
+    }
+
+    .view-content {
+      @include tab {
+        width: 100%;
+      }
+
+      .views-row {
+        margin-bottom: $spaceSm;
+
+        h3 {
           font-size: 2rem;
           margin-bottom: $spaceXxs;
         }
-        .views-field-body,.views-field-field-meta-description{
+
+        .views-field-body,
+        .views-field-field-meta-description {
           font-size: 1.75rem;
         }
-			}//end views row
-		}//end view content
-	}//end taxonomy term
-	.feed-icon{
-		display: none;
-	}
-}//end path taxonomy
+      }
+    }
+  }
 
+  .feed-icon {
+    display: none;
+  }
+}
