@@ -58,7 +58,7 @@ section-menu:
   js:
     components/02-chunks/navigation/section-menu/section-menu.js: {}
   dependencies:
-    - citizen_dart/debounce
+    - core/drupal.debounce
 select:
   version: 4.0.3
   css:
