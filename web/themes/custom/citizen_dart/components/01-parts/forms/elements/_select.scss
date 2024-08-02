@@ -94,6 +94,7 @@ body,
     .select2-selection--multiple {
       @include inputSelect;
       padding: 5px 3.5rem 6px 1.5rem;
+      position: static;
 
       &:after {
         content: '';
@@ -126,18 +127,26 @@ body,
 
         .select2-selection__choice {
           font-size: 14px;
+          margin-left: 0;
+          margin-right: 2px;
+          padding-left: 5px;
+          vertical-align: baseline;
         }
       }
 
       .select2-selection__choice__remove {
+        border-right: 0;
+        margin-right: 2px;
+        padding: 0;
         position: relative;
         z-index: 999;
       }
 
       .select2-search--inline {
+        display: inline-block;
         position: relative;
         float: none;
-        padding: 2px 3px;
+        height: 28px;
 
         input.select2-search__field {
           color: $darkGrey;
@@ -147,6 +156,11 @@ body,
             @include placeholderFocus;
           }
         }
+      }
+
+      .select2-search--inline .select2-search__field {
+        max-width: 88%;
+        vertical-align: baseline;
       }
 
       .select2-selection__choice {

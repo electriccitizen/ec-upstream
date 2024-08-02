@@ -68,18 +68,18 @@
               const activeList = activeItem.nextElementSibling;
               if (activeList) {
                 slideDown(activeList, 200);
+                parentsUntil(activeList, '#section-menu-wrapper > ul', (element) => {
+                  element.classList.add('active-trail', 'expanded');
+                  const parentExpander = element.querySelector(":scope > .expander");
+                  const parentList = element.querySelector(':scope > li > ul');
+                  if (parentExpander) {
+                    parentExpander.setAttribute("aria-expanded", true);
+                  }
+                  if (parentList) {
+                    parentList.setAttribute('aria-hidden', false)
+                  }
+                })
               }
-              parentsUntil(activeList, '#section-menu-wrapper > ul', (element) => {
-                element.classList.add('active-trail', 'expanded');
-                const parentExpander = element.querySelector(":scope > .expander");
-                const parentList = element.querySelector(':scope > li > ul');
-                if (parentExpander) {
-                  parentExpander.setAttribute("aria-expanded", true);
-                }
-                if (parentList) {
-                  parentList.setAttribute('aria-hidden', false)
-                }
-              })
             });
           });
         };
