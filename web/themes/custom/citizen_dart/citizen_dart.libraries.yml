@@ -5,7 +5,7 @@ global:
     theme:
       dist/style.css: {}
   js:
-    components/05-assembly/global/site.js: {}
+    components/04-assembly/global/site.js: {}
   dependencies:
     - core/drupal
     - core/drupal.debounce
