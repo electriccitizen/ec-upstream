@@ -1,8 +1,7 @@
 /* FILE
 =========== */
 
-@use '../../../00-base/base' as *;
-@use '../../buttons/button-mixins' as *;
+@use '../../../00-base' as *;
 
 @mixin placeholder {
   $placeTint: 1;

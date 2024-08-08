@@ -1,7 +1,9 @@
 /* ==============
 	 BUTTONS
 ================== */
-@use '../../00-base/base' as *;
+
+@use '../variables' as *;
+@use 'general-mixins' as *;
 
 @mixin dropbutton {
 

@@ -2,8 +2,7 @@
    Section Layouts
 =================== */
 
-@use '../../../00-base/base' as *;
-@use '../../../01-parts/buttons/button-mixins' as *;
+@use '../../../00-base' as *;
 
 .layout-content{
 	padding-left: $siteMarginMobile;

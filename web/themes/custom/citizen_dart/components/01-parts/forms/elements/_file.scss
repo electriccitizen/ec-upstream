@@ -1,7 +1,7 @@
 /* FILE
 =========== */
 
-@use '../../../00-base/base' as *;
+@use '../../../00-base/' as *;
 @use 'form-mixins' as *;
 
 .js-form-type-managed-file,

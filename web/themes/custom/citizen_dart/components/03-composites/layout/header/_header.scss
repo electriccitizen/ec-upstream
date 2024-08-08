@@ -2,7 +2,7 @@
 	SITE HEADER
 =================== */
 
-@use '../../../00-base/base' as *;
+@use '../../../00-base' as *;
 
 .site-header {
   padding: 20px $siteMarginMobile;

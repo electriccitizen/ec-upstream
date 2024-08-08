@@ -2,7 +2,7 @@
    GALLERY WIDGET
 ==================== */
 
-@use '../../../00-base/base' as *;
+@use '../../../00-base' as *;
 @use '../../../02-chunks/media/media-mixins' as *;
 
 .paragraph--type--gallery {

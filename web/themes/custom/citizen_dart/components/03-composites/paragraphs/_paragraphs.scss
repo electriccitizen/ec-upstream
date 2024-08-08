@@ -18,7 +18,7 @@
 @forward 'text/text';
 @forward 'video/video';
 
-@use '../../00-base/base' as *;
+@use '../../00-base' as *;
 @use 'sass:math';
 
 .block-field-paragraphs {

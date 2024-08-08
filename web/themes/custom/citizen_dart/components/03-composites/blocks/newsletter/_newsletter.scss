@@ -1,9 +1,8 @@
 /* =================
    NEWSLETTER-BLOCK
 =================== */
-@use '../../../00-base/base' as *;
+@use '../../../00-base' as *;
 @use '../../../01-parts/forms/elements/form-mixins' as *;
-@use '../../../01-parts/buttons/button-mixins' as *;
 
 .block-newsletter {
   .field.body {

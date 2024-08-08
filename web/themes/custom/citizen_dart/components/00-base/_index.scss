@@ -6,4 +6,6 @@
 @forward 'variables/component-colors';
 @forward 'variables/fonts';
 @forward 'variables/units';
-@forward 'variables/general-mixins';
+
+@forward 'mixins/general-mixins';
+@forward 'mixins/button-mixins';

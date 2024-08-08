@@ -1,7 +1,7 @@
 /* =============
 	 BREADCRUMBS
 ------------------- */
-@use '../../../00-base/base' as *;
+@use '../../../00-base' as *;
 
 .breadcrumb {
   max-width: $contentStop;

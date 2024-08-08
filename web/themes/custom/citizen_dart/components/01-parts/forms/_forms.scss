@@ -11,9 +11,8 @@
 @forward 'elements/select';
 @forward 'elements/textfields';
 
-@use '../../00-base/base' as *;
+@use '../../00-base' as *;
 @use 'elements/form-mixins' as *;
-@use '../buttons/button-mixins' as *;
 
 /* FORM ITEM STYLING
 -------------------- */
