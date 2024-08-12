@@ -1,16 +1,8 @@
 /* ==================
-    global views settings
+  GENERAL VIEWS THEMING
 ==================== */
 
-/* VIEWS INDEX
-------------------- */
-@forward 'bios/bio-views';
-@forward 'events/event-views';
-@forward 'news/news-views';
-@forward 'search/search';
-
 @use '../../00-base' as *;
-@use '../../01-parts/forms/elements/form-mixins' as *;
 
 #views-form-wrapper {
   @include safeFlex(row, wrap, start, center);

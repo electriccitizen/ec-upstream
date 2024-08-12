@@ -1,7 +1,7 @@
 /* ==============
 	 BUTTONS
 ================== */
-@use '../00-base/' as *;
+@use '../../00-base/' as *;
 
 .ec-button {
   @include button;

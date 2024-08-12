@@ -2,7 +2,6 @@
 	 MEDIA
 ============== */
 @use '../../00-base' as *;
-@use 'media-mixins' as *;
 
 img {
   @include imageBase;

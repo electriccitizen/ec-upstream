@@ -3,9 +3,8 @@
 ================ */
 
 @use '../../../00-base/' as *;
-@use 'form-mixins' as *;
 
-field--type-datetime {
+.field--type-datetime {
   margin-bottom: $formElementSpace;
 
   .label {

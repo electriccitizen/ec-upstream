@@ -2,7 +2,6 @@
    NEWSLETTER-BLOCK
 =================== */
 @use '../../../00-base' as *;
-@use '../../../01-parts/forms/elements/form-mixins' as *;
 
 .block-newsletter {
   .field.body {

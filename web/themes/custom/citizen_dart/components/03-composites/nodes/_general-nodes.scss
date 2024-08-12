@@ -1,33 +1,8 @@
 /* ===============
-   NODES
+   GENERIC NODE THEMING
 =================== */
 
-/* NODES INDEX
-------------------- */
-@forward 'basic-page/basic-page';
-@forward 'bio/bio';
-@forward 'event/event';
-@forward 'landing-page/landing-page';
-@forward 'news/news';
-@forward 'support-book/support-book';
-
 @use '../../00-base' as *;
-@use 'node-mixins' as *;
-
-@mixin warning {
-  min-height: 400px;
-  @include safeFlex(column, nowrap, center, center);
-
-  & > div {
-    max-width: $textMax + 40px;
-    border: 1px solid $borderRule;
-    padding: 40px 30px;
-  }
-
-  #block-citizen-dart-content {
-    padding-top: 0 !important;
-  }
-}
 
 /* REVISIONS
 -------------------- */

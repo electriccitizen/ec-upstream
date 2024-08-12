@@ -2,17 +2,7 @@
    FORMS
 ================= */
 
-/* ELEMENTS INDEX
-------------------------- */
-@forward 'elements/checkbox';
-@forward 'elements/date';
-@forward 'elements/file';
-@forward 'elements/radio';
-@forward 'elements/select';
-@forward 'elements/textfields';
-
 @use '../../00-base' as *;
-@use 'elements/form-mixins' as *;
 
 /* FORM ITEM STYLING
 -------------------- */
