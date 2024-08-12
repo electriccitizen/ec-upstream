@@ -37,3 +37,16 @@ Working:
 Citizen Dart follows the [Drupal Coding Standards](https://www.drupal.org/docs/develop/standards),
 specifically applying to the [CSS formatting guidelines](https://www.drupal.org/docs/develop/standards/css/css-formatting-guidelines)
 and [Twig coding standards](https://www.drupal.org/docs/develop/coding-standards/twig-coding-standards).
+
+## File Structure
+
+Citizen Dart applies a variation of the atmoic design structure. All mixins and variables are kept in folders in 00-Base. Site building elements scale up from there in 01-Parts, 02-Chunks, 03-Composites. Miscellaneous, front-end admin, print and other global files are stored in 04-Assembly.  CKE.scss uses parts of the main theme to compile the styles for the CKE5 Editor in a separate style sheet.
+
+Individual stylesheets in each main folder are all forwarded into single index files at each level. Example: _parts_index indexes all the main files in 01-parts.  There is also a _form_index files in 01-parts/forms that forwards the individual form element files to the parts_index which passes them onto the styles.scss sheet.  No SASS code should be written in index files.  For general SASS (like global paragraph theming), use a _general file at the same level as the index file.
+
+This method of forwarding via _index wills is recommended to prevent namspacing loops and to ensure that base variables and mixins and can be safely and easily used anywhere in the theme.
+
+Critical CSS is called in the `<head>` and is indexed in specific _critical files in 01-Parts, 02-Chunks and 03-Composites.
+
+When adding a new .scss file anywhere in the, simple make sure that it is forwarded in its immediate parent's index file. To have all variables and mixins available in the new file simply include the base folder: `@use '../../00-base' as *;` at the start of the file.
+
