@@ -2,9 +2,7 @@
  WYSIWYG STYLES
 ============================ */
 
-@use '00-base/base' as *;
-@use '01-parts/buttons/button-mixins' as *;
-@use '02-chunks/media/media-mixins' as *;
+@use '00-base' as *;
 
 /* WYSIWYG for editors
 ---------------*/

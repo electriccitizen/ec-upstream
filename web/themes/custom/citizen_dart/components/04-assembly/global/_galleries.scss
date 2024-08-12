@@ -2,7 +2,7 @@
  3RD PARTY GALLERY STYLES
 ====================*/
 
-@use '../../00-base/base' as *;
+@use '../../00-base' as *;
 
 @mixin outsideSliderArrows($arrowSpace, $arrowColor, $arrowHover) {
   padding-left: $arrowSpace;

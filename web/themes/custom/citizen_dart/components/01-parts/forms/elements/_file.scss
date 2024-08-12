@@ -1,8 +1,7 @@
 /* FILE
 =========== */
 
-@use '../../../00-base/base' as *;
-@use 'form-mixins' as *;
+@use '../../../00-base/' as *;
 
 .js-form-type-managed-file,
 .form-item-file-upload-field,

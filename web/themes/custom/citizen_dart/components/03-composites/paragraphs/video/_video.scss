@@ -2,7 +2,7 @@
    VIDEO WIDGET
 ================= */
 
-@use '../../../00-base/base' as *;
+@use '../../../00-base' as *;
 
 .paragraph--type--video {
   @include textConstrain;

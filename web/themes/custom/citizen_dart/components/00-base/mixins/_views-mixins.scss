@@ -2,7 +2,8 @@
     global views settings
 ==================== */
 
-@use '../../00-base/base' as *;
+@use '../variables' as *;
+@use 'layout-mixins' as *;
 
 @mixin viewsImage {
   margin-bottom: $spaceSm;

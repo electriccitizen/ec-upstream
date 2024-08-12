@@ -2,8 +2,7 @@
    SEARCH
 ================= */
 
-@use '../../../00-base/base' as *;
-@use '../views-mixins' as *;
+@use '../../../00-base' as *;
 
 .block-views-exposed-filter-blocksite-search-site-search-block {
   position: relative;

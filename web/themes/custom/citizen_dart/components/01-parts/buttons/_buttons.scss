@@ -1,8 +1,7 @@
 /* ==============
 	 BUTTONS
 ================== */
-@use '../../00-base/base' as *;
-@use 'button-mixins' as *;
+@use '../../00-base/' as *;
 
 .ec-button {
   @include button;

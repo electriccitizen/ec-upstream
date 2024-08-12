@@ -1,8 +1,9 @@
-/* FILE
+/* FORM MIXINS
 =========== */
 
-@use '../../../00-base/base' as *;
-@use '../../buttons/button-mixins' as *;
+@use '../variables' as *;
+@use 'general-mixins' as *;
+@use 'button-mixins' as *;
 
 @mixin placeholder {
   $placeTint: 1;

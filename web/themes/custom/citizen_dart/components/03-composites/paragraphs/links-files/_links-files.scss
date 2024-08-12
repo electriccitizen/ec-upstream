@@ -2,7 +2,7 @@
    LINKS N FILES WIDGET
 ================== */
 
-@use '../../../00-base/base' as *;
+@use '../../../00-base' as *;
 
 .paragraph--type--links-files {
   @include textConstrain;
