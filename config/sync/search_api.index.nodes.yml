@@ -71,8 +71,8 @@ processor_settings:
   entity_type: {  }
   html_filter:
     weights:
-      preprocess_index: -46
-      preprocess_query: -46
+      preprocess_index: -47
+      preprocess_query: -47
     all_fields: false
     fields:
       - body
@@ -89,8 +89,8 @@ processor_settings:
       strong: 2
   ignore_character:
     weights:
-      preprocess_index: -10
-      preprocess_query: -10
+      preprocess_index: -44
+      preprocess_query: -43
     all_fields: true
     fields:
       - body
@@ -118,8 +118,8 @@ processor_settings:
   rendered_item: {  }
   stemmer:
     weights:
-      preprocess_index: -43
-      preprocess_query: -43
+      preprocess_index: -46
+      preprocess_query: -46
     all_fields: true
     fields:
       - body
@@ -143,8 +143,8 @@ processor_settings:
     minimum_word_size: '3'
   transliteration:
     weights:
-      preprocess_index: -20
-      preprocess_query: -20
+      preprocess_index: -50
+      preprocess_query: -50
     all_fields: true
     fields:
       - body
@@ -152,16 +152,13 @@ processor_settings:
       - title
   type_boost:
     weights:
-      preprocess_index: -42
+      preprocess_index: -45
     boosts:
       'entity:node':
         datasource_boost: 1.0
         bundle_boosts:
-          event: 0.0
           landing_page: 5.0
-          news: 0.0
           page: 3.0
-          profiles: 0.0
 tracker_settings:
   default:
     indexing_order: fifo
