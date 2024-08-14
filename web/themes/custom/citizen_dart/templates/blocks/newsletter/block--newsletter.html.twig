@@ -33,7 +33,6 @@
 {% endblock %}
 
 {% block blockContent %}
-	{{ attach_library('citizen_dart/modal') }}
 	{% if content.body.0 %}
 		{% set intro = {
 			'#type': 'processed_text',
@@ -41,24 +40,13 @@
 			'#format': content.body.0['#format']
 		} %}
 	{% endif %}
-	{% if content.field_modal_intro.0 %}
-		{% set modalIntro = {
-			'#type': 'processed_text',
-			'#text': content.field_modal_intro.0['#text'],
-			'#format': content.field_modal_intro.0['#format']
-		} %}
-	{% endif %}
 
-	{% set modalId = content['#block_content'].id() %}
-	{% embed "@citizen_dart/partials/_modals.twig"
-		with{
-			modalHeader: content.field_modal_header['#items'].0.value,
-			modalTrigger: content.field_modal_trigger['#items'].0.value,
-			embedForm: content.field_form_embed['#items'].0.value,
-			modalIdentifier: modalId
-		}
-	%}
-
-	{% endembed %}
+  {% if content.field_form_embed.0 %}
+    <div class="form-embed">
+      {% autoescape false %}
+        {{- content.field_form_embed['#items'].0.value -}}
+      {% endautoescape %}
+    </div>
+  {% endif %}
 
 {% endblock %}
