@@ -33,3 +33,12 @@ function citizen_dart_form_alter(&$form, FormStateInterface $form_state) {
     $form['actions']['submit']['#suffix'] = '<span class="material-icons">search</span>';
   }
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function citizen_dart_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['element']['#form_id'])) {
+    $suggestions[] = 'form__' . $variables['element']['#form_id'];
+  }
+}

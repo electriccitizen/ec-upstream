@@ -354,8 +354,10 @@ h1.webform-title {
 
 /* USER LOGIN
 --------------- */
-.user-login-form,
-#user-pass {
+.user-access-form {
+  h1{
+    margin-bottom: $elementSpace;
+  }
   max-width: $desk;
   @include auto;
 
