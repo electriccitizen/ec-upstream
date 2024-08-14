@@ -28,9 +28,14 @@ Using a profile will allow your to simply type whatever the profile is and the t
 sass --watch scss:dist  --style compressed
 ```
 
-Working:
+## WORKING
+
 (a) cd into the Citizen Dart folder
 (b) run whichever theme command you prefer from above.
+
+## ADDITIONAL
+
+Generally, all preprocess hooks should be put into a relevant include file, located in the /includes folder, as opposed to directly into citizen_dart.theme.
 
 ## Code Standards
 
@@ -49,4 +54,3 @@ This method of forwarding via _index wills is recommended to prevent namspacing 
 Critical CSS is called in the `<head>` and is indexed in specific _critical files in 01-Parts, 02-Chunks and 03-Composites.
 
 When adding a new .scss file anywhere in the, simple make sure that it is forwarded in its immediate parent's index file. To have all variables and mixins available in the new file simply include the base folder: `@use '../../00-base' as *;` at the start of the file.
-
