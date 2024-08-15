@@ -40,22 +40,29 @@
 {% extends 'paragraph.html.twig' %}
 
 {% block widgetContent %}
-
+  {% set size = content.field_size.0['#markup'] %}
 	{% set caption = content.field_caption.0['#context'].value %}
+  {% set imageID = content.field_image.0['#plain_text'] %}
 
-	<div class="image-wrapper">
+	<div class="image-wrapper image-size-{{ size }}">
 		{% if content.field_link.0 %}
 			<a href="{{ content.field_link.0['#url'] }}" aria-label="Go to {{ content.field_link.0['#title'] }}">
 		{% endif %}
 			{% block image %}
-				{{ content.field_image }}
-				<figcaption>
-					{{ caption }}
-				</figcaption>
+				{% if size == 'column' %}
+          {{ drupal_entity('media',imageID,'full') }}
+        {% else %}
+          {{ drupal_entity('media',imageID,'default') }}
+        {% endif %}
 			{% endblock %}
 		{% if content.field_link.0 %}
 			</a>
 		{% endif %}
+    {% if caption %}
+      <figcaption>
+        {{ caption }}
+      </figcaption>
+    {% endif %}
 	</div>
 {% endblock %}
 

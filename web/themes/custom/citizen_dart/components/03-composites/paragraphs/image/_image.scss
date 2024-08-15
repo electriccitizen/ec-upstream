@@ -4,18 +4,25 @@
 
 @use '../../../00-base' as *;
 
-.paragraph--type--image {
+.paragraph--type--image{
 
-  .image-wrapper {
+  .image-wrapper{
     @include auto;
-  }
-
-  a {
-    color: $baseText;
-    text-decoration: none;
-
-    img {
-      @include imageHover;
+    &.image-size-original{
+      img{
+        width: auto;
+        max-width: 100%;
+        @include auto;
+      }
+    }
+    figcaption{
+      margin-top: $spaceXxs;
+    }
+    a{
+    
+      img{
+        @include imageHover;
+      }
     }
   }
 }
