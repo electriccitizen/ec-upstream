@@ -10,9 +10,9 @@ third_party_settings:
     parent: ''
 _core:
   default_config_hash: Upw3Fr3FdxLI0VGTXqHX7P-dYoBmEAhf3QLMawIwsFA
-name: Bios
+name: Speakers
 type: bios
-description: 'Add bio information for a person.'
+description: 'Add presenter information for a person.'
 help: ''
 new_revision: true
 preview_mode: 0

@@ -1,0 +1,21 @@
+uuid: 1d5078a8-dae9-46f8-82d8-10556bbbfb67
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_suffixes
+field_name: field_suffixes
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

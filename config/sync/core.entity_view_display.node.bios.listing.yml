@@ -12,8 +12,8 @@ dependencies:
     - field.field.node.bios.field_last_name
     - field.field.node.bios.field_list_widget
     - field.field.node.bios.field_meta_description
-    - field.field.node.bios.field_phone
     - field.field.node.bios.field_position
+    - field.field.node.bios.field_suffixes
     - field.field.node.bios.field_suggest_a_meta_description
     - node.type.bios
   module:
@@ -55,7 +55,7 @@ hidden:
   field_last_name: true
   field_list_widget: true
   field_meta_description: true
-  field_phone: true
+  field_suffixes: true
   field_suggest_a_meta_description: true
   links: true
   search_api_excerpt: true

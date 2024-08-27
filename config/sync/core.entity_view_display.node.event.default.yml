@@ -4,12 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
-    - field.field.node.event.field_address
     - field.field.node.event.field_category
     - field.field.node.event.field_dates
     - field.field.node.event.field_image
     - field.field.node.event.field_list_widget
+    - field.field.node.event.field_location
     - field.field.node.event.field_meta_description
+    - field.field.node.event.field_speakers
     - field.field.node.event.field_suggest_a_meta_description
     - node.type.event
   module:
@@ -140,6 +141,25 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
+          c6a27379-c5dd-4864-a0dc-211e8dfa9525:
+            uuid: c6a27379-c5dd-4864-a0dc-211e8dfa9525
+            region: first
+            configuration:
+              id: 'field_block:node:event:field_location'
+              label: Location
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
@@ -153,6 +173,22 @@ content:
       link: true
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_location:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_speakers:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
     region: content
   field_suggest_a_meta_description:
     type: field_augmentor_formatter
@@ -169,7 +205,6 @@ content:
     region: content
 hidden:
   body: true
-  field_address: true
   field_category: true
   field_dates: true
   field_image: true

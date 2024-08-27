@@ -9,12 +9,12 @@ _core:
 id: bios
 label: Bios
 type: 'canonical_entities:node'
-pattern: 'bios/[node:title]'
+pattern: 'speakers/[node:title]'
 selection_criteria:
-  1e19efa3-96e8-4998-8613-ae3f8e267d04:
+  f8ba39d4-2d9a-4d17-b793-97f9dfb46a87:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 1e19efa3-96e8-4998-8613-ae3f8e267d04
+    uuid: f8ba39d4-2d9a-4d17-b793-97f9dfb46a87
     context_mapping:
       node: node
     bundles:

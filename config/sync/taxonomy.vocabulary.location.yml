@@ -1,0 +1,8 @@
+uuid: fac1484f-6871-4650-b3d9-02062572d890
+langcode: en
+status: true
+dependencies: {  }
+name: Location
+vid: location
+description: 'Event locations'
+weight: 0
