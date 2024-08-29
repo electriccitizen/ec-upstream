@@ -1,9 +1,9 @@
-uuid: 37829819-b8e7-46aa-b81d-6ad4458be1f5
+uuid: 2a4a9fc5-c0c0-4c01-8469-cab6238bff9a
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.listing
+    - core.entity_view_mode.node.speaker
     - field.field.node.bios.body
     - field.field.node.bios.field_bio_order
     - field.field.node.bios.field_email
@@ -24,27 +24,19 @@ third_party_settings:
     allow_custom: false
 _core:
   default_config_hash: 5B6kXAAmFMzavs5iFwC15pBNWviSgJjF6pIjT8MSlKI
-id: node.bios.listing
+id: node.bios.speaker
 targetEntityType: node
 bundle: bios
-mode: listing
+mode: speaker
 content:
   field_image:
     type: entity_reference_entity_view
-    label: visually_hidden
+    label: hidden
     settings:
       view_mode: square
       link: false
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_position:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden:
   body: true
@@ -54,6 +46,7 @@ hidden:
   field_last_name: true
   field_list_widget: true
   field_meta_description: true
+  field_position: true
   field_suffixes: true
   links: true
   search_api_excerpt: true

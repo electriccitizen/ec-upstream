@@ -18,6 +18,19 @@
 
   .block-field-dates {
     @include metaText;
+    & + .block-field-location {
+      margin-top: -4rem;
+    }
+  }
+
+  .block-field-speakers {
+    .field-speakers {
+      @include safeFlex(row,wrap,start,center);
+    }
+    .field-multi-item {
+      @include safeFlex(row,wrap,start,start);
+      gap: 3rem;
+    }
   }
 
   &.node-teaser,
@@ -26,5 +39,29 @@
       @include metaText;
       margin-bottom: $spaceSm;
     }
+    .field-location {
+      @include metaText;
+      margin-top: -$spaceSm;
+      margin-bottom: $spaceSm;
+    }
   }
+
+  &.node-teaser {
+    .field-speakers{
+      @include safeFlex(row,wrap,start,center);
+      margin-bottom: $spaceSm;
+      font-size: 16px;
+      .field-multi-item {
+        @include safeFlex(row,wrap,start,start);
+        gap: 3rem;
+      }
+      .node-bios.node-speaker{
+        .node-field-image{
+          max-width: 32px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
 }

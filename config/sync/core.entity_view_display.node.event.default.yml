@@ -11,10 +11,8 @@ dependencies:
     - field.field.node.event.field_location
     - field.field.node.event.field_meta_description
     - field.field.node.event.field_speakers
-    - field.field.node.event.field_suggest_a_meta_description
     - node.type.event
   module:
-    - augmentor
     - citizen_custom
     - layout_builder
     - layout_discovery
@@ -139,7 +137,7 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
           c6a27379-c5dd-4864-a0dc-211e8dfa9525:
             uuid: c6a27379-c5dd-4864-a0dc-211e8dfa9525
@@ -159,6 +157,25 @@ third_party_settings:
                   link: false
                 third_party_settings: {  }
             weight: 2
+            additional: {  }
+          091278a8-68fa-4f76-b04d-9f6169f4ea4f:
+            uuid: 091278a8-68fa-4f76-b04d-9f6169f4ea4f
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_speakers'
+              label: Speaker(s)
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: inline
+                settings:
+                  view_mode: speaker
+                third_party_settings: {  }
+            weight: 0
             additional: {  }
         third_party_settings: {  }
 id: node.event.default
@@ -189,14 +206,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 105
-    region: content
-  field_suggest_a_meta_description:
-    type: field_augmentor_formatter
-    label: above
-    settings:
-      debug: false
-    third_party_settings: {  }
-    weight: 103
     region: content
   links:
     settings: {  }

@@ -1,0 +1,11 @@
+uuid: 638e3ffe-0ae4-4c51-a32e-ab48f44cc481
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.speaker
+label: Speaker
+description: ''
+targetEntityType: node
+cache: true

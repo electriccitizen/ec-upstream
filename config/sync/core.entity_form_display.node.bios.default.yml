@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.bios.field_meta_description
     - field.field.node.bios.field_position
     - field.field.node.bios.field_suffixes
-    - field.field.node.bios.field_suggest_a_meta_description
     - node.type.bios
   module:
     - allowed_formats
@@ -111,7 +110,6 @@ content:
 hidden:
   created: true
   field_list_widget: true
-  field_suggest_a_meta_description: true
   path: true
   promote: true
   sticky: true

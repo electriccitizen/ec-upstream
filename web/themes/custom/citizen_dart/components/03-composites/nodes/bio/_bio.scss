@@ -87,7 +87,22 @@
     }
   }
 
-  &.node-teaser .main-node-content {
+  &.node-teaser > .main-node-content {
     width: 100%;
+    .node-field-title{
+      font-size: $baseSize;
+    }
   }
+
+  &.node-speaker {
+    @include safeFlex(row,nowrap,start,center);
+    .node-field-image {
+      max-width: 40px;
+      margin-right: 16px;
+      img{
+        border-radius: 50%;
+      }
+    }
+  }
+
 }

@@ -66,30 +66,30 @@ body .layout-content {
 .node-teaser {
   width: 100%;
 
-  .node-field-image {
+  & > .node-field-image {
     margin-bottom: $spaceSm;
   }
 
-  .node-field-title {
-    @include heading4;
-    margin-bottom: $spaceXxs;
+  & > .main-node-content { 
+    & > .node-field-title {
+      @include heading4;
+      margin-bottom: $spaceXxs;
+    }
+    & > .metatext {
+      @include metaText;
+      margin-bottom: $spaceSm;
+    }
   }
-
-  .metatext {
-    @include metaText;
-    margin-bottom: $spaceSm;
-  }
-
   @include smallTab {
     @include safeFlex(row, wrap, start, start);
 
-    .node-field-image {
+    & > .node-field-image {
       @include safeFlexSize(0, 0, 340px);
       padding-right: 40px;
       margin-bottom: 0;
     }
 
-    .main-node-content {
+    & > .main-node-content {
       width: calc(100% - 380px);
     }
   }
