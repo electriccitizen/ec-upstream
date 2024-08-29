@@ -1,0 +1,23 @@
+uuid: 4ab428bf-d79d-4261-99c5-2edc48856645
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.microsite
+id: taxonomy_term.microsite.default
+targetEntityType: taxonomy_term
+bundle: microsite
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true
+  status: true

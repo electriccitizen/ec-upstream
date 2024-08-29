@@ -1,0 +1,8 @@
+uuid: ace47dc3-523e-4b1c-b7fb-63fa98a5501d
+langcode: en
+status: true
+dependencies: {  }
+id: microsite-one-main
+label: 'Microsite One Main'
+description: ''
+locked: false

@@ -7,8 +7,10 @@ dependencies:
 third_party_settings:
   menu_ui:
     available_menus:
+      - another-microsite-main
       - footer
       - main
+      - microsite-one-main
       - secondary
     parent: 'main:'
 _core:

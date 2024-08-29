@@ -9,12 +9,12 @@ _core:
 id: landing_page
 label: 'Landing Page'
 type: 'canonical_entities:node'
-pattern: '[node:menu-link:parents:join:/]/[node:title]'
+pattern: '[node:field_microsite]/[node:menu-link:parents:join:/]/[node:title]'
 selection_criteria:
-  34874229-2c1f-42d4-ad61-d184b4f45cdc:
+  93a4e0a2-7e48-4585-a201-0a071fb85e6f:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 34874229-2c1f-42d4-ad61-d184b4f45cdc
+    uuid: 93a4e0a2-7e48-4585-a201-0a071fb85e6f
     context_mapping:
       node: node
     bundles:

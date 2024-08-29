@@ -1,25 +1,23 @@
-uuid: f027cec2-8ffc-4a87-b744-2d5da50dc8e5
+uuid: 8c83aa57-c687-4851-98e7-8f18e5a9d94b
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.main
+    - system.menu.microsite-one-main
   module:
     - superfish
     - system
   theme:
     - citizen_dart
-_core:
-  default_config_hash: c9L8E5CrakDbgagLgsLDk7zFHiHbVJyvxaE3xiulsMA
-id: citizen_dart_mainnavigation
+id: citizen_dart_micrositeonemain
 theme: citizen_dart
 region: header
-weight: -5
+weight: -4
 provider: null
-plugin: 'superfish:main'
+plugin: 'superfish:microsite-one-main'
 settings:
-  id: 'superfish:main'
-  label: 'Main navigation'
+  id: 'superfish:microsite-one-main'
+  label: 'Microsite One Main'
   label_display: '0'
   provider: superfish
   level: 1
@@ -36,7 +34,7 @@ settings:
   hoverintent: 1
   touch: 3
   touchbh: 0
-  touchbp: 760
+  touchbp: 768
   touchua: 0
   touchual: ''
   touchuam: 0
@@ -57,8 +55,8 @@ settings:
   smallamt: ''
   smallabt: 2
   supersubs: 0
-  minwidth: 16
-  maxwidth: 16
+  minwidth: 12
+  maxwidth: 27
   multicolumn: 0
   multicolumn_depth: 1
   multicolumn_levels: 1
@@ -74,5 +72,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    negate: true
-    pages: "/another-microsite\r\n/another-microsite/*\r\n/microsite-one\r\n/microsite-one/*"
+    negate: false
+    pages: "/microsite-one\r\n/microsite-one/*"

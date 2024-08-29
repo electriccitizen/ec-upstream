@@ -56,12 +56,18 @@
   .t-search {
     border: $inputBorderWidth solid transparent;
     color: $searchIcon;
+    .micro--microsite-one & {
+      color: $white;
+    }
 
     &:hover,
     &:focus {
       color: $searchIconHover;
       outline: none;
       text-decoration: none;
+      .micro--microsite-one & {
+        color: $gray50;
+      }
     }
 
     .material-icons {

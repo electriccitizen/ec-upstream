@@ -7,7 +7,12 @@
 .site-header {
   padding: 20px $siteMarginMobile;
   background: $headerBack;
-
+  .micro--microsite-one &{
+    background: $navy100;
+  }
+  .micro--another-microsite &{
+    background: $yellow100;
+  }
   & > div {
     max-width: $contentStop;
     @include auto;
@@ -74,7 +79,7 @@
 
 /* MAIN NAVIGATION BLOCK
 ------------------------ */
-.block-superfishmain {
+.block-superfishmain,.block-superfishmicrosite-one-main,.block-superfishanother-microsite-main {
 
   @include onlyMobile {
 

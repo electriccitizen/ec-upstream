@@ -6,6 +6,28 @@
  */
 
 /**
+ * Implements hook_preprocess_block().
+ */
+function citizen_dart_preprocess_block(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $node_revision = \Drupal::routeMatch()->getParameter('node_revision');
+  if (isset($node_revision)) {
+    $vid = $node_revision->getRevisionId();
+  }
+  if ($node) {
+    if ((!$node instanceof NodeInterface) && (isset($vid))) {
+      $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($vid);
+    }
+    // Check for microsite.
+    if (!empty($node->field_microsite[0])) {
+      $microsite = $node->field_microsite[0]->entity->name->value;
+      $micrositeClean = str_replace(' ', '-', $microsite);
+      $variables['microsite'] = strtolower($micrositeClean);
+    }
+  }
+}
+
+/**
  * Implements hook_theme_suggestions_block_alter().
  */
 function citizen_dart_theme_suggestions_block_alter(array &$suggestions, array $variables) {

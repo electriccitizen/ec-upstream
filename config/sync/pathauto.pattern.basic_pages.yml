@@ -9,12 +9,12 @@ _core:
 id: basic_pages
 label: 'Basic Pages'
 type: 'canonical_entities:node'
-pattern: '[node:menu-link:parents:join:/]/[node:title]'
+pattern: '[node:field_microsite]/[node:menu-link:parents:join:/]/[node:title]'
 selection_criteria:
-  76b1c99e-b64c-4bf7-90b3-194a0b38a2df:
+  c681b79c-355f-405c-ba54-c94c530edff4:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 76b1c99e-b64c-4bf7-90b3-194a0b38a2df
+    uuid: c681b79c-355f-405c-ba54-c94c530edff4
     context_mapping:
       node: node
     bundles:

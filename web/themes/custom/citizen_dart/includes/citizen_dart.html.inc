@@ -29,6 +29,12 @@ function citizen_dart_preprocess_html(&$variables) {
     if (!empty($node->field_image[0])) {
       $variables['attributes']['class'][] = 'has-main-image';
     }
+    // Check for microsite.
+    if (!empty($node->field_microsite[0])) {
+      $microsite = $node->field_microsite[0]->entity->name->value;
+      $micrositeClean = str_replace(' ', '-', $microsite);
+      $variables['attributes']['class'][] = 'micro--' . strtolower($micrositeClean);
+    }
   }
 }
 

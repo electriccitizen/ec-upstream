@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_image
     - field.field.node.page.field_meta_description
+    - field.field.node.page.field_microsite
     - field.field.node.page.field_paragraphs
     - node.type.page
     - system.menu.main
@@ -153,6 +154,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_microsite:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
     region: content
   links:
     settings: {  }

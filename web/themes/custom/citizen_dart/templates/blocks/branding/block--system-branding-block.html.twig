@@ -18,7 +18,11 @@
 
 {% block blockContent %}
 	<a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
-		{% if site_logo %}
+    {% if microsite == 'another-microsite' %}
+      <img class="logo" src="/themes/custom/citizen_dart/logo-another-microsite.svg" alt="{{ 'Home'|t }}" width="300" height="92" />
+    {% elseif microsite == 'microsite-one' %}
+      <img class="logo" src="/themes/custom/citizen_dart/logo-microsite-one.svg" alt="{{ 'Home'|t }}" width="300" height="92" />
+		{% elseif site_logo %}
 	  		<img class="logo" src="{{ site_logo }}" alt="{{ 'Home'|t }}" width="300" height="92" />
 		{% endif %}
 		{% if site_name %}
