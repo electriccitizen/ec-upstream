@@ -16,7 +16,7 @@
   position: relative;
 
   &:not(.layout-section) {
-    margin-bottom: $elementSpace;
+    margin-bottom: $spaceXl;
   }
 
   &.layout-section {
@@ -32,7 +32,7 @@
       }
 
       & + .backless {
-        margin-top: $elementSpace;
+        margin-top: $spaceXl;
       }
 
       &:last-child {
@@ -40,4 +40,10 @@
       }
     }
   }
+  .layout__region{
+    & > *{
+      margin-bottom: $spaceXl;
+    }
+  }
+  
 }

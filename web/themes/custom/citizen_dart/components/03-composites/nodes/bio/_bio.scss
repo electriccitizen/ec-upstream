@@ -30,6 +30,9 @@
     max-width: 320px;
     @include auto;
 
+    img {
+      border-radius: 50%;
+    }
     @include tab {
       float: left;
       @include edgeReset;
@@ -87,10 +90,19 @@
     }
   }
 
-  &.node-teaser > .main-node-content {
-    width: 100%;
-    .node-field-title{
-      font-size: $baseSize;
+  .block-by-speaker {
+    @extend %imageBio;
+  }
+
+  &.node-teaser {
+    & > .node-field-image img {
+      border-radius: 50%;
+    }
+    & > .main-node-content {
+      width: 100%;
+      .node-field-title{
+        font-size: $baseSize;
+      }
     }
   }
 
@@ -99,7 +111,10 @@
     .node-field-image {
       max-width: 40px;
       margin-right: 16px;
-      img{
+      .contextual {
+        display: none;
+      }
+      img {
         border-radius: 50%;
       }
     }

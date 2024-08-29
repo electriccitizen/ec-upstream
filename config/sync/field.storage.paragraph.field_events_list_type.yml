@@ -17,6 +17,9 @@ settings:
     -
       value: custom
       label: Custom
+    -
+      value: next_three
+      label: 'Next Three'
   allowed_values_function: ''
 module: options
 locked: false

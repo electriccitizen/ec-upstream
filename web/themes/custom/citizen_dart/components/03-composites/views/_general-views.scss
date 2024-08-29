@@ -5,9 +5,9 @@
 @use '../../00-base' as *;
 
 #views-form-wrapper {
-  @include safeFlex(row, wrap, start, center);
+  @include safeFlex(row, wrap, center, center);
   @include bleed(padding, 20px);
-
+  margin-bottom: $elementSpace;
   .form-item {
     width: 100%;
 

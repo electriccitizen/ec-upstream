@@ -14,12 +14,14 @@ dependencies:
     - field.field.node.bios.field_position
     - field.field.node.bios.field_suffixes
     - node.type.bios
+    - views.view.events
   module:
     - layout_builder
     - layout_discovery
     - system
     - text
     - user
+    - views
 third_party_settings:
   layout_builder:
     enabled: true
@@ -141,6 +143,19 @@ third_party_settings:
                   view_mode: square
                 third_party_settings: {  }
             weight: 1
+            additional: {  }
+          9d7c5a53-6007-4887-ab7f-94fdc4a7796a:
+            uuid: 9d7c5a53-6007-4887-ab7f-94fdc4a7796a
+            region: content
+            configuration:
+              id: 'views_block:events-by_speaker'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 7
             additional: {  }
         third_party_settings: {  }
 _core:

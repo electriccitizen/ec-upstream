@@ -34,6 +34,10 @@
     font: inherit;
     width: 100%;
 
+    .indicates-required {
+      display: none;
+    }
+
     label {
       display: none;
     }
@@ -42,6 +46,11 @@
       padding: 0;
     }
 
+    .asterisk {
+      font-size: 80%;
+      top: 0;
+    }
+    
     #mce-EMAIL {
       @include textInput;
       border-radius: 0;

@@ -90,7 +90,9 @@ body .layout-content {
     }
 
     & > .main-node-content {
-      width: calc(100% - 380px);
+      &:not(:only-child){
+        width: calc(100% - 380px);
+      }
     }
   }
 }

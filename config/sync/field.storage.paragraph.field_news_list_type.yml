@@ -15,6 +15,9 @@ settings:
       value: all_news
       label: 'All News'
     -
+      value: featured_news
+      label: 'Featured News'
+    -
       value: custom
       label: Custom
   allowed_values_function: ''

@@ -56,10 +56,7 @@ datasource_settings:
     bundles:
       default: true
       selected:
-        - bios
-        - event
         - news
-        - support_book
     languages:
       default: true
       selected: {  }

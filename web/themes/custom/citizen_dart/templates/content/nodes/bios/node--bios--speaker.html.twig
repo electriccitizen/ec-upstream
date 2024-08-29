@@ -75,6 +75,6 @@
 
 {% block node %}
   <div{{ title_attributes.addClass("node-field-title") }}>
-    <a href="{{- url -}}" rel="bookmark">{{- label.0['#context'].value -}}{% if element['#object'].field_suffixes.0 %}, {{ element['#object'].field_suffixes.0.value }}{% endif %}</a>
+    <a href="{{- url -}}" rel="bookmark">{{- label.0['#context'].value -}}{% if elements['#node'].field_suffixes.0 %}, {{ elements['#node'].field_suffixes.0.value }}{% endif %}</a>
   </div>
 {% endblock %}

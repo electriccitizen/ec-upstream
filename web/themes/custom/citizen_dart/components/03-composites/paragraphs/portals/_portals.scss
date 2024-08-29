@@ -14,6 +14,9 @@
       margin-bottom: $spaceMd;
       max-width: 308px;
       width: 100%;
+      @include desk{
+        max-width: 33.33%;
+      }
     }
 
     a {

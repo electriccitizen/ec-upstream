@@ -13,6 +13,11 @@
     @include auto;
     @include safeFlex(row, wrap, null, center);
     position: relative;
+    .contextual {
+      & > button, & > ul.contextual-links {
+        display: none;
+      }
+    }
   }
 }
 
@@ -26,6 +31,7 @@
 
   @include desk {
     width: 240px;
+    padding: 16px 0;
   }
 
   a {
@@ -53,13 +59,13 @@
 
   .contextual {
     display: none !important;
+    position: static;
   }
 
   .t-search {
     position: absolute;
-    top: 18px;
+    top: 0;
     right: 10px;
-
     @include desk {
       top: 0;
     }
@@ -80,7 +86,7 @@
       height: 32px;
       width: 32px;
       position: absolute;
-      top: 20px;
+      top: 2px;
       right: 50px;
     }
   }
@@ -88,7 +94,7 @@
   @include desk {
     width: 100%;
     padding-left: 280px;
-    position: absolute;
+    position: absolute !important;
     bottom: -20px;
     right: 0;
   }

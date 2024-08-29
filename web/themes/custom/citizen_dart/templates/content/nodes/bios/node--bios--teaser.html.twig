@@ -73,4 +73,10 @@
 
 {% extends 'node--teaser.html.twig' %}
 
+{% block nodeTitle %}
+  <h2{{ title_attributes.addClass("node-field-title") }}>
+    <a href="{{- url -}}" rel="bookmark">{{- label.0['#context'].value -}}{% if elements['#node'].field_suffixes.0 %}, {{ elements['#node'].field_suffixes.0.value }}{% endif %}</a>
+  </h2>
+{% endblock %}
+
 {% block nodeDate %}{% endblock %}

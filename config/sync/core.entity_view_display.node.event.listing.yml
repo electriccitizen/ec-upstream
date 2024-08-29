@@ -57,25 +57,12 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_meta_description:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_speakers:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 3
-    region: content
 hidden:
   body: true
   field_category: true
   field_image: true
   field_list_widget: true
+  field_meta_description: true
+  field_speakers: true
   links: true
   search_api_excerpt: true
