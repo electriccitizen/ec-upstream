@@ -1,175 +1,401 @@
 {
-  "id": "backstop_default",
-  "viewports": [
-    {
-      "label": "phone",
-      "width": 320,
-      "height": 480
+    "id": "Default Test",
+    "viewports": [
+        {
+            "label": "desktop",
+            "width": 1200,
+            "height": 1024
+        },
+        {
+            "label": "desktop_large",
+            "width": 1400,
+            "height": 1000
+        },
+        {
+            "label": "mobile_tall",
+            "width": 320,
+            "height": 480
+        },
+        {
+            "label": "tablet_tall",
+            "width": 768,
+            "height": 1024
+        },
+        {
+            "label": "tablet_wide",
+            "width": 1024,
+            "height": 768
+        }
+    ],
+    "onBeforeScript": "puppet/onBefore.js",
+    "scenarios": [
+        {
+            "label": "Footer Link 1",
+            "url": "http://ec-upstream.docksal.site",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Another event",
+            "url": "http://ec-upstream.docksal.site/node/43",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/43",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "EVent 5 home cat 2",
+            "url": "http://ec-upstream.docksal.site/node/24",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/24",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Event 3 no cat",
+            "url": "http://ec-upstream.docksal.site/node/22",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/22",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Event 6 Past event - all cats, home",
+            "url": "http://ec-upstream.docksal.site/node/25",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/25",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Event Example",
+            "url": "http://ec-upstream.docksal.site/node/41",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/41",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "All News",
+            "url": "http://ec-upstream.docksal.site/node/10",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/10",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Bios",
+            "url": "http://ec-upstream.docksal.site/bios",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/bios",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Events",
+            "url": "http://ec-upstream.docksal.site/events",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/events",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Home",
+            "url": "http://ec-upstream.docksal.site/node/33",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/33",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Landing page",
+            "url": "http://ec-upstream.docksal.site/node/40",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/40",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Landing page example",
+            "url": "http://ec-upstream.docksal.site/node/39",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/39",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "News",
+            "url": "http://ec-upstream.docksal.site/all-news",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/all-news",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Site Search",
+            "url": "http://ec-upstream.docksal.site/node/47",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/47",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Images aligned with captions",
+            "url": "http://ec-upstream.docksal.site/node/26",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/26",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Images aligned with no captions microsite test",
+            "url": "http://ec-upstream.docksal.site/node/27",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/27",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "News 2",
+            "url": "http://ec-upstream.docksal.site/node/4",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/4",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "News all the things",
+            "url": "http://ec-upstream.docksal.site/node/3",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/3",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "BP Sub Item 1",
+            "url": "http://ec-upstream.docksal.site/basic-page/bp-sub-item-1",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/basic-page/bp-sub-item-1",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "BP Sub Item 1",
+            "url": "http://ec-upstream.docksal.site/node/13",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/13",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "BP Sub Item 2",
+            "url": "http://ec-upstream.docksal.site/basic-page/bp-sub-item-2-different-menu-link-title",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/basic-page/bp-sub-item-2-different-menu-link-title",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "BP Sub Item 2 - different menu link title",
+            "url": "http://ec-upstream.docksal.site/node/14",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/14",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "BP Sub Sub Sub Item",
+            "url": "http://ec-upstream.docksal.site/node/16",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/16",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Breadcrumb Test",
+            "url": "http://ec-upstream.docksal.site/breadcrumbs",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/breadcrumbs",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Breadcrumb Test - different link title and alias",
+            "url": "http://ec-upstream.docksal.site/node/15",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/15",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Term Dictionary",
+            "url": "http://ec-upstream.docksal.site/node/19",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/19",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        },
+        {
+            "label": "Web Editor Guide",
+            "url": "http://ec-upstream.docksal.site/node/18",
+            "cookiePath": null,
+            "referenceUrl": "http://ec-upstream.docksal.site/node/18",
+            "delay": 2000,
+            "hideSelectors": [],
+            "removeSelectors": [
+                "iframe",
+                " .captcha",
+                " .youtube"
+            ]
+        }
+    ],
+    "paths": {
+        "bitmaps_reference": "backstop_data/bitmaps_reference",
+        "bitmaps_test": "backstop_data/bitmaps_test",
+        "html_report": "backstop_data/html_report",
+        "ci_report": "backstop_data/ci_report"
     },
-    {
-      "label": "tablet",
-      "width": 1024,
-      "height": 768
+    "report": ["browser", "json"],
+    "engine": "puppeteer",
+    "engineOptions": {
+        "args": [
+            "--no-sandbox"
+        ]
     },
-    {
-      "label": "desk",
-      "width": 1400,
-      "height": 1200
-    }
-  ],
-  "onBeforeScript": "puppet/onBefore.js",
-  "scenarios": [
-    {
-      "label": "Homepage",
-      "url": "http://ec-upstream.docksal.site/",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": []
-    },
-    {
-      "label": "Bios",
-      "url": "http://ec-upstream.docksal.site/node/17",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/17",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": []
-    },
-    {
-      "label": "Basic Page",
-      "url": "http://ec-upstream.docksal.site/node/11",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/11",
-      "delay": 0,
-      "hideSelectors": [".paragraph.paragraph--type--map"],
-      "removeSelectors": []
-    },
-    {
-      "label": "BP Sub Item 1",
-      "url": "http://ec-upstream.docksal.site/node/13",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/13",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": []
-    },
-    {
-      "label": "BP Sub Item 2 - different menu link title",
-      "url": "http://ec-upstream.docksal.site/node/14",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/14",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": []
-    },
-    {
-      "label": "Breadcrumb Test - different link title and alias",
-      "url": "http://ec-upstream.docksal.site/node/15",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/15",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": []
-    },
-    {
-      "label": "BP Sub Sub Sub Item",
-      "url": "http://ec-upstream.docksal.site/node/16",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/16",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": []
-    },
-    {
-      "label": "News",
-      "url": "http://ec-upstream.docksal.site/node/10",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/10",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": []
-    },
-    {
-      "label": "Events",
-      "url": "http://ec-upstream.docksal.site/node/9",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/9",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": []
-    },
-    {
-      "label": "All section layouts & styles",
-      "url": "http://ec-upstream.docksal.site/node/7",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/7",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": []
-    },
-    {
-      "label": "Landing Page",
-      "url": "http://ec-upstream.docksal.site/node/12",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/12",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": []
-    },
-    {
-      "label": "All Widgets",
-      "url": "http://ec-upstream.docksal.site/node/8",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/8",
-      "delay": 4,
-      "hideSelectors": [],
-      "removeSelectors": [".gallery-wrapper", ".field-location.geolocation"]
-    },
-    {
-      "label": "News List Cat1",
-      "url": "http://ec-upstream.docksal.site/node/34",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/34",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": []
-    },
-    {
-      "label": "News List Cat 2",
-      "url": "http://ec-upstream.docksal.site/node/35",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/35",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": []
-    },
-    {
-      "label": "News List no results",
-      "url": "http://ec-upstream.docksal.site/node/36",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/36",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": []
-    },
-    {
-      "label": "Events Cat 1",
-      "url": "http://ec-upstream.docksal.site/node/37",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/37",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": []
-    },
-    {
-      "label": "List Widgets",
-      "url": "http://ec-upstream.docksal.site/node/38",
-      "referenceUrl": "http://dev-ec-upstream.pantheonsite.io/node/38",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": []
-    }
-  ],
-  "paths": {
-    "bitmaps_reference": "backstop_data/bitmaps_reference",
-    "bitmaps_test": "backstop_data/bitmaps_test",
-    "engine_scripts": "backstop_data/engine_scripts",
-    "html_report": "backstop_data/html_report",
-    "ci_report": "backstop_data/ci_report"
-  },
-  "report": ["browser"],
-  "engine": "puppeteer",
-  "engineOptions": {
-    "args": ["--no-sandbox"]
-  },
-  "asyncCaptureLimit": 3,
-  "asyncCompareLimit": 50,
-  "debug": false,
-  "debugWindow": false
+    "asyncCaptureLimit": 3,
+    "asyncCompareLimit": 50,
+    "debug": false,
+    "debugWindow": false
 }
