@@ -1,7 +1,6 @@
-version: "3.9"
 services:
   cli:
-    image: docksal/cli:php8.2
+    image: docksal/cli:php8.3
   db:
     image: docksal/mariadb:10.6
     environment:
