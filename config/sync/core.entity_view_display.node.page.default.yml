@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.page.field_image
     - field.field.node.page.field_meta_description
     - field.field.node.page.field_microsite
+    - field.field.node.page.field_new_field
     - field.field.node.page.field_paragraphs
     - node.type.page
     - system.menu.main
@@ -77,6 +78,22 @@ third_party_settings:
               provider: system
               context_mapping: {  }
             weight: 2
+            additional: {  }
+          6876615f-91e3-4c62-986e-bad1eb1ea4bc:
+            uuid: 6876615f-91e3-4c62-986e-bad1eb1ea4bc
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_new_field'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 4
             additional: {  }
         third_party_settings: {  }
       -
@@ -162,6 +179,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_new_field:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
     region: content
   links:
     settings: {  }

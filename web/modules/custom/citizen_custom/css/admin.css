@@ -226,3 +226,27 @@ button.disabled:hover {
 .field--name-field-address #edit-field-address-0-address-country-code {
   display: none;
 }
+
+fieldset.smartdate--widget .smartdate--time-inline{
+  @media screen and (min-width: 56em){
+    align-items: center;
+  }
+}
+
+fieldset.smartdate--widget .smartdate--time-inline .form-item:not(:last-of-type){
+  margin-top: .5rem;
+  margin-bottom: .5rem; 
+}
+
+fieldset.smartdate--widget .smartdate--time-inline .form-item:not(:first-of-type){
+  margin-left: .25rem;
+  margin-right: .25rem;
+}
+
+fieldset.smartdate--widget .smartdate--time-inline .smartdate--separator{
+  margin: 0 .5rem;
+}
+
+fieldset.smartdate--widget .allday-label{
+  margin-top: .5em;
+}

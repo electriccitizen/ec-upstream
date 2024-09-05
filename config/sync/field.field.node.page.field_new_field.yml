@@ -1,0 +1,19 @@
+uuid: 0ec09a67-1126-4d1d-a254-e4fee5295aaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_new_field
+    - node.type.page
+id: node.page.field_new_field
+field_name: field_new_field
+entity_type: node
+bundle: page
+label: 'New field'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
