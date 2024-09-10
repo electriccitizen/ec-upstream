@@ -25,6 +25,7 @@ To test the new Search components, do the following:
 3. Edit the Layout of the page and add a Section.
 4. Pick one of the new Search Layouts. I normally go with the Two Column. Using one of these layouts is necessary in order for the web components to render properly.
 5. Add the "Results" block to this new Search section.
-6. Save the page.
-7. Add `?q=ipsum` to your URL.
-8. See the results appear (unthemed and kind of gross looking) when the page reloads!
+6. Add the "Search Input" block to this new Search section.
+7. Save the page.
+8. Enter a query into the Search Input field and hit Enter.
+9. See the results appear (unthemed and kind of gross looking) immediately!
