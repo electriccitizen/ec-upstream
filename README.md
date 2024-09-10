@@ -12,8 +12,19 @@ Ec-upstream is a Composer-based Drupal application hosted on [Pantheon](http://d
 
 * Refer to [THEME-INSTALL.md](/web/themes/citizen_patterns/THEME-INSTALL.md) for Theme Building instructions.
 
-* Refer to [EC-BACKSTOP.md](/tests/backstop/EC-BACKSTOP.md) for complete instructions for Visual Regression Testing using Backstop JS. 
+* Refer to [EC-BACKSTOP.md](/tests/backstop/EC-BACKSTOP.md) for complete instructions for Visual Regression Testing using Backstop JS.
 
 ## Important notes
 
+## Search Demo
 
+To test the new Search components, do the following:
+
+1. Ensure you've run a composer install and a config import since switching to this branch.
+2. Create a new Landing Page titled "Search Demo" or something similar.
+3. Edit the Layout of the page and add a Section.
+4. Pick one of the new Search Layouts. I normally go with the Two Column. Using one of these layouts is necessary in order for the web components to render properly.
+5. Add the "Results" block to this new Search section.
+6. Save the page.
+7. Add `?q=ipsum` to your URL.
+8. See the results appear (unthemed and kind of gross looking) when the page reloads!
