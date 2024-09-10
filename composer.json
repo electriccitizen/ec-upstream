@@ -76,6 +76,8 @@
     "drupal/responsive_preview": "^2.0",
     "drupal/role_delegation": "^1.1",
     "drupal/search_api": "^1.18",
+    "drupal/search_api_decoupled": "^1.0@alpha",
+    "drupal/search_web_components": "^1.0@alpha",
     "drupal/smart_date": "^4.0",
     "drupal/stable": "^2.0",
     "drupal/stage_file_proxy": "^3.0",
