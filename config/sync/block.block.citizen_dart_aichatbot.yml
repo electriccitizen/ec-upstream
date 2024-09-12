@@ -1,0 +1,28 @@
+uuid: c025cf52-7305-4737-a9ba-7de5c1976660
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_chatbot
+  theme:
+    - citizen_dart
+id: citizen_dart_aichatbot
+theme: citizen_dart
+region: header
+weight: 0
+provider: null
+plugin: ai_chatbot_block
+settings:
+  id: ai_chatbot_block
+  label: 'Search Assistant'
+  label_display: visible
+  provider: ai_chatbot
+  ai_assistant: search_assistant
+  bot_name: 'Generic Chatbot'
+  bot_image: /core/misc/druplicon.png
+  use_username: 1
+  default_username: User
+  use_avatar: 1
+  default_avatar: /core/misc/favicon.ico
+  first_message: 'Hello! What can I help you find today?'
+visibility: {  }

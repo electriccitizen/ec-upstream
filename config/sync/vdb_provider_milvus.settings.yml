@@ -1,0 +1,5 @@
+api_key: zillix_milvus
+server: 'https://in03-24b56921e0b99f2.serverless.gcp-us-west1.cloud.zilliz.com'
+port: 443
+_core:
+  default_config_hash: 5NZOobHFb17N--ZKFQxPuIXV5y5hRVdDMLJw07UQq4w

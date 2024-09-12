@@ -1,0 +1,25 @@
+uuid: d746add1-b6e6-49aa-940a-9b7eece043ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_search
+id: ai_test_server
+name: 'AI Test Server'
+description: ''
+backend: search_api_ai_search
+backend_config:
+  database: milvus
+  chat_model: openai__gpt-3.5-turbo
+  database_name: default
+  collection: TestDrupalCollection
+  metric: cosine_similarity
+  embeddings_engine: openai__text-embedding-3-small
+  embeddings_engine_configuration:
+    set_dimensions: false
+    dimensions: 1536
+  embedding_strategy: metadata_chunks
+  embedding_strategy_configuration:
+    chunk_size: '2048'
+    chunk_min_overlap: '100'
+    metadata_max_percentage: '30'

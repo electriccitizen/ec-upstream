@@ -4,6 +4,11 @@ module:
   addanother: 0
   address: 0
   admin_toolbar: 0
+  ai: 0
+  ai_api_explorer: 0
+  ai_assistant_api: 0
+  ai_chatbot: 0
+  ai_search: 0
   allowed_formats: 0
   antibot: 0
   augmentor: 0
@@ -82,6 +87,8 @@ module:
   path_alias: 0
   pathologic: 0
   phpass: 0
+  provider_lmstudio: 0
+  provider_openai: 0
   quicklink: 0
   redirect: 0
   responsive_image: 0
@@ -104,6 +111,7 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
+  vdb_provider_milvus: 0
   views_bulk_operations: 0
   views_infinite_scroll: 0
   views_ui: 0

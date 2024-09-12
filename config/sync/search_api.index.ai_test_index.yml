@@ -1,0 +1,62 @@
+uuid: 17005b50-7582-403d-8adf-0e33adeff9e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.server.ai_test_server
+  module:
+    - ai_search
+    - node
+    - search_api
+id: ai_test_index
+name: 'AI Test Index'
+description: ''
+read_only: false
+field_settings:
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: embeddings
+    configuration:
+      roles:
+        - anonymous
+      view_mode:
+        'entity:node':
+          bios: default
+          event: default
+          modules: default
+          news: default
+          page: default
+          support_book: default
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected:
+        - landing_page
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 5
+  index_directly: true
+  track_changes_in_references: true
+server: ai_test_server
