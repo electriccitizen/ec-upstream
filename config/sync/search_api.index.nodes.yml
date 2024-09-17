@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - field.storage.node.field_exclude_search
+    - field.storage.node.field_category
     - field.storage.node.field_meta_description
     - search_api.server.local
     - core.entity_view_mode.node.teaser
@@ -26,14 +26,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.body
-  field_exclude_search:
-    label: 'Exclude from Site Search'
+  field_category:
+    label: Category
     datasource_id: 'entity:node'
-    property_path: field_exclude_search
-    type: boolean
+    property_path: field_category
+    type: integer
     dependencies:
       config:
-        - field.storage.node.field_exclude_search
+        - field.storage.node.field_category
   field_meta_description:
     label: 'Meta Description'
     datasource_id: 'entity:node'
@@ -52,8 +52,11 @@ field_settings:
         - anonymous
       view_mode:
         'entity:node':
-          landing_page: teaser
+          bios: teaser
+          event: teaser
+          news: teaser
           page: teaser
+          support_book: teaser
   title:
     label: Title
     datasource_id: 'entity:node'

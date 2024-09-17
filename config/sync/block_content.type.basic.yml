@@ -6,5 +6,5 @@ _core:
   default_config_hash: daquaZWsTzi26WXS1IJu69f5cQx7_VnKhop6A56tYwU
 id: basic
 label: 'Basic block'
-revision: 0
+revision: false
 description: 'A basic block contains a title and a body.'
