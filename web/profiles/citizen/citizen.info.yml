@@ -70,7 +70,6 @@ dependencies:
   - pathauto
   - path_alias
   - pathologic
-  - quicklink
   - redirect
   - responsive_image
   - responsive_preview
