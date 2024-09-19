@@ -7,6 +7,7 @@
 
 include 'includes/citizen_dart.html.inc';
 include 'includes/citizen_dart.block.inc';
+include 'includes/citizen_dart.breadcrumb.inc';
 include 'includes/citizen_dart.field.inc';
 include 'includes/citizen_dart.form.inc';
 include 'includes/citizen_dart.media.inc';
