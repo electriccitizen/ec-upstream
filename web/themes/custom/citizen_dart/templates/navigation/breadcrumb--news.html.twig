@@ -8,6 +8,12 @@
  */
 #}
 
-{% extends 'breadcrumb--bios.html.twig' %}
+{% extends 'breadcrumb.html.twig' %}
 
-   
+{% block trail %}
+  {{ parent() }}
+  <li>
+    <a href="{{ path('entity.node.canonical',{'node':10}) }}">News</a>
+  </li>
+  <li>{{ currentNode.title.value }}</li>
+{% endblock %}

@@ -8,6 +8,9 @@
  */
 #}
 
-{% extends 'breadcrumb--bios.html.twig' %}
+{% extends 'breadcrumb.html.twig' %}
 
-   
+{% block trail %}
+  {{ parent() }}
+  <li>{{ currentNode.title.value }}</li>
+{% endblock %}
