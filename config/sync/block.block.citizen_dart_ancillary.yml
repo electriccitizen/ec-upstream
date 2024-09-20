@@ -1,25 +1,23 @@
-uuid: 0ac91714-9514-4399-a5dc-df2be0cc210e
+uuid: 82dcc332-ed7b-42c1-859b-6976551b93f6
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.footer
+    - system.menu.ancillary
   module:
     - menu_block
   theme:
     - citizen_dart
-_core:
-  default_config_hash: 2VA69XayHZewRlk5D2y0nLUtkrvITcyLRTCOsCDiJUA
-id: citizen_dart_footer
+id: citizen_dart_ancillary
 theme: citizen_dart
-region: prefooter
-weight: -6
+region: footer
+weight: -5
 provider: null
-plugin: 'menu_block:footer'
+plugin: 'menu_block:ancillary'
 settings:
-  id: 'menu_block:footer'
-  label: Quicklinks
-  label_display: visible
+  id: 'menu_block:ancillary'
+  label: Ancillary
+  label_display: '0'
   provider: menu_block
   follow: false
   follow_parent: child
@@ -28,8 +26,8 @@ settings:
   level: 1
   depth: 1
   expand_all_items: false
-  parent: 'footer:'
+  parent: 'ancillary:'
   render_parent: false
-  suggestion: footer
+  suggestion: ancillary
   hide_on_nonactive: false
 visibility: {  }
