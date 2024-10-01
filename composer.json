@@ -177,10 +177,13 @@
       ".\/vendor\/bin\/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor .\/web\/modules\/custom",
       ".\/vendor\/bin\/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor .\/web\/themes\/custom"
     ],
-    "post-install-cmd": [
+    "sniff-enable": [
       "cp -r 'hooks/' '.git/hooks/'",
       "php -r \"copy('hooks/pre-commit', '.git/hooks/pre-commit');\"",
       "php -r \"chmod('.git/hooks/pre-commit', 0777);\""
+    ],
+    "sniff-disable": [
+      "rm '.git/hooks/pre-commit'"
     ]
   },
   "require-dev": {
