@@ -32,6 +32,8 @@ Follow these steps to install a local development environment.
 
 `fin hosts add`
 
+`composer run sniff-enable`
+
 ## Download and import the database
 
 `fin drush @ec-upstream.dev sql-dump > database.sql`
@@ -91,6 +93,14 @@ your Drupal code:
 To manually check from the command line, run the following command:
 
 `composer run code-sniff`
+
+To manually disable code sniffing, run:
+
+`composer run sniff-disable`
+
+To re-enable it again, run the command that enabled it during installation:
+
+`composer run sniff-enable`
 
 # Theming
 The active theme for this project is **citizen_patterns**:
