@@ -25,7 +25,7 @@ settings:
   label_type: block
   level: 1
   depth: 3
-  expand_all_items: false
+  expand_all_items: true
   parent: 'main:'
   render_parent: false
   suggestion: main
