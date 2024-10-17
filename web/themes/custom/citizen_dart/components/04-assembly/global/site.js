@@ -1,4 +1,4 @@
-(function (Drupal, once) {
+(function ($, Drupal, once) {
 
   /* BACK TO TOP
   ------------------ */
@@ -23,5 +23,30 @@
       });
     }
   }
+  Drupal.behaviors.widthCheck = {
+    attach: function (context, settings) {
+      once('desktopSizing', 'body', context).forEach(() => {
+        const deskWidth = 984;
+        let currentSize = "";
+        widthCheck();
 
-})(Drupal, once);
+        window.addEventListener('resize', widthCheck);
+
+        function widthCheck() {
+          const oldSize = currentSize;
+          if ($(window).width() >= deskWidth) {
+            currentSize = "desk";
+          }
+          else {
+            currentSize = "mobile";
+          }
+          if (oldSize !== currentSize) {
+            $("body").removeClass("size-" + oldSize);
+            $("body").addClass("size-" + currentSize);
+          }
+        }
+      });
+    }
+  }
+
+})(jQuery, Drupal, once);
