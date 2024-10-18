@@ -65,31 +65,3 @@
     }
   }
 }
-
-/* MAIN NAVIGATION BLOCK
------------------------- */
-.block-superfishmain {
-
-  @include onlyMobile {
-
-    &.contextual-region {
-      position: static;
-    }
-
-    #superfish-main-toggle {
-      height: 32px;
-      width: 32px;
-      position: absolute;
-      top: 20px;
-      right: 50px;
-    }
-  }
-
-  @include desk {
-    width: 100%;
-    padding-left: 280px;
-    position: absolute;
-    bottom: -20px;
-    right: 0;
-  }
-}

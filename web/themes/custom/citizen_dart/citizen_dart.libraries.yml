@@ -6,6 +6,7 @@ global:
       dist/style.css: {}
   js:
     components/04-assembly/global/site.js: {}
+    components/02-chunks/navigation/main-navigation/main-navigation.js: {}
   dependencies:
     - core/drupal
     - core/drupal.debounce
