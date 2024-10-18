@@ -54,21 +54,15 @@
             // jQuery has a much smoother "show" operation than anything vanilla
             // can do easily. We have to clean up the style props this adds when
             // changing back to desktop, though.
-            parent.find("ul").show(200);
+            parent.children("ul").slideDown(200);
           }
           else {
-            parent.find("ul").hide(200);
+            parent.children("ul").slideUp(200);
           }
         });
         window.addEventListener("resize", () => {
           if (lastSize == "size-mobile" && $("body").hasClass("size-desk")) {
-            $("li", menu).each((index, menu_item) => {
-              if ($(menu_item).hasClass('open')) {
-                // Remove any additional styles set by jQuery.
-                $(menu_item).find("ul").hide(0).attr("style", "");
-              }
-              $(menu_item).removeClass("open");
-            });
+            $("li", menu).removeClass("open").find("ul").hide(0).attr("style", "");
             lastSize = "size-desk";
           }
           else if (lastSize == "size-desk" && $("body").hasClass("size-mobile")) {

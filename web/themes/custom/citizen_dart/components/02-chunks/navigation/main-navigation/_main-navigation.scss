@@ -279,11 +279,13 @@ ul.menu-main-navigation {
   }
 
   li.item-level-2 {
-    ul {
-      background-color: $sfDropdown;
-      left: 100%;
-      top: 0px;
-      min-width: 240px;
+    > ul {
+      display: none;
+      @include desk {
+        left: 100%;
+        top: 0px;
+        min-width: 240px;
+      }
     }
 
     a {
@@ -322,12 +324,14 @@ ul.menu-main-navigation {
   }
 
   li.item-level-3 {
-    font-size: 1.7rem;
     line-height: 1;
 
     > a {
-      padding-left: 40px;
-      padding: 1rem 2.5rem 1rem 5rem;
+      padding: 1.25rem;
+      @include desk {
+        font-size: 1.7rem;
+        padding: 1rem 2.5rem 1rem 5rem;
+      }
 
       &.menuparent {
         padding: 1rem 5rem;
