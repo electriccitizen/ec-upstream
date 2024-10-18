@@ -134,7 +134,11 @@ ul.menu-main-navigation {
         display: none;
       }
     }
+    > ul {
+      display: none;
+    }
     &.open {
+      z-index: 499;
       > a.menu-item-expand {
         background: transparent;
 
@@ -147,7 +151,14 @@ ul.menu-main-navigation {
           text-indent: 0;
         }
       }
+
+      @include desk {
+        > ul {
+          display: block;
+        }
+      }
     }
+
   }
 
   ul {
@@ -155,17 +166,6 @@ ul.menu-main-navigation {
   }
 
   > li {
-    > ul {
-      display: none;
-    }
-    &.open {
-      z-index: 499;
-      @include desk {
-        > ul {
-          display: block;
-        }
-      }
-    }
 
     &:hover {
       > a {
@@ -280,9 +280,12 @@ ul.menu-main-navigation {
 
   li.item-level-2 {
     > ul {
-      display: none;
       @include desk {
+        background: $sfDropdown;
         left: 100%;
+        margin: 0;
+        padding: 0;
+        position: absolute;
         top: 0px;
         min-width: 240px;
       }
@@ -299,7 +302,7 @@ ul.menu-main-navigation {
     a.menuparent {
       &:after {
         content: '';
-        display: inline-block;
+        display: none;
         padding: 0;
         position: relative;
         right: -7px;
@@ -311,6 +314,9 @@ ul.menu-main-navigation {
         @include materialIconOutline(\e5e1);
         font-size: 18px;
         @include transFormAnimate;
+        @include desk {
+          display: inline-block;
+        }
       }
 
       &:hover,
