@@ -160,8 +160,10 @@ ul.menu-main-navigation {
     }
     &.open {
       z-index: 499;
-      > ul {
-        display: block;
+      @include desk {
+        > ul {
+          display: block;
+        }
       }
     }
 
@@ -253,22 +255,23 @@ ul.menu-main-navigation {
 
     > ul {
       padding: 0 0 2.5rem;
-      top: 100%;
-      min-width: 280px;
-      background: $sfDropdown;
-      position: absolute;
-      width: 12em;
-      left: 0;
 
       @include desk {
+        background: $sfDropdown;
+        left: 0;
+        min-width: 280px;
         padding: 2.5rem 0 0;
+        position: absolute;
+        top: 100%;
+        width: 12em;
       }
 
       > li {
         padding: 0;
-
-        &:last-of-type {
-          padding: 0 0 2.5rem;
+        @include desk {
+          &:last-of-type {
+            padding: 0 0 2.5rem;
+          }
         }
       }
     }
@@ -285,7 +288,10 @@ ul.menu-main-navigation {
 
     a {
       line-height: 1;
-      padding: 1.5rem 2.5rem;
+      padding: 1.25rem 3.75rem 1.25rem 5rem;
+      @include desk {
+        padding: 1.5rem 2.5rem;
+      }
     }
 
     a.menuparent {

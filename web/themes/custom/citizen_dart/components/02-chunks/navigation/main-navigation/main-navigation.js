@@ -6,6 +6,7 @@
 
       $(once('main-navigation', '#block-main-menu', context)).each(function () {
         const menu = $('.menu-main-navigation', this);
+        let lastSize = $("body").hasClass("size-desk") ? "size-desk" : "size-mobile";
 
         // Behavior depends on if we're mobile or not. To track this, we set a
         // single class in the body in 04-assembly/global/site.js.
@@ -44,7 +45,36 @@
           event.stopPropagation();
           $(event.currentTarget).toggleClass("open");
           menu.toggleClass("accordion-open");
-        })
+        });
+        $(".menu-item-expand", this).on("click", (event) => {
+          event.stopPropagation();
+          const parent = $(event.currentTarget).parent();
+          parent.toggleClass("open");
+          if (parent.hasClass("open")) {
+            // jQuery has a much smoother "show" operation than anything vanilla
+            // can do easily. We have to clean up the style props this adds when
+            // changing back to desktop, though.
+            parent.find("ul").show(200);
+          }
+          else {
+            parent.find("ul").hide(200);
+          }
+        });
+        window.addEventListener("resize", () => {
+          if (lastSize == "size-mobile" && $("body").hasClass("size-desk")) {
+            $("li", menu).each((index, menu_item) => {
+              if ($(menu_item).hasClass('open')) {
+                // Remove any additional styles set by jQuery.
+                $(menu_item).find("ul").hide(0).attr("style", "");
+              }
+              $(menu_item).removeClass("open");
+            });
+            lastSize = "size-desk";
+          }
+          else if (lastSize == "size-desk" && $("body").hasClass("size-mobile")) {
+            lastSize = "size-mobile";
+          }
+        });
       });
 
       function addActiveClass($element, noDelay = false) {
