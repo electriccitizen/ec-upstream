@@ -26,7 +26,13 @@
   Drupal.behaviors.widthCheck = {
     attach: function (context, settings) {
       once('desktopSizing', 'body', context).forEach(() => {
-        const deskWidth = 984;
+        // Get desktop width from CSS vars set in 00-base/variables/_units.scss.
+        let deskWidth = window.getComputedStyle(document.documentElement).getPropertyValue('--desk-size');
+        if (!deskWidth) {
+          // As a backup, just in case the browser doesn't support CSS vars.
+          deskWidth = "984px";
+        }
+        deskWidth = deskWidth.replace("px", "");
         let currentSize = "";
         widthCheck();
 
