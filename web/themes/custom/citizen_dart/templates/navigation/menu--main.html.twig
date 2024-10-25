@@ -49,8 +49,7 @@
         ]
       %}
       <li{{ item.attributes.addClass(classes) }}>
-
-        {{ link(item.title, item.url, create_attribute({ 'class': item['link_classes'] })) }}
+        <a href="{{ "nolink" not in item.link_classes ? item.url : "#" }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
         {% if item.below %}
           <a href="#" class="menu-item-expand">{{ "Expand Menu Item"|t }}</a>
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}

@@ -15,29 +15,24 @@
         // The menu has two different designs based on which width the screen
         // currently is, and you'll see those checks throughout.
 
+        $("a.nolink", menu).on("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+        })
         $("li", menu).on("mouseenter", addActiveClassCallback);
         $("li", menu).on("mouseleave", removeActiveClassCallback);
-        $("a, span.nolink", menu).on("focus", (event) => {
+        $("a", menu).on("focus", (event) => {
           addActiveClass($(event.currentTarget).parent(), true);
+          // Close all other items.
+          removeActiveClass($(event.currentTarget).parent().siblings("li.open"), true);
         })
-        $("a, span.nolink", menu).on("blur", (event) => {
-          // Some extra logic to determine if we need to move into the child
-          // link tree if we're tabbing past a menu item.
+        $("a", menu).on("blur", (event) => {
           const link = $(event.currentTarget)
           const parentLi = link.parent();
-          if (link.hasClass("menuparent")) {
-            event.stopPropagation();
-            $("li", parentLi).get(0).focus();
-          }
-          else {
-            if (!parentLi.hasClass("item-level-1") && parentLi.is(":last-child")) {
-              // Find the parent LI of the parent and move to that.
-              const grandparentLi = parentLi.parent().parent();
-              event.stopPropagation();
-              removeActiveClass(parentLi, true);
-              removeActiveClass(grandparentLi, true);
-              grandparentLi.next().focus();
-            }
+          // Make sure menu items are closed when we leave them. This might be
+          // redundant with the "focus" closer above, but just in case we leave
+          // the menu itself, we need to double-check.
+          if (!link.hasClass("menuparent")) {
             removeActiveClass(parentLi, true);
           }
         });
