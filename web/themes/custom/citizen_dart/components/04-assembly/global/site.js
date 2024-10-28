@@ -1,4 +1,4 @@
-(function (Drupal, once) {
+(function ($, Drupal, once) {
 
   /* BACK TO TOP
   ------------------ */
@@ -23,5 +23,36 @@
       });
     }
   }
+  Drupal.behaviors.widthCheck = {
+    attach: function (context, settings) {
+      once('desktopSizing', 'body', context).forEach(() => {
+        // Get desktop width from CSS vars set in 00-base/variables/_units.scss.
+        let deskWidth = window.getComputedStyle(document.documentElement).getPropertyValue('--desk-size');
+        if (!deskWidth) {
+          // As a backup, just in case the browser doesn't support CSS vars.
+          deskWidth = "984px";
+        }
+        deskWidth = deskWidth.replace("px", "");
+        let currentSize = "";
+        widthCheck();
 
-})(Drupal, once);
+        window.addEventListener('resize', widthCheck);
+
+        function widthCheck() {
+          const oldSize = currentSize;
+          if ($(window).width() >= deskWidth) {
+            currentSize = "desk";
+          }
+          else {
+            currentSize = "mobile";
+          }
+          if (oldSize !== currentSize) {
+            $("body").removeClass("size-" + oldSize);
+            $("body").addClass("size-" + currentSize);
+          }
+        }
+      });
+    }
+  }
+
+})(jQuery, Drupal, once);
