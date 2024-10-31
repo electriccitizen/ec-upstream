@@ -7,6 +7,7 @@ dependencies:
     - block_content.type.newsletter
     - block_content.type.social_media_links
     - filter.format.limited_html
+    - filter.format.support_html
     - filter.format.webform_default
     - media.type.document
     - media.type.image
@@ -144,6 +145,7 @@ permissions:
   - 'update media'
   - 'use add another'
   - 'use text format limited_html'
+  - 'use text format support_html'
   - 'use text format webform_default'
   - 'view all media revisions'
   - 'view all revisions'
