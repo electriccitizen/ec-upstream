@@ -35,13 +35,7 @@ settings:
       - removeFormat
       - undo
       - redo
-      - '|'
-      - openai
-      - augmentor
   plugins:
-    augmentor_ckeditor5_augmentor:
-      augmentors:
-        76cc3de4-0423-48a6-a7cf-159497d4cbc6: Summarize
     ckeditor5_alignment:
       enabled_alignments:
         - center
@@ -176,12 +170,6 @@ settings:
       linkit_profile: wysiwyg
     media_media:
       allow_view_mode_override: true
-    openai_ckeditor_openai:
-      completion:
-        enabled: true
-        model: gpt-3.5-turbo
-        temperature: 0.2
-        max_tokens: 512
 image_upload:
   status: true
   scheme: public
