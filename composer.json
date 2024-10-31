@@ -78,7 +78,6 @@
     "drupal/smart_date": "^4.0",
     "drupal/stable": "^2.0",
     "drupal/stage_file_proxy": "^3.0",
-    "drupal/superfish": "^1.8",
     "drupal/token": "^1.7",
     "drupal/turnstile": "^1.1",
     "drupal/twig_tweak": "^3.1",
