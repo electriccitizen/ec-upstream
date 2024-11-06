@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_support_type
     - search_api.index.support
   module:
+    - options
     - search_api
 id: support_search
 label: 'Support Search'
@@ -92,13 +94,82 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
+        field_support_type:
+          id: field_support_type
+          table: search_api_index_support
+          field: field_support_type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_key
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
       pager:
         type: none
         options:
           offset: 0
           items_per_page: null
       exposed_form:
-        type: input_required
+        type: basic
         options:
           submit_button: Search
           reset_button: true
@@ -107,8 +178,6 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-          text_input_required: ''
-          text_input_required_format: basic_html
       access:
         type: none
         options: {  }
@@ -126,6 +195,19 @@ display:
           admin_label: ''
           plugin_id: search_api
           order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+        title:
+          id: title
+          table: search_api_index_support
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
@@ -197,7 +279,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'What do you need help with?'
+            label: 'Search Support Book'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -214,7 +296,7 @@ display:
               editor: '0'
               site_manager: '0'
             expose_fields: false
-            placeholder: ''
+            placeholder: 'Enter keyword(s)'
             searched_fields_id: search_api_fulltext_searched_fields
             value_maxlength: 128
           is_grouped: false
@@ -232,8 +314,16 @@ display:
           parse_mode: terms
           min_length: null
           fields: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: '{{ field_support_type }}'
+          default_row_class: true
       row:
         type: fields
       query:
@@ -256,6 +346,7 @@ display:
         - url
         - 'user.node_grants:view'
       tags:
+        - 'config:field.storage.node.field_support_type'
         - 'config:search_api.index.support'
         - 'search_api_list:support'
   search_results:
@@ -276,5 +367,6 @@ display:
         - url
         - 'user.node_grants:view'
       tags:
+        - 'config:field.storage.node.field_support_type'
         - 'config:search_api.index.support'
         - 'search_api_list:support'

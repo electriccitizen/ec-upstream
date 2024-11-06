@@ -104,12 +104,10 @@ processor_settings:
     alt: true
     tags:
       b: 2
-      em: 1
       h1: 5
       h2: 3
       h3: 2
       strong: 2
-      u: 1
   ignore_character:
     weights:
       preprocess_index: -10
@@ -159,6 +157,7 @@ processor_settings:
       - body
       - title
     stopwords:
+      - I
       - a
       - an
       - and
@@ -168,12 +167,17 @@ processor_settings:
       - be
       - but
       - by
+      - can
+      - do
       - for
+      - have
+      - how
       - if
       - in
       - into
       - is
       - it
+      - need
       - 'no'
       - not
       - of
@@ -191,9 +195,11 @@ processor_settings:
       - they
       - this
       - to
+      - want
       - was
       - will
       - with
+      - you
   tokenizer:
     weights:
       preprocess_index: -6
