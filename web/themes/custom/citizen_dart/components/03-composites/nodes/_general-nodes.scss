@@ -37,14 +37,9 @@
 /* RESTRICTED NODE TYPES
 ---------------------- */
 .path-node {
-
-  // Restricted Access message.
-  &:not(.logged-in) {
-    .restricted-node {
-      @include warning;
-    }
+  .restricted-node {
+    @include warning;
   }
-
 }
 
 

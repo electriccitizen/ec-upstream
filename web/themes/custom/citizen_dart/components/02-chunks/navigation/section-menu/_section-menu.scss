@@ -92,7 +92,12 @@
       list-style: none;
       padding: .5rem 3.5rem;
       position: relative;
-
+      //hide support menu items from roles that do not need them
+      .node-type-support-book:not(.role-site_manager):not(.role-administrator):not(.role-super-user) &{
+        &.item-type-site-management{
+          display: none;
+        }
+      }
       a {
         color: $menuTop;
         text-decoration: none;
