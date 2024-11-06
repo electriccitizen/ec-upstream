@@ -10,7 +10,7 @@ dependencies:
     - field.field.paragraph.image.field_widget_title
     - paragraphs.paragraphs_type.image
   module:
-    - linkit
+    - link
     - media_library
 _core:
   default_config_hash: cBM8t2vhx662vgaXknhdaK6YiHX_gSkYDu_4nLQpdd8
@@ -35,14 +35,12 @@ content:
       media_types: {  }
     third_party_settings: {  }
   field_link:
-    type: linkit
+    type: link_default
     weight: 4
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
-      linkit_profile: default
-      linkit_auto_link_text: false
     third_party_settings: {  }
   field_size:
     type: options_select

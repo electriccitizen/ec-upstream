@@ -13,10 +13,8 @@ dependencies:
     - field.field.node.bios.field_meta_description
     - field.field.node.bios.field_phone
     - field.field.node.bios.field_position
-    - field.field.node.bios.field_suggest_a_meta_description
     - node.type.bios
   module:
-    - augmentor
     - layout_builder
     - layout_discovery
     - system
@@ -238,14 +236,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 106
-    region: content
-  field_suggest_a_meta_description:
-    type: field_augmentor_formatter
-    label: above
-    settings:
-      debug: false
-    third_party_settings: {  }
-    weight: 103
     region: content
   links:
     settings: {  }

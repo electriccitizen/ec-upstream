@@ -13,11 +13,9 @@ dependencies:
     - field.field.node.bios.field_meta_description
     - field.field.node.bios.field_phone
     - field.field.node.bios.field_position
-    - field.field.node.bios.field_suggest_a_meta_description
     - node.type.bios
   module:
     - allowed_formats
-    - augmentor
     - field_group
     - media_library
     - telephone
@@ -118,25 +116,6 @@ content:
     region: content
     settings:
       size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_suggest_a_meta_description:
-    type: augmentor_default_widget
-    weight: 4
-    region: content
-    settings:
-      source_fields:
-        - body
-      targets:
-        0:
-          target_field: field_meta_description
-          key: default
-        actions:
-          add_target: 'Add one more target'
-      augmentor: 76cc3de4-0423-48a6-a7cf-159497d4cbc6
-      action: replace
-      button_label: 'Suggest a Meta Description'
-      rows: '5'
       placeholder: ''
     third_party_settings: {  }
   status:

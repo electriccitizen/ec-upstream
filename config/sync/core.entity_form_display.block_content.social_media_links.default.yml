@@ -7,7 +7,7 @@ dependencies:
     - field.field.block_content.social_media_links.body
     - field.field.block_content.social_media_links.field_platforms
   module:
-    - linkit
+    - link
     - text
 _core:
   default_config_hash: jVG6sIBQXZRZ4yV_I1eQazXt-2AAeOlnZxUI1_Hxxcc
@@ -27,14 +27,12 @@ content:
       show_summary: false
     third_party_settings: {  }
   field_platforms:
-    type: linkit
+    type: link_default
     weight: 27
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
-      linkit_profile: default
-      linkit_auto_link_text: false
     third_party_settings: {  }
   info:
     type: string_textfield

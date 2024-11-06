@@ -30,6 +30,8 @@ function citizen_dart_preprocess_html(&$variables) {
       $variables['attributes']['class'][] = 'has-main-image';
     }
   }
+  // Get the mtime of the critical.css file for cache-busting.
+  $variables['critical_css_mtime'] = filemtime(DRUPAL_ROOT . '/themes/custom/citizen_dart/dist/critical.css');
 }
 
 /**

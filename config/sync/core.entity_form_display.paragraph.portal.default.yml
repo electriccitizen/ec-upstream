@@ -9,7 +9,7 @@ dependencies:
     - field.field.paragraph.portal.field_long_text
     - paragraphs.paragraphs_type.portal
   module:
-    - linkit
+    - link
     - media_library
     - text
 _core:
@@ -35,14 +35,12 @@ content:
       media_types: {  }
     third_party_settings: {  }
   field_link:
-    type: linkit
+    type: link_default
     weight: 2
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
-      linkit_profile: default
-      linkit_auto_link_text: false
     third_party_settings: {  }
   field_long_text:
     type: text_textarea

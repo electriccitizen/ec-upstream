@@ -13,7 +13,7 @@
 
           window.onload = function () {
             setTimeout(function () {
-              var viewScrollAnchor = document.getElementById('views-form-wrapper');
+              var viewScrollAnchor = document.getElementById('skip-filters');
 
               if (viewScrollAnchor) {
                 viewScrollAnchor.scrollIntoView({
