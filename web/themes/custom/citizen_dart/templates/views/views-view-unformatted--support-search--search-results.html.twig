@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+
+
+{% extends 'views-view-unformatted.html.twig' %}
+
+{% block unformattedRows %}
+  {% if 'administrator' in user.roles or 'site_manager' in user.roles or user.id == '1' %}
+    {{ parent() }}
+  {% else %}
+    {% for row in rows %}
+      {% if row.attributes.class != 'site-management' %}
+        {%
+          set row_classes = [
+            default_row_class ? 'views-row',
+          ]
+        %}
+        <div{{ row.attributes.addClass(row_classes) }}>
+
+          {% block rowContent %}
+            {{ row.content }}
+          {% endblock %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endblock %}
