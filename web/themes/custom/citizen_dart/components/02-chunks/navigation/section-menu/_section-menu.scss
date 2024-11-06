@@ -74,6 +74,10 @@
     display: block !important;
   }
 
+  .nav-toggle-container {
+    display: none;
+  }
+
   & > ul:not(.contextual-links) {
     @include listReset;
     @include auto;
@@ -111,6 +115,11 @@
         &.is-active {
           color: $menuTopActive;
           pointer-events: none;
+        }
+
+        // Hide expander that menu--main.html.twig adds for use in the top menu.
+        &.menu-item-expand {
+          display: none;
         }
       }
 

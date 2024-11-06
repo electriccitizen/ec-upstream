@@ -4,6 +4,7 @@
     attach: function (context) {
       once('section-menu', '#block-section-menu', context).forEach(sectionMenu => {
         const sectionMenuWrapper = sectionMenu.querySelector('#section-menu-wrapper');
+        const menuNavigation = sectionMenu.querySelector(".menu-main-navigation");
 
         sectionMenu.querySelector('.section-menu-toggle').addEventListener('click', event => {
           event.preventDefault();
@@ -14,12 +15,14 @@
               event.target.setAttribute('aria-expanded', false);
               event.target.classList.remove('active-nav');
               event.target.querySelector('.material-icons').innerHTML = 'menu';
+              menuNavigation.classList.remove('accordion-open');
               slideUp(sectionMenuWrapper, 200);
             }
             else {
               event.target.setAttribute('aria-expanded', true);
               event.target.classList.add('active-nav');
               event.target.querySelector('.material-icons').innerHTML = 'close';
+              menuNavigation.classList.add('accordion-open');
               slideDown(sectionMenuWrapper, 200);
             }
           }
