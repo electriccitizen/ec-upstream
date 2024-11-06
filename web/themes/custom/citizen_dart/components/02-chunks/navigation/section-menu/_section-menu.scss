@@ -74,6 +74,10 @@
     display: block !important;
   }
 
+  .nav-toggle-container {
+    display: none;
+  }
+
   & > ul:not(.contextual-links) {
     @include listReset;
     @include auto;
