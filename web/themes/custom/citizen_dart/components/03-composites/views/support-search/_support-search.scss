@@ -10,8 +10,10 @@
     @include auto;
   }
 
-  div.contextual {
-    display: none;
+  &:not(.js-layout-builder-block) {
+    div.contextual {
+      display: none;
+    }
   }
 
   h2.block-title {
