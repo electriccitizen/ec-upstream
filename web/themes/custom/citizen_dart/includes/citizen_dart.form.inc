@@ -28,9 +28,17 @@ function citizen_dart_preprocess_webform(&$variables) {
 /**
  * Implements hook_form_alter().
  */
-function citizen_dart_form_alter(&$form, FormStateInterface $form_state) {
+function citizen_dart_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form['#id'] == 'site-search-form') {
     $form['actions']['submit']['#suffix'] = '<span class="material-icons">search</span>';
+  }
+  if (strpos($form_id, 'views_exposed_form') === 0) {
+    if (isset($form['actions']['submit'])) {
+      $form['actions']['submit']['#attributes']['class'][] = 'views-submit';
+    }
+    if (isset($form['actions']['reset'])) {
+      $form['actions']['reset']['#attributes']['class'][] = 'views-reset';
+    }
   }
 }
 
