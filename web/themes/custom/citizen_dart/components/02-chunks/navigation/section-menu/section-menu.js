@@ -68,7 +68,7 @@
             // active.
             menuList.querySelectorAll('.is-active').forEach(activeItem => {
               activeItem.removeAttribute('href');
-              const activeList = activeItem.nextElementSibling;
+              const activeList = activeItem.parentNode.querySelector("ul");
               if (activeList) {
                 slideDown(activeList, 200);
                 parentsUntil(activeList, '#section-menu-wrapper > ul', (element) => {
