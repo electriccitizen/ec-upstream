@@ -33,5 +33,8 @@ function _menu_item_classes_recursive(array &$items) {
       $item['link_classes'][] = 'menuparent';
       _menu_item_classes_recursive($item['below']);
     }
+    if ($item['url']->toString() === \Drupal::request()->getRequestUri()) {
+      $item['link_classes'][] = 'is-active';
+    }
   }
 }
