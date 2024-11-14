@@ -10,10 +10,8 @@ dependencies:
     - field.field.node.event.field_image
     - field.field.node.event.field_list_widget
     - field.field.node.event.field_meta_description
-    - field.field.node.event.field_suggest_a_meta_description
     - node.type.event
   module:
-    - augmentor
     - citizen_custom
     - layout_builder
     - layout_discovery
@@ -153,14 +151,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 101
-    region: content
-  field_suggest_a_meta_description:
-    type: field_augmentor_formatter
-    label: above
-    settings:
-      debug: false
-    third_party_settings: {  }
-    weight: 103
     region: content
   links:
     settings: {  }

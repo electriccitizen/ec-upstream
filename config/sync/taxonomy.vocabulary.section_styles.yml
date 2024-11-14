@@ -8,3 +8,4 @@ name: 'Section Styles'
 vid: section_styles
 description: 'Sets styles for paragraph sections.'
 weight: 0
+new_revision: false
