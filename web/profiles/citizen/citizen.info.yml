@@ -70,7 +70,6 @@ dependencies:
   - pathauto
   - path_alias
   - pathologic
-  - quicklink
   - redirect
   - responsive_image
   - responsive_preview
@@ -81,7 +80,6 @@ dependencies:
   - shortcut
   - smart_date
   - smart_date_recur
-  - superfish
   - system
   - taxonomy
   - telephone

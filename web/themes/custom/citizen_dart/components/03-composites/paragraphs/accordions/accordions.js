@@ -7,42 +7,41 @@
           link.addEventListener('click', function (e) {
             e.preventDefault();
 
-            const activeHeader = this.parentElement;
-            const currentActiveAccordion = document.querySelector('.accordion-item.accord-active');
+            console.log(this);
 
-            if (currentActiveAccordion) {
-              const activeLongText = currentActiveAccordion.querySelector('.field-long-text');
-              activeLongText.classList.remove('show-content');
-              activeLongText.setAttribute('aria-hidden', 'true');
-              currentActiveAccordion.querySelector('.accordion-header a').setAttribute('aria-expanded', 'false');
-              currentActiveAccordion.classList.remove('accord-active');
-              // If the clicked header is the currently open accordion, close it
-              // and return.
-              if (activeHeader === currentActiveAccordion.querySelector('.accordion-header')) {
-                return;
-              }
+            //expand/collapse
+            if (this.classList.contains('collapsed')) {
+              this.classList.remove('collapsed');
+              this.classList.add('expanded');
+              this.setAttribute('aria-expanded', 'true');
+
+              const content = this.parentElement.nextElementSibling;
+              content.classList.remove('collapse');
+              content.classList.add('expand');
+              content.setAttribute('aria-hidden', 'false');
+
+              // Set max-height to 0 initially, then to scrollHeight after a tiny delay
+              content.style.maxHeight = '0px';
+              setTimeout(() => {
+                content.style.maxHeight = content.scrollHeight + 'px';
+              }, 10); // Small delay to trigger the transition
+            } else {
+              this.classList.remove('expanded');
+              this.classList.add('collapsed');
+              this.setAttribute('aria-expanded', 'false');
+
+              const content = this.parentElement.nextElementSibling;
+              content.style.maxHeight = content.scrollHeight + 'px'; // Set current height
+
+              content.classList.remove('expand');
+              content.classList.add('collapse');
+              content.setAttribute('aria-hidden', 'true');
+
+              // Ensure smooth transition by setting initial max-height if expanded on load
+              setTimeout(() => {
+                content.style.maxHeight = '0px'; // Collapse to 0px
+              }, 10);
             }
-
-            const openAccordion = activeHeader.closest('.accordion-item');
-            const openLongText = openAccordion.querySelector('.field-long-text');
-            const openHeader = openAccordion.querySelector('.accordion-header a');
-
-            openLongText.classList.add('show-content');
-            openLongText.setAttribute('aria-hidden', 'false');
-            openHeader.setAttribute('aria-expanded', 'true');
-            openAccordion.classList.add('accord-active');
-
-            setTimeout(function () {
-              const windowTop = window.scrollY;
-              const currentAccordionTop = openAccordion.getBoundingClientRect().top + windowTop;
-
-              if (windowTop > currentAccordionTop) {
-                window.scrollTo({
-                  top: currentAccordionTop - 100,
-                  behavior: 'smooth'
-                });
-              }
-            }, 510);
 
           });
         });

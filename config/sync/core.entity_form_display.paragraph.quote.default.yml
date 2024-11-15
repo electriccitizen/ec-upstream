@@ -6,7 +6,6 @@ dependencies:
     - field.field.paragraph.quote.field_image
     - field.field.paragraph.quote.field_quote
     - field.field.paragraph.quote.field_source
-    - field.field.paragraph.quote.field_widget_title
     - paragraphs.paragraphs_type.quote
   module:
     - media_library
@@ -35,14 +34,6 @@ content:
   field_source:
     type: string_textfield
     weight: 3
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_widget_title:
-    type: string_textfield
-    weight: 0
     region: content
     settings:
       size: 60

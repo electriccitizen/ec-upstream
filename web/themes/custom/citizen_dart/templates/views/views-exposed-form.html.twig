@@ -16,6 +16,13 @@
   #}
 {{ q }}
 {% endif %}
+
+<a href="#skip-filters" class="visually-hidden focusable">
+  {%- trans %}Skip filters{% endtrans -%}
+</a>
+
 <div id="views-form-wrapper">
   {{ form }}
 </div>
+
+<a id="skip-filters" tabindex="-2"></a>

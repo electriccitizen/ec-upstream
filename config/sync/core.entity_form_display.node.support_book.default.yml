@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.support_book.body
+    - field.field.node.support_book.field_exclude_search
     - field.field.node.support_book.field_paragraphs
+    - field.field.node.support_book.field_support_type
+    - field.field.node.support_book.layout_builder__layout
     - node.type.support_book
   module:
     - allowed_formats
@@ -19,7 +22,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 1
+    weight: 2
     region: content
     settings:
       rows: 9
@@ -30,19 +33,34 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
-  field_paragraphs:
-    type: layout_paragraphs
-    weight: 2
+  field_exclude_search:
+    type: boolean_checkbox
+    weight: 6
     region: content
     settings:
+      display_label: true
+    third_party_settings: {  }
+  field_paragraphs:
+    type: layout_paragraphs
+    weight: 3
+    region: content
+    settings:
+      view_mode: default
       preview_view_mode: preview
+      form_display_mode: default
       nesting_depth: 0
       require_layouts: 0
       empty_message: ''
     third_party_settings: {  }
+  field_support_type:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 3
+    weight: 4
     region: content
     settings:
       display_label: true
@@ -57,6 +75,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  layout_builder__layout: true
   path: true
   promote: true
   sticky: true

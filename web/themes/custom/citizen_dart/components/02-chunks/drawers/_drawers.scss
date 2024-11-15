@@ -9,7 +9,12 @@
   padding-right: 2.5rem;
   font-weight: $heavy;
   margin-top: $spaceXxs;
-
+  &.pre-hide-toggle{
+    display: none;
+  }
+  &.pre-hide-toggle.visible-drawer{
+    display: block;
+  }
   &:hover,
   &:focus {
     &:after {
@@ -19,12 +24,9 @@
 
   &:after {
     content: '';
-    display: block;
+    display: inline-block;
+    vertical-align: middle;
     width: 2rem;
-    height: 2rem;
-    position: absolute;
-    bottom: calc(50% - 0.5rem);
-    right: 0;
     @include materialIconOutline(\e5cf);
     font-size: 24px;
   }
@@ -32,38 +34,11 @@
   &.active-drawer {
     &:after {
       @include rotate(180);
-      bottom: calc(50% - 1.5rem);
-      right: -0.5rem;
-    }
-
-    &.drawer-fade {
-      &:after {
-        right: calc(50% - 90px);
-      }
-    }
-  }
-
-  &.drawer-fade {
-    display: block;
-    width: 100%;
-    padding: 6rem 2.5rem 2rem;
-    text-align: center;
-    margin-top: 0;
-    @include gradient(bottom, $lightGrey, 0%, transparent);
-
-    &:after {
-      bottom: 2.5rem;
-      right: calc(50% - 74px);
+      margin-left: .5em;
     }
   }
 }
 
 .drawer-content {
-  @include showContent(500px, .5s);
-
-  &.show-content {
-    &:not(.not-fade) {
-      padding-bottom: $spaceMd;
-    }
-  }
+  @include showContent(1000px, .5s);
 }

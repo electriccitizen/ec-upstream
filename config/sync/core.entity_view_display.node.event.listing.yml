@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.event.field_image
     - field.field.node.event.field_list_widget
     - field.field.node.event.field_meta_description
-    - field.field.node.event.field_suggest_a_meta_description
     - node.type.event
   module:
     - layout_builder
@@ -62,6 +61,5 @@ hidden:
   field_category: true
   field_image: true
   field_list_widget: true
-  field_suggest_a_meta_description: true
   links: true
   search_api_excerpt: true

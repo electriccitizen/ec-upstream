@@ -6,7 +6,6 @@ dependencies:
     - field.field.paragraph.quote.field_image
     - field.field.paragraph.quote.field_quote
     - field.field.paragraph.quote.field_source
-    - field.field.paragraph.quote.field_widget_title
     - paragraphs.paragraphs_type.quote
 _core:
   default_config_hash: S7mR-GJTTHYLb1VaV09LHuOo7xH93VGlgiFNsD04KxI
@@ -38,14 +37,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 3
-    region: content
-  field_widget_title:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
     region: content
 hidden:
   search_api_excerpt: true

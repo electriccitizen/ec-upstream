@@ -74,6 +74,10 @@
     display: block !important;
   }
 
+  .nav-toggle-container {
+    display: none;
+  }
+
   & > ul:not(.contextual-links) {
     @include listReset;
     @include auto;
@@ -81,7 +85,7 @@
     ul:not(.contextual-links) {
       margin: .5rem 0;
       display: none;
-      padding-left: 2.5rem;
+      padding-left: 0;
 
       &.expanded {
         display: block;
@@ -92,7 +96,12 @@
       list-style: none;
       padding: .5rem 3.5rem;
       position: relative;
-
+      //hide support menu items from roles that do not need them
+      .node-type-support-book:not(.role-site_manager):not(.role-administrator):not(.role-super-user) &{
+        &.item-type-site-management{
+          display: none;
+        }
+      }
       a {
         color: $menuTop;
         text-decoration: none;
@@ -106,6 +115,11 @@
         &.is-active {
           color: $menuTopActive;
           pointer-events: none;
+        }
+
+        // Hide expander that menu--main.html.twig adds for use in the top menu.
+        &.menu-item-expand {
+          display: none;
         }
       }
 
@@ -134,7 +148,7 @@
       }
 
       li {
-        padding: .5rem 0;
+        padding-right: 0;
 
         a {
           color: $menuChild;

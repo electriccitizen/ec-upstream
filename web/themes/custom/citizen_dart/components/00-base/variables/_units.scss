@@ -17,6 +17,12 @@ $onlySmall: max-width $tab - 1px;
 $onlyPhone: max-width $smallTab - 1px;
 $onlyMobile: max-width $desk - 1px;
 
+// Used by JS to make sure the SCSS vars can be used.
+:root {
+  --tab-size: #{$tab};
+  --desk-size: #{$desk};
+  --large-size: #{$largeScreen};
+}
 
 /* SPACING & LAYOUT VARIABLES
 ----------------------------- */

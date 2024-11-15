@@ -68,3 +68,27 @@
     }
   }
 }
+
+/* Ancillary Menu
+-------------- */
+.block-ancillary-menu {
+  ul:not(.contextual-links) {
+    @include listReset;
+
+    li {
+      position: relative;
+
+      a {
+        display: block;
+        color: $prefooterLink;
+
+        &:hover,
+        &:focus {
+          color: $prefooterLinkHover;
+          @include transAll(.3s);
+
+        }
+      }
+    }
+  }
+}

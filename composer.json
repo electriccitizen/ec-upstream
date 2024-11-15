@@ -72,7 +72,6 @@
     "drupal/password_policy": "^4.0",
     "drupal/pathauto": "^1.8",
     "drupal/pathologic": "^2.0",
-    "drupal/quicklink": "^2.0",
     "drupal/redirect": "^1.6",
     "drupal/responsive_preview": "^2.0",
     "drupal/role_delegation": "^1.1",
@@ -82,7 +81,6 @@
     "drupal/smart_date": "^4.0",
     "drupal/stable": "^2.0",
     "drupal/stage_file_proxy": "^3.0",
-    "drupal/superfish": "^1.6",
     "drupal/token": "^1.7",
     "drupal/turnstile": "^1.1",
     "drupal/twig_tweak": "^3.1",
@@ -180,6 +178,14 @@
       ".\/vendor\/bin\/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor .\/web\/themes\/custom",
       ".\/vendor\/bin\/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor .\/web\/modules\/custom",
       ".\/vendor\/bin\/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor .\/web\/themes\/custom"
+    ],
+    "sniff-enable": [
+      "cp -r 'hooks/' '.git/hooks/'",
+      "php -r \"copy('hooks/pre-commit', '.git/hooks/pre-commit');\"",
+      "php -r \"chmod('.git/hooks/pre-commit', 0777);\""
+    ],
+    "sniff-disable": [
+      "rm '.git/hooks/pre-commit'"
     ]
   },
   "require-dev": {

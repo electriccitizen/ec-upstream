@@ -54,9 +54,9 @@
 				 } %}
 				<div class="accordion-item" data-accordion-id="{{ key + 1 }}">
 					<div class="accordion-header">
-						<a href="#" role="button" aria-controls="{{ controlParent }}" aria-expanded="false">{{ accordion['#paragraph'].field_accordion_header.0.value }}</a>
+						<a class="collapsed" href="#" role="button" aria-controls="{{ controlParent }}" aria-expanded="false">{{ accordion['#paragraph'].field_accordion_header.0.value }}</a>
 					</div>
-					<div class="field field-long-text text-long" id="{{ controlParent }}" aria-hidden="true">
+					<div class="field field-long-text text-long collapse" id="{{ controlParent }}" aria-hidden="true">
 						<div class="inner-text">
 							{{ text }}
 						</div>
