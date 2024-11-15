@@ -265,7 +265,6 @@
   }
   button[type=submit] {
     @include submitButton;
-    display: inline-block;
     min-width: auto;
   }
   button {
@@ -276,5 +275,15 @@
   button {
     margin-bottom: 8px;
     padding: 1rem 1.5rem;
+  }
+
+  form.search-input {
+    button {
+      @include submitButton;
+      display: inline-block;
+      margin-bottom: 8px;
+      min-width: auto;
+      padding: 1rem 1.5rem;
+    }
   }
 }
