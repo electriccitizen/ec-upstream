@@ -303,6 +303,7 @@ display:
           bypass_access: false
           skip_access: false
       relationships: {  }
+      use_ajax: true
       header: {  }
       footer:
         result:
