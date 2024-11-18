@@ -275,7 +275,7 @@
 
   ul.list {
     margin: 2rem auto;
-    max-width: $contentStop;
+    max-width: $textMax;
   }
   li.result-default {
     margin-bottom: 30px;
@@ -323,6 +323,39 @@
       margin-bottom: 8px;
       min-width: auto;
       padding: 1rem 1.5rem;
+    }
+  }
+}
+
+.block-swc-search-simple-pager {
+  .pager {
+    gap: 10px;
+  }
+  button {
+    background: none;
+    border: 0;
+    color: $baseText;
+    font-size: $baseSize;
+    font-weight: $heavy;
+    &.current:before {
+      content: "Page";
+    }
+    &.next,
+    &.prev {
+      @include transAll(.3s);
+      background-color: $pagerNumberBack;
+      color: $pagerNumber;
+      cursor: pointer;
+      &:hover,
+      &:focus {
+        color: $pagerNumberHover;
+        background: $pagerNumberBackHover;
+        text-decoration: none;
+      }
+      &:disabled {
+        color: $midGrey;
+        cursor: default;
+      }
     }
   }
 }
