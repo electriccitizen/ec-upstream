@@ -143,6 +143,52 @@ processor_settings:
     exceptions:
       mexican: mexic
       texan: texa
+  stopwords:
+    weights:
+      preprocess_index: -5
+      preprocess_query: -2
+    all_fields: false
+    fields:
+      - body
+      - field_meta_description
+      - result
+      - title
+    stopwords:
+      - a
+      - an
+      - and
+      - are
+      - as
+      - at
+      - be
+      - but
+      - by
+      - for
+      - if
+      - in
+      - into
+      - is
+      - it
+      - 'no'
+      - not
+      - of
+      - 'on'
+      - or
+      - s
+      - such
+      - t
+      - that
+      - the
+      - their
+      - then
+      - there
+      - these
+      - they
+      - this
+      - to
+      - was
+      - will
+      - with
   tokenizer:
     weights:
       preprocess_index: -49
@@ -174,7 +220,6 @@ processor_settings:
       'entity:node':
         datasource_boost: 1.0
         bundle_boosts:
-          landing_page: 5.0
           page: 3.0
 tracker_settings:
   default:
