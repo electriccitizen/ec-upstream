@@ -224,3 +224,66 @@
     }
   }
 }
+
+/* Decoupled Search-specific Styles */
+.block-swc-search-results {
+  ul.list,
+  li.result-default {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul.list {
+    margin: 0;
+  }
+  li.result-default {
+    margin-bottom: 30px;
+  }
+}
+
+.block-swc-search-input,
+.block-swc-facet-dropdown,
+.block-swc-facet-button,
+.block-swc-facet-checkbox {
+  ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+  }
+  input[type=text] {
+    @include textInput;
+    .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--first &,
+    .search-web-components--layout--twocol.search-web-components--layout--twocol--75-25 .layout__region--second & {
+      max-width: 200px;
+    }
+  }
+  select {
+    padding: .75rem 4rem .75rem 1.5rem;
+    color: $placeColor;
+    text-align: left;
+    background: $siteBack;
+  }
+  button[type=submit] {
+    @include submitButton;
+    min-width: auto;
+  }
+  button {
+    @include button;
+    cursor: pointer;
+  }
+  button[type=submit],
+  button {
+    margin-bottom: 8px;
+    padding: 1rem 1.5rem;
+  }
+
+  form.search-input {
+    button {
+      @include submitButton;
+      display: inline-block;
+      margin-bottom: 8px;
+      min-width: auto;
+      padding: 1rem 1.5rem;
+    }
+  }
+}

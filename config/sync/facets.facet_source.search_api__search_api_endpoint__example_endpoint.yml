@@ -1,0 +1,12 @@
+uuid: fb61d7ec-bb74-4f11-920e-f7093fa6968f
+langcode: en
+status: true
+dependencies: {  }
+id: search_api__search_api_endpoint__example_endpoint
+name: 'search_api:search_api_endpoint__example_endpoint'
+filter_key: ''
+url_processor: query_string
+breadcrumb:
+  active: false
+  before: true
+  group: false

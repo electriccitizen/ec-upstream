@@ -43,7 +43,7 @@ function citizen_dart_form_alter(&$form, FormStateInterface $form_state, $form_i
 }
 
 /**
- * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ * Implements hook_theme_suggestions_HOOK_alter().
  */
 function citizen_dart_theme_suggestions_form_alter(array &$suggestions, array $variables) {
   if (!empty($variables['element']['#form_id'])) {

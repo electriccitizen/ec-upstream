@@ -1,6 +1,6 @@
 uuid: 0b9aa23a-140e-4485-9b54-a027c96d9efe
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
@@ -17,7 +17,6 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-    sections: {  }
 _core:
   default_config_hash: QY84XCJelpMQMf9_s_YDi4EogUf7Nfk4AG3w7x1M2wI
 id: node.page.teaser
@@ -36,16 +35,13 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 100
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 101
+    weight: 0
     region: content
 hidden:
   field_image: true
   field_meta_description: true
   field_oc_widgets: true
   field_paragraphs: true
+  field_suggest_a_meta_description: true
+  links: true
   search_api_excerpt: true

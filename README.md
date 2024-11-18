@@ -12,8 +12,6 @@ Ec-upstream is a Composer-based Drupal application hosted on [Pantheon](http://d
 
 * Refer to [THEME-INSTALL.md](/web/themes/citizen_patterns/THEME-INSTALL.md) for Theme Building instructions.
 
-* Refer to [EC-BACKSTOP.md](/tests/backstop/EC-BACKSTOP.md) for complete instructions for Visual Regression Testing using Backstop JS. 
+* Refer to [EC-BACKSTOP.md](/tests/backstop/EC-BACKSTOP.md) for complete instructions for Visual Regression Testing using Backstop JS.
 
 ## Important notes
-
-
