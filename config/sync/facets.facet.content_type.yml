@@ -36,7 +36,7 @@ widget:
     collapsible: 0
     closed: 0
     showCountInCollapseLabel: 0
-    selectLabel: ''
+    selectLabel: 'Select Type'
 empty_behavior:
   behavior: none
 only_visible_when_facet_source_is_visible: true
