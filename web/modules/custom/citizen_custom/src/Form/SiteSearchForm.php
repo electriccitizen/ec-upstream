@@ -65,10 +65,13 @@ class SiteSearchForm extends FormBase {
       '#label' => 'Search',
       '#title' => $this->t('Search'),
       '#title_display' => 'invisible',
-      '#name' => 'site_search_api_fulltext',
+      '#name' => 'q',
       '#size' => 30,
       '#default_value' => '',
       '#placeholder' => 'Enter keyword(s)',
+      '#attributes' => [
+        'class' => ['site-search-fulltext'],
+      ],
     ];
 
     $form['actions'] = [

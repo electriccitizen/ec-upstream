@@ -127,7 +127,7 @@
     padding: 160px $siteMarginMobile;
   }
 
-  .js-form-item-site-search-api-fulltext {
+  .js-form-type-textfield {
     padding: 1.5 0;
     width: 100%;
     margin-bottom: 0;
@@ -226,6 +226,37 @@
 }
 
 /* Decoupled Search-specific Styles */
+.search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--top-first,
+.search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--bottom-first {
+  @include safeFlex(row, wrap, center, start);
+  @include auto;
+  background-color: $lightGrey;
+  gap: 20px;
+  margin: 0 -3rem;
+  padding: 0 3rem;
+  .block {
+    padding: 6rem 0 2rem;
+  }
+  .search-input {
+    @include safeFlex(row, wrap, center, start);
+    gap: 20px;
+    @include auto;
+    > span {
+      @include safeFlex(row, no-wrap, center, start);
+      gap: 20px;
+    }
+  }
+}
+.block-swc-search-input {
+  .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--top-first &,
+  .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--top-second &,
+  .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--top-third &,
+  .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--bottom-first &,
+  .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--bottom-second &,
+  .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--bottom-third & {
+    min-width: 280px;
+  }
+}
 .block-swc-search-results {
   ul.list,
   li.result-default {
@@ -234,7 +265,8 @@
   }
 
   ul.list {
-    margin: 0;
+    margin: 2rem auto;
+    max-width: $contentStop;
   }
   li.result-default {
     margin-bottom: 30px;
@@ -258,10 +290,8 @@
     }
   }
   select {
-    padding: .75rem 4rem .75rem 1.5rem;
-    color: $placeColor;
-    text-align: left;
     background: $siteBack;
+    @include textInput;
   }
   button[type=submit] {
     @include submitButton;
