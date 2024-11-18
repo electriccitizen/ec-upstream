@@ -15,17 +15,3 @@ Ec-upstream is a Composer-based Drupal application hosted on [Pantheon](http://d
 * Refer to [EC-BACKSTOP.md](/tests/backstop/EC-BACKSTOP.md) for complete instructions for Visual Regression Testing using Backstop JS.
 
 ## Important notes
-
-## Search Demo
-
-To test the new Search components, do the following:
-
-1. Ensure you've run a composer install and a config import since switching to this branch.
-2. Create a new Landing Page titled "Search Demo" or something similar.
-3. Edit the Layout of the page and add a Section.
-4. Pick one of the new Search Layouts. I normally go with the Two Column. Using one of these layouts is necessary in order for the web components to render properly.
-5. Add the "Results" block to this new Search section.
-6. Add the "Search Input" block to this new Search section.
-7. Save the page.
-8. Enter a query into the Search Input field and hit Enter.
-9. See the results appear (unthemed and kind of gross looking) immediately!
