@@ -45,7 +45,25 @@
 
           });
         });
+
+        window.addEventListener('resize', Drupal.debounce(updateAccordHeight, 150, false));
+
       });
+
+      /**
+       * Update accordion height if needed up screen resize
+       */
+       function updateAccordHeight() {
+         const accordions = document.querySelectorAll('.accordion-item .expand'); // Select all accordion items
+         accordions.forEach((accordion) => {
+           const accordionContent = accordion.querySelector('.inner-text'); // Select the child element
+           if (accordionContent) {
+             const scrollHeight = accordionContent.scrollHeight;
+             accordion.style.maxHeight = scrollHeight + 'px'; // Set current height
+           }
+         });
+       }
+       
     }
   }
 
