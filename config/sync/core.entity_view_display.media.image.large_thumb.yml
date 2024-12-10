@@ -29,10 +29,12 @@ content:
     settings:
       responsive_image_style: large_thumb
       image_link: ''
+      image_loading:
+        attribute: lazy
     third_party_settings:
       lazy:
         lazy_image: '1'
-        placeholder_style: large_thumbnail
+        placeholder_style: ''
         data_uri: false
     weight: 0
     region: content

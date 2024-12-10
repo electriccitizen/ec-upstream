@@ -29,10 +29,12 @@ content:
     settings:
       responsive_image_style: views_card
       image_link: ''
+      image_loading:
+        attribute: lazy
     third_party_settings:
       lazy:
         lazy_image: '1'
-        placeholder_style: views_card
+        placeholder_style: ''
         data_uri: false
     weight: 0
     region: content

@@ -1,6 +1,6 @@
 uuid: d82aa8ed-9e4e-4ce2-a436-15d5863a8bc5
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.media.medium_embed
