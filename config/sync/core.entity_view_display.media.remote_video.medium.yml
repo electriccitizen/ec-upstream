@@ -1,9 +1,9 @@
-uuid: c44004a6-9970-4a7f-98bd-a90a6db24f10
+uuid: 43624bc9-db37-4f7a-bd0c-c1babb5aabb4
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.small_embed
+    - core.entity_view_mode.media.medium
     - field.field.media.remote_video.field_media_oembed_video
     - media.type.remote_video
   module:
@@ -14,11 +14,11 @@ third_party_settings:
     enabled: false
     allow_custom: false
 _core:
-  default_config_hash: gzYk-8SS3W6shtQcV6_vzJAr9MxLecXVlCXr4XhVKmw
-id: media.remote_video.small_embed
+  default_config_hash: EmxUpVr_gmOopulAPnxJ761oY_SoWCVl4H0zNn56SKU
+id: media.remote_video.medium
 targetEntityType: media
 bundle: remote_video
-mode: small_embed
+mode: medium
 content:
   field_media_oembed_video:
     type: oembed
