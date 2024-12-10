@@ -40,10 +40,11 @@ items_per_page_options:
 searched_fields:
   body: body
   field_meta_description: field_meta_description
+  field_search_keywords: field_search_keywords
   title: title
-parse_mode: direct
+parse_mode: phrase
 excluded_fields: {  }
 default_sort: search_api_relevance
 default_sort_order: desc
 skip_field_extraction: false
-ensure_result_item_url: true
+ensure_result_item_url: false

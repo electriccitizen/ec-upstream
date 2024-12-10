@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - field.storage.node.field_category
     - field.storage.node.field_meta_description
+    - field.storage.node.field_search_keywords
     - search_api.server.local
     - core.entity_view_mode.node.teaser
   module:
@@ -26,25 +26,26 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.body
-  field_category:
-    label: Category
-    datasource_id: 'entity:node'
-    property_path: field_category
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_category
   field_meta_description:
     label: 'Meta Description'
     datasource_id: 'entity:node'
     property_path: field_meta_description
     type: text
-    boost: 8.0
+    boost: 3.0
     dependencies:
       config:
         - field.storage.node.field_meta_description
-  result:
-    label: Result
+  field_search_keywords:
+    label: 'Search Keywords'
+    datasource_id: 'entity:node'
+    property_path: field_search_keywords
+    type: text
+    boost: 21.0
+    dependencies:
+      config:
+        - field.storage.node.field_search_keywords
+  rendered_item:
+    label: 'Rendered HTML output'
     property_path: rendered_item
     type: text
     configuration:
@@ -52,17 +53,14 @@ field_settings:
         - anonymous
       view_mode:
         'entity:node':
-          bios: teaser
-          event: teaser
-          news: teaser
+          landing_page: teaser
           page: teaser
-          support_book: teaser
   title:
     label: Title
     datasource_id: 'entity:node'
     property_path: title
     type: text
-    boost: 21.0
+    boost: 8.0
     dependencies:
       module:
         - node
@@ -77,9 +75,10 @@ field_settings:
 datasource_settings:
   'entity:node':
     bundles:
-      default: true
+      default: false
       selected:
         - landing_page
+        - page
     languages:
       default: true
       selected: {  }
@@ -115,7 +114,8 @@ processor_settings:
     fields:
       - body
       - field_meta_description
-      - result
+      - field_search_keywords
+      - rendered_item
       - title
       - type
     ignorable: "['¿¡!?,.:;]"
@@ -135,7 +135,8 @@ processor_settings:
     fields:
       - body
       - field_meta_description
-      - result
+      - field_search_keywords
+      - rendered_item
       - title
       - type
   language_with_fallback: {  }
@@ -148,7 +149,8 @@ processor_settings:
     fields:
       - body
       - field_meta_description
-      - result
+      - field_search_keywords
+      - rendered_item
       - title
     exceptions:
       mexican: mexic
@@ -157,11 +159,12 @@ processor_settings:
     weights:
       preprocess_index: -5
       preprocess_query: -2
-    all_fields: false
+    all_fields: true
     fields:
       - body
       - field_meta_description
-      - result
+      - field_search_keywords
+      - rendered_item
       - title
     stopwords:
       - a
@@ -207,7 +210,8 @@ processor_settings:
     fields:
       - body
       - field_meta_description
-      - result
+      - field_search_keywords
+      - rendered_item
       - title
     spaces: ''
     ignored: ._-
@@ -221,17 +225,10 @@ processor_settings:
     fields:
       - body
       - field_meta_description
-      - result
+      - field_search_keywords
+      - rendered_item
       - title
       - type
-  type_boost:
-    weights:
-      preprocess_index: -45
-    boosts:
-      'entity:node':
-        datasource_boost: 1.0
-        bundle_boosts:
-          page: 3.0
 tracker_settings:
   default:
     indexing_order: fifo

@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.landing_page.field_image
     - field.field.node.landing_page.field_meta_description
     - field.field.node.landing_page.field_paragraphs
+    - field.field.node.landing_page.field_search_keywords
     - field.field.node.landing_page.layout_builder__layout
     - node.type.landing_page
   module:
@@ -25,7 +26,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 4
+    weight: 3
     region: content
     settings:
       rows: 9
@@ -38,7 +39,7 @@ content:
         hide_guidelines: '1'
   field_exclude_search:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -60,13 +61,23 @@ content:
     third_party_settings: {  }
   field_paragraphs:
     type: layout_paragraphs
-    weight: 5
+    weight: 4
     region: content
     settings:
+      view_mode: default
       preview_view_mode: preview
+      form_display_mode: default
       nesting_depth: 0
       require_layouts: 1
       empty_message: ''
+    third_party_settings: {  }
+  field_search_keywords:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   path:
     type: path
