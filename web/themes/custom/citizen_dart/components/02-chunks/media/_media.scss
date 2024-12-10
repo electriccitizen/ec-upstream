@@ -97,15 +97,15 @@ article+figcaption {
   // Control sizes for images and video.
   @include desk {
 
-    &.small-embed {
+    &.small {
       @include smallEmbed;
     }
 
-    &.medium-embed {
+    &.medium {
       @include mediumEmbed;
     }
 
-    &.large-embed {
+    &.large {
       @include largeEmbed;
     }
   }
