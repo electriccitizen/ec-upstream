@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.bios.field_bio_order
     - field.field.node.bios.field_email
     - field.field.node.bios.field_first_name
+    - field.field.node.bios.field_headshot
     - field.field.node.bios.field_last_name
     - field.field.node.bios.field_list_widget
     - field.field.node.bios.field_meta_description
@@ -14,11 +15,14 @@ dependencies:
     - field.field.node.bios.field_position
     - node.type.bios
   module:
+    - image
     - layout_builder
     - layout_discovery
     - system
     - text
     - user
+  theme:
+    - citizen_dart
 third_party_settings:
   layout_builder:
     enabled: true
@@ -42,11 +46,37 @@ third_party_settings:
             additional: {  }
         third_party_settings: {  }
       -
-        layout_id: layout_onecol
+        layout_id: two_column_sidebar_left
         layout_settings:
-          label: 'Section 2'
+          label: ''
           context_mapping: {  }
         components:
+          a49cec78-2f07-4849-bc0f-10aaf767216a:
+            uuid: a49cec78-2f07-4849-bc0f-10aaf767216a
+            region: first
+            configuration:
+              id: 'field_block:node:bios:field_headshot'
+              label: Headshot
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: lazy_responsive_image
+                label: hidden
+                settings:
+                  responsive_image_style: square
+                  image_loading:
+                    attribute: lazy
+                  image_link: ''
+                third_party_settings:
+                  lazy:
+                    lazy_image: '1'
+                    placeholder_style: ''
+                    data_uri: false
+            weight: 0
+            additional: {  }
           309fb6a3-f256-4d0e-8b0a-c3eb31997687:
             uuid: 309fb6a3-f256-4d0e-8b0a-c3eb31997687
             region: content
@@ -64,7 +94,7 @@ third_party_settings:
                 settings:
                   link_to_entity: false
                 third_party_settings: {  }
-            weight: 2
+            weight: 0
             additional: {  }
           40c08fae-ad78-46b3-917b-973e2ba599ce:
             uuid: 40c08fae-ad78-46b3-917b-973e2ba599ce
@@ -83,44 +113,7 @@ third_party_settings:
                 settings:
                   link_to_entity: false
                 third_party_settings: {  }
-            weight: 3
-            additional: {  }
-          96b798b4-02ea-424c-975c-eacfedc89041:
-            uuid: 96b798b4-02ea-424c-975c-eacfedc89041
-            region: content
-            configuration:
-              id: 'field_block:node:bios:field_email'
-              label: 'E:'
-              label_display: visible
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: email_mailto
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 4
-            additional: {  }
-          fb3202c4-36eb-49e3-8179-3a93348ab6a9:
-            uuid: fb3202c4-36eb-49e3-8179-3a93348ab6a9
-            region: content
-            configuration:
-              id: 'field_block:node:bios:field_phone'
-              label: 'P:'
-              label_display: visible
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: telephone_link
-                label: hidden
-                settings:
-                  title: ''
-                third_party_settings: {  }
-            weight: 5
+            weight: 1
             additional: {  }
           b8f1809e-7a20-4e59-a3c8-33097218a597:
             uuid: b8f1809e-7a20-4e59-a3c8-33097218a597
@@ -138,8 +131,52 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 6
+            weight: 4
             additional: {  }
+          96b798b4-02ea-424c-975c-eacfedc89041:
+            uuid: 96b798b4-02ea-424c-975c-eacfedc89041
+            region: content
+            configuration:
+              id: 'field_block:node:bios:field_email'
+              label: 'E:'
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: email_mailto
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          fb3202c4-36eb-49e3-8179-3a93348ab6a9:
+            uuid: fb3202c4-36eb-49e3-8179-3a93348ab6a9
+            region: content
+            configuration:
+              id: 'field_block:node:bios:field_phone'
+              label: 'P:'
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Section 2'
+          context_mapping: {  }
+        components: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: 5B6kXAAmFMzavs5iFwC15pBNWviSgJjF6pIjT8MSlKI
@@ -178,6 +215,17 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_headshot:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 110
     region: content
   field_last_name:
     type: string

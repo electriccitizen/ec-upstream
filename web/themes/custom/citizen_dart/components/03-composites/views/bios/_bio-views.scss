@@ -12,7 +12,7 @@
   }
 
   .view-content {
-    margin-bottom: -$spaceLg;
+    margin-bottom: -$spaceMd;
     @include bleed(padding, 40px);
   }
 
@@ -34,19 +34,5 @@
     @include desk {
       width: 25%;
     }
-  }
-
-  .node-teaser {
-    display: block;
-  }
-
-  .node-field-image {
-    margin-bottom: $spaceXs;
-    padding-right: 0;
-  }
-
-  .node-field-title {
-    @include heading4;
-    margin-bottom: $spaceXxs;
   }
 }

@@ -71,25 +71,30 @@
  */
 #}
 
-{% extends 'node.html.twig' %}
 
-{% set date = node.getCreatedTime() %}
+{% set classes = [
+  'node-' ~ view_mode|clean_class,
+  'node-' ~ view_mode|clean_class ~ '-' ~ node.type.0.target_id|clean_class
+] %}
 
-{% block nodeMeta %}
-  <div class="node-field-image">
+<article{{ attributes.addClass(classes) }}>
+  {% block nodeImage %}
     {% if content.field_image %}
-      {{ content.field_image }}
+      <div class="node-field-image">
+        {{ content.field_image }}
+      </div>
     {% endif %}
-  </div>
-{% endblock %}
-{% block node %}
-  <h2{{ title_attributes.addClass("node-field-title") }}>
-    <a href="{{- url -}}" rel="bookmark">{{- label.0['#context'].value -}}</a>
-  </h2>
-  {% block nodeDate %}
-    <div class="metatext">
-      <time datetime="{{- date|date('c') -}}">{{- date|date('U')|format_date("number_date_short") -}}</time>
+  {% endblock %}
+  {% block node %}
+    <div class="node-teaser-content">
+      {% block nodeTitle %}
+        <h2{{ title_attributes.addClass("node-field-title") }}>
+          <a href="{{- url -}}" rel="bookmark">{{- label.0['#context'].value -}}</a>
+        </h2>
+      {% endblock %}
+      {% block nodeContent %}
+        {{- content|without("field_image") -}}
+      {% endblock %}
     </div>
   {% endblock %}
-  {{- content|without("field_image") -}}
-{% endblock %}
+</article>

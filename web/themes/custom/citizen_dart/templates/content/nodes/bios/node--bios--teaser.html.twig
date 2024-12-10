@@ -73,4 +73,10 @@
 
 {% extends 'node--teaser.html.twig' %}
 
-{% block nodeDate %}{% endblock %}
+{% block nodeImage %}
+  {{ content.field_headshot }}
+{% endblock %}
+
+{% block nodeContent %}
+{{ content|without('field_headshot') }}
+{% endblock %}

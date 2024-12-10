@@ -84,7 +84,7 @@ body .layout-content {
       margin-bottom: 0;
     }
 
-    .main-node-content {
+    .node-teaser-content {
       width: calc(100% - 380px);
     }
   }
@@ -100,5 +100,6 @@ body .layout-content {
 
   .metatext {
     @include metaText;
+    margin-bottom: $spaceSm;
   }
 }

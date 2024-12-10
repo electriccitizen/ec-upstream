@@ -20,11 +20,15 @@
     @include metaText;
   }
 
-  &.node-teaser,
-  &.node-listing {
-    .field-dates {
-      @include metaText;
-      margin-bottom: $spaceSm;
-    }
+}
+
+.node-teaser-event {
+  .field-dates {
+    @include metaText;
+    margin-bottom: $spaceSm;
   }
+}
+
+.node-listing-event{
+  @extend .node-teaser-event;
 }

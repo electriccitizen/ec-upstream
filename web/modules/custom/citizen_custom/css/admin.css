@@ -266,3 +266,9 @@ fieldset.smartdate--widget .allday-label{
   margin-top: .5em;
 
 }
+
+/* ADJUST FOCAL POINT PREVIEW ON IMAGE FIELDS SO VERTICAL IMAGES DON'T LOOK LIKE PARTIALS
+--------------------------- */
+.image-preview .focal-point-wrapper .image-style-thumbnail{
+  min-width: 100%;
+}

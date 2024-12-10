@@ -12,7 +12,9 @@
   }
 
   .views-row {
-    @include viewsRowStandard;
+    &:not(:last-child) {
+      margin-bottom: $spaceMd;
+    }
   }
 }
 
@@ -20,14 +22,8 @@
 ------------- */
 .events.events-list {
   .views-row {
-    @include viewsRowStandard;
-
-    .views-field-title {
-      @include safeFlexSize(0, 0, 100%);
-    }
-
-    .metatext {
-      margin-bottom: 0;
+    &:not(:last-child) {
+      margin-bottom: $spaceMd;
     }
   }
 }

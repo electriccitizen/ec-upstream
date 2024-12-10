@@ -8,14 +8,19 @@ dependencies:
     - field.field.node.bios.field_bio_order
     - field.field.node.bios.field_email
     - field.field.node.bios.field_first_name
+    - field.field.node.bios.field_headshot
     - field.field.node.bios.field_last_name
     - field.field.node.bios.field_list_widget
     - field.field.node.bios.field_meta_description
     - field.field.node.bios.field_phone
     - field.field.node.bios.field_position
+    - lazy.settings
     - node.type.bios
+    - responsive_image.styles.square
   module:
     - layout_builder
+    - lazy
+    - responsive_image
     - user
 third_party_settings:
   layout_builder:
@@ -28,6 +33,21 @@ targetEntityType: node
 bundle: bios
 mode: listing
 content:
+  field_headshot:
+    type: lazy_responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: square
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      lazy:
+        lazy_image: '1'
+        placeholder_style: ''
+        data_uri: false
+    weight: 0
+    region: content
   field_position:
     type: string
     label: hidden

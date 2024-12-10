@@ -71,18 +71,5 @@
  */
 #}
 
-{% extends 'node.html.twig' %}
+{% extends 'node--teaser.html.twig' %}
 
-{% set date = node.getCreatedTime() %}
-
-{% block nodeMeta %}
-  {% block nodeTitle %}
-    <h2{{ title_attributes.addClass("node-field-title") }}>
-      <a href="{{- url -}}" rel="bookmark">{{- label.0['#context'].value -}}</a>
-    </h2>
-  {% endblock %}
-
-{% endblock %}
-{% block node %}
-  {{- content -}}
-{% endblock %}

@@ -73,6 +73,7 @@
 
 {% extends 'node--teaser.html.twig' %}
 
-{% block nodeDate %}
-  <div class="date">{{ elements['#node'].created.value|date('F j, Y') }}</div>
+{% block nodeContent %}
+  <div class="date metatext">{{ elements['#node'].created.value|date('F j, Y') }}</div>
+  {{ parent() }}
 {% endblock %}
