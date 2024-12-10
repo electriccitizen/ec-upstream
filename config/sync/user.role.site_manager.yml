@@ -17,6 +17,7 @@ dependencies:
     - node.type.landing_page
     - node.type.news
     - node.type.page
+    - node.type.support_book
   module:
     - addanother
     - block_content
@@ -77,6 +78,7 @@ permissions:
   - 'create page content'
   - 'create remote_video media'
   - 'create social_media_links block content'
+  - 'create support_book content'
   - 'create url aliases'
   - 'create webform'
   - 'customize shortcut links'
@@ -92,6 +94,7 @@ permissions:
   - 'delete any page content'
   - 'delete any social_media_links block content'
   - 'delete any social_media_links block content revisions'
+  - 'delete any support_book content'
   - 'delete any webform'
   - 'delete any webform submission'
   - 'delete bios revisions'
@@ -104,9 +107,11 @@ permissions:
   - 'delete own landing_page content'
   - 'delete own news content'
   - 'delete own page content'
+  - 'delete own support_book content'
   - 'delete own webform'
   - 'delete own webform submission'
   - 'delete page revisions'
+  - 'delete support_book revisions'
   - 'edit any basic block content'
   - 'edit any bios content'
   - 'edit any document media'
@@ -118,6 +123,7 @@ permissions:
   - 'edit any page content'
   - 'edit any remote_video media'
   - 'edit any social_media_links block content'
+  - 'edit any support_book content'
   - 'edit any webform'
   - 'edit any webform submission'
   - 'edit layout paragraphs plugin config'
@@ -129,6 +135,7 @@ permissions:
   - 'edit own news content'
   - 'edit own page content'
   - 'edit own remote_video media'
+  - 'edit own support_book content'
   - 'edit own webform'
   - 'edit own webform submission'
   - 'revert all revisions'
@@ -140,6 +147,7 @@ permissions:
   - 'revert landing_page revisions'
   - 'revert news revisions'
   - 'revert page revisions'
+  - 'revert support_book revisions'
   - 'switch shortcut sets'
   - 'update any media'
   - 'update media'
@@ -160,4 +168,5 @@ permissions:
   - 'view own unpublished content'
   - 'view own webform submission'
   - 'view page revisions'
+  - 'view support_book revisions'
   - 'view the administration theme'
