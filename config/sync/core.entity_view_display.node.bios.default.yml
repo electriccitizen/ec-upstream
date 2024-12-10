@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.bios.field_bio_order
     - field.field.node.bios.field_email
     - field.field.node.bios.field_first_name
-    - field.field.node.bios.field_image
     - field.field.node.bios.field_last_name
     - field.field.node.bios.field_list_widget
     - field.field.node.bios.field_meta_description
@@ -141,25 +140,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 6
             additional: {  }
-          da69263f-8129-4557-ae64-9aac6a561d43:
-            uuid: da69263f-8129-4557-ae64-9aac6a561d43
-            region: content
-            configuration:
-              id: 'field_block:node:bios:field_image'
-              label: 'Bio Image'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_entity_view
-                label: hidden
-                settings:
-                  view_mode: square
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: 5B6kXAAmFMzavs5iFwC15pBNWviSgJjF6pIjT8MSlKI
@@ -198,14 +178,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 103
-    region: content
-  field_image:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 107
     region: content
   field_last_name:
     type: string

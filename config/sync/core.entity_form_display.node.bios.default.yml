@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.bios.field_bio_order
     - field.field.node.bios.field_email
     - field.field.node.bios.field_first_name
-    - field.field.node.bios.field_image
     - field.field.node.bios.field_last_name
     - field.field.node.bios.field_list_widget
     - field.field.node.bios.field_meta_description
@@ -17,7 +16,6 @@ dependencies:
   module:
     - allowed_formats
     - field_group
-    - media_library
     - telephone
     - text
 third_party_settings:
@@ -79,13 +77,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_image:
-    type: media_library_widget
-    weight: 0
-    region: content
-    settings:
-      media_types: {  }
     third_party_settings: {  }
   field_last_name:
     type: string_textfield
