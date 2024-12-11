@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Theme override of a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ */
+#}
+{% if q is not empty %}
+  {#
+    This ensures that, if clean URLs are off, the 'q' is added first,
+    as a hidden form element, so that it shows up first in the POST URL.
+  #}
+{{ q }}
+{% endif %}
+{{ attach_library('citizen_dart/drawers') }}
+<a href="#skip-filters" class="visually-hidden focusable">
+  {%- trans %}Skip filters{% endtrans -%}
+</a>
+
+<div id="views-form-wrapper">
+  <div class="basic-form">
+    {{ form.site_search_api_fulltext }}
+  </div>
+  <div class="advanced-form">
+    <a href="#" class="drawer-toggle drawer-below" aria-controls="advanced-search-drawer" aria-expanded="false">Advanced Search</a>
+    <div class="drawer-content" id="advanced-search-drawer" aria-hidden="true">
+      {{ form.field_audience }}
+      {{ form.type }}
+    </div>
+  </div>
+  {{ form.actions }}
+</div>
+
+<a id="skip-filters" tabindex="-2"></a>

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
+    - field.storage.node.field_audience
     - field.storage.node.field_exclude_search
     - field.storage.node.field_meta_description
     - field.storage.node.field_search_keywords
@@ -26,6 +27,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.body
+  field_audience:
+    label: Audience
+    datasource_id: 'entity:node'
+    property_path: field_audience
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_audience
   field_exclude_search:
     label: 'Exclude from Site Search'
     datasource_id: 'entity:node'
@@ -75,10 +84,12 @@ datasource_settings:
       default: false
       selected:
         - landing_page
+        - news
         - page
     languages:
-      default: true
-      selected: {  }
+      default: false
+      selected:
+        - en
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
@@ -110,6 +121,7 @@ processor_settings:
     all_fields: true
     fields:
       - body
+      - field_audience
       - field_meta_description
       - field_search_keywords
       - title
@@ -130,6 +142,7 @@ processor_settings:
     all_fields: true
     fields:
       - body
+      - field_audience
       - field_meta_description
       - field_search_keywords
       - title
@@ -216,6 +229,7 @@ processor_settings:
     all_fields: true
     fields:
       - body
+      - field_audience
       - field_meta_description
       - field_search_keywords
       - title

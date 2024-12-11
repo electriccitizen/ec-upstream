@@ -6,7 +6,7 @@
   Drupal.behaviors.drawerBelow = {
     attach: function (context, settings) {
       once('drawer', '.drawer-toggle', context).forEach(drawer => {
-
+        console.log('drawer')
         const drawerID = drawer.getAttribute('aria-controls');
         if (drawer.classList.contains('pre-hide-toggle') ) {
           //find the matching drawer content and if there is one, do something
