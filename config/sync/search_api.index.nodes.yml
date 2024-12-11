@@ -44,17 +44,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_search_keywords
-  rendered_item:
-    label: 'Rendered HTML output'
-    property_path: rendered_item
-    type: text
-    configuration:
-      roles:
-        - anonymous
-      view_mode:
-        'entity:node':
-          landing_page: teaser
-          page: teaser
   title:
     label: Title
     datasource_id: 'entity:node'
@@ -115,7 +104,6 @@ processor_settings:
       - body
       - field_meta_description
       - field_search_keywords
-      - rendered_item
       - title
       - type
     ignorable: "['¿¡!?,.:;]"
@@ -136,7 +124,6 @@ processor_settings:
       - body
       - field_meta_description
       - field_search_keywords
-      - rendered_item
       - title
       - type
   language_with_fallback: {  }
@@ -150,7 +137,6 @@ processor_settings:
       - body
       - field_meta_description
       - field_search_keywords
-      - rendered_item
       - title
     exceptions:
       mexican: mexic
@@ -164,7 +150,6 @@ processor_settings:
       - body
       - field_meta_description
       - field_search_keywords
-      - rendered_item
       - title
     stopwords:
       - a
@@ -211,7 +196,6 @@ processor_settings:
       - body
       - field_meta_description
       - field_search_keywords
-      - rendered_item
       - title
     spaces: ''
     ignored: ._-
@@ -226,7 +210,6 @@ processor_settings:
       - body
       - field_meta_description
       - field_search_keywords
-      - rendered_item
       - title
       - type
 tracker_settings:

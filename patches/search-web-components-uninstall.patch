@@ -1,0 +1,15 @@
+diff --git a/search_web_components.module b/search_web_components.module
+index dca5495..197be60 100644
+--- a/search_web_components.module
++++ b/search_web_components.module
+@@ -50,7 +50,9 @@ function search_web_components_search_api_endpoint_presave(SearchApiEndpointInte
+     // Ensure that mapping indexes are numeric so json serialization creates an
+     // array of objects instead of an object of objects.
+     $results = $search_api_endpoint->getThirdPartySetting('search_web_components', 'results');
+-    $results['mappings'] = array_values($results['mappings']);
++    if ($results && $results['mappings']) {
++      $results['mappings'] = array_values($results['mappings']);
++    }
+     $search_api_endpoint->setThirdPartySetting('search_web_components', 'results', $results);
+
+     return;
