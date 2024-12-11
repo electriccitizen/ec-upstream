@@ -8,6 +8,7 @@ dependencies:
   module:
     - filter
     - media
+    - search_api_decoupled
     - system
 _core:
   default_config_hash: 5QqXm46ktpziOsRs6P56FB-c74-my0zZ-A8NG-9Vjmc
@@ -17,6 +18,8 @@ weight: 0
 is_admin: false
 permissions:
   - 'access content'
+  - 'use search api endpoint'
+  - 'use search with example_endpoint endpoint'
   - 'use text format limited_html'
   - 'use text format restricted_html'
   - 'view media'
