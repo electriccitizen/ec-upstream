@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_audience
     - field.field.node.landing_page.field_exclude_search
     - field.field.node.landing_page.field_image
     - field.field.node.landing_page.field_meta_description
@@ -76,6 +77,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_audience: true
   field_exclude_search: true
   field_image: true
   field_meta_description: true

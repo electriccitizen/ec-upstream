@@ -1,0 +1,9 @@
+uuid: b43b0c2d-d9ca-41a7-822a-87ed6094f63a
+langcode: en
+status: true
+dependencies: {  }
+name: Audience
+vid: audience
+description: 'used for assigning audiences to pages for advanced search.'
+weight: 0
+new_revision: false

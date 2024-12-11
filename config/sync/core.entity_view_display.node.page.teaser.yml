@@ -5,7 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_audience
     - field.field.node.page.field_image
+    - field.field.node.page.field_last_reviewed
     - field.field.node.page.field_meta_description
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_search_keywords
@@ -39,7 +41,9 @@ content:
     weight: 0
     region: content
 hidden:
+  field_audience: true
   field_image: true
+  field_last_reviewed: true
   field_meta_description: true
   field_oc_widgets: true
   field_paragraphs: true

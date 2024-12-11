@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
+    - field.storage.node.field_exclude_search
     - field.storage.node.field_meta_description
     - field.storage.node.field_search_keywords
     - search_api.server.local
-    - core.entity_view_mode.node.teaser
   module:
     - node
     - search_api
@@ -26,6 +26,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.body
+  field_exclude_search:
+    label: 'Exclude from Site Search'
+    datasource_id: 'entity:node'
+    property_path: field_exclude_search
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.node.field_exclude_search
   field_meta_description:
     label: 'Meta Description'
     datasource_id: 'entity:node'
@@ -44,17 +52,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_search_keywords
-  rendered_item:
-    label: 'Rendered HTML output'
-    property_path: rendered_item
-    type: text
-    configuration:
-      roles:
-        - anonymous
-      view_mode:
-        'entity:node':
-          landing_page: teaser
-          page: teaser
   title:
     label: Title
     datasource_id: 'entity:node'
@@ -115,7 +112,6 @@ processor_settings:
       - body
       - field_meta_description
       - field_search_keywords
-      - rendered_item
       - title
       - type
     ignorable: "['¿¡!?,.:;]"
@@ -136,7 +132,6 @@ processor_settings:
       - body
       - field_meta_description
       - field_search_keywords
-      - rendered_item
       - title
       - type
   language_with_fallback: {  }
@@ -150,7 +145,6 @@ processor_settings:
       - body
       - field_meta_description
       - field_search_keywords
-      - rendered_item
       - title
     exceptions:
       mexican: mexic
@@ -164,7 +158,6 @@ processor_settings:
       - body
       - field_meta_description
       - field_search_keywords
-      - rendered_item
       - title
     stopwords:
       - a
@@ -211,7 +204,6 @@ processor_settings:
       - body
       - field_meta_description
       - field_search_keywords
-      - rendered_item
       - title
     spaces: ''
     ignored: ._-
@@ -226,7 +218,6 @@ processor_settings:
       - body
       - field_meta_description
       - field_search_keywords
-      - rendered_item
       - title
       - type
 tracker_settings:

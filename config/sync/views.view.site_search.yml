@@ -393,8 +393,8 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: search_api_boolean
-          operator: '!='
-          value: '1'
+          operator: '='
+          value: '0'
           group: 1
           exposed: false
           expose:
@@ -449,7 +449,7 @@ display:
       display_description: ''
       exposed_block: true
       display_extenders: {  }
-      block_description: 'Search Block'
+      block_description: 'Search Results'
       block_category: 'Site Search'
     cache_metadata:
       max-age: -1

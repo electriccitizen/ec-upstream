@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_audience
     - field.field.node.landing_page.field_exclude_search
     - field.field.node.landing_page.field_image
     - field.field.node.landing_page.field_meta_description
@@ -127,6 +128,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_audience:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
     region: content
   field_exclude_search:
     type: boolean

@@ -4,13 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_audience
     - field.field.node.page.field_image
+    - field.field.node.page.field_last_reviewed
     - field.field.node.page.field_meta_description
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_search_keywords
     - node.type.page
     - system.menu.main
   module:
+    - datetime
     - layout_builder
     - layout_discovery
     - menu_block
@@ -155,6 +158,23 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
+  field_audience:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_last_reviewed:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 104
+    region: content
   field_meta_description:
     type: basic_string
     label: above
