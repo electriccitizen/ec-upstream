@@ -38,9 +38,14 @@
       display: none;
     }
 
+    .indicates-required{
+      display: none;
+    }
+
     #mc-embedded-subscribe-form {
       padding: 0;
     }
+
 
     #mce-EMAIL {
       @include textInput;

@@ -5,8 +5,19 @@
 @use '../../../00-base' as *;
 
 .site-header {
-  padding: 20px $siteMarginMobile;
+  padding: 20px $siteMarginMobile 28px;
   background: $headerBack;
+  position: relative;
+  &:after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, $white 0, $red 40%);
+  }
 
   & > div {
     max-width: $contentStop;

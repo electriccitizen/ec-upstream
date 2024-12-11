@@ -48,33 +48,33 @@
   background: $ruleColor;
 }
 
-@mixin gradient($grad-direction, $grad-start, $gradStartPercent, $grad-stop) {
-  background: -moz-linear-gradient($grad-direction, $grad-start $gradStartPercent, $grad-stop 100%);
+@mixin gradient($grad-direction, $grad-start, $gradStartPercent, $grad-stop, $gradStopPercent) {
+  background: -moz-linear-gradient($grad-direction, $grad-start $gradStartPercent, $grad-stop $gradStopPercent);
   /* FF3.6+ */
-  background: -webkit-linear-gradient($grad-direction, $grad-start $gradStartPercent, $grad-stop 100%);
+  background: -webkit-linear-gradient($grad-direction, $grad-start $gradStartPercent, $grad-stop $gradStopPercent);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient($grad-direction, $grad-start $gradStartPercent, $grad-stop 100%);
+  background: -o-linear-gradient($grad-direction, $grad-start $gradStartPercent, $grad-stop $gradStopPercent);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient($grad-direction, $grad-start $gradStartPercent, $grad-stop 100%);
+  background: -ms-linear-gradient($grad-direction, $grad-start $gradStartPercent, $grad-stop $gradStopPercent);
 
   /* IE10+ */
   @if $grad-direction =='top' {
-    background: linear-gradient(to bottom, $grad-start $gradStartPercent, $grad-stop 100%);
+    background: linear-gradient(to bottom, $grad-start $gradStartPercent, $grad-stop $gradStopPercent);
     /* W3C */
   }
 
   @else if $grad-direction =='bottom' {
-    background: linear-gradient(to top, $grad-start $gradStartPercent, $grad-stop 100%);
+    background: linear-gradient(to top, $grad-start $gradStartPercent, $grad-stop $gradStopPercent);
     /* W3C */
   }
 
   @else if $grad-direction =='left' {
-    background: linear-gradient(to right, $grad-start $gradStartPercent, $grad-stop 100%);
+    background: linear-gradient(to right, $grad-start $gradStartPercent, $grad-stop $gradStopPercent);
     /* W3C */
   }
 
   @else if $grad-direction =='right' {
-    background: linear-gradient(to left, $grad-start $gradStartPercent, $grad-stop 100%);
+    background: linear-gradient(to left, $grad-start $gradStartPercent, $grad-stop $gradStopPercent);
     /* W3C */
   }
 

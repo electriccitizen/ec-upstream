@@ -10,7 +10,7 @@
   padding: $spaceLg 0 $spaceXs;
 
   &::after {
-    @include fullBack($lightGrey);
+    @include fullBack($lightGray);
   }
 
   #views-form-wrapper {
