@@ -15,6 +15,9 @@ settings:
       value: all_upcoming_events
       label: 'All Events'
     -
+      value: featured_events
+      label: 'Featured Events'
+    -
       value: custom
       label: Custom
   allowed_values_function: ''
