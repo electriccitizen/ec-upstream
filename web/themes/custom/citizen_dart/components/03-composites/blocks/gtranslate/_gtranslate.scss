@@ -1,0 +1,91 @@
+/* ================
+	 GTRANSLATE
+=================== */
+@use '../../../00-base' as *;
+
+.block-gtranslate-block{
+  position: absolute;
+  top: 13px;
+  right: 94px;
+
+  @include desk{
+    top: -3px;
+    right: 50px;
+  }
+
+  .gtranslate_wrapper{
+  	.gt_switcher_wrapper{
+  		position: static !important;
+  	}
+  	.gt_switcher{
+  		width: auto;
+  		line-height: inherit;
+  		.gt_selected{
+  			background: none;
+  			z-index: 400;
+  			a{
+  				padding: 0;
+  				border: 0;
+  				background: none;
+  				width: auto;
+  				height: auto;
+  				font-family: $header;
+  				padding: 1rem 0;
+  				color: $black;
+  				font-size: $baseSize;
+          @include safeFlex(row, wrap, center, center);
+
+          &::after{
+            display: none;
+          }
+
+  				&:hover{
+  					text-decoration: underline;
+  				}
+
+  				img{
+  					display: none;
+  				}
+
+          span.material-icons-outlined{
+            margin-right: 3px;
+            margin-top: -3px;
+
+            &::after{
+              content: '';
+              background: $white;
+              height: 3px;
+              width: 19px;
+              display: block;
+              margin-top: -5px;
+              position: relative;
+            }
+          }
+  			}//end a
+  		}//end selected
+  		.gt_option{
+  			position: absolute;
+  			background: $siteBack;
+  			border: 1px solid #999;
+  			border-top: none;
+  			font-family: $bodyFont;
+  			height: 205px !important;
+  			max-height: 205px;
+        z-index: 1;
+
+  			a{
+  				padding: 1rem 0 1rem .5rem;
+  				img{
+  					display: none;
+  				}
+  			}
+  			a:not(.selected){
+  				&:hover{
+  					background-color: $gray;
+  					color: $black;
+  				}
+  			}
+  		}//end .option
+  	}//end switcher
+  }// end gtranslate wrapper
+}//end #block-gtranslate

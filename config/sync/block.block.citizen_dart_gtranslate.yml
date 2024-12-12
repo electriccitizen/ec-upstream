@@ -9,7 +9,7 @@ dependencies:
 id: citizen_dart_gtranslate
 theme: citizen_dart
 region: header
-weight: -7
+weight: -6
 provider: null
 plugin: gtranslate_block
 settings:
