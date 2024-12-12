@@ -141,7 +141,7 @@
     input {
       width: 100%;
       background: transparent;
-      padding: 8px 4px;
+      padding: 8px 12px;
       border: none;
       color: $searchDropText;
       border: $inputBorderWidth solid transparent;
@@ -165,8 +165,8 @@
 
       &:focus {
         outline: none;
-        border-color: $inputBorderFocus;
-        box-shadow: inset 0 0 0 1px $inputBorderFocus;
+        border-color: $white;
+        box-shadow: inset 0 0 0 1px $white;
         @extend %searchBlockPlaceholderFocus;
       }
     }
@@ -192,7 +192,7 @@
       border: 0;
 
       @include tab {
-        top: -48px;
+        top: -40px;
         right: 12px;
       }
 
@@ -218,7 +218,7 @@
 
       @include tab {
         font-size: 3.5rem;
-        top: -48px;
+        top: -40px;
         right: 12px;
       }
     }

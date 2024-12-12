@@ -1,21 +1,19 @@
-uuid: c85c068b-1891-4ca0-8737-70d0725480a6
+uuid: f1e568be-ee37-4466-bf09-09f7a1a59be0
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_image
     - media.type.image
-    - node.type.event
-_core:
-  default_config_hash: 6JbsaIYePpf0JeuzxsxBVULzd39GqP14sXwvUPdmXkw
-id: node.event.field_image
+    - node.type.department
+id: node.department.field_image
 field_name: field_image
 entity_type: node
-bundle: event
-label: 'Event Image'
-description: '<strong>Optimal image size:</strong> 720x720px'
+bundle: department
+label: Banner
+description: '<strong>Optimal image size:</strong> 1600x912px'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

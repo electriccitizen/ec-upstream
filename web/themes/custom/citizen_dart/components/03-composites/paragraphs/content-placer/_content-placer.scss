@@ -7,6 +7,10 @@
 .paragraph--type--content-placer {
   &.custom-views-list {
     @include textConstrain;
+
+    .node-department & {
+      max-width: 100% !important;
+    }
   }
 
   .field-widget-title {

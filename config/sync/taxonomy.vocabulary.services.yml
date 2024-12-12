@@ -1,0 +1,9 @@
+uuid: d5074fcb-7c31-4abd-88fd-4c9e3c6bc2d6
+langcode: en
+status: true
+dependencies: {  }
+name: Services
+vid: services
+description: 'Services for departments'
+weight: 0
+new_revision: false

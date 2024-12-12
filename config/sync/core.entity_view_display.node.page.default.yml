@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_search_keywords
     - node.type.page
+    - system.menu.departments
     - system.menu.main
   module:
     - datetime
@@ -125,6 +126,28 @@ third_party_settings:
                 settings: {  }
                 third_party_settings: {  }
             weight: 0
+            additional: {  }
+          b9cc5ea2-d38c-45de-b05f-f44410ebffe7:
+            uuid: b9cc5ea2-d38c-45de-b05f-f44410ebffe7
+            region: first
+            configuration:
+              id: 'menu_block:departments'
+              label: Departments
+              label_display: visible
+              provider: menu_block
+              context_mapping: {  }
+              follow: true
+              follow_parent: active
+              label_link: true
+              label_type: root
+              level: 2
+              depth: 0
+              expand_all_items: true
+              parent: 'departments:'
+              render_parent: false
+              suggestion: departments_section_menu
+              hide_on_nonactive: true
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -

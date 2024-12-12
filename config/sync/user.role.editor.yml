@@ -9,6 +9,7 @@ dependencies:
     - media.type.image
     - media.type.remote_video
     - node.type.bios
+    - node.type.department
     - node.type.event
     - node.type.landing_page
     - node.type.news
@@ -44,11 +45,13 @@ permissions:
   - 'access toolbar'
   - 'access user profiles'
   - 'access webform overview'
+  - 'administer departments menu items'
   - 'administer main menu items'
   - 'administer secondary menu items'
   - 'cancel smart date recur instances'
   - 'change own username'
   - 'create bios content'
+  - 'create department content'
   - 'create document media'
   - 'create event content'
   - 'create image media'
@@ -61,15 +64,18 @@ permissions:
   - 'create webform'
   - 'delete all revisions'
   - 'delete any bios content'
+  - 'delete any department content'
   - 'delete any event content'
   - 'delete any landing_page content'
   - 'delete any news content'
   - 'delete any page content'
   - 'delete bios revisions'
+  - 'delete department revisions'
   - 'delete event revisions'
   - 'delete landing_page revisions'
   - 'delete news revisions'
   - 'delete own bios content'
+  - 'delete own department content'
   - 'delete own event content'
   - 'delete own files'
   - 'delete own landing_page content'
@@ -79,6 +85,7 @@ permissions:
   - 'delete own webform submission'
   - 'delete page revisions'
   - 'edit any bios content'
+  - 'edit any department content'
   - 'edit any document media'
   - 'edit any event content'
   - 'edit any image media'
@@ -89,6 +96,7 @@ permissions:
   - 'edit any webform'
   - 'edit layout paragraphs plugin config'
   - 'edit own bios content'
+  - 'edit own department content'
   - 'edit own document media'
   - 'edit own event content'
   - 'edit own image media'
@@ -101,6 +109,7 @@ permissions:
   - 'reschedule smart date recur instances'
   - 'revert all revisions'
   - 'revert bios revisions'
+  - 'revert department revisions'
   - 'revert event revisions'
   - 'revert landing_page revisions'
   - 'revert news revisions'
@@ -114,6 +123,7 @@ permissions:
   - 'view all revisions'
   - 'view any webform submission'
   - 'view bios revisions'
+  - 'view department revisions'
   - 'view event revisions'
   - 'view landing_page revisions'
   - 'view news revisions'

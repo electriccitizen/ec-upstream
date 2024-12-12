@@ -1,0 +1,9 @@
+uuid: 3a354de3-2bb0-4818-a527-f7f6c147c0c5
+langcode: en
+status: true
+dependencies: {  }
+name: Amenities
+vid: amenities
+description: 'Amenities for county parks'
+weight: 0
+new_revision: false

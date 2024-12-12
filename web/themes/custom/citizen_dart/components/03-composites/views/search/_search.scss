@@ -8,23 +8,49 @@
   position: relative;
   z-index: 2;
   padding: $spaceLg 0 $spaceXs;
-
-  &::after {
-    @include fullBack($lightGray);
-  }
+  max-width: 400px;
+  @include auto;
 
   #views-form-wrapper {
     @include safeFlex(row, wrap, center, start);
     @include auto;
 
+    .basic-form {
+      width: 100%;
+    }
+
+    .advanced-form {
+      width: 100%;
+      margin-bottom: $spaceXs;
+      
+      .drawer-content {
+        padding-top: $spaceXxs;
+        @include safeFlex(row,wrap,center,start);
+        gap: 2rem;
+        .form-item{
+          width: calc(50% - 1rem);
+          label{
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: $light;
+          }
+        }
+      }
+    }
+
     .js-form-type-textfield {
+      max-width: 100%;
+      width: 100%;
+      margin-bottom: $spaceXxs;
+
       label {
         @include visuallyHidden;
       }
     }
 
     .form-actions {
-      margin: 0;
+      margin: 0 0 0 -16px;
+      width: 100%;
     }
   }
 }

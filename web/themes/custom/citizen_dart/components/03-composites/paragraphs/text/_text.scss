@@ -6,6 +6,9 @@
 
 .paragraph--type--text {
   @include textConstrain;
+  .node-department & {
+    max-width: 100% !important;
+  }
 
   .widget-wrapper figure[role=group] {
     margin: 0 0 $spaceMd 0;

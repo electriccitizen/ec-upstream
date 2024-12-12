@@ -1,0 +1,21 @@
+uuid: c07169ea-2a65-4dcd-bbe5-b3af0e47049a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone_numbers
+    - node.type.department
+  module:
+    - telephone
+id: node.department.field_phone_numbers
+field_name: field_phone_numbers
+entity_type: node
+bundle: department
+label: 'Phone Numbers'
+description: '<strong>Suggested format:</strong> (XXX) XXX-XXX'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

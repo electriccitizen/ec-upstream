@@ -6,6 +6,9 @@
 
 .paragraph--type--links-files {
   @include textConstrain;
+  .node-department & {
+    max-width: 100% !important;
+  }
 
   .links-files {
     margin-top: 2.5rem;

@@ -1,0 +1,24 @@
+/* =============
+   DEPARTMENT NODE
+================ */
+
+@use '../../../00-base' as *;
+
+.node-teaser-department {
+  max-width: 360px;
+  @include auto;
+  display: block;
+
+  .node-teaser-content {
+    width: 100%;
+  }
+
+  .node-field-image {
+    margin-bottom: $spaceXs;
+    padding-right: 0;
+  }
+
+  .node-field-title {
+    margin-bottom: $spaceXs;
+  }
+}

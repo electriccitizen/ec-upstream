@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.field_category
+    - field.field.node.news.field_department
     - field.field.node.news.field_image
     - field.field.node.news.field_list_widget
     - field.field.node.news.field_meta_description
@@ -33,7 +34,19 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+  created:
+    type: datetime_timestamp
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_category:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_department:
     type: options_select
     weight: 4
     region: content
@@ -63,13 +76,6 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 8
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
     weight: 7
     region: content
     settings:
@@ -84,8 +90,8 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
-  created: true
   field_list_widget: true
   path: true
+  sticky: true
   uid: true
   url_redirects: true
