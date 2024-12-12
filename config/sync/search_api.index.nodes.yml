@@ -4,11 +4,12 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_paragraphs
-    - field.storage.paragraph.field_accordion_header
     - field.storage.paragraph.field_accordion_items
-    - field.storage.paragraph.field_widget_title
     - field.storage.paragraph.field_long_text
+    - field.storage.paragraph.field_accordion_header
+    - field.storage.paragraph.field_widget_title
     - field.storage.node.body
+    - field.storage.node.field_exclude_search
     - field.storage.node.field_meta_description
     - field.storage.node.field_search_keywords
     - search_api.server.local
@@ -67,6 +68,14 @@ field_settings:
         - field.storage.paragraph.field_widget_title
       module:
         - paragraphs
+  field_exclude_search:
+    label: 'Exclude from Site Search'
+    datasource_id: 'entity:node'
+    property_path: field_exclude_search
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.node.field_exclude_search
   field_long_text:
     label: 'Paragraph Text'
     datasource_id: 'entity:node'
