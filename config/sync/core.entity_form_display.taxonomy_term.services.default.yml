@@ -1,0 +1,23 @@
+uuid: f17dae90-6944-4743-b17f-f9584c61e05d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.services
+id: taxonomy_term.services.default
+targetEntityType: taxonomy_term
+bundle: services
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true
+  status: true
