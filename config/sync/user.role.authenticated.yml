@@ -9,7 +9,6 @@ dependencies:
     - file
     - filter
     - media
-    - search_api_decoupled
     - shortcut
     - system
     - toolbar
@@ -24,8 +23,6 @@ permissions:
   - 'access shortcuts'
   - 'access toolbar'
   - 'delete own files'
-  - 'use search api endpoint'
-  - 'use search with example_endpoint endpoint'
   - 'use text format basic_html'
   - 'use text format limited_html'
   - 'view media'
