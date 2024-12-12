@@ -43,6 +43,7 @@
     "drupal/default_content": "^2.0",
     "drupal/devel": "^5.0",
     "drupal/drupal-extension": "^5.0@RC",
+    "drupal/editoria11y": "^2.1",
     "drupal/embed": "^1.6",
     "drupal/entity": "^1.1",
     "drupal/entity_reference_revisions": "^1.8",
