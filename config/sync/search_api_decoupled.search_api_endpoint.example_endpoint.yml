@@ -29,7 +29,7 @@ third_party_settings:
           keys:
             - default
           settings:
-            field: result
+            field: rendered_item
 id: example_endpoint
 label: 'Example Endpoint'
 description: ''
@@ -39,6 +39,8 @@ items_per_page_options:
   - 10
 searched_fields:
   body: body
+  field_accordion_text: field_accordion_text
+  field_long_text: field_long_text
   field_meta_description: field_meta_description
   field_search_keywords: field_search_keywords
   title: title

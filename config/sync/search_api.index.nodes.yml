@@ -3,12 +3,19 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_paragraphs
+    - field.storage.paragraph.field_accordion_items
+    - field.storage.paragraph.field_long_text
+    - field.storage.paragraph.field_accordion_header
+    - field.storage.paragraph.field_widget_title
     - field.storage.node.body
+    - field.storage.node.field_exclude_search
     - field.storage.node.field_meta_description
     - field.storage.node.field_search_keywords
     - search_api.server.local
     - core.entity_view_mode.node.teaser
   module:
+    - paragraphs
     - node
     - search_api
 _core:
@@ -26,6 +33,60 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.body
+  field_accordion_header:
+    label: 'Accordion Header'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_accordion_header'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_accordion_header
+      module:
+        - paragraphs
+  field_accordion_text:
+    label: 'Accordion Body'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_accordion_items:entity:field_long_text'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_accordion_items
+        - field.storage.paragraph.field_long_text
+      module:
+        - paragraphs
+  field_accordion_title:
+    label: 'Accordion Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_accordion_items:entity:field_widget_title'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_accordion_items
+        - field.storage.paragraph.field_widget_title
+      module:
+        - paragraphs
+  field_exclude_search:
+    label: 'Exclude from Site Search'
+    datasource_id: 'entity:node'
+    property_path: field_exclude_search
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.node.field_exclude_search
+  field_long_text:
+    label: 'Paragraph Text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_long_text'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_long_text
+      module:
+        - paragraphs
   field_meta_description:
     label: 'Meta Description'
     datasource_id: 'entity:node'
@@ -44,6 +105,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_search_keywords
+  field_widget_title:
+    label: 'Widget Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_widget_title'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_widget_title
+      module:
+        - paragraphs
   rendered_item:
     label: 'Rendered HTML output'
     property_path: rendered_item
@@ -113,8 +185,13 @@ processor_settings:
     all_fields: true
     fields:
       - body
+      - field_accordion_header
+      - field_accordion_text
+      - field_accordion_title
+      - field_long_text
       - field_meta_description
       - field_search_keywords
+      - field_widget_title
       - rendered_item
       - title
       - type
@@ -134,8 +211,13 @@ processor_settings:
     all_fields: true
     fields:
       - body
+      - field_accordion_header
+      - field_accordion_text
+      - field_accordion_title
+      - field_long_text
       - field_meta_description
       - field_search_keywords
+      - field_widget_title
       - rendered_item
       - title
       - type
@@ -148,6 +230,8 @@ processor_settings:
     all_fields: true
     fields:
       - body
+      - field_accordion_text
+      - field_long_text
       - field_meta_description
       - field_search_keywords
       - rendered_item
@@ -162,6 +246,8 @@ processor_settings:
     all_fields: true
     fields:
       - body
+      - field_accordion_text
+      - field_long_text
       - field_meta_description
       - field_search_keywords
       - rendered_item
@@ -209,6 +295,8 @@ processor_settings:
     all_fields: true
     fields:
       - body
+      - field_accordion_text
+      - field_long_text
       - field_meta_description
       - field_search_keywords
       - rendered_item
@@ -224,8 +312,13 @@ processor_settings:
     all_fields: true
     fields:
       - body
+      - field_accordion_header
+      - field_accordion_text
+      - field_accordion_title
+      - field_long_text
       - field_meta_description
       - field_search_keywords
+      - field_widget_title
       - rendered_item
       - title
       - type

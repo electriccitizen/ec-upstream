@@ -232,12 +232,9 @@
   @include auto;
   background-color: $lightGrey;
   gap: 20px;
-  margin: 0 -3rem;
+  margin: 0 -3rem ;
   max-width: none;
-  padding: 0 3rem;
-  .block {
-    padding: 6rem 0 2rem;
-  }
+  padding: 6rem 3rem 2rem;
   .search-input {
     @include safeFlex(row, wrap, center, start);
     gap: 20px;
@@ -257,12 +254,14 @@
   }
 }
 .block-swc-search-input {
+  flex: 1 1 100%;
   .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--top-first &,
   .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--top-second &,
   .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--top-third &,
   .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--bottom-first &,
   .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--bottom-second &,
   .search-web-components--layout--twocol.search-web-components--layout--twocol--25-75 .layout__region--bottom-third & {
+    margin-bottom: 0;
     min-width: 280px;
   }
 }
