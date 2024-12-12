@@ -6,6 +6,9 @@
 
 .paragraph--type--video {
   @include textConstrain;
+  .node-department & {
+    max-width: 100% !important;
+  }
 
   article {
     @include animation('fadeIn 1.5s 1');

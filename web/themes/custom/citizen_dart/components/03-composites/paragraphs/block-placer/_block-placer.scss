@@ -6,5 +6,8 @@
 .paragraph--type--block-placer {
   .block-basic {
     @include textConstrain;
+    .node-department & {
+      max-width: 100% !important;
+    }
   }
 }

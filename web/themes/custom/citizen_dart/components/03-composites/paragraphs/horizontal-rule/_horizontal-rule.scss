@@ -7,6 +7,9 @@
 .paragraph--type--horizontal-rule {
   .text {
     @include textConstrain;
+    .node-department & {
+      max-width: 100% !important;
+    }
   }
 
   hr {

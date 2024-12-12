@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.content_placer.field_bios_list_type
     - field.field.paragraph.content_placer.field_content_type
+    - field.field.paragraph.content_placer.field_department
     - field.field.paragraph.content_placer.field_departments_list_type
     - field.field.paragraph.content_placer.field_events_category
     - field.field.paragraph.content_placer.field_events_list_type
@@ -42,12 +43,19 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_department:
+    type: entity_reference_entity_id
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
   field_departments_list_type:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 10
     region: content
   field_events_category:
     type: entity_reference_entity_id

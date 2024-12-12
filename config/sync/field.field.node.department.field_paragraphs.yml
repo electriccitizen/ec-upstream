@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_paragraphs
     - node.type.department
     - paragraphs.paragraphs_type.accordions
+    - paragraphs.paragraphs_type.content_placer
     - paragraphs.paragraphs_type.form_placer
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.horizontal_rule
@@ -31,6 +32,7 @@ settings:
   handler_settings:
     target_bundles:
       accordions: accordions
+      content_placer: content_placer
       form_placer: form_placer
       gallery: gallery
       horizontal_rule: horizontal_rule
@@ -52,7 +54,7 @@ settings:
         enabled: false
       content_placer:
         weight: -38
-        enabled: false
+        enabled: true
       custom_embed:
         weight: -37
         enabled: false

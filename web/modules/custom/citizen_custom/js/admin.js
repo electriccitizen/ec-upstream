@@ -8,7 +8,7 @@
         // Hide select and limit fields that are not the content type (taxonomy)
         // field. These get displayed later depending on which content type is
         // selected.
-        hideAllBut('.field--widget-options-select, .field--name-field-limit-list', contentTypeField, context);
+        hideAllBut('.field--widget-options-select, .field--name-field-limit-list, .field--name-field-department', contentTypeField, context);
         const contentTypeSelect = contentTypeField.querySelector("select");
         // Store the "machine name" of the currently selected Content type.
         let typeName = getTypeString(contentTypeSelect);
@@ -20,7 +20,7 @@
             taxonomyListType.style.display = 'block';
             taxonomyListSelect = taxonomyListType.querySelector("select");
             if (taxonomyListSelect.selectedIndex != "_none" && getTypeString(taxonomyListSelect) == 'custom') {
-              context.querySelectorAll('.field--name-field-' + typeName + '-category, .field--name-field-limit-list').forEach(element => {
+              context.querySelectorAll('.field--name-field-' + typeName + '-category, .field--name-field-limit-list, .field--name-field-department').forEach(element => {
                 element.style.display = 'block';
               });
             }
@@ -48,12 +48,12 @@
             if (typeName) {
               // If the list type is custom, show the matching category field.
               if (getTypeString(event.target) == 'custom') {
-                context.querySelectorAll('.field--name-field-' + typeName + '-category, .field--name-field-limit-list').forEach(element => {
+                context.querySelectorAll('.field--name-field-' + typeName + '-category, .field--name-field-limit-list, .field--name-field-department').forEach(element => {
                   element.style.display = 'block';
                 });
               }
               else {
-                context.querySelectorAll('.field--name-field-' + typeName + '-category, .field--name-field-limit-list').forEach(element => {
+                context.querySelectorAll('.field--name-field-' + typeName + '-category, .field--name-field-limit-list, .field--name-field-department').forEach(element => {
                   element.style.display = 'none';
                 });
               }

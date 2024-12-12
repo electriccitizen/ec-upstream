@@ -223,6 +223,22 @@ function citizen_custom_views_pre_view($view, $display_id, &$args) {
                 unset($filters['field_category_target_id']);
               }
 
+              // Unset or alter department tag filter.
+              if (isset($paragraph->field_department[0])) {
+                // Make an array out of the department set in the paragraph.
+                $departments = [];
+                foreach ($paragraph->field_department as $department) {
+                  $departments[] = $department->target_id;
+                }
+                // Replace the department filter with the paragraph department.
+                $filters['field_department_target_id']['value']['value'] = $departments;
+              }
+              else {
+                // If the department field is not used, then unset the filter.
+                if (isset($filters['field_department_target_id'])) {
+                  unset($filters['field_department_target_id']);
+                }
+              }// End department filter.
               break;
 
           }
@@ -246,6 +262,22 @@ function citizen_custom_views_pre_view($view, $display_id, &$args) {
                 // filter.
                 unset($filters['field_category_target_id']);
               }
+              // Unset or alter department tag filter.
+              if (isset($paragraph->field_department[0])) {
+                // Make an array out of the department set in the paragraph.
+                $departments = [];
+                foreach ($paragraph->field_department as $department) {
+                  $departments[] = $department->target_id;
+                }
+                // Replace the departmen filter with the paragraph department.
+                $filters['field_department_target_id']['value']['value'] = $departments;
+              }
+              else {
+                // If the department field is not used, then unset the filter.
+                if (isset($filters['field_department_target_id'])) {
+                  unset($filters['field_department_target_id']);
+                }
+              }// End department filter.
               break;
 
           }

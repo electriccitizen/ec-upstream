@@ -74,6 +74,9 @@ h2.section-title {
   @include blockTitle;
   font-size: 3rem;
   max-width: $textMax + 40px;
+  .node-department & {
+    max-width: 100%;
+  }
 }
 
 .widget-title,
@@ -81,6 +84,9 @@ h2.section-title {
   @include blockTitle;
   letter-spacing: 0;
   text-transform: none;
+  .node-department & {
+    max-width: 100%;
+  }
 }
 
 /* TEXT STYLES
