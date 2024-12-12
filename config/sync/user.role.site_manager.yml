@@ -13,13 +13,17 @@ dependencies:
     - media.type.image
     - media.type.remote_video
     - node.type.bios
+    - node.type.department
     - node.type.event
     - node.type.landing_page
     - node.type.news
     - node.type.page
     - node.type.support_book
+    - taxonomy.vocabulary.amenities
+    - taxonomy.vocabulary.audience
     - taxonomy.vocabulary.event_categories
     - taxonomy.vocabulary.news_categories
+    - taxonomy.vocabulary.services
   module:
     - addanother
     - block_content
@@ -56,6 +60,7 @@ permissions:
   - 'access user profiles'
   - 'access webform overview'
   - 'administer ancillary menu items'
+  - 'administer departments menu items'
   - 'administer footer menu items'
   - 'administer main menu items'
   - 'administer redirects'
@@ -71,6 +76,7 @@ permissions:
   - 'change own username'
   - 'create basic block content'
   - 'create bios content'
+  - 'create department content'
   - 'create document media'
   - 'create event content'
   - 'create image media'
@@ -82,14 +88,18 @@ permissions:
   - 'create remote_video media'
   - 'create social_media_links block content'
   - 'create support_book content'
+  - 'create terms in amenities'
+  - 'create terms in audience'
   - 'create terms in event_categories'
   - 'create terms in news_categories'
+  - 'create terms in services'
   - 'create url aliases'
   - 'create webform'
   - 'delete all revisions'
   - 'delete any basic block content'
   - 'delete any basic block content revisions'
   - 'delete any bios content'
+  - 'delete any department content'
   - 'delete any event content'
   - 'delete any landing_page content'
   - 'delete any news content'
@@ -102,10 +112,12 @@ permissions:
   - 'delete any webform'
   - 'delete any webform submission'
   - 'delete bios revisions'
+  - 'delete department revisions'
   - 'delete event revisions'
   - 'delete landing_page revisions'
   - 'delete news revisions'
   - 'delete own bios content'
+  - 'delete own department content'
   - 'delete own event content'
   - 'delete own files'
   - 'delete own landing_page content'
@@ -116,10 +128,14 @@ permissions:
   - 'delete own webform submission'
   - 'delete page revisions'
   - 'delete support_book revisions'
+  - 'delete terms in amenities'
+  - 'delete terms in audience'
   - 'delete terms in event_categories'
   - 'delete terms in news_categories'
+  - 'delete terms in services'
   - 'edit any basic block content'
   - 'edit any bios content'
+  - 'edit any department content'
   - 'edit any document media'
   - 'edit any event content'
   - 'edit any image media'
@@ -134,6 +150,7 @@ permissions:
   - 'edit any webform submission'
   - 'edit layout paragraphs plugin config'
   - 'edit own bios content'
+  - 'edit own department content'
   - 'edit own document media'
   - 'edit own event content'
   - 'edit own image media'
@@ -144,8 +161,11 @@ permissions:
   - 'edit own support_book content'
   - 'edit own webform'
   - 'edit own webform submission'
+  - 'edit terms in amenities'
+  - 'edit terms in audience'
   - 'edit terms in event_categories'
   - 'edit terms in news_categories'
+  - 'edit terms in services'
   - 'make smart dates recur'
   - 'reschedule smart date recur instances'
   - 'revert all revisions'
@@ -153,6 +173,7 @@ permissions:
   - 'revert any newsletter block content revisions'
   - 'revert any social_media_links block content revisions'
   - 'revert bios revisions'
+  - 'revert department revisions'
   - 'revert event revisions'
   - 'revert landing_page revisions'
   - 'revert news revisions'
@@ -172,6 +193,7 @@ permissions:
   - 'view any social_media_links block content history'
   - 'view any webform submission'
   - 'view bios revisions'
+  - 'view department revisions'
   - 'view event revisions'
   - 'view landing_page revisions'
   - 'view news revisions'

@@ -1,0 +1,60 @@
+uuid: f964dc8d-a0e5-4c40-a997-67d94a3e417a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.department.body
+    - field.field.node.department.field_address
+    - field.field.node.department.field_email
+    - field.field.node.department.field_image
+    - field.field.node.department.field_logo
+    - field.field.node.department.field_meta_description
+    - field.field.node.department.field_paragraphs
+    - field.field.node.department.field_phone_numbers
+    - field.field.node.department.field_services
+    - field.field.node.department.field_website
+    - node.type.department
+  module:
+    - address
+    - user
+id: node.department.teaser
+targetEntityType: node
+bundle: department
+mode: teaser
+content:
+  field_address:
+    type: address_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: square
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_logo:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: square
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_email: true
+  field_meta_description: true
+  field_paragraphs: true
+  field_phone_numbers: true
+  field_services: true
+  field_website: true
+  links: true
+  search_api_excerpt: true

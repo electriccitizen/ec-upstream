@@ -445,6 +445,7 @@ display:
           plugin_id: search_api_options
           operator: or
           value:
+            department: department
             landing_page: landing_page
             news: news
             page: page

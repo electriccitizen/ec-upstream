@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.content_placer.field_bios_list_type
     - field.field.paragraph.content_placer.field_content_type
+    - field.field.paragraph.content_placer.field_departments_list_type
     - field.field.paragraph.content_placer.field_events_category
     - field.field.paragraph.content_placer.field_events_list_type
     - field.field.paragraph.content_placer.field_limit_list
@@ -43,6 +44,7 @@ content:
     region: content
 hidden:
   field_bios_list_type: true
+  field_departments_list_type: true
   field_events_category: true
   field_events_list_type: true
   field_limit_list: true

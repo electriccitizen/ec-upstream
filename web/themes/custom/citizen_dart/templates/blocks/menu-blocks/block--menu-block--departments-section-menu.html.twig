@@ -31,18 +31,6 @@
  * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
  */
 #}
-{% set heading_id = 'block-' ~ content['#menu_name'] ~ '-menu' %}
-{% set attributes = attributes.addClass('block--system-menu') %}
 
-{% if configuration.label %}
-  {% set blockTitle = configuration.label|clean_class %}
-{% endif %}
-<nav aria-label="{{ configuration.label|clean_class }}" id="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby', 'id').addClass(blockTitle,heading_id) }}>
-  {# Label. If not displayed, we still provide it for screen readers. #}
-  <h2 class="block-title{% if not configuration.label_display %} visually-hidden{% endif %}">{{ configuration.label }}</h2>
-  {{ title_suffix }}
-  {# Menu. #}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
-</nav>
+{% extends 'block--menu-block--section-menu.html.twig' %}
+

@@ -3,14 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
     - field.storage.node.field_audience
+    - field.storage.node.body
     - field.storage.node.field_exclude_search
     - field.storage.node.field_meta_description
     - field.storage.node.field_search_keywords
+    - field.storage.node.field_services
     - search_api.server.local
   module:
     - node
+    - taxonomy
     - search_api
 _core:
   default_config_hash: t2DsQd4U0dH3PyvGMWVR6HHEBwqdBqnnnMyMMGpL9EE
@@ -61,6 +63,16 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_search_keywords
+  services:
+    label: Services
+    datasource_id: 'entity:node'
+    property_path: 'field_services:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_services
+      module:
+        - taxonomy
   title:
     label: Title
     datasource_id: 'entity:node'
@@ -83,6 +95,7 @@ datasource_settings:
     bundles:
       default: false
       selected:
+        - department
         - landing_page
         - news
         - page
@@ -124,6 +137,7 @@ processor_settings:
       - field_audience
       - field_meta_description
       - field_search_keywords
+      - services
       - title
       - type
     ignorable: "['¿¡!?,.:;]"
@@ -145,6 +159,7 @@ processor_settings:
       - field_audience
       - field_meta_description
       - field_search_keywords
+      - services
       - title
       - type
   language_with_fallback: {  }
@@ -158,6 +173,7 @@ processor_settings:
       - body
       - field_meta_description
       - field_search_keywords
+      - services
       - title
     exceptions:
       mexican: mexic
@@ -171,6 +187,7 @@ processor_settings:
       - body
       - field_meta_description
       - field_search_keywords
+      - services
       - title
     stopwords:
       - a
@@ -217,6 +234,7 @@ processor_settings:
       - body
       - field_meta_description
       - field_search_keywords
+      - services
       - title
     spaces: ''
     ignored: ._-
@@ -232,6 +250,7 @@ processor_settings:
       - field_audience
       - field_meta_description
       - field_search_keywords
+      - services
       - title
       - type
 tracker_settings:

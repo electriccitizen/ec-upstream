@@ -1,21 +1,19 @@
-uuid: 3a73d49c-831a-471e-a140-19ca2b250189
+uuid: 4998a02d-8ae8-4272-9b6d-a31053fca6bc
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_address
-    - node.type.event
+    - node.type.department
   module:
     - address
-_core:
-  default_config_hash: EiYpcHSt0U5FOp10uRQ5ebHSsUEGPNK-mTV1m2l4dgI
-id: node.event.field_address
+id: node.department.field_address
 field_name: field_address
 entity_type: node
-bundle: event
+bundle: department
 label: Address
-description: ''
-required: false
+description: 'Enter the address for the main office(s) of this department.'
+required: true
 translatable: false
 default_value:
   -
@@ -46,7 +44,7 @@ settings:
     familyName:
       override: hidden
     organization:
-      override: optional
+      override: hidden
     addressLine1:
       override: optional
     addressLine2:
