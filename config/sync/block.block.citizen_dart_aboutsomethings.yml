@@ -16,7 +16,7 @@ provider: null
 plugin: 'block_content:9f1d2a20-cf57-41e3-af59-6423d2a37e2a'
 settings:
   id: 'block_content:9f1d2a20-cf57-41e3-af59-6423d2a37e2a'
-  label: 'About Some Things'
+  label: 'Administration Center'
   label_display: visible
   provider: block_content
   status: true

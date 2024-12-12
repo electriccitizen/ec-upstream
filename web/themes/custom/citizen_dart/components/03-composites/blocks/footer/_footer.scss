@@ -4,6 +4,12 @@
 
 @use '../../../00-base' as *;
 
+.block-1 {
+  ul:not(.contextual-links){
+    @include listReset;
+  }
+}
+
 .block-footer-menu {
 
   ul:not(.contextual-links) {
