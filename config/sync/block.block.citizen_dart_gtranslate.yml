@@ -1,0 +1,20 @@
+uuid: 34de1eef-c7d7-462c-bba0-933dc8762ac2
+langcode: en
+status: true
+dependencies:
+  module:
+    - gtranslate
+  theme:
+    - citizen_dart
+id: citizen_dart_gtranslate
+theme: citizen_dart
+region: header
+weight: -7
+provider: null
+plugin: gtranslate_block
+settings:
+  id: gtranslate_block
+  label: GTranslate
+  label_display: '0'
+  provider: gtranslate
+visibility: {  }
