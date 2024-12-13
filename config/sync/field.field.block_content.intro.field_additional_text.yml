@@ -1,0 +1,19 @@
+uuid: fd9ecf2f-4ba1-43dc-98dd-9cf2d726e28b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.intro
+    - field.storage.block_content.field_additional_text
+id: block_content.intro.field_additional_text
+field_name: field_additional_text
+entity_type: block_content
+bundle: intro
+label: Tagline
+description: 'Add a short tagline for this intro.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

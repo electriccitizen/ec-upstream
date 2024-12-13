@@ -1,0 +1,52 @@
+uuid: 752dc2c2-df78-4426-acb1-1301c93b96e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.intro
+    - field.field.block_content.intro.field_additional_text
+    - field.field.block_content.intro.field_jump_links
+    - field.field.block_content.intro.field_video_background
+  module:
+    - file
+    - link
+id: block_content.intro.default
+targetEntityType: block_content
+bundle: intro
+mode: default
+content:
+  field_additional_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_jump_links:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_video_background:
+    type: file_video
+    label: hidden
+    settings:
+      controls: false
+      autoplay: true
+      loop: true
+      multiple_file_display_type: sources
+      muted: true
+      width: 1920
+      height: 1080
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

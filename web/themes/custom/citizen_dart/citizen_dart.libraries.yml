@@ -32,13 +32,17 @@ featherlight:
 fonts:
   css:
     theme:
-      https://fonts.googleapis.com/css?family=Lato:ital,wght@0,300;;0,400;;0,700;1,400: { type: external, preprocess: false }
+      https://fonts.googleapis.com/css?family=Lato:ital,wght@0,300;;0,400;;0,700;;0,900;1,400: { type: external, preprocess: false }
 forms:
   js:
     components/01-parts/forms/forms.js: {}
 galleries:
   js:
     components/03-composites/paragraphs/gallery/gallery.js: {}
+jump-links:
+  version: 1.0
+  js:
+    components/03-composites/blocks/intro/intro.js: { }
 modal:
   js:
     components/02-chunks/modals/modals.js: {}

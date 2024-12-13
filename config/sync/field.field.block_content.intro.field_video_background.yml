@@ -1,0 +1,27 @@
+uuid: 6fea8e60-1544-4765-a31c-b378eb9d806f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.intro
+    - field.storage.block_content.field_video_background
+  module:
+    - file
+id: block_content.intro.field_video_background
+field_name: field_video_background
+entity_type: block_content
+bundle: intro
+label: 'Video Background'
+description: 'Add a short video background that will be looped behind the intro text. The video should be no more than 20 seconds and should have medium lighting—nothing very light or very dark.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: mp4
+  max_filesize: ''
+  description_field: false
+field_type: file

@@ -1,0 +1,249 @@
+/* ===============
+   WAYFINDING WIDGET
+================= */
+
+@use '../../../00-base' as *;
+
+.paragraph--type--wayfinding{
+  &.wf-full{
+    .layout.layout--threecol-section &,.layout.layout--twocol-section{
+      @include tab{
+        height: calc(100% - 6rem);
+        .wayfinding.single{
+          height: 100%;
+          margin: 0;
+        }
+      }
+    }//end multicolumn layouts
+  }//end single in multi columns
+  .widget-wrapper{
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+  .wayfinding{
+    padding: 20px 20px 40px;
+    position: relative;
+    max-width: 440px;
+    @include auto;
+    background: $cream;
+    .wf-image{
+      margin-bottom: 5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .wayfinding-info{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .wayfinding-headline{
+      @include heading2;
+      line-height: 1.58;
+      margin-bottom: $spaceXs;
+    }
+    .wayfinding-text{
+      margin-bottom: $spaceLg;
+    }
+
+    .wayfinding-links{
+      @include safeFlex(row,wrap,start,start);
+      width: 100%;
+      gap: 24px;
+      .wayfinding-link{
+        a{
+          @include outlineButton($red);
+          min-width: 180px;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    /* BOX WAYFINDING */
+    &.box{
+      position: relative;
+      &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100px;
+        height: 45px;
+        background: $red;
+        clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+      }
+      .widget-section > .layout--onecol &,
+      .widget-section > .layout--twocol-section--67-33 > .layout__region--first &,
+      .widget-section > .layout--twocol-section--75-25 > .layout__region--first &,
+      .widget-section > .layout--twocol-section--33-67 > .layout__region--second &,
+      .widget-section > .layout--twocol-section--25-75 > .layout__region--second &,
+      .node-support-book &{
+        @include desk{
+          max-width: $textMax;
+          padding: 30px;
+          @include safeFlex(row,nowrap,start,stretch);
+          &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: auto;
+            right: auto;
+            top: 0;
+            left:0;
+            width: 100px;
+            height: 45px;
+            background: $red;
+            clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
+          }
+          .wayfinding-info{
+            @include safeFlex(row,nowrap,justify,center);
+            gap: 40px;
+            padding-right: 20px;
+            .wayfinding-text-wrapper{
+              padding-top: 50px;
+              padding-bottom: 50px;
+              width: calc(100% - 240px);
+            }
+          }
+          .wayfinding-links{
+            text-align: left;
+            width: 200px;
+            a{
+              margin-bottom: 0;
+            }
+          }
+        }//end desk
+      }//end layout logic check
+      .wayfinding-link{
+        @include safeFlex(row,nowrap,center,center);
+        @include bleed(padding, 80px);
+        @include desk{
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+      }//end wayfinding link
+    }//end box
+
+    /* FULL WAYFINDING */
+    &.full{
+      padding: 50px 0 40px;
+      margin-top: 0;
+      position: relative;
+      &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100px;
+        height: 45px;
+        background: $red;
+        clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+      }
+      .widget-section > .layout--onecol &,.node-support-book &{
+        @include desk{
+          padding: 50px 40px 10px;
+          max-width: 890px;
+          margin-top: 20px;
+          @include safeFlex(row,nowrap,start,stretch);
+          &.right:after{
+            right: auto;
+            left: 0;
+            clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+          }
+          &.left{
+            .wf-image{
+              margin-right: 50px;
+              margin-left: 0;
+              order: 1;
+              .field-media-image{
+                top: -70px;
+                left: -60px;
+                right: auto;
+              }
+            }//end field image
+            .wayfinding-info{
+              order: 2;
+            }
+          }//end left
+          .wf-image{
+            width: 400px;
+            margin-left: 50px;
+            margin-right: 0;
+            margin-bottom: 0;
+            order: 2;
+            .field-media-image{
+              top: -70px;
+              right: -60px;
+              left: auto;
+            }
+          }
+          .wayfinding-info{
+            flex: 1 1;
+            padding-left: 0;
+            padding-right: 0;
+            @include safeFlex(column,nowrap,center,start);
+            order: 1;
+          }
+          .wayfinding-headline{
+            font-size: 4rem;
+            line-height: 1.25;
+          }
+          .wayfinding-links{
+            a{
+              margin-bottom: 0;
+            }
+          }
+        }//end desk
+      }//end layout when in a single column or support book
+      .widget-section > .layout:not(.layout--onecol) &,.node-support-book &{
+        @include tab{
+          padding: 50px 20px;
+          background: $cream;
+          overflow: hidden;
+          &:after{
+            content: none;
+          }
+        }//end tab
+      }//end layout check for not one column
+      .wf-image{
+        max-width: 440px;
+        margin-top: -50px;
+        @include desk{
+          max-width: 400px;
+          margin-top: 0;
+          @include safeFlexOrder(2);
+        }
+        .image._00x600{
+          position: relative;
+          width: 100%;
+          padding-bottom: 100%;
+        }
+        .field-media-image{
+          opacity: 1;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          img{
+            max-width: 440px;
+            max-height: 440px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+            @include desk{
+              max-width: 400px;
+              max-height: 400px;
+            }
+          }
+        }
+      }//end field image
+      .wayfinding-headline{
+        font-family: $displayHeader;
+        font-size: 3.5rem;
+        line-height: 1.28;
+      }
+    }//end single
+  }// endwayfinding
+}//end wayfinding widget

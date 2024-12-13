@@ -136,6 +136,10 @@ button.disabled:hover {
   background-image: url('../icons/paragraphs/block-placer.svg');
 }
 
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-call_to_action>a:before {
+  background-image: url('../icons/paragraphs/ctas.svg');
+}
+
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-content_placer>a:before {
   background-image: url('../icons/paragraphs/content-placer.svg');
 }
@@ -182,6 +186,10 @@ button.disabled:hover {
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-video>a:before {
   background-image: url('../icons/paragraphs/video.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-wayfinding>a:before {
+  background-image: url('../icons/paragraphs/wayfinding.svg');
 }
 
 .js-lpb-component.paragraph--view-mode--preview {
