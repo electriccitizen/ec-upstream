@@ -18,6 +18,30 @@
 
   .block-field-dates {
     @include metaText;
+
+    .first-date {
+      @include safeFlex(column,nowrap,start,start);
+    }
+
+    .add-to-calendar {
+      margin-top: $spaceXxs;
+
+      a {
+        &:not(:last-of-type) {
+          margin-right: .5rem;
+        }
+      }
+    }
+
+    .addtocal__outlook {
+      display: none;
+    }
+
+    .drawer-content {
+      .add-to-calendar {
+        margin-left: .5rem;
+      }
+    }
   }
 
   .block-field-event-location + .block-field-address{
