@@ -449,6 +449,7 @@ display:
             landing_page: landing_page
             news: news
             page: page
+            park: park
           group: 1
           exposed: true
           expose:
@@ -469,6 +470,7 @@ display:
               administrator: '0'
               editor: '0'
               site_manager: '0'
+              content_manager: '0'
             reduce: true
           is_grouped: false
           group_info:
