@@ -3,7 +3,7 @@
 =================== */
 @use '../../../00-base' as *;
 
-.block-intro {
+.block-intro:not(.layout-builder-block) {
   width: 100vw;
   position: relative;
   z-index: 2;
@@ -11,8 +11,8 @@
   overflow: hidden;
   @include safeFlex(column,nowrap,center,start);
 
-  @include contentStop{
-    min-height: 500px;
+  @include desk{
+    min-height: 600px;
   }
 
   &:before {
