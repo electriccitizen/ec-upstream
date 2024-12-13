@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
-    - field.field.node.event.field_add_to_calendar
     - field.field.node.event.field_address
     - field.field.node.event.field_category
     - field.field.node.event.field_dates
@@ -175,7 +174,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_add_to_calendar: true
   field_list_widget: true
   path: true
   sticky: true

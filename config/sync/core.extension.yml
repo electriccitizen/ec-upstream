@@ -3,7 +3,7 @@ _core:
 module:
   addanother: 0
   address: 0
-  addtocalendar: 0
+  addtocal_augment: 0
   admin_toolbar: 0
   allowed_formats: 0
   antibot: 0
@@ -25,6 +25,7 @@ module:
   crop: 0
   ctools: 0
   ctools_block: 0
+  date_augmenter: 0
   datetime: 0
   default_content: 0
   dynamic_page_cache: 0

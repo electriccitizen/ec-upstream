@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
-    - field.field.node.event.field_add_to_calendar
     - field.field.node.event.field_address
     - field.field.node.event.field_category
     - field.field.node.event.field_dates
@@ -17,7 +16,6 @@ dependencies:
     - field.field.node.event.field_speakers
     - node.type.event
   module:
-    - addtocalendar
     - citizen_custom
     - layout_builder
     - layout_discovery
@@ -87,39 +85,29 @@ third_party_settings:
                     decimals: 2
                     suffix: h
                 third_party_settings:
-                  addtocalendar:
-                    addtocalendar_show: 0
-                    addtocalendar_settings:
-                      style: blue
-                      display_text: 'Add to Calendar'
-                      atc_title:
-                        field: title
-                        tokenized: Title
-                      atc_description:
-                        field: body
-                        tokenized: Description
-                      atc_location:
-                        field: field_address
-                        tokenized: Location
-                      atc_organizer:
-                        field: token
-                        tokenized: Upstream
-                      atc_organizer_email:
-                        field: token
-                        tokenized: no-reply@electriccitizen.com
-                      atc_date_end:
-                        field: field_dates
-                        tokenized: 'End Date'
-                      atc_privacy: public
-                      data_secure: auto
-                      data_calendars:
-                        'Google Calendar': 'Google Calendar'
-                        'Outlook Online': '0'
-                        iCalendar: '0'
-                        Outlook: '0'
-                        'Yahoo! Calendar': '0'
-                      multiple_value: '2'
-                      delta: '0'
+                  date_augmenter:
+                    instances:
+                      status:
+                        addtocal: true
+                      weights:
+                        order:
+                          addtocal:
+                            weight: 0
+                      settings:
+                        addtocal:
+                          label: ''
+                          event_title: '[node:title]'
+                          location: '[node:field_address]'
+                          description: '[node:body]'
+                          retain_spacing: false
+                          icons: false
+                          max_desc: 240
+                          ellipsis: true
+                          past_events: false
+                          target: ''
+                          ignore_timezone_if_UTC: true
+                      augmenter_settings:
+                        settings__formatter__third_party_settings__date_augmenter__instances__augmenter_settings__active_tab: ''
             weight: 1
             additional: {  }
           52e7c725-489a-4be8-9107-97debf399c36:
@@ -248,24 +236,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 3
             additional: {  }
-          24c02ae0-1444-4869-8dc0-cd8f88dfacd2:
-            uuid: 24c02ae0-1444-4869-8dc0-cd8f88dfacd2
-            region: first
-            configuration:
-              id: 'field_block:node:event:field_add_to_calendar'
-              label: 'Add to Calendar'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: add_to_calendar
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
@@ -276,13 +246,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: -20
-    region: content
-  field_add_to_calendar:
-    type: add_to_calendar
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 107
     region: content
   field_department:
     type: entity_reference_label
