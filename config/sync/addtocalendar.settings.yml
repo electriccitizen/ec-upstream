@@ -1,0 +1,12 @@
+_core:
+  default_config_hash: BcwjpHw9c1XDyurrV6ks92P8rKm21juJJgiWYAOqfv4
+addtocalendar_show: '0'
+style: blue
+display_text: 'Add to Calendar'
+atc_title: Title
+atc_description: Description
+atc_location: Location
+atc_privacy: public
+data_secure: auto
+multiple_value: 1
+delta: 0

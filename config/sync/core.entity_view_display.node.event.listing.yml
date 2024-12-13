@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.listing
     - field.field.node.event.body
+    - field.field.node.event.field_add_to_calendar
     - field.field.node.event.field_address
     - field.field.node.event.field_category
     - field.field.node.event.field_dates
@@ -62,6 +63,7 @@ content:
 hidden:
   body: true
   content_moderation_control: true
+  field_add_to_calendar: true
   field_address: true
   field_category: true
   field_department: true

@@ -3,6 +3,7 @@ _core:
 module:
   addanother: 0
   address: 0
+  addtocalendar: 0
   admin_toolbar: 0
   allowed_formats: 0
   antibot: 0
