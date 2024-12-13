@@ -1,0 +1,9 @@
+uuid: 82b3dcfc-dccb-4da9-beaf-e60f7e682a54
+langcode: en
+status: true
+dependencies: {  }
+name: 'Editorial Access'
+vid: editorial_access
+description: 'Editorial access section terms'
+weight: 0
+new_revision: false

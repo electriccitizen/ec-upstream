@@ -1,0 +1,25 @@
+uuid: fcd3d5ef-291c-4fcf-9c55-1ee8d4cce5e9
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:8e6ddfff-d2a3-4aa1-8a97-36012e496871'
+  module:
+    - block_content
+  theme:
+    - citizen_dart
+id: citizen_dart_noenglish
+theme: citizen_dart
+region: postcontent
+weight: 0
+provider: null
+plugin: 'block_content:8e6ddfff-d2a3-4aa1-8a97-36012e496871'
+settings:
+  id: 'block_content:8e6ddfff-d2a3-4aa1-8a97-36012e496871'
+  label: 'No English? '
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

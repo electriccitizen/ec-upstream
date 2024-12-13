@@ -1,0 +1,84 @@
+/* =============
+   DEPARTMENT NODE
+================ */
+
+@use '../../../00-base' as *;
+
+.node-park {
+
+  #node-section-2 .layout__region--content {
+    @include safeFlex(row,wrap,start,start);
+    max-width: $contentStop;
+    @include auto;
+
+    .block-field.block-body {
+      width: 100%;
+
+      @include onlySmall {
+        order: 2;
+      }
+      @include tab{
+        width: calc(100% - 320px);
+        padding-right: 32px;
+      }
+    }
+    .block-field.block-nid{ 
+      width: 100%;
+
+      @include tab {
+        width: 320px;
+      }
+    }
+  }
+
+  // Park details
+  .field.nid {
+    padding: 24px 32px;
+    background: $lightGreen;
+    
+    h2 {
+      @include heading5;
+      text-transform: uppercase;
+      margin-bottom: $spaceXs;
+    }
+
+    .park-details {
+
+      .detail-item {
+        &:not(:last-child) {
+          margin-bottom: $spaceXxs;
+        }
+      }
+
+      .park-amenities {
+        a{
+          color: $darkerGreen;
+          text-decoration: underline;
+          &:hover,&:focus {
+            color: $black;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .park-address {
+        .label {
+          font-weight: $heavy;
+        }
+      }
+    }
+
+
+  }
+}
+
+.node-teaser-park {
+  .address-wrapper {
+    @include metaText;
+    margin-bottom: $spaceXs;
+  }
+
+  .field-meta-description {
+    margin-bottom: $spaceXs;
+  }
+}

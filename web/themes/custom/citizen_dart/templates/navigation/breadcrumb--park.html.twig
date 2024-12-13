@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+
+{% extends 'breadcrumb.html.twig' %}
+
+{% block trail %}
+  <li>
+    <a href="/">Home</a>
+  </li>
+  <li>
+    <a href="{{ path('entity.node.canonical',{'node':67}) }}">Parks</a>
+  </li>
+  <li>{{ currentNode.title.value }}</li>
+{% endblock %}

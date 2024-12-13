@@ -13,5 +13,6 @@ base theme: stable9
 regions:
   header: Header
   content: Content
+  postcontent: Post-Content
   prefooter: Pre-Footer
   footer: Footer

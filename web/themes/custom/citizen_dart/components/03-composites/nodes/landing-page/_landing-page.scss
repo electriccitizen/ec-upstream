@@ -9,6 +9,12 @@
     @include edgeToEdge;
   }
 
+  .block-field.block-title {
+    &:first-child {
+      margin-top: $spaceMd;
+    }
+  }
+
   .block-field.block-body {
     @include auto;
     max-width: $textMax;

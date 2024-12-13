@@ -4,6 +4,39 @@
 
 @use '../../../00-base' as *;
 
+.postcontent-wrapper{
+  //background: linear-gradient(to right, $lightRed 0, $lightRed 10%, $white 25%, $white 75%, $lightRed 90%, $lightRed 100%);
+  // border-top: 4px solid $red;
+  // border-bottom: 4px solid $red;
+  padding: 32px $siteMarginMobile;
+  background: $white;
+  position: relative;
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 80vw;
+    height: 45vw;
+    width: 100vw;
+    clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+    background: $prefooterBack;
+    overflow: hidden;
+  }
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    right: 80vw;
+    height: 45vw;
+    width: 100vw;
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+    background: $prefooterBack;
+    overflow: hidden;
+  }
+}
+
 .prefooter-wrapper {
   background: $prefooterBack;
   color: $prefooterText;
@@ -141,15 +174,10 @@
           max-width: 320px;
           grid-column: 2 / 3;
           grid-row: 1 / 3;
-
-          .platform-links {
-            @include safeFlex(row, wrap, start, start);
-          }
         }
-
         a {
           color: $red;
-
+      
           &:hover,
           &:focus {
             color: $darkGray;
@@ -157,7 +185,7 @@
               fill: $transWhite;
             }
           }
-
+      
           .cls-1 {
             fill: $white;
           }

@@ -1,0 +1,21 @@
+uuid: 17e50371-5f13-41c9-a8ea-7c017208c92c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_park_type
+    - node.type.park
+  module:
+    - options
+id: node.park.field_park_type
+field_name: field_park_type
+entity_type: node
+bundle: park
+label: 'Park Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

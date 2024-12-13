@@ -1,0 +1,192 @@
+uuid: 8220449d-0cbf-45ba-9d88-bc6c78a70cba
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - block_content.type.newsletter
+    - block_content.type.social_media_links
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - node.type.bios
+    - node.type.department
+    - node.type.event
+    - node.type.landing_page
+    - node.type.news
+    - node.type.page
+    - node.type.park
+    - taxonomy.vocabulary.amenities
+    - taxonomy.vocabulary.audience
+    - taxonomy.vocabulary.event_categories
+    - taxonomy.vocabulary.news_categories
+    - taxonomy.vocabulary.services
+    - workflows.workflow.editorial
+  module:
+    - addanother
+    - block_content
+    - citizen_custom
+    - content_moderation
+    - help
+    - media
+    - menu_admin_per_menu
+    - node
+    - path
+    - redirect
+    - responsive_preview
+    - shortcut
+    - smart_date_recur
+    - system
+    - taxonomy
+    - webform
+    - workbench_access
+id: content_manager
+label: 'Content Manager'
+weight: 6
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access block library'
+  - 'access content overview'
+  - 'access help pages'
+  - 'access media overview'
+  - 'access responsive preview'
+  - 'access taxonomy overview'
+  - 'access user profiles'
+  - 'access webform overview'
+  - 'administer departments menu items'
+  - 'administer main menu items'
+  - 'administer redirects'
+  - 'administer webform element access'
+  - 'administer webform submission'
+  - 'cancel smart date recur instances'
+  - 'change own username'
+  - 'create basic block content'
+  - 'create bios content'
+  - 'create department content'
+  - 'create document media'
+  - 'create event content'
+  - 'create image media'
+  - 'create landing_page content'
+  - 'create media'
+  - 'create news content'
+  - 'create newsletter block content'
+  - 'create page content'
+  - 'create park content'
+  - 'create remote_video media'
+  - 'create social_media_links block content'
+  - 'create terms in amenities'
+  - 'create terms in audience'
+  - 'create terms in event_categories'
+  - 'create terms in news_categories'
+  - 'create terms in services'
+  - 'create url aliases'
+  - 'create webform'
+  - 'delete all revisions'
+  - 'delete any basic block content'
+  - 'delete any basic block content revisions'
+  - 'delete any bios content'
+  - 'delete any department content'
+  - 'delete any event content'
+  - 'delete any landing_page content'
+  - 'delete any news content'
+  - 'delete any newsletter block content'
+  - 'delete any newsletter block content revisions'
+  - 'delete any page content'
+  - 'delete any park content'
+  - 'delete any social_media_links block content'
+  - 'delete any social_media_links block content revisions'
+  - 'delete any webform'
+  - 'delete any webform submission'
+  - 'delete bios revisions'
+  - 'delete department revisions'
+  - 'delete event revisions'
+  - 'delete landing_page revisions'
+  - 'delete news revisions'
+  - 'delete own bios content'
+  - 'delete own department content'
+  - 'delete own event content'
+  - 'delete own landing_page content'
+  - 'delete own news content'
+  - 'delete own page content'
+  - 'delete own park content'
+  - 'delete own webform'
+  - 'delete own webform submission'
+  - 'delete page revisions'
+  - 'delete park revisions'
+  - 'delete terms in amenities'
+  - 'delete terms in audience'
+  - 'delete terms in event_categories'
+  - 'delete terms in news_categories'
+  - 'delete terms in services'
+  - 'edit any basic block content'
+  - 'edit any bios content'
+  - 'edit any department content'
+  - 'edit any document media'
+  - 'edit any event content'
+  - 'edit any image media'
+  - 'edit any landing_page content'
+  - 'edit any news content'
+  - 'edit any newsletter block content'
+  - 'edit any page content'
+  - 'edit any park content'
+  - 'edit any remote_video media'
+  - 'edit any social_media_links block content'
+  - 'edit any webform'
+  - 'edit layout paragraphs plugin config'
+  - 'edit own bios content'
+  - 'edit own department content'
+  - 'edit own document media'
+  - 'edit own event content'
+  - 'edit own image media'
+  - 'edit own landing_page content'
+  - 'edit own news content'
+  - 'edit own page content'
+  - 'edit own park content'
+  - 'edit own remote_video media'
+  - 'edit own webform submission'
+  - 'edit terms in amenities'
+  - 'edit terms in audience'
+  - 'edit terms in event_categories'
+  - 'edit terms in news_categories'
+  - 'edit terms in services'
+  - 'make smart dates recur'
+  - 'reschedule smart date recur instances'
+  - 'revert all revisions'
+  - 'revert any basic block content revisions'
+  - 'revert any newsletter block content revisions'
+  - 'revert any social_media_links block content revisions'
+  - 'revert bios revisions'
+  - 'revert department revisions'
+  - 'revert event revisions'
+  - 'revert landing_page revisions'
+  - 'revert news revisions'
+  - 'revert page revisions'
+  - 'revert park revisions'
+  - 'switch shortcut sets'
+  - 'update any media'
+  - 'update media'
+  - 'use add another'
+  - 'use editorial transition archive'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
+  - 'use editorial transition send_for_review'
+  - 'use workbench access'
+  - 'view all revisions'
+  - 'view any basic block content history'
+  - 'view any newsletter block content history'
+  - 'view any social_media_links block content history'
+  - 'view any unpublished content'
+  - 'view any webform submission'
+  - 'view bios revisions'
+  - 'view department revisions'
+  - 'view event revisions'
+  - 'view landing_page revisions'
+  - 'view latest version'
+  - 'view news revisions'
+  - 'view own unpublished content'
+  - 'view own webform submission'
+  - 'view page revisions'
+  - 'view park revisions'
+  - 'view the administration theme'
+  - 'view workbench access information'

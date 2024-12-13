@@ -1,0 +1,33 @@
+uuid: c9710ab2-1fbe-4f39-8d2d-66f0d4238555
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_editorial_access
+    - node.type.park
+    - taxonomy.vocabulary.editorial_access
+  content:
+    - 'taxonomy_term:editorial_access:da5e8c07-3f55-4a68-bd0d-dbc9037bc74f'
+id: node.park.field_editorial_access
+field_name: field_editorial_access
+entity_type: node
+bundle: park
+label: 'Editorial Access'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: da5e8c07-3f55-4a68-bd0d-dbc9037bc74f
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      editorial_access: editorial_access
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

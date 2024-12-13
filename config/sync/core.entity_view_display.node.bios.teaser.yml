@@ -53,6 +53,7 @@ content:
     region: content
 hidden:
   body: true
+  content_moderation_control: true
   field_bio_order: true
   field_email: true
   field_first_name: true

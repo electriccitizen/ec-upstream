@@ -44,6 +44,7 @@ content:
 hidden:
   addtoany: true
   body: true
+  content_moderation_control: true
   field_category: true
   field_department: true
   field_list_widget: true

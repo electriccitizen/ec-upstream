@@ -6,7 +6,6 @@
 .block-newsletter {
   .field.body {
     margin-bottom: $spaceMd;
-
     & > *:last-child {
       margin-bottom: 0;
     }
@@ -28,6 +27,14 @@
       }
     }
   }
+
+  .form-embed {
+    @include onlySmall {
+      max-width: 350px;
+      @include auto;
+    }
+  }
+
 
   #mc_embed_signup {
     background: none;
@@ -54,7 +61,8 @@
 
     #mc-embedded-subscribe {
       @include submitButton;
-      width: auto;
+      min-width: 0;
+      width: 130px;
       border-radius: 0;
     }
   }

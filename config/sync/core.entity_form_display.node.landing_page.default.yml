@@ -5,19 +5,44 @@ dependencies:
   config:
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_audience
+    - field.field.node.landing_page.field_editorial_access
     - field.field.node.landing_page.field_exclude_search
     - field.field.node.landing_page.field_image
     - field.field.node.landing_page.field_meta_description
+    - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_paragraphs
     - field.field.node.landing_page.field_search_keywords
     - field.field.node.landing_page.layout_builder__layout
     - node.type.landing_page
+    - workflows.workflow.editorial
   module:
     - allowed_formats
+    - content_moderation
+    - field_group
     - layout_paragraphs
     - media_library
+    - metatag
     - path
     - text
+third_party_settings:
+  field_group:
+    group_access:
+      children:
+        - field_editorial_access
+      label: Access
+      region: content
+      parent_name: ''
+      weight: 13
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
 _core:
   default_config_hash: gbY6a9MX0FQZ0CX4y9Ms2PnP6UO6AW27EelFEQURt5s
 id: node.landing_page.default
@@ -44,9 +69,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_editorial_access:
+    type: options_buttons
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_exclude_search:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -66,6 +97,14 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_metatags:
+    type: metatag_firehose
+    weight: 12
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
   field_paragraphs:
     type: layout_paragraphs
     weight: 4
@@ -80,21 +119,27 @@ content:
     third_party_settings: {  }
   field_search_keywords:
     type: string_textfield
-    weight: 6
+    weight: 7
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 7
+    weight: 8
     region: content
     settings:
       display_label: true

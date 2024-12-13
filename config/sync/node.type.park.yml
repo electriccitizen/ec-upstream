@@ -1,0 +1,17 @@
+uuid: b4ccadb7-2225-437c-9508-d58c074cd81b
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Park
+type: park
+description: 'Add park nodes for the parks and rec site.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

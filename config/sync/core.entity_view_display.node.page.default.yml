@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_audience
+    - field.field.node.page.field_editorial_access
     - field.field.node.page.field_image
     - field.field.node.page.field_last_reviewed
     - field.field.node.page.field_meta_description
+    - field.field.node.page.field_metatags
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_search_keywords
     - node.type.page
@@ -18,6 +20,7 @@ dependencies:
     - layout_builder
     - layout_discovery
     - menu_block
+    - metatag
     - system
     - user
   theme:
@@ -181,6 +184,11 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_audience:
     type: entity_reference_label
     label: above
@@ -188,6 +196,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_editorial_access:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
     region: content
   field_last_reviewed:
     type: datetime_default
@@ -204,6 +220,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
     region: content
   field_search_keywords:
     type: string

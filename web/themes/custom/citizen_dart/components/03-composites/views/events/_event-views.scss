@@ -4,6 +4,54 @@
 
 @use '../../../00-base' as *;
 
+@mixin eventLayout {
+  display: grid;
+  grid-column-gap: 40px;
+  grid-row-gap: 16px;
+  grid-template-columns: 85px 1fr;
+
+  &:not(:last-child) {
+    margin-bottom: $spaceMd;
+  }
+  
+  .views-field-field-dates-value {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+
+    .calendar-card {
+      @include safeFlex(column,nowrap,center,center);
+      padding: 10px;
+      background: $lightRed;
+      color: $black;
+      
+      .cal-day {
+        font-size: 40px;
+        line-height: 1;
+        font-weight: $heavy;
+      }
+      .cal-month {
+        font-weight: $light;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .views-field-title {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  .views-field-field-dates {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    .metatext{
+      @include metaText;
+    }
+  }
+  .views-field-field-meta-description {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+}
+
 /* ALL UPCOMING EVENTS
 ------------- */
 .events.all-upcoming-events {
@@ -11,10 +59,21 @@
     padding-bottom: $elementSpace;
   }
 
+  .view-content{
+    max-width: $textMax;
+    @include auto;
+  }
+
+  .grouping-title {
+    display: block;
+    padding-bottom: $spaceXxs;
+    margin-bottom: $spaceSm;
+    border-bottom: 1px solid $borderRule;
+    text-align: center;
+  }
+
   .views-row {
-    &:not(:last-child) {
-      margin-bottom: $spaceMd;
-    }
+    @include eventLayout;
   }
 }
 
@@ -22,8 +81,17 @@
 ------------- */
 .events.events-list {
   .views-row {
-    &:not(:last-child) {
-      margin-bottom: $spaceMd;
-    }
+    @include eventLayout;
+  }
+}
+
+/* FEATURED EVENTS
+------------- */
+.events.featured-events {
+  max-width: $textMax;
+  @include auto;
+
+  .views-row {
+    @include eventLayout;
   }
 }

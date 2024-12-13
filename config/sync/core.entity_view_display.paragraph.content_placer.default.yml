@@ -13,6 +13,7 @@ dependencies:
     - field.field.paragraph.content_placer.field_link
     - field.field.paragraph.content_placer.field_news_category
     - field.field.paragraph.content_placer.field_news_list_type
+    - field.field.paragraph.content_placer.field_parks_list_type
     - field.field.paragraph.content_placer.field_widget_title
     - paragraphs.paragraphs_type.content_placer
   module:
@@ -105,6 +106,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_parks_list_type:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
     region: content
   field_widget_title:
     type: string
