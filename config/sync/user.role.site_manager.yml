@@ -22,6 +22,7 @@ dependencies:
     - node.type.support_book
     - taxonomy.vocabulary.amenities
     - taxonomy.vocabulary.audience
+    - taxonomy.vocabulary.editorial_access
     - taxonomy.vocabulary.event_categories
     - taxonomy.vocabulary.news_categories
     - taxonomy.vocabulary.services
@@ -94,6 +95,7 @@ permissions:
   - 'create support_book content'
   - 'create terms in amenities'
   - 'create terms in audience'
+  - 'create terms in editorial_access'
   - 'create terms in event_categories'
   - 'create terms in news_categories'
   - 'create terms in services'
@@ -137,6 +139,7 @@ permissions:
   - 'delete support_book revisions'
   - 'delete terms in amenities'
   - 'delete terms in audience'
+  - 'delete terms in editorial_access'
   - 'delete terms in event_categories'
   - 'delete terms in news_categories'
   - 'delete terms in services'
@@ -172,6 +175,7 @@ permissions:
   - 'edit own webform submission'
   - 'edit terms in amenities'
   - 'edit terms in audience'
+  - 'edit terms in editorial_access'
   - 'edit terms in event_categories'
   - 'edit terms in news_categories'
   - 'edit terms in services'

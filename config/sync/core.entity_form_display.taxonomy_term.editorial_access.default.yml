@@ -1,0 +1,23 @@
+uuid: 635851bd-5615-4251-aec3-c092e10f6cab
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.editorial_access
+id: taxonomy_term.editorial_access.default
+targetEntityType: taxonomy_term
+bundle: editorial_access
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true
+  status: true
