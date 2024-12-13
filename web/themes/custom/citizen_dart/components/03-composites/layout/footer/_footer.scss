@@ -9,11 +9,36 @@
   // border-top: 4px solid $red;
   // border-bottom: 4px solid $red;
   padding: 32px $siteMarginMobile;
-  background: $cream;
+  background: $white;
+  position: relative;
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 80vw;
+    height: 45vw;
+    width: 100vw;
+    clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+    background: $prefooterBack;
+    overflow: hidden;
+  }
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    right: 80vw;
+    height: 45vw;
+    width: 100vw;
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+    background: $prefooterBack;
+    overflow: hidden;
+  }
 }
 
 .prefooter-wrapper {
-  //background: $prefooterBack;
+  background: $prefooterBack;
   color: $prefooterText;
 
   .modal-content {
