@@ -13,6 +13,7 @@ dependencies:
     - field.field.paragraph.content_placer.field_link
     - field.field.paragraph.content_placer.field_news_category
     - field.field.paragraph.content_placer.field_news_list_type
+    - field.field.paragraph.content_placer.field_parks_list_type
     - field.field.paragraph.content_placer.field_widget_title
     - paragraphs.paragraphs_type.content_placer
   module:
@@ -36,19 +37,19 @@ content:
     third_party_settings: {  }
   field_department:
     type: options_select
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   field_departments_list_type:
     type: options_select
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   field_events_category:
     type: options_select
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -60,14 +61,14 @@ content:
     third_party_settings: {  }
   field_limit_list:
     type: number
-    weight: 9
+    weight: 10
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_link:
     type: link_default
-    weight: 10
+    weight: 11
     region: content
     settings:
       placeholder_url: ''
@@ -75,13 +76,19 @@ content:
     third_party_settings: {  }
   field_news_category:
     type: options_select
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_news_list_type:
     type: options_select
     weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_parks_list_type:
+    type: options_select
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

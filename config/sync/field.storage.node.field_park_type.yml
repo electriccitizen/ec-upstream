@@ -1,0 +1,36 @@
+uuid: 32a3d3e2-c741-4246-bb6b-ac3332e5a259
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_park_type
+field_name: field_park_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: community_park
+      label: 'Community Park'
+    -
+      value: outdoor
+      label: 'Dog Park'
+    -
+      value: running_path
+      label: 'Running Path'
+    -
+      value: hiking_trail
+      label: 'Hiking Trail'
+    -
+      value: pool
+      label: Pool
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

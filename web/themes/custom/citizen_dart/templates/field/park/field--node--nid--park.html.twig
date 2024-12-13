@@ -1,0 +1,93 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see template_preprocess_field()
+ */
+#}
+
+{% extends 'field.html.twig' %}
+
+{% block fieldSingleNo %}
+  <h2>Park Details</h2>
+  <div class="park-details">
+    {% if element['#object'].field_park_type.0 %}
+      <div class="park-type detail-item">
+        <span class="inline-label">Park Type:</span>
+        {{ element['#object'].field_park_type.0.value|replace({'_':' '}) }}
+      </div>
+    {% endif %}
+    {% if element['#object'].field_area.0 %}
+      <div class="park-area detail-item">
+        <span class="inline-label">Size:</span>
+        {{ element['#object'].field_area.0.value }}
+      </div>
+    {% endif %}
+    {% if element['#object'].field_capacity.0 %}
+      <div class="park-capacity detail-item">
+        <span class="inline-label">Capacity:</span>
+        {{ element['#object'].field_capacity.0.value }}
+      </div>
+    {% endif %}
+    {% if element['#object'].field_amenities.0 %}
+      <div class="park-amenities detail-item">
+        <span class="inline-label">Amenities:</span>
+        {% for amenity in element['#object'].field_amenities %}
+          <a href="{{ path('entity.node.canonical', {'node': '67'}) }}?combine=&field_amenities_target_id%5B%5D={{ amenity.target_id }}">{{ amenity.entity.name.0.value }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% if element['#object'].field_address.0 %}
+      <div class="park-address detail-item">
+        <span class="label">Address:</span>
+        <div class="address-line1">
+          {{ element['#object'].field_address.0.address_line1 }}
+        </div>
+        <div class="address-line2">
+          {{ element['#object'].field_address.0.address_line2 }}
+        </div>
+        <div class="address-locale">
+          {{ element['#object'].field_address.0.locality }}, {{ element['#object'].field_address.0.administrative_area }} {{ element['#object'].field_address.0.postal_code }}
+        </div>
+      </div>
+    {% endif %}
+    {% if element['#object'].field_hours.0 %}
+      <div class="park-hours detail-item">
+        <span class="inline-label">Hours:</span>
+        {{ element['#object'].field_hours.0.value }}
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}
+          

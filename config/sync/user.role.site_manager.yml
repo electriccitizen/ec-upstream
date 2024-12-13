@@ -18,6 +18,7 @@ dependencies:
     - node.type.landing_page
     - node.type.news
     - node.type.page
+    - node.type.park
     - node.type.support_book
     - taxonomy.vocabulary.amenities
     - taxonomy.vocabulary.audience
@@ -85,6 +86,7 @@ permissions:
   - 'create news content'
   - 'create newsletter block content'
   - 'create page content'
+  - 'create park content'
   - 'create remote_video media'
   - 'create social_media_links block content'
   - 'create support_book content'
@@ -106,6 +108,7 @@ permissions:
   - 'delete any newsletter block content'
   - 'delete any newsletter block content revisions'
   - 'delete any page content'
+  - 'delete any park content'
   - 'delete any social_media_links block content'
   - 'delete any social_media_links block content revisions'
   - 'delete any support_book content'
@@ -123,10 +126,12 @@ permissions:
   - 'delete own landing_page content'
   - 'delete own news content'
   - 'delete own page content'
+  - 'delete own park content'
   - 'delete own support_book content'
   - 'delete own webform'
   - 'delete own webform submission'
   - 'delete page revisions'
+  - 'delete park revisions'
   - 'delete support_book revisions'
   - 'delete terms in amenities'
   - 'delete terms in audience'
@@ -143,6 +148,7 @@ permissions:
   - 'edit any news content'
   - 'edit any newsletter block content'
   - 'edit any page content'
+  - 'edit any park content'
   - 'edit any remote_video media'
   - 'edit any social_media_links block content'
   - 'edit any support_book content'
@@ -157,6 +163,7 @@ permissions:
   - 'edit own landing_page content'
   - 'edit own news content'
   - 'edit own page content'
+  - 'edit own park content'
   - 'edit own remote_video media'
   - 'edit own support_book content'
   - 'edit own webform'
@@ -178,6 +185,7 @@ permissions:
   - 'revert landing_page revisions'
   - 'revert news revisions'
   - 'revert page revisions'
+  - 'revert park revisions'
   - 'revert support_book revisions'
   - 'switch shortcut sets'
   - 'update any media'
@@ -200,5 +208,6 @@ permissions:
   - 'view own unpublished content'
   - 'view own webform submission'
   - 'view page revisions'
+  - 'view park revisions'
   - 'view support_book revisions'
   - 'view the administration theme'

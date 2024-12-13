@@ -14,6 +14,7 @@ dependencies:
     - field.field.paragraph.content_placer.field_link
     - field.field.paragraph.content_placer.field_news_category
     - field.field.paragraph.content_placer.field_news_list_type
+    - field.field.paragraph.content_placer.field_parks_list_type
     - field.field.paragraph.content_placer.field_widget_title
     - paragraphs.paragraphs_type.content_placer
   module:
@@ -53,4 +54,5 @@ hidden:
   field_link: true
   field_news_category: true
   field_news_list_type: true
+  field_parks_list_type: true
   search_api_excerpt: true

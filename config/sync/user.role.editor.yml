@@ -14,6 +14,7 @@ dependencies:
     - node.type.landing_page
     - node.type.news
     - node.type.page
+    - node.type.park
   module:
     - addanother
     - citizen_custom
@@ -59,6 +60,7 @@ permissions:
   - 'create media'
   - 'create news content'
   - 'create page content'
+  - 'create park content'
   - 'create remote_video media'
   - 'create url aliases'
   - 'create webform'
@@ -69,6 +71,7 @@ permissions:
   - 'delete any landing_page content'
   - 'delete any news content'
   - 'delete any page content'
+  - 'delete any park content'
   - 'delete bios revisions'
   - 'delete department revisions'
   - 'delete event revisions'
@@ -81,9 +84,11 @@ permissions:
   - 'delete own landing_page content'
   - 'delete own news content'
   - 'delete own page content'
+  - 'delete own park content'
   - 'delete own webform'
   - 'delete own webform submission'
   - 'delete page revisions'
+  - 'delete park revisions'
   - 'edit any bios content'
   - 'edit any department content'
   - 'edit any document media'
@@ -92,6 +97,7 @@ permissions:
   - 'edit any landing_page content'
   - 'edit any news content'
   - 'edit any page content'
+  - 'edit any park content'
   - 'edit any remote_video media'
   - 'edit any webform'
   - 'edit layout paragraphs plugin config'
@@ -103,6 +109,7 @@ permissions:
   - 'edit own landing_page content'
   - 'edit own news content'
   - 'edit own page content'
+  - 'edit own park content'
   - 'edit own remote_video media'
   - 'edit own webform submission'
   - 'make smart dates recur'
@@ -114,6 +121,7 @@ permissions:
   - 'revert landing_page revisions'
   - 'revert news revisions'
   - 'revert page revisions'
+  - 'revert park revisions'
   - 'switch shortcut sets'
   - 'update any media'
   - 'update media'
@@ -130,4 +138,5 @@ permissions:
   - 'view own unpublished content'
   - 'view own webform submission'
   - 'view page revisions'
+  - 'view park revisions'
   - 'view the administration theme'

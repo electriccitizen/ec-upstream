@@ -1,0 +1,24 @@
+uuid: 8e489503-c2f4-4fce-b405-682982fdc43e
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_parks_list_type
+field_name: field_parks_list_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: all_parks
+      label: 'All Parks'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
