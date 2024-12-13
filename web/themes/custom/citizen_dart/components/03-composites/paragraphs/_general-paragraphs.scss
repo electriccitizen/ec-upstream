@@ -22,6 +22,7 @@
   &.layout-section {
     &.background {
       padding-top: $elementSpace;
+      padding-bottom: 1px;
 
       &.light-gray {
         background: $offWhite;
@@ -29,6 +30,14 @@
 
       &.light-blue {
         background: $iceBlue;
+      }
+
+      &.light-green {
+        background: $lightGreen;
+      }
+
+      &.light-red {
+        background: $lightRed;
       }
 
       & + .backless {
