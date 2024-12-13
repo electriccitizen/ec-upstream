@@ -39,6 +39,7 @@ dependencies:
     - system
     - taxonomy
     - webform
+    - workbench_access
 id: content_manager
 label: 'Content Manager'
 weight: 6
@@ -170,6 +171,7 @@ permissions:
   - 'use editorial transition create_new_draft'
   - 'use editorial transition publish'
   - 'use editorial transition send_for_review'
+  - 'use workbench access'
   - 'view all revisions'
   - 'view any basic block content history'
   - 'view any newsletter block content history'
@@ -187,3 +189,4 @@ permissions:
   - 'view page revisions'
   - 'view park revisions'
   - 'view the administration theme'
+  - 'view workbench access information'

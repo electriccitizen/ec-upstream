@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_audience
+    - field.field.node.page.field_editorial_access
     - field.field.node.page.field_image
     - field.field.node.page.field_last_reviewed
     - field.field.node.page.field_meta_description
@@ -195,6 +196,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_editorial_access:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
     region: content
   field_last_reviewed:
     type: datetime_default

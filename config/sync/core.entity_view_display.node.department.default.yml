@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.department.body
     - field.field.node.department.field_address
+    - field.field.node.department.field_editorial_access
     - field.field.node.department.field_email
     - field.field.node.department.field_image
     - field.field.node.department.field_logo
@@ -239,6 +240,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 104
+    region: content
+  field_editorial_access:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 111
     region: content
   field_email:
     type: email_mailto

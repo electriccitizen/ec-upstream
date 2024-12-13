@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.park.field_amenities
     - field.field.node.park.field_area
     - field.field.node.park.field_capacity
+    - field.field.node.park.field_editorial_access
     - field.field.node.park.field_hours
     - field.field.node.park.field_image
     - field.field.node.park.field_meta_description
@@ -60,6 +61,7 @@ hidden:
   content_moderation_control: true
   field_area: true
   field_capacity: true
+  field_editorial_access: true
   field_hours: true
   field_paragraphs: true
   field_park_type: true

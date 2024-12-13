@@ -108,6 +108,7 @@ module:
   viewsreference: 0
   webform: 0
   webform_ui: 0
+  workbench_access: 0
   workflows: 0
   extlink: 1
   menu_admin_per_menu: 1

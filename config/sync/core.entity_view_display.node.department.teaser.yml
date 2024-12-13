@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.department.body
     - field.field.node.department.field_address
+    - field.field.node.department.field_editorial_access
     - field.field.node.department.field_email
     - field.field.node.department.field_image
     - field.field.node.department.field_logo
@@ -51,6 +52,7 @@ content:
 hidden:
   body: true
   content_moderation_control: true
+  field_editorial_access: true
   field_email: true
   field_meta_description: true
   field_paragraphs: true

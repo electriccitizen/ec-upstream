@@ -46,6 +46,7 @@ dependencies:
     - system
     - taxonomy
     - webform
+    - workbench_access
 _core:
   default_config_hash: JotecaDH6FqenwPpGTB370LYSGcRJAdLfXPZkjhsM64
 id: site_manager
@@ -74,7 +75,10 @@ permissions:
   - 'administer webform element access'
   - 'administer webform submission'
   - 'assign editor role'
+  - 'assign selected workbench access'
   - 'assign site_manager role'
+  - 'assign workbench access'
+  - 'bypass workbench access'
   - 'cancel account'
   - 'cancel smart date recur instances'
   - 'change own username'
@@ -204,6 +208,7 @@ permissions:
   - 'use text format limited_html'
   - 'use text format support_html'
   - 'use text format webform_default'
+  - 'use workbench access'
   - 'view all media revisions'
   - 'view all revisions'
   - 'view any basic block content history'
@@ -223,3 +228,4 @@ permissions:
   - 'view park revisions'
   - 'view support_book revisions'
   - 'view the administration theme'
+  - 'view workbench access information'
