@@ -8,13 +8,19 @@ dependencies:
     - field.field.node.event.field_category
     - field.field.node.event.field_dates
     - field.field.node.event.field_department
+    - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_type
     - field.field.node.event.field_list_widget
     - field.field.node.event.field_meta_description
+    - field.field.node.event.field_registration
+    - field.field.node.event.field_speakers
     - node.type.event
   module:
     - citizen_custom
     - layout_builder
     - layout_discovery
+    - link
+    - options
     - system
     - user
   theme:
@@ -117,7 +123,85 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 0
+            weight: 3
+            additional: {  }
+          b398cebb-c57d-491f-b9ab-e9f476b64f40:
+            uuid: b398cebb-c57d-491f-b9ab-e9f476b64f40
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_speakers'
+              label: Presentors
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          1bc269d7-f5f0-4cd2-87ec-34cedc4f9b8a:
+            uuid: 1bc269d7-f5f0-4cd2-87ec-34cedc4f9b8a
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_registration'
+              label: 'Registration Link'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: null
+                  url_only: true
+                  url_plain: true
+                  rel: '0'
+                  target: '0'
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          ce8df6c4-3edf-42fc-9ccb-1fadbd870ba8:
+            uuid: ce8df6c4-3edf-42fc-9ccb-1fadbd870ba8
+            region: first
+            configuration:
+              id: 'field_block:node:event:field_address'
+              label: Address
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: address_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          38fdcb5c-93ed-44cc-a7d9-3ce644a3c2b9:
+            uuid: 38fdcb5c-93ed-44cc-a7d9-3ce644a3c2b9
+            region: first
+            configuration:
+              id: 'field_block:node:event:field_event_location'
+              label: 'Event Location'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: list_default
+                label: inline
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
             additional: {  }
         third_party_settings: {  }
 id: node.event.default
@@ -138,6 +222,20 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
+  field_event_location:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_event_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
   field_list_widget:
     type: entity_reference_label
     label: above
@@ -145,6 +243,26 @@ content:
       link: true
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_registration:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_speakers:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
     region: content
   links:
     settings: {  }

@@ -1,4 +1,4 @@
-(function (Drupal, once) {
+(function ($, Drupal, once) {
 
   /* CONTENT PLACER PARAGRAPH SELECT LIST FUNCTIONALITY
   ----------------------- */
@@ -64,6 +64,61 @@
     }
   };
 
+  /* EVENT FIELD CONTROLS
+  ----------------------- */
+  Drupal.behaviors.eventFields = {
+    attach: function (context) {
+      once('isEvent', '.field--name-field-event-type', context).forEach(eventTypeField => {
+        let typeFields = $('.field--name-field-speakers,.field--name-field-registration');
+        let locationFields = $('.field--name-field-address');
+
+        typeFields.hide();
+        locationFields.hide();
+
+        const selectedType = $('.field--name-field-event-type option:selected').text().toLowerCase().replace(/_/g, '-');
+        const selectedLocation = $('.field--name-field-event-location option:selected').text().toLowerCase().replace(/_/g, '-');
+        console.log(selectedLocation);
+        if (selectedType == 'registration required') {
+          $('.field--name-field-registration').show();
+        } else if (selectedType == 'internal training') {
+          $('.field--name-field-speakers').show();
+        } 
+        if ((selectedLocation == 'on site') || (selectedLocation == 'hybrid')) {
+          $('.field--name-field-address').show();
+        }
+
+        $('.field--name-field-event-type select').change(function () {
+          const choice = $(this).find("option:selected").text().toLowerCase().replace(/_/g, '-');
+          if (choice == 'registration required') {
+            typeFields.hide();
+            locationFields.hide();
+            $('.field--name-field-registration').show();
+          } else if (choice == 'internal training') {
+            typeFields.hide();
+            locationFields.hide();
+            $('.field--name-field-speakers').show();
+          } else {
+            typeFields.hide();
+            locationFields.hide();
+          }
+        });
+
+        $('.field--name-field-event-location select').change(function () {
+          const choice = $(this).find("option:selected").text().toLowerCase().replace(/_/g, '-');
+          if ((choice == 'on site') || (choice == 'hybrid')) {
+            typeFields.hide();
+            locationFields.hide();
+            $('.field--name-field-address').show();
+          } else {
+            typeFields.hide();
+            locationFields.hide();
+          }
+        });
+
+      });
+    }
+  };
+
   /* Add paragraph preview labels
   ----------------------- */
   Drupal.behaviors.previewLabel = {
@@ -114,4 +169,4 @@
     });
   }
 
-})(Drupal, once);
+})(jQuery, Drupal, once);

@@ -20,6 +20,10 @@
     @include metaText;
   }
 
+  .block-field-event-location + .block-field-address{
+    margin-top: -4rem;
+  }
+
 }
 
 .node-teaser-event {
