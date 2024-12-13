@@ -1,0 +1,72 @@
+uuid: 226676df-bb2c-4924-ae82-d6c569b76ddc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.wayfinding.field_additional_text
+    - field.field.paragraph.wayfinding.field_alignment
+    - field.field.paragraph.wayfinding.field_image
+    - field.field.paragraph.wayfinding.field_link_multi
+    - field.field.paragraph.wayfinding.field_version
+    - field.field.paragraph.wayfinding.field_widget_title
+    - paragraphs.paragraphs_type.wayfinding
+  module:
+    - link
+    - options
+id: paragraph.wayfinding.default
+targetEntityType: paragraph
+bundle: wayfinding
+mode: default
+content:
+  field_additional_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_alignment:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: 600x600
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link_multi:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_version:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_widget_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

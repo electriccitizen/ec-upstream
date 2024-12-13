@@ -184,6 +184,10 @@ button.disabled:hover {
   background-image: url('../icons/paragraphs/video.svg');
 }
 
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-wayfinding>a:before {
+  background-image: url('../icons/paragraphs/wayfinding.svg');
+}
+
 .js-lpb-component.paragraph--view-mode--preview {
   padding: 10px 5px;
   margin: 2px;

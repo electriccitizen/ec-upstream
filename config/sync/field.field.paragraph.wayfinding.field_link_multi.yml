@@ -1,0 +1,23 @@
+uuid: b8e0612f-9bed-486d-8ec5-86c582b32aca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link_multi
+    - paragraphs.paragraphs_type.wayfinding
+  module:
+    - link
+id: paragraph.wayfinding.field_link_multi
+field_name: field_link_multi
+entity_type: paragraph
+bundle: wayfinding
+label: Buttons
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 1
+field_type: link

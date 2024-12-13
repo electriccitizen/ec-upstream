@@ -1,0 +1,23 @@
+uuid: 4a6ab01a-0966-4a72-8ec2-c67d10026f4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_version
+    - paragraphs.paragraphs_type.wayfinding
+  module:
+    - options
+id: paragraph.wayfinding.field_version
+field_name: field_version
+entity_type: paragraph
+bundle: wayfinding
+label: Version
+description: 'Wayfinding will show a larger image and you have the option to move the image to the left or the right. Wayfinding box is similar, more condensed version and should only be used for single link wayfinding.'
+required: true
+translatable: false
+default_value:
+  -
+    value: full
+default_value_callback: ''
+settings: {  }
+field_type: list_string
