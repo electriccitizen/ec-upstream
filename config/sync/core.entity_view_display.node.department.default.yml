@@ -133,7 +133,7 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 2
+            weight: 3
             additional: {  }
           16e550fb-be09-43f2-888b-832dd53bb404:
             uuid: 16e550fb-be09-43f2-888b-832dd53bb404
@@ -153,25 +153,6 @@ third_party_settings:
                   view_mode: default
                 third_party_settings: {  }
             weight: 4
-            additional: {  }
-          7a5e23e7-bc96-4ff3-bdf1-a946f921bb6e:
-            uuid: 7a5e23e7-bc96-4ff3-bdf1-a946f921bb6e
-            region: content
-            configuration:
-              id: 'field_block:node:department:field_services'
-              label: Services
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_entity_view
-                label: inline
-                settings:
-                  view_mode: default
-                third_party_settings: {  }
-            weight: 5
             additional: {  }
           5ec920f0-e0e0-4611-80e7-eb27a500b9d0:
             uuid: 5ec920f0-e0e0-4611-80e7-eb27a500b9d0
@@ -209,6 +190,25 @@ third_party_settings:
                   view_mode: square
                 third_party_settings: {  }
             weight: 1
+            additional: {  }
+          7a5e23e7-bc96-4ff3-bdf1-a946f921bb6e:
+            uuid: 7a5e23e7-bc96-4ff3-bdf1-a946f921bb6e
+            region: content
+            configuration:
+              id: 'field_block:node:department:field_services'
+              label: Services
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: inline
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 2
             additional: {  }
         third_party_settings: {  }
       -

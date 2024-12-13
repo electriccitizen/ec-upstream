@@ -37,7 +37,7 @@ third_party_settings:
       label: 'Contact Information'
       region: content
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: details
       format_settings:
         classes: ''
@@ -53,7 +53,7 @@ third_party_settings:
       label: Access
       region: content
       parent_name: ''
-      weight: 12
+      weight: 11
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -143,7 +143,7 @@ content:
     third_party_settings: {  }
   field_services:
     type: options_select
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -157,7 +157,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }

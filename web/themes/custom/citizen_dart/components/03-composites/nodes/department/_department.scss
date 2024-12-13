@@ -4,6 +4,13 @@
 
 @use '../../../00-base' as *;
 
+.node-department {
+  .block-field.block-title {
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
 .node-teaser-department {
   max-width: 360px;
   @include auto;
