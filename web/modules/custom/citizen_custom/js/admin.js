@@ -119,6 +119,46 @@
     }
   };
 
+  Drupal.behaviors.wayfindingWidget = {
+    attach: function (context, settings) {
+      $(once('isWayfindingWidget', '.field--name-field-version .js-form-type-select', context)).each(function(){
+      
+      let boxFields = $('.field--name-field-alignment,.field--name-field-image');
+
+      //hide combo by default
+      $(this).closest('.paragraphs-subform,.layout-paragraphs-component-form').find(boxFields).hide();
+
+       $(document).ajaxComplete(function () {
+
+       	//when an existing wayfind is opened, ckeck the version and set show the correct fields
+       	if($('.field--name-field-version .js-form-type-select', this).find("option:selected").val()){
+	        var chosen = $('.field--name-field-version .js-form-type-select', this).find("option:selected").text().toLowerCase().replace(/_/g, '-');
+	        if (chosen == 'box') {
+            boxFields.hide();
+          } else {
+            boxFields.show();
+          }
+	      }
+
+        // detect the chosen list type and show the proper select or manual field options
+        $('.field--name-field-version .js-form-type-select').each(function () {
+          //when the content type select is changed
+          $(this).find('select').change(function () {
+            //get the option
+            var choice = $(this).find("option:selected").text().toLowerCase().replace(/_/g, '-');
+            if (choice == 'box'){
+	            boxFields.hide();
+	          } else {
+	            boxFields.show();
+	          }
+          });
+        });
+         
+       });//end ajax complete
+     });
+    }
+  };//end wayfinding
+
   /* Add paragraph preview labels
   ----------------------- */
   Drupal.behaviors.previewLabel = {

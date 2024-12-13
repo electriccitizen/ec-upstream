@@ -1,0 +1,58 @@
+uuid: 423a66e9-25a2-41e2-b70a-c4292b75fce5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.wayfinding.field_additional_text
+    - field.field.paragraph.wayfinding.field_alignment
+    - field.field.paragraph.wayfinding.field_image
+    - field.field.paragraph.wayfinding.field_link_multi
+    - field.field.paragraph.wayfinding.field_version
+    - field.field.paragraph.wayfinding.field_widget_title
+    - image.style.paragraph_preview
+    - paragraphs.paragraphs_type.wayfinding
+  module:
+    - lazy
+    - media
+    - options
+id: paragraph.wayfinding.preview
+targetEntityType: paragraph
+bundle: wayfinding
+mode: preview
+content:
+  field_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: paragraph_preview
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      lazy:
+        lazy_image: '0'
+        placeholder_style: ''
+        data_uri: false
+    weight: 1
+    region: content
+  field_version:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_widget_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_additional_text: true
+  field_alignment: true
+  field_link_multi: true
+  search_api_excerpt: true

@@ -19,6 +19,7 @@ dependencies:
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.wayfinding
   module:
     - entity_reference_revisions
 _core:
@@ -51,6 +52,7 @@ settings:
       quote: quote
       text: text
       video: video
+      wayfinding: wayfinding
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
@@ -74,6 +76,9 @@ settings:
       gallery:
         weight: -34
         enabled: true
+      gallery_item:
+        weight: 27
+        enabled: false
       horizontal_rule:
         weight: -33
         enabled: true
@@ -83,11 +88,11 @@ settings:
       layout_section:
         weight: -31
         enabled: true
+      layout_section_simple:
+        weight: 31
+        enabled: false
       links_files:
         weight: -30
-        enabled: true
-      map:
-        weight: -29
         enabled: true
       portal:
         weight: -27
@@ -103,5 +108,8 @@ settings:
         enabled: true
       video:
         weight: -23
+        enabled: true
+      wayfinding:
+        weight: 38
         enabled: true
 field_type: entity_reference_revisions

@@ -1,0 +1,27 @@
+uuid: b33b5c86-24f1-4b67-9a58-fc19d8d386f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_version
+field_name: field_version
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: full
+      label: Full
+    -
+      value: box
+      label: Box
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -15,6 +15,7 @@ dependencies:
     - paragraphs.paragraphs_type.links_files
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.wayfinding
   module:
     - entity_reference_revisions
 id: node.department.field_paragraphs
@@ -41,6 +42,7 @@ settings:
       links_files: links_files
       text: text
       video: video
+      wayfinding: wayfinding
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
@@ -96,5 +98,8 @@ settings:
         enabled: true
       video:
         weight: -23
+        enabled: true
+      wayfinding:
+        weight: 38
         enabled: true
 field_type: entity_reference_revisions
