@@ -35,6 +35,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  content_moderation_control: true
   field_exclude_search: true
   field_paragraphs: true
   field_support_type: true

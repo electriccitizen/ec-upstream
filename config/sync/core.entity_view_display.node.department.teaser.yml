@@ -50,6 +50,7 @@ content:
     region: content
 hidden:
   body: true
+  content_moderation_control: true
   field_email: true
   field_meta_description: true
   field_paragraphs: true

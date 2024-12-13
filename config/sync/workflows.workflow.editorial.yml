@@ -1,0 +1,88 @@
+uuid: 33a1e26a-b309-435e-8393-90336abd0858
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.bios
+    - node.type.department
+    - node.type.event
+    - node.type.landing_page
+    - node.type.news
+    - node.type.page
+    - node.type.park
+    - node.type.support_book
+  module:
+    - content_moderation
+id: editorial
+label: Editorial
+type: content_moderation
+type_settings:
+  states:
+    archived:
+      label: Archived
+      weight: 1
+      published: false
+      default_revision: true
+    draft:
+      label: Draft
+      weight: -2
+      published: false
+      default_revision: false
+    needs_review:
+      label: 'Needs Review'
+      weight: -1
+      published: false
+      default_revision: false
+    published:
+      label: Published
+      weight: 0
+      published: true
+      default_revision: true
+  transitions:
+    archive:
+      label: Archive
+      from:
+        - archived
+        - draft
+        - needs_review
+        - published
+      to: archived
+      weight: 1
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - archived
+        - draft
+        - needs_review
+        - published
+      to: draft
+      weight: -2
+    publish:
+      label: Publish
+      from:
+        - archived
+        - draft
+        - needs_review
+        - published
+      to: published
+      weight: 0
+    send_for_review:
+      label: 'Send for Review'
+      from:
+        - archived
+        - draft
+        - needs_review
+        - published
+      to: needs_review
+      weight: -1
+  entity_types:
+    node:
+      - bios
+      - department
+      - event
+      - landing_page
+      - news
+      - page
+      - park
+      - support_book
+  default_moderation_state: draft

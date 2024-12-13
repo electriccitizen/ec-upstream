@@ -48,18 +48,19 @@ content:
         decimals: 2
         suffix: h
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_meta_description:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
 hidden:
   addtoany: true
   body: true
+  content_moderation_control: true
   field_address: true
   field_category: true
   field_department: true

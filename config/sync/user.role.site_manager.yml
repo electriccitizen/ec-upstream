@@ -25,10 +25,12 @@ dependencies:
     - taxonomy.vocabulary.event_categories
     - taxonomy.vocabulary.news_categories
     - taxonomy.vocabulary.services
+    - workflows.workflow.editorial
   module:
     - addanother
     - block_content
     - citizen_custom
+    - content_moderation
     - file
     - filter
     - help
@@ -191,6 +193,10 @@ permissions:
   - 'update any media'
   - 'update media'
   - 'use add another'
+  - 'use editorial transition archive'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
+  - 'use editorial transition send_for_review'
   - 'use text format limited_html'
   - 'use text format support_html'
   - 'use text format webform_default'
@@ -199,11 +205,13 @@ permissions:
   - 'view any basic block content history'
   - 'view any newsletter block content history'
   - 'view any social_media_links block content history'
+  - 'view any unpublished content'
   - 'view any webform submission'
   - 'view bios revisions'
   - 'view department revisions'
   - 'view event revisions'
   - 'view landing_page revisions'
+  - 'view latest version'
   - 'view news revisions'
   - 'view own unpublished content'
   - 'view own webform submission'

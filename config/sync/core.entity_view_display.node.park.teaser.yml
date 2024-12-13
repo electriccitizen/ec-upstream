@@ -57,6 +57,7 @@ content:
     region: content
 hidden:
   body: true
+  content_moderation_control: true
   field_area: true
   field_capacity: true
   field_hours: true
