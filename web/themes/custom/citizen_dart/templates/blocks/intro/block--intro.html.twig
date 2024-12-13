@@ -1,0 +1,64 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+
+{% extends 'block.html.twig' %}
+
+
+{% block blockSetup %}
+  {{ attach_library('citizen_dart/select') }}
+  {{ attach_library('citizen_dart/jump-links') }}
+
+  {{ title_prefix }}
+  <div class="intro-text">
+    <div class="intro-text-inner">
+      {% if label %}
+        <h1 class="intro-title">{% block labelText %}{{ label }}{% endblock %}</h1>
+      {% endif %}
+      {{ content.field_additional_text }}
+      <div class="jump-menu">      
+        <label for="{% block labelFor %}jump-links-wantto{% endblock %}" class="visually-hidden">{% block label %}Quicklinks{% endblock %}</label>
+        <select id="{% block jumpId %}jump-links-wantto{% endblock %}" class="form-select select-jump">
+          <option>I want to...</option>
+          {% for jump in content.field_jump_links %}
+            <option value="{{ jump['#url'] }}">{{ jump['#title'] }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+  </div>
+  {{ content.field_video_background }}
+  <div class="video-control">
+    <a href="#" class="video-motion-toggle" state="playing">Pause Video</a>
+  </div>
+  {{ title_suffix }}
+{% endblock %}
+
+
+
+
+

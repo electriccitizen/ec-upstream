@@ -1,0 +1,8 @@
+uuid: cdc0207e-e3ab-48b6-b380-78c60175a357
+langcode: en
+status: true
+dependencies: {  }
+id: intro
+label: Intro
+revision: false
+description: 'An intro block for use on the home page.'

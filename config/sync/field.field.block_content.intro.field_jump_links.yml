@@ -1,0 +1,23 @@
+uuid: ac01bb6d-d5ac-4a83-9156-4069b145e343
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.intro
+    - field.storage.block_content.field_jump_links
+  module:
+    - link
+id: block_content.intro.field_jump_links
+field_name: field_jump_links
+entity_type: block_content
+bundle: intro
+label: 'I want to...'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link
