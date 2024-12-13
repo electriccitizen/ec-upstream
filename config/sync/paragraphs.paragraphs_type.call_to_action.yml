@@ -1,0 +1,10 @@
+uuid: ad04b3f3-acfb-4a85-af15-6d447f834a40
+langcode: en
+status: true
+dependencies: {  }
+id: call_to_action
+label: 'Call to Action'
+icon_uuid: null
+icon_default: null
+description: 'Add a call to action to landing or department pages'
+behavior_plugins: {  }

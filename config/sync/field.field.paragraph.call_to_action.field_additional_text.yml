@@ -1,0 +1,19 @@
+uuid: 4986bb02-958f-4fab-be88-84851752b8c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_additional_text
+    - paragraphs.paragraphs_type.call_to_action
+id: paragraph.call_to_action.field_additional_text
+field_name: field_additional_text
+entity_type: paragraph
+bundle: call_to_action
+label: 'Additional Text'
+description: 'Add one to two short sentences letting the user know why this is important.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
