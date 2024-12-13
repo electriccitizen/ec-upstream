@@ -1,0 +1,114 @@
+/* ================
+	 JUMP LINKS (I WANT TO)
+=================== */
+@use '../../../00-base' as *;
+
+.block-intro {
+  width: 100vw;
+  position: relative;
+  z-index: 2;
+  @include edgeToEdge;
+  overflow: hidden;
+  @include safeFlex(column,nowrap,center,start);
+
+  @include contentStop{
+    min-height: 500px;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(to right, rgba(97,5,9,0.8) 0, rgba(177,17,22,0.2) 100%);
+  }
+
+  .intro-text {
+    padding: 80px $siteMarginMobile;
+    max-width: $contentStop;
+    width: 100%;
+    @include auto;
+    position: relative;
+    z-index: 3;
+   
+
+    h1 {
+      color: $white;
+      font-size: 8rem;
+      font-weight: 900;
+      margin-bottom: $spaceXxs;
+
+      @include tab {
+        font-size: 10rem;
+      }
+    }
+
+    .field-additional-text{
+      font-size: 20px;
+      color: $white;
+      margin-bottom: $spaceMd;
+    }
+  }
+  .select2 {
+    width: 60% !important;
+    max-width: 460px !important;
+
+    .select2-selection--single {
+      background: rgba(35,35,35,0.4);
+      border-color: $white;
+
+      .select2-selection__rendered {
+        background: transparent;
+        color: $white;
+      }
+
+      .select2-selection__arrow:after{
+        color: $white;
+      }
+    }
+  }
+
+  .field-video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    video {
+      width: 150vw !important;
+      height: auto !important;
+
+      @include tab {
+        width: 100vw !important;
+      }
+    }
+  }
+
+  .video-control{
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    z-index: 3;
+    a{
+      color: $white;
+      display: block;
+      width: 32px;
+      height: 32px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      text-indent: -9999px;
+      &[state='playing']{
+        background-image: url(../images/elements/pause-white.svg);
+      }
+      &[state='paused']{
+        background-image: url(../images/elements/play-white.svg);
+      }
+    }
+  }
+}

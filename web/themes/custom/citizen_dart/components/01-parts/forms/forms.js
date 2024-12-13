@@ -66,7 +66,7 @@
 
         // Call the initialization function on the specified select elements.
         documentReady(function () {
-          initializeSelect2('form.views-exposed-form select, form.webform-submission-form select, form#views-exposed-form-site-search-site-search-block select');
+          initializeSelect2('form.views-exposed-form select, form.webform-submission-form select, form#views-exposed-form-site-search-site-search-block select,.block-intro select');
           updateSelect2Accessibility();
         });
 
