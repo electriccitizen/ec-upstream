@@ -74,6 +74,18 @@
 		</main>
 	{% endblock %}
 
+  {% block pagePostContent %}
+		{% if page.postcontent %}
+			<section class="postcontent-wrapper" role="complementary" aria-label="{{ "Post Content"|t }}">
+				<div class="postcontent-inner">
+					{% block prepostContent %}
+						{{ page.postcontent }}
+					{% endblock %}
+				</div>
+			</section>
+		{% endif %}
+	{% endblock %}
+
 	{% block pagePreFooter %}
 		{% if page.prefooter %}
 			<section class="prefooter-wrapper" role="complementary" aria-label="{{ "Prefooter"|t }}">

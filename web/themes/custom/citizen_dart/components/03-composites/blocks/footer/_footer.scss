@@ -4,9 +4,75 @@
 
 @use '../../../00-base' as *;
 
+
+// no english
+.block-7 {
+  .field.body {
+    text-align: center;
+    @include tab {
+      @include safeFlex(row,nowrap,center,center);
+      gap: 32px;
+      text-align: left;
+    }
+
+    h2{
+      margin-bottom: $spaceXs;
+
+      @include tab {
+        margin-bottom: 0;
+      }
+    }
+
+    svg.tel {
+      display: none;
+    }
+
+    a.ec-button {
+      position: relative;
+      padding-left: 68px;
+      font-size: 22px;
+      margin-bottom: 0;
+
+      &:hover,&:focus,&:active {
+        &:before{
+          background-color: $black;
+        }
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left: 20px;
+        top: 10px;
+        background-color: $white;
+        -webkit-mask-image: url(../images/elements/phone.svg);
+        mask-image: url(../images/elements/phone.svg);
+        background-size: 40px;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+// administrative center
 .block-1 {
-  ul:not(.contextual-links){
+
+  .field.body {
+    @include onlySmall {
+      max-width: 196px;
+      @include auto;
+    }
+  }
+
+  ul:not(.contextual-links) {
     @include listReset;
+  }
+
+  svg.tel {
+    display: none;
   }
 }
 
@@ -14,6 +80,10 @@
 
   ul:not(.contextual-links) {
     @include listReset;
+    @include onlySmall {
+      max-width: 140px;
+      @include auto;
+    }
 
     li {
       position: relative;
@@ -65,6 +135,15 @@
   }
 }
 
+.block-social-media-links {
+  .field-platforms .platform-links {
+    @include safeFlex(row, wrap, center, start);
+    @include tab {
+      @include safeFlex(row, wrap, start, start);
+    }
+  }
+}
+
 /* Ancillary Menu
 -------------- */
 .block-ancillary-menu {
@@ -83,6 +162,7 @@
       a {
         display: block;
         color: $footerLink;
+        font-size: 14px;
 
         &:hover,
         &:focus {
