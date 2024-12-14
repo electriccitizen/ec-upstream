@@ -46,7 +46,14 @@
 // Regular 403 and 404 messages.
 body .layout-content {
   & > .error-content {
+    position: relative;
     @include warning;
+    .block-alerts{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
   }
 }
 

@@ -12,7 +12,7 @@
   }
 
   .views-row {
-    padding: 16px $siteMarginMobile;
+    padding: 16px 6rem;
     font-size: 19px;
     text-align: center;
     color: $white;
@@ -38,11 +38,27 @@
 
     a{
       color: $white;
-      text-decoration: underline;
+      &:not(.close-x) {
+        text-decoration: underline;
+      }
+      &.close-x{
+        position: absolute;
+        top: 10px;
+        right: 0;
+        @include safeFlex(column,nowrap,center,center);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+      }
 
       &:hover,&:focus{
         color: $transWhite;
         text-decoration: none;
+
+        &.close-x{
+          background: $transWhite;
+          color: $black;
+        }
       }
     }
 
@@ -56,11 +72,15 @@
 
       a{
         color: $black;
-        text-decoration: underline;
+        &:not(.close-x) {
+          text-decoration: underline;
+        }
   
         &:hover,&:focus{
           color: $transBlack;
-          text-decoration: none;
+          &:not(.close-x) {
+            text-decoration: none;
+          }
         }
       }
     } 
