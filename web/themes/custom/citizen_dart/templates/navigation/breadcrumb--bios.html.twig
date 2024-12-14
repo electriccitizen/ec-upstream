@@ -11,6 +11,11 @@
 {% extends 'breadcrumb.html.twig' %}
 
 {% block trail %}
-  {{ parent() }}
+  <li>
+    <a href="/">Home</a>
+  </li>
+  <li>
+    <a href="{{ path('entity.node.canonical',{'node':65}) }}">Directory</a>
+  </li>
   <li>{{ currentNode.title.value }}</li>
 {% endblock %}

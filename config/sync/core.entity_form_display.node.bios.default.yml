@@ -15,8 +15,10 @@ dependencies:
     - field.field.node.bios.field_position
     - image.style.thumbnail
     - node.type.bios
+    - workflows.workflow.editorial
   module:
     - allowed_formats
+    - content_moderation
     - field_group
     - focal_point
     - telephone
@@ -122,6 +124,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     weight: 8
@@ -134,7 +142,11 @@ hidden:
   field_list_widget: true
   path: true
   promote: true
+  publish_on: true
+  publish_state: true
   sticky: true
   title: true
   uid: true
+  unpublish_on: true
+  unpublish_state: true
   url_redirects: true

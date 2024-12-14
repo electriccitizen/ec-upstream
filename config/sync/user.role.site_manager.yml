@@ -7,6 +7,7 @@ dependencies:
     - block_content.type.intro
     - block_content.type.newsletter
     - block_content.type.social_media_links
+    - core.entity_view_display.node.landing_page.default
     - filter.format.limited_html
     - filter.format.support_html
     - filter.format.webform_default
@@ -38,6 +39,7 @@ dependencies:
     - file
     - filter
     - help
+    - layout_builder
     - media
     - menu_admin_per_menu
     - node
@@ -85,6 +87,8 @@ permissions:
   - 'cancel account'
   - 'cancel smart date recur instances'
   - 'change own username'
+  - 'configure editable landing_page node layout overrides'
+  - 'create and edit custom blocks'
   - 'create announcement content'
   - 'create basic block content'
   - 'create bios content'

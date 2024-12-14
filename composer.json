@@ -77,6 +77,8 @@
     "drupal/redirect": "^1.6",
     "drupal/responsive_preview": "^2.0",
     "drupal/role_delegation": "^1.1",
+    "drupal/scheduler": "^2.1",
+    "drupal/scheduler_content_moderation_integration": "^3.0",
     "drupal/search_api": "^1.18",
     "drupal/search_api_decoupled": "^1.0@alpha",
     "drupal/search_web_components": "^1.0@alpha",

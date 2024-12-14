@@ -12,5 +12,30 @@
     @include onlySmall {
       @include safeFlex(row, wrap, center, start);
     }
+    .node-content & {
+      @include safeFlex(row, wrap, center, start);
+
+      a {
+        &:hover,&:focus{
+          @include transAll(.3);
+          svg {
+            fill: $black;
+          }
+          .cls-1{
+            fill: $buttonBackHover;
+          }
+        }
+      }
+
+      svg {
+        width: 48px;
+        height: 48px;
+        fill: $white;
+      }
+
+      .cls-1 {
+        fill: $red; 
+      }
+    }
   }
 }

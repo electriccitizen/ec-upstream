@@ -10,9 +10,13 @@ dependencies:
     - field.field.node.news.field_list_widget
     - field.field.node.news.field_meta_description
     - node.type.news
+    - workflows.workflow.editorial
   module:
     - allowed_formats
+    - content_moderation
     - media_library
+    - scheduler
+    - scheduler_content_moderation_integration
     - text
 _core:
   default_config_hash: Iq3XY-ukBPCbRmU85Iae8of6Ds4UXrvg7dcmav7qjaM
@@ -67,12 +71,35 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   promote:
     type: boolean_checkbox
     weight: 6
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 52
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  publish_state:
+    type: scheduler_moderation
+    weight: 53
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 50
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
@@ -88,6 +115,18 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 54
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  unpublish_state:
+    type: scheduler_moderation
+    weight: 55
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   field_list_widget: true
