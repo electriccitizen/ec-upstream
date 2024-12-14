@@ -11,6 +11,10 @@
   overflow: hidden;
   @include safeFlex(column,nowrap,center,start);
 
+  .logged-in &{
+    width: calc(100vw - 65px);
+  }
+
   @include desk{
     min-height: 600px;
   }
@@ -28,6 +32,19 @@
     background: linear-gradient(to right, rgba(28,33,13,0.8) 0, rgba(86,100,44,0.2) 100%);
   }
 
+  &:after{
+    content: '';
+    display: block;
+    width: 160px;
+    height: 70px;
+    position: absolute;
+    top: -1px;
+    right: 0;
+    z-index: 2;
+    background: $white;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+  }
+
   .intro-text {
     padding: 80px $siteMarginMobile;
     max-width: $contentStop;
@@ -35,7 +52,6 @@
     @include auto;
     position: relative;
     z-index: 3;
-   
 
     h1 {
       color: $white;
@@ -87,6 +103,10 @@
 
       @include tab {
         width: 100vw !important;
+
+        .logged-in &{
+          width: calc(100vw - 65px) !important;
+        }
       }
     }
   }
