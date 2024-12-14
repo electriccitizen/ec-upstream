@@ -3,7 +3,9 @@ langcode: en
 status: true
 dependencies:
   module:
+    - ckeditor5_premium_features
     - editor
+    - lazy
     - linkit
     - media
     - pathologic
@@ -13,29 +15,35 @@ name: 'Limited HTML'
 format: limited_html
 weight: 0
 filters:
+  ckeditor5_premium_features_collaboration_filter:
+    id: ckeditor5_premium_features_collaboration_filter
+    provider: ckeditor5_premium_features
+    status: true
+    weight: -100
+    settings: {  }
   editor_file_reference:
     id: editor_file_reference
     provider: editor
     status: false
-    weight: -46
+    weight: -42
     settings: {  }
   filter_align:
     id: filter_align
     provider: filter
     status: false
-    weight: -45
+    weight: -41
     settings: {  }
   filter_autop:
     id: filter_autop
     provider: filter
     status: true
-    weight: -44
+    weight: -46
     settings: {  }
   filter_caption:
     id: filter_caption
     provider: filter
     status: false
-    weight: -43
+    weight: -40
     settings: {  }
   filter_html:
     id: filter_html
@@ -50,31 +58,31 @@ filters:
     id: filter_html_escape
     provider: filter
     status: false
-    weight: -47
+    weight: -43
     settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
     provider: filter
     status: false
-    weight: -42
+    weight: -39
     settings: {  }
   filter_htmlcorrector:
     id: filter_htmlcorrector
     provider: filter
     status: true
-    weight: -41
+    weight: -45
     settings: {  }
   filter_image_lazy_load:
     id: filter_image_lazy_load
     provider: filter
     status: true
-    weight: -45
+    weight: -47
     settings: {  }
   filter_pathologic:
     id: filter_pathologic
     provider: pathologic
     status: true
-    weight: -40
+    weight: -44
     settings:
       settings_source: global
       local_settings:
@@ -87,6 +95,14 @@ filters:
     weight: -50
     settings:
       filter_url_length: 72
+  lazy_filter:
+    id: lazy_filter
+    provider: lazy
+    status: false
+    weight: -37
+    settings:
+      image: true
+      iframe: true
   linkit:
     id: linkit
     provider: linkit

@@ -31,6 +31,7 @@ settings:
       - '|'
       - style
       - '|'
+      - wproofreader
       - sourceEditing
       - removeFormat
       - undo
