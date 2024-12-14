@@ -4,9 +4,23 @@ status: true
 dependencies:
   module:
     - crop
+    - scheduler
 third_party_settings:
   crop:
     image_field: field_media_file
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
 _core:
   default_config_hash: ACiM5MBCpu1cSlMOBHCg3d5RSAE1G9k9trb3lF3r_Ko
 id: document
@@ -14,7 +28,7 @@ label: Document
 description: 'Add documents as media entities.'
 source: file
 queue_thumbnail_downloads: false
-new_revision: false
+new_revision: true
 source_configuration:
   source_field: field_media_file
 field_map: {  }
