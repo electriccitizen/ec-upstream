@@ -1,0 +1,27 @@
+/* ============
+   BASIC PAGE
+================ */
+
+@use '../../../00-base' as *;
+
+.node-announcement {
+  max-width: $textMax;
+  @include auto;
+
+  .urgency {
+    display: inline-block;
+    padding: 8px 12px;
+    &.emergency {
+      background: #fc0202;
+      color: $white;
+    }
+    &.urgent {
+      background: $yellow;
+      color: $black;
+    }
+    &.announcement {
+      background: $darkBlue;
+      color: $white;
+    }
+  }
+}

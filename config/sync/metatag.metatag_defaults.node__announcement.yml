@@ -1,0 +1,8 @@
+uuid: ea33f5a5-3e31-4150-8de6-263f271a53e3
+langcode: en
+status: true
+dependencies: {  }
+id: node__announcement
+label: 'Content: Alert'
+tags:
+  robots: 'noindex, nofollow, noarchive, nosnippet, noimageindex'

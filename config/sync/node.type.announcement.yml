@@ -1,0 +1,17 @@
+uuid: 08887b2b-cb72-4485-9a3b-57605b93ec3c
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Alert
+type: announcement
+description: 'Add announcements or alerts.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

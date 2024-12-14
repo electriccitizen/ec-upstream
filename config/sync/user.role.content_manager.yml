@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - block_content.type.basic
+    - block_content.type.intro
     - block_content.type.newsletter
     - block_content.type.social_media_links
     - media.type.document
@@ -67,6 +68,7 @@ permissions:
   - 'create document media'
   - 'create event content'
   - 'create image media'
+  - 'create intro block content'
   - 'create landing_page content'
   - 'create media'
   - 'create news content'
@@ -88,6 +90,8 @@ permissions:
   - 'delete any bios content'
   - 'delete any department content'
   - 'delete any event content'
+  - 'delete any intro block content'
+  - 'delete any intro block content revisions'
   - 'delete any landing_page content'
   - 'delete any news content'
   - 'delete any newsletter block content'
@@ -125,6 +129,7 @@ permissions:
   - 'edit any document media'
   - 'edit any event content'
   - 'edit any image media'
+  - 'edit any intro block content'
   - 'edit any landing_page content'
   - 'edit any news content'
   - 'edit any newsletter block content'
@@ -154,6 +159,7 @@ permissions:
   - 'reschedule smart date recur instances'
   - 'revert all revisions'
   - 'revert any basic block content revisions'
+  - 'revert any intro block content revisions'
   - 'revert any newsletter block content revisions'
   - 'revert any social_media_links block content revisions'
   - 'revert bios revisions'
@@ -174,6 +180,7 @@ permissions:
   - 'use workbench access'
   - 'view all revisions'
   - 'view any basic block content history'
+  - 'view any intro block content history'
   - 'view any newsletter block content history'
   - 'view any social_media_links block content history'
   - 'view any unpublished content'

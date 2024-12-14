@@ -16,6 +16,7 @@ button:
   bios: false
   department: false
   park: false
+  announcement: false
 message:
   page: false
   event: false
@@ -28,6 +29,7 @@ message:
   bios: false
   department: false
   park: false
+  announcement: false
 tab:
   page: true
   event: true
@@ -40,6 +42,7 @@ tab:
   bios: true
   department: true
   park: true
+  announcement: true
 tab_edit:
   page: false
   event: false
@@ -52,3 +55,4 @@ tab_edit:
   bios: false
   department: false
   park: false
+  announcement: false

@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+
+{% extends 'views-view-unformatted.html.twig' %}
+
+
+{% block unformattedRows %}
+	{% for row in rows %}
+	  {%
+	    set row_classes = [
+	      default_row_class ? 'views-row',
+	    ]
+	  %}
+    {% if row.content['#row'].node__field_section_url_field_section_url_value %}
+      {% set sectionURL = row.content['#row'].node__field_section_url_field_section_url_value  %}
+    {% endif  %}
+    {% if sectionURL and sectionURL == starting_segment %}
+      <div{{ row.attributes.addClass(row_classes) }}>
+        {% block rowContent %}
+          {{ row.content }}
+        {% endblock %}
+      </div>
+    {% elseif not row.content['#row'].node__field_section_url_field_section_url_value %}
+      <div{{ row.attributes.addClass(row_classes) }}>
+        {{ row.content }}
+      </div>
+    {% endif %}
+	{% endfor %}
+{% endblock %}

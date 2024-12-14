@@ -1,0 +1,19 @@
+uuid: b2ca31e1-ff73-46de-bc86-b6794001e160
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section_url
+    - node.type.announcement
+id: node.announcement.field_section_url
+field_name: field_section_url
+entity_type: node
+bundle: announcement
+label: 'Section URL'
+description: 'Enter the URL path(s) you want this alert displayed on. <strong>Example: <code>/goverment/</code></strong>  will display the alert on all pages starting with <code>/government/</code>. Each path must start <em>and</em> end with a <code>/</code> character. Leave blank to show this alert on <em>all</em> pages.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

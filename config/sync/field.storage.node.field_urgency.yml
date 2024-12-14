@@ -1,0 +1,30 @@
+uuid: 84f3b464-e298-4aee-8c3c-509a85d39af8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_urgency
+field_name: field_urgency
+entity_type: node
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 1
+      label: Emergency
+    -
+      value: 2
+      label: Urgent
+    -
+      value: 3
+      label: 'Announcement (not urgent)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

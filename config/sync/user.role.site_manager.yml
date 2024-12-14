@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - block_content.type.basic
+    - block_content.type.intro
     - block_content.type.newsletter
     - block_content.type.social_media_links
     - filter.format.limited_html
@@ -12,6 +13,7 @@ dependencies:
     - media.type.document
     - media.type.image
     - media.type.remote_video
+    - node.type.announcement
     - node.type.bios
     - node.type.department
     - node.type.event
@@ -83,12 +85,14 @@ permissions:
   - 'cancel account'
   - 'cancel smart date recur instances'
   - 'change own username'
+  - 'create announcement content'
   - 'create basic block content'
   - 'create bios content'
   - 'create department content'
   - 'create document media'
   - 'create event content'
   - 'create image media'
+  - 'create intro block content'
   - 'create landing_page content'
   - 'create media'
   - 'create news content'
@@ -107,11 +111,15 @@ permissions:
   - 'create url aliases'
   - 'create webform'
   - 'delete all revisions'
+  - 'delete announcement revisions'
+  - 'delete any announcement content'
   - 'delete any basic block content'
   - 'delete any basic block content revisions'
   - 'delete any bios content'
   - 'delete any department content'
   - 'delete any event content'
+  - 'delete any intro block content'
+  - 'delete any intro block content revisions'
   - 'delete any landing_page content'
   - 'delete any news content'
   - 'delete any newsletter block content'
@@ -128,6 +136,7 @@ permissions:
   - 'delete event revisions'
   - 'delete landing_page revisions'
   - 'delete news revisions'
+  - 'delete own announcement content'
   - 'delete own bios content'
   - 'delete own department content'
   - 'delete own event content'
@@ -148,12 +157,14 @@ permissions:
   - 'delete terms in event_categories'
   - 'delete terms in news_categories'
   - 'delete terms in services'
+  - 'edit any announcement content'
   - 'edit any basic block content'
   - 'edit any bios content'
   - 'edit any department content'
   - 'edit any document media'
   - 'edit any event content'
   - 'edit any image media'
+  - 'edit any intro block content'
   - 'edit any landing_page content'
   - 'edit any news content'
   - 'edit any newsletter block content'
@@ -165,6 +176,7 @@ permissions:
   - 'edit any webform'
   - 'edit any webform submission'
   - 'edit layout paragraphs plugin config'
+  - 'edit own announcement content'
   - 'edit own bios content'
   - 'edit own department content'
   - 'edit own document media'
@@ -189,7 +201,9 @@ permissions:
   - 'mark as ok in editoria11y'
   - 'reschedule smart date recur instances'
   - 'revert all revisions'
+  - 'revert announcement revisions'
   - 'revert any basic block content revisions'
+  - 'revert any intro block content revisions'
   - 'revert any newsletter block content revisions'
   - 'revert any social_media_links block content revisions'
   - 'revert bios revisions'
@@ -214,7 +228,9 @@ permissions:
   - 'use workbench access'
   - 'view all media revisions'
   - 'view all revisions'
+  - 'view announcement revisions'
   - 'view any basic block content history'
+  - 'view any intro block content history'
   - 'view any newsletter block content history'
   - 'view any social_media_links block content history'
   - 'view any unpublished content'

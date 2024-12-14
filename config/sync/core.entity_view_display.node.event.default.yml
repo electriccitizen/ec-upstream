@@ -95,7 +95,7 @@ third_party_settings:
                             weight: 0
                       settings:
                         addtocal:
-                          label: ''
+                          label: 'Add to your calendar'
                           event_title: '[node:title]'
                           location: '[node:field_address]'
                           description: '[node:body]'
