@@ -26,7 +26,24 @@
     .add-to-calendar {
       margin-top: $spaceXxs;
 
+      .addtocal__label {
+        display: block;
+      }
+
       a {
+        padding: 4px 6px;
+        border: 1px solid $red;
+        color: $red;
+        display: inline-block;
+        vertical-align: center;
+
+        &:hover,&:focus {
+          text-decoration: none;
+          background: $buttonBackHover;
+          color: $buttonTextHover;
+          border-color: $buttonBackHover;
+        }
+
         &:not(:last-of-type) {
           margin-right: .5rem;
         }
@@ -40,6 +57,10 @@
     .drawer-content {
       .add-to-calendar {
         margin-left: .5rem;
+
+        a {
+          margin: .5rem 0 1rem;
+        }
       }
     }
   }
