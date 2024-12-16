@@ -31,7 +31,7 @@
 ------------------- */
 .block-system-branding-block {
   // Leave room for search toogle and menu hamburger on mobile.
-  width: calc(100% - 70px);
+  width: 170px;
   position: relative;
   z-index: 10;
 
@@ -69,10 +69,29 @@
   .t-search {
     position: absolute;
     top: 18px;
-    right: 10px;
+    right: 35px;
 
     @include desk {
       top: 0;
+      right: 0;
     }
   }
+}
+
+/* MAIN NAV BLOCK
+------------------- */
+#block-main-menu {
+  @include desk {
+    bottom: -20px;
+    padding-left: 280px;
+    position: absolute;
+    right: 0;
+  }
+}
+/* MOBILE MENU TOGGLE
+------------------ */
+#main-nav-toggle {
+  position: absolute;
+  top: 20px;
+  right: 0;
 }

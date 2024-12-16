@@ -4,13 +4,17 @@
 
 @use '../../../00-base' as *;
 
-.paragraph--type--call-to-action{
-  max-width: 894px;
-  @include auto;
+.paragraph--type--call-to-action{ 
+  @include edgeToEdge;
   position: relative;
   overflow: hidden;
-  width: 100%;
+  width: 100vw;
   padding: 86px 20px 50px;
+  @media screen and (min-width: 942px){
+    max-width: 894px;
+    @include auto;
+    width: 100%;
+  }
   //change layout and padding in a layout wide enough on a screen large enough
   .widget-section > .layout--onecol &,
   .widget-section > .layout--twocol-section--50-50 &,
@@ -85,6 +89,18 @@
     a{
       @include outlineButton($white);
       margin-bottom: 0;
+    }
+  }
+  .white-stripes{
+    position: absolute;
+    top: -50px;
+    right: -100px;
+    z-index: 1;
+    width: 263px;
+    height: 171px;
+    svg{
+      width: 100%;
+      height: 100%;
     }
   }
 }//end call to action

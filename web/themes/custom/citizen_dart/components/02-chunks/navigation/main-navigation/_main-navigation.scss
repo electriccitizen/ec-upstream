@@ -3,24 +3,12 @@
 ================ */
 @use '../../../00-base' as *;
 
-#block-main-menu {
-  @include desk {
-    bottom: -20px;
-    padding-left: 280px;
-    position: absolute;
-    right: 0;
-  }
-}
-
 /* MOBILE TOGGLE
   ------------------ */
 #main-nav-toggle {
   display: block;
   height: 32px;
   width: 32px;
-  position: absolute;
-  top: 20px;
-  right: 50px;
   @include desk {
     display: none;
   }
@@ -236,11 +224,12 @@ ul.menu-main-navigation li {
         background: $sfMobileTopBackExpanded;
 
         @include desk {
-          color: $sfTopLink;
+          color: $sfTopLinkHover;
+          background: $sfTopBackHover;
         }
 
         &:not(.menu-link-expand) {
-          border-bottom: 3px solid $transBlack;
+          border-bottom: 3px solid darken($red,5%);
 
           @include desk {
             border-bottom: 0;
@@ -250,6 +239,19 @@ ul.menu-main-navigation li {
 
       > ul {
         padding: 1.5rem 0;
+      }
+
+      &:last-child {
+        @include desk {
+          & > ul {
+            left: auto;
+            right: 0;
+            & > li > ul{
+              left: auto;
+              right: 100%;
+            }
+          }
+        }
       }
     }
 
@@ -323,6 +325,23 @@ ul.menu-main-navigation li {
       &:focus {
         &:after {
           color: $buttonBackHover;
+        }
+      }
+    }
+
+    @include onlyMobile{
+      a{
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        &.menu-item-expand{
+          height: 50px;
+          width: 50px;
+          padding: 0;
+          right: 5px;
+          &:after{
+            height: 50px;
+            width: 50px;
+          }
         }
       }
     }

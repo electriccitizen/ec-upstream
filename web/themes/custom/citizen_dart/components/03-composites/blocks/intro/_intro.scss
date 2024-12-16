@@ -16,6 +16,10 @@
   }
 
   @include desk{
+    min-height: 520px;
+  }
+
+  @include contentStop{
     min-height: 600px;
   }
 
@@ -38,11 +42,11 @@
     width: 160px;
     height: 70px;
     position: absolute;
-    top: -1px;
-    right: 0;
+    bottom: -1px;
+    left: 0;
     z-index: 2;
     background: $white;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
   }
 
   .intro-text {

@@ -148,26 +148,26 @@ $oddRowText : $baseText;
 ---------------------- */
 //desktop
 $sfTopLink : $black;
-$sfTopLinkHover : $black;
-$sfTopBackHover : $lightGray;
+$sfTopLinkHover : $white;
+$sfTopBackHover : $red;
 $sfTopActive : $link;
-$sfTopActiveHover : $link;
-$sfChildLink : $link;
-$sfChildLinkHover : $hoverLink;
+$sfTopActiveHover : $white;
+$sfChildLink : $white;
+$sfChildLinkHover : $transWhite;
 $sfChildActive : $black;
-$sfChildActiveHover : $hoverLink;
-$sfDropdown : $lightGray;
+$sfChildActiveHover : $transWhite;
+$sfDropdown : $red;
 
 //mobile
-$sfMobileDrop : $white;
-$sfMobileDropBorder : $black;
-$sfMobileItemBorder : $borderRule;
-$sfMobileTop : $link;
-$sfMobileTopBack : $white;
-$sfMobileTopExpanded : $hoverLink;
-$sfMobileTopBackExpanded : $lightGray;
-$sfMobileChild : $link;
-$sfMobileChildActive : $white;
+$sfMobileDrop : $red;
+$sfMobileDropBorder : $white;
+$sfMobileItemBorder : $white;
+$sfMobileTop : $white;
+$sfMobileTopBack : $red;
+$sfMobileTopExpanded : $white;
+$sfMobileTopBackExpanded : $red;
+$sfMobileChild : $white;
+$sfMobileChildActive : $transWhite;
 
 /* MENU BLOCK (Sidebar)
 --------------------- */
