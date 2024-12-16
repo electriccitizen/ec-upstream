@@ -20,7 +20,7 @@ function citizen_dart_preprocess_responsive_image(&$variables) {
   switch ($style_id) {
     case 'banner':
       $img_width = 1000;
-      $img_height = 400;
+      $img_height = 480;
       // Get the url for each image style being preloaded.
       $deskURL = ImageStyle::load('banner_desk')->buildUrl($variables['uri']);
       $midDeskURL = ImageStyle::load('banner_middesk')->buildUrl($variables['uri']);
