@@ -166,6 +166,29 @@
     @include quote;
   }
 
+  .ck-content hr{
+    background: $black;
+    height: 1px;
+  }
+
+  .ck-content .table table{
+    th{
+      color: $tableHeaderText;
+      background: $tableHeaderBack;
+      &.ck-editor__nested-editable:focus{
+        color: $black;
+      }
+    }
+    tbody tr:nth-child(even){
+      td{
+        background: $lightRed;
+        &.ck-editor__nested-editable:focus{
+          background: rgba(158,201,250,0.3);
+        }
+      }
+    }
+  }
+
 
   /* DOCUMENT ICONS
 	------------------ */
