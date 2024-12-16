@@ -14,6 +14,10 @@
       margin-bottom: $spaceMd;
       max-width: 308px;
       width: 100%;
+      
+      @include desk {
+        max-width: 33.33%;
+      }
     }
 
     a {
@@ -42,13 +46,11 @@
     }
 
     .field-headline {
-      @include heading4;
       text-align: center;
     }
 
     .field-long-text {
       margin-top: $spaceXxs;
-      font-size: 2rem;
     }
   }
 }

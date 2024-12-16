@@ -5,7 +5,7 @@
 @use '../../../00-base' as *;
 
 .paragraph--type--call-to-action{
-  max-width: 1094px;
+  max-width: 894px;
   @include auto;
   position: relative;
   overflow: hidden;
@@ -25,7 +25,7 @@
     }
   }
   &:after{
-    @include fullBack(darken($red, 5%));
+    @include fullBack(lighten($red, 2%));
     z-index: -4;
   }
   .widget-wrapper{
@@ -48,7 +48,7 @@
         width: 60%;
         padding-right: 20px;
       }
-      .cta-text-right{
+      .field-link{
         width: 40%;
       }
     }
@@ -78,8 +78,13 @@
       }
     }//end field media image
   }//end article
-  .field-link a{
-    @include outlineButton($white);
-    margin-bottom: 0;
+  .field-link {
+    @include tab{
+      @include safeFlex(row,nowrap,center,center);
+    }
+    a{
+      @include outlineButton($white);
+      margin-bottom: 0;
+    }
   }
 }//end call to action

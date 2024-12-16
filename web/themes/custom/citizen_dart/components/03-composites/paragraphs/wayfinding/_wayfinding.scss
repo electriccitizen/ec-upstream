@@ -100,7 +100,7 @@
             padding-right: 20px;
             .wayfinding-text-wrapper{
               padding-top: 50px;
-              padding-bottom: 50px;
+              padding-bottom: 30px;
               width: calc(100% - 240px);
             }
           }
@@ -141,7 +141,7 @@
       }
       .widget-section > .layout--onecol &,.node-support-book &{
         @include desk{
-          padding: 50px 40px 10px;
+          padding: 50px 40px 40px;
           max-width: 890px;
           margin-top: 20px;
           @include safeFlex(row,nowrap,start,stretch);
