@@ -2,6 +2,7 @@
   Drupal.behaviors.main_navigation = {
     attach: function (context, settings) {
       const activeClass = "open";
+      const rtlClass = "right-to-left";
       const hoverDelay = 200;
 
       $(once('main-navigation', '#block-main-menu', context)).each(function () {
@@ -68,15 +69,37 @@
 
       function addActiveClass($element, noDelay = false) {
         if ($("body").hasClass("size-desk")) {
+          // Find the list this element is displaying for later visibility
+          // check.
+          const childList = $element.children("ul");
           window.setTimeout(() => {
             $element.addClass(activeClass);
+            if (childList.length > 0) {
+              // If the list is going to run off the side of the page, apply a
+              // class that aligns it to the right side of the hovered element,
+              // instead of the left.
+              if ((childList.offset().left + childList.width()) > $(document).width()) {
+                childList.addClass(rtlClass);
+              }
+              else {
+                // If screen resolution has changed we need to remove the RTL
+                // class.
+                childList.removeClass(rtlClass);
+              }
+            }
           }, noDelay ? 0 : hoverDelay);
         }
       }
       function removeActiveClass($element, noDelay = false) {
         if ($("body").hasClass("size-desk")) {
+          const childList = $element.children("ul");
           window.setTimeout(() => {
               $element.removeClass(activeClass);
+              if (childList.length > 0) {
+                // If the RTL class has been applied, be sure to remove it so it
+                // can be re-checked when the parent element is hovered again.
+                childList.removeClass(rtlClass);
+              }
           }, noDelay ? 0 : hoverDelay);
         }
       }
