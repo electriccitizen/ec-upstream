@@ -7,6 +7,4 @@ _core:
 id: taxonomy_term
 label: 'Taxonomy term'
 tags:
-  title: '[term:name] | [site:name]'
-  robots: 'noindex, nofollow, noarchive, nosnippet, noodp, noydir, noimageindex, notranslate'
-  description: '[term:description]'
+  robots: 'noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate'
