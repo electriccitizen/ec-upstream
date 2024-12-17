@@ -113,9 +113,23 @@ function citizen_custom_form_node_form_alter(&$form, FormStateInterface $form_st
     case 'event':
       $form['promote']['widget']['value']['#title'] = 'Add to Featured Events';
       $form['promote']['widget']['value']['#description'] = t('Should have a news image.');
+      $form['field_address']['widget'][0]['address']['#after_build'][] = 'citizen_custom_address_organization_label';
+
+      break;
+
+    case 'department':
+      $form['field_address']['widget'][0]['address']['#after_build'][] = 'citizen_custom_address_organization_label';
 
       break;
   }
+}
+
+/**
+ * Implements custom form label alter.
+ */
+function citizen_custom_address_organization_label($element, $form_state) {
+  $element['organization']['#title'] = t('Building');
+  return $element;
 }
 
 /**
