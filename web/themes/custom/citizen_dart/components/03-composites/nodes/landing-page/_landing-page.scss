@@ -5,8 +5,62 @@
 @use '../../../00-base' as *;
 
 .node-landing-page {
+  #node-section-1 .layout__region--content{
+    @include tab {
+      position: relative;
+
+      .block-field-image {
+        &:first-child {
+          position: relative;
+
+          &:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(28,33,13,0.8) 0, rgba(86,100,44,0.2) 40%);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+          }
+        }
+      }
+      .block-field.block-title {
+        &:last-child {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          text-align: left;
+          max-width: 100%;
+          width: 100%;
+          z-index: 2;
+          margin-bottom: $spaceSm;
+
+          .field.title {
+            max-width: $contentStop;
+            @include auto;
+            text-align: left;
+
+            h1 {
+              max-width: $textMax;
+              color: $white;
+              font-size: 8.5rem;
+              text-shadow: 1px 1px 7px rgba(0,0,0,.5);
+            }
+          }
+        }
+      }
+    }
+    @include contentStop{
+      .block-field.block-title:last-child .field.title h1{
+        font-size: 10rem;
+      }
+    }
+  }
   .block-field-image {
     @include edgeToEdge;
+    @include animation('fadeIn 2s 1');
   }
 
   .block-field.block-title {
