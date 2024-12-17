@@ -64,16 +64,23 @@
 
 /* SKIP NAV
 ------------- */
-.overflow-guard > a.focusable {
+a.focusable.skip-link {
 
   &:focus {
     position: fixed !important;
     top: 0;
     left: 0;
     z-index: 9999;
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: auto;
     background: $siteBack;
     padding: .5rem 3rem;
+    color: $link;
+    border: 1px solid $link;
+    opacity: 1;
+    font-size: 14px;
+    &.inline-skip{
+      position: absolute !important;
+    }
   }
 }
