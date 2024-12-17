@@ -45,7 +45,11 @@
     {% if element['#object'].field_park_type.0 %}
       <div class="park-type detail-item">
         <span class="inline-label">Park Type:</span>
-        {{ element['#object'].field_park_type.0.value|replace({'_':' '}) }}
+        {% if element['#object'].field_park_type.0.value == 'outdoor' %}
+          Dog Park
+        {% else %}
+          {{ element['#object'].field_park_type.0.value|replace({'_':' '}) }}
+        {% endif %}
       </div>
     {% endif %}
     {% if element['#object'].field_area.0 %}

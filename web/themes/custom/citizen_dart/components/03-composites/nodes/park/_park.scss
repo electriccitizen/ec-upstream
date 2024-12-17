@@ -50,6 +50,10 @@
         }
       }
 
+      .park-type{
+        text-transform: capitalize;
+      }
+
       .park-amenities {
         a{
           color: $darkerGreen;

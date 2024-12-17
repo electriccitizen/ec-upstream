@@ -1,0 +1,13 @@
+/* ==================
+		PARKS VIEWS
+==================== */
+
+@use '../../../00-base' as *;
+
+/* ALL NEWS
+------------- */
+.parks.all-parks {
+  .views-row:not(:last-child) {
+    margin-bottom: $spaceMd;
+  }
+}
