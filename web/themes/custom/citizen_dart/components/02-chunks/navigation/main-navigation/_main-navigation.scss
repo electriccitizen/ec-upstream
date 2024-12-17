@@ -77,8 +77,23 @@ ul.menu-main-navigation li {
 /* MOBILE-SPECIFIC
 ------------------ */
 @include onlyMobile {
-  ul.menu-main-navigation:not(.accordion-open) {
-    display: none;
+  ul.menu-main-navigation{
+    &:not(.accordion-open) {
+      display: none;
+    }
+    ul.cloned-secondary-menu {
+      padding: 12px 4rem;
+      margin: 0;
+
+      li {
+        a {
+          font-size: 14px;
+          padding-top: .75rem;
+          padding-bottom: .75rem;
+          text-transform: uppercase;
+        }
+      }
+    }
   }
 }
 

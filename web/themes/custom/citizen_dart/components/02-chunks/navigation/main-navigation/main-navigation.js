@@ -8,6 +8,19 @@
         const menu = $('.menu-main-navigation', this);
         let lastSize = $("body").hasClass("size-desk") ? "size-desk" : "size-mobile";
 
+        //clone secondary menu if starting on mobile
+        if ($("body").hasClass("size-mobile")) {
+          const $secondaryMenu = $(".block-secondary-menu ul:not(.contextual-links)").first();
+
+          if ($secondaryMenu.length) {
+            // Clone the menu, add a class to track it, and append it.
+            const $clonedMenu = $secondaryMenu
+              .clone()
+              .addClass("cloned-secondary-menu");
+            $("ul.menu-main-navigation").append($clonedMenu);
+          }
+        }
+
         // Behavior depends on if we're mobile or not. To track this, we set a
         // single class in the body in 04-assembly/global/site.js.
         // "size-desk" indicates desktop size (> 986px wide) and "size-mobile"
@@ -59,9 +72,21 @@
           if (lastSize == "size-mobile" && $("body").hasClass("size-desk")) {
             $("li", menu).removeClass("open").find("ul").hide(0).attr("style", "");
             lastSize = "size-desk";
+            //when get to desktop
+            $("ul.menu-main-navigation .cloned-secondary-menu").remove();
           }
           else if (lastSize == "size-desk" && $("body").hasClass("size-mobile")) {
             lastSize = "size-mobile";
+            //when get to mobile
+            const $secondaryMenu = $(".block-secondary-menu ul:not(.contextual-links)").first();
+
+            if ($secondaryMenu.length) {
+              // Clone the menu, add a class to track it, and append it.
+              const $clonedMenu = $secondaryMenu
+                .clone()
+                .addClass("cloned-secondary-menu");
+              $("ul.menu-main-navigation").append($clonedMenu);
+            }
           }
         });
       });

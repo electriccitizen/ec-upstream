@@ -1,0 +1,33 @@
+/* ==============
+	 SECONDARY
+================ */
+@use '../../../00-base' as *;
+
+#block-secondary-menu {
+  width: 100%;
+
+  &:after{
+    @include fullBack($red);
+  }
+
+  ul:not(.contextual-links) {
+    @include listReset;
+    @include safeFlex(row,nowrap,end,start);
+    gap: 16px;
+
+    li {
+      a {
+        color: $white;
+        text-decoration: none;
+        font-size: 16px;
+        display: inline-block;
+        padding: 4px;
+
+        &:hover,&:focus {
+          color: $transWhite;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}//end secondary menu (desktop)
