@@ -19,6 +19,7 @@ dependencies:
   module:
     - addanother
     - citizen_custom
+    - ckeditor5_premium_features_wproofreader
     - content_moderation
     - editoria11y
     - file
@@ -29,6 +30,7 @@ dependencies:
     - node
     - path
     - responsive_preview
+    - scheduler
     - shortcut
     - smart_date_recur
     - system
@@ -52,6 +54,10 @@ permissions:
   - 'administer main menu items'
   - 'cancel smart date recur instances'
   - 'change own username'
+  - 'ckeditor5 wproofreader toggle proofreading'
+  - 'ckeditor5 wproofreader user dictionary'
+  - 'ckeditor5 wproofreader user general settings'
+  - 'ckeditor5 wproofreader user ignore settings'
   - 'create bios content'
   - 'create department content'
   - 'create document media'
@@ -67,6 +73,7 @@ permissions:
   - 'delete all revisions'
   - 'delete any bios content'
   - 'delete any department content'
+  - 'delete any document media revisions'
   - 'delete any event content'
   - 'delete any landing_page content'
   - 'delete any news content'
@@ -112,6 +119,7 @@ permissions:
   - 'mark as hidden in editoria11y'
   - 'reschedule smart date recur instances'
   - 'revert all revisions'
+  - 'revert any document media revisions'
   - 'revert bios revisions'
   - 'revert department revisions'
   - 'revert event revisions'
@@ -119,6 +127,7 @@ permissions:
   - 'revert news revisions'
   - 'revert page revisions'
   - 'revert park revisions'
+  - 'schedule publishing of nodes'
   - 'switch shortcut sets'
   - 'update any media'
   - 'update media'
@@ -129,6 +138,7 @@ permissions:
   - 'use text format webform_default'
   - 'use workbench access'
   - 'view all revisions'
+  - 'view any document media revisions'
   - 'view any unpublished content'
   - 'view bios revisions'
   - 'view department revisions'
@@ -138,7 +148,9 @@ permissions:
   - 'view latest version'
   - 'view news revisions'
   - 'view own unpublished content'
+  - 'view own unpublished media'
   - 'view page revisions'
   - 'view park revisions'
+  - 'view scheduled content'
   - 'view the administration theme'
   - 'view workbench access information'

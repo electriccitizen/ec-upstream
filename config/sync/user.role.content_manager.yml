@@ -27,7 +27,9 @@ dependencies:
     - addanother
     - block_content
     - citizen_custom
+    - ckeditor5_premium_features_wproofreader
     - content_moderation
+    - editoria11y
     - help
     - media
     - menu_admin_per_menu
@@ -35,6 +37,7 @@ dependencies:
     - path
     - redirect
     - responsive_preview
+    - scheduler
     - shortcut
     - smart_date_recur
     - system
@@ -56,12 +59,18 @@ permissions:
   - 'access user profiles'
   - 'access webform overview'
   - 'administer departments menu items'
+  - 'administer footer menu items'
   - 'administer main menu items'
   - 'administer redirects'
+  - 'administer secondary menu items'
   - 'administer webform element access'
   - 'administer webform submission'
   - 'cancel smart date recur instances'
   - 'change own username'
+  - 'ckeditor5 wproofreader toggle proofreading'
+  - 'ckeditor5 wproofreader user dictionary'
+  - 'ckeditor5 wproofreader user general settings'
+  - 'ckeditor5 wproofreader user ignore settings'
   - 'create basic block content'
   - 'create bios content'
   - 'create department content'
@@ -89,6 +98,7 @@ permissions:
   - 'delete any basic block content revisions'
   - 'delete any bios content'
   - 'delete any department content'
+  - 'delete any document media revisions'
   - 'delete any event content'
   - 'delete any intro block content'
   - 'delete any intro block content revisions'
@@ -156,9 +166,12 @@ permissions:
   - 'edit terms in news_categories'
   - 'edit terms in services'
   - 'make smart dates recur'
+  - 'mark as hidden in editoria11y'
+  - 'mark as ok in editoria11y'
   - 'reschedule smart date recur instances'
   - 'revert all revisions'
   - 'revert any basic block content revisions'
+  - 'revert any document media revisions'
   - 'revert any intro block content revisions'
   - 'revert any newsletter block content revisions'
   - 'revert any social_media_links block content revisions'
@@ -169,6 +182,7 @@ permissions:
   - 'revert news revisions'
   - 'revert page revisions'
   - 'revert park revisions'
+  - 'schedule publishing of nodes'
   - 'switch shortcut sets'
   - 'update any media'
   - 'update media'
@@ -180,6 +194,7 @@ permissions:
   - 'use workbench access'
   - 'view all revisions'
   - 'view any basic block content history'
+  - 'view any document media revisions'
   - 'view any intro block content history'
   - 'view any newsletter block content history'
   - 'view any social_media_links block content history'
@@ -187,13 +202,16 @@ permissions:
   - 'view any webform submission'
   - 'view bios revisions'
   - 'view department revisions'
+  - 'view editoria11y checker'
   - 'view event revisions'
   - 'view landing_page revisions'
   - 'view latest version'
   - 'view news revisions'
   - 'view own unpublished content'
+  - 'view own unpublished media'
   - 'view own webform submission'
   - 'view page revisions'
   - 'view park revisions'
+  - 'view scheduled content'
   - 'view the administration theme'
   - 'view workbench access information'

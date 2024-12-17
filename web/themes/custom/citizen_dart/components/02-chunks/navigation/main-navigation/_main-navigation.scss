@@ -286,7 +286,7 @@ ul.menu-main-navigation li {
         background: $sfDropdown;
         left: 100%;
         margin: 0;
-        padding: 0;
+        padding: 8px 0;
         position: absolute;
         top: 0px;
         min-width: 240px;
@@ -354,12 +354,12 @@ ul.menu-main-navigation li {
     > a {
       padding: 1.25rem;
       @include desk {
-        font-size: 1.7rem;
-        padding: 1rem 2.5rem 1rem 5rem;
+        font-size: 2rem;
+        padding: 1.25rem 2.5rem 1.25xrem 5rem;
       }
 
       &.menuparent {
-        padding: 1rem 5rem;
+        padding: 1.25rem 5rem;
       }
     }
   }
