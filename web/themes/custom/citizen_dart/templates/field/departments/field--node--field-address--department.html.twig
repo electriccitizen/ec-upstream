@@ -66,7 +66,7 @@
   {% if element['#object'].field_email.0 %}
     <div class="email">
       <span class="inline-label">E:</span>
-      <a href="{{ element['#object'].field_email.0.value|clean_class }}">{{ element['#object'].field_email.0.value|clean_class }}</a>
+      <a href="{{ element['#object'].field_email.0.value }}">{{ element['#object'].field_email.0.value }}</a>
     </div>
   {% endif %}
   {% if element['#object'].field_phone_numbers.0 %}
