@@ -9,6 +9,15 @@
   display: block;
   height: 32px;
   width: 32px;
+  border: 1px solid transparent;
+  
+  &:hover,&:focus{
+    border-color: $hamburgerActive;
+    outline: none;
+    &:before{
+      color: $hamburgerActive;
+    }
+  }
   @include desk {
     display: none;
   }
@@ -21,13 +30,19 @@
     @include materialIcon(\e5d2);
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 1px;
+    right: 3px;
     color: $hamburger;
     line-height: 28px;
   }
 
   &.open {
+    &:hover,&:focus {
+      border-color: $hamburger;
+      &:before {
+        color: $hamburger;
+      }
+    }
     &:before {
       @include materialIcon(\e5cd);
       color: $hamburgerActive;

@@ -178,6 +178,26 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
+          276f1feb-6702-4626-acd4-70e30d53797e:
+            uuid: 276f1feb-6702-4626-acd4-70e30d53797e
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_last_reviewed'
+              label: 'Last Reviewed'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: number_date_short
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
         third_party_settings: {  }
 id: node.page.default
 targetEntityType: node
