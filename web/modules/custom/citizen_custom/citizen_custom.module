@@ -112,7 +112,6 @@ function citizen_custom_form_node_form_alter(&$form, FormStateInterface $form_st
 
     case 'event':
       $form['promote']['widget']['value']['#title'] = 'Add to Featured Events';
-      $form['promote']['widget']['value']['#description'] = t('Should have a news image.');
       if (in_array($form_id, ['node_event_edit_form', 'node_event_form'])) {
         $form['field_address']['widget'][0]['address']['#after_build'][] = 'citizen_custom_address_organization_label';
       }
