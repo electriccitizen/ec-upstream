@@ -509,14 +509,14 @@ display:
     position: 1
     display_options:
       fields:
-        field_dates_value_1:
-          id: field_dates_value_1
+        field_dates_2:
+          id: field_dates_2
           table: node__field_dates
-          field: field_dates_value
+          field: field_dates
           relationship: none
           group_type: group
-          admin_label: 'cal day'
-          plugin_id: date
+          admin_label: 'Cal Day'
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -558,22 +558,53 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          date_format: custom
-          custom_date_format: j
-          timezone: ''
-        field_dates_value:
-          id: field_dates_value
+          click_sort_column: value
+          type: smartdate_custom
+          settings:
+            separator: ''
+            time_diff:
+              enabled: 0
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: '2'
+              refresh: '60'
+              description: ''
+            date_format: j
+            custom_date_format: ''
+            timezone: ''
+            tooltip:
+              date_format: long
+              custom_date_format: ''
+            join: ''
+            time_format: ''
+            time_hour_format: ''
+            allday_label: ''
+            date_first: '1'
+            ampm_reduce: 0
+            site_time_toggle: 0
+          group_column: value
+          group_columns: {  }
+          group_rows: false
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_dates_1:
+          id: field_dates_1
           table: node__field_dates
-          field: field_dates_value
+          field: field_dates
           relationship: none
           group_type: group
           admin_label: 'Cal Month'
-          plugin_id: date
+          plugin_id: field
           label: ''
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"calendar-card\">\r\n   <div class=\"cal-day\">{{ field_dates_value_1 }}</div>\r\n   <div class=\"cal-month\">{{ field_dates_value }}</div>\r\n</div>"
+            text: "<div class=\"calendar-card\">\r\n   <div class=\"cal-day\">{{ field_dates_2 }}</div>\r\n   <div class=\"cal-month\">{{ field_dates_1 }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -610,9 +641,40 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          date_format: custom
-          custom_date_format: M
-          timezone: ''
+          click_sort_column: value
+          type: smartdate_custom
+          settings:
+            separator: ''
+            time_diff:
+              enabled: 0
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: '2'
+              refresh: '60'
+              description: ''
+            date_format: M
+            custom_date_format: ''
+            timezone: ''
+            tooltip:
+              date_format: long
+              custom_date_format: ''
+            join: ''
+            time_format: ''
+            time_hour_format: ''
+            allday_label: ''
+            date_first: '1'
+            ampm_reduce: 0
+            site_time_toggle: 0
+          group_column: value
+          group_columns: {  }
+          group_rows: false
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         title:
           id: title
           table: node_field_data
@@ -886,19 +948,19 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_dates_value_2:
-          id: field_dates_value_2
+        field_dates_3:
+          id: field_dates_3
           table: node__field_dates
-          field: field_dates_value
+          field: field_dates
           relationship: none
           group_type: group
           admin_label: 'Grouping Month'
-          plugin_id: date
+          plugin_id: field
           label: ''
           exclude: true
           alter:
             alter_text: true
-            text: '{{ field_dates_value_2 }} Events'
+            text: '{{ field_dates_3 }} Events'
             make_link: false
             path: ''
             absolute: false
@@ -923,7 +985,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h2
+          element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -935,9 +997,40 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          date_format: custom
-          custom_date_format: F
-          timezone: ''
+          click_sort_column: value
+          type: smartdate_custom
+          settings:
+            separator: ''
+            time_diff:
+              enabled: 0
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: '2'
+              refresh: '60'
+              description: ''
+            date_format: F
+            custom_date_format: ''
+            timezone: ''
+            tooltip:
+              date_format: long
+              custom_date_format: ''
+            join: ''
+            time_format: ''
+            time_hour_format: ''
+            allday_label: ''
+            date_first: '1'
+            ampm_reduce: 0
+            site_time_toggle: 0
+          group_column: value
+          group_columns: {  }
+          group_rows: false
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       sorts:
         field_dates_value:
           id: field_dates_value
@@ -1181,7 +1274,7 @@ display:
         options:
           grouping:
             -
-              field: field_dates_value_2
+              field: field_dates_3
               rendered: true
               rendered_strip: false
           row_class: ''
@@ -1223,14 +1316,14 @@ display:
     position: 2
     display_options:
       fields:
-        field_dates_value_1:
-          id: field_dates_value_1
+        field_dates_2:
+          id: field_dates_2
           table: node__field_dates
-          field: field_dates_value
+          field: field_dates
           relationship: none
           group_type: group
           admin_label: 'Cal day'
-          plugin_id: date
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -1272,22 +1365,53 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          date_format: custom
-          custom_date_format: j
-          timezone: ''
-        field_dates_value:
-          id: field_dates_value
+          click_sort_column: value
+          type: smartdate_custom
+          settings:
+            separator: ' '
+            time_diff:
+              enabled: 0
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: '2'
+              refresh: '60'
+              description: ''
+            date_format: j
+            custom_date_format: ''
+            timezone: ''
+            tooltip:
+              date_format: long
+              custom_date_format: ''
+            join: ''
+            time_format: ''
+            time_hour_format: ''
+            allday_label: ''
+            date_first: '1'
+            ampm_reduce: 0
+            site_time_toggle: 0
+          group_column: value
+          group_columns: {  }
+          group_rows: false
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_dates_1:
+          id: field_dates_1
           table: node__field_dates
-          field: field_dates_value
+          field: field_dates
           relationship: none
           group_type: group
-          admin_label: 'Cal Month'
-          plugin_id: date
+          admin_label: 'Cal month'
+          plugin_id: field
           label: ''
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"calendar-card\">\r\n   <div class=\"cal-day\">{{ field_dates_value_1 }}</div>\r\n   <div class=\"cal-month\">{{ field_dates_value }}</div>\r\n</div>"
+            text: "<div class=\"calendar-card\">\r\n   <div class=\"cal-day\">{{ field_dates_2 }}</div>\r\n   <div class=\"cal-month\">{{ field_dates_1 }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1324,9 +1448,40 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          date_format: custom
-          custom_date_format: M
-          timezone: ''
+          click_sort_column: value
+          type: smartdate_custom
+          settings:
+            separator: ''
+            time_diff:
+              enabled: 0
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: '2'
+              refresh: '60'
+              description: ''
+            date_format: M
+            custom_date_format: ''
+            timezone: ''
+            tooltip:
+              date_format: long
+              custom_date_format: ''
+            join: ''
+            time_format: ''
+            time_hour_format: ''
+            allday_label: ''
+            date_first: '1'
+            ampm_reduce: 0
+            site_time_toggle: 0
+          group_column: value
+          group_columns: {  }
+          group_rows: false
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         title:
           id: title
           table: node_field_data
@@ -1826,14 +1981,14 @@ display:
     position: 2
     display_options:
       fields:
-        field_dates_value_1:
-          id: field_dates_value_1
+        field_dates_2:
+          id: field_dates_2
           table: node__field_dates
-          field: field_dates_value
+          field: field_dates
           relationship: none
           group_type: group
           admin_label: 'Cal day'
-          plugin_id: date
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -1875,22 +2030,53 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          date_format: custom
-          custom_date_format: j
-          timezone: ''
-        field_dates_value:
-          id: field_dates_value
+          click_sort_column: value
+          type: smartdate_custom
+          settings:
+            separator: ''
+            time_diff:
+              enabled: 0
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: '2'
+              refresh: '60'
+              description: ''
+            date_format: j
+            custom_date_format: ''
+            timezone: ''
+            tooltip:
+              date_format: long
+              custom_date_format: ''
+            join: ''
+            time_format: ''
+            time_hour_format: ''
+            allday_label: ''
+            date_first: '1'
+            ampm_reduce: 0
+            site_time_toggle: 0
+          group_column: value
+          group_columns: {  }
+          group_rows: false
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_dates_1:
+          id: field_dates_1
           table: node__field_dates
-          field: field_dates_value
+          field: field_dates
           relationship: none
           group_type: group
-          admin_label: 'Cal Month'
-          plugin_id: date
+          admin_label: 'Cal month'
+          plugin_id: field
           label: ''
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"calendar-card\">\r\n   <div class=\"cal-day\">{{ field_dates_value_1 }}</div>\r\n   <div class=\"cal-month\">{{ field_dates_value }}</div>\r\n</div>"
+            text: "<div class=\"calendar-card\">\r\n   <div class=\"cal-day\">{{ field_dates_2 }}</div>\r\n   <div class=\"cal-month\">{{ field_dates_1 }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1927,9 +2113,40 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          date_format: custom
-          custom_date_format: M
-          timezone: ''
+          click_sort_column: value
+          type: smartdate_custom
+          settings:
+            separator: ''
+            time_diff:
+              enabled: 0
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: '2'
+              refresh: '60'
+              description: ''
+            date_format: M
+            custom_date_format: ''
+            timezone: ''
+            tooltip:
+              date_format: long
+              custom_date_format: ''
+            join: ''
+            time_format: ''
+            time_hour_format: ''
+            allday_label: ''
+            date_first: '1'
+            ampm_reduce: 0
+            site_time_toggle: 0
+          group_column: value
+          group_columns: {  }
+          group_rows: false
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         title:
           id: title
           table: node_field_data
