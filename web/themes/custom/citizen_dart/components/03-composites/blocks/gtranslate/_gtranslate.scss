@@ -30,17 +30,20 @@
   				width: auto;
   				height: auto;
   				font-family: $header;
-  				padding: 1rem 0;
+  				padding: 1rem 4px;
   				color: $black;
   				font-size: $baseSize;
           @include safeFlex(row, wrap, center, center);
+          border: 1px solid transparent;
 
           &::after{
             display: none;
           }
 
-  				&:hover{
-  					text-decoration: underline;
+  				&:hover,&:focus{
+            color: $red;
+            border-color: $red;
+            outline: none;
   				}
 
   				img{

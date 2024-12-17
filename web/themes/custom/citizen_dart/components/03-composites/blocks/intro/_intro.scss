@@ -81,6 +81,10 @@
     .select2-selection--single {
       background: rgba(35,35,35,0.4);
       border-color: $white;
+      &:focus{
+        border-color: $blue;
+      }
+
 
       .select2-selection__rendered {
         background: transparent;
