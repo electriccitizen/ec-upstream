@@ -264,6 +264,11 @@ ul.menu-main-navigation li {
         position: absolute;
         top: 100%;
         width: 12em;
+
+        &.right-to-left {
+          left: auto;
+          right: 0;
+        }
       }
 
       > li {
@@ -288,6 +293,11 @@ ul.menu-main-navigation li {
         position: absolute;
         top: 0px;
         min-width: 240px;
+
+        &.right-to-left {
+          left: auto;
+          right: 100%;
+        }
       }
     }
 
