@@ -79,6 +79,7 @@ permissions:
   - 'administer nodes'
   - 'administer redirects'
   - 'administer secondary menu items'
+  - 'administer support-book menu items'
   - 'administer url aliases'
   - 'administer users'
   - 'administer webform element access'
