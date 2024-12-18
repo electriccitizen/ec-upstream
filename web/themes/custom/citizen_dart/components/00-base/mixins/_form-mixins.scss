@@ -153,15 +153,6 @@
 
     &[type="radio"] {
       border-radius: 50%;
-
-      &:checked {
-        background-color: $red;
-
-        &:hover,
-        &:focus {
-          background-color: $midGray;
-        }
-      }
     }
   }
 }

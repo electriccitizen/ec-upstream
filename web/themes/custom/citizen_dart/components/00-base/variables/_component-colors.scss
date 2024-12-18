@@ -102,13 +102,13 @@ $inputBorderFocus : $link;
 $placeColor : $admingray;
 $placeFocusColor : $placeColor;
 $validation : $brightRed;
-$checkbox : $link;
-$checkboxHover : $link;
-$checkboxBackHover : $lightGray;
-$checkboxChecked : $link;
-$checkboxCheckedHover : $midGray;
-$checkboxCheckedBack : $link;
-$checkboxCheckedBackHover : $midGray;
+$checkbox : $borderRule;
+$checkboxHover : lighten($red, 8%);
+$checkboxBackHover : lighten($red, 8%);
+$checkboxChecked : $red;
+$checkboxCheckedHover : lighten($red, 8%);
+$checkboxCheckedBack : $red;
+$checkboxCheckedBackHover : lighten($red, 8%);
 $selectArrow : $midGray;
 $selectHighlight : $link;
 $progressBar : $gray;
@@ -211,20 +211,20 @@ $resultsText : $baseText;
 
 /* ACCORDIONS
 ------------------- */
-$accordHeader : $baseText;
+$accordHeader : $white;
 $accordHeaderHover : $white;
-$accordHeaderBorder : $darkGray;
-$accordHeaderBorderHover : $darkGray;
-$accordHeaderBack : $siteBack;
-$accordHeaderBackHover : $darkGray;
+$accordHeaderBorder : $red;
+$accordHeaderBorderHover : lighten($red,8%);
+$accordHeaderBack : $red;
+$accordHeaderBackHover : lighten($red,8%);
 $accordContentBack : $siteBack;
 $accordContentBorder : transparent;
 $accordActive : $white;
 $accordActiveHover : $white;
-$accordActiveBorder : $black;
-$accordActiveBorderHover : $darkGray;
-$accordActiveBack : $black;
-$accordActiveBackHover : $darkGray;
+$accordActiveBorder : $red;
+$accordActiveBorderHover : lighten($red,8%);
+$accordActiveBack : $red;
+$accordActiveBackHover : lighten($red,8%);
 
 /* MESSAGES
 ------------------ */

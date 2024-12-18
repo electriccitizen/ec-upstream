@@ -25,3 +25,16 @@
     @include metaText;
   }
 }
+
+/* LISTING */
+.node-listing-news {
+  h2.node-field-title {
+    @include heading3;
+    margin-bottom: 16px;
+  }
+}
+
+/* teaser */
+.node-teaser-news {
+  @extend .node-listing-news;
+}

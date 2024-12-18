@@ -16,10 +16,17 @@
   }
 }
 
+
 /* NEWS LIST
 ------------- */
-.news.news-list {
+.news-list {
   .views-row:not(:last-child) {
     margin-bottom: $spaceMd;
   }
+}
+
+/* FEATURED
+------------- */
+.news.featured-news {
+  @extend .news-list;
 }

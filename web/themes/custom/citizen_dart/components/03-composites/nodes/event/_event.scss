@@ -21,8 +21,10 @@
 
     .first-date {
       @include safeFlex(column,nowrap,start,start);
+      font-weight: $heavy;
 
       .add-to-calendar {
+        font-weight: $regular;
         .addtocal__label {
           margin-bottom: $spaceXxs;
         }
@@ -61,11 +63,14 @@
     }
 
     .drawer-content {
+      margin-top: 1rem;
+      font-weight: $heavy;
       .add-to-calendar {
-        margin-left: .5rem;
+        font-weight: $regular;
+        display: inline-block;
 
         a {
-          margin: .5rem 0 1rem;
+          margin: .5rem 0 1.5rem;
         }
       }
     }
@@ -75,6 +80,11 @@
     margin-top: -4rem;
   }
 
+  .block-field-address {
+    .organization {
+      font-weight: $heavy;
+    }
+  }
 }
 
 .node-teaser-event {

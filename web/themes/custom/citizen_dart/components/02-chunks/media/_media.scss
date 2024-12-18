@@ -19,6 +19,14 @@ article+figcaption {
   margin-top: $spaceXs;
 }
 
+.path-media .block-system-main-block > article.media-item{
+  max-width: $contentStop;
+  @include auto;
+  img {
+    width: auto;
+    max-width: 100%;
+  }
+}
 
 /* EMBEDDED VIDEO
 ------------------ */
