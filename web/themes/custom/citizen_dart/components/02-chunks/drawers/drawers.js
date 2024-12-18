@@ -16,16 +16,12 @@
             drawer.remove();
             drawerContent.remove();
           }
-        }
-        
+        }  
 
         drawer.addEventListener('click', function (e) {
           e.preventDefault();
 
-          let toggleText = findToggleType(this);
-          if (toggleText = 'Search') {
-            toggleText = 'filters';
-          } 
+          const toggleText = this.dataset.toggle;
           
           if (this.classList.contains('drawer-below')) {
             if (!this.classList.contains('active-drawer')) {

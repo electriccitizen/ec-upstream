@@ -54,5 +54,3 @@ This method of forwarding via _index wills is recommended to prevent namspacing 
 Critical CSS is called in the `<head>` and is indexed in specific _critical files in 01-Parts, 02-Chunks and 03-Composites.
 
 When adding a new .scss file anywhere in the, simple make sure that it is forwarded in its immediate parent's index file. To have all variables and mixins available in the new file simply include the base folder: `@use '../../00-base' as *;` at the start of the file.
-
-Test deploy change

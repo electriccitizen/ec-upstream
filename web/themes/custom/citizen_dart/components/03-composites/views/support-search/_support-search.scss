@@ -25,10 +25,18 @@
       text-align: left;
     }
   }
+
+  .views-row{
+    margin-bottom: $spaceXxs;
+  }
 }
 
 #views-exposed-form-support-search-search-results #views-form-wrapper {
   position: relative;
+
+  .layout--twocol-sideleft .layout__region--first & {
+    margin-bottom: 0;
+  }
 
   .js-form-type-textfield {
     width: 100%;

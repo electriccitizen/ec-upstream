@@ -21,6 +21,12 @@
 
     .first-date {
       @include safeFlex(column,nowrap,start,start);
+
+      .add-to-calendar {
+        .addtocal__label {
+          margin-bottom: $spaceXxs;
+        }
+      }
     }
 
     .add-to-calendar {
