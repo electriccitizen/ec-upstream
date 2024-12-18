@@ -20,6 +20,9 @@ accordion:
 alerts:
   js:
     components/03-composites/views/alerts/alerts.js: {}
+cta:
+  js:
+    components/03-composites/paragraphs/cta/cta.js: {}
 drawers:
   js:
     components/02-chunks/drawers/drawers.js: {}
@@ -86,3 +89,6 @@ table:
 views:
   js:
     components/03-composites/views/views.js: {}
+wayfinding:
+  js:
+    components/03-composites/paragraphs/wayfinding/wayfinding.js: {}

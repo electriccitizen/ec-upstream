@@ -4,6 +4,36 @@
 
 @use '../../../00-base' as *;
 
+@include keyframes(wayfindingLeft){
+	from{
+		left: 70px;
+    z-index: -2;
+	}
+	50%{
+		left: -375px;
+    z-index: 1;
+	}
+	100%{
+		left: -60px;
+    z-index: 2;
+	}
+}
+
+@include keyframes(wayfindingRight){
+	from{
+		right: 70px;
+    z-index: -2;
+	}
+	50%{
+		right: -375px;
+    z-index: 1;
+	}
+	100%{
+		right: -60px;
+    z-index: 2;
+	}
+}
+
 .paragraph--type--wayfinding{
   &.wf-full{
     .layout.layout--threecol-section &,.layout.layout--twocol-section{
@@ -15,6 +45,27 @@
         }
       }
     }//end multicolumn layouts
+
+    &.wayfinding-visible {
+      .wayfinding.full {
+        .widget-section > .layout--onecol &,.node-support-book & {
+          @include desk {
+            &.right .wf-image .field-media-image{
+              @include animation('wayfindingRight 1.5s 1 forwards');
+            }
+            &.left .wf-image .field-media-image{
+              @include animation('wayfindingLeft 1.5s 1 forwards');
+            }
+          }
+        }
+        .wf-image .field-media-image{
+          @include onlyMobile {
+            opacity: 1;
+            @include transition-animate(opacity, 1s, ease-in);
+          }
+        }
+      }
+    }
   }//end single in multi columns
   .widget-wrapper{
     padding-top: 1px;
@@ -29,7 +80,6 @@
     .wf-image{
       margin-bottom: 5rem;
       position: relative;
-      z-index: 1;
     }
     .wayfinding-info{
       padding-left: 20px;
@@ -175,6 +225,8 @@
               top: -70px;
               right: -60px;
               left: auto;
+              z-index: -2;
+              opacity: 1;
             }
           }
           .wayfinding-info{
@@ -219,7 +271,7 @@
           padding-bottom: 100%;
         }
         .field-media-image{
-          opacity: 1;
+          opacity: 0;
           position: absolute;
           top: 0;
           left: 0;

@@ -43,6 +43,7 @@
 {% block widgetTitle %}{% endblock %}
 
 {% block widgetContent %}
+  {{ attach_library('citizen_dart/cta') }}
   <div class="cta-text">
     {% if content.field_widget_title.0 %}
       <h2 class="widget-title">{{- content.field_widget_title.0['#context'].value -}}</h2>

@@ -15,6 +15,16 @@
     @include auto;
     width: 100%;
   }
+
+  &.cta-visible {
+    .cta-image-wrapper .cta-image img{
+      opacity: .6;
+      @include transition-animate(opacity, 1s, ease-in);
+    }
+    .white-stripes{
+      @include slidefromUpperRightDelayed(.5s,0);
+    }
+  }
   //change layout and padding in a layout wide enough on a screen large enough
   .widget-section > .layout--onecol &,
   .widget-section > .layout--twocol-section--50-50 &,
@@ -78,7 +88,7 @@
         position: relative;
         z-index: -3;
         object-fit: cover;
-        opacity: .6;
+        opacity: 0;
       }
     }//end field media image
   }//end article
@@ -98,6 +108,7 @@
     z-index: 1;
     width: 263px;
     height: 171px;
+    transform: translatex(200%) translatey(200%);
     svg{
       width: 100%;
       height: 100%;

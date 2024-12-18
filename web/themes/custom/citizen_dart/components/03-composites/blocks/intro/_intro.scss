@@ -62,18 +62,30 @@
       font-size: 8rem;
       font-weight: 900;
       margin-bottom: $spaceXxs;
+      position: relative;
+      left: -100vw;
+      @include slideFromLeftFast;
 
       @include tab {
         font-size: 10rem;
       }
     }
 
-    .field-additional-text{
+    .field-additional-text {
       font-size: 20px;
       color: $white;
       margin-bottom: $spaceMd;
+      position: relative;
+      left: -100vw;
+      @include slideFromLeftFastDelayed(1.5s);
     }
   }
+  
+  .jump-menu {
+    opacity: 0;
+    @include animation('.75s fadeIn 2.75s 1 forwards');
+  }
+
   .select2 {
     width: 60% !important;
     max-width: 460px !important;

@@ -5,6 +5,7 @@
 @use '../variables' as *;
 @use 'general-mixins' as *;
 @use 'layout-mixins' as *;
+@use 'animation-mixins' as *;
 
 @mixin dropbutton {
 
@@ -62,6 +63,7 @@
     @include transAll(.3s);
     text-decoration: none;
     outline: 0;
+    @include animation('breathe .75s 1');
   }
 
   &:active {
@@ -96,6 +98,7 @@
     color: $buttonTextHover;
     border-color: $buttonBackHover;
     @include transAll(.3s);
+    @include animation('breathe .75s 1');
   }
 
   &:active {
@@ -129,6 +132,7 @@
     background: $buttonBackHover;
     border-color: $buttonBackHover;
     color: $buttonTextHover;
+    @include animation('breathe .75s 1');
   }
 
   &:active {
@@ -149,6 +153,7 @@
     background: $buttonBackHover;
     border-color: $buttonBackHover;
     color: $buttonTextHover;
+    @include animation('breathe .75s 1');
   }
 
   &:active {
@@ -169,6 +174,7 @@
     background: $buttonBackHover;
     border-color: $buttonBackHover;
     color: $buttonTextHover;
+    @include animation('breathe .75s 1');
   }
 
   &:active {

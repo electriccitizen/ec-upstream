@@ -60,7 +60,8 @@
   }
   .block-field-image {
     @include edgeToEdge;
-    @include animation('fadeIn 2s 1');
+    opacity: 0;
+    @include animation('fadeIn 2s 1 forwards');
   }
 
   .block-field.block-title {

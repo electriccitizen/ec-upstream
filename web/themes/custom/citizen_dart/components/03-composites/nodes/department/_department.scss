@@ -9,6 +9,10 @@
     max-width: 100%;
     text-align: left;
   }
+  .block-field-image {
+    opacity: 0;
+    @include animation('fadeIn 1.5s 1 forwards');
+  }
 }
 
 .node-teaser-department {

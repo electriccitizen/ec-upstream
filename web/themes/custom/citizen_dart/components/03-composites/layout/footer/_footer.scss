@@ -4,6 +4,24 @@
 
 @use '../../../00-base' as *;
 
+@include keyframes(footerLeft){
+	from{
+		left: 180vw;
+	}
+	100%{
+		left: 80vw;
+	}
+}
+
+@include keyframes(footerRight){
+	from{
+		right: 180vw;
+	}
+	100%{
+		right: 80vw;
+	}
+}
+
 .postcontent-wrapper{
   //background: linear-gradient(to right, $lightRed 0, $lightRed 10%, $white 25%, $white 75%, $lightRed 90%, $lightRed 100%);
   // border-top: 4px solid $red;
@@ -11,12 +29,20 @@
   padding: 32px $siteMarginMobile;
   background: $white;
   position: relative;
+  &.footer-visible {
+    &:before {
+      @include animation('footerLeft 1s 1 forwards');
+    }
+    &:after {
+      @include animation('footerRight 1s 1 forwards');
+    }
+  }
   &:before{
     content: '';
     display: block;
     position: absolute;
     bottom: -1px;
-    left: 80vw;
+    left: 180vw;
     height: 45vw;
     width: 100vw;
     clip-path: polygon(100% 0%, 0% 100%, 100% 100%);

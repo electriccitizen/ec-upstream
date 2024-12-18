@@ -11,6 +11,8 @@
 
   .block-field-image {
     @include edgeToEdge;
+    opacity: 0;
+    @include animation('fadeIn 1.5s 1 forwards');
   }
 
   .block-field.block-body {

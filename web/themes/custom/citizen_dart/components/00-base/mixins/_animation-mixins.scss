@@ -57,3 +57,66 @@
 .fadeIn {
   @include animation('fadeIn 1.5s 1');
 }
+
+@include keyframes(breathe){
+	from{
+		scale: 1;
+	}
+	50%{
+		scale: 1.075;
+	}
+	100%{
+		scale: 1;
+	}
+}
+
+@mixin slideFromLeftFast{
+  @keyframes slideInLeftFast {
+    from {
+      left: -100vw;
+    }
+    to {
+      left: 0;
+    }
+  }
+  animation: slideInLeftFast 1.5s forwards;
+}
+
+@mixin slideFromLeftFastDelayed($animationDelay){
+  @keyframes slideInLeftFast {
+    from {
+      left: -100vw;
+    }
+    to {
+      left: 0;
+    }
+  }
+  animation: slideInLeftFast 1.5s forwards;
+  animation-delay: $animationDelay;
+}
+
+@mixin slidefromUpperRightDelayed($animationLength,$animationDelay){
+  @keyframes slidefromUpperRightDelayed {
+    from {
+      transform: translatex(100%) translatey(-100%);
+    }
+    to {
+      transform: translatex(0) translatey(0);
+    }
+  }
+  animation: slidefromUpperRightDelayed $animationLength forwards;
+  animation-delay: $animationDelay;
+}
+
+@mixin transitionAni($transition-property, $transition-time, $method) {
+	-webkit-transition: $transition-property $transition-time $method;
+	-moz-transition: $transition-property $transition-time $method;
+	-ms-transition: $transition-property $transition-time $method;
+	-o-transition: $transition-property $transition-time $method;
+	transition: $transition-property $transition-time $method;
+	backface-visibility: hidden;
+}
+
+@mixin transition-animate($transition...) {
+  @include transitionAni($transition...);
+}

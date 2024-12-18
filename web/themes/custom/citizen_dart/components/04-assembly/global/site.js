@@ -82,13 +82,13 @@
         }
 
         //add disclaimer popup after translating to non-English page
-        let alertEnglish = 'Hello! This page has been translated by a computer. This sometimes results in poor-quality translations. We are sorry for any problems this may cause. To get help from a person who speaks your language, please contact us at equity@Bloomingtonmn.gov or 952-563-8739.';
-        let alertChineseSimp = '您好！ 本页面已由计算机翻译。 这有时会存在翻译质量不佳。 对于可能由此导致的任何问题，我们深表歉意。 如需与您说同种语言的人提供帮助，请通过 Equity@Bloomingtonmn.gov 或 952-563-8739 联系我们';
-        let alertChineseTrad = '您好！ 此頁面已由電腦翻譯。 這有時會導致翻譯品質不佳。 對於由此可能導致的任何問題，我們深表歉意。 欲從說您語言的人員來獲得幫助，請透過equity@Bloomingtonmn.gov 或952-563-8739 與我們聯繫';
-        let alertKhmer = 'សួស្តី! ទំព័រនេះត្រូវបានបកប្រែដោយកុំព្យូទ័រ។ ពេលខ្លះលទ្ធផលនៃការបកប្រែមានគុណភាពអន់។ យើងខ្ញុំសូមអភ័យទោសចំពោះបញ្ហាណាមួយដែលរឿងនេះអាចបង្កឱ្យមាន។ ដើម្បីទទួលជំនួយពីមនុស្សម្នាក់ដែលនិយាយភាសារបស់អ្នក សូមទាក់ទងមកយើងខ្ញុំតាមអ៊ីមែល equity@Bloomingtonmn.gov ឬតាមលេខទូរសព្ទ 952-563-8739។';
-        let alertSomali = 'Nabad! Boggan waxa tarjumay kombuyuutar. Tani waxay mararka qaar keentaa tarjumaado tayo xun. Waan ka xunnahay wixii dhibaato ay taasi keento. Si aad caawimo uga hesho qof ku hadla luqadaada, fadlan nagala soo xiriir equity@Bloomingtonmn.gov ama 952-563-8739.';
-        let alertSpanish = '¡Hola! Una computadora tradujo esta página. A menudo, esto resulta en traducciones de poca o baja calidad. Sentimos mucho cualquier problema que le ocasione. Para recibir ayuda de una persona que hable su idioma, por favor comuníquese con nosotros al equity@Bloomingtonmn.gov o al 952-563-8739.';
-        let alertVietnamese = 'Xin chào! Trang này được dịch bởi máy tính. Do đó đôi lúc bản dịch có chất lượng chưa tốt. Chúng tôi xin lỗi nếu việc này gây bất tiện cho bạn. Để được trợ giúp bởi nhân viên biết nói ngôn ngữ của bạn, vui lòng liên hệ với chúng tôi theo địa chỉ equity@Bloomingtonmn.gov hoặc gọi số 952-563-8739.';
+        let alertEnglish = 'Hello! This page has been translated by a computer. This sometimes results in poor-quality translations. We are sorry for any problems this may cause. To get help from a person who speaks your language, please contact us at info@dakotacounty.gov or 612-867-5309.';
+        let alertChineseSimp = '您好！ 本页面已由计算机翻译。 这有时会存在翻译质量不佳。 对于可能由此导致的任何问题，我们深表歉意。 如需与您说同种语言的人提供帮助，请通过 info@dakotacounty.gov 或 952-563-8739 联系我们';
+        let alertChineseTrad = '您好！ 此頁面已由電腦翻譯。 這有時會導致翻譯品質不佳。 對於由此可能導致的任何問題，我們深表歉意。 欲從說您語言的人員來獲得幫助，請透過info@dakotacounty.gov 或612-867-5309 與我們聯繫';
+        let alertKhmer = 'សួស្តី! ទំព័រនេះត្រូវបានបកប្រែដោយកុំព្យូទ័រ។ ពេលខ្លះលទ្ធផលនៃការបកប្រែមានគុណភាពអន់។ យើងខ្ញុំសូមអភ័យទោសចំពោះបញ្ហាណាមួយដែលរឿងនេះអាចបង្កឱ្យមាន។ ដើម្បីទទួលជំនួយពីមនុស្សម្នាក់ដែលនិយាយភាសារបស់អ្នក សូមទាក់ទងមកយើងខ្ញុំតាមអ៊ីមែល info@dakotacounty.gov ឬតាមលេខទូរសព្ទ 612-867-5309។';
+        let alertSomali = 'Nabad! Boggan waxa tarjumay kombuyuutar. Tani waxay mararka qaar keentaa tarjumaado tayo xun. Waan ka xunnahay wixii dhibaato ay taasi keento. Si aad caawimo uga hesho qof ku hadla luqadaada, fadlan nagala soo xiriir info@dakotacounty.gov ama 612-867-5309.';
+        let alertSpanish = '¡Hola! Una computadora tradujo esta página. A menudo, esto resulta en traducciones de poca o baja calidad. Sentimos mucho cualquier problema que le ocasione. Para recibir ayuda de una persona que hable su idioma, por favor comuníquese con nosotros al info@dakotacounty.gov o al 612-867-5309.';
+        let alertVietnamese = 'Xin chào! Trang này được dịch bởi máy tính. Do đó đôi lúc bản dịch có chất lượng chưa tốt. Chúng tôi xin lỗi nếu việc này gây bất tiện cho bạn. Để được trợ giúp bởi nhân viên biết nói ngôn ngữ của bạn, vui lòng liên hệ với chúng tôi theo địa chỉ info@dakotacounty.gov hoặc gọi số 612-867-5309.';
         let alerts = [
           alertEnglish, alertChineseSimp, alertChineseTrad, alertSpanish, alertVietnamese, alertKhmer, alertSomali
         ];
@@ -101,5 +101,33 @@
       });
     }
   }
+
+/* FOOTER ANIMATIONS
+------------------ */
+Drupal.behaviors.footerAnimate = {
+  attach: function (context, settings) {
+  	$(once('footerAnimations', '.postcontent-wrapper', context)).each(function(){
+      // Function to handle the intersection observer callback
+      function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+          if ($("html").hasClass("animations-paused")) {
+            entry.target.classList.add('footer-visible');
+            observer.unobserve(entry.target);
+          }
+          else if (entry.isIntersecting) {
+            //add class when target is visible
+            entry.target.classList.add('footer-visible');
+            observer.unobserve(entry.target); // Stop observing once the class is added
+          }
+        });
+      }
+
+      const observer = new IntersectionObserver(handleIntersection, { threshold: 0.15 });
+      // Select the target element
+      // Start observing the target element
+      observer.observe(this);
+    });
+  }
+}
 
 })(jQuery, Drupal, once);
