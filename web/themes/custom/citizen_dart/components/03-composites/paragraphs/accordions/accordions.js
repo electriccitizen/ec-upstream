@@ -7,8 +7,6 @@
           link.addEventListener('click', function (e) {
             e.preventDefault();
 
-            console.log(this);
-
             //expand/collapse
             if (this.classList.contains('collapsed')) {
               this.classList.remove('collapsed');
@@ -63,7 +61,7 @@
            }
          });
        }
-       
+
     }
   }
 
