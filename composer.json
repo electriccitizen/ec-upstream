@@ -15,6 +15,14 @@
     {
       "type": "path",
       "url": "upstream-configuration"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:electriccitizen/citizen_migrate.git"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:electriccitizen/citizen_sb.git"
     }
   ],
   "require": {
