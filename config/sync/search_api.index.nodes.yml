@@ -3,21 +3,20 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_paragraphs
-    - field.storage.paragraph.field_accordion_items
-    - field.storage.paragraph.field_long_text
-    - field.storage.paragraph.field_accordion_header
-    - field.storage.paragraph.field_widget_title
+    - core.entity_view_mode.node.teaser
     - field.storage.node.body
     - field.storage.node.field_exclude_search
     - field.storage.node.field_meta_description
+    - field.storage.node.field_paragraphs
     - field.storage.node.field_search_keywords
+    - field.storage.paragraph.field_accordion_header
+    - field.storage.paragraph.field_accordion_items
+    - field.storage.paragraph.field_long_text
+    - field.storage.paragraph.field_widget_title
     - search_api.server.local
-    - core.entity_view_mode.node.teaser
   module:
-    - paragraphs
     - node
-    - search_api
+    - paragraphs
 _core:
   default_config_hash: t2DsQd4U0dH3PyvGMWVR6HHEBwqdBqnnnMyMMGpL9EE
 id: nodes
