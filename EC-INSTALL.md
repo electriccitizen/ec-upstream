@@ -1,6 +1,6 @@
 EC-Upstream Local Development
 =============================
-Reviewed by Wilbur, 2022-10-21
+Reviewed by Wilbur, 2025-01-21
 
 # Project Details
 - **NAME:** ec-upstream
@@ -24,15 +24,13 @@ Follow these steps to install a local development environment.
 
 `git clone git@github.com:electriccitizen/ec-upstream.git ec-upstream`
 
-`cd ec-upstream`
-
-`composer install`
-
-`fin start`
-
-`fin hosts add`
-
-`composer run sniff-enable`
+```
+cd ec-upstream
+fin hosts add
+fin cert
+fin composer install
+fin composer run sniff-enable
+```
 
 ## Download and import the database
 
@@ -55,15 +53,13 @@ Open the generated login URL and you should be set to go.
 # Refreshing your local environment
 Whenever you start a new task, you'll want to refresh your local environment to pull in the latest changes from other developers.
 
-`cd ~/Projects/ec-upstream`
-
-`git checkout main`
-
-`git pull`
-
-`fin restart`
-
-`composer install`
+```
+cd ~/Projects/ec-upstream
+git checkout main
+git pull
+fin restart
+fin composer install
+```
 
 DB Pull - Optional
 `fin drush @ec-upstream.dev sql-dump > database.sql`
@@ -136,8 +132,8 @@ Whenever you create a Github pull request, a new Pantheon multidev is created in
 # Project Legend
 
 ## Docksal Images
-- DB - docksal/mariadb:10.4
-- CLI - docksal/cli:stable-php7.4
+- DB - docksal/mariadb:10.6
+- CLI - docksal/cli:stable-php8.3
 - SOLR - docksal/solr:1.0-solr3
 
 See `~/Projects/ec-upstream/.docksal/docksal.yml`

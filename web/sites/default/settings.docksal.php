@@ -20,7 +20,7 @@ $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml'
 
 $config['system.logging']['error_level'] = 'verbose';
 
-$settings['rebuild_access'] = TRUE;
+// $settings['rebuild_access'] = TRUE;
 
 $settings['skip_permissions_hardening'] = TRUE;
 

@@ -9,7 +9,6 @@ dependencies:
     - search_api.server.local
   module:
     - node
-    - search_api
 id: support
 name: Support
 description: ''
