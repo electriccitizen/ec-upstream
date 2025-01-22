@@ -132,8 +132,8 @@ Whenever you create a Github pull request, a new Pantheon multidev is created in
 # Project Legend
 
 ## Docksal Images
-- DB - docksal/mariadb:10.4
-- CLI - docksal/cli:stable-php7.4
+- DB - docksal/mariadb:10.6
+- CLI - docksal/cli:stable-php8.3
 - SOLR - docksal/solr:1.0-solr3
 
 See `~/Projects/ec-upstream/.docksal/docksal.yml`
