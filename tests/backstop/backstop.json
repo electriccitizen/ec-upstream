@@ -28,357 +28,182 @@
         }
     ],
     "onBeforeScript": "puppet/onBefore.js",
+    "onReadyScript": "puppet/onReady.js",
+    "scenarioDefaults": {
+        "delay": 1000,
+        "hideSelectors": [
+            "iframe"
+        ],
+        "removeSelectors": [
+            "iframe",
+            " .captcha",
+            " .youtube"
+        ],
+        "misMatchThreshold": 0.1,
+        "requireSameDimensions":false
+    },
     "scenarios": [
         {
             "label": "Footer Link 1",
             "url": "http://ec-upstream.docksal.site",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io"
         },
         {
             "label": "Another event",
             "url": "http://ec-upstream.docksal.site/node/43",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/43",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/43"
         },
         {
             "label": "EVent 5 home cat 2",
             "url": "http://ec-upstream.docksal.site/node/24",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/24",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/24"
         },
         {
             "label": "Event 3 no cat",
             "url": "http://ec-upstream.docksal.site/node/22",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/22",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/22"
         },
         {
             "label": "Event 6 Past event - all cats, home",
             "url": "http://ec-upstream.docksal.site/node/25",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/25",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/25"
         },
         {
             "label": "Event Example",
             "url": "http://ec-upstream.docksal.site/node/41",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/41",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/41"
         },
         {
             "label": "All News",
             "url": "http://ec-upstream.docksal.site/node/10",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/10",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/10"
         },
         {
             "label": "Bios",
             "url": "http://ec-upstream.docksal.site/bios",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/bios",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/bios"
         },
         {
             "label": "Events",
             "url": "http://ec-upstream.docksal.site/events",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/events",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/events"
         },
         {
             "label": "Home",
             "url": "http://ec-upstream.docksal.site/node/33",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/33",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/33"
         },
         {
             "label": "Landing page",
             "url": "http://ec-upstream.docksal.site/node/40",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/40",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/40"
         },
         {
             "label": "Landing page example",
             "url": "http://ec-upstream.docksal.site/node/39",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/39",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/39"
         },
         {
             "label": "News",
             "url": "http://ec-upstream.docksal.site/all-news",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/all-news",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/all-news"
         },
         {
             "label": "Site Search",
             "url": "http://ec-upstream.docksal.site/node/47",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/47",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/47"
         },
         {
             "label": "Images aligned with captions",
             "url": "http://ec-upstream.docksal.site/node/26",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/26",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/26"
         },
         {
             "label": "Images aligned with no captions microsite test",
             "url": "http://ec-upstream.docksal.site/node/27",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/27",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/27"
         },
         {
             "label": "News 2",
             "url": "http://ec-upstream.docksal.site/node/4",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/4",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/4"
         },
         {
             "label": "News all the things",
             "url": "http://ec-upstream.docksal.site/node/3",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/3",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/3"
         },
         {
             "label": "BP Sub Item 1",
             "url": "http://ec-upstream.docksal.site/basic-page/bp-sub-item-1",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/basic-page/bp-sub-item-1",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/basic-page/bp-sub-item-1"
         },
         {
             "label": "BP Sub Item 1",
             "url": "http://ec-upstream.docksal.site/node/13",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/13",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/13"
         },
         {
             "label": "BP Sub Item 2",
             "url": "http://ec-upstream.docksal.site/basic-page/bp-sub-item-2-different-menu-link-title",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/basic-page/bp-sub-item-2-different-menu-link-title",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/basic-page/bp-sub-item-2-different-menu-link-title"
         },
         {
             "label": "BP Sub Item 2 - different menu link title",
             "url": "http://ec-upstream.docksal.site/node/14",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/14",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/14"
         },
         {
             "label": "BP Sub Sub Sub Item",
             "url": "http://ec-upstream.docksal.site/node/16",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/16",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/16"
         },
         {
             "label": "Breadcrumb Test",
             "url": "http://ec-upstream.docksal.site/breadcrumbs",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/breadcrumbs",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/breadcrumbs"
         },
         {
             "label": "Breadcrumb Test - different link title and alias",
             "url": "http://ec-upstream.docksal.site/node/15",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/15",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/15"
         },
         {
             "label": "Term Dictionary",
             "url": "http://ec-upstream.docksal.site/node/19",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/19",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/19"
         },
         {
             "label": "Web Editor Guide",
             "url": "http://ec-upstream.docksal.site/node/18",
             "cookiePath": null,
-            "referenceUrl": "http://ec-upstream.docksal.site/node/18",
-            "delay": 2000,
-            "hideSelectors": [],
-            "removeSelectors": [
-                "iframe",
-                " .captcha",
-                " .youtube"
-            ]
+            "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/18"
         }
     ],
     "paths": {
