@@ -69,8 +69,18 @@ git pull
 echo -e  "${green_bg} Fin Restart ${NC}${yellow} Restart fin to get latest container updates...${NC}"
 fin restart
 
+# Set File paths if they do not exist
+if [ ! -d ${SITEDIR_PATH}/files/private ]; then
+  mkdir ${SITEDIR_PATH}/files/private;
+fi
+
 # Composer Install
 echo -e  "${green_bg} Composer Install ${NC}${yellow} to install latest updates from composer.json...${NC}"
+rm -rf vendor
+rm -rf web/core
+rm -rf web/libraries
+rm -rf web/modules/contrib
+rm -rf web/themes/contrib
 fin composer install
 
 if [ "$1" == 'pull' ]; then
