@@ -83,6 +83,10 @@ rm -rf web/modules/contrib
 rm -rf web/themes/contrib
 fin composer install
 
+# Composer Run sniff-enable
+echo -e  "${green_bg} Composer run ${NC}${yellow} sniff-enable ${NC}"
+ddev composer run sniff-enable
+
 if [ "$1" == 'pull' ]; then
   start2=$SECONDS
   echo -en "${green_bg} Fin Pull ${NC}${yellow} Starting Pantheon DB Pull... ${NC}"

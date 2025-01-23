@@ -229,46 +229,34 @@ button.disabled:hover {
 
 /* SMARTDATE FIELD ADJUSTMENTS
 ------------------------ */
-fieldset.smartdate--widget .smartdate--time-inline{
+fieldset.smartdate--widget .smartdate--time-inline {
 
-  @media screen and (min-width: 56em){
-
+  @media screen and (min-width: 56em) {
     align-items: center;
-
   }
 
 }
 
-fieldset.smartdate--widget .smartdate--time-inline .form-item:not(:last-of-type){
-
+fieldset.smartdate--widget .smartdate--time-inline .form-item:not(:last-of-type) {
   margin-top: .5rem;
-
   margin-bottom: .5rem;
-
 }
 
-fieldset.smartdate--widget .smartdate--time-inline .form-item:not(:first-of-type){
-
+fieldset.smartdate--widget .smartdate--time-inline .form-item:not(:first-of-type) {
   margin-left: .25rem;
-
   margin-right: .25rem;
-
 }
 
-fieldset.smartdate--widget .smartdate--time-inline .smartdate--separator{
-
+fieldset.smartdate--widget .smartdate--time-inline .smartdate--separator {
   margin: 0 .5rem;
-
 }
 
-fieldset.smartdate--widget .allday-label{
-
+fieldset.smartdate--widget .allday-label {
   margin-top: .5em;
-
 }
 
 /* ADJUST FOCAL POINT PREVIEW ON IMAGE FIELDS SO VERTICAL IMAGES DON'T LOOK LIKE PARTIALS
 --------------------------- */
-.image-preview .focal-point-wrapper .image-style-thumbnail{
+.image-preview .focal-point-wrapper .image-style-thumbnail {
   min-width: 100%;
 }

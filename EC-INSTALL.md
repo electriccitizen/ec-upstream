@@ -16,9 +16,9 @@ Reviewed by Wilbur, 2025-01-21
 - [EC: Local development requirements](https://docs.google.com/document/d/1_yeISu5bW5637TCeXByi82LUUfD1jeeSDHh5IeiPz4o/edit?usp=sharing)
 - [EC: Developing on Pantheon](https://docs.google.com/document/d/1oTBHep57WENbf8PnM4LSn2Zx6x5EKA1rSYDEMvBEsUY/edit)
 
-# Local Development Setup
+# Local Development Setup for Docksal
 
-Follow these steps to install a local development environment.
+Follow these steps to install a local development environment with Docksal.
 
 `cd ~/Projects`
 
@@ -50,7 +50,7 @@ fin composer run sniff-enable
 
 Open the generated login URL and you should be set to go.
 
-# Refreshing your local environment
+# Refreshing your local environment with Docksal
 Whenever you start a new task, you'll want to refresh your local environment to pull in the latest changes from other developers.
 
 ```
@@ -71,6 +71,66 @@ End DB Pull
 `fin drush cim`
 
 `fin drush uli`
+
+Open the generated login URL and you should be set to go.
+
+# Local Development Setup for DDev
+
+Follow these steps to install a local development environment with DDev.
+
+`cd ~/Projects`
+
+`git clone git@github.com:electriccitizen/ec-upstream.git ec-upstream`
+
+```
+cd ec-upstream
+ddev start
+ddev composer install
+ddev composer run sniff-enable
+```
+
+## Download and import the database
+
+`ddev auth ssh`
+
+`ddev drush @ec-upstream.dev sql-dump > database.sql`
+
+`ddev import-db database.sql`
+
+`ddev drush cr`
+
+## Import local configuration
+
+`ddev drush cim`
+
+## Log into website as admin
+
+`ddev uli`
+
+Open the generated login URL and you should be set to go.
+
+# Refreshing your local environment with Docksal
+Whenever you start a new task, you'll want to refresh your local environment to pull in the latest changes from other developers.
+
+```
+cd ~/Projects/ec-upstream
+git checkout main
+git pull
+ddev start
+ddev composer install
+```
+
+DB Pull - Optional
+`ddev auth ssh`
+`ddev drush @ec-upstream.dev sql-dump > database.sql`
+`ddev import-db database.sql`
+End DB Pull
+
+`ddev drush cr`
+
+`ddev drush cim`
+
+`ddev drush uli`
 
 Open the generated login URL and you should be set to go.
 
@@ -135,14 +195,13 @@ Whenever you create a Github pull request, a new Pantheon multidev is created in
 - DB - docksal/mariadb:10.6
 - CLI - docksal/cli:stable-php8.3
 - SOLR - docksal/solr:1.0-solr3
-
 See `~/Projects/ec-upstream/.docksal/docksal.yml`
 
 ## settings.docksal.php
 - database connection
 - hash_salt
-- base_url
 - development services
+- state_cache
 - error level
 - CSS/JS aggregation
 - rebuild_access
@@ -150,9 +209,25 @@ See `~/Projects/ec-upstream/.docksal/docksal.yml`
 - trusted_host_pattern
 - file paths
 
+## DDev Images
+php_version: "8.3"
+webserver_type: nginx-fpm
+database:
+    type: mariadb
+    version: "10.6"
+- SOLR - TODO!
+See `~/Projects/ec-upstream/.ddev/config.yaml`
+
+## settings.ddev.php
+- database connection
+- hash_salt
+- state_cache
+- permissions_hardening
+- trusted_host_pattern
+- error level
 See `/Projects/ec-upstream/web/sites/default/settings.docksal.php`
 
-# Enabling Xdebug
+# Enabling Xdebug - Docksal
 
 Copy the `.docksal/docksal-local.yml.default` file to the .docksal folder as `docksal-local.yml` and ensure that `XDEBUG_ENABLED=1`
 
@@ -166,6 +241,9 @@ xdebug.client_host=192.168.64.100
 ```
 
 Run `fin restart` to restart the Docksal project.
+
+# Enabling Xdebug - DDev
+
 
 # Backstop Testing
 
