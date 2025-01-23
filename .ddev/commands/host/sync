@@ -23,7 +23,7 @@ echo-green () { echo -e "${green}$1${NC}"; }
 echo-green-bg () { echo -e "${green_bg}$1${NC}"; }
 echo-yellow () { echo -e "${yellow}$1${NC}"; }
 
-cd ${DDEV_DOCROOT}
+cd ${DDEV_APPROOT}
 
 # Check for a clean repository
 if ! [ -z "$(git status --untracked-files=no --porcelain)" ]; then
@@ -67,7 +67,7 @@ ddev composer install
 if [ "$1" == 'pull' ]; then
   start2=$SECONDS
   echo -en "${green_bg} ddev Pull ${NC}${yellow} Starting Pantheon DB Pull... ${NC}"
-  ddev pull --skip-files -y
+  ddev pull pantheon --skip-files -y
   ## Calculate Process time
   duration2=$(( SECONDS - start2 ))
 fi
