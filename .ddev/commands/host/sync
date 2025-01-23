@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 ## Description: Sync your local environment with fresh data and code from Pantheon development environment.
-## Usage: sync
+## Usage: sync [flags] [args]
+## Example: "ddev sync" or "ddev sync pull" or "ddev sync database.sql.gz"
+## Flags: [{"Name":"pull", "Usage":"ddev sync pull loads the remote DB to LOCAL"}]
 
 # Project Settings
 REPO_BRANCH=main
