@@ -61,8 +61,14 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
    * If there is a docksal settings file, then include it
    */
   $docksal_settings = __DIR__ . "/settings.docksal.php";
-  if (file_exists($docksal_settings)) {
+  if (getenv('IS_DOCKSAL_PROJECT') == 'true' && is_readable($ddev_settings)) {
       include $docksal_settings;
+  }
+
+  // ddev settings we installed here!
+  $ddev_settings = __DIR__ . '/settings.ddev.php';
+  if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
+    require $ddev_settings;
   }
 
   /**
@@ -72,9 +78,4 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
   if (file_exists($local_settings)) {
       include $local_settings;
   }
-}
-// Automatically generated include for settings managed by ddev.
-$ddev_settings = __DIR__ . '/settings.ddev.php';
-if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
-  require $ddev_settings;
 }
