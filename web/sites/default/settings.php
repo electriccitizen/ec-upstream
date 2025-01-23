@@ -57,18 +57,19 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
 
   $config['config_split.config_split.local']['status'] = TRUE;
 
-  /**
-   * If there is a docksal settings file, then include it
-   */
-  $docksal_settings = __DIR__ . "/settings.docksal.php";
-  if (getenv('IS_DOCKSAL_PROJECT') == 'true' && is_readable($ddev_settings)) {
-      include $docksal_settings;
-  }
-
   // ddev settings we installed here!
   $ddev_settings = __DIR__ . '/settings.ddev.php';
   if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
     require $ddev_settings;
+  } else {
+
+  /**
+   * If it's not DDEV, we use docksal settings file
+   */
+  $docksal_settings = __DIR__ . "/settings.docksal.php";
+    if (is_readable($docksal_settings)) {
+        include $docksal_settings;
+    }
   }
 
   /**
