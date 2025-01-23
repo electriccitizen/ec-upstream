@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ## Description: ddev drush uli - User login substitute
-## Usage: ddev uli
+## Usage: uli
 
 # Abort if anything fails
 set -e

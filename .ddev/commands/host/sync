@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
 ## Description: Sync your local environment with fresh data and code from Pantheon development environment.
-## Usage: ddev sync
+## Usage: sync
 
 # Project Settings
 REPO_BRANCH=main
-SITEDIR_PATH=${DDEV_DOCROOT}/sites/default
 
 # Abort if anything fails
 set -e
@@ -48,12 +47,12 @@ git checkout ${REPO_BRANCH}
 git pull 
 
 # ddev Restart
-echo -e  "${green_bg} ddev Restart ${NC}${yellow} Restart ddev to get latest container updates...${NC}"
+echo -e  "${green_bg} DDev Restart ${NC}${yellow} Restart ddev to get latest container updates...${NC}"
 ddev restart
 
 # Set File paths if they do not exist
-if [ ! -d ${SITEDIR_PATH}/files/private ]; then
-  mkdir ${SITEDIR_PATH}/files/private;
+if [ ! -d ${DDEV_DOCROOT}sites/default/files/private ]; then
+  mkdir -p ${DDEV_DOCROOT}sites/default/files/private;
 fi
 
 # Composer Install
