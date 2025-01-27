@@ -25,6 +25,7 @@ settings:
       - indent
       - outdent
       - '|'
+      - wproofreader
       - removeFormat
       - undo
       - redo
