@@ -43,7 +43,7 @@ filters:
     status: true
     weight: -48
     settings:
-      allowed_html: '<br> <p class="text-align-left text-align-center text-align-right"> <h2 class="text-align-left text-align-center text-align-right"> <h3 class="text-align-left text-align-center text-align-right"> <h4 class="text-align-left text-align-center text-align-right"> <h5 class="text-align-left text-align-center text-align-right"> <h6 class="text-align-left text-align-center text-align-right"> <strong> <em> <a href data-entity-type data-entity-uuid data-entity-substitution> <ul> <ol start> <li>'
+      allowed_html: '<br> <p class="text-align-left text-align-center text-align-right"> <h2 class="text-align-left text-align-center text-align-right"> <h3 class="text-align-left text-align-center text-align-right"> <h4 class="text-align-left text-align-center text-align-right"> <h5 class="text-align-left text-align-center text-align-right"> <h6 class="text-align-left text-align-center text-align-right"> <strong> <em> <a href data-entity-type data-entity-uuid data-entity-substitution> <ul> <ol start> <li> <mark class>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_html_escape:

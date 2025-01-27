@@ -14,6 +14,8 @@ settings:
       - bold
       - italic
       - '|'
+      - highlight
+      - '|'
       - alignment
       - '|'
       - link
@@ -127,6 +129,9 @@ settings:
           weight: 3
           search: '<a name="OLE_LINK[^"]*">(.*?)<\/a>'
           replace: $1
+    ckeditor5_plugin_pack_highlight__highlight:
+      options: {  }
+      use_default_markers: true
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<cite>'
@@ -136,7 +141,6 @@ settings:
         - '<figcaption>'
         - '<picture>'
         - '<small>'
-        - '<mark>'
         - '<blockquote cite>'
         - '<span class>'
         - '<img srcset typeof src alt height width data-entity-type data-entity-uuid data-entity-substitution data-align data-caption loading data-src class>'
@@ -157,9 +161,6 @@ settings:
         - '<drupal-media title>'
     ckeditor5_style:
       styles:
-        -
-          label: Highlight
-          element: '<span class="highlight">'
         -
           label: Warning
           element: '<p class="warning">'

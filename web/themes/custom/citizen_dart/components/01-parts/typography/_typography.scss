@@ -148,10 +148,32 @@ p.warning {
   text-align: center;
 }
 
-span.highlight {
-  background-color: $highlight;
-  padding-left: 4px;
-  padding-right: 4px;
+mark {
+  background-color: unset;
+
+  &.pen-red {
+    color: $redText;
+  }
+
+  &.pen-green {
+    color: $greenText;
+  }
+
+  &.marker-yellow {
+    background-color: $yellowMarker;
+  }
+
+  &.marker-green {
+    background-color: $greenMarker;
+  }
+
+  &.marker-pink {
+    background-color: $pinkMarker;
+  }
+
+  &.marker-blue {
+    background-color: $blueMarker;
+  }
 }
 
 .hr,
