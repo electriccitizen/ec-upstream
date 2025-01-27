@@ -96,6 +96,21 @@ function citizen_custom_form_alter(&$form, FormStateInterface $form_state, $form
     $form['revision_information']['#access'] = FALSE;
     $form['revision']['#access'] = FALSE;
   }
+  // Check if form contains Address field and attach after-build callback.
+  if (!empty($form['field_address']['widget'][0]['address'])) {
+    $form['field_address']['widget'][0]['address']['#after_build'][] = 'citizen_custom_address_organization_label';
+  }
+}
+
+/**
+ * Implements custom form label alter.
+ */
+function citizen_custom_address_organization_label($element, $form_state) {
+  // Modify the "organization" field's title within the address field.
+  if (isset($element['organization'])) {
+    $element['organization']['#title'] = t('Building');
+  }
+  return $element;
 }
 
 /**
