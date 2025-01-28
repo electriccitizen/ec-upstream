@@ -128,7 +128,7 @@ function citizen_custom_form_node_form_alter(&$form, FormStateInterface $form_st
 
     case 'event':
       $form['promote']['widget']['value']['#title'] = 'Add to Featured Events';
-      $form['promote']['widget']['value']['#description'] = t('Should have a event image.');
+      $form['promote']['widget']['value']['#description'] = t('Should have an event image.');
 
       break;
   }
