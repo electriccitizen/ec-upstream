@@ -969,23 +969,26 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: date
-          operator: '>='
+          operator: '>'
           value:
             min: ''
             max: ''
             value: ''
             type: date
-            granularity: day
+            granularity: second
           group: 1
           exposed: true
           expose:
             operator_id: field_dates_value_op
-            label: 'Starts After'
+            label: 'Start Date'
             description: ''
-            use_operator: false
+            use_operator: true
             operator: field_dates_value_op
-            operator_limit_selection: false
-            operator_list: {  }
+            operator_limit_selection: true
+            operator_list:
+              '<': '<'
+              '>': '>'
+              between: between
             identifier: field_dates_value
             required: false
             remember: false
@@ -996,9 +999,9 @@ display:
               administrator: '0'
               editor: '0'
               site_manager: '0'
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: mm/dd/yyyy
+            min_placeholder: MM/DD/YYYY
+            max_placeholder: MM/DD/YYYY
+            placeholder: MM/DD/YYYY
           is_grouped: false
           group_info:
             label: ''
