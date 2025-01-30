@@ -6,7 +6,6 @@
   Drupal.behaviors.drawerBelow = {
     attach: function (context, settings) {
       once('drawer', '.drawer-toggle', context).forEach(drawer => {
-
         const drawerID = drawer.getAttribute('aria-controls');
         if (drawer.classList.contains('pre-hide-toggle') ) {
           //find the matching drawer content and if there is one, do something
@@ -18,13 +17,12 @@
             drawerContent.remove();
           }
         }
-        
 
         drawer.addEventListener('click', function (e) {
           e.preventDefault();
 
-          const toggleText = findToggleType(this);
-          
+          const toggleText = this.dataset.toggle;
+
           if (this.classList.contains('drawer-below')) {
             if (!this.classList.contains('active-drawer')) {
               this.nextElementSibling.setAttribute('aria-hidden', 'false');

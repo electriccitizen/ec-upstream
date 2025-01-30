@@ -50,7 +50,7 @@
     {% endif %}
   {%- endfor -%}
   {% if items.1 %}
-    <a href="#" class="drawer-toggle drawer-below" aria-controls="drawer-{{ rando }}" aria-expanded="false">See all dates</a>
+    <a href="#" class="drawer-toggle drawer-below" aria-controls="drawer-{{ rando }}" aria-expanded="false" data-toggle="dates">See all dates</a>
     <div id="drawer-{{ rando }}" class="drawer-content not-fade" aria-hidden="true">
       {%- for item in items -%}
         {% if not loop.first %}
