@@ -26,30 +26,48 @@
           if (this.classList.contains('drawer-below')) {
             if (!this.classList.contains('active-drawer')) {
               this.nextElementSibling.setAttribute('aria-hidden', 'false');
-              this.nextElementSibling.classList.add('show-content');
               this.textContent = Drupal.t('See fewer @toggle', { '@toggle': toggleText });
               this.classList.add('active-drawer');
               this.setAttribute('aria-expanded', 'true');
+
+              // Set max-height to 0 initially, then to scrollHeight after a tiny delay
+              this.nextElementSibling.style.maxHeight = '0px';
+              setTimeout(() => {
+                this.nextElementSibling.style.maxHeight = this.nextElementSibling.scrollHeight + 'px';
+              }, 10); // Small delay to trigger the transition
             } else {
               this.textContent = Drupal.t('See all @toggle', { '@toggle': toggleText });
               this.classList.remove('active-drawer');
               this.setAttribute('aria-expanded', 'false');
               this.nextElementSibling.setAttribute('aria-hidden', 'true');
-              this.nextElementSibling.classList.remove('show-content');
+
+              // Ensure smooth transition by setting initial max-height if expanded on load
+              setTimeout(() => {
+                this.nextElementSibling.style.maxHeight = '0px'; // Collapse to 0px
+              }, 10);
             }
           } else {
             if (!this.classList.contains('active-drawer')) {
               this.previousElementSibling.setAttribute('aria-hidden', 'false');
-              this.previousElementSibling.classList.add('show-content');
               this.textContent = Drupal.t('See fewer @toggle', { '@toggle': toggleText });
               this.classList.add('active-drawer');
               this.setAttribute('aria-expanded', 'true');
+
+              // Set max-height to 0 initially, then to scrollHeight after a tiny delay
+              this.previousElementSibling.style.maxHeight = '0px';
+              setTimeout(() => {
+                this.previousElementSibling.style.maxHeight = this.nextElementSibling.scrollHeight + 'px';
+              }, 10); // Small delay to trigger the transition
             } else {
               this.textContent = Drupal.t('See all @toggle', { '@toggle': toggleText });
               this.classList.remove('active-drawer');
               this.setAttribute('aria-expanded', 'false');
               this.previousElementSibling.setAttribute('aria-hidden', 'true');
-              this.previousElementSibling.classList.remove('show-content');
+
+              // Ensure smooth transition by setting initial max-height if expanded on load
+              setTimeout(() => {
+                this.previousElementSibling.style.maxHeight = '0px'; // Collapse to 0px
+              }, 10);
             }
           }
         });

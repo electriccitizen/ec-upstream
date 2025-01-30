@@ -15,8 +15,13 @@
           const searchFormWrapper = document.getElementById("search-form-wrapper");
 
           if (searchFormWrapper) {
-            searchFormWrapper.classList.add('show-content');
             searchFormWrapper.setAttribute('aria-hidden', 'false');
+
+            // Set max-height to 0 initially, then to scrollHeight after a tiny delay
+            searchFormWrapper.style.maxHeight = '0px';
+            setTimeout(() => {
+              searchFormWrapper.style.maxHeight = searchFormWrapper.scrollHeight + 'px';
+            }, 10); // Small delay to trigger the transition
           }
 
           if (target) {
@@ -50,10 +55,11 @@
           const searchFormWrapper = document.getElementById("search-form-wrapper");
 
           if (searchFormWrapper) {
+
+            // Ensure smooth transition by setting initial max-height if expanded on load
             setTimeout(() => {
-              searchFormWrapper.classList.remove('show-content');
-              searchFormWrapper.setAttribute('aria-hidden', 'true');
-            }, 200);
+              searchFormWrapper.style.maxHeight = '0px'; // Collapse to 0px
+            }, 10);
           }
         }
 

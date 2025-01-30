@@ -49,13 +49,7 @@
 
   // Accordion content.
   .field-long-text {
-    max-height: 0;
-    transition: max-height .6s ease-out;
-    overflow: hidden;
-
-    &.show-content {
-      transition: max-height .6s ease-in;
-    }
+    @include showContent(.6s);
 
     .inner-text {
       padding: 2.5rem 4rem;
