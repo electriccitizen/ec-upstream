@@ -18,50 +18,7 @@
  *   - in_active_trail: TRUE if the link is in the active trail.
  */
 #}
-{% import _self as menus %}
 
-{#
-  We call a macro which calls itself to render the full tree.
-  @see http://twig.sensiolabs.org/doc/tags/macro.html
-#}
+{% extends 'menu--main.html.twig' %}
 
-{{ menus.menu_links(items, attributes, 0) }}
-
-{% macro menu_links(items, attributes, menu_level) %}
-  {% import _self as menus %}
-  {% if items %}
-    {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('menu-support-book-navigation') }}>
-    {% else %}
-      <ul>
-    {% endif %}
-    {% for item in items %}
-      {% if item.url.routeParameters.node %}
-        {% set linkNode = drupal_entity('node',item.url.routeParameters.node) %}
-        {% if linkNode['#node'].field_support_type.0 %}
-          {% set supportType = linkNode['#node'].field_support_type.0.value|clean_class %}
-        {% else %}
-        {% set supportType = '' %}
-        {% endif %}
-      {% endif %}
-      {%
-        set classes = [
-          'menu-item',
-          item.is_expanded ? 'menu-item--expanded',
-          item.is_collapsed ? 'menu-item--collapsed',
-          item.in_active_trail ? 'menu-item--active-trail',
-          'item-level-' ~ (menu_level + 1),
-          'item-type-' ~ supportType
-        ]
-      %}
-      <li{{ item.attributes.addClass(classes) }}>
-        <a href="{{ "nolink" not in item.link_classes ? item.url : "#" }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
-        {% if item.below %}
-          <a href="#" class="menu-item-expand">{{ "Expand Menu Item"|t }}</a>
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-        {% endif %}
-      </li>
-    {% endfor %}
-    </ul>
-  {% endif %}
-{% endmacro %}
+{% block mobileToggle %}{% endblock %}
