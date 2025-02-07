@@ -2,6 +2,7 @@
 
   /* CONTENT PLACER PARAGRAPH SELECT LIST FUNCTIONALITY
   ----------------------- */
+  /*
   Drupal.behaviors.contentPlacer = {
     attach: function (context) {
       once('isContentPlacer', '.field--name-field-content-type', context).forEach(contentTypeField => {
@@ -60,6 +61,75 @@
             }
           });
         });
+      });
+    }
+  };
+  */
+
+  /* CONTENT LIST PARAGRAPH SELECT LIST FUNCTIONALITY
+  ----------------------- */
+  Drupal.behaviors.contentList = {
+    attach: function (context) {
+      once('isContentPlacer', '.field--name-field-content-type', context).forEach(contentTypeField => {
+      
+        // Hide select and limit fields that are not the content type (taxonomy)
+        // field. These get displayed later depending on which content type is
+        // selected.
+        hideAllBut('.field--widget-options-select, .field--name-field-limit-list', contentTypeField, context);
+        const contentTypeSelect = contentTypeField.querySelector("select");
+        // Store the "machine name" of the currently selected Content type.
+        let typeName = getTypeString(contentTypeSelect);  
+        
+        // If the Content Placer has already had options set, make sure the
+        // appropriate fields are shown.
+        if (typeName && contentTypeSelect.selectedIndex != "_none") {
+          
+          // This will work for content type categorie fields (like events_category)
+          // as long as the field is correctly named. Additional control fields
+          // like 'event_type' will need to be added using individual logic
+          const categories = '.field--name-field-' + typeName + '-category';
+          context.querySelectorAll('.field--name-field-' + typeName + '-category').forEach(element => {
+            element.style.display = 'block';
+          });
+        }
+
+        /*
+        // Assign onchange events to various fields to hide and show related
+        // fields.
+        contentTypeField.addEventListener("change", event => {
+          // Re-hide any fields that may have been unhidden since the last
+          // change.
+          hideAllBut('.field--widget-options-select, .field--name-field-limit-list', contentTypeField, context, true);
+
+          typeName = getTypeString(event.target);
+          if (typeName) {
+            context.querySelector('.field--name-field-' + typeName + '-list-type').style.display = 'block';
+          }
+        });
+        */
+
+        /*
+        // Show or hide additional options when "Custom" is selected.
+        context.querySelectorAll("div[class*='-list-type']").forEach((taxonomyListType) => {
+          //when one of the list type fields selects are changed
+          taxonomyListType.querySelector('select').addEventListener("change", event => {
+
+            if (typeName) {
+              // If the list type is custom, show the matching category field.
+              if (getTypeString(event.target) == 'custom') {
+                context.querySelectorAll('.field--name-field-' + typeName + '-category, .field--name-field-limit-list').forEach(element => {
+                  element.style.display = 'block';
+                });
+              }
+              else {
+                context.querySelectorAll('.field--name-field-' + typeName + '-category, .field--name-field-limit-list').forEach(element => {
+                  element.style.display = 'none';
+                });
+              }
+            }
+          });
+        });
+        */
       });
     }
   };
