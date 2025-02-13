@@ -45,7 +45,7 @@
 {% if paragraph.id.value %}
   {# render the custom list view only if there are results form the views pre_render_hook #}
   {% if drupal_view('content_list',listType, paragraph.id.value)|render|striptags|trim|length > 0 %}
-    <div class="paragraph paragraph--type--content-list content-{{ contentType ~ '-list'}} custom-views-list" data-quickedit-entity-id="paragraph/{{ paragraph.id.value }}">
+    <div class="paragraph paragraph--type--content-list content-{{ contentType ~ '-list'}}" data-quickedit-entity-id="paragraph/{{ paragraph.id.value }}">
       {{ content.field_widget_title }}
       {{ drupal_view('content_list',listType, paragraph.id.value) }}
       {{ content.field_link }}
