@@ -7,6 +7,7 @@ dependencies:
     - node.type.landing_page
     - paragraphs.paragraphs_type.accordions
     - paragraphs.paragraphs_type.block_placer
+    - paragraphs.paragraphs_type.content_list
     - paragraphs.paragraphs_type.content_placer
     - paragraphs.paragraphs_type.custom_embed
     - paragraphs.paragraphs_type.form_placer
@@ -19,6 +20,7 @@ dependencies:
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.view_placer
   module:
     - entity_reference_revisions
 _core:
@@ -40,6 +42,7 @@ settings:
       accordions: accordions
       block_placer: block_placer
       content_placer: content_placer
+      content_list: content_list
       custom_embed: custom_embed
       form_placer: form_placer
       gallery: gallery
@@ -51,6 +54,7 @@ settings:
       quote: quote
       text: text
       video: video
+      view_placer: view_placer
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
@@ -62,11 +66,14 @@ settings:
       block_placer:
         weight: -39
         enabled: true
+      content_list:
+        weight: -37
+        enabled: true
       content_placer:
         weight: -38
         enabled: true
       custom_embed:
-        weight: -37
+        weight: -36
         enabled: true
       form_placer:
         weight: -35
@@ -74,6 +81,9 @@ settings:
       gallery:
         weight: -34
         enabled: true
+      gallery_item:
+        weight: -23
+        enabled: false
       horizontal_rule:
         weight: -33
         enabled: true
@@ -83,25 +93,28 @@ settings:
       layout_section:
         weight: -31
         enabled: true
+      layout_section_simple:
+        weight: -22
+        enabled: false
       links_files:
         weight: -30
         enabled: true
-      map:
-        weight: -29
-        enabled: true
       portal:
-        weight: -27
+        weight: -29
         enabled: false
       portals:
-        weight: -26
+        weight: -28
         enabled: true
       quote:
-        weight: -25
+        weight: -27
         enabled: true
       text:
-        weight: -24
+        weight: -26
         enabled: true
       video:
-        weight: -23
+        weight: -25
+        enabled: true
+      view_placer:
+        weight: -24
         enabled: true
 field_type: entity_reference_revisions

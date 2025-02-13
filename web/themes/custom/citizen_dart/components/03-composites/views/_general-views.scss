@@ -14,18 +14,15 @@
   .form-item {
     width: 100%;
 
-
-
-    &:not(#edit-field-dates-value-wrapper--2) {
+    &:not(#edit-field-dates-value-wrapper):not(#edit-field-dates-value-wrapper--2) {
       @include smallTab {
         width: 50%;
         max-width: 300px;
       }
     }
 
-    &#edit-field-dates-value-wrapper--2 {
+    &#edit-field-dates-value-wrapper,&#edit-field-dates-value-wrapper--2 {
       padding: 0;
-
       legend {
         padding: 0 10px;
       }
@@ -51,6 +48,7 @@
         }
       }
     }
+    
 
     label {
       @include formLabel;

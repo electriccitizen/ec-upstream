@@ -4,16 +4,20 @@
 
 @use '../../../00-base' as *;
 
-/* ALL UPCOMING EVENTS
+/* EVENTS LIST
 ------------- */
-.events.all-upcoming-events {
-  .view {
-    padding-bottom: $elementSpace;
-  }
-
+.content-events-list {
   .views-row {
     &:not(:last-child) {
       margin-bottom: $spaceMd;
     }
+  }
+}
+
+/* NEWS LIST
+------------- */
+.content-news-list {
+  .views-row:not(:last-child) {
+    margin-bottom: $spaceMd;
   }
 }
