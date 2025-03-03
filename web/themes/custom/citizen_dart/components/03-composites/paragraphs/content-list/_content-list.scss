@@ -1,13 +1,11 @@
 /* ===============
-  CONTENT PLACER WIDGET
+  CONTENT LIST WIDGET
 ================= */
 
 @use '../../../00-base' as *;
 
-.paragraph--type--content-placer {
-  &.custom-views-list {
-    @include textConstrain;
-  }
+.paragraph--type--content-list {
+  @include textConstrain;
 
   .field-widget-title {
     text-align: left;

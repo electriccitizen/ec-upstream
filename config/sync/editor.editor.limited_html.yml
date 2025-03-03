@@ -12,8 +12,10 @@ settings:
   toolbar:
     items:
       - bold
-      - '|'
       - italic
+      - '|'
+      - highlight
+      - '|'
       - alignment
       - '|'
       - link
@@ -25,6 +27,7 @@ settings:
       - indent
       - outdent
       - '|'
+      - wproofreader
       - removeFormat
       - undo
       - redo
@@ -119,6 +122,9 @@ settings:
           weight: 3
           search: '<a name="OLE_LINK[^"]*">(.*?)<\/a>'
           replace: $1
+    ckeditor5_plugin_pack_highlight__highlight:
+      options: {  }
+      use_default_markers: true
     linkit_extension:
       linkit_enabled: true
       linkit_profile: wysiwyg

@@ -129,59 +129,63 @@ button.disabled:hover {
 
 /* CUSTOM ICONS ARE ALL DOWNLOADED FROM MATERIAL ICONS */
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-accordions>a:before {
-  background-image: url('../icons/paragraphs/accordions.svg');
+  background-image: url('../icons/accordions.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-block_placer>a:before {
-  background-image: url('../icons/paragraphs/block-placer.svg');
+  background-image: url('../icons/block-placer.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-content_list>a:before {
+  background-image: url('../icons/content-list.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-content_placer>a:before {
-  background-image: url('../icons/paragraphs/content-placer.svg');
+  background-image: url('../icons/content-placer.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-custom_embed>a:before {
-  background-image: url('../icons/paragraphs/custom-embed.svg');
+  background-image: url('../icons/custom-embed.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-form_placer>a:before {
-  background-image: url('../icons/paragraphs/form-placer.svg');
+  background-image: url('../icons/form-placer.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-gallery>a:before {
-  background-image: url('../icons/paragraphs/gallery.svg');
+  background-image: url('../icons/gallery.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-horizontal_rule>a:before {
-  background-image: url('../icons/paragraphs/horizontal-rule.svg');
+  background-image: url('../icons/horizontal-rule.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-image>a:before {
-  background-image: url('../icons/paragraphs/image.svg');
+  background-image: url('../icons/image.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-links_files>a:before {
-  background-image: url('../icons/paragraphs/links-files.svg');
-}
-
-.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-map>a:before {
-  background-image: url('../icons/paragraphs/map.svg');
+  background-image: url('../icons/links-files.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-portals>a:before {
-  background-image: url('../icons/paragraphs/portals.svg');
+  background-image: url('../icons/portals.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-quote>a:before {
-  background-image: url('../icons/paragraphs/quote.svg');
+  background-image: url('../icons/quote.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-text>a:before {
-  background-image: url('../icons/paragraphs/text.svg');
+  background-image: url('../icons/text.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-video>a:before {
-  background-image: url('../icons/paragraphs/video.svg');
+  background-image: url('../icons/video.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-view_placer>a:before {
+  background-image: url('../icons/view-placer.svg');
 }
 
 .js-lpb-component.paragraph--view-mode--preview {

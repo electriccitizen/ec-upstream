@@ -25,6 +25,10 @@
       }
     }
 
+    mark.marker-yellow {
+      background-color: #fff01f;
+    }
+
     ul figure.drupal-media {
       margin: 0;
 
@@ -90,12 +94,6 @@
 
   .default.remote-video {
     width: 100%;
-  }
-
-  .highlight {
-    background-color: $highlight;
-    padding-left: 4px;
-    padding-right: 4px;
   }
 
   .warning {

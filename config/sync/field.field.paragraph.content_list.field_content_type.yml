@@ -1,15 +1,15 @@
-uuid: 181dbcd4-27d3-4701-a5c4-5351153e7990
+uuid: 31141dda-3f8d-45b9-9f69-806fab9217bc
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_content_type
-    - paragraphs.paragraphs_type.content_placer
+    - paragraphs.paragraphs_type.content_list
     - taxonomy.vocabulary.list_widget
-id: paragraph.content_placer.field_content_type
+id: paragraph.content_list.field_content_type
 field_name: field_content_type
 entity_type: paragraph
-bundle: content_placer
+bundle: content_list
 label: Content
 description: ''
 required: true

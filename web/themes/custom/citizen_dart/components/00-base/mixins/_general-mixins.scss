@@ -87,15 +87,10 @@
   transition: transform 0.15s ease-in 0s, -webkit-transform 0.15s ease-in 0s;
 }
 
-@mixin showContent($maxHeight, $time) {
+@mixin showContent($time) {
   max-height: 0;
   transition: max-height #{$time} ease-out;
   overflow: hidden;
-
-  &.show-content {
-    max-height: #{$maxHeight};
-    transition: max-height #{$time} ease-in;
-  }
 }
 
 @mixin browserWipe {

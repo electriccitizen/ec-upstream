@@ -17,13 +17,3 @@
     }
   }
 }
-
-/* EVENTS LIST
-------------- */
-.events.events-list {
-  .views-row {
-    &:not(:last-child) {
-      margin-bottom: $spaceMd;
-    }
-  }
-}

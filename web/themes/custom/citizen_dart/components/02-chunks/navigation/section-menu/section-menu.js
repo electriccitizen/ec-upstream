@@ -14,14 +14,14 @@
             if (event.target.classList.contains('active-nav')) {
               event.target.setAttribute('aria-expanded', false);
               event.target.classList.remove('active-nav');
-              event.target.querySelector('.material-icons').innerHTML = 'menu';
+              event.target.querySelector('.material-icons').innerHTML = '&#xE5D2;';
               menuNavigation.classList.remove('accordion-open');
               slideUp(sectionMenuWrapper, 200);
             }
             else {
               event.target.setAttribute('aria-expanded', true);
               event.target.classList.add('active-nav');
-              event.target.querySelector('.material-icons').innerHTML = 'close';
+              event.target.querySelector('.material-icons').innerHTML = '&#xE5CD;';
               menuNavigation.classList.add('accordion-open');
               slideDown(sectionMenuWrapper, 200);
             }

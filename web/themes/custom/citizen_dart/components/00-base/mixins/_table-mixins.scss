@@ -2,6 +2,7 @@
 	 TABLES
 ============== */
 @use '../variables' as *;
+@use 'sass:color';
 
 %tableSort {
   color: $white;
@@ -55,9 +56,9 @@
 }
 
 %tableSortActive {
-  background: lighten($tableHeaderBack, 6%);
-  border-top-color: lighten($tableHeaderBack, 6%);
-  border-bottom-color: lighten($link, 10%);
+  background: color.adjust($tableHeaderBack, $lightness: 6%);
+  border-top-color: color.adjust($tableHeaderBack, $lightness: 6%);
+  border-bottom-color: color.adjust($link, $lightness: 10%);
 
   &>a {
     color: $white;

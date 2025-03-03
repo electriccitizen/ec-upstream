@@ -10,7 +10,9 @@
 .view-content,
 .webform-submission-form {
   table {
-    @include table;
+  @include table;
+  & {
     margin-bottom: $spaceMd;
   }
+}//end table
 }

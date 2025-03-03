@@ -12,6 +12,8 @@ function citizen_dart_preprocess_menu(&$variables) {
   switch ($variables['menu_name']) {
     case 'main':
       _menu_item_classes_recursive($variables['items']);
+    case 'support-book':
+      _menu_item_classes_recursive($variables['items']);
 
       break;
   }

@@ -40,5 +40,5 @@
 }
 
 .drawer-content {
-  @include showContent(1000px, .5s);
+  @include showContent(.5s);
 }

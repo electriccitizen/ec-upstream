@@ -1,0 +1,10 @@
+uuid: 2b7bf504-659a-4404-b078-f57af02802ca
+langcode: en
+status: true
+dependencies: {  }
+id: content_list
+label: 'Content List'
+icon_uuid: null
+icon_default: null
+description: 'Add custom defined list of content to a section.'
+behavior_plugins: {  }

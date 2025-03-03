@@ -30,7 +30,7 @@ function citizen_dart_preprocess_webform(&$variables) {
  */
 function citizen_dart_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form['#id'] == 'site-search-form') {
-    $form['actions']['submit']['#suffix'] = '<span class="material-icons">search</span>';
+    $form['actions']['submit']['#suffix'] = '<span class="material-icons">&#xE8b6;</span>';
   }
   if (strpos($form_id, 'views_exposed_form') === 0) {
     if (isset($form['actions']['submit'])) {

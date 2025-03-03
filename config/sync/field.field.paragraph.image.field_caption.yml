@@ -10,7 +10,7 @@ field_name: field_caption
 entity_type: paragraph
 bundle: image
 label: Caption
-description: '<strong>NOTE:</strong> Captions may not be displayed in all places this media is used.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

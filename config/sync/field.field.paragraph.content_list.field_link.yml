@@ -1,23 +1,23 @@
-uuid: 35bd2db4-aa12-4a45-afda-53f7d0fc92e3
+uuid: b758338f-ae03-44f3-9dbd-c8332e907d17
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_link
-    - paragraphs.paragraphs_type.content_placer
+    - paragraphs.paragraphs_type.content_list
   module:
     - link
-id: paragraph.content_placer.field_link
+id: paragraph.content_list.field_link
 field_name: field_link
 entity_type: paragraph
-bundle: content_placer
+bundle: content_list
 label: 'More Link'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   title: 2
-  link_type: 17
+  link_type: 1
 field_type: link

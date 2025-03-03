@@ -1,0 +1,23 @@
+/* ==================
+		EVENTS VIEWS
+==================== */
+
+@use '../../../00-base' as *;
+
+/* EVENTS LIST
+------------- */
+.content-events-list {
+  .views-row {
+    &:not(:last-child) {
+      margin-bottom: $spaceMd;
+    }
+  }
+}
+
+/* NEWS LIST
+------------- */
+.content-news-list {
+  .views-row:not(:last-child) {
+    margin-bottom: $spaceMd;
+  }
+}

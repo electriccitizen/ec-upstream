@@ -38,7 +38,7 @@
 
 <nav aria-label="{{ "Section Menu"|t }}" id="block-section-menu"{{ attributes }} class="block--system-menu section-menu">
   {{ title_prefix }}
-  <h2 id="section-menu-title" class="block-title{% if not configuration.label_display %} visually-hidden{% endif %}"><a href="#" class="section-menu-toggle" aria-label="{{ "Mobile Section Menu Toggle"|t }}"><span class="material-icons">menu</span>{{ configuration.label }}</a></h2>
+<h2 id="section-menu-title" class="block-title{% if not configuration.label_display %} visually-hidden{% endif %}"><a href="#" class="section-menu-toggle" aria-label="{{ "Mobile Section Menu Toggle"|t }}"><span class="material-icons">&#xE5D2;</span>{{ configuration.label }}</a></h2>
   {{ title_suffix }}
   <div id="section-menu-wrapper">
     {% block sectionMenu %}
@@ -46,4 +46,3 @@
     {% endblock %}
   </div>
 </nav>
-

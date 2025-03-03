@@ -11,7 +11,9 @@
     .gallery-wrapper {
       @include safeFlex(row, wrap, center, start);
       @include bleed(padding, 32px);
-      margin-bottom: -$spaceMd;
+      & {
+        margin-bottom: -$spaceMd;        
+      }
 
       // Hide the content before lightbox.
       .featherlight-hidden {

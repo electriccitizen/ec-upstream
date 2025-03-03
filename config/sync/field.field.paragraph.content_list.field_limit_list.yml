@@ -1,18 +1,18 @@
-uuid: 2e9b4ccd-46bd-4d3f-9c30-e946c297b8cd
+uuid: 4faa018d-be5b-41eb-a077-8cd4bc5ddcc5
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_limit_list
-    - paragraphs.paragraphs_type.content_placer
-id: paragraph.content_placer.field_limit_list
+    - paragraphs.paragraphs_type.content_list
+id: paragraph.content_list.field_limit_list
 field_name: field_limit_list
 entity_type: paragraph
-bundle: content_placer
+bundle: content_list
 label: 'Limit List'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

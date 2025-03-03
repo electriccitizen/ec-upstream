@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.bios.field_first_name
     - field.field.node.bios.field_headshot
     - field.field.node.bios.field_last_name
-    - field.field.node.bios.field_list_widget
     - field.field.node.bios.field_meta_description
     - field.field.node.bios.field_phone
     - field.field.node.bios.field_position
@@ -131,7 +130,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_list_widget: true
   path: true
   promote: true
   sticky: true
