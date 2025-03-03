@@ -12,9 +12,7 @@ $databases['default']['default'] = array (
 );
 $settings['hash_salt'] = 'I wish i were a boy in France.';
 
-// Site Specific URL 
-$base_url = "http://ec-upstream.docksal.site";
-$settings['trusted_host_patterns'] = array('^ec-upstream\.docksal\.site', '^ec-upstream\.docksal');
+$settings['trusted_host_patterns'] = array('^ec-upstream\.ddev\.site', '^ec-upstream\.docksal\.site');
 
 $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
 
