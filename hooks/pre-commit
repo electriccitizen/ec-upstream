@@ -5,7 +5,9 @@ files=`git diff --cached --name-only --diff-filter=ACRTM`
 
 # Test if DDev or Docksal is running 
 # IF DDev
-if [ DDEV_UID ]; then 
+if [ ${DDEV_UID} ]; then
+
+  echo "Running DDev stuff"
 
   # Execute PHP Code Sniffer for Coding Standards.
   ddev exec phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,scss ${files} --ignore="\.min\.css,\.min\.js,*/dist/*\.css,/components-addons/*"
