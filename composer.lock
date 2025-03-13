@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4abb34d68062eedc3d516388d29aa4d",
+    "content-hash": "9e054a5969c9928f23a954f4c6391f85",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6761,6 +6761,64 @@
             }
         },
         {
+            "name": "drupal/simple_sitemap",
+            "version": "4.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/simple_sitemap.git",
+                "reference": "4.2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/simple_sitemap-4.2.2.zip",
+                "reference": "4.2.2",
+                "shasum": "1f9c9197d37450fb347a4fa3f10191f5f4b5ef13"
+            },
+            "require": {
+                "drupal/core": "^10.2 || ^11",
+                "ext-xmlwriter": "*"
+            },
+            "conflict": {
+                "drush/drush": "<12.5.1"
+            },
+            "require-dev": {
+                "drupal/paragraphs": "^1.18"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.2.2",
+                    "datestamp": "1732485885",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pawel Ginalski (gbyte)",
+                    "homepage": "https://www.drupal.org/u/gbyte",
+                    "email": "contact@gbyte.dev",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "walkingdexter",
+                    "homepage": "https://www.drupal.org/user/3251330"
+                }
+            ],
+            "description": "Creates a standard conform hreflang XML sitemap of the site content and provides a framework for developing other sitemap types.",
+            "homepage": "https://drupal.org/project/simple_sitemap",
+            "support": {
+                "source": "https://cgit.drupalcode.org/simple_sitemap",
+                "issues": "https://drupal.org/project/issues/simple_sitemap"
+            }
+        },
+        {
             "name": "drupal/smart_date",
             "version": "4.2.1",
             "source": {
@@ -7519,105 +7577,6 @@
                 "issues": "https://www.drupal.org/project/issues/webform?version=8.x",
                 "docs": "https://www.drupal.org/docs/8/modules/webform",
                 "forum": "https://drupal.stackexchange.com/questions/tagged/webform"
-            }
-        },
-        {
-            "name": "drupal/xmlsitemap",
-            "version": "2.0.0-beta1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/xmlsitemap.git",
-                "reference": "2.0.0-beta1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/xmlsitemap-2.0.0-beta1.zip",
-                "reference": "2.0.0-beta1",
-                "shasum": "83fe21b87952dce131b0fbebff24313ca0b75cdf"
-            },
-            "require": {
-                "drupal/core": "^10.3 || ^11",
-                "ext-xmlwriter": "*"
-            },
-            "require-dev": {
-                "drupal/config_readonly": "^1.0",
-                "drupal/metatag": "^2.0",
-                "drupal/robotstxt": "^1.0"
-            },
-            "suggest": {
-                "drush/drush": "Command-line regenerating and rebuilding sitemaps."
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.0-beta1",
-                    "datestamp": "1732973050",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
-                },
-                "drush": {
-                    "services": {
-                        "drush.services.yml": ">=11"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "alanburke",
-                    "homepage": "https://www.drupal.org/user/35997"
-                },
-                {
-                    "name": "amateescu",
-                    "homepage": "https://www.drupal.org/user/729614"
-                },
-                {
-                    "name": "andrei.dincu",
-                    "homepage": "https://www.drupal.org/user/2628879"
-                },
-                {
-                    "name": "dave reid",
-                    "homepage": "https://www.drupal.org/user/53892"
-                },
-                {
-                    "name": "juampynr",
-                    "homepage": "https://www.drupal.org/user/682736"
-                },
-                {
-                    "name": "paulmckibben",
-                    "homepage": "https://www.drupal.org/user/279003"
-                },
-                {
-                    "name": "pifagor",
-                    "homepage": "https://www.drupal.org/user/2375692"
-                },
-                {
-                    "name": "poker10",
-                    "homepage": "https://www.drupal.org/user/272316"
-                },
-                {
-                    "name": "renatog",
-                    "homepage": "https://www.drupal.org/user/3326031"
-                },
-                {
-                    "name": "tadityar",
-                    "homepage": "https://www.drupal.org/user/3094465"
-                },
-                {
-                    "name": "th_tushar",
-                    "homepage": "https://www.drupal.org/user/1835276"
-                }
-            ],
-            "description": "Creates XML Sitemaps for the site",
-            "homepage": "https://www.drupal.org/project/xmlsitemap",
-            "support": {
-                "source": "https://git.drupalcode.org/project/xmlsitemap",
-                "issues": "http://drupal.org/project/issues/xmlsitemap"
             }
         },
         {
@@ -9563,7 +9522,7 @@
         },
         {
             "name": "pantheon-upstreams/upstream-configuration",
-            "version": "dev-ecup-272",
+            "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "upstream-configuration",
@@ -16826,12 +16785,11 @@
         "drupal/entity_usage": 10,
         "drupal/openai": 10,
         "drupal/search_api_decoupled": 15,
-        "drupal/search_web_components": 15,
-        "drupal/xmlsitemap": 10
+        "drupal/search_web_components": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
