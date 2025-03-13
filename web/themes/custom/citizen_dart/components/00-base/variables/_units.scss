@@ -13,9 +13,9 @@ $contentStop: 1200px;
 $largeScreen: 1600px;
 $textMax: 800px;
 $onlyTab: $tab $desk - 1px;
-$onlySmall: max-width $tab - 1px;
-$onlyPhone: max-width $smallTab - 1px;
-$onlyMobile: max-width $desk - 1px;
+$onlySmall: $tab - 1px;
+$onlyPhone: $smallTab - 1px;
+$onlyMobile: $desk - 1px;
 
 // Used by JS to make sure the SCSS vars can be used.
 :root {
@@ -80,7 +80,7 @@ $sectionGutter: 40px;
 }
 
 @mixin onlyMobile {
-  @media screen and (max-width: $desk) {
+  @media screen and (max-width: $onlyMobile) {
     @content;
   }
 }
@@ -92,13 +92,13 @@ $sectionGutter: 40px;
 }
 
 @mixin onlySmall {
-  @media screen and (max-width: $tab) {
+  @media screen and (max-width: $onlySmall) {
     @content;
   }
 }
 
 @mixin onlyPhone {
-  @media screen and (max-width: $smallTab) {
+  @media screen and (max-width: $onlyPhone) {
     @content;
   }
 }
