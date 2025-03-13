@@ -20,6 +20,7 @@
                   behavior: 'smooth',
                   block: 'start'
                 });
+                viewScrollAnchor.focus();
               }
             }, 300);
           };
