@@ -78,6 +78,7 @@ dependencies:
   - search_api_db
   - serialization
   - shortcut
+  - simple_sitemap
   - smart_date
   - smart_date_recur
   - system
@@ -94,7 +95,6 @@ dependencies:
   - views_ui
   - webform
   - webform_ui
-  - xmlsitemap
 
 themes:
   - stable9
