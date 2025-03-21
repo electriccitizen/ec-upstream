@@ -56,10 +56,9 @@
 
     // Controls.
     .featherlight-close-icon {
-      background: none;
+      background: $sliderArrowBack;
       font-size: 24px;
       color: $modalGalButton;
-      text-shadow: 2px 2px 3px $modalGalButtonShadow;
       height: 32px;
       width: 32px;
       font-family: $bodyFont;
@@ -68,7 +67,6 @@
       &:focus {
         color: $modalGalButtonHover;
         background: $modalGalButtonBackHover;
-        text-shadow: 2px 2px 3px $modalGalButtonShadowHover;
       }
     }
 
@@ -91,17 +89,25 @@
           position: absolute;
           top: 40px;
           left: 10%;
+          width: 32px;
+          height: 32px;
+          background: $sliderArrowBack;
+          border-radius: 50%;
+          font-size: 20px;
+          @include safeFlex(column,nowrap,center,center);
           @include materialIcon('arrow_back');
         }
       }
 
       &:hover,
       &:focus {
-        background: $modalGalButtonBackHover;
-
         span {
           border-right-color: $link;
           @include transition(border-right-color, 0.3s, ease);
+
+          &:before {
+            background: $modalGalButtonBackHover;
+          }
         }
       }
     }
@@ -124,17 +130,25 @@
         &:before {
           position: absolute;
           top: 40px;
+          width: 32px;
+          height: 32px;
+          background: $sliderArrowBack;
+          border-radius: 50%;
+          font-size: 20px;
+          @include safeFlex(column,nowrap,center,center);
           @include materialIcon('arrow_forward');
         }
       }
 
       &:hover,
       &:focus {
-        background: $modalGalButtonBackHover;
-
         span {
           border-left-color: $link;
           @include transition(border-left-color, 0.3s, ease);
+
+          &:before {
+            background: $modalGalButtonBackHover;
+          }
         }
       }
     }
@@ -182,9 +196,10 @@
 
     &:before {
       content: '';
-      display: block;
       position: absolute;
       top: calc(50% - 10px);
+      width: 32px;
+      height: 32px;
     }
 
     &.slick-prev {
@@ -192,7 +207,11 @@
 
       &:before {
         left: 20px;
+        font-size: 20px;
+        @include safeFlex(column,nowrap,center,center);
         @include materialIcon('arrow_back');
+        background: $sliderArrowBack;
+        border-radius: 50%;
       }
 
       &:hover,
@@ -210,7 +229,11 @@
 
       &:before {
         right: 20px;
+        font-size: 20px;
+        @include safeFlex(column,nowrap,center,center);
         @include materialIcon('arrow_forward');
+        background: $sliderArrowBack;
+        border-radius: 50%;
       }
 
       &:hover,
