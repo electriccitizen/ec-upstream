@@ -3,10 +3,7 @@
 # Get all files attempting to be changed from HEAD.
 files=`git diff --cached --name-only --diff-filter=ACRTM`
 
-# Test if DDev or Docksal is running 
-# IF DDev
-if [ ${DDEV_UID} ]; then
-
+if [ ! -z "$files" ]; then
   echo "Running DDev stuff"
 
   # Execute PHP Code Sniffer for Coding Standards.
@@ -22,23 +19,5 @@ if [ ${DDEV_UID} ]; then
     echo "The code you are committing are violating Drupal's Best Practices. Please make all listed adjustments and commit again."
     exit 1
   fi
-
-else
-
-  # NOT DDev, so Docksal 
-
-  # Execute PHP Code Sniffer for Coding Standards.
-  fin exec phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,scss ${files} --ignore="\.min\.css,\.min\.js,*/dist/*\.css,/components-addons/*"
-  if [ $? -ne 0 ]; then
-    echo "Coding Standard errors were found in the files you are committing. Please make all listed adjustments and commit again."
-    exit 1
-  fi
-
-  # Execute PHP Code Sniffer for Drupal Best Practices.
-  fin exec phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,scss,twig ${files} --ignore="\.min\.css,\.min\.js,*/dist/*\.css,/components-addons/*"
-  if [ $? -ne 0 ]; then
-    echo "The code you are committing are violating Drupal's Best Practices. Please make all listed adjustments and commit again."
-    exit 1
-  fi
-
 fi
+
