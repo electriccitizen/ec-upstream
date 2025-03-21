@@ -38,10 +38,7 @@ function citizen_dart_preprocess_html(&$variables) {
   // Define the fallback image URL.
   $fallback_image = Url::fromUri('internal:/themes/custom/citizen_dart/logo-social.jpg', ['absolute' => TRUE])->toString();
 
-  // Get the current route match and check for a content entity.
-  $route_match = \Drupal::routeMatch();
-  $og_image = NULL;
-
+  // Make sure we're on a node.
   $node = Drupal::request()->attributes->get('node');
   $node_revision = \Drupal::routeMatch()->getParameter('node_revision');
   if ($node_revision) {
@@ -52,9 +49,6 @@ function citizen_dart_preprocess_html(&$variables) {
       $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($vid);
     }
     if ($node->get('field_image')->isEmpty()) {
-      $metatag_manager = \Drupal::service('metatag.manager');
-      // Get metatag values from the entity.
-      $metatags = $metatag_manager->tagsFromEntity($node);
 
       // Set Open Graph and Twitter image meta tags.
       $variables['#attached']['html_head'][] = [
