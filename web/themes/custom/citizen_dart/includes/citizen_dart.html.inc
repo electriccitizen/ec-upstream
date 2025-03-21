@@ -5,6 +5,8 @@
  * Includes all preprocess and alter hooks related to HTML and pages.
  */
 
+use Drupal\Core\Url;
+
 /**
  * Implements hook_preprocess_html().
  */
@@ -32,6 +34,51 @@ function citizen_dart_preprocess_html(&$variables) {
   }
   // Get the mtime of the critical.css file for cache-busting.
   $variables['critical_css_mtime'] = filemtime(DRUPAL_ROOT . '/themes/custom/citizen_dart/dist/critical.css');
+
+  // Define the fallback image URL.
+  $fallback_image = Url::fromUri('internal:/themes/custom/citizen_dart/logo-social.jpg', ['absolute' => TRUE])->toString();
+
+  // Get the current route match and check for a content entity.
+  $route_match = \Drupal::routeMatch();
+  $og_image = NULL;
+
+  $node = Drupal::request()->attributes->get('node');
+  $node_revision = \Drupal::routeMatch()->getParameter('node_revision');
+  if ($node_revision) {
+    $vid = $node_revision->getRevisionId();
+  }
+  if ($node) {
+    if ((!$node instanceof NodeInterface) && (isset($vid))) {
+      $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($vid);
+    }
+    if ($node->get('field_image')->isEmpty()) {
+      $metatag_manager = \Drupal::service('metatag.manager');
+      // Get metatag values from the entity.
+      $metatags = $metatag_manager->tagsFromEntity($node);
+
+      // Set Open Graph and Twitter image meta tags.
+      $variables['#attached']['html_head'][] = [
+        [
+          '#tag' => 'meta',
+          '#attributes' => [
+            'property' => 'og:image',
+            'content' => $fallback_image,
+          ],
+        ],
+        'og:image',
+      ];
+      $variables['#attached']['html_head'][] = [
+        [
+          '#tag' => 'meta',
+          '#attributes' => [
+            'property' => 'twitter:image',
+            'content' => $fallback_image,
+          ],
+        ],
+        'twitter:image',
+      ];
+    }
+  }
 }
 
 /**
