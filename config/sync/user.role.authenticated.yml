@@ -6,6 +6,7 @@ dependencies:
     - filter.format.basic_html
     - filter.format.limited_html
   module:
+    - ckeditor5_premium_features_wproofreader
     - file
     - filter
     - media
@@ -23,6 +24,8 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access toolbar'
+  - 'ckeditor5 wproofreader add word'
+  - 'ckeditor5 wproofreader ignore all'
   - 'delete own files'
   - 'use search api endpoint'
   - 'use search with example_endpoint endpoint'
