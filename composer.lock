@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9e054a5969c9928f23a954f4c6391f85",
+    "content-hash": "4e2bace2298fe52a38cf63fd2bcb0314",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2459,29 +2459,26 @@
         },
         {
             "name": "drupal/addanother",
-            "version": "1.3.0",
+            "version": "dev-1.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/addanother.git",
-                "reference": "8.x-1.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/addanother-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "b1f6614a655a13f583f0b62984619a929b199d2c"
+                "reference": "8a2389e598ecdbdfa69902ec562e67c0fd570c49"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10"
+                "drupal/core": "^8 || ^9 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1710425567",
+                    "version": "8.x-1.3+1-dev",
+                    "datestamp": "1727760426",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -16796,6 +16793,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/addanother": 20,
         "drupal/augmentor_chatgpt": 15,
         "drupal/ckeditor5_fullscreen": 10,
         "drupal/drupal-extension": 5,
