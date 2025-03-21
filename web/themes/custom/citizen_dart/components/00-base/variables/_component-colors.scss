@@ -66,18 +66,6 @@ $footerText : $offWhite;
 $footerLink : $adminGold;
 $footerLinkHover : $adminWhiteGold;
 $borderRule : $black;
-$modalBack : $adminTransGrey;
-$modalContent : $baseText;
-$modalContentBack : $siteBack;
-$modalHeader : $white;
-$modalHeaderBack : $darkGrey;
-$modalHeaderClose : $white;
-$modalHeaderCloseHover : $grey;
-$modalGalButton : $white;
-$modalGalButtonHover : $link;
-$modalGalButtonBackHover : transparent;
-$modalGalButtonShadow : $transBlack;
-$modalGalButtonShadowHover : $transBlack;
 $hamburger : $black;
 $hamburgerActive : $black;
 $searchIcon : $black;
@@ -145,7 +133,23 @@ $evenRowText : $baseText;
 $oddRowBack : $lightGrey;
 $oddRowText : $baseText;
 
-/* SUPERFISH
+/* GALLERIES / MODALS
+----------------------------- */
+$sliderArrowBack : $transBlack;
+$modalBack : $adminTransGrey;
+$modalContent : $baseText;
+$modalContentBack : $siteBack;
+$modalHeader : $white;
+$modalHeaderBack : $darkGrey;
+$modalHeaderClose : $white;
+$modalHeaderCloseHover : $grey;
+$modalGalButton : $white;
+$modalGalButtonHover : $link;
+$modalGalButtonBackHover : transparent;
+$modalGalButtonShadow : $transBlack;
+$modalGalButtonShadowHover : $transBlack;
+
+/* NAVIGATION
 ---------------------- */
 //desktop
 $sfTopLink : $black;

@@ -182,9 +182,10 @@
 
     &:before {
       content: '';
-      display: block;
       position: absolute;
       top: calc(50% - 10px);
+      width: 32px;
+      height: 32px;
     }
 
     &.slick-prev {
@@ -192,7 +193,11 @@
 
       &:before {
         left: 20px;
+        font-size: 20px;
+        @include safeFlex(column,nowrap,center,center);
         @include materialIcon('arrow_back');
+        background: $sliderArrowBack;
+        border-radius: 50%;
       }
 
       &:hover,
@@ -210,7 +215,11 @@
 
       &:before {
         right: 20px;
+        font-size: 20px;
+        @include safeFlex(column,nowrap,center,center);
         @include materialIcon('arrow_forward');
+        background: $sliderArrowBack;
+        border-radius: 50%;
       }
 
       &:hover,
