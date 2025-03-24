@@ -76,13 +76,13 @@ fieldset {
 /* AUTOCOMPLETE DROPDOWN
 -------------------------- */
 .ui-autocomplete {
-  #drupal-off-canvas-wrapper-wrapper & {
+  .ui-dialog-off-canvas & {
     background: $siteBack;
   }
 
   .ui-menu-item-wrapper {
     display: block;
-    font-size: 2rem;
+    font-size: 2rem !important;
 
     &.ui-state-active {
       background: $link;

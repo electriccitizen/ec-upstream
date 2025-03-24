@@ -170,10 +170,10 @@
 
 /* OFF CANVAS
 ----------------- */
-#drupal-off-canvas-wrapper {
+.ui-dialog.ui-dialog-off-canvas.ui-widget.ui-widget-content {
   .ui-dialog-titlebar {
     .ui-dialog-title {
-      font-size: 15px;
+      font-size: 15px !important;
       line-height: .75em;
       font-weight: $regular;
 
@@ -193,8 +193,8 @@
     }
   }
 
-  #drupal-off-canvas {
-    font-size: 16px;
+  .ui-widget-content.ui-dialog-content {
+    font-size: 16px !important;
 
     button,
     .ui-button {
@@ -208,7 +208,7 @@
     summary,
     input:where(:not([type="checkbox"], [type="radio"], [type="file"])),
     textarea {
-      font-size: 14px;
+      font-size: 14px !important;
     }
 
     .form-actions {
@@ -217,7 +217,7 @@
 
     select {
       background-color: revert;
-      font-size: 14px;
+      font-size: 14px !important;
       background-size: .75em;
     }
 
