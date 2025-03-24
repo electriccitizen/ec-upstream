@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-## Description: ddev drush uli - User login substitute
-## Usage: uli [flags] [args]
-## Example: "ddev uli" or "ddev uli --uid='xxx'" or other uli options
-
-# Abort if anything fails
-set -e
-ddev exec drush uli "$@" --uri=${DDEV_SITENAME}.${DDEV_TLD}

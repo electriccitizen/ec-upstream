@@ -44,7 +44,7 @@
           });
         });
 
-        window.addEventListener('resize', Drupal.debounce(updateAccordHeight, 150, false));
+        window.addEventListener('resize', Drupal.debounce(updateAccordHeight, 150, FALSE));
 
       });
 

@@ -1,4 +1,3 @@
-
 (function (Drupal, once) {
 
   Drupal.behaviors.searchToggle = {

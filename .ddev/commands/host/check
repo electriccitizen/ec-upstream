@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Description: Code sniff to Drupal standards with phpcs. Pass along a file name or a directory name.
+## Usage: check [arg]
+## Example: "ddev check web/sites/default/settings.php" or "ddev check web/sites/default/"
+
+ddev exec phpcs --standard=Drupal,DrupalPractice --ignore="\.min\.css,\.min\.js,*/dist/*\.css,/components-addons/*" "$@" 

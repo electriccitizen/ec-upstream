@@ -18,7 +18,6 @@ module:
   devel_generate: 0
   stage_file_proxy: 0
   update: 0
-  upgrade_status: 0
   webform_devel: 0
 theme: {  }
 complete_list: {  }
