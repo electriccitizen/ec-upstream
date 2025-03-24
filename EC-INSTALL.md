@@ -1,11 +1,11 @@
 EC-Upstream Local Development
 =============================
-Reviewed by Adam, 2025-03-21
+Reviewed by Adam, 2025-03-24
 
 # Project Details
 - **NAME:** ec-upstream
-- **URL:** http://dev-ec-upstream.pantheonsite.io/
-- **LOCAL URL:** http://ec-upstream.docksal.site
+- **URL:** https://dev-ec-upstream.pantheonsite.io/
+- **LOCAL URL:** https://ec-upstream.ddev.site
 - **BRANCH:** main
 - **HOSTING:** [Pantheon Dashboard](https://dashboard.pantheon.io/sites/b043b678-2567-403a-aafc-947c7d9a76de#dev/code)
 )
@@ -16,122 +16,56 @@ Reviewed by Adam, 2025-03-21
 - [EC: Local development requirements](https://docs.google.com/document/d/1_yeISu5bW5637TCeXByi82LUUfD1jeeSDHh5IeiPz4o/edit?usp=sharing)
 - [EC: Developing on Pantheon](https://docs.google.com/document/d/1oTBHep57WENbf8PnM4LSn2Zx6x5EKA1rSYDEMvBEsUY/edit)
 
-# Local Development Setup for Docksal
-
-Follow these steps to install a local development environment with Docksal.
+# Local Development Setup
 
 `cd ~/Projects`
 
-`git clone git@github.com:electriccitizen/ec-upstream.git ec-upstream`
-
 ```
-cd ec-upstream
-fin hosts add
-fin cert
-fin composer install
-fin composer run sniff-enable
-```
-
-## Download and import the database
-
-`fin drush @ec-upstream.dev sql-dump > database.sql`
-
-`fin db import database.sql`
-
-`fin drush cr`
-
-## Import local configuration
-
-`fin drush cim`
-
-## Log into website as admin
-
-`fin drush uli`
-
-Open the generated login URL and you should be set to go.
-
-# Refreshing your local environment with Docksal
-Whenever you start a new task, you'll want to refresh your local environment to pull in the latest changes from other developers.
-
-```
-cd ~/Projects/ec-upstream
-git checkout main
-git pull
-fin restart
-fin composer install
-```
-
-DB Pull - Optional
-`fin drush @ec-upstream.dev sql-dump > database.sql`
-`fin db import database.sql`
-End DB Pull
-
-`fin drush cr`
-
-`fin drush cim`
-
-`fin drush uli`
-
-Open the generated login URL and you should be set to go.
-
-# Local Development Setup for DDev
-
-Follow these steps to install a local development environment with DDev.
-
-`cd ~/Projects`
-
-`git clone git@github.com:electriccitizen/ec-upstream.git ec-upstream`
-
-```
-cd ec-upstream
+git clone git@github.com:electriccitizen/ec-upstream.git ec-upstream
+cd ec-upstream/
 ddev start
-ddev composer install
-ddev composer run sniff-enable
-```
-
-## Download and import the database
-
-`ddev auth ssh`
-
-`ddev drush @ec-upstream.dev sql-dump > database.sql`
-
-`ddev import-db database.sql`
-
-`ddev drush cr`
-
-## Import local configuration
-
-`ddev drush cim`
-
-## Log into website as admin
-
-`ddev uli`
-
-Open the generated login URL and you should be set to go.
-
-# Refreshing your local environment with Docksal
-Whenever you start a new task, you'll want to refresh your local environment to pull in the latest changes from other developers.
-
-```
-cd ~/Projects/ec-upstream
-git checkout main
-git pull
-ddev start
+ddev auth ssh
 ddev composer install
 ```
+## Download and import the database
 
-DB Pull - Optional
-`ddev auth ssh`
-`ddev drush @ec-upstream.dev sql-dump > database.sql`
-`ddev import-db database.sql`
-End DB Pull
+```
+ddev drush @ec-upstream.live sql-dump > dev.sql
+ddev import-db --file=dev.sql
+ddev drush cr
+ddev drush cim
+```
 
-`ddev drush cr`
-
-`ddev drush cim`
+## Log into website as admin
 
 `ddev drush uli`
 
+Open the generated login URL and you should be set to go.
+
+# Refreshing your local environment
+
+Whenever you start a new task, you'll want to refresh your local environment to pull in the latest changes from other developers.
+
+```
+cd ~/Projects/ec-upstream
+git checkout main
+git pull
+ddev restart
+ddev auth ssh
+ddev composer install
+```
+
+DB Pull (Optional)
+```
+ddev drush @ec-upstream.dev sql-dump > dev.sql
+ddev import-db --file=dev.sql`
+```
+
+```
+ddev drush cr
+ddev drush cim
+ddev drush uli
+```
 Open the generated login URL and you should be set to go.
 
 # Code Standards
@@ -146,17 +80,29 @@ your Drupal code:
 * [PHPStorm](https://www.jetbrains.com/help/phpstorm/drupal-support.html)
 * [Sublime Text](https://github.com/enzolutions/sublime-drupal)
 
+## Built-in DDev commands to fix Coding Standards
+
+We install the coder module to provide access to phpcs and phpcbf, for detecting and fixing coding standards. Here's how to use ddev command to do this work:
+`ddev check file.name` or `ddev check some/file/directory`
+This will run phpcs, with defined Drupal and Drupalpractice coding standards.  
+
+You can fix reported errors with the following commands:
+`ddev fix file.name` or `ddev fix some/file/directory`
+This will run phpcbf and apply the fixes to the affected files.  
+
+## Enabling and disabling Code Sniffing
+
 To manually check from the command line, run the following command:
 
-`composer run code-sniff`
+`ddev composer run code-sniff`
 
 To manually disable code sniffing, run:
 
-`composer run sniff-disable`
+`ddev composer run sniff-disable`
 
 To re-enable it again, run the command that enabled it during installation:
 
-`composer run sniff-enable`
+`ddev composer run sniff-enable`
 
 # Theming
 The active theme for this project is **citizen_patterns**:
@@ -169,15 +115,14 @@ See the THEME-INSTALL.md file inside of the theme root for install instructions.
 
 To interact with Pantheon via drush, you can use the Drush aliases that are auto-generated for each environment. For example:
 
-**DEV, TEST**
+**DEV**
 
-* There is no LIVE environment for the EC-Upstream site.
+* There is no LIVE or TEST environment for the EC-Upstream site.
 
 These aliases are always available via:
 
 ```
 @ec-upstream.dev
-@ec-upstream.test
 ```
 Note that not all projects will have all environments enabled.
 
@@ -191,59 +136,27 @@ Whenever you create a Github pull request, a new Pantheon multidev is created in
 
 # Project Legend
 
-## Docksal Images
-- DB - docksal/mariadb:10.6
-- CLI - docksal/cli:stable-php8.3
-- SOLR - docksal/solr:1.0-solr3
-See `~/Projects/ec-upstream/.docksal/docksal.yml`
-
-## settings.docksal.php
-- database connection
-- hash_salt
-- development services
-- state_cache
-- error level
-- CSS/JS aggregation
-- rebuild_access
-- permissions_hardening
-- trusted_host_pattern
-- file paths
-
 ## DDev Images
-php_version: "8.3"
-webserver_type: nginx-fpm
-database:
-    type: mariadb
-    version: "10.6"
-- SOLR - TODO!
-See `~/Projects/ec-upstream/.ddev/config.yaml`
+- DB - mariadb:10.6
+- PHP - 8.3
 
-## settings.ddev.php
-- database connection
-- hash_salt
-- state_cache
-- permissions_hardening
-- trusted_host_pattern
-- error level
-See `/Projects/ec-upstream/web/sites/default/settings.docksal.php`
+See `~/Projects/ecupdate/.ddev/config.yml`
 
-# Enabling Xdebug - Docksal
+# Enabling Xdebug
 
-Copy the `.docksal/docksal-local.yml.default` file to the .docksal folder as `docksal-local.yml` and ensure that `XDEBUG_ENABLED=1`
+Enable xdebug by running `ddev xdebug`. It will remain enabled for the entirety of your session and you can re-enable when needed. This should remain off in the DDEV config.  
 
-Open `.docksal/etc/php/php.ini` and uncomment the three lines of code directly under [xdebug]:
+Auto Configuration for PHPStorm:
 
-```
-[xdebug]
-xdebug.mode=debug
-xdebug.discover_client_host=1
-xdebug.client_host=192.168.64.100
-```
+1. Turn on the listener in PHPStorm
+2. Add a breakpoint at the top of web/index.php
+3. Visit a page on the
+4. This should prompt a dialog that sets up your server
+5. The defaults should work
 
-Run `fin restart` to restart the Docksal project.
+For other platforms and documentation see: 
 
-# Enabling Xdebug - DDev
-
+[DDEV DOCS](https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/)
 
 # Backstop Testing
 
