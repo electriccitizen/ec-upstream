@@ -15,14 +15,6 @@
     {
       "type": "path",
       "url": "upstream-configuration"
-    },
-    {
-      "type": "git",
-      "url": "git@github.com:electriccitizen/citizen_migrate.git"
-    },
-    {
-      "type": "git",
-      "url": "git@github.com:electriccitizen/citizen_sb.git"
     }
   ],
   "require": {
@@ -45,9 +37,9 @@
     "drupal/config_filter": "^2.0",
     "drupal/config_ignore": "^3.0",
     "drupal/config_split": "^2.0",
-    "drupal/core-composer-scaffold": "10.4.*",
-    "drupal/core-project-message": "10.4.*",
-    "drupal/core-recommended": "10.4.*",
+    "drupal/core-composer-scaffold": "^11",
+    "drupal/core-project-message": "^11",
+    "drupal/core-recommended": "^11",
     "drupal/crop": "^2.1",
     "drupal/ctools": "^4.0",
     "drupal/date_popup": "^2.0",
@@ -95,15 +87,13 @@
     "drupal/token": "^1.7",
     "drupal/turnstile": "^1.1",
     "drupal/twig_tweak": "^3.1",
-    "drupal/upgrade_status": "^4.3",
     "drupal/views_bulk_operations": "^4.0",
     "drupal/views_infinite_scroll": "^2.0",
     "drupal/viewsreference": "^2.0",
     "drupal/webform": "^6.3",
     "drush-ops/behat-drush-endpoint": "^9.4",
     "drush/drush": "^13",
-    "oomphinc/composer-installers-extender": "^2.0",
-    "pantheon-upstreams/upstream-configuration": "*"
+    "oomphinc/composer-installers-extender": "^2.0"
   },
   "conflict": {
     "drupal\/drupal": "*"
@@ -210,7 +200,7 @@
     "genesis/behat-fail-aid": "^3.7",
     "mikey179/vfsstream": "^1.6",
     "palantirnet/drupal-rector": "^0.13.1",
-    "phpunit/phpunit": "^9.5",
+    "phpunit/phpunit": "*",
     "squizlabs/php_codesniffer": "^3.6",
     "symfony/css-selector": "^5.3",
     "symfony/phpunit-bridge": "^6.1"

@@ -346,7 +346,6 @@ libraries:
 requirements:
   cdn: false
   clientside_validation: true
-  bootstrap: true
   spam: true
 third_party_settings:
   antibot: {  }
