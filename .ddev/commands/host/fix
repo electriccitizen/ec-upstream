@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Description: FIX code to Drupal standards with phpcbf. Pass along a file name or a directory name.
+## Usage: fix [arg]
+## Example: "ddev phpfix web/sites/default/settings.php" or "ddev fixphp web/sites/default/"
+
+ddev exec phpcbf --standard=Drupal,DrupalPractice --ignore="\.min\.css,\.min\.js,*/dist/*\.css,/components-addons/*" "$@"

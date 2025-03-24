@@ -1,4 +1,3 @@
-
 (function ($, Drupal, once) {
 
   // NOTE: Need jQuery for both slider libraries.
@@ -21,8 +20,8 @@
       $(once('slider', '.gallery-type.slider', context)).each(function () {
         $(document).ready(function () {
           $('.field-gallery-items', this).slick({
-            adaptiveHeight: true,
-            autoplay: true,
+            adaptiveHeight: TRUE,
+            autoplay: TRUE,
             autoplaySpeed: 5000,
           });
           $('button.slick-prev, button.slick-next').addClass('material-icons');
