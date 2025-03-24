@@ -4,7 +4,7 @@
 files=`git diff --cached --name-only --diff-filter=ACRTM`
 
 if [ ! -z "$files" ]; then
-  echo "Running DDev stuff"
+  echo "Running DDev code-sniffing stuff"
 
   # Execute PHP Code Sniffer for Coding Standards.
   ddev exec phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,scss ${files} --ignore="\.min\.css,\.min\.js,*/dist/*\.css,/components-addons/*"
