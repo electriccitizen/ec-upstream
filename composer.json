@@ -133,14 +133,15 @@
       "drupal\/core": "-p2"
     },
     "drupal-scaffold": {
-      "allowed-packages": [
-        "pantheon-systems\/drupal-integrations"
-      ],
       "locations": {
-        "web-root": ".\/web"
+        "web-root": "./web"
       },
+      "allowed-packages": [
+        "pantheon-systems/drupal-integrations"
+      ],
       "file-mapping": {
-        "[project-root]\/.editorconfig": false,
+        "[project-root]/.editorconfig": false,
+        "[project-root]/pantheon.upstream.yml": false,
         "[project-root]\/.gitattributes": false
       }
     },
