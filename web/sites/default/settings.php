@@ -5,8 +5,6 @@
  * Load services definition file.
  */
 
-use Pantheon\Integrations\Assets;
-
 $settings['container_yamls'][] = __DIR__ . '/services.yml';
 
 /**
@@ -15,7 +13,7 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
 $pantheon_services_file = __DIR__ . '/services.pantheon.preproduction.yml';
 if (
   isset($_ENV['PANTHEON_ENVIRONMENT']) &&
-  (($_ENV['PANTHEON_ENVIRONMENT'] == 'live') || ($_ENV['PANTHEON_ENVIRONMENT'] == 'test'))
+  ( ($_ENV['PANTHEON_ENVIRONMENT'] == 'live') || ($_ENV['PANTHEON_ENVIRONMENT'] == 'test') )
 ) {
   $pantheon_services_file = __DIR__ . '/services.pantheon.production.yml';
 }
@@ -24,7 +22,7 @@ if (file_exists($pantheon_services_file)) {
   $settings['container_yamls'][] = $pantheon_services_file;
 }
 
-include Assets::dir() . "/settings.pantheon.php";
+include \Pantheon\Integrations\Assets::dir() . "/settings.pantheon.php";
 
 /**
  * Place the config directory outside of the Drupal root.
