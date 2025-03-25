@@ -52,9 +52,13 @@ git pull
 echo -e  "${green_bg} DDev Restart ${NC}${yellow} Restart ddev to get latest container updates...${NC}"
 ddev restart
 
+# DDEV auth ssh
+echo -e  "${green_bg} ddev auth ssh ${NC}${yellow} - Loads your local SSH keys into the running container ${NC}"
+  ddev auth ssh
+
 # Set File paths if they do not exist
-if [ ! -d ${DDEV_DOCROOT}sites/default/files/private ]; then
-  mkdir -p ${DDEV_DOCROOT}sites/default/files/private;
+if [ ! -d ${DDEV_DOCROOT}/sites/default/files/private ]; then
+  mkdir -p ${DDEV_DOCROOT}/sites/default/files/private;
 fi
 
 # Composer Install
