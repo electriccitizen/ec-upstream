@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.basic_html
     - filter.format.limited_html
+    - filter.format.webform_default
   module:
     - ckeditor5_premium_features_wproofreader
     - file
@@ -31,4 +32,5 @@ permissions:
   - 'use search with example_endpoint endpoint'
   - 'use text format basic_html'
   - 'use text format limited_html'
+  - 'use text format webform_default'
   - 'view media'
