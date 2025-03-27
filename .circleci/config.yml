@@ -127,6 +127,7 @@ jobs:
           name: deploy to Pantheon
           command: ./.ci/deploy/pantheon/dev-multidev
           no_output_timeout: 20m
+          TERMINUS_BUILD_TOOLS_WORKFLOW_TIMEOUT: 600
 
 #  behat_test:
 #    <<: *defaults
