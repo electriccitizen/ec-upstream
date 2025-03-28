@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Default path if none provided
+RECIPE_PATH=""
+
+# Help function
+usage() {
+  echo "Usage: ddev recipe <path-to-recipe>"
+  echo "   or: ddev recipe --path=<path-to-recipe>"
+}
+
+# Parse arguments
+while [[ "$#" -gt 0 ]]; do
+  case $1 in
+    --path=*) RECIPE_PATH="${1#*=}" ;;
+    -h|--help) usage; exit 0 ;;
+    *) RECIPE_PATH="$1" ;;
+  esac
+  shift
+done
+
+# Validate path
+if [[ -z "$RECIPE_PATH" ]]; then
+  echo "❌ You must provide a recipe path."
+  usage
+  exit 1
+fi
+
+echo "📦 Running Drupal recipe at: $RECIPE_PATH"
+
+# Run the actual drupal recipe command
+ddev exec -d /var/www/html/web php core/scripts/drupal recipe "$RECIPE_PATH"
