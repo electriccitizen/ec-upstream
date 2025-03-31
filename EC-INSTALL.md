@@ -35,10 +35,10 @@ ddev auth ssh
 
 ```
 ddev drush @ec-upstream.dev sql-dump > database.sql
-ddev import-db database.sql
+ddev import-db --file=database.sql
 ddev drush cr
 ddev drush cim
-ddev uli
+ddev drush uli
 ```
 
 Open the generated login URL and you should be set to go.
@@ -126,7 +126,7 @@ Whenever you create a Github pull request, a new Pantheon multidev is created in
 
 # Project Legend
 
-## DDev 
+## DDev
 php_version: "8.3"
 webserver_type: nginx-fpm
 database:
@@ -146,7 +146,7 @@ Auto Configuration for PHPStorm:
 4. This should prompt a dialog that sets up your server
 5. The defaults should work
 
-For other platforms and documentation see: 
+For other platforms and documentation see:
 
 [DDEV DOCS](https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/)
 
