@@ -1,0 +1,52 @@
+uuid: eaedcab2-3c1f-46f9-9660-3e783251eb1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.nodes
+  module:
+    - search_web_components
+third_party_settings:
+  search_web_components:
+    sorts:
+      -
+        label: Relevance
+        key: search_api_relevance
+        order: desc
+    page_sizes:
+      -
+        label: '10'
+        key: '10'
+    displays:
+      -
+        label: List
+        key: list
+    results:
+      field: ''
+      mappings:
+        -
+          element: search-result-element-rendered
+          keys:
+            - default
+          settings:
+            field: rendered_item
+id: example_endpoint
+label: 'Example Endpoint'
+description: ''
+index: nodes
+limit: 10
+items_per_page_options:
+  - 10
+searched_fields:
+  body: body
+  field_accordion_text: field_accordion_text
+  field_long_text: field_long_text
+  field_meta_description: field_meta_description
+  field_search_keywords: field_search_keywords
+  title: title
+parse_mode: phrase
+excluded_fields: {  }
+default_sort: search_api_relevance
+default_sort_order: desc
+skip_field_extraction: false
+ensure_result_item_url: false
