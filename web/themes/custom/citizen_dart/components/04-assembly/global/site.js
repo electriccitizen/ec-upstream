@@ -40,7 +40,7 @@
 
         function widthCheck() {
           const oldSize = currentSize;
-          if ($(window).width() >= deskWidth) {
+          if ($('body').width() >= deskWidth) {
             currentSize = "desk";
           }
           else {
