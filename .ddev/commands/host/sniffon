@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Description: Turn on the automatic Code Sniffer as part of the commit process.
+## Usage: sniffon [arg]
+## Example: "ddev sniffon"
+
+ddev composer run sniff-enable
