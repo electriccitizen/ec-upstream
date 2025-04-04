@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Description: Turn OFF the automatic Code Sniffer as part of the commit process.
+## Usage: sniffoff [arg]
+## Example: "ddev sniffoff"
+
+ddev composer run sniff-disable

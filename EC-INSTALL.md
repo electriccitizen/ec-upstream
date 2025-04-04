@@ -1,6 +1,6 @@
 EC-Upstream Local Development
 =============================
-Reviewed by Adam, 2025-03-25
+Reviewed by Adam, 2025-04-04
 
 # Project Details
 - **NAME:** ec-upstream
@@ -27,7 +27,7 @@ git clone git@github.com:electriccitizen/ec-upstream.git ec-upstream
 cd ec-upstream
 ddev start
 ddev composer install
-ddev composer run sniff-enable
+ddev sniffon
 ddev auth ssh
 ```
 
@@ -88,11 +88,11 @@ To manually check from the command line, run the following command:
 
 To manually disable code sniffing, run:
 
-`ddev composer run sniff-disable`
+`ddev sniffoff`
 
 To re-enable it again, run the command that enabled it during installation:
 
-`ddev composer run sniff-enable`
+`ddev sniffon`
 
 # Theming
 The active theme for this project is **citizen_patterns**:
