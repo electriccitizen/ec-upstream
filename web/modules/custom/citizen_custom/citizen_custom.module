@@ -151,10 +151,6 @@ function citizen_custom_local_tasks_alter(&$local_tasks) {
       unset($local_tasks['redirect.settings']);
     }
   }
-
-  if (isset($user)) {
-    unset($local_tasks['redirect.settings']);
-  }
 }
 
 /**
