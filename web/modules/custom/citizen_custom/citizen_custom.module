@@ -110,7 +110,7 @@ function citizen_custom_address_organization_label($element, $form_state) {
   if (isset($element['organization'])) {
     $element['organization']['#title'] = t('Building');
   }
-  //bad comment
+
   return $element;
 }
 
@@ -142,6 +142,7 @@ function citizen_custom_local_tasks_alter(&$local_tasks) {
   // Hide redirects settings from non admins.
   $user = \Drupal::currentUser();
   $userRole = $user->getRoles();
+  //other bad comment
   if (!in_array('administrator', $userRole)) {
     if (isset($local_tasks['redirect.list'])) {
       unset($local_tasks['redirect.list']);
