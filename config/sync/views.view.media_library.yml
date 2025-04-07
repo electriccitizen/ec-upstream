@@ -10,7 +10,6 @@ dependencies:
     - media
     - media_library
     - user
-    - views_infinite_scroll
   enforced:
     module:
       - media_library
@@ -486,37 +485,7 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags:
-        - 'config:core.entity_view_display.media.document.banner'
-        - 'config:core.entity_view_display.media.document.default'
-        - 'config:core.entity_view_display.media.document.full'
-        - 'config:core.entity_view_display.media.document.large'
-        - 'config:core.entity_view_display.media.document.large_embed'
-        - 'config:core.entity_view_display.media.document.media_library'
-        - 'config:core.entity_view_display.media.document.medium'
-        - 'config:core.entity_view_display.media.document.medium_embed'
-        - 'config:core.entity_view_display.media.document.small'
-        - 'config:core.entity_view_display.media.document.small_embed'
-        - 'config:core.entity_view_display.media.image.banner'
-        - 'config:core.entity_view_display.media.image.default'
-        - 'config:core.entity_view_display.media.image.full'
-        - 'config:core.entity_view_display.media.image.large'
-        - 'config:core.entity_view_display.media.image.large_embed'
-        - 'config:core.entity_view_display.media.image.large_thumb'
-        - 'config:core.entity_view_display.media.image.media_library'
-        - 'config:core.entity_view_display.media.image.medium'
-        - 'config:core.entity_view_display.media.image.medium_embed'
-        - 'config:core.entity_view_display.media.image.small'
-        - 'config:core.entity_view_display.media.image.small_embed'
-        - 'config:core.entity_view_display.media.image.square'
-        - 'config:core.entity_view_display.media.image.thumbnail_cropped'
-        - 'config:core.entity_view_display.media.image.views_card'
-        - 'config:core.entity_view_display.media.remote_video.default'
-        - 'config:core.entity_view_display.media.remote_video.full'
-        - 'config:core.entity_view_display.media.remote_video.large_embed'
-        - 'config:core.entity_view_display.media.remote_video.media_library'
-        - 'config:core.entity_view_display.media.remote_video.medium_embed'
-        - 'config:core.entity_view_display.media.remote_video.small_embed'
+      tags: {  }
   page:
     id: page
     display_title: Page
@@ -916,37 +885,7 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags:
-        - 'config:core.entity_view_display.media.document.banner'
-        - 'config:core.entity_view_display.media.document.default'
-        - 'config:core.entity_view_display.media.document.full'
-        - 'config:core.entity_view_display.media.document.large'
-        - 'config:core.entity_view_display.media.document.large_embed'
-        - 'config:core.entity_view_display.media.document.media_library'
-        - 'config:core.entity_view_display.media.document.medium'
-        - 'config:core.entity_view_display.media.document.medium_embed'
-        - 'config:core.entity_view_display.media.document.small'
-        - 'config:core.entity_view_display.media.document.small_embed'
-        - 'config:core.entity_view_display.media.image.banner'
-        - 'config:core.entity_view_display.media.image.default'
-        - 'config:core.entity_view_display.media.image.full'
-        - 'config:core.entity_view_display.media.image.large'
-        - 'config:core.entity_view_display.media.image.large_embed'
-        - 'config:core.entity_view_display.media.image.large_thumb'
-        - 'config:core.entity_view_display.media.image.media_library'
-        - 'config:core.entity_view_display.media.image.medium'
-        - 'config:core.entity_view_display.media.image.medium_embed'
-        - 'config:core.entity_view_display.media.image.small'
-        - 'config:core.entity_view_display.media.image.small_embed'
-        - 'config:core.entity_view_display.media.image.square'
-        - 'config:core.entity_view_display.media.image.thumbnail_cropped'
-        - 'config:core.entity_view_display.media.image.views_card'
-        - 'config:core.entity_view_display.media.remote_video.default'
-        - 'config:core.entity_view_display.media.remote_video.full'
-        - 'config:core.entity_view_display.media.remote_video.large_embed'
-        - 'config:core.entity_view_display.media.remote_video.media_library'
-        - 'config:core.entity_view_display.media.remote_video.medium_embed'
-        - 'config:core.entity_view_display.media.remote_video.small_embed'
+      tags: {  }
   widget:
     id: widget
     display_title: Widget
@@ -1189,9 +1128,10 @@ display:
           hide_alter_empty: true
           view_mode: media_library
       pager:
-        type: infinite_scroll
+        type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 24
           total_pages: null
           id: 0
@@ -1206,9 +1146,6 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          views_infinite_scroll:
-            button_text: 'Load More'
-            automatically_load_content: true
       access:
         type: perm
         options:
@@ -1420,37 +1357,7 @@ display:
         - url.query_args
         - 'url.query_args:sort_by'
         - user.permissions
-      tags:
-        - 'config:core.entity_view_display.media.document.banner'
-        - 'config:core.entity_view_display.media.document.default'
-        - 'config:core.entity_view_display.media.document.full'
-        - 'config:core.entity_view_display.media.document.large'
-        - 'config:core.entity_view_display.media.document.large_embed'
-        - 'config:core.entity_view_display.media.document.media_library'
-        - 'config:core.entity_view_display.media.document.medium'
-        - 'config:core.entity_view_display.media.document.medium_embed'
-        - 'config:core.entity_view_display.media.document.small'
-        - 'config:core.entity_view_display.media.document.small_embed'
-        - 'config:core.entity_view_display.media.image.banner'
-        - 'config:core.entity_view_display.media.image.default'
-        - 'config:core.entity_view_display.media.image.full'
-        - 'config:core.entity_view_display.media.image.large'
-        - 'config:core.entity_view_display.media.image.large_embed'
-        - 'config:core.entity_view_display.media.image.large_thumb'
-        - 'config:core.entity_view_display.media.image.media_library'
-        - 'config:core.entity_view_display.media.image.medium'
-        - 'config:core.entity_view_display.media.image.medium_embed'
-        - 'config:core.entity_view_display.media.image.small'
-        - 'config:core.entity_view_display.media.image.small_embed'
-        - 'config:core.entity_view_display.media.image.square'
-        - 'config:core.entity_view_display.media.image.thumbnail_cropped'
-        - 'config:core.entity_view_display.media.image.views_card'
-        - 'config:core.entity_view_display.media.remote_video.default'
-        - 'config:core.entity_view_display.media.remote_video.full'
-        - 'config:core.entity_view_display.media.remote_video.large_embed'
-        - 'config:core.entity_view_display.media.remote_video.media_library'
-        - 'config:core.entity_view_display.media.remote_video.medium_embed'
-        - 'config:core.entity_view_display.media.remote_video.small_embed'
+      tags: {  }
   widget_table:
     id: widget_table
     display_title: 'Widget (table)'
@@ -1652,9 +1559,10 @@ display:
               granularity: 2
               refresh: 60
       pager:
-        type: infinite_scroll
+        type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 24
           total_pages: null
           id: 0
@@ -1669,9 +1577,6 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          views_infinite_scroll:
-            button_text: 'Load More'
-            automatically_load_content: true
       access:
         type: perm
         options:
