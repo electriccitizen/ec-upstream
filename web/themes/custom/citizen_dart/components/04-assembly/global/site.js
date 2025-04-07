@@ -38,6 +38,7 @@
 
         window.addEventListener('resize', widthCheck);
 
+        //comment format
         function widthCheck() {
           const oldSize = currentSize;
           if ($('body').width() >= deskWidth) {
