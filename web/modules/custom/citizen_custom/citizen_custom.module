@@ -110,6 +110,7 @@ function citizen_custom_address_organization_label($element, $form_state) {
   if (isset($element['organization'])) {
     $element['organization']['#title'] = t('Building');
   }
+  //bad comment
   return $element;
 }
 
