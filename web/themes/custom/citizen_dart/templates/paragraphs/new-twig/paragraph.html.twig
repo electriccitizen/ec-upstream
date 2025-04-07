@@ -39,8 +39,13 @@
 
 {% extends 'paragraph.html.twig'%}
 
+{# some comment #}
 {% block widgetContent -%}
   <div class="whatever">
     {{ something }}
   </div>
+  {% if something %}
+    {{ whatever }}
+  {% endif%}
 {%endblock%}
+
