@@ -1,0 +1,13 @@
+/* ===============
+    NEW TEST WIDGET
+================= */
+
+@use '../../../00-base' as *;
+
+.paragraph--type--new-test {
+    .field-whatever {
+      
+      color: $red;
+      @include auto;
+    }
+  }
