@@ -4,7 +4,8 @@
 
 /* hide default drupal preview button
 ---------------------------- */
-#edit-gin-actions input[data-drupal-selector="edit-preview"] {
+#edit-gin-actions input[data-drupal-selector="edit-preview"],
+#edit-gin-sticky-actions input[data-drupal-selector="gin-sticky-edit-preview"] {
   display: none;
 }
 
@@ -43,16 +44,6 @@ button.disabled:hover {
   width: 100%;
   padding-left: 8px;
   margin-top: -8px;
-}
-
-/* hide additional buttons added by infinite scroll in media library
------------------------------------------ */
-.media-library-widget-modal .ui-dialog-buttonset.form-actions button.media-library-select.ui-widget:not(:first-child) {
-  display: none !important;
-}
-
-[data-drupal-views-infinite-scroll-pager="automatic"] {
-  bottom: 0;
 }
 
 /* ADJUST UI DIALOG CLOSE X */
