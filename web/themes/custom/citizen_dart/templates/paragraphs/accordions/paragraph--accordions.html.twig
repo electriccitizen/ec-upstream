@@ -37,32 +37,32 @@
  */
 #}
 
-
-
 {% extends 'paragraph.html.twig' %}
 
 {% block widgetContent %}
-	{{ attach_library('citizen_dart/accordion') }}
-	<div class="field field-accordion-items">
-		{%- for key, accordion in content.field_accordion_items -%}
-			{% if key|first != '#' %}
-				{% set controlParent = 'accordion-content-' ~ paragraph.id() ~ '-' ~ (key + 1) %}
-				{% set text = {
-					'#type': 'processed_text',
-					'#text': accordion['#paragraph'].field_long_text.0.value,
-					'#format': accordion['#paragraph'].field_long_text.0.format
-				 } %}
-				<div class="accordion-item" data-accordion-id="{{ key + 1 }}">
-					<div class="accordion-header">
-						<a class="collapsed" href="#" role="button" aria-controls="{{ controlParent }}" aria-expanded="false">{{ accordion['#paragraph'].field_accordion_header.0.value }}</a>
-					</div>
-					<div class="field field-long-text text-long collapse" id="{{ controlParent }}" aria-hidden="true">
-						<div class="inner-text">
-							{{ text }}
-						</div>
-					</div>
-				</div>
-			{% endif %}
-		{%- endfor -%}
-	</div>
+  {{ attach_library('citizen_dart/accordion') }}
+  <div class="field field-accordion-items">
+    {%- for key, accordion in content.field_accordion_items -%}
+      {% if key|first != '#' %}
+        {% set controlParent = 'accordion-content-' ~ paragraph.id() ~ '-' ~ (key + 1) %}
+        {% set text = {
+          '#type': 'processed_text',
+          '#text': accordion['#paragraph'].field_long_text.0.value ?? "",
+          '#format': accordion['#paragraph'].field_long_text.0.format
+         } %}
+        <div class="accordion-item collapsed" data-accordion-id="{{ key + 1 }}">
+          <div class="accordion-header" role="button" aria-controls="{{ controlParent }}" aria-expanded="false">
+            <a href="#">{{ accordion['#paragraph'].field_accordion_header.0.value }}</a>
+          </div>
+          <div class="accordion-content" id="{{ controlParent }}" aria-hidden="true">
+            <div class="field field-long-text text-long collapse">
+              <div class="inner-text">
+                {{ text }}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {%- endfor -%}
+  </div>
 {% endblock %}

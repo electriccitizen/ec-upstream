@@ -48,19 +48,23 @@
   }
 
   // Accordion content.
-  .field-long-text {
-    @include showContent(.6s);
+  .accordion-content {
+    transition: max-height .6s ease-out;
+    max-height: 0;
+    overflow: hidden;
+
+    &.show-content {
+      transition: max-height .6s ease-in;
+    }
 
     .inner-text {
-      padding: 2.5rem 4rem;
+      padding: 6px 0 $spaceSm;
       background: $accordContentBack;
-      border-left: 1px solid $accordContentBorder;
-      border-right: 1px solid $accordContentBorder;
     }
   }
 
   // Active accordion.
-  &.accord-active {
+  &.expanded {
     .accordion-header {
       a {
         color: $accordActive;

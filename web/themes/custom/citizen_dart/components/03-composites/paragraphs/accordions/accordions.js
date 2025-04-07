@@ -2,40 +2,39 @@
 
   Drupal.behaviors.accordion = {
     attach: function (context, settings) {
-      once('accordion', '.field-accordion-items', context).forEach(accord => {
-        accord.querySelectorAll('.accordion-header a').forEach(function (link) {
-          link.addEventListener('click', function (e) {
+      once('accordion', '.field-accordion-items', context).forEach(accordions => {
+        accordions.querySelectorAll('.accordion-item').forEach(function (accordion) {
+          const header = accordion.querySelector('.accordion-header');
+          const content = accordion.querySelector('.accordion-content');
+          header.addEventListener('click', function (e) {
             e.preventDefault();
+            e.stopPropagation();
 
-            //expand/collapse
-            if (this.classList.contains('collapsed')) {
-              this.classList.remove('collapsed');
-              this.classList.add('expanded');
-              this.setAttribute('aria-expanded', 'true');
+            // Expand/Collapse clicked accordion.
+            if (accordion.classList.contains('collapsed')) {
+              accordion.classList.remove('collapsed');
+              accordion.classList.add('expanded');
 
-              const content = this.parentElement.nextElementSibling;
-              content.classList.remove('collapse');
-              content.classList.add('expand');
+              header.setAttribute('aria-expanded', 'true');
               content.setAttribute('aria-hidden', 'false');
 
-              // Set max-height to 0 initially, then to scrollHeight after a tiny delay
+              // Set max-height to 0 initially, then to scrollHeight after a
+              // tiny delay to trigger the transition.
               content.style.maxHeight = '0px';
               setTimeout(() => {
                 content.style.maxHeight = content.scrollHeight + 'px';
-              }, 10); // Small delay to trigger the transition
-            } else {
-              this.classList.remove('expanded');
-              this.classList.add('collapsed');
-              this.setAttribute('aria-expanded', 'false');
+              }, 10);
+            }
+            else {
+              accordion.classList.remove('expanded');
+              accordion.classList.add('collapsed');
 
-              const content = this.parentElement.nextElementSibling;
-              content.style.maxHeight = content.scrollHeight + 'px'; // Set current height
-
-              content.classList.remove('expand');
-              content.classList.add('collapse');
+              header.setAttribute('aria-expanded', 'false');
+              // Ensure smooth transition by setting initial max-height, if
+              // expanded, on load.
+              content.style.maxHeight = content.scrollHeight + 'px';
               content.setAttribute('aria-hidden', 'true');
 
-              // Ensure smooth transition by setting initial max-height if expanded on load
               setTimeout(() => {
                 content.style.maxHeight = '0px'; // Collapse to 0px
               }, 10);
@@ -43,25 +42,7 @@
 
           });
         });
-
-        window.addEventListener('resize', Drupal.debounce(updateAccordHeight, 150, FALSE));
-
       });
-
-      /**
-       * Update accordion height if needed up screen resize
-       */
-       function updateAccordHeight() {
-         const accordions = document.querySelectorAll('.accordion-item .expand'); // Select all accordion items
-         accordions.forEach((accordion) => {
-           const accordionContent = accordion.querySelector('.inner-text'); // Select the child element
-           if (accordionContent) {
-             const scrollHeight = accordionContent.scrollHeight;
-             accordion.style.maxHeight = scrollHeight + 'px'; // Set current height
-           }
-         });
-       }
-
     }
   }
 
