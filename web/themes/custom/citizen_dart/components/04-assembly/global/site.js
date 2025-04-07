@@ -38,17 +38,8 @@
 
         window.addEventListener('resize', widthCheck);
 
-        //comment format
-        function widthCheck() {
-          const oldSize = currentSize;
-          if ($('body').width() >= deskWidth) {
-            currentSize = "desk";
-          }
-          else {
-            currentSize = "mobile";
-          }
-          if (oldSize !== currentSize) {
-            $("body").removeClass("size-" + oldSize);
+
+        function $("body").removeClass("size-" + oldSize);
             $("body").addClass("size-" + currentSize);
           }
         }
@@ -57,3 +48,4 @@
   }
 
 })(jQuery, Drupal, once);
+
