@@ -18,13 +18,13 @@ dependencies:
     - media_library
     - smart_date
     - smart_date_recur
+    - tagify
     - text
 third_party_settings:
   field_group:
     group_location:
       children:
         - field_address
-        - field_event_location
       label: Location
       region: content
       parent_name: ''
@@ -64,10 +64,17 @@ content:
       wrapper_type: details
     third_party_settings: {  }
   field_category:
-    type: options_select
+    type: tagify_entity_reference_autocomplete_widget
     weight: 5
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      placeholder: 'Search for categories'
+      suggestions_dropdown: 1
+      show_entity_id: 0
+      show_info_label: 0
+      info_label: ''
     third_party_settings: {  }
   field_dates:
     type: smartdate_inline
@@ -86,6 +93,7 @@ content:
       hide_date: true
       allday: true
       remove_seconds: false
+      duration_overlay: true
       separator: to
     third_party_settings:
       smart_date_recur:

@@ -6,6 +6,8 @@ dependencies:
     - field.field.paragraph.block_placer.field_block
     - field.field.paragraph.block_placer.field_widget_title
     - paragraphs.paragraphs_type.block_placer
+  module:
+    - tagify
 _core:
   default_config_hash: _ADm84s3xb8oJOwKNsBGX-z76ap8HJi14FR6l98ovl0
 id: paragraph.block_placer.default
@@ -14,10 +16,17 @@ bundle: block_placer
 mode: default
 content:
   field_block:
-    type: options_select
+    type: tagify_entity_reference_autocomplete_widget
     weight: 3
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      placeholder: ''
+      suggestions_dropdown: 1
+      show_entity_id: 0
+      show_info_label: 0
+      info_label: ''
     third_party_settings: {  }
   field_widget_title:
     type: string_textfield

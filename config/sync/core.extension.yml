@@ -98,6 +98,7 @@ module:
   smart_date: 0
   smart_date_recur: 0
   system: 0
+  tagify: 0
   taxonomy: 0
   telephone: 0
   text: 0
