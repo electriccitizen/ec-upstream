@@ -17,6 +17,7 @@
 
               header.setAttribute('aria-expanded', 'true');
               content.setAttribute('aria-hidden', 'false');
+              content.removeAttribute('inert');
 
               // Set max-height to 0 initially, then to scrollHeight after a
               // tiny delay to trigger the transition.
@@ -34,6 +35,7 @@
               // expanded, on load.
               content.style.maxHeight = content.scrollHeight + 'px';
               content.setAttribute('aria-hidden', 'true');
+              content.setAttribute('inert', '');
 
               setTimeout(() => {
                 content.style.maxHeight = '0px'; // Collapse to 0px
