@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - image.style.large_thumbnail
+    - image.style.large_thumbnail_1_5x
     - image.style.large_thumbnail_2x
     - image.style.large_thumbnail_non_webp
   theme:
@@ -23,7 +24,7 @@ image_style_mappings:
     multiplier: 1x
   -
     image_mapping_type: image_style
-    image_mapping: large_thumbnail_2x
+    image_mapping: large_thumbnail_1_5x
     breakpoint_id: citizen_dart.mobile
     multiplier: 1.5x
   -
