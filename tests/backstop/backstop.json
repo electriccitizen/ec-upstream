@@ -30,7 +30,7 @@
     "onBeforeScript": "puppet/onBefore.js",
     "onReadyScript": "puppet/onReady.js",
     "scenarioDefaults": {
-        "delay": 1000,
+        "delay": 3000,
         "hideSelectors": [
             "iframe"
         ],
@@ -45,163 +45,163 @@
     "scenarios": [
         {
             "label": "Footer Link 1",
-            "url": "http://ec-upstream.docksal.site",
+            "url": "http://ec-upstream.ddev.site",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io"
         },
         {
             "label": "Another event",
-            "url": "http://ec-upstream.docksal.site/node/43",
+            "url": "http://ec-upstream.ddev.site/node/43",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/43"
         },
         {
             "label": "EVent 5 home cat 2",
-            "url": "http://ec-upstream.docksal.site/node/24",
+            "url": "http://ec-upstream.ddev.site/node/24",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/24"
         },
         {
             "label": "Event 3 no cat",
-            "url": "http://ec-upstream.docksal.site/node/22",
+            "url": "http://ec-upstream.ddev.site/node/22",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/22"
         },
         {
             "label": "Event 6 Past event - all cats, home",
-            "url": "http://ec-upstream.docksal.site/node/25",
+            "url": "http://ec-upstream.ddev.site/node/25",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/25"
         },
         {
             "label": "Event Example",
-            "url": "http://ec-upstream.docksal.site/node/41",
+            "url": "http://ec-upstream.ddev.site/node/41",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/41"
         },
         {
             "label": "All News",
-            "url": "http://ec-upstream.docksal.site/node/10",
+            "url": "http://ec-upstream.ddev.site/node/10",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/10"
         },
         {
             "label": "Bios",
-            "url": "http://ec-upstream.docksal.site/bios",
+            "url": "http://ec-upstream.ddev.site/bios",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/bios"
         },
         {
             "label": "Events",
-            "url": "http://ec-upstream.docksal.site/events",
+            "url": "http://ec-upstream.ddev.site/events",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/events"
         },
         {
             "label": "Home",
-            "url": "http://ec-upstream.docksal.site/node/33",
+            "url": "http://ec-upstream.ddev.site/node/33",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/33"
         },
         {
             "label": "Landing page",
-            "url": "http://ec-upstream.docksal.site/node/40",
+            "url": "http://ec-upstream.ddev.site/node/40",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/40"
         },
         {
             "label": "Landing page example",
-            "url": "http://ec-upstream.docksal.site/node/39",
+            "url": "http://ec-upstream.ddev.site/node/39",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/39"
         },
         {
             "label": "News",
-            "url": "http://ec-upstream.docksal.site/all-news",
+            "url": "http://ec-upstream.ddev.site/all-news",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/all-news"
         },
         {
             "label": "Site Search",
-            "url": "http://ec-upstream.docksal.site/node/47",
+            "url": "http://ec-upstream.ddev.site/node/47",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/47"
         },
         {
             "label": "Images aligned with captions",
-            "url": "http://ec-upstream.docksal.site/node/26",
+            "url": "http://ec-upstream.ddev.site/node/26",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/26"
         },
         {
             "label": "Images aligned with no captions microsite test",
-            "url": "http://ec-upstream.docksal.site/node/27",
+            "url": "http://ec-upstream.ddev.site/node/27",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/27"
         },
         {
             "label": "News 2",
-            "url": "http://ec-upstream.docksal.site/node/4",
+            "url": "http://ec-upstream.ddev.site/node/4",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/4"
         },
         {
             "label": "News all the things",
-            "url": "http://ec-upstream.docksal.site/node/3",
+            "url": "http://ec-upstream.ddev.site/node/3",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/3"
         },
         {
             "label": "BP Sub Item 1",
-            "url": "http://ec-upstream.docksal.site/basic-page/bp-sub-item-1",
+            "url": "http://ec-upstream.ddev.site/basic-page/bp-sub-item-1",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/basic-page/bp-sub-item-1"
         },
         {
             "label": "BP Sub Item 1",
-            "url": "http://ec-upstream.docksal.site/node/13",
+            "url": "http://ec-upstream.ddev.site/node/13",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/13"
         },
         {
             "label": "BP Sub Item 2",
-            "url": "http://ec-upstream.docksal.site/basic-page/bp-sub-item-2-different-menu-link-title",
+            "url": "http://ec-upstream.ddev.site/basic-page/bp-sub-item-2-different-menu-link-title",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/basic-page/bp-sub-item-2-different-menu-link-title"
         },
         {
             "label": "BP Sub Item 2 - different menu link title",
-            "url": "http://ec-upstream.docksal.site/node/14",
+            "url": "http://ec-upstream.ddev.site/node/14",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/14"
         },
         {
             "label": "BP Sub Sub Sub Item",
-            "url": "http://ec-upstream.docksal.site/node/16",
+            "url": "http://ec-upstream.ddev.site/node/16",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/16"
         },
         {
             "label": "Breadcrumb Test",
-            "url": "http://ec-upstream.docksal.site/breadcrumbs",
+            "url": "http://ec-upstream.ddev.site/breadcrumbs",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/breadcrumbs"
         },
         {
             "label": "Breadcrumb Test - different link title and alias",
-            "url": "http://ec-upstream.docksal.site/node/15",
+            "url": "http://ec-upstream.ddev.site/node/15",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/15"
         },
         {
             "label": "Term Dictionary",
-            "url": "http://ec-upstream.docksal.site/node/19",
+            "url": "http://ec-upstream.ddev.site/node/19",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/19"
         },
         {
             "label": "Web Editor Guide",
-            "url": "http://ec-upstream.docksal.site/node/18",
+            "url": "http://ec-upstream.ddev.site/node/18",
             "cookiePath": null,
             "referenceUrl": "https://dev-ec-upstream.pantheonsite.io/node/18"
         }
