@@ -23,9 +23,9 @@
         $("li", menu).on("mouseenter", addActiveClassCallback);
         $("li", menu).on("mouseleave", removeActiveClassCallback);
         $("a", menu).on("focus", (event) => {
-          addActiveClass($(event.currentTarget).parent(), TRUE);
+          addActiveClass($(event.currentTarget).parent(), true);
           // Close all other items.
-          removeActiveClass($(event.currentTarget).parent().siblings("li.open"), TRUE);
+          removeActiveClass($(event.currentTarget).parent().siblings("li.open"), true);
         })
         $("a", menu).on("blur", (event) => {
           const link = $(event.currentTarget)
@@ -34,7 +34,7 @@
           // redundant with the "focus" closer above, but just in case we leave
           // the menu itself, we need to double-check.
           if (!link.hasClass("menuparent")) {
-            removeActiveClass(parentLi, TRUE);
+            removeActiveClass(parentLi, true);
           }
         });
         $("#main-nav-toggle", this).on("click", (event) => {
