@@ -65,7 +65,7 @@ class SiteSearchForm extends FormBase {
       '#label' => 'Search',
       '#title' => $this->t('Search'),
       '#title_display' => 'invisible',
-      '#name' => 'q',
+      '#name' => 'search_site_api_fulltext',
       '#size' => 30,
       '#default_value' => '',
       '#placeholder' => 'Enter keyword(s)',

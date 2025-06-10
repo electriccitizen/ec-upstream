@@ -4,9 +4,8 @@ status: true
 dependencies:
   config:
     - search_api.index.nodes
-    - search_api_decoupled.search_api_endpoint.example_endpoint
   module:
-    - search_api_decoupled
+    - search_api
 id: content_type
 name: 'Content type'
 weight: 0
@@ -14,7 +13,7 @@ min_count: 1
 missing: false
 missing_label: others
 url_alias: content_type
-facet_source_id: 'search_api:search_api_endpoint__example_endpoint'
+#facet_source_id: 'search_api:search_api_endpoint__example_endpoint'
 field_identifier: type
 query_operator: or
 hard_limit: 0

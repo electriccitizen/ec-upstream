@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a78ba61f45e50b9d46a72df4ecd9bfc",
+    "content-hash": "98f770383050d6d9079b41e9af083b2f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6540,134 +6540,6 @@
                 "source": "https://git.drupalcode.org/project/search_api",
                 "issues": "https://www.drupal.org/project/issues/search_api",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
-            }
-        },
-        {
-            "name": "drupal/search_api_decoupled",
-            "version": "1.0.0-alpha39",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/search_api_decoupled.git",
-                "reference": "1.0.0-alpha39"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api_decoupled-1.0.0-alpha39.zip",
-                "reference": "1.0.0-alpha39",
-                "shasum": "e58b63007e782eef674e80ad6f3e9401d06dd621"
-            },
-            "require": {
-                "drupal/core": "^9 || ^10 || ^11",
-                "drupal/search_api": "^1.28"
-            },
-            "require-dev": {
-                "drupal/facets": "^2.0",
-                "drupal/search_api_autocomplete": "^1.7",
-                "drupal/search_api_db": "*",
-                "drupal/search_api_decoupled_autocomplete": "*",
-                "drupal/search_api_decoupled_facets": "*",
-                "drupal/search_api_decoupled_ui": "*"
-            },
-            "suggest": {
-                "drupal/facets": "^2.0",
-                "drupal/search_api_autocomplete": "^1.7",
-                "drupal/search_api_exclude": "^2.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.0-alpha39",
-                    "datestamp": "1738784892",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Artem Dmitriiev (1xINTERNET)",
-                    "homepage": "https://www.drupal.org/user/3235287",
-                    "email": "a.dmitriiev@1xinternet.de"
-                },
-                {
-                    "name": "breidert",
-                    "homepage": "https://www.drupal.org/user/135619"
-                },
-                {
-                    "name": "capynet",
-                    "homepage": "https://www.drupal.org/user/197160"
-                },
-                {
-                    "name": "dreizwo",
-                    "homepage": "https://www.drupal.org/user/1048466"
-                },
-                {
-                    "name": "JSnow11",
-                    "homepage": "https://www.drupal.org/user/3669146"
-                }
-            ],
-            "description": "Search API endpoints for headless search.",
-            "homepage": "https://www.drupal.org/project/search_api_decoupled",
-            "support": {
-                "source": "https://git.drupalcode.org/project/search_api_decoupled"
-            }
-        },
-        {
-            "name": "drupal/search_web_components",
-            "version": "1.0.0-alpha6",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/search_web_components.git",
-                "reference": "1.0.0-alpha6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_web_components-1.0.0-alpha6.zip",
-                "reference": "1.0.0-alpha6",
-                "shasum": "0b5d7c903fb0100b14fb02a91bfcffb465b01b71"
-            },
-            "require": {
-                "drupal/core": "^10 || ^11",
-                "drupal/search_api_decoupled": "^1.0@alpha"
-            },
-            "require-dev": {
-                "drupal/facets": "*",
-                "drupal/search_api_decoupled_facets": "*"
-            },
-            "suggest": {
-                "drupal/facets": "Required to use facets."
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.0-alpha6",
-                    "datestamp": "1730123764",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "ctrladel",
-                    "homepage": "https://www.drupal.org/user/2824963"
-                }
-            ],
-            "description": "A library of Lit web components to use with Drupal' search_api_decoupled module.",
-            "homepage": "https://www.drupal.org/project/search_web_components",
-            "support": {
-                "source": "https://git.drupalcode.org/project/search_web_components",
-                "issues": "https://www.drupal.org/project/issues/search_web_components"
             }
         },
         {
@@ -16329,8 +16201,6 @@
         "drupal/drupal-extension": 5,
         "drupal/entity_usage": 10,
         "drupal/openai": 10,
-        "drupal/search_api_decoupled": 15,
-        "drupal/search_web_components": 15,
         "drupal/stage_file_proxy": 20
     },
     "prefer-stable": true,

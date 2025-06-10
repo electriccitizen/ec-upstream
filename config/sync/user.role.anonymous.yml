@@ -8,7 +8,6 @@ dependencies:
   module:
     - filter
     - media
-    - search_api_decoupled
     - system
 _core:
   default_config_hash: 5QqXm46ktpziOsRs6P56FB-c74-my0zZ-A8NG-9Vjmc

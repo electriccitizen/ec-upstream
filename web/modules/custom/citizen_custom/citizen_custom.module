@@ -268,19 +268,3 @@ function citizen_custom_views_pre_view($view, $display_id, &$args) {
   }
 }
 
-/**
- * Implements hook_query_alter().
- *
- * Remove nodes from search that have "Exclude from Search" checked.
- */
-function citizen_custom_query_alter(AlterableInterface $query) {
-  if ($query->hasTag('search_api_db_search')) {
-    // This is a search page query, so make sure to to only include nodes that
-    // do not have the "Exclude from Search" field or do not have the field
-    // checked.
-    $conditional = $query->orConditionGroup()
-      ->condition('t_2.field_exclude_search', NULL, 'IS NULL')
-      ->condition('t_2.field_exclude_search', 0);
-    $query->condition($conditional);
-  }
-}

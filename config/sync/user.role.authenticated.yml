@@ -11,7 +11,6 @@ dependencies:
     - file
     - filter
     - media
-    - search_api_decoupled
     - shortcut
     - system
     - toolbar
