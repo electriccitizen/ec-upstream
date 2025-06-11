@@ -138,13 +138,35 @@ See `~/Projects/ec-upstream/.ddev/config.yaml`
 
 Enable xdebug by running `ddev xdebug`. It will remain enabled for the entirety of your session and you can re-enable when needed. This should remain off in the DDEV config.  
 
-Auto Configuration for PHPStorm:
+## Auto Configuration for PHPStorm:
 
 1. Turn on the listener in PHPStorm
 2. Add a breakpoint at the top of web/index.php
 3. Visit a page on the
 4. This should prompt a dialog that sets up your server
 5. The defaults should work
+
+## Step debugging for CLI in PHPStorm:
+1. In `.ddev/config.yaml`, verify you have the `DRUSH_ALLOW_XDEBUG` web_environment variable.
+   ```yaml
+   web_environment: [DRUSH_ALLOW_XDEBUG=1]
+   ```
+2. Start DDEV.
+    ```shell
+    ddev start
+    ```
+3. Enable Xdebug.
+   ```shell
+   ddev xdebug
+   ```
+4. In PHPStorm:
+   - Enable the Listener _Run > Start Listening for PHP Debug Connections_.
+   - Enable the "Break at first line…" option _Run > Break at first line of PHP scripts_.
+5. Run a Drush command in the terminal, such as:
+   ```shell
+   ddev drush cr
+   # This process will pause at the first line of the drush.php.
+   ```
 
 For other platforms and documentation see:
 
