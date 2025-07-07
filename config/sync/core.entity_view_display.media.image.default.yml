@@ -23,10 +23,10 @@ content:
       image_link: ''
       image_style: default_scaled
       image_loading:
-        attribute: lazy
+        attribute: eager
     third_party_settings:
       lazy:
-        lazy_image: '1'
+        lazy_image: '0'
         placeholder_style: ''
         data_uri: false
     weight: 0
