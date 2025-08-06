@@ -273,10 +273,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              senior_editor: '0'
-              editor: '0'
             placeholder: 'Enter keyword(s)'
           is_grouped: false
           group_info:
@@ -363,10 +359,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-              site_manager: '0'
             expose_fields: false
             placeholder: 'Enter keyword(s)'
             searched_fields_id: ''
