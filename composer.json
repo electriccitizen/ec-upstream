@@ -89,7 +89,7 @@
     "drush-ops/behat-drush-endpoint": "^9.4",
     "drush/drush": "^13",
     "oomphinc/composer-installers-extender": "^2.0",
-    "pantheon-systems/drupal-integrations": "^11.1"
+    "pantheon-systems/drupal-integrations": "^11.2"
   },
   "conflict": {
     "drupal\/drupal": "*"
@@ -196,7 +196,7 @@
     "genesis/behat-fail-aid": "^3.7",
     "mikey179/vfsstream": "^1.6",
     "palantirnet/drupal-rector": "^0.13.1",
-    "phpunit/phpunit": "^10.5",
+    "phpunit/phpunit": "^11.5",
     "squizlabs/php_codesniffer": "^3.6",
     "symfony/css-selector": "^5.3",
     "symfony/phpunit-bridge": "^6.1"

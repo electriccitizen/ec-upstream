@@ -3,17 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.listing
     - core.entity_view_mode.node.teaser
     - field.storage.node.body
     - field.storage.node.field_meta_description
     - node.type.news
     - taxonomy.vocabulary.news_categories
-  content:
-    - 'taxonomy_term:news_categories:46c56633-3740-4c9e-9948-b4c3ddc1fc2c'
   module:
     - node
-    - paragraphs
     - taxonomy
     - text
     - user
@@ -409,10 +405,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              senior_editor: '0'
-              editor: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -727,10 +719,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-              site_manager: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -774,10 +762,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-              site_manager: '0'
             reduce: false
           is_grouped: false
           group_info:

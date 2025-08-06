@@ -43,7 +43,7 @@ ddev drush uli
 
 Open the generated login URL and you should be set to go.
 
-# Refreshing your local environment with Docksal
+# Refreshing your local environment with DDev
 Whenever you start a new task, you'll want to refresh your local environment to pull in the latest changes from other developers.
 
 ```
@@ -58,7 +58,7 @@ ddev auth ssh
 DB Pull - Optional
 ```
 ddev drush @ec-upstream.dev sql-dump > database.sql
-ddev import-db database.sql
+ddev import-db --file=database.sql
 ```
 End DB Pull
 

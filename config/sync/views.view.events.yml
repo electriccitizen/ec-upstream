@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.listing
     - core.entity_view_mode.node.teaser
     - field.storage.node.body
     - field.storage.node.field_dates
@@ -11,11 +10,8 @@ dependencies:
     - field.storage.node.field_meta_description
     - node.type.event
     - taxonomy.vocabulary.event_categories
-  content:
-    - 'taxonomy_term:event_categories:da078701-2987-4f71-8f71-71c652340826'
   module:
     - node
-    - paragraphs
     - smart_date
     - taxonomy
     - text
@@ -383,10 +379,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              senior_editor: '0'
-              editor: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -429,10 +421,6 @@ display:
             multiple: true
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              senior_editor: '0'
-              editor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -846,10 +834,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-              site_manager: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -893,10 +877,6 @@ display:
             multiple: true
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              senior_editor: '0'
-              editor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -995,10 +975,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-              site_manager: '0'
             min_placeholder: MM/DD/YYYY
             max_placeholder: MM/DD/YYYY
             placeholder: MM/DD/YYYY
