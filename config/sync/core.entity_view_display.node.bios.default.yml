@@ -65,7 +65,7 @@ third_party_settings:
                 type: lazy_responsive_image
                 label: hidden
                 settings:
-                  responsive_image_style: square
+                  responsive_image_style: 360x360
                   image_loading:
                     attribute: lazy
                   image_link: ''
