@@ -27,8 +27,6 @@ permissions:
   - 'ckeditor5 wproofreader add word'
   - 'ckeditor5 wproofreader ignore all'
   - 'delete own files'
-  - 'use search api endpoint'
-  - 'use search with example_endpoint endpoint'
   - 'use text format basic_html'
   - 'use text format limited_html'
   - 'use text format webform_default'

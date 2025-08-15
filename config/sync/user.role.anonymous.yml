@@ -17,8 +17,6 @@ weight: 0
 is_admin: false
 permissions:
   - 'access content'
-  - 'use search api endpoint'
-  - 'use search with example_endpoint endpoint'
   - 'use text format limited_html'
   - 'use text format restricted_html'
   - 'view media'
