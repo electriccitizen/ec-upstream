@@ -7,6 +7,18 @@
         const openTrigger = search.querySelector(".t-search");
         const closeTrigger = search.querySelector(".close-search");
         const target = search.querySelector(".t-search-close");
+        const searchInput = search.querySelector("#edit-site-search-api-fulltext");
+        const searchSubmitBtn = search.querySelector("#edit-site-search-submit");
+
+        if (closeTrigger) {
+          closeTrigger.setAttribute("tabindex", "-1");
+        }
+        if (searchInput) {
+          searchInput.setAttribute("tabindex", "-1");
+        }
+        if (searchSubmitBtn) {
+          searchSubmitBtn.setAttribute("tabindex", "-1");
+        }
 
         // Open search.
         const openSearchBlock = (e) => {
@@ -15,6 +27,16 @@
 
           if (searchFormWrapper) {
             searchFormWrapper.setAttribute('aria-hidden', 'false');
+
+            if (closeTrigger) {
+              closeTrigger.setAttribute("tabindex", "0");
+            }
+            if (searchInput) {
+              searchInput.setAttribute("tabindex", "0");
+            }
+            if (searchSubmitBtn) {
+              searchSubmitBtn.setAttribute("tabindex", "0");
+            }
 
             // Set max-height to 0 initially, then to scrollHeight after a tiny delay
             searchFormWrapper.style.maxHeight = '0px';
@@ -47,6 +69,17 @@
         // Close search.
         const closeSearchBlock = (e) => {
           e.preventDefault();
+
+          if (closeTrigger) {
+            closeTrigger.setAttribute("tabindex", "-1");
+          }
+          if (searchInput) {
+            searchInput.setAttribute("tabindex", "-1");
+          }
+          if (searchSubmitBtn) {
+            searchSubmitBtn.setAttribute("tabindex", "-1");
+          }
+
           if (target) {
             target.style.display = 'none';
           }
