@@ -28,7 +28,7 @@ function citizen_dart_preprocess_menu(&$variables) {
 function _menu_item_classes_recursive(array &$items) {
   foreach ($items as &$item) {
     $item['link_classes'] = [];
-    if (!$item['url']->isExternal() && $item['url']->getRouteName() === '<nolink>') {
+    if (!$item['url']->isExternal() && $item['url']->isRouted() && $item['url']->getRouteName() === '<nolink>') {
       $item['link_classes'][] = 'nolink';
     }
     if (!empty($item['below'])) {
