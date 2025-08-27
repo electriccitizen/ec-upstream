@@ -28,7 +28,7 @@ function citizen_dart_preprocess_html(&$variables) {
       $variables['attributes']['class'][] = 'unpublished';
     }
     // Check for main image.
-    if (!empty($node->field_image[0])) {
+    if ($node->hasField('field_image') && !$node->get('field_image')->isEmpty()) {
       $variables['attributes']['class'][] = 'has-main-image';
     }
   }
@@ -48,7 +48,7 @@ function citizen_dart_preprocess_html(&$variables) {
     if ((!$node instanceof NodeInterface) && (isset($vid))) {
       $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($vid);
     }
-    if ($node->get('field_image')->isEmpty()) {
+    if ($node->hasField('field_image') && !$node->get('field_image')->isEmpty()) {
 
       // Set Open Graph and Twitter image meta tags.
       $variables['#attached']['html_head'][] = [

@@ -12,14 +12,14 @@
           // sizes.
           if (window.outerWidth < 980) {
             if (event.target.classList.contains('active-nav')) {
-              event.target.setAttribute('aria-expanded', FALSE);
+              event.target.setAttribute('aria-expanded', false);
               event.target.classList.remove('active-nav');
               event.target.querySelector('.material-icons').innerHTML = '&#xE5D2;';
               menuNavigation.classList.remove('accordion-open');
               slideUp(sectionMenuWrapper, 200);
             }
             else {
-              event.target.setAttribute('aria-expanded', TRUE);
+              event.target.setAttribute('aria-expanded', true);
               event.target.classList.add('active-nav');
               event.target.querySelector('.material-icons').innerHTML = '&#xE5CD;';
               menuNavigation.classList.add('accordion-open');
@@ -28,7 +28,7 @@
           }
         });
 
-        window.addEventListener('resize', Drupal.debounce(mobileSectionNav, 150, FALSE));
+        window.addEventListener('resize', Drupal.debounce(mobileSectionNav, 150, false));
 
         // Must wait for document loading to be complete to come after theme.
         window.onload = () => {
@@ -50,12 +50,12 @@
                 if (menuList.classList.contains('expanded')) {
                   // Collapse nested list.
                   menuList.classList.remove('expanded');
-                  event.target.setAttribute('aria-expanded', FALSE);
+                  event.target.setAttribute('aria-expanded', false);
                   slideUp(childList, 200);
                 }
                 else {
                   menuList.classList.add('expanded');
-                  event.target.setAttribute('aria-expanded', TRUE);
+                  event.target.setAttribute('aria-expanded', true);
                   slideDown(childList, 200);
                 }
               });
@@ -76,10 +76,10 @@
                   const parentExpander = element.querySelector(":scope > .expander");
                   const parentList = element.querySelector(':scope > li > ul');
                   if (parentExpander) {
-                    parentExpander.setAttribute("aria-expanded", TRUE);
+                    parentExpander.setAttribute("aria-expanded", true);
                   }
                   if (parentList) {
-                    parentList.setAttribute('aria-hidden', FALSE)
+                    parentList.setAttribute('aria-hidden', false)
                   }
                 })
               }
@@ -97,7 +97,7 @@
    */
   function slideUp(element, duration) {
     element.style.overflow = 'hidden';
-    element.setAttribute('aria-hidden', TRUE);
+    element.setAttribute('aria-hidden', true);
     window.requestAnimationFrame(timestamp => animateSlide(element, element.scrollHeight, -element.scrollHeight, duration, timestamp));
   }
 
@@ -108,7 +108,7 @@
    */
   function slideDown(element, duration) {
     element.style.display = 'block';
-    element.setAttribute('aria-hidden', FALSE);
+    element.setAttribute('aria-hidden', false);
     window.requestAnimationFrame(timestamp => animateSlide(element, 0, element.scrollHeight, duration, timestamp));
   }
 
@@ -182,8 +182,8 @@
       if (!sectionMenuToggle.hasAttribute('aria-controls')) {
         sectionMenuToggle.setAttribute('href', '#');
         sectionMenuToggle.setAttribute('aria-controls', 'section-menu-wrapper');
-        sectionMenuToggle.setAttribute('aria-expanded', FALSE);
-        sectionMenuWrapper.setAttribute('aria-hidden', TRUE);
+        sectionMenuToggle.setAttribute('aria-expanded', false);
+        sectionMenuWrapper.setAttribute('aria-hidden', true);
       }
     }
     else {
