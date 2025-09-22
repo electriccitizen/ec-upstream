@@ -75,6 +75,8 @@
   width: 100%;
   border-spacing: unset;
   border: 1px solid $rowBorder;
+  display: table;
+  table-layout: fixed;
 
   caption {
     font-weight: $heavy;
@@ -95,77 +97,103 @@
     }
   }
 
-  thead th {
-    background: $tableHeaderBack;
-    color: $tableHeaderText;
-    padding: 2.5rem 2rem;
-    text-align: left;
-    border-bottom: 3px solid $tableHeaderBack;
-    vertical-align: top;
+  thead {
+    width: 100%;
 
-    a {
-      @extend %tableSort;
-    }
-
-    &.is-active {
-      @extend %tableSortActive;
-    }
-
-    &:first-child {
-      padding-left: 3.5rem;
-    }
-
-    &:last-child {
-      padding-right: 3.5rem;
-    }
-  }
-
-  tbody tr {
-
-    &:not(:last-child) td {
-      border-bottom: 1px solid $rowBorder;
-    }
-
-    &:nth-of-type(odd) {
-      background: $oddRowBack;
-
-      td {
-        color: $oddRowText;
-      }
-    }
-
-    &:nth-of-type(even) {
-      background: $evenRowBack;
-
-      td {
-        color: $evenRowText;
-      }
+    tr {
+      width: 100%;
     }
 
     th {
-      background: $tableRowHeaderBack;
-      color: $tableRowHeaderText;
+      background: $tableHeaderBack;
+      color: $tableHeaderText;
+      padding: 2.5rem 2rem;
       text-align: left;
-      padding-left: 3.5rem;
-      padding-right: 2rem;
-    }
+      border-bottom: 3px solid $tableHeaderBack;
+      vertical-align: top;
+      max-width: 67%;
 
-    &:not(:last-child) {
-      th {
+      a {
+        @extend %tableSort;
+      }
+
+      &.is-active {
+        @extend %tableSortActive;
+      }
+
+      &:first-child {
+        padding-left: 3.5rem;
+      }
+
+      &:last-child {
+        padding-right: 3.5rem;
+      }
+
+      &:not(:last-child){
+        border-right: 1px solid rgba(255,255,255,0.4);
+      }
+    }
+  }
+
+  tbody {
+    width: 100%;
+
+    tr {
+      width: 100%;
+
+      td{
+        &:not(:last-child){
+          @include tab{
+            border-right: 1px solid $midGrey;
+          }
+        }
+      }
+      
+      &:not(:last-child) td {
         border-bottom: 1px solid $rowBorder;
       }
-    }
 
-    // Give a bit extra room in the row on mobile.
-    @include onlyMobile {
-      td {
-        padding: 1rem $siteMarginMobile;
+      &:nth-of-type(odd) {
+        background: $oddRowBack;
+
+        td {
+          color: $oddRowText;
+        }
       }
 
-      //style headers
-      &>td.st-key {
-        text-transform: uppercase;
-        font-weight: $heavy;
+      &:nth-of-type(even) {
+        background: $evenRowBack;
+
+        td {
+          color: $evenRowText;
+        }
+      }
+
+      th {
+        background: $tableRowHeaderBack;
+        color: $tableRowHeaderText;
+        text-align: left;
+        padding-left: 3.5rem;
+        padding-right: 2rem;
+      }
+
+      &:not(:last-child) {
+        th {
+          border-bottom: 1px solid $rowBorder;
+        }
+      }
+
+      // Give a bit extra room in the row on mobile.
+      @include onlyMobile {
+        td {
+          padding: 1rem $siteMarginMobile;
+        }
+
+        //style headers
+        &>td.st-key {
+          text-transform: uppercase;
+          font-weight: $heavy;
+        }
       }
     }
   }

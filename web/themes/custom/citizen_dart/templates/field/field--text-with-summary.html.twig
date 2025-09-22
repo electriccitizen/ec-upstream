@@ -40,7 +40,7 @@
 {% extends 'field.html.twig' %}
 
 {% block fieldSingleNo %}
-	{% if '<table>' in item.content['#text'] %}
+	{% if '<table>' in item.content['#text'] or '<table class="table">' in item.content['#text'] %}
 		{{ attach_library('citizen_dart/table') }}
 	{% endif %}
 	{{ parent() }}

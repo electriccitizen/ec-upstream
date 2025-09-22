@@ -42,3 +42,16 @@ two_column_sidebar_right:
       label: Content
     second:
       label: Second
+search_web_components_twocol:
+  label: Search Web Components
+  category: Search Web Components Plugin
+  path: templates/layout
+  template: layout--search-web-components-twocol
+  default_region: content
+  icon_map:
+    - [content, content, content, second]
+  regions:
+    content:
+      label: Content
+    second:
+      label: Second

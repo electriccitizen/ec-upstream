@@ -56,7 +56,7 @@
         <main role="main">
           <div class="layout-content">
             <div class="restricted-node">
-              <div>You do not have permission to view this support page. Please contact a site administrator if you feel this is an error.</div>
+              <div>You do not have permission to view {% block restrictedType %}this support page{% endblock %}. Please contact a site administrator if you feel this is an error.</div>
             </div>
           </div>
         </main>
@@ -68,7 +68,8 @@
 		<main role="main">
       <div class="layout-content">
         <div class="restricted-node">
-          <div>You must be <a href="/user">logged in</a> to view support pages.</div>
+          
+          <div>You must be <a href="/user">logged in</a> to view {% block restrictedAnonMessage %}support pages{% endblock %}.</div>
         </div>
       </div>
     </main>

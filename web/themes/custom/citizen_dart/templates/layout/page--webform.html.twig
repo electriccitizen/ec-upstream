@@ -52,12 +52,12 @@
 		{{ parent() }}
 	{%- else -%}
 		<main role="main">
-
-	      <div class="layout-content">
-	      	<div class="restricted-node"><div>You must be <a href="/user">logged in</a> to view webforms.</div></div>
-	      </div>{# /.layout-content #}
-
-	    </main>
+      <div class="layout-content">
+        <div class="restricted-node">
+          <div>You must be <a href="/user">logged in</a> to view {% block restrictedAnonMessage %}webforms{% endblock %}.</div>
+        </div>
+      </div>
+    </main>
 	{%- endif -%}
 {% endblock %}
   
