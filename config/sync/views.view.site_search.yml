@@ -327,7 +327,7 @@ display:
         - 'search_api_list:nodes'
   site_search_block:
     id: site_search_block
-    display_title: 'Search Results Block'
+    display_title: 'Search Block'
     display_plugin: block
     position: 1
     display_options:
@@ -441,7 +441,7 @@ display:
       display_description: ''
       exposed_block: true
       display_extenders: {  }
-      block_description: 'Search Results Block'
+      block_description: 'Search Block'
       block_category: 'Site Search'
     cache_metadata:
       max-age: -1
