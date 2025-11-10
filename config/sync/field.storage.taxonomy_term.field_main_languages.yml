@@ -12,6 +12,9 @@ type: list_string
 settings:
   allowed_values:
     -
+      value: albanian
+      label: Albanian
+    -
       value: arabic
       label: Arabic
     -
@@ -21,11 +24,20 @@ settings:
       value: mandarin_chinese
       label: 'Mandarin Chinese'
     -
+      value: czech
+      label: Czech
+    -
+      value: danish
+      label: Danish
+    -
       value: english
       label: English
     -
       value: french
       label: French
+    -
+      value: german
+      label: German
     -
       value: hindi
       label: Hindi
@@ -33,8 +45,17 @@ settings:
       value: korean
       label: Korean
     -
+      value: polish
+      label: Polish
+    -
+      value: portuguese
+      label: Portuguese
+    -
       value: russian
       label: Russian
+    -
+      value: serbian
+      label: Serbian
     -
       value: spanish
       label: Spanish
