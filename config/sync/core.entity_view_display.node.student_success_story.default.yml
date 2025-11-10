@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.student_success_story.field_degree_pursuing_attained
     - field.field.node.student_success_story.field_higher_education_institute
+    - field.field.node.student_success_story.field_home_country
     - field.field.node.student_success_story.field_image
     - node.type.student_success_story
   module:
@@ -29,6 +30,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_home_country:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
     region: content
   field_image:
     type: entity_reference_entity_view

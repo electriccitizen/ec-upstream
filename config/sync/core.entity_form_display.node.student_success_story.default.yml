@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.student_success_story.field_degree_pursuing_attained
     - field.field.node.student_success_story.field_higher_education_institute
+    - field.field.node.student_success_story.field_home_country
     - field.field.node.student_success_story.field_image
     - node.type.student_success_story
   module:
@@ -32,6 +33,16 @@ content:
   field_higher_education_institute:
     type: entity_reference_autocomplete
     weight: 121
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_home_country:
+    type: entity_reference_autocomplete
+    weight: 123
     region: content
     settings:
       match_operator: CONTAINS
