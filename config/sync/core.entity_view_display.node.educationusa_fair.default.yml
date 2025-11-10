@@ -9,7 +9,9 @@ dependencies:
     - field.field.node.educationusa_fair.field_dates
     - field.field.node.educationusa_fair.field_fair_host
     - field.field.node.educationusa_fair.field_fair_images
+    - field.field.node.educationusa_fair.field_home_country
     - field.field.node.educationusa_fair.field_location
+    - field.field.node.educationusa_fair.field_location_type
     - field.field.node.educationusa_fair.field_virtual_event
     - filter.format.plain_text
     - node.type.educationusa_fair
@@ -19,6 +21,7 @@ dependencies:
     - layout_builder
     - layout_discovery
     - link
+    - options
     - smart_date
     - system
     - text
@@ -270,6 +273,14 @@ content:
       link: false
     third_party_settings: {  }
     weight: 107
+    region: content
+  field_home_country:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 109
     region: content
   field_location:
     type: geolocation_map
@@ -847,6 +858,13 @@ content:
       data_provider_settings: {  }
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_location_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 110
     region: content
   field_virtual_event:
     type: link

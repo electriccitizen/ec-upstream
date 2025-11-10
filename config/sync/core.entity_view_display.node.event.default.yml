@@ -98,6 +98,16 @@ third_party_settings:
                   force_chronological: false
                   add_classes: false
                   time_wrapper: false
+                  localize: true
+                  parts:
+                    start: start
+                    end: end
+                    duration: '0'
+                  duration:
+                    separator: ' | '
+                    unit: ''
+                    decimals: 2
+                    suffix: h
                 third_party_settings: {  }
             weight: 2
             additional: {  }

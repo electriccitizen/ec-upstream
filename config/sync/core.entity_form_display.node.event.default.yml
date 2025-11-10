@@ -12,9 +12,11 @@ dependencies:
     - field.field.node.event.field_contact_phone
     - field.field.node.event.field_dates
     - field.field.node.event.field_event_type
+    - field.field.node.event.field_home_country
     - field.field.node.event.field_image
     - field.field.node.event.field_list_widget
     - field.field.node.event.field_location
+    - field.field.node.event.field_location_type
     - field.field.node.event.field_meeting_link
     - field.field.node.event.field_meta_description
     - field.field.node.event.field_registration
@@ -36,13 +38,15 @@ third_party_settings:
   field_group:
     group_location:
       children:
+        - field_location_type
         - field_meeting_link
+        - field_home_country
         - field_address
         - field_location
       label: Location
       region: content
       parent_name: ''
-      weight: 10
+      weight: 12
       format_type: details
       format_settings:
         classes: ''
@@ -90,7 +94,7 @@ content:
         hide_guidelines: '1'
   field_address:
     type: address_default
-    weight: 13
+    weight: 14
     region: content
     settings:
       wrapper_type: details
@@ -173,6 +177,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_home_country:
+    type: entity_reference_autocomplete
+    weight: 13
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_image:
     type: media_library_widget
     weight: 0
@@ -182,7 +196,7 @@ content:
     third_party_settings: {  }
   field_location:
     type: geolocation_googlegeocoder
-    weight: 14
+    weight: 15
     region: content
     settings:
       auto_client_location: ''
@@ -516,6 +530,12 @@ content:
           locality: false
           administrative-area: false
           postal-code: false
+  field_location_type:
+    type: options_select
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_meeting_link:
     type: link_default
     weight: 12
@@ -542,14 +562,14 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 13
+    weight: 14
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 11
+    weight: 13
     region: content
     settings:
       display_label: true

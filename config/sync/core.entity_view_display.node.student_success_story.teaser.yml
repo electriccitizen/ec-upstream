@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.student_success_story.body
     - field.field.node.student_success_story.field_degree_pursuing_attained
     - field.field.node.student_success_story.field_higher_education_institute
     - field.field.node.student_success_story.field_home_country
@@ -31,6 +32,7 @@ content:
     weight: 100
     region: content
 hidden:
+  body: true
   field_degree_pursuing_attained: true
   field_higher_education_institute: true
   field_home_country: true

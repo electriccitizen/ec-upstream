@@ -10,7 +10,9 @@ dependencies:
     - field.field.node.educationusa_fair.field_dates
     - field.field.node.educationusa_fair.field_fair_host
     - field.field.node.educationusa_fair.field_fair_images
+    - field.field.node.educationusa_fair.field_home_country
     - field.field.node.educationusa_fair.field_location
+    - field.field.node.educationusa_fair.field_location_type
     - field.field.node.educationusa_fair.field_virtual_event
     - node.type.educationusa_fair
   module:
@@ -55,6 +57,8 @@ hidden:
   field_audience: true
   field_fair_host: true
   field_fair_images: true
+  field_home_country: true
   field_location: true
+  field_location_type: true
   field_virtual_event: true
   search_api_excerpt: true

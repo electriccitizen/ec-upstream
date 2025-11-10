@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: 'High Education Institute'
 type: high_education_institute
-description: null
+description: 'Add a U.S. institute of higher education.'
 help: null
 new_revision: true
 preview_mode: 1

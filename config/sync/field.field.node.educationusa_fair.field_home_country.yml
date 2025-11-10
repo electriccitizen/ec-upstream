@@ -1,0 +1,29 @@
+uuid: eb2eb27e-4fb2-44fc-b9af-6e5ac860c135
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_home_country
+    - node.type.educationusa_fair
+    - taxonomy.vocabulary.country
+id: node.educationusa_fair.field_home_country
+field_name: field_home_country
+entity_type: node
+bundle: educationusa_fair
+label: Country
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      country: country
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -9,7 +9,9 @@ dependencies:
     - field.field.node.educationusa_fair.field_dates
     - field.field.node.educationusa_fair.field_fair_host
     - field.field.node.educationusa_fair.field_fair_images
+    - field.field.node.educationusa_fair.field_home_country
     - field.field.node.educationusa_fair.field_location
+    - field.field.node.educationusa_fair.field_location_type
     - field.field.node.educationusa_fair.field_virtual_event
     - node.type.educationusa_fair
   module:
@@ -43,20 +45,16 @@ content:
         hide_guidelines: '1'
   field_address:
     type: address_default
-    weight: 6
+    weight: 7
     region: content
     settings:
       wrapper_type: details
     third_party_settings: {  }
   field_audience:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 4
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_dates:
     type: smartdate_inline
@@ -89,7 +87,7 @@ content:
           YEARLY: YEARLY
   field_fair_host:
     type: string_textfield
-    weight: 8
+    weight: 10
     region: content
     settings:
       size: 60
@@ -102,9 +100,19 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
+  field_home_country:
+    type: entity_reference_autocomplete
+    weight: 9
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_location:
     type: geolocation_googlegeocoder
-    weight: 7
+    weight: 8
     region: content
     settings:
       auto_client_location: ''
@@ -438,9 +446,15 @@ content:
           locality: false
           administrative-area: false
           postal-code: false
+  field_location_type:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_virtual_event:
     type: link_default
-    weight: 5
+    weight: 6
     region: content
     settings:
       placeholder_url: ''
@@ -448,13 +462,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 10
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 9
+    weight: 11
     region: content
     settings:
       display_label: true
