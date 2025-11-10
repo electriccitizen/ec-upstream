@@ -1,0 +1,22 @@
+uuid: 547800e7-9194-488e-8fcd-63f4d59b5b62
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: high_ed_institutes
+label: 'High Ed Institutes'
+type: 'canonical_entities:node'
+pattern: 'higher-education-institutes/[node:title]'
+selection_criteria:
+  4632f0f3-dd1a-4c82-8f36-5d045c19285a:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 4632f0f3-dd1a-4c82-8f36-5d045c19285a
+    context_mapping:
+      node: node
+    bundles:
+      high_education_institute: high_education_institute
+selection_logic: and
+weight: -5
+relationships: {  }

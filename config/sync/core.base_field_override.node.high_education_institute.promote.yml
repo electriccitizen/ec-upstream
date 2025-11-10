@@ -1,0 +1,22 @@
+uuid: b9b1d63c-86d3-44e4-b3b3-b9ca50252d37
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.high_education_institute
+id: node.high_education_institute.promote
+field_name: promote
+entity_type: node
+bundle: high_education_institute
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
