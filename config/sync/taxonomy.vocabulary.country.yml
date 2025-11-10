@@ -1,0 +1,9 @@
+uuid: aa106bb1-f6c8-41ea-b2d0-c0a4d24908f5
+langcode: en
+status: true
+dependencies: {  }
+name: Country
+vid: country
+description: 'List of countries with demographic data'
+weight: 0
+new_revision: false

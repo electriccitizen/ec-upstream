@@ -1,0 +1,58 @@
+uuid: 392746c6-634c-457f-8f67-e9e8f02737f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.country.field_capital
+    - field.field.taxonomy_term.country.field_ethnicities
+    - field.field.taxonomy_term.country.field_main_languages
+    - field.field.taxonomy_term.country.field_population
+    - taxonomy.vocabulary.country
+  module:
+    - options
+    - text
+id: taxonomy_term.country.default
+targetEntityType: taxonomy_term
+bundle: country
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_capital:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_ethnicities:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_main_languages:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_population:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

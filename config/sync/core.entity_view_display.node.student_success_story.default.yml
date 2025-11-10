@@ -1,0 +1,48 @@
+uuid: b67bc5e0-b84c-42e7-a8f0-891e648c97ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.student_success_story.field_degree_pursuing_attained
+    - field.field.node.student_success_story.field_higher_education_institute
+    - field.field.node.student_success_story.field_image
+    - node.type.student_success_story
+  module:
+    - user
+id: node.student_success_story.default
+targetEntityType: node
+bundle: student_success_story
+mode: default
+content:
+  field_degree_pursuing_attained:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_higher_education_institute:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: 400x300
+      link: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

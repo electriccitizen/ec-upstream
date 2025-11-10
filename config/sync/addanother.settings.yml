@@ -16,6 +16,7 @@ button:
   bios: false
   educationusa_fair: false
   high_education_institute: false
+  student_success_story: false
 message:
   page: false
   event: false
@@ -28,6 +29,7 @@ message:
   bios: false
   educationusa_fair: false
   high_education_institute: false
+  student_success_story: false
 tab:
   page: true
   event: true
@@ -40,6 +42,7 @@ tab:
   bios: true
   educationusa_fair: true
   high_education_institute: true
+  student_success_story: true
 tab_edit:
   page: false
   event: false
@@ -52,3 +55,4 @@ tab_edit:
   bios: false
   educationusa_fair: false
   high_education_institute: false
+  student_success_story: false

@@ -1,0 +1,57 @@
+uuid: 4f163d1c-2c06-4f10-bc53-c29927fbd3d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.country.field_capital
+    - field.field.taxonomy_term.country.field_ethnicities
+    - field.field.taxonomy_term.country.field_main_languages
+    - field.field.taxonomy_term.country.field_population
+    - taxonomy.vocabulary.country
+id: taxonomy_term.country.default
+targetEntityType: taxonomy_term
+bundle: country
+mode: default
+content:
+  field_capital:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ethnicities:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_main_languages:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_population:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true
+  status: true

@@ -1,0 +1,19 @@
+uuid: ddb7f0c5-a36a-4b8a-9811-804961faf3a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_degree_pursuing_attained
+    - node.type.student_success_story
+id: node.student_success_story.field_degree_pursuing_attained
+field_name: field_degree_pursuing_attained
+entity_type: node
+bundle: student_success_story
+label: 'Degree Pursuing/Attained'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
