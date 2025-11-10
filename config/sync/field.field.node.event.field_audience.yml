@@ -1,18 +1,18 @@
-uuid: eb2eb27e-4fb2-44fc-b9af-6e5ac860c135
+uuid: 60e23ea4-63db-4ef6-bcb3-4c68623b088f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_home_country
-    - node.type.educationusa_fair
-    - taxonomy.vocabulary.country
-id: node.educationusa_fair.field_home_country
-field_name: field_home_country
+    - field.storage.node.field_audience
+    - node.type.event
+    - taxonomy.vocabulary.fair_audiences
+id: node.event.field_audience
+field_name: field_audience
 entity_type: node
-bundle: educationusa_fair
-label: Country
+bundle: event
+label: Audience
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      country: country
+      fair_audiences: fair_audiences
     sort:
       field: name
       direction: asc

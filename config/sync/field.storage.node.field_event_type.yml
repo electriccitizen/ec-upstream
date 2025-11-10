@@ -20,6 +20,9 @@ settings:
     -
       value: informational
       label: Informational
+    -
+      value: fair
+      label: fair
   allowed_values_function: ''
 module: options
 locked: false
