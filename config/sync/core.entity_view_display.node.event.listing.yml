@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.event.field_dates
     - field.field.node.event.field_image
     - field.field.node.event.field_list_widget
+    - field.field.node.event.field_location
     - field.field.node.event.field_meta_description
     - node.type.event
   module:
@@ -61,5 +62,6 @@ hidden:
   field_category: true
   field_image: true
   field_list_widget: true
+  field_location: true
   links: true
   search_api_excerpt: true
