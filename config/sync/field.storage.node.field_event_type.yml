@@ -1,0 +1,30 @@
+uuid: 4d3202f8-bad2-4edb-9f16-5613b1989c62
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_event_type
+field_name: field_event_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: recruiting
+      label: Recruiting
+    -
+      value: advisor_center
+      label: 'Advisor Center'
+    -
+      value: informational
+      label: Informational
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

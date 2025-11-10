@@ -1,0 +1,19 @@
+uuid: c7875cd3-d2fd-4e56-9577-3347ba905c2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fair_host
+    - node.type.educationusa_fair
+id: node.educationusa_fair.field_fair_host
+field_name: field_fair_host
+entity_type: node
+bundle: educationusa_fair
+label: 'Fair Host'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

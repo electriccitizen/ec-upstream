@@ -1,0 +1,9 @@
+uuid: 447dc555-0cdc-4708-9c28-f8391a409541
+langcode: en
+status: true
+dependencies: {  }
+name: 'Fair Audiences'
+vid: fair_audiences
+description: 'Audiences for EduUsa Fairs'
+weight: 0
+new_revision: false

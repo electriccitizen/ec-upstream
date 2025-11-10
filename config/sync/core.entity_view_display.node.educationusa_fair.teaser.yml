@@ -1,0 +1,60 @@
+uuid: 5fca81bf-77b1-4f32-aecb-36edfea7c82e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.educationusa_fair.body
+    - field.field.node.educationusa_fair.field_address
+    - field.field.node.educationusa_fair.field_audience
+    - field.field.node.educationusa_fair.field_dates
+    - field.field.node.educationusa_fair.field_fair_host
+    - field.field.node.educationusa_fair.field_fair_images
+    - field.field.node.educationusa_fair.field_location
+    - field.field.node.educationusa_fair.field_virtual_event
+    - node.type.educationusa_fair
+  module:
+    - smart_date
+    - user
+id: node.educationusa_fair.teaser
+targetEntityType: node
+bundle: educationusa_fair
+mode: teaser
+content:
+  field_dates:
+    type: smartdate_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+      format: compact
+      force_chronological: false
+      add_classes: false
+      time_wrapper: true
+      localize: false
+      parts:
+        start: start
+        end: end
+        duration: '0'
+      duration:
+        separator: ' | '
+        unit: ''
+        decimals: 2
+        suffix: h
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_address: true
+  field_audience: true
+  field_fair_host: true
+  field_fair_images: true
+  field_location: true
+  field_virtual_event: true
+  search_api_excerpt: true

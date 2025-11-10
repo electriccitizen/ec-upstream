@@ -5,18 +5,27 @@ dependencies:
   config:
     - field.field.node.event.body
     - field.field.node.event.field_address
+    - field.field.node.event.field_capacity
     - field.field.node.event.field_category
+    - field.field.node.event.field_contact_email
+    - field.field.node.event.field_contact_name
+    - field.field.node.event.field_contact_phone
     - field.field.node.event.field_dates
+    - field.field.node.event.field_event_type
     - field.field.node.event.field_image
     - field.field.node.event.field_list_widget
     - field.field.node.event.field_location
+    - field.field.node.event.field_meeting_link
     - field.field.node.event.field_meta_description
+    - field.field.node.event.field_registration
     - node.type.event
   module:
     - citizen_custom
     - geolocation
     - layout_builder
     - layout_discovery
+    - link
+    - options
     - system
     - user
   theme:
@@ -67,7 +76,7 @@ third_party_settings:
                 settings:
                   view_mode: 400x300
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
           62ca981d-bd3d-498f-ab2d-fc4a19a8329e:
             uuid: 62ca981d-bd3d-498f-ab2d-fc4a19a8329e
@@ -90,7 +99,7 @@ third_party_settings:
                   add_classes: false
                   time_wrapper: false
                 third_party_settings: {  }
-            weight: 1
+            weight: 2
             additional: {  }
           52e7c725-489a-4be8-9107-97debf399c36:
             uuid: 52e7c725-489a-4be8-9107-97debf399c36
@@ -726,6 +735,110 @@ third_party_settings:
                     touchZoom: false
                     bounceAtZoomLimits: false
                 third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          19727c38-eea4-4534-ad27-695fb46846e4:
+            uuid: 19727c38-eea4-4534-ad27-695fb46846e4
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_meeting_link'
+              label: 'Meeting Link'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: link
+                label: inline
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: '0'
+                  target: '0'
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          7497a61e-fc24-40d4-81eb-fdb5907bffef:
+            uuid: 7497a61e-fc24-40d4-81eb-fdb5907bffef
+            region: first
+            configuration:
+              id: 'field_block:node:event:field_registration'
+              label: Registration
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: '0'
+                  target: '0'
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          4b4dd63c-8846-408e-8c5f-fbd1ca893e1b:
+            uuid: 4b4dd63c-8846-408e-8c5f-fbd1ca893e1b
+            region: first
+            configuration:
+              id: 'field_block:node:event:field_event_type'
+              label: 'Event Type'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: list_default
+                label: inline
+                settings: {  }
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          04ac3770-521d-47c6-a83d-18d32d73b34f:
+            uuid: 04ac3770-521d-47c6-a83d-18d32d73b34f
+            region: first
+            configuration:
+              id: 'field_block:node:event:field_capacity'
+              label: Capacity
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: number_integer
+                label: inline
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          46216438-2e52-4af2-a948-8007dc851058:
+            uuid: 46216438-2e52-4af2-a948-8007dc851058
+            region: content
+            configuration:
+              id: 'field_block:node:event:nid'
+              label: ID
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: number_integer
+                label: hidden
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: false
+                third_party_settings: {  }
             weight: 1
             additional: {  }
         third_party_settings: {  }
@@ -734,6 +847,44 @@ targetEntityType: node
 bundle: event
 mode: default
 content:
+  field_capacity:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_contact_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_contact_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_contact_phone:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_event_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
   field_list_widget:
     type: entity_reference_label
     label: above
@@ -748,6 +899,30 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_meeting_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_registration:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 105
     region: content
   links:
     settings: {  }
