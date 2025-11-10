@@ -17,6 +17,7 @@ button:
   educationusa_fair: false
   high_education_institute: false
   student_success_story: false
+  advising_center: false
 message:
   page: false
   event: false
@@ -30,6 +31,7 @@ message:
   educationusa_fair: false
   high_education_institute: false
   student_success_story: false
+  advising_center: false
 tab:
   page: true
   event: true
@@ -43,6 +45,7 @@ tab:
   educationusa_fair: true
   high_education_institute: true
   student_success_story: true
+  advising_center: true
 tab_edit:
   page: false
   event: false
@@ -56,3 +59,4 @@ tab_edit:
   educationusa_fair: false
   high_education_institute: false
   student_success_story: false
+  advising_center: false

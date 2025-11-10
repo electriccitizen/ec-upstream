@@ -33,8 +33,7 @@ default_value:
     family_name: null
 default_value_callback: ''
 settings:
-  available_countries:
-    US: US
+  available_countries: {  }
   langcode_override: ''
   field_overrides:
     givenName:

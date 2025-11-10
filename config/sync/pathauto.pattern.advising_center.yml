@@ -1,0 +1,22 @@
+uuid: fb4c161c-e90a-4eda-8139-aac14c5b2e3f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: advising_center
+label: 'Advising Center'
+type: 'canonical_entities:node'
+pattern: 'advising-center/[node:title]'
+selection_criteria:
+  5a0f37ef-a75d-43ce-bf5d-4da4d9682f96:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 5a0f37ef-a75d-43ce-bf5d-4da4d9682f96
+    context_mapping:
+      node: node
+    bundles:
+      advising_center: advising_center
+selection_logic: and
+weight: -5
+relationships: {  }

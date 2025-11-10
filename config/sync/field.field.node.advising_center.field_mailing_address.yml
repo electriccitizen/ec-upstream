@@ -1,38 +1,21 @@
-uuid: 3a73d49c-831a-471e-a140-19ca2b250189
+uuid: 8fc3d3c7-a875-4871-80fc-2049767e66ba
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_address
-    - node.type.event
+    - field.storage.node.field_mailing_address
+    - node.type.advising_center
   module:
     - address
-_core:
-  default_config_hash: EiYpcHSt0U5FOp10uRQ5ebHSsUEGPNK-mTV1m2l4dgI
-id: node.event.field_address
-field_name: field_address
+id: node.advising_center.field_mailing_address
+field_name: field_mailing_address
 entity_type: node
-bundle: event
-label: Address
+bundle: advising_center
+label: 'Mailing Address'
 description: ''
 required: false
 translatable: false
-default_value:
-  -
-    langcode: null
-    country_code: US
-    administrative_area: ''
-    locality: ''
-    dependent_locality: null
-    postal_code: ''
-    sorting_code: null
-    address_line1: ''
-    address_line2: ''
-    address_line3: null
-    organization: ''
-    given_name: null
-    additional_name: null
-    family_name: null
+default_value: {  }
 default_value_callback: ''
 settings:
   available_countries: {  }

@@ -1,0 +1,22 @@
+uuid: c47fab22-c6f7-436c-9554-a224cf60a4ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: success_story
+label: 'Success Story'
+type: 'canonical_entities:node'
+pattern: 'student-success-story/[node:title]'
+selection_criteria:
+  2bddccf9-d448-45d7-b8fd-43eb50e105df:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 2bddccf9-d448-45d7-b8fd-43eb50e105df
+    context_mapping:
+      node: node
+    bundles:
+      student_success_story: student_success_story
+selection_logic: and
+weight: -5
+relationships: {  }

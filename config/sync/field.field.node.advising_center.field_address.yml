@@ -1,21 +1,19 @@
-uuid: 3a73d49c-831a-471e-a140-19ca2b250189
+uuid: c7b09ce9-d9d1-4fd6-a6ae-9325eef3ddab
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_address
-    - node.type.event
+    - node.type.advising_center
   module:
     - address
-_core:
-  default_config_hash: EiYpcHSt0U5FOp10uRQ5ebHSsUEGPNK-mTV1m2l4dgI
-id: node.event.field_address
+id: node.advising_center.field_address
 field_name: field_address
 entity_type: node
-bundle: event
-label: Address
+bundle: advising_center
+label: 'Walk-in Address'
 description: ''
-required: false
+required: true
 translatable: false
 default_value:
   -

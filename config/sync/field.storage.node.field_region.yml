@@ -1,0 +1,19 @@
+uuid: d32c39c5-3a0a-480e-955e-7c0b0cdba6c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_region
+field_name: field_region
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
