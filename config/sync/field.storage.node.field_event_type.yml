@@ -15,8 +15,8 @@ settings:
       value: recruiting
       label: Recruiting
     -
-      value: advisor_center
-      label: 'Advisor Center'
+      value: advising_center
+      label: 'Advising Center'
     -
       value: informational
       label: Informational
