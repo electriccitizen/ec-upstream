@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.advising_center.field_location
     - field.field.node.advising_center.field_mailing_address
     - field.field.node.advising_center.field_region
+    - field.field.node.advising_center.field_service_level
     - field.field.node.advising_center.field_website
     - filter.format.plain_text
     - node.type.advising_center
@@ -23,6 +24,7 @@ dependencies:
     - layout_discovery
     - link
     - office_hours
+    - options
     - system
     - text
     - user
@@ -49,6 +51,21 @@ third_party_settings:
               provider: system
               context_mapping: {  }
             weight: 0
+            additional: {  }
+          d2351332-81d2-4cd4-a53e-d92621f95cf2:
+            uuid: d2351332-81d2-4cd4-a53e-d92621f95cf2
+            region: content
+            configuration:
+              id: 'field_block:node:advising_center:field_service_level'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: list_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -
@@ -933,6 +950,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 112
+    region: content
+  field_service_level:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 113
     region: content
   field_website:
     type: link

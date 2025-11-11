@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.advising_center.field_location
     - field.field.node.advising_center.field_mailing_address
     - field.field.node.advising_center.field_region
+    - field.field.node.advising_center.field_service_level
     - field.field.node.advising_center.field_website
     - node.type.advising_center
   module:
@@ -474,6 +475,12 @@ content:
       show_entity_id: 0
       show_info_label: 0
       info_label: ''
+    third_party_settings: {  }
+  field_service_level:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_website:
     type: link_default

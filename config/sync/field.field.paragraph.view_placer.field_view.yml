@@ -26,6 +26,7 @@ settings:
     embed: embed
     block: block
   preselect_views:
+    advising_centers: advising_centers
     bios: bios
     events: events
     news: news
