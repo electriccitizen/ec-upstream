@@ -89,10 +89,8 @@ class CreateEventNodeWebformHandler extends WebformHandlerBase {
       'title' => $values['event_title'] ?? 'Untitled Event',
     ];
 
-    // Set event category to "Advising Center" (TID: 39).
-    $node_args['field_category'] = [
-      'target_id' => 39,
-    ];
+    // Set event type to "advising_center".
+    $node_args['field_event_type'] = 'advising_center';
 
     // Add event date/time using smart date field.
     if ($event_date) {
