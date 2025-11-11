@@ -35,10 +35,10 @@ class CreateEventNodeWebformHandler extends WebformHandlerBase {
     // Get all submitted values.
     $values = $webform_submission->getData();
 
-    // Process the datetime field for the event date.
+    // Process the datetime fields for the event start and end date.
     // The webform datetime field returns a timestamp or ISO 8601 string.
     $event_date = NULL;
-    $duration = 60; // Default duration in minutes.
+    $event_end = NULL;
 
     if (!empty($values['event_date_time'])) {
       try {
@@ -53,7 +53,26 @@ class CreateEventNodeWebformHandler extends WebformHandlerBase {
         }
       }
       catch (\Exception $e) {
-        \Drupal::logger('citizen_custom')->error('Error parsing event date: @message', [
+        \Drupal::logger('citizen_custom')->error('Error parsing event start date: @message', [
+          '@message' => $e->getMessage(),
+        ]);
+      }
+    }
+
+    if (!empty($values['event_end'])) {
+      try {
+        // Handle datetime field - could be timestamp or ISO string.
+        if (is_numeric($values['event_end'])) {
+          $event_end = \DateTime::createFromFormat('U', $values['event_end']);
+        }
+        else {
+          // Remove timezone if present in ISO format.
+          $date_string = strtok($values['event_end'], '+');
+          $event_end = new \DateTime($date_string);
+        }
+      }
+      catch (\Exception $e) {
+        \Drupal::logger('citizen_custom')->error('Error parsing event end date: @message', [
           '@message' => $e->getMessage(),
         ]);
       }
@@ -77,13 +96,23 @@ class CreateEventNodeWebformHandler extends WebformHandlerBase {
 
     // Add event date/time using smart date field.
     if ($event_date) {
-      // Calculate end time (add duration).
-      $end_date = clone $event_date;
-      $end_date->modify("+{$duration} minutes");
+      // Use event_end if provided, otherwise default to 60 minutes after start.
+      if ($event_end) {
+        $end_timestamp = $event_end->getTimestamp();
+        // Calculate duration in minutes.
+        $duration = (int) round(($end_timestamp - $event_date->getTimestamp()) / 60);
+      }
+      else {
+        // Default to 60 minutes if no end time provided.
+        $duration = 60;
+        $end_date = clone $event_date;
+        $end_date->modify("+{$duration} minutes");
+        $end_timestamp = $end_date->getTimestamp();
+      }
 
       $node_args['field_dates'] = [
         'value' => $event_date->getTimestamp(),
-        'end_value' => $end_date->getTimestamp(),
+        'end_value' => $end_timestamp,
         'duration' => $duration,
       ];
     }
