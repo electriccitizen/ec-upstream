@@ -25,6 +25,7 @@ dependencies:
     - media_library
     - office_hours
     - path
+    - tagify
     - telephone
     - text
 third_party_settings:
@@ -99,14 +100,17 @@ content:
       media_types: {  }
     third_party_settings: {  }
   field_home_country:
-    type: entity_reference_autocomplete
-    weight: 9
+    type: tagify_entity_reference_autocomplete_widget
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
-      size: 60
       placeholder: ''
+      suggestions_dropdown: 1
+      show_entity_id: 0
+      show_info_label: 0
+      info_label: ''
     third_party_settings: {  }
   field_hours:
     type: office_hours_default
@@ -459,14 +463,17 @@ content:
       wrapper_type: fieldset
     third_party_settings: {  }
   field_region:
-    type: entity_reference_autocomplete
-    weight: 26
+    type: tagify_entity_reference_autocomplete_widget
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
-      size: 60
       placeholder: ''
+      suggestions_dropdown: 1
+      show_entity_id: 0
+      show_info_label: 0
+      info_label: ''
     third_party_settings: {  }
   field_website:
     type: link_default
@@ -478,13 +485,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 12
+    weight: 7
     region: content
     settings:
       display_label: true

@@ -50,38 +50,6 @@ third_party_settings:
               context_mapping: {  }
             weight: 0
             additional: {  }
-          501cd41a-b284-4eff-953f-82a3e1572f2d:
-            uuid: 501cd41a-b284-4eff-953f-82a3e1572f2d
-            region: content
-            configuration:
-              id: 'field_block:node:advising_center:field_region'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
-          e7ea57de-7bb0-4898-8c02-8251087b7d13:
-            uuid: e7ea57de-7bb0-4898-8c02-8251087b7d13
-            region: content
-            configuration:
-              id: 'field_block:node:advising_center:field_home_country'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: inline
-                settings:
-                  link: false
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: two_column_sidebar_right
