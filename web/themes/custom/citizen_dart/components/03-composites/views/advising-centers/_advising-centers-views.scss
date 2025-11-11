@@ -1,0 +1,22 @@
+/* ==================
+    ADVISING CENTERS VIEWS
+==================== */
+
+@use '../../../00-base' as *;
+
+/* ALL BIOS
+------------- */
+.advising-centers {
+  .view {
+    padding-bottom: $elementSpace;
+  }
+
+  .view-content {
+  
+  }
+
+  .views-row {
+    width: 100%;
+    margin-bottom: $spaceMd;
+  }
+}
