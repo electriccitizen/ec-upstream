@@ -1,0 +1,21 @@
+uuid: 28b2b429-f7c4-4755-8ce5-279160e70103
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_type
+    - node.type.event
+  module:
+    - options
+id: node.event.field_location_type
+field_name: field_location_type
+entity_type: node
+bundle: event
+label: 'Location Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

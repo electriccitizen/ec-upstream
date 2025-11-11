@@ -1,0 +1,19 @@
+uuid: 2e17998c-0392-4d68-beca-2b3489dc4bed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_ethnicities
+    - taxonomy.vocabulary.country
+id: taxonomy_term.country.field_ethnicities
+field_name: field_ethnicities
+entity_type: taxonomy_term
+bundle: country
+label: Ethnicities
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

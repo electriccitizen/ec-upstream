@@ -1,0 +1,9 @@
+uuid: cc053a2b-e8f1-4708-831e-e733101f1922
+langcode: en
+status: true
+dependencies: {  }
+name: Region
+vid: region
+description: 'Region of the World'
+weight: 0
+new_revision: false

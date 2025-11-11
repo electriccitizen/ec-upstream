@@ -1,0 +1,17 @@
+uuid: d9add798-2c96-4ddb-b7c2-1f9fa212492d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Student Success Story'
+type: student_success_story
+description: 'Add student success stories tied to higher education institutes.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

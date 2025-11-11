@@ -1,0 +1,22 @@
+uuid: c2a2b5c1-b943-4ee5-a5e6-c7e271f37540
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: eduusa_fair
+label: 'EduUsa Fair'
+type: 'canonical_entities:node'
+pattern: 'educationusa-fairs/[node:title]'
+selection_criteria:
+  ea912f2c-d6ce-468c-bc04-19e90864f3d9:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: ea912f2c-d6ce-468c-bc04-19e90864f3d9
+    context_mapping:
+      node: node
+    bundles:
+      educationusa_fair: educationusa_fair
+selection_logic: and
+weight: -5
+relationships: {  }

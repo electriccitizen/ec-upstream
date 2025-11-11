@@ -1,1 +1,7 @@
-origin_dir: null
+hotlink: false
+origin: 'https://pr-111-ec-upstream.pantheonsite.io'
+origin_dir: sites/default/files
+proxy_headers: ''
+use_imagecache_root: false
+verify: false
+excluded_extensions: ''

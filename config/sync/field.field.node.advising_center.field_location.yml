@@ -1,0 +1,21 @@
+uuid: 0a4f8487-b5d2-4186-8005-e1ff02664868
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.advising_center
+  module:
+    - geolocation
+id: node.advising_center.field_location
+field_name: field_location
+entity_type: node
+bundle: advising_center
+label: Location
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

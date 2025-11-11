@@ -1,0 +1,21 @@
+uuid: 0291a81d-3b97-4fa5-a943-c28bcb8fac0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_types
+    - node.type.high_education_institute
+  module:
+    - options
+id: node.high_education_institute.field_program_types
+field_name: field_program_types
+entity_type: node
+bundle: high_education_institute
+label: 'Program Types'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

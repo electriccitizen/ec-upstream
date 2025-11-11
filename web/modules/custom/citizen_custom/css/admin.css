@@ -217,8 +217,7 @@ button.disabled:hover {
 
 /* FIELD ADJUSTMENTS
 ------------------------ */
-.field--name-field-geolocation fieldset.geolocation-widget-input,
-.field--name-field-address #edit-field-address-0-address-country-code {
+.field--name-field-geolocation fieldset.geolocation-widget-input{
   display: none;
 }
 

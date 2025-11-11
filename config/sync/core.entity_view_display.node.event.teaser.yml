@@ -6,11 +6,22 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.event.body
     - field.field.node.event.field_address
+    - field.field.node.event.field_audience
+    - field.field.node.event.field_capacity
     - field.field.node.event.field_category
+    - field.field.node.event.field_contact_email
+    - field.field.node.event.field_contact_name
+    - field.field.node.event.field_contact_phone
     - field.field.node.event.field_dates
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_home_country
     - field.field.node.event.field_image
     - field.field.node.event.field_list_widget
+    - field.field.node.event.field_location
+    - field.field.node.event.field_location_type
+    - field.field.node.event.field_meeting_link
     - field.field.node.event.field_meta_description
+    - field.field.node.event.field_registration
     - node.type.event
   module:
     - layout_builder
@@ -70,7 +81,18 @@ hidden:
   addtoany: true
   body: true
   field_address: true
+  field_audience: true
+  field_capacity: true
   field_category: true
+  field_contact_email: true
+  field_contact_name: true
+  field_contact_phone: true
+  field_event_type: true
+  field_home_country: true
   field_list_widget: true
+  field_location: true
+  field_location_type: true
+  field_meeting_link: true
+  field_registration: true
   links: true
   search_api_excerpt: true

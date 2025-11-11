@@ -1,0 +1,49 @@
+uuid: 8fc3d3c7-a875-4871-80fc-2049767e66ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mailing_address
+    - node.type.advising_center
+  module:
+    - address
+id: node.advising_center.field_mailing_address
+field_name: field_mailing_address
+entity_type: node
+bundle: advising_center
+label: 'Mailing Address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: hidden
+    additionalName:
+      override: hidden
+    familyName:
+      override: hidden
+    organization:
+      override: optional
+    addressLine1:
+      override: optional
+    addressLine2:
+      override: optional
+    addressLine3:
+      override: hidden
+    postalCode:
+      override: optional
+    sortingCode:
+      override: hidden
+    dependentLocality:
+      override: hidden
+    locality:
+      override: optional
+    administrativeArea:
+      override: optional
+  fields: {  }
+field_type: address

@@ -1,0 +1,19 @@
+uuid: 075d0e29-247b-4561-85d6-cbe8088696d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_email
+    - node.type.advising_center
+id: node.advising_center.field_contact_email
+field_name: field_contact_email
+entity_type: node
+bundle: advising_center
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

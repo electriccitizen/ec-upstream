@@ -1,0 +1,30 @@
+uuid: 16fff416-61d3-426b-be73-c4b49f40ff60
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_service_level
+field_name: field_service_level
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: reference
+      label: Reference
+    -
+      value: standard
+      label: Standard
+    -
+      value: comprehensive
+      label: Comprehensive
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

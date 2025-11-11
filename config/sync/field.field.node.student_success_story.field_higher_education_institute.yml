@@ -1,0 +1,29 @@
+uuid: 84e972a4-c346-4a01-9eca-fca35da25379
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_higher_education_institute
+    - node.type.high_education_institute
+    - node.type.student_success_story
+id: node.student_success_story.field_higher_education_institute
+field_name: field_higher_education_institute
+entity_type: node
+bundle: student_success_story
+label: 'Higher Education Institute'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      high_education_institute: high_education_institute
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

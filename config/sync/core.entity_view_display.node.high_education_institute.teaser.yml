@@ -1,0 +1,45 @@
+uuid: 097f3caa-a9db-411e-aead-6de983af4fc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.high_education_institute.body
+    - field.field.node.high_education_institute.field_address
+    - field.field.node.high_education_institute.field_education_system
+    - field.field.node.high_education_institute.field_image
+    - field.field.node.high_education_institute.field_location
+    - field.field.node.high_education_institute.field_number_of_students
+    - field.field.node.high_education_institute.field_program_types
+    - field.field.node.high_education_institute.field_website
+    - node.type.high_education_institute
+  module:
+    - user
+id: node.high_education_institute.teaser
+targetEntityType: node
+bundle: high_education_institute
+mode: teaser
+content:
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: 400x300
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_address: true
+  field_education_system: true
+  field_location: true
+  field_number_of_students: true
+  field_program_types: true
+  field_website: true
+  search_api_excerpt: true

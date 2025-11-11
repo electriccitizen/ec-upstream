@@ -1,0 +1,21 @@
+uuid: 0400be7a-9362-414b-99b3-bb8a9dc03f06
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_service_level
+    - node.type.advising_center
+  module:
+    - options
+id: node.advising_center.field_service_level
+field_name: field_service_level
+entity_type: node
+bundle: advising_center
+label: 'Level of Service'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

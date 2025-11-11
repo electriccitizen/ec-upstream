@@ -1,0 +1,21 @@
+uuid: b101830d-b263-4efb-8309-82d67ff21826
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_phone
+    - node.type.advising_center
+  module:
+    - telephone
+id: node.advising_center.field_contact_phone
+field_name: field_contact_phone
+entity_type: node
+bundle: advising_center
+label: Phone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

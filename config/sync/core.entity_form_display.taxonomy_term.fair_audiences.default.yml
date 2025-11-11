@@ -1,0 +1,23 @@
+uuid: e6528a70-ebe6-412b-bc75-448b43dbc885
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.fair_audiences
+id: taxonomy_term.fair_audiences.default
+targetEntityType: taxonomy_term
+bundle: fair_audiences
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true
+  status: true

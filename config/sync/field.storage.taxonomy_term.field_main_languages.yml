@@ -1,0 +1,72 @@
+uuid: bd59771f-20e6-4d0c-9958-e20a79c5816d
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_main_languages
+field_name: field_main_languages
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: albanian
+      label: Albanian
+    -
+      value: arabic
+      label: Arabic
+    -
+      value: bengali
+      label: Bengali
+    -
+      value: mandarin_chinese
+      label: 'Mandarin Chinese'
+    -
+      value: czech
+      label: Czech
+    -
+      value: danish
+      label: Danish
+    -
+      value: english
+      label: English
+    -
+      value: french
+      label: French
+    -
+      value: german
+      label: German
+    -
+      value: hindi
+      label: Hindi
+    -
+      value: korean
+      label: Korean
+    -
+      value: polish
+      label: Polish
+    -
+      value: portuguese
+      label: Portuguese
+    -
+      value: russian
+      label: Russian
+    -
+      value: serbian
+      label: Serbian
+    -
+      value: spanish
+      label: Spanish
+    -
+      value: urdu
+      label: Urdu
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

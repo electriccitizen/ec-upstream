@@ -1,0 +1,21 @@
+uuid: 96f30694-327e-49c0-9195-1f091d20ace9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_main_languages
+    - taxonomy.vocabulary.country
+  module:
+    - options
+id: taxonomy_term.country.field_main_languages
+field_name: field_main_languages
+entity_type: taxonomy_term
+bundle: country
+label: 'Main Languages'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

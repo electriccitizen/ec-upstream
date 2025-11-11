@@ -1,0 +1,17 @@
+uuid: ad66cc28-efc0-49b0-88ad-38729c3bce8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Advising Center'
+type: advising_center
+description: 'Add an advising center location.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

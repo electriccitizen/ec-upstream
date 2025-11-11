@@ -1,0 +1,17 @@
+uuid: 9df5c412-747b-46a1-9bbd-d30ef50d6210
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'High Education Institute'
+type: high_education_institute
+description: 'Add a U.S. institute of higher education.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

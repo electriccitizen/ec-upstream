@@ -1,0 +1,214 @@
+uuid: b67bc5e0-b84c-42e7-a8f0-891e648c97ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.student_success_story.body
+    - field.field.node.student_success_story.field_degree_pursuing_attained
+    - field.field.node.student_success_story.field_higher_education_institute
+    - field.field.node.student_success_story.field_home_country
+    - field.field.node.student_success_story.field_image
+    - node.type.student_success_story
+  module:
+    - layout_builder
+    - layout_discovery
+    - system
+    - text
+    - user
+  theme:
+    - citizen_dart
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          40f4526a-ed8d-4b93-9c23-f2beabe5a70e:
+            uuid: 40f4526a-ed8d-4b93-9c23-f2beabe5a70e
+            region: content
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              label_display: '0'
+              provider: system
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: two_column_sidebar_left
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          e8765238-574a-436b-8e95-40aeeaaebbcd:
+            uuid: e8765238-574a-436b-8e95-40aeeaaebbcd
+            region: first
+            configuration:
+              id: 'field_block:node:student_success_story:field_image'
+              label: Headshot
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: 360x360
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          e2747fc4-7bc2-40f9-a3dc-49133a2621a6:
+            uuid: e2747fc4-7bc2-40f9-a3dc-49133a2621a6
+            region: content
+            configuration:
+              id: 'field_block:node:student_success_story:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          b89d011b-a9f5-4b42-b7a1-8a17caad2d5b:
+            uuid: b89d011b-a9f5-4b42-b7a1-8a17caad2d5b
+            region: content
+            configuration:
+              id: 'field_block:node:student_success_story:body'
+              label: Bio
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          0b846981-19f4-48ed-b259-795b8360d48e:
+            uuid: 0b846981-19f4-48ed-b259-795b8360d48e
+            region: content
+            configuration:
+              id: 'field_block:node:student_success_story:field_degree_pursuing_attained'
+              label: 'Degree Pursuing/Attained'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          dae409f1-0acb-4788-965a-0689f6b9cc5c:
+            uuid: dae409f1-0acb-4788-965a-0689f6b9cc5c
+            region: content
+            configuration:
+              id: 'field_block:node:student_success_story:field_higher_education_institute'
+              label: 'Higher Education Institute'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          cf22e943-952d-4dea-b22a-852e6474c513:
+            uuid: cf22e943-952d-4dea-b22a-852e6474c513
+            region: content
+            configuration:
+              id: 'field_block:node:student_success_story:field_home_country'
+              label: 'Home Country'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.student_success_story.default
+targetEntityType: node
+bundle: student_success_story
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_degree_pursuing_attained:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_higher_education_institute:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_home_country:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: 400x300
+      link: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true
