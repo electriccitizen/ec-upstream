@@ -92,6 +92,26 @@ class CreateEventNodeWebformHandler extends WebformHandlerBase {
     // Set event type to "advising_center".
     $node_args['field_event_type'] = 'advising_center';
 
+    // Map webform type_of_event to field_location_type.
+    // Webform uses "Virtual" and "In-Person", node field uses "virtual" and "in_person".
+    if (!empty($values['type_of_event'])) {
+      $location_type_map = [
+        'Virtual' => 'virtual',
+        'In-Person' => 'in_person',
+      ];
+
+      $webform_type = $values['type_of_event'];
+      if (isset($location_type_map[$webform_type])) {
+        $node_args['field_location_type'] = $location_type_map[$webform_type];
+      }
+      else {
+        // Log a warning if an unmapped value is encountered.
+        \Drupal::logger('citizen_custom')->warning('Unmapped type_of_event value "@type" encountered in webform submission. Please update the location type mapping in CreateEventNodeWebformHandler.', [
+          '@type' => $webform_type,
+        ]);
+      }
+    }
+
     // Add event date/time using smart date field.
     if ($event_date) {
       // Use event_end if provided, otherwise default to 60 minutes after start.
