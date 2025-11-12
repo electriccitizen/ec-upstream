@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.student_success_story.field_higher_education_institute
     - field.field.node.student_success_story.field_home_country
     - field.field.node.student_success_story.field_image
+    - field.field.node.student_success_story.field_name
     - node.type.student_success_story
   module:
     - user
@@ -36,4 +37,5 @@ hidden:
   field_degree_pursuing_attained: true
   field_higher_education_institute: true
   field_home_country: true
+  field_name: true
   search_api_excerpt: true

@@ -7,12 +7,12 @@ dependencies:
 id: success_story
 label: 'Success Story'
 type: 'canonical_entities:node'
-pattern: 'student-success-story/[node:title]'
+pattern: 'student-success-stories/[node:title]'
 selection_criteria:
-  2bddccf9-d448-45d7-b8fd-43eb50e105df:
+  219cc208-f413-4098-8d67-c94369a8ca82:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 2bddccf9-d448-45d7-b8fd-43eb50e105df
+    uuid: 219cc208-f413-4098-8d67-c94369a8ca82
     context_mapping:
       node: node
     bundles:

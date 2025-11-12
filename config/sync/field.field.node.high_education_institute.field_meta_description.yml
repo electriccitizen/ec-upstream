@@ -1,0 +1,19 @@
+uuid: e6a84a69-b260-4c01-975d-644498d36128
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_description
+    - node.type.high_education_institute
+id: node.high_education_institute.field_meta_description
+field_name: field_meta_description
+entity_type: node
+bundle: high_education_institute
+label: 'HEI Summary'
+description: 'The text displayed when this bio appears in search engine results or internal lists. The description should be one to two short sentences summarizing the bio and should be less than 240 characters (less than 60ish words).'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

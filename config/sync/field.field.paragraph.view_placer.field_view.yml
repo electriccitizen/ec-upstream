@@ -29,6 +29,7 @@ settings:
     advising_centers: advising_centers
     bios: bios
     events: events
+    higher_education_institutes: higher_education_institutes
     news: news
   enabled_settings: {  }
 field_type: viewsreference
