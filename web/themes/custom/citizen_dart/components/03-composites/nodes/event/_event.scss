@@ -23,12 +23,90 @@
 }
 
 .node-teaser-event {
+
+  .node-field-title {
+    margin-bottom: $spaceXs;
+    a {
+      &:hover,&:focus {
+        background-color: $darkIce;
+      }
+    }
+  }
+
   .field-dates {
     @include metaText;
     margin-bottom: $spaceSm;
   }
+
+  .field-meta-description {
+    margin-bottom: $spaceXxs;
+    font-size: 2rem;
+  }
+
+  .event-type-wrapper {
+    font-size: 2rem;
+    margin-bottom: $spaceXxs;
+
+    .field-event-type {
+      display: inline;
+    }
+
+    .comma {
+      margin-left: -0.25em;
+    }
+
+    a {
+      text-decoration: underline;
+      &:hover,&:focus {
+        color: $hoverLink;
+        text-decoration: none;
+        background: $darkIce;
+      }
+    }
+  }
+
+  .location {
+    font-size: 2rem;
+  }
 }
 
 .node-listing-event{
-  @extend .node-teaser-event;
+  .node-field-title {
+    margin-bottom: $spaceXs;
+    a {
+      color: $blue;
+      &:hover,&:focus {
+        color: $black;
+        background: $blackTransHover;
+      }
+    }
+  }
+  .field-dates {
+    @include metaText;
+    margin-bottom: $spaceXxs;
+  }
+  .field-meta-description {
+    font-size: 1.75rem;
+    margin-bottom: $spaceXxs;
+  }
+  .event-type-wrapper {
+    font-size: 1.75rem;
+
+    .field-event-type {
+      display: inline;
+    }
+
+    .comma {
+      margin-left: -0.35em;
+    }
+
+    a {
+      text-decoration: underline;
+      &:hover,&:focus {
+        color: $hoverLink;
+        text-decoration: none;
+        background: $blackTransHover;
+      }
+    }
+  }
 }

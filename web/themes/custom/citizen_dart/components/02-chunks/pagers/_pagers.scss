@@ -74,7 +74,7 @@ $pagerLine: 3rem;
   @include safeFlex(row, wrap, center, center);
 
   .view-content+& {
-    margin-top: $spaceXl;
+    margin-top: $spaceMd;
   }
 
   .pager__item {

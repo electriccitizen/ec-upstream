@@ -26,6 +26,7 @@ dependencies:
     - node.type.event
   module:
     - layout_builder
+    - options
     - smart_date
     - user
 third_party_settings:
@@ -37,6 +38,14 @@ targetEntityType: node
 bundle: event
 mode: listing
 content:
+  field_advising_center:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_dates:
     type: smartdate_default
     label: hidden
@@ -60,6 +69,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_event_type:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_meta_description:
     type: basic_string
     label: hidden
@@ -70,14 +86,12 @@ content:
 hidden:
   body: true
   field_address: true
-  field_advising_center: true
   field_audience: true
   field_capacity: true
   field_category: true
   field_contact_email: true
   field_contact_name: true
   field_contact_phone: true
-  field_event_type: true
   field_home_country: true
   field_image: true
   field_list_widget: true

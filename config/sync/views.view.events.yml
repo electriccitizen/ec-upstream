@@ -284,7 +284,7 @@ display:
         options:
           offset: 0
           pagination_heading_level: h4
-          items_per_page: 12
+          items_per_page: 6
           total_pages: null
           id: 0
           tags:
@@ -840,7 +840,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            placeholder: ''
+            placeholder: 'Enter keywords...'
           is_grouped: false
           group_info:
             label: ''
@@ -1503,7 +1503,7 @@ display:
           label_field: none
           marker_row_number: 0
           marker_icon_path: ''
-          even_empty: 1
+          even_empty: 0
           centre:
             client_location:
               enable: false
@@ -1514,7 +1514,7 @@ display:
               weight: 0
               settings:
                 reset_zoom: false
-                min_zoom: 13
+                min_zoom: 15
               map_center_id: fit_bounds
             fixed_boundaries:
               enable: false
@@ -1571,7 +1571,7 @@ display:
                 enabled: false
               leaflet_gesture_handling:
                 weight: 0
-                enabled: false
+                enabled: true
               leaflet_rotate:
                 weight: 0
                 settings:
@@ -1934,7 +1934,7 @@ display:
                 weight: 0
                 settings:
                   cluster_settings:
-                    show_coverage_on_hover: true
+                    show_coverage_on_hover: false
                     zoom_to_bounds_on_click: true
                   disable_clustering_at_zoom: 0
                   custom_marker_settings: ''
@@ -1971,8 +1971,8 @@ display:
                   keep_in_view: false
                   close_button: true
                   auto_close: true
-                  close_on_escape_key: true
-                  class_name: ''
+                  close_on_escape_key: false
+                  class_name: info-box
                 enabled: true
               geolocation_marker_scroll_to_id:
                 weight: 0
@@ -2033,10 +2033,10 @@ display:
                   identify: false
                 enabled: false
             zoom: '10'
-            height: 400px
+            height: 450px
             width: 100%
             minZoom: '0'
-            maxZoom: '0'
+            maxZoom: '20'
             maxBounds:
               north_east_bound:
                 lat: null
@@ -2052,10 +2052,10 @@ display:
             boxZoom: false
             doubleClickZoom: true
             dragging: true
-            zoomAnimation: true
+            zoomAnimation: false
             zoomAnimationThreshold: 4
-            fadeAnimation: true
-            markerZoomAnimation: true
+            fadeAnimation: false
+            markerZoomAnimation: false
             inertia: false
             inertiaDeceleration: 3000
             easeLinearity: 0.2
@@ -2066,10 +2066,10 @@ display:
             scrollWheelZoom: false
             wheelDebounceTime: 40
             wheelPxPerZoomLevel: 60
-            tap: true
+            tap: false
             tapTolerance: 15
             touchZoom: false
-            bounceAtZoomLimits: true
+            bounceAtZoomLimits: false
       row:
         type: 'entity:node'
         options:

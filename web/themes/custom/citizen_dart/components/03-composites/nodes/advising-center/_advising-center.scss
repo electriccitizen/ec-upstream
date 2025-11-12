@@ -18,12 +18,27 @@
 .node-teaser-advising-center {
   align-items: center;
 
+  .node-field-title {
+    a{
+      display: inline-block;
+
+      &:hover,&:focus {
+        background: $darkIce;
+      }
+    }
+  }
+
   .node-teaser-content {
     strong {
       font-family: $displayHeader;
       text-transform: uppercase;
       font-size: 2rem;
       margin-right: 1rem;
+    }
+    a {
+      &:hover,&:focus {
+        background: $darkIce;
+      }
     }
   }
 }
@@ -42,6 +57,7 @@
         color: $blue;
         &:hover,&:focus {
           color: $black;
+          background: $blackTransHover;
         }
       }
     }

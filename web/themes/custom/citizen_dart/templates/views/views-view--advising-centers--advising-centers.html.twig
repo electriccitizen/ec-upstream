@@ -57,7 +57,9 @@
   
   <div class="view-wrapper">
     <div class="view-inner-left">
-      <h2 class="form-header">Search for<br>Advising Centers</h2>
+      {% block formheader %}
+        <h2 class="form-header">Search for<br>Advising Centers</h2>
+      {% endblock %}
       {% block viewExposed %}
         {{ exposed }}
       {% endblock %}

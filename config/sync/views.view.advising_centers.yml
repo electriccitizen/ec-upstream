@@ -1132,7 +1132,7 @@ display:
                   auto_pan: true
                   keep_in_view: false
                   close_button: true
-                  auto_close: false
+                  auto_close: true
                   close_on_escape_key: false
                   class_name: info-box
                 enabled: true

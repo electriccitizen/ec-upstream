@@ -4,7 +4,7 @@
 
 @use '../../../00-base' as *;
 
-/* ALL BIOS
+/* ALL ADVISING CENTERS
 ------------- */
 .advising-centers {
   .view-wrapper {
@@ -19,7 +19,7 @@
       .view-inner-right {
         flex: 1 1 auto;
         & > .views-element-container {
-          margin-bottom: $spaceLg;
+          margin-bottom: $spaceXl;
         }
       }
     }
@@ -50,6 +50,6 @@
 
   .views-row {
     width: 100%;
-    margin-bottom: $spaceMd;
+    margin-bottom: $spaceLg;
   }
 }
