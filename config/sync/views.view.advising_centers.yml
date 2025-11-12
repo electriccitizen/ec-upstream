@@ -1195,7 +1195,7 @@ display:
                   identify: false
                 enabled: false
             zoom: '10'
-            height: 400px
+            height: 450px
             width: 100%
             minZoom: '0'
             maxZoom: '20'
@@ -1446,7 +1446,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            placeholder: ''
+            placeholder: 'Enter name...'
           is_grouped: false
           group_info:
             label: ''

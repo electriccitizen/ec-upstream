@@ -1,0 +1,11 @@
+uuid: 8673c6ec-d767-4eef-ac1a-2b0a5c6a57a1
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.900x500
+label: 900x500
+description: null
+targetEntityType: media
+cache: true

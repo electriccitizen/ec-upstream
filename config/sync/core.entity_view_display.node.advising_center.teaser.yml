@@ -32,11 +32,9 @@ bundle: advising_center
 mode: teaser
 content:
   field_fair_images:
-    type: entity_reference_entity_view
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view_mode: 400x300
-      link: false
+    settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content

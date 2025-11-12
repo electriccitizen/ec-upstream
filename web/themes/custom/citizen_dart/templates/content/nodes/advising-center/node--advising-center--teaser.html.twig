@@ -79,9 +79,9 @@
 
 <article{{ attributes.addClass(classes) }}>
   {% block nodeImage %}
-    {% if content.field_image %}
+    {% if content.field_fair_images.0 %}
       <div class="node-field-image">
-        {{ content.field_image }}
+        {{ drupal_entity('media', content.field_fair_images.0['#plain_text'], '400x225') }}
       </div>
     {% endif %}
   {% endblock %}
@@ -97,10 +97,10 @@
           <div class="city"><strong>City:</strong> {{ content.field_mailing_address.0.locality }}</div>
         {% endif %}
         {% if content.field_home_country.0 %}
-          <div class="country"><strong>Country:</strong> <a href="{{ path('entity.node.canonical',{'node':120}) }}?field_home_country_target_id={{ content.field_home_country.0["#taxonomy_term"].tid.0.value }}">{{ content.field_home_country.0['#taxonomy_term'].name.0.value }}</a></div>
+          <div class="country"><strong>Country:</strong> <a href="{{ path('entity.node.canonical',{'node':123}) }}?field_home_country_target_id={{ content.field_home_country.0["#taxonomy_term"].tid.0.value }}">{{ content.field_home_country.0['#taxonomy_term'].name.0.value }}</a></div>
         {% endif %}
         {% if content.field_service_level.0 %}
-          <div class="service-level"><strong>Level of service:</strong> <a href="{{ path('entity.node.canonical',{'node':120}) }}?field_service_level_value={{ content.field_service_level.0['#markup']|clean_class }}">{{ content.field_service_level.0['#markup'] }}</a></div>
+          <div class="service-level"><strong>Level of service:</strong> <a href="{{ path('entity.node.canonical',{'node':123}) }}?field_service_level_value={{ content.field_service_level.0['#markup']|clean_class }}">{{ content.field_service_level.0['#markup'] }}</a></div>
         {% endif %}
       {% endblock %}
     </div>

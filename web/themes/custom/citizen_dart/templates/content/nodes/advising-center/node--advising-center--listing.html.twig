@@ -102,12 +102,12 @@
         {% endif %}
         {% if content.field_home_country.0 %}
           <div class="country-demographics">
-            <div><strong>Country Demographics</strong></div>
-            <div class="capital"><span>Capital:</span> {{ content.field_home_country.0['#taxonomy_term'].field_capital.0.value }}</div>
-            <div class="population"><span>Population:</span> {{ content.field_home_country.0['#taxonomy_term'].field_population.0.value }}</div>
-            <div class="ethnicity"><span>Main Ethnicities:</span> {{ content.field_home_country.0['#taxonomy_term'].field_ethnicities.0.value }}</div>
+            <div class="demographic-label">Country Demographics</div>
+            <div class="capital"><strong>Capital:</strong> {{ content.field_home_country.0['#taxonomy_term'].field_capital.0.value }}</div>
+            <div class="population"><strong>Population:</strong> {{ content.field_home_country.0['#taxonomy_term'].field_population.0.value }}</div>
+            <div class="ethnicity"><strong>Main Ethnicities:</strong> {{ content.field_home_country.0['#taxonomy_term'].field_ethnicities.0.value }}</div>
             <div class="languages">
-              <span>Main Language:</span> {{ content.field_home_country.0['#taxonomy_term'].field_main_languages.0.value|capitalize }}
+              <strong>Main Language:</strong> {{ content.field_home_country.0['#taxonomy_term'].field_main_languages.0.value|capitalize }}
             </div>
           </div>
         {% endif %}

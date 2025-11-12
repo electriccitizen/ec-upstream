@@ -24,7 +24,7 @@ $adminTransGrey : rgba(92, 96, 98, .92);
 /* TEXT
 ---------------------- */
 $baseText : $darkGrey;
-$link : $red;
+$link : $blue;
 $activeLink : $black;
 $hoverLink : $midGrey;
 $breadLink : $link;
@@ -34,29 +34,29 @@ $breadCurrent : $darkGrey;
 /* BUTTONS
 ---------------------- */
 $buttonBack : $link;
-$buttonBackHover : $grey;
-$buttonBackActive : color.adjust($grey, $lightness: -5%);
+$buttonBackHover : $lightBlue;
+$buttonBackActive : color.adjust($lightBlue, $lightness: -5%);
 $buttonText : $white;
 $buttonTextHover : $black;
 $buttonTextActive : $black;
 $submitBack : $link;
 $submitText : $white;
-$submitBackHover : $grey;
+$submitBackHover : $lightBlue;
 $submitTextHover : $black;
 $resetBack : $darkGrey;
 $resetText : $white;
-$resetBackHover : $grey;
+$resetBackHover : $lightBlue;
 $resetTextHover : $black;
 $cautionBack : $midGrey;
 $cautionText : $white;
-$cautionBackHover : $grey;
+$cautionBackHover : $lightBlue;
 $cautionTextHover : $black;
 
 /* SYSTEM
 --------------------- */
 $siteBack : $white;
 $unpub : $adminPink;
-$headerBack : $offWhite;
+$headerBack : $darkBlue;
 $prefooterBack : $darkGrey;
 $prefooterText : $offWhite;
 $prefooterLink : $adminGold;
@@ -68,7 +68,7 @@ $footerLinkHover : $adminWhiteGold;
 $borderRule : $black;
 $hamburger : $black;
 $hamburgerActive : $black;
-$searchIcon : $black;
+$searchIcon : $white;
 $searchIconHover : $link;
 $searchDropBack : rgba(35, 35, 35, 0.97);
 $searchDropText : $white;
@@ -152,16 +152,16 @@ $modalGalButtonShadowHover : $transBlack;
 /* NAVIGATION
 ---------------------- */
 //desktop
-$sfTopLink : $black;
+$sfTopLink : $white;
 $sfTopLinkHover : $black;
-$sfTopBackHover : $lightGrey;
-$sfTopActive : $link;
-$sfTopActiveHover : $link;
-$sfChildLink : $link;
+$sfTopBackHover : $lightBlue;
+$sfTopActive : $black;
+$sfTopActiveHover : $white;
+$sfChildLink : $black;
 $sfChildLinkHover : $hoverLink;
 $sfChildActive : $black;
 $sfChildActiveHover : $hoverLink;
-$sfDropdown : $lightGrey;
+$sfDropdown : $lightBlue;
 
 //mobile
 $sfMobileDrop : $white;

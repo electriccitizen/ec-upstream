@@ -52,28 +52,6 @@ third_party_settings:
               context_mapping: {  }
             weight: 0
             additional: {  }
-          d2351332-81d2-4cd4-a53e-d92621f95cf2:
-            uuid: d2351332-81d2-4cd4-a53e-d92621f95cf2
-            region: content
-            configuration:
-              id: 'field_block:node:advising_center:field_service_level'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: list_default
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
-        third_party_settings: {  }
-      -
-        layout_id: two_column_sidebar_right
-        layout_settings:
-          label: ''
-          context_mapping: {  }
-        components:
           716ae2cd-4677-417c-aef1-6abd55b04e62:
             uuid: 716ae2cd-4677-417c-aef1-6abd55b04e62
             region: content
@@ -91,8 +69,15 @@ third_party_settings:
                 settings:
                   link_to_entity: false
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: two_column_sidebar_right
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
           34f35f8f-48db-4341-87c8-359f3c2ce6f3:
             uuid: 34f35f8f-48db-4341-87c8-359f3c2ce6f3
             region: content
@@ -108,7 +93,7 @@ third_party_settings:
                 type: entity_reference_entity_view
                 label: hidden
                 settings:
-                  view_mode: banner
+                  view_mode: 900x500
                 third_party_settings: {  }
             weight: 1
             additional: {  }
