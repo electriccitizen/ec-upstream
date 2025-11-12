@@ -71,16 +71,39 @@
  */
 #}
 
-{% extends 'node--teaser.html.twig' %}
+{% set classes = [
+  'node-' ~ view_mode|clean_class,
+  'node-' ~ view_mode|clean_class ~ '-' ~ node.type.0.target_id|clean_class
+] %}
 
-{% block nodeContent %}
-  {{ content.field_meta_description }}
-  <div class="location">
-    <strong>Location: </strong>
-    {{ content.field_address.0.locality }}, {{ content.field_address.0.administrative_area }}
+<a href="#" class="modal-trigger" aria-controls="#modal-{{ node.nid.0.value }}">{{- label.0['#context'].value -}}</a>
+
+<div class="modal-outer" i="#modal-{{ node.nid.0.value }}">
+  <div class="modal-inner">
+    <div class="modal-header">
+      {{- label.0['#context'].value -}}
+    </div>
+    <article{{ attributes.addClass(classes) }}>
+      
+      {% block nodeImage %}
+        {% if content.field_image %}
+          <div class="node-field-image">
+            {{ content.field_image }}
+          </div>
+        {% endif %}
+      {% endblock %}
+      {% block node %}
+        <div class="node-teaser-content">
+          {% block nodeTitle %}
+            <h2{{ title_attributes.addClass("node-field-title") }}>
+              {{ content.field_name }}
+            </h2>
+          {% endblock %}
+          {% block nodeContent %}
+            {{- content|without("field_image","field_name") -}}
+          {% endblock %}
+        </div>
+      {% endblock %}
+    </article>
   </div>
-  {% if drupal_view('higher_education_institutes', 'hei_stories', node.nid.0.value)|render|striptags|trim|length > 0  %}
-    <strong class="story-label">Read student success story: </strong>{{ drupal_view('higher_education_institutes', 'hei_stories', node.nid.0.value) }}
-  {% endif %}
-{% endblock %}
-    
+</div>
