@@ -1,0 +1,55 @@
+/* ==================
+    ADVISING CENTERS VIEWS
+==================== */
+
+@use '../../../00-base' as *;
+
+/* ALL BIOS
+------------- */
+.advising-centers {
+  .view-wrapper {
+    display: flex;
+    
+    @include desk {
+      flex-direction: no-wrap;
+      gap: 60px;
+      .view-inner-left {
+        flex: 0 0 300px;
+      }
+      .view-inner-right {
+        flex: 1 1 auto;
+        & > .views-element-container {
+          margin-bottom: $spaceLg;
+        }
+      }
+    }
+  }
+
+  h2.form-header {
+    @include heading3;
+    margin-bottom: $spaceMd;
+  }
+
+  #views-form-wrapper {
+    @include desk {
+      display: block;
+      .form-item:not(#edit-field-dates-value-wrapper):not(#edit-field-dates-value-wrapper--2) {
+        width: 100%;
+      }
+      .form-actions {
+        @include desk {
+          margin-left: -10px;
+        }
+      }
+    }
+  }
+
+  .advising-center-map {
+    @include leafletPopup;
+  }
+
+  .views-row {
+    width: 100%;
+    margin-bottom: $spaceMd;
+  }
+}

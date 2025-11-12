@@ -1,0 +1,23 @@
+uuid: 21dcd366-99bc-42ff-a2ab-86b45ee28e72
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 900x500
+label: 900x500
+effects:
+  9ad160b7-aa05-43be-b03f-0353179ca5d2:
+    uuid: 9ad160b7-aa05-43be-b03f-0353179ca5d2
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 900
+      height: 500
+      crop_type: focal_point
+  d75f3d26-712d-460a-bcc7-682f96fabe40:
+    uuid: d75f3d26-712d-460a-bcc7-682f96fabe40
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

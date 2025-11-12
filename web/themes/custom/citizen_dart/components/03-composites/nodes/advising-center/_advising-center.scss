@@ -1,0 +1,72 @@
+/* ============
+   ADVISING CENTER
+================ */
+
+@use '../../../00-base' as *;
+
+.node-advising-center {
+  .block-field.block-title {
+    text-align: left;
+    max-width: $contentStop;
+
+    .page-title {
+      max-width: $textMax;
+    }
+  }
+}
+
+.node-teaser-advising-center {
+  align-items: center;
+
+  .node-teaser-content {
+    strong {
+      font-family: $displayHeader;
+      text-transform: uppercase;
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.node-listing-advising-center {
+  .node-teaser-content {
+    font-size: 2rem;
+
+    & > div {
+      margin-bottom: $spaceXxs;
+    }
+
+    .node-field-title {
+      margin-bottom: $spaceXs;
+      a {
+        color: $blue;
+        &:hover,&:focus {
+          color: $black;
+        }
+      }
+    }
+
+    strong {
+      font-family: $displayHeader;
+      text-transform: uppercase;
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+    
+    .country-demographics {
+
+      & > div {
+        margin-bottom: $spaceXxs;
+      }
+
+      .demographic-label {
+        margin-top: $spaceSm;
+        padding-top: $spaceXs;
+        border-top: 1px solid $blue;
+        margin-bottom: $spaceXxs;
+        font-weight: $heavy;
+        font-size: 2.25rem;
+      }
+    }
+  }
+}

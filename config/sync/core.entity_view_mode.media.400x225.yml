@@ -1,0 +1,11 @@
+uuid: d3ad4939-7771-4752-a7ec-e5bed4479fdf
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.400x225
+label: 400x225
+description: null
+targetEntityType: media
+cache: true

@@ -13,13 +13,20 @@
 
           window.onload = function () {
             setTimeout(function () {
+              console.log('scrolling');
               var viewScrollAnchor = document.getElementById('skip-filters');
 
               if (viewScrollAnchor) {
-                viewScrollAnchor.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start'
+                // Get the anchor’s position relative to the document
+                var anchorPosition = viewScrollAnchor.getBoundingClientRect().top + window.pageYOffset;
+
+                // Scroll to 200px before the anchor
+                window.scrollTo({
+                  top: anchorPosition - 700,
+                  behavior: 'smooth'
                 });
+
+                // Optionally set focus
                 viewScrollAnchor.focus();
               }
             }, 300);

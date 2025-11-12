@@ -1,0 +1,74 @@
+uuid: 869e8969-eee9-479e-b704-bdf13f67a018
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.advising_center.body
+    - field.field.node.advising_center.field_address
+    - field.field.node.advising_center.field_contact_email
+    - field.field.node.advising_center.field_contact_phone
+    - field.field.node.advising_center.field_fair_images
+    - field.field.node.advising_center.field_home_country
+    - field.field.node.advising_center.field_hours
+    - field.field.node.advising_center.field_location
+    - field.field.node.advising_center.field_mailing_address
+    - field.field.node.advising_center.field_region
+    - field.field.node.advising_center.field_service_level
+    - field.field.node.advising_center.field_website
+    - node.type.advising_center
+  module:
+    - address
+    - layout_builder
+    - options
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.advising_center.teaser
+targetEntityType: node
+bundle: advising_center
+mode: teaser
+content:
+  field_fair_images:
+    type: entity_reference_entity_id
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_home_country:
+    type: entity_reference_entity_view
+    label: inline
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_mailing_address:
+    type: address_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_service_level:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  body: true
+  field_address: true
+  field_contact_email: true
+  field_contact_phone: true
+  field_hours: true
+  field_location: true
+  field_region: true
+  field_website: true
+  links: true
+  search_api_excerpt: true

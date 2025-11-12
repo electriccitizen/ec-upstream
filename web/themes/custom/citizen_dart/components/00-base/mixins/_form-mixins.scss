@@ -77,7 +77,7 @@
 }
 
 @mixin formLabel {
-  font-family: $header;
+  font-family: $displayHeader;
   font-size: $formLabelSize;
   font-weight: $formLabelWeight;
   color: $black;

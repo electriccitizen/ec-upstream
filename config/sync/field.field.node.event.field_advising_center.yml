@@ -1,0 +1,29 @@
+uuid: 95256cde-7f9d-4e3e-b965-7286c459bff3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_advising_center
+    - node.type.advising_center
+    - node.type.event
+id: node.event.field_advising_center
+field_name: field_advising_center
+entity_type: node
+bundle: event
+label: 'Advising Center'
+description: 'If this event is for an advising center, choose the advising center it belongs to.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      advising_center: advising_center
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -3,25 +3,16 @@
 ================ */
 @use '../../../00-base' as *;
 
-#block-main-menu {
-  @include desk {
-    bottom: -20px;
-    padding-left: 280px;
-    position: absolute;
-    right: 0;
-  }
-}
-
-/* MOBILE TOGGLE
+/* MOBILE MENU TOGGLE
   ------------------ */
 #main-nav-toggle {
-  display: block;
-  height: 32px;
-  width: 32px;
+  height: 40px;
+  width: 40px;
   position: absolute;
-  top: 20px;
-  right: 50px;
-  @include desk {
+  top: -4px;
+  right: -8px;
+  @include safeFlex(column,nowrap,center,center);
+  @include menuShift {
     display: none;
   }
 
@@ -31,12 +22,9 @@
 
   &:before {
     @include materialIcon(\e5d2);
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
     color: $hamburger;
     line-height: 28px;
+    font-size: 32px;
   }
 
   &.open {
@@ -47,72 +35,48 @@
   }
 }
 
-/* GLOBAL COLORS
-	----------------- */
-ul.menu-main-navigation li {
-  a {
-    color: $sfChildLink;
-    display: block;
-    text-align: left;
-
-    &:hover,
-    &:focus {
-      color: $sfChildLinkHover;
-    }
-  }
-
-  &.active-trail > a {
-    color: $sfChildActive;
-
-    &:hover,
-    &:focus {
-      color: $sfChildActiveHover;
-    }
-  }
-}
-
-/* MOBILE-SPECIFIC
------------------- */
-@include onlyMobile {
-  ul.menu-main-navigation:not(.accordion-open) {
-    display: none;
-  }
-}
-
-/* DESK FISH
----------------- */
+/* GLOBAL 
+------------ */
 #block-main-menu ul.menu-main-navigation {
   list-style-type: none;
   margin: 0;
   padding: 0;
   z-index: 497;
+  font-family: $displayHeader;
+  font-weight: $heavy;
+  letter-spacing: 1%;
+  ul {
+    list-style-type: none;
+    display: none;
+  }
+  li {
+    list-style: none;
+    position: relative;
+  }
+}
 
-  @include onlyMobile {
-    background: $sfMobileDrop;
-    border-bottom: 8px solid $sfMobileDropBorder;
+/* MOBILE-SPECIFIC
+------------------ */
+@include mobileMenu {
+  ul.menu-main-navigation:not(.accordion-open) {
+    display: none;
+  }
+  #block-main-menu ul.menu-main-navigation {
+    background: $mmMobileDrop;
+    border-bottom: 8px solid $mmMobileDropBorder;
     left: -$siteMarginMobile !important;
     overflow: hidden;
     position: absolute;
     top: calc(100% + 20px) !important;
     text-align: left;
     width: calc(100% + $siteMarginMobile * 2);
-  }
 
-  @include desk {
-    @include safeFlex(row, wrap, end, null);
-  }
-
-  li {
-    float: none;
-    list-style: none;
-    position: relative;
-
-    > a.menu-item-expand {
+    a.menu-item-expand {
       background: transparent;
       display: block;
       height: 60px;
       padding: 0;
-      position: absolute;
+      position: absolute !important;
       right: 0;
       text-align: left;
       text-indent: -9000px;
@@ -134,223 +98,258 @@ ul.menu-main-navigation li {
         display: none;
       }
     }
-    > ul {
-      display: none;
-    }
-    &.open {
-      z-index: 499;
-      > a.menu-item-expand {
-        background: transparent;
 
+    .open {
+      & > a.menu-item-expand {
         &:after {
           @include rotate(180);
-          @include materialIconOutline(\e5cf);
-          position: absolute;
-          @include safeFlex(row, no-wrap, center, center);
-          @include setDimensions(60px, 60px);
-          text-indent: 0;
-        }
-      }
-
-      @include desk {
-        > ul {
-          display: block;
         }
       }
     }
+    // top level mobile
+    li.item-level-1 {
+      &:not(:last-child) {
+        border-bottom: 1px solid $mmMobileItemBorder;
+      }
 
+      & > a,
+      & > span.nolink {
+        background: $mmMobileTopBack;
+        color: $mmMobileTop;
+        padding: 2.5rem 4rem;
+        line-height: 1.15;
+        font-size: 2.25rem;
+        display: block;
+        position: relative;
+
+        &:hover,&:focus {
+          text-decoration: none;
+        }
+      }
+
+      &.open {
+        & > a,
+        & > span.nolink {
+          color: $mmMobileTopExpanded;
+          background: $mmMobileTopBackExpanded;
+        }
+      }
+
+      ul {
+        padding-bottom: 3rem;
+        padding-left: 2rem;
+        background-color: $mmMobileTopBackExpanded;
+      }
+    }
+
+    //second level & below mobile
+    li.item-level-2 {
+
+      a {
+        line-height: 1;
+        font-size: 2rem;
+        padding: 1.5rem 2rem;
+        color: $white;
+        display: block;
+        &:hover,&:focus {
+          text-decoration: none;
+        }
+
+        &.menu-item-expand {
+          height: 40px;
+          &:after {
+            height: 40px; 
+            font-size: 21px;
+          }
+        }
+      }
+    }
+    li.item-level-3 {
+      a {
+        font-size: 1.75rem;
+      }
+    }
   }
+}
 
-  ul {
-    list-style-type: none;
-  }
+/* DESK FISH
+---------------- */
+@include menuShift {
+  #block-main-menu ul.menu-main-navigation {
+    @include safeFlex(row, wrap, end, null);
+    margin-bottom: 1rem;
 
-  > li {
-
-    &:hover {
-      > a {
-        background: $sfTopBackHover;
-        color: $sfTopLinkHover;
-      }
-    }
-
-    > a,
-    > span.nolink {
-      padding: 2.5rem 4rem;
-      line-height: 1.15;
-      color: $sfTopLink;
-      font-size: 2.25rem;
-      display: block;
-      position: relative;
-
-      @include desk {
-        font-size: 2.5rem;
-        padding: 2.5rem 1.5rem !important;
-        &:hover,
-        &:focus {
-          background: $sfTopBackHover;
-          color: $sfTopLinkHover;
-        }
-      }
-    }
-
-    &.active-trail {
-      &:hover > a {
-        color: $sfTopActiveHover;
-      }
-
-      > a {
-        color: $sfTopActive;
-
-        &:hover,
-        &:focus {
-          color: $sfTopActiveHover;
-        }
-      }
-    }
-  }
-
-  li.item-level-1 {
-
-    > a {
-      background: $sfMobileTopBack;
-      color: $sfMobileTop;
-
-      @include desk {
-        background: transparent;
-        color: $sfTopLink;
-      }
-    }
-
-    &:not(:last-child) {
-      border-bottom: 1px solid $sfMobileItemBorder;
-
-      @include desk {
-        border-bottom: 0;
-      }
-    }
-
-    &.open {
-      > a.menuparent {
-        color: $sfMobileTopExpanded;
-        background: $sfMobileTopBackExpanded;
-
-        @include desk {
-          color: $sfTopLink;
-        }
-
-        &:not(.menu-link-expand) {
-          border-bottom: 3px solid $transBlack;
-
-          @include desk {
-            border-bottom: 0;
+    // top level
+    li.item-level-1 {
+      &:hover,&:focus {
+        & > a {
+          color: $mmTopLinkHover;
+          text-decoration: none;
+          &:not(.menuparent):before {
+            width: 100%;
+            transition: width .3s ease-out;
           }
         }
       }
 
-      > ul {
-        padding: 1.5rem 0;
+      &.open {
+        & > a.menuparent {
+          &.menuparent {
+            &:after {
+              transform: rotate(180deg);
+            }
+          }
+        }
+        & > ul {
+          display: block;
+          padding: 1.5rem 0 3rem;
+          z-index: 10;
+        }
       }
-    }
 
-    > ul {
-      padding: 0 0 2.5rem;
+      &.menu-item--active-trail {
+        &:hover > a,&:focus > a {
+          color: $mmTopActiveHover;
+          &:not(.menuparent):before  {
+            background: $white;
+          }
+        }
 
-      @include desk {
-        background: $sfDropdown;
+        & > a {
+          color: $mmTopActive;
+        }
+      }
+
+      & > a,
+      & > span.nolink {
+        color: $mmTopLink;
+        padding: 1.5rem 1.5rem;
+        line-height: 1.15;
+        font-size: 1.75rem;
+        display: block;
+        position: relative;
+
+        &:not(.menuparent):before {
+          content: '';
+          display: block;
+          width: 0;
+          height: 2px;
+          background: $mmTopLinkHover;
+          position: absolute;
+          top: 100%;
+          left: 0;
+        }
+
+        &.menu-item-expand {
+          display: none;
+        }
+
+        &.menuparent {
+          &:after {
+            content: '';
+            display: inline-block;
+            margin-left: 1rem;
+            height: 8px;
+            width: 8px;
+            background-image: none;
+            background-image: url(../images/elements/menu-caret.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            @include transFormAnimate;
+          }
+        }
+      }
+
+      //first level dropdown
+      & > ul {
+        padding: 0 0 2.5rem;
+        background: $mmDropdown;
         left: 0;
-        min-width: 280px;
         padding: 2.5rem 0 0;
         position: absolute;
         top: 100%;
-        width: 12em;
-
-        &.right-to-left {
-          left: auto;
-          right: 0;
-        }
-      }
-
-      > li {
-        padding: 0;
-        @include desk {
-          &:last-of-type {
-            padding: 0 0 2.5rem;
-          }
-        }
+        width: 200px;
       }
     }
 
-  }
+    // second level and below
+    li.item-level-2 {
+      &.active-trail {
+        color: $mmChildActive;
+      }
 
-  li.item-level-2 {
-    > ul {
-      @include desk {
-        background: $sfDropdown;
+      &:hover,&:focus {
+        color: $mmChildActiveHover;
+      }
+
+      &.open {
+        & > a.menuparent{
+
+          &:after {
+            transform: translateX(6px);
+          } 
+        }
+
+        & > ul {
+          display: block;
+        }
+
+        &:first-child {
+          & > ul {
+            top: -10px;
+          }
+        }
+      }
+
+      ul {
+        background: $mmDropdown;
         left: 100%;
         margin: 0;
-        padding: 0;
+        padding: 5px 0 15px;
         position: absolute;
         top: 0px;
-        min-width: 240px;
+        min-width: 200px;
 
         &.right-to-left {
           left: auto;
           right: 100%;
         }
       }
-    }
 
-    a {
-      line-height: 1;
-      padding: 1.25rem 3.75rem 1.25rem 5rem;
-      @include desk {
+      a {
+        display: inline-block;
+        line-height: 1.2;
         padding: 1.5rem 2.5rem;
-      }
-    }
+        font-size: 1.75rem;
+        color: $mmChildLink;
 
-    a.menuparent {
-      &:after {
-        content: '';
-        display: none;
-        padding: 0;
-        position: relative;
-        right: -7px;
-        top: 0.6rem;
-        opacity: 1;
-        height: 18px;
-        width: 18px;
-        background-image: none;
-        @include materialIconOutline(\e5e1);
-        font-size: 18px;
-        @include transFormAnimate;
-        @include desk {
-          display: inline-block;
+        &:hover,
+        &:focus {
+          color: $mmChildLinkHover
         }
-      }
 
-      &:hover,
-      &:focus {
-        &:after {
-          color: $buttonBackHover;
+        &.menuparent {
+          &:after {
+            content: '';
+            display: inline-block;
+            position: relative;
+            right: 0;
+            margin-left: 1rem;
+            height: 8px;
+            width: 8px;
+            background-image: none;
+            background-image: url(../images/elements/menu-caret-right.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            transition: transform 0.3s ease-out; 
+          }
         }
-      }
-    }
 
-  }
-
-  li.item-level-3 {
-    line-height: 1;
-
-    > a {
-      padding: 1.25rem;
-      @include desk {
-        font-size: 1.7rem;
-        padding: 1rem 2.5rem 1rem 5rem;
-      }
-
-      &.menuparent {
-        padding: 1rem 5rem;
+        &.menu-item-expand {
+          display: none;
+        }
       }
     }
   }

@@ -65,3 +65,18 @@
     }
   }
 }
+
+#block-main-menu {
+  h2.block-title {
+    color: $white;
+  }
+  @include menuShift {
+    bottom: 0;
+    padding-left: 236px;
+    position: absolute;
+    right: 154px;
+    .logged-in & {
+      padding-left: 180px;
+    }
+  }
+}

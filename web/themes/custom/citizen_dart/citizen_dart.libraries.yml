@@ -42,6 +42,9 @@ galleries:
 modal:
   js:
     components/02-chunks/modals/modals.js: {}
+node-slider:
+  js:
+    components/03-composites/nodes/node-slider.js: {}
 pager:
   js:
     components/02-chunks/pagers/pager.js: {}

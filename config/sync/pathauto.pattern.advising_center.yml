@@ -7,12 +7,12 @@ dependencies:
 id: advising_center
 label: 'Advising Center'
 type: 'canonical_entities:node'
-pattern: 'advising-center/[node:title]'
+pattern: 'find-advising-center/[node:title]'
 selection_criteria:
-  5a0f37ef-a75d-43ce-bf5d-4da4d9682f96:
+  bb22ffbd-0cb8-4d0d-9013-accae0044be0:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 5a0f37ef-a75d-43ce-bf5d-4da4d9682f96
+    uuid: bb22ffbd-0cb8-4d0d-9013-accae0044be0
     context_mapping:
       node: node
     bundles:

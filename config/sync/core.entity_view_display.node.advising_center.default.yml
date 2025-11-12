@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.advising_center.field_location
     - field.field.node.advising_center.field_mailing_address
     - field.field.node.advising_center.field_region
+    - field.field.node.advising_center.field_service_level
     - field.field.node.advising_center.field_website
     - filter.format.plain_text
     - node.type.advising_center
@@ -23,6 +24,7 @@ dependencies:
     - layout_discovery
     - link
     - office_hours
+    - options
     - system
     - text
     - user
@@ -50,13 +52,6 @@ third_party_settings:
               context_mapping: {  }
             weight: 0
             additional: {  }
-        third_party_settings: {  }
-      -
-        layout_id: two_column_sidebar_right
-        layout_settings:
-          label: ''
-          context_mapping: {  }
-        components:
           716ae2cd-4677-417c-aef1-6abd55b04e62:
             uuid: 716ae2cd-4677-417c-aef1-6abd55b04e62
             region: content
@@ -74,8 +69,15 @@ third_party_settings:
                 settings:
                   link_to_entity: false
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: two_column_sidebar_right
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
           34f35f8f-48db-4341-87c8-359f3c2ce6f3:
             uuid: 34f35f8f-48db-4341-87c8-359f3c2ce6f3
             region: content
@@ -91,7 +93,7 @@ third_party_settings:
                 type: entity_reference_entity_view
                 label: hidden
                 settings:
-                  view_mode: banner
+                  view_mode: 900x500
                 third_party_settings: {  }
             weight: 1
             additional: {  }
@@ -933,6 +935,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 112
+    region: content
+  field_service_level:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 113
     region: content
   field_website:
     type: link
