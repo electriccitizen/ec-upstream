@@ -3,20 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.listing
     - core.entity_view_mode.node.teaser
     - field.storage.node.body
-    - field.storage.node.field_address
     - field.storage.node.field_dates
     - field.storage.node.field_image
     - field.storage.node.field_location
     - field.storage.node.field_meta_description
     - node.type.event
+    - taxonomy.vocabulary.country
     - taxonomy.vocabulary.event_categories
   module:
-    - address
     - geolocation
     - geolocation_leaflet
     - node
+    - options
     - smart_date
     - taxonomy
     - text
@@ -283,7 +284,7 @@ display:
         options:
           offset: 0
           pagination_heading_level: h4
-          items_per_page: 6
+          items_per_page: 12
           total_pages: null
           id: 0
           tags:
@@ -303,7 +304,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Search
           reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -827,7 +828,7 @@ display:
           exposed: true
           expose:
             operator_id: combine_op
-            label: Keyword(s)
+            label: 'By Keyword(s)'
             description: ''
             use_operator: false
             operator: combine_op
@@ -856,51 +857,6 @@ display:
             title: title
             body: body
             field_meta_description: field_meta_description
-        field_category_target_id:
-          id: field_category_target_id
-          table: node__field_category
-          field: field_category_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_category_target_id_op
-            label: 'Event Type'
-            description: ''
-            use_operator: false
-            operator: field_category_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_category_target_id
-            required: false
-            remember: false
-            multiple: true
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: true
-          vid: event_categories
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
         field_dates_end_value:
           id: field_dates_end_value
           table: node__field_dates
@@ -946,43 +902,33 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_dates_value:
-          id: field_dates_value
-          table: node__field_dates
-          field: field_dates_value
+        field_event_type_value:
+          id: field_event_type_value
+          table: node__field_event_type
+          field: field_event_type_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: date
-          operator: '>'
-          value:
-            min: ''
-            max: ''
-            value: ''
-            type: date
-            granularity: second
+          plugin_id: list_field
+          operator: or
+          value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: field_dates_value_op
-            label: 'Start Date'
+            operator_id: field_event_type_value_op
+            label: 'By Type'
             description: ''
-            use_operator: true
-            operator: field_dates_value_op
-            operator_limit_selection: true
-            operator_list:
-              '<': '<'
-              '>': '>'
-              between: between
-            identifier: field_dates_value
+            use_operator: false
+            operator: field_event_type_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_event_type_value
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-            min_placeholder: MM/DD/YYYY
-            max_placeholder: MM/DD/YYYY
-            placeholder: MM/DD/YYYY
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -995,6 +941,92 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+          reduce_duplicates: true
+        field_location_type_value:
+          id: field_location_type_value
+          table: node__field_location_type
+          field: field_location_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_location_type_value_op
+            label: 'In Person or Virtual'
+            description: ''
+            use_operator: false
+            operator: field_location_type_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_location_type_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+        field_home_country_target_id:
+          id: field_home_country_target_id
+          table: node__field_home_country
+          field: field_home_country_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_home_country_target_id_op
+            label: 'By Country'
+            description: ''
+            use_operator: false
+            operator: field_home_country_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_home_country_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: country
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
       filter_groups:
         operator: AND
         groups:
@@ -1011,13 +1043,27 @@ display:
           relationship: none
           view_mode: teaser
       defaults:
+        use_ajax: false
         style: false
         row: false
         fields: false
         sorts: false
         filters: false
         filter_groups: false
+        footer: false
+      use_ajax: true
       display_description: ''
+      footer:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: "<span class=\"results-count\">Results: @start - @end of @total</span>\r\n<span class=\"count-shim\">@page_count</span>"
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -1032,10 +1078,10 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_dates'
         - 'config:field.storage.node.field_meta_description'
-  embed_1:
-    id: embed_1
+  events_map:
+    id: events_map
     display_title: 'Events Map'
-    display_plugin: embed
+    display_plugin: attachment
     position: 2
     display_options:
       fields:
@@ -1167,118 +1213,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_image:
-          id: field_image
-          table: node__field_image
-          field: field_image
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_entity_view
-          settings:
-            view_mode: views_card
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        nothing:
-          id: nothing
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: custom
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: "<div class=\"title\">{{ title }}</div>\r\n{{ field_date }}\r\n{% if body %}\r\n  <div class=\"body\">{{ body }}</div>\r\n{% endif %}"
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
         field_location:
           id: field_location
           table: node__field_location
@@ -1289,7 +1223,7 @@ display:
           entity_type: node
           plugin_id: geolocation_field
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -1342,68 +1276,224 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_address:
-          id: field_address
-          table: node__field_address
-          field: field_address
+      pager:
+        type: none
+        options:
+          offset: 0
+      empty: {  }
+      sorts:
+        field_dates_value:
+          id: field_dates_value
+          table: node__field_dates
+          field: field_dates_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: langcode
-          type: address_default
-          settings: {  }
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+          plugin_id: date
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            event: event
+          group: 1
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        combine:
+          id: combine
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: combine
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: combine_op
+            label: Keyword(s)
+            description: ''
+            use_operator: false
+            operator: combine_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: combine
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields:
+            title: title
+            body: body
+        field_event_type_value:
+          id: field_event_type_value
+          table: node__field_event_type
+          field: field_event_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_event_type_value_op
+            label: 'By Type'
+            description: ''
+            use_operator: false
+            operator: field_event_type_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_event_type_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+        field_location_type_value:
+          id: field_location_type_value
+          table: node__field_location_type
+          field: field_location_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_location_type_value_op
+            label: 'In Person or Virtual'
+            description: ''
+            use_operator: false
+            operator: field_location_type_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_location_type_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+        field_home_country_target_id:
+          id: field_home_country_target_id
+          table: node__field_home_country
+          field: field_home_country_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_home_country_target_id_op
+            label: 'By Country'
+            description: ''
+            use_operator: false
+            operator: field_home_country_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_home_country_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          vid: country
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: maps_common
         options:
@@ -1981,29 +2071,37 @@ display:
             touchZoom: false
             bounceAtZoomLimits: true
       row:
-        type: fields
+        type: 'entity:node'
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          relationship: none
+          view_mode: listing
       defaults:
+        empty: false
+        use_ajax: false
+        pager: false
         style: false
         row: false
         fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+        footer: false
+      use_ajax: true
       display_description: ''
+      footer: {  }
       display_extenders: {  }
+      displays:
+        all_upcoming_events: all_upcoming_events
+      inherit_arguments: false
+      inherit_exposed_filters: true
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_address'
-        - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_location'
