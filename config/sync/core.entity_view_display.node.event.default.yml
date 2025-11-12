@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.event.body
     - field.field.node.event.field_address
+    - field.field.node.event.field_advising_center
     - field.field.node.event.field_audience
     - field.field.node.event.field_capacity
     - field.field.node.event.field_category
@@ -794,7 +795,7 @@ third_party_settings:
                   rel: '0'
                   target: '0'
                 third_party_settings: {  }
-            weight: 6
+            weight: 7
             additional: {  }
           4b4dd63c-8846-408e-8c5f-fbd1ca893e1b:
             uuid: 4b4dd63c-8846-408e-8c5f-fbd1ca893e1b
@@ -832,7 +833,7 @@ third_party_settings:
                   thousand_separator: ''
                   prefix_suffix: true
                 third_party_settings: {  }
-            weight: 5
+            weight: 6
             additional: {  }
           46216438-2e52-4af2-a948-8007dc851058:
             uuid: 46216438-2e52-4af2-a948-8007dc851058
@@ -871,6 +872,25 @@ third_party_settings:
                 settings:
                   link: false
                 third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          87d7ba83-695a-433e-8dd8-c9054822dcdc:
+            uuid: 87d7ba83-695a-433e-8dd8-c9054822dcdc
+            region: first
+            configuration:
+              id: 'field_block:node:event:field_advising_center'
+              label: 'Advising Center'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
             weight: 4
             additional: {  }
         third_party_settings: {  }
@@ -879,6 +899,14 @@ targetEntityType: node
 bundle: event
 mode: default
 content:
+  field_advising_center:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 111
+    region: content
   field_audience:
     type: entity_reference_label
     label: hidden

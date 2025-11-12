@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.event.body
     - field.field.node.event.field_address
+    - field.field.node.event.field_advising_center
     - field.field.node.event.field_audience
     - field.field.node.event.field_capacity
     - field.field.node.event.field_category
@@ -81,6 +82,7 @@ hidden:
   addtoany: true
   body: true
   field_address: true
+  field_advising_center: true
   field_audience: true
   field_capacity: true
   field_category: true
