@@ -9,6 +9,7 @@ $em-base: 8px;
 $smallTab: 520px;
 $tab: 800px;
 $desk: 984px;
+$menuShift: 1024px;
 $contentStop: 1200px;
 $largeScreen: 1600px;
 $textMax: 800px;
@@ -16,6 +17,7 @@ $onlyTab: $tab $desk - 1px;
 $onlySmall: $tab - 1px;
 $onlyPhone: $smallTab - 1px;
 $onlyMobile: $desk - 1px;
+$mobileMenu: $menuShift - 1px;
 
 // Used by JS to make sure the SCSS vars can be used.
 :root {
@@ -67,6 +69,12 @@ $sectionGutter: 40px;
   }
 }
 
+@mixin menuShift {
+  @media screen and (min-width: $menuShift) {
+    @content;
+  }
+}
+
 @mixin contentStop {
   @media screen and (min-width: $contentStop) {
     @content;
@@ -75,6 +83,12 @@ $sectionGutter: 40px;
 
 @mixin largeScreen {
   @media screen and (min-width: $largeScreen) {
+    @content;
+  }
+}
+
+@mixin mobileMenu {
+  @media screen and (max-width: $mobileMenu) {
     @content;
   }
 }

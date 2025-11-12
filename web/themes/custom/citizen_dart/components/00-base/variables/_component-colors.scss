@@ -56,21 +56,21 @@ $cautionTextHover : $black;
 --------------------- */
 $siteBack : $white;
 $unpub : $adminPink;
-$headerBack : $darkBlue;
-$prefooterBack : $darkGrey;
-$prefooterText : $offWhite;
-$prefooterLink : $adminGold;
-$prefooterLinkHover : $adminWhiteGold;
-$footerBack : $black;
-$footerText : $offWhite;
-$footerLink : $adminGold;
-$footerLinkHover : $adminWhiteGold;
+$headerBack : linear-gradient(to right, $darkBlue 70%, $navy 100%);
+$prefooterBack : $darkBlue;
+$prefooterText : $white;
+$prefooterLink : $white;
+$prefooterLinkHover : $lightBlue;
+$footerBack : $navy;
+$footerText : $white;
+$footerLink : $white;
+$footerLinkHover : $lightBlue;
 $borderRule : $black;
 $hamburger : $black;
 $hamburgerActive : $black;
 $searchIcon : $white;
-$searchIconHover : $link;
-$searchDropBack : rgba(35, 35, 35, 0.97);
+$searchIconHover : $lightBlue;
+$searchDropBack : rgba(7, 22, 56, 0.94);
 $searchDropText : $white;
 $searchDropPlace : $white;
 $searchDropPlaceFocus : $white;
@@ -152,27 +152,27 @@ $modalGalButtonShadowHover : $transBlack;
 /* NAVIGATION
 ---------------------- */
 //desktop
-$sfTopLink : $white;
-$sfTopLinkHover : $black;
-$sfTopBackHover : $lightBlue;
-$sfTopActive : $black;
-$sfTopActiveHover : $white;
-$sfChildLink : $black;
-$sfChildLinkHover : $hoverLink;
-$sfChildActive : $black;
-$sfChildActiveHover : $hoverLink;
-$sfDropdown : $lightBlue;
+$mmTopLink : $white;
+$mmTopLinkHover : $lightBlue;
+$mmTopBackHover : $blue;
+$mmTopActive : $lightBlue;
+$mmTopActiveHover : $white;
+$mmChildLink : $black;
+$mmChildLinkHover : $hoverLink;
+$mmChildActive : $black;
+$mmChildActiveHover : $hoverLink;
+$mmDropdown : $lightBlue;
 
 //mobile
-$sfMobileDrop : $white;
-$sfMobileDropBorder : $black;
-$sfMobileItemBorder : $borderRule;
-$sfMobileTop : $link;
-$sfMobileTopBack : $white;
-$sfMobileTopExpanded : $hoverLink;
-$sfMobileTopBackExpanded : $lightGrey;
-$sfMobileChild : $link;
-$sfMobileChildActive : $white;
+$mmMobileDrop : $white;
+$mmMobileDropBorder : $black;
+$mmMobileItemBorder : $borderRule;
+$mmMobileTop : $link;
+$mmMobileTopBack : $white;
+$mmMobileTopExpanded : $hoverLink;
+$mmMobileTopBackExpanded : $lightGrey;
+$mmMobileChild : $link;
+$mmMobileChildActive : $white;
 
 /* MENU BLOCK (Sidebar)
 --------------------- */

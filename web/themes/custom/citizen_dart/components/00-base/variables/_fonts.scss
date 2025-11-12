@@ -215,7 +215,7 @@ $h6Sm: 2rem;
   }
 }
 
-%materialSetup {
+@mixin materialSetup {
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -235,13 +235,13 @@ $h6Sm: 2rem;
 @mixin materialIcon($icon) {
   content: '#{$icon}';
   font-family: 'Material Icons';
-  @extend %materialSetup;
+  @include materialSetup;
 }
 
 @mixin materialIconOutline($icon) {
   content: '#{$icon}';
   font-family: 'Material Icons Outlined';
-  @extend %materialSetup;
+  @include materialSetup;
 }
 
 .material-icons {
