@@ -8,7 +8,7 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: 'High Education Institute'
+name: 'Higher Education Institute'
 type: high_education_institute
 description: 'Add a U.S. institute of higher education.'
 help: null
