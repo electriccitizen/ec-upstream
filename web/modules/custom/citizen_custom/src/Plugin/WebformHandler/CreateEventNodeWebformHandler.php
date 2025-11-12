@@ -166,6 +166,11 @@ class CreateEventNodeWebformHandler extends WebformHandlerBase {
       ];
     }
 
+    // Add advising center field (direct value transfer).
+    if (!empty($values['advising_center'])) {
+      $node_args['field_advising_center'] = $values['advising_center'];
+    }
+
     // Create and save the node with error handling.
     try {
       $node = Node::create($node_args);
