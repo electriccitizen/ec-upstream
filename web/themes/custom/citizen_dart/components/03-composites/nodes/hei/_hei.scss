@@ -1,0 +1,102 @@
+/* ============
+   HIEHG EDUCATION INSTITUTION
+================ */
+
+@use '../../../00-base' as *;
+
+.node-high-education-institute {
+  .block-field.block-title {
+    text-align: left;
+    max-width: $contentStop;
+
+    .page-title {
+      max-width: $textMax;
+    }
+  }
+}
+
+.node-teaser-high-education-institute {
+
+  .node-field-title {
+    a{
+      display: inline-block;
+
+      &:hover,&:focus {
+        background: $darkIce;
+      }
+    }
+  }
+
+  .node-teaser-content {
+    strong {
+      font-family: $displayHeader;
+      text-transform: uppercase;
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+
+    a {
+      &:hover,&:focus {
+        background: $darkIce;
+      }
+    }
+
+    .field-meta-description {
+      margin-bottom: $spaceXxs;
+      font-size: 2rem;
+    }
+
+    .location {
+      margin-bottom: $spaceXxs;
+      font-size: 2rem;
+    }
+
+    .views-element-container {
+      display: inline;
+    }
+  }
+}
+
+.node-listing-advising-center {
+  .node-teaser-content {
+    font-size: 2rem;
+
+    & > div {
+      margin-bottom: $spaceXxs;
+    }
+
+    .node-field-title {
+      margin-bottom: $spaceXs;
+      a {
+        color: $blue;
+        &:hover,&:focus {
+          color: $black;
+          background: $blackTransHover;
+        }
+      }
+    }
+
+    strong {
+      font-family: $displayHeader;
+      text-transform: uppercase;
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+    
+    .country-demographics {
+
+      & > div {
+        margin-bottom: $spaceXxs;
+      }
+
+      .demographic-label {
+        margin-top: $spaceSm;
+        padding-top: $spaceXs;
+        border-top: 1px solid $blue;
+        margin-bottom: $spaceXxs;
+        font-weight: $heavy;
+        font-size: 2.25rem;
+      }
+    }
+  }
+}

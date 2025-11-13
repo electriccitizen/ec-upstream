@@ -27,7 +27,9 @@
 
   h2.form-header {
     @include heading3;
-    margin-bottom: $spaceMd;
+    & {
+      margin-bottom: $spaceMd;
+    }
   }
 
   #views-form-wrapper {

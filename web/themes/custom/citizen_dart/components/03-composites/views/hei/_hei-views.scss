@@ -1,12 +1,12 @@
 /* ==================
-    ADVISING CENTERS VIEWS
+		HIGHER EDUCATION INTITUTE VIEWS
 ==================== */
 
 @use '../../../00-base' as *;
 
-/* ALL ADVISING CENTERS
+/* ALL HEIS
 ------------- */
-.advising-centers {
+.all-institutes {
   .view-wrapper {
     display: flex;
     
@@ -46,12 +46,28 @@
     }
   }
 
-  .advising-center-map {
+  .hei-map {
     @include leafletPopup;
   }
 
-  .views-row {
+  & > .view-content > .views-row {
     width: 100%;
     margin-bottom: $spaceLg;
   }
 }
+
+/* SUCCESS STORIES ON HEI
+---------------------- */
+.hei-stories {
+  display: inline;
+  .view-content,.view-row {
+    display: inline;
+  }
+  .modal-trigger {
+
+  }
+ .modal-outer {
+  display: none;
+ } 
+}
+

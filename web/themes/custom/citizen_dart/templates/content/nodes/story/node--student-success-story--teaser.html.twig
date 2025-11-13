@@ -73,37 +73,44 @@
 
 {% set classes = [
   'node-' ~ view_mode|clean_class,
-  'node-' ~ view_mode|clean_class ~ '-' ~ node.type.0.target_id|clean_class
+  'node-' ~ view_mode|clean_class ~ '-' ~ node.type.0.target_id|clean_class,
+  'modal-content'
 ] %}
 
-<a href="#" class="modal-trigger" aria-controls="#modal-{{ node.nid.0.value }}">{{- label.0['#context'].value -}}</a>
-
-<div class="modal-outer" i="#modal-{{ node.nid.0.value }}">
-  <div class="modal-inner">
-    <div class="modal-header">
-      {{- label.0['#context'].value -}}
-    </div>
-    <article{{ attributes.addClass(classes) }}>
-      
-      {% block nodeImage %}
-        {% if content.field_image %}
-          <div class="node-field-image">
-            {{ content.field_image }}
+{{ attach_library('citizen_dart/modal') }}
+<div class="modal">
+	<div class="modal-lead" data-attribute-id="modal-{{ node.nid.0.value }}">
+		<button id="modal-trigger-{{ node.nid.0.value }}" class="ec-modal-trigger" aria-controls="modal-outer-{{ node.nid.0.value }}">{{- label.0['#context'].value -}}</button>
+	</div>
+  
+  <dialog class="modal-wrapper" id="modal-outer-{{node.nid.0.value }}" aria-modal="true">
+		<div class="modal-inner" id="modal-inner-{{ node.nid.0.value }}" tabindex="-1">
+			<button class="modal-close" id="modal-close-{{ node.nid.0.value }}">✕<span class="visually-hidden">close</span></button>
+      <div class="modal-header">
+        <h2>{{- label.0['#context'].value -}}</h2>
+      </div>
+      <article{{ attributes.addClass(classes) }}>
+        
+        {% block nodeImage %}
+          {% if content.field_image %}
+            <div class="node-field-image">
+              {{ content.field_image }}
+            </div>
+          {% endif %}
+        {% endblock %}
+        {% block node %}
+          <div class="node-teaser-content">
+            {% block nodeTitle %}
+              <h2{{ title_attributes.addClass("node-field-title") }}>
+                {{ content.field_name }}
+              </h2>
+            {% endblock %}
+            {% block nodeContent %}
+              {{- content|without("field_image","field_name") -}}
+            {% endblock %}
           </div>
-        {% endif %}
-      {% endblock %}
-      {% block node %}
-        <div class="node-teaser-content">
-          {% block nodeTitle %}
-            <h2{{ title_attributes.addClass("node-field-title") }}>
-              {{ content.field_name }}
-            </h2>
-          {% endblock %}
-          {% block nodeContent %}
-            {{- content|without("field_image","field_name") -}}
-          {% endblock %}
-        </div>
-      {% endblock %}
-    </article>
-  </div>
+        {% endblock %}
+      </article>
+    </div>
+  </dialog>
 </div>
