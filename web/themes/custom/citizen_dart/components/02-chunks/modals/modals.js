@@ -6,7 +6,6 @@
       once('modalContent', '.modal', context).forEach(modal => {
 				//set the variables needed to keep the modal controls specific
 				const modalLead = modal.querySelector('.modal-lead');
-				const pid = modalLead ? modalLead.getAttribute('data-attribute-id') : null;
 				const modalWrapper = modal.querySelector('.modal-wrapper');
 				const overflowGuard = document.querySelector('.overflow-guard');
 
@@ -14,18 +13,20 @@
 				  overflowGuard.appendChild(modalWrapper);
 				}
 
-				const get = document.getElementById.bind(document);
-
 				window.addEventListener('load', () => {
-          //set the controls for this specific modal
-          let modalRoot = get('modal-outer-' + pid);
-          let button = get('modal-trigger-' + pid);
-          let modal = get('modal-inner-' + pid);
-          let close = get('modal-close-' + pid);
+          // Cache key elements relative to the current modal so we do not rely on matching IDs.
+          const button = modalLead ? modalLead.querySelector('.ec-modal-trigger') : null;
+          const modalRoot = modalWrapper;
+          const modalInner = modalWrapper ? modalWrapper.querySelector('.modal-inner') : null;
+          const close = modalWrapper ? modalWrapper.querySelector('.modal-close') : null;
+
+          if (!button || !modalRoot || !modalInner || !close) {
+            return;
+          }
           //set the click functions
           modalRoot.addEventListener('click', rootClick);
           button.addEventListener('click', openModal);
-          modal.addEventListener('click', modalClick);
+          modalInner.addEventListener('click', modalClick);
           close.addEventListener('click', modalClose);
           //close when the modal window is clicked out side of the content
           function rootClick() {
@@ -38,22 +39,22 @@
             setTimeout(() => { modalRoot.classList.remove('close-modal','active-modal'); }, 1200);
 
             //if there is a external video in an iframe or an HTML video, stop it when the modal closes
-            if (modal.getElementsByTagName('iframe').length != 0) {
-              modal.getElementsByTagName('iframe')[0].src = modal.getElementsByTagName('iframe')[0].src;
+            if (modalInner.getElementsByTagName('iframe').length != 0) {
+              modalInner.getElementsByTagName('iframe')[0].src = modalInner.getElementsByTagName('iframe')[0].src;
             }
-            else if (modal.getElementsByTagName('video').length != 0) {
-              modal.getElementsByTagName('video')[0].pause();
-              modal.getElementsByTagName('video')[0].currentTime = 0;
+            else if (modalInner.getElementsByTagName('video').length != 0) {
+              modalInner.getElementsByTagName('video')[0].pause();
+              modalInner.getElementsByTagName('video')[0].currentTime = 0;
             }
           }
 
           function openModal() {
             modalRoot.classList.add('active-modal');
-            if (modal.getElementsByTagName('form').length != 0) {
-              modal.getElementsByTagName('form')[0].getElementsByTagName('input')[0].focus();
+            if (modalInner.getElementsByTagName('form').length != 0) {
+              modalInner.getElementsByTagName('form')[0].getElementsByTagName('input')[0].focus();
             }
             else {
-              modal.focus();
+              modalInner.focus();
             }
           }
           // Prevent close when the modal inner content is clicked.
@@ -64,7 +65,7 @@
           }
           // Close the modal when the ESC key is pressed.
           document.addEventListener('keydown', function (event) {
-            if (event.key === 27) {
+            if (event.key === 'Escape' || event.keyCode === 27) {
               modalClose();
             }
           });
