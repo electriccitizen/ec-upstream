@@ -148,3 +148,13 @@
 		}
 	}
 }//end modal-wrapper
+
+html.modal-open {
+	overflow: hidden;
+}
+
+body.modal-open {
+	position: fixed;
+	width: 100%;
+	overflow: visible;
+}

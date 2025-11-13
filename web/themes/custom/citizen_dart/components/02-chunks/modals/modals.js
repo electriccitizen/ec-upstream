@@ -1,5 +1,7 @@
 (function(Drupal, once) {
 
+	let scrollPosition = 0;
+
 	//Pop-up content functionality.
 	Drupal.behaviors.modal = {
     attach: function (context) {
@@ -12,6 +14,28 @@
 				if (modalWrapper && overflowGuard) {
 				  overflowGuard.appendChild(modalWrapper);
 				}
+
+				const lockScroll = () => {
+          scrollPosition = window.pageYOffset || document.documentElement.scrollTop || 0;
+          document.documentElement.classList.add('modal-open');
+          if (document.body) {
+            document.body.classList.add('modal-open');
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPosition}px`;
+            document.body.style.width = '100%';
+          }
+        };
+
+        const unlockScroll = () => {
+          document.documentElement.classList.remove('modal-open');
+          if (document.body) {
+            document.body.classList.remove('modal-open');
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollPosition);
+          }
+        };
 
 				window.addEventListener('load', () => {
           // Cache key elements relative to the current modal so we do not rely on matching IDs.
@@ -31,12 +55,18 @@
           //close when the modal window is clicked out side of the content
           function rootClick() {
             modalRoot.classList.add('close-modal');
-            setTimeout(() => { modalRoot.classList.remove('close-modal','active-modal'); }, 1200);
+            setTimeout(() => {
+              modalRoot.classList.remove('close-modal','active-modal');
+              unlockScroll();
+            }, 1200);
           }
           //close when the close button is clicked
           function modalClose() {
             modalRoot.classList.add('close-modal');
-            setTimeout(() => { modalRoot.classList.remove('close-modal','active-modal'); }, 1200);
+            setTimeout(() => {
+              modalRoot.classList.remove('close-modal','active-modal');
+              unlockScroll();
+            }, 1200);
 
             //if there is a external video in an iframe or an HTML video, stop it when the modal closes
             if (modalInner.getElementsByTagName('iframe').length != 0) {
@@ -50,6 +80,7 @@
 
           function openModal() {
             modalRoot.classList.add('active-modal');
+            lockScroll();
             if (modalInner.getElementsByTagName('form').length != 0) {
               modalInner.getElementsByTagName('form')[0].getElementsByTagName('input')[0].focus();
             }
