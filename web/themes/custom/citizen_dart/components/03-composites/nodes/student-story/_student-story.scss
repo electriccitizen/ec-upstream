@@ -1,0 +1,46 @@
+/* =============
+   STUDENT STORY NODE
+================ */
+
+@use '../../../00-base' as *;
+
+.node-student-success-story {
+  @include auto;
+  max-width: $contentStop;
+
+  .block-field.block-title {
+    max-width: 100%;
+
+    h1 {
+      text-align: left;
+    }
+  }
+
+  .block-created {
+    @include metaText;
+  }
+}
+
+.node-teaser-student-success-story {
+  color: $white;
+
+  .node-teaser-content {
+    span.inline-label {
+      font-family: $displayHeader;
+      text-transform: uppercase;
+      font-size: 2rem;
+    }
+    .node-field-title {
+      font-size: 3.25rem;
+      margin-bottom: $spaceSm;
+    }
+
+    .field-home-country {
+      margin-bottom: $spaceXxs;
+    }
+
+    .field-degree-pursuing-attained {
+      margin-bottom: $spaceSm;
+    }
+  }
+}

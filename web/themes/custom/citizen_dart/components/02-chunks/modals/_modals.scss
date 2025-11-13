@@ -35,7 +35,7 @@
 	margin: 0;
 	padding: 0;
 	z-index: 999;
-	background: rgba(0, 0, 0, .8);
+	background: rgba(7,22,56,.8);
 	width: 100%;
 	height: 100%;
 	border: 0;
@@ -55,14 +55,15 @@
 		max-width: none;
 		max-height: none;
 		box-sizing: border-box;
-		background: #fff;
+		background: $darkBlue;
 		border: 0;
 		overflow-y: auto;
 		transform: translateX(100%);
 		transition: transform .45s ease;
 		transition-delay: 0s;
+    color: $white;
 		@include tab{
-			width: 33.333%;
+			width: 66.67%;
 			min-width: 420px;
 		}
 		& >.contextual .trigger {
@@ -71,11 +72,11 @@
 		.modal-close {
 			background: 0 0;
 			font-size: 16px;
-			color: #000;
-			height: 24px;
-			width: 24px;
-			top: 0;
-			right: 0;
+			color: $white;
+			height: 40px;
+			width: 40px;
+			top: 7px;
+			right: 20px;
 			position: absolute;
 			border: 0;
 			font-family: $bodyFont;
@@ -83,16 +84,25 @@
 			z-index: 9999;
 			&:focus,
 			&:hover {
-				color: #bf0e0e;
+				background-color: $lightBlue;
+        color: $navy;
 			}
 		}//end modal close inner
 	} //end modal-inner
 	.modal-header {
 		position: relative;
+    margin-bottom: $spaceSm;
+    border-bottom: 1px solid $white;
+
 		h2 {
 			@include heading4;
-			margin: 0 0 1rem;
+      & {
+        font-family: $displayHeader;
+        padding-bottom: $spaceXxs;
+        text-transform: uppercase;
+      }
 		}
+
 		//end block title
 		.modal-close {
 			border: 1px solid transparent;
