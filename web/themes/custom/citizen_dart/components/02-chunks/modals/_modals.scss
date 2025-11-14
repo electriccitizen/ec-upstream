@@ -18,6 +18,7 @@
     margin: 0;
     font-size: 2rem;
     text-align: left;
+    cursor: pointer;
 
     &:hover,&:focus {
       color: $hoverLink;

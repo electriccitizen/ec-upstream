@@ -71,33 +71,46 @@
  */
 #}
 
-
 {% set classes = [
   'node-' ~ view_mode|clean_class,
-  'node-' ~ view_mode|clean_class ~ '-' ~ node.type.0.target_id|clean_class
+  'node-' ~ view_mode|clean_class ~ '-' ~ node.type.0.target_id|clean_class,
+  'modal-content'
 ] %}
 
-<article{{ attributes.addClass(classes) }}>
-  {% block nodeImage %}
-    {% if content.field_image %}
-      <div class="node-field-image">
-        {{ content.field_image }}
+{{ attach_library('citizen_dart/modal') }}
+<div class="modal">
+	<div class="modal-lead" data-attribute-id="modal-sl-{{ node.nid.0.value }}">
+		<button id="modal-trigger-sl-{{ node.nid.0.value }}" class="ec-modal-trigger" aria-controls="modal-outer-sl-{{ node.nid.0.value }}">{{- label.0['#context'].value -}}</button>
+	</div>
+  
+  <dialog class="modal-wrapper" id="modal-outer-sl-{{node.nid.0.value }}" aria-modal="true">
+		<div class="modal-inner" id="modal-inner-sl-{{ node.nid.0.value }}" tabindex="-1">
+			<button class="modal-close" id="modal-close-sl-{{ node.nid.0.value }}">✕<span class="visually-hidden">close</span></button>
+      <div class="modal-header">
+        <h2>{{- label.0['#context'].value -}}</h2>
       </div>
-    {% endif %}
-  {% endblock %}
-  {% block node %}
-    <div class="node-teaser-content">
-      {% block nodeTitle %}
-        <div{{ title_attributes.addClass("node-field-title") }}>
-          <a href="{{- url -}}" rel="bookmark">{{- label.0['#context'].value -}}</a>
-        </div>
-      {% endblock %}
-      {% block nodeContent %}
-        <div class="location">
-          <strong>Location: </strong>
-          {{ content.field_address.0.locality }}, {{ content.field_address.0.administrative_area }}
-        </div>
-      {% endblock %}
+      <article{{ attributes.addClass(classes) }}>
+        
+        {% block nodeImage %}
+          {% if content.field_image %}
+            <div class="node-field-image">
+              {{ content.field_image }}
+            </div>
+          {% endif %}
+        {% endblock %}
+        {% block node %}
+          <div class="node-teaser-content">
+            {% block nodeTitle %}
+              <h2{{ title_attributes.addClass("node-field-title") }}>
+                {{ content.field_name }}
+              </h2>
+            {% endblock %}
+            {% block nodeContent %}
+              {{- content|without("field_image","field_name") -}}
+            {% endblock %}
+          </div>
+        {% endblock %}
+      </article>
     </div>
-  {% endblock %}
-</article>
+  </dialog>
+</div>

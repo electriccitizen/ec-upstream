@@ -1033,7 +1033,7 @@ display:
                   close_button: true
                   auto_close: true
                   close_on_escape_key: false
-                  class_name: ''
+                  class_name: info-box
                 enabled: true
               geolocation_marker_scroll_to_id:
                 weight: 0
