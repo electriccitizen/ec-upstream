@@ -146,3 +146,4 @@ upstream/web/
 /web/sites/default/settings.docksal.php
 /.docksal/docksal-local.env
 /.docksal/docksal-local.yml
+.venv/

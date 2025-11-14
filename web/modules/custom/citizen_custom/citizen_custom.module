@@ -8,6 +8,7 @@
 use Drupal\Core\Database\Query\AlterableInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
 use Drupal\paragraphs\Entity\Paragraph;
 
 /**
@@ -79,9 +80,44 @@ function citizen_custom_preprocess_block(&$variables) {
  * Implements hook_page_attachments().
  */
 function citizen_custom_page_attachments(array &$attachments) {
-  // Add custom admin theme files to admin pages.
-  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+  $router_context = \Drupal::service('router.admin_context');
+
+  if ($router_context->isAdminRoute()) {
+    // Add custom admin theme files to admin pages.
     $attachments['#attached']['library'][] = 'citizen_custom/admin-global';
+    return;
+  }
+  
+
+  $attachments['#attached']['library'][] = 'citizen_custom/world-countries-layer';
+
+  $citizen_settings = &$attachments['#attached']['drupalSettings']['citizenCustom'];
+  if (!isset($citizen_settings)) {
+    $citizen_settings = [];
+  }
+
+  if (empty($citizen_settings['countriesGeojsonUrl'])) {
+    $citizen_settings['countriesGeojsonUrl'] = Url::fromUri('base:modules/custom/citizen_custom/data/natural_earth_countries.geojson')
+      ->toString();
+  }
+
+  if (empty($citizen_settings['worldCountriesLayer'])) {
+    $citizen_settings['worldCountriesLayer'] = [
+      'mapIds' => [],
+      'mapSelectors' => [],
+      'tooltipField' => 'NAME_LONG',
+      'demographics' => [],
+      'demographicsKey' => 'ISO_A3',
+    ];
+  }
+  else {
+    $citizen_settings['worldCountriesLayer'] += [
+      'mapIds' => [],
+      'mapSelectors' => [],
+      'tooltipField' => 'NAME_LONG',
+      'demographics' => [],
+      'demographicsKey' => 'ISO_A3',
+    ];
   }
 }
 
@@ -267,4 +303,3 @@ function citizen_custom_views_pre_view($view, $display_id, &$args) {
 
   }
 }
-

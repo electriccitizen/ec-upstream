@@ -10,3 +10,11 @@ admin-global:
     - core/once
     - core/drupal
     - core/drupalSettings
+
+world-countries-layer:
+  version: 1.0
+  js:
+    js/world-countries-layer.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
