@@ -50,7 +50,7 @@
     @include leafletPopup;
   }
 
-  & > .view-content > .views-row {
+  .view-inner-right > .view-content > .views-row {
     width: 100%;
     margin-bottom: $spaceLg;
   }
