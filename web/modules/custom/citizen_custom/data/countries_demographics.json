@@ -1,0 +1,1222 @@
+{
+  "AFG": {
+    "population": "40.12 million",
+    "ethnicities": null,
+    "languages": "Afghan Persian or Dari"
+  },
+  "GBR": {
+    "population": "68.46 million",
+    "ethnicities": "White, Black/African/Caribbean/black British, Asian/Asian British: Indian",
+    "languages": "English"
+  },
+  "ALB": {
+    "population": "3.11 million",
+    "ethnicities": "Albanian, Greek, other",
+    "languages": "Albanian"
+  },
+  "DZA": {
+    "population": "47.02 million",
+    "ethnicities": "Arab-Amazigh, European",
+    "languages": "Arabic"
+  },
+  "ASM": {
+    "population": "43.9 thousand",
+    "ethnicities": "Pacific Islander, Asian, mixed",
+    "languages": "Samoan"
+  },
+  "AND": {
+    "population": "85.37 thousand",
+    "ethnicities": "Spanish, Andorran, Portuguese",
+    "languages": "Catalan"
+  },
+  "AGO": {
+    "population": "37.2 million",
+    "ethnicities": "Ovimbundu, Kimbundu, Bakongo",
+    "languages": "Portuguese"
+  },
+  "AIA": {
+    "population": "19.42 thousand",
+    "ethnicities": "African/Black, Hispanic, mixed",
+    "languages": "English"
+  },
+  "ATA": {
+    "population": null,
+    "ethnicities": null,
+    "languages": null
+  },
+  "ATG": {
+    "population": "102.63 thousand",
+    "ethnicities": "African descent, mixed, Hispanic",
+    "languages": "English"
+  },
+  "ARG": {
+    "population": "46.99 million",
+    "ethnicities": "European (mostly Spanish and Italian descent) and Mestizo (mixed European and Indigenous ancestry), Indigenous, African descent",
+    "languages": "Spanish"
+  },
+  "ARM": {
+    "population": "2.98 million",
+    "ethnicities": "Armenian, Yezidi, other",
+    "languages": "Armenian"
+  },
+  "ABW": {
+    "population": "125.06 thousand",
+    "ethnicities": "Dutch, Colombian, Venezuelan",
+    "languages": "Papiamento"
+  },
+  "AUS": {
+    "population": "26.77 million",
+    "ethnicities": "English, Australian, Irish",
+    "languages": "English"
+  },
+  "AUT": {
+    "population": "8.97 million",
+    "ethnicities": "Austrian, German, Bosnian and Herzegovinian",
+    "languages": "German"
+  },
+  "AZE": {
+    "population": "10.65 million",
+    "ethnicities": "Azerbaijani, Lezghin, Russian",
+    "languages": "Azerbaijani (Azeri)"
+  },
+  "BHS": {
+    "population": "410.86 thousand",
+    "ethnicities": "African descent, White, mixed",
+    "languages": "English"
+  },
+  "BHR": {
+    "population": "1.57 million",
+    "ethnicities": "Bahraini, Asian, other Arab",
+    "languages": "Arabic"
+  },
+  "BGD": {
+    "population": "168.7 million",
+    "ethnicities": "Bengali, other indigenous ethnic groups",
+    "languages": "Bangla"
+  },
+  "BRB": {
+    "population": "304.14 thousand",
+    "ethnicities": "African descent, mixed, White",
+    "languages": "English"
+  },
+  "BLR": {
+    "population": "9.5 million",
+    "ethnicities": "Belarusian, Russian, Polish",
+    "languages": "Russian"
+  },
+  "BEL": {
+    "population": "11.98 million",
+    "ethnicities": "Belgian, Italian, Moroccan",
+    "languages": "Dutch"
+  },
+  "BLZ": {
+    "population": "415.79 thousand",
+    "ethnicities": "Mestizo, Creole, Maya",
+    "languages": "English"
+  },
+  "BEN": {
+    "population": "14.7 million",
+    "ethnicities": "Fon and related, Adja and related, Yoruba and related",
+    "languages": "French"
+  },
+  "BMU": {
+    "population": "72.8 thousand",
+    "ethnicities": "African descent, White, mixed",
+    "languages": "English"
+  },
+  "BTN": {
+    "population": "884.55 thousand",
+    "ethnicities": "Ngalop (also known as Bhote), ethnic Nepali (predominantly Lhotshampas), indigenous or migrant tribes",
+    "languages": "Sharchopkha"
+  },
+  "BOL": {
+    "population": "12.31 million",
+    "ethnicities": "Mestizo (mixed White and Indigenous ancestry), Indigenous, White",
+    "languages": "Spanish"
+  },
+  "BIH": {
+    "population": "3.8 million",
+    "ethnicities": "Bosniak, Serb, Croat",
+    "languages": "Bosnian"
+  },
+  "BWA": {
+    "population": "2.45 million",
+    "ethnicities": "Tswana (or Setswana), Kalanga, Basarwa",
+    "languages": "Setswana"
+  },
+  "BVT": {
+    "population": null,
+    "ethnicities": null,
+    "languages": null
+  },
+  "BRA": {
+    "population": "220.05 million",
+    "ethnicities": "mixed, White, Black",
+    "languages": "Portuguese"
+  },
+  "IOT": {
+    "population": "0",
+    "ethnicities": null,
+    "languages": null
+  },
+  "VGB": {
+    "population": "40.1 thousand",
+    "ethnicities": "African/Black, Latino, White",
+    "languages": "English"
+  },
+  "BRN": {
+    "population": "491.9 thousand",
+    "ethnicities": "Malay, Chinese, other",
+    "languages": "Malay (Bahasa Melayu)"
+  },
+  "BGR": {
+    "population": "6.78 million",
+    "ethnicities": "Bulgarian, Turkish, Roma",
+    "languages": "Bulgarian"
+  },
+  "BFA": {
+    "population": "23.04 million",
+    "ethnicities": "Mossi, Fulani (Peuhl), Gurunsi",
+    "languages": "Mossi"
+  },
+  "MMR": {
+    "population": "57.53 million",
+    "ethnicities": "Burman (Bamar), Shan, Karen",
+    "languages": "Burmese"
+  },
+  "BDI": {
+    "population": "13.59 million",
+    "ethnicities": "Hutu, Tutsi, Twa",
+    "languages": "Kirundi"
+  },
+  "CPV": {
+    "population": "611.01 thousand",
+    "ethnicities": "Creole (Mulatto), African, European",
+    "languages": "Portuguese"
+  },
+  "KHM": {
+    "population": "17.06 million",
+    "ethnicities": "Khmer, Cham, Chinese",
+    "languages": "Khmer"
+  },
+  "CMR": {
+    "population": "30.97 million",
+    "ethnicities": "Bamileke-Bamu, Biu-Mandara, Arab-Choa/Hausa/Kanuri",
+    "languages": "English"
+  },
+  "CAN": {
+    "population": "38.79 million",
+    "ethnicities": "Canadian, English, Scottish",
+    "languages": "English"
+  },
+  "CYM": {
+    "population": "66.65 thousand",
+    "ethnicities": "Cayman Islander, Jamaican, Filipino",
+    "languages": "English"
+  },
+  "CAF": {
+    "population": "5.65 million",
+    "ethnicities": "Baya, Banda, Mandjia",
+    "languages": "French"
+  },
+  "TCD": {
+    "population": "19.09 million",
+    "ethnicities": "Sara (Ngambaye/Sara/Madjingaye/Mbaye), Kanembu/Bornu/Buduma, Arab",
+    "languages": "French"
+  },
+  "CHL": {
+    "population": "18.66 million",
+    "ethnicities": "White and non-Indigenous, Mapuche, Aymara",
+    "languages": "Spanish"
+  },
+  "CHN": {
+    "population": "2.23 thousand",
+    "ethnicities": null,
+    "languages": null
+  },
+  "CXR": {
+    "population": "1.69 thousand",
+    "ethnicities": "Chinese, European, Malay",
+    "languages": "English"
+  },
+  "CPT": {
+    "population": null,
+    "ethnicities": null,
+    "languages": null
+  },
+  "CCK": {
+    "population": "0",
+    "ethnicities": null,
+    "languages": null
+  },
+  "COL": {
+    "population": "49.59 million",
+    "ethnicities": "Mestizo and White, Afro-Colombian (includes Mulatto, Raizal, and Palenquero), Indigenous",
+    "languages": "Spanish"
+  },
+  "COM": {
+    "population": "900.14 thousand",
+    "ethnicities": "Antalote, Cafre, Makoa",
+    "languages": "Arabic"
+  },
+  "COD": {
+    "population": "115.4 million",
+    "ethnicities": "Bantu (including Mongo, Luba, Kongo), Mangbetu-Azande (Hamitic)",
+    "languages": "French"
+  },
+  "COG": {
+    "population": "6.1 million",
+    "ethnicities": "Kongo (Bakongo), Teke, Mbochi",
+    "languages": "French"
+  },
+  "COK": {
+    "population": "7.76 thousand",
+    "ethnicities": "Cook Island Maori, part Cook Island Maori, Fijian",
+    "languages": "English"
+  },
+  "CRI": {
+    "population": "5.27 million",
+    "ethnicities": "White or Mestizo, Mulatto, Indigenous",
+    "languages": "Spanish"
+  },
+  "CIV": {
+    "population": "29.98 million",
+    "ethnicities": "Akan, Voltaique or Gur, Northern Mande",
+    "languages": "French"
+  },
+  "HRV": {
+    "population": "4.15 million",
+    "ethnicities": "Croat, Serb, other",
+    "languages": "Croatian"
+  },
+  "CUB": {
+    "population": "10.97 million",
+    "ethnicities": "White, Mulatto or mixed, Black",
+    "languages": "Spanish"
+  },
+  "CUW": {
+    "population": "153.29 thousand",
+    "ethnicities": "Curacaoan, Dutch, Dominican",
+    "languages": "Papiamento"
+  },
+  "CYP": {
+    "population": "1.32 million",
+    "ethnicities": "Greek, other, unspecified",
+    "languages": "Greek"
+  },
+  "CZE": {
+    "population": "10.84 million",
+    "ethnicities": "Czech, Moravian, other",
+    "languages": "Czech"
+  },
+  "DNK": {
+    "population": "5.97 million",
+    "ethnicities": "Danish (includes Greenlandic (who are predominantly Inuit) and Faroese), Turkish, other",
+    "languages": "Danish"
+  },
+  "DJI": {
+    "population": "994.97 thousand",
+    "ethnicities": "Somali, Afar, other",
+    "languages": "French"
+  },
+  "DMA": {
+    "population": "74.66 thousand",
+    "ethnicities": "African descent, mixed, Indigenous",
+    "languages": "English"
+  },
+  "DOM": {
+    "population": "10.82 million",
+    "ethnicities": "mixed, Black, White",
+    "languages": "Spanish"
+  },
+  "ECU": {
+    "population": "18.31 million",
+    "ethnicities": "Mestizo (mixed Indigenous and White), Montubio, Indigenous",
+    "languages": "Spanish (Castilian)"
+  },
+  "EGY": {
+    "population": "111.25 million",
+    "ethnicities": "Egyptian, other",
+    "languages": "Arabic"
+  },
+  "SLV": {
+    "population": "6.63 million",
+    "ethnicities": "Mestizo, White, Indigenous",
+    "languages": "Spanish"
+  },
+  "GNQ": {
+    "population": "1.8 million",
+    "ethnicities": "Fang, Bubi, Ndowe",
+    "languages": "Spanish"
+  },
+  "ERI": {
+    "population": "6.34 million",
+    "ethnicities": "Tigrinya, Tigre, Saho",
+    "languages": "Tigrinya"
+  },
+  "EST": {
+    "population": "1.19 million",
+    "ethnicities": "Estonian, Russian, Ukrainian",
+    "languages": "Estonian"
+  },
+  "SWZ": {
+    "population": "1.14 million",
+    "ethnicities": null,
+    "languages": "English"
+  },
+  "ETH": {
+    "population": "118.55 million",
+    "ethnicities": "Oromo, Amhara, Somali",
+    "languages": "Oromo"
+  },
+  "EUR": {
+    "population": "451.82 million",
+    "ethnicities": null,
+    "languages": "Bulgarian"
+  },
+  "FLK": {
+    "population": "3.14 thousand",
+    "ethnicities": "Falkland Islander, British, St. Helenian",
+    "languages": "English"
+  },
+  "FRO": {
+    "population": "52.93 thousand",
+    "ethnicities": "Faroese, Danish, Filipino",
+    "languages": "Faroese"
+  },
+  "FJI": {
+    "population": "951.61 thousand",
+    "ethnicities": "iTaukei, Indo-Fijian, Rotuman",
+    "languages": "English"
+  },
+  "FIN": {
+    "population": "5.63 million",
+    "ethnicities": "Finnish",
+    "languages": "Finnish"
+  },
+  "FRA": {
+    "population": "68.37 million",
+    "ethnicities": "Celtic and Latin with Teutonic, Slavic, North African (Algerian, Moroccan, Tunisian), Indochinese, Basque minorities, overseas departments: Black, White, Mulatto, East Indian, Chinese, Indigenous",
+    "languages": "French"
+  },
+  "PYF": {
+    "population": "303.54 thousand",
+    "ethnicities": "Polynesian, Chinese, local French",
+    "languages": "French"
+  },
+  "ATF": {
+    "population": "0",
+    "ethnicities": null,
+    "languages": null
+  },
+  "GAB": {
+    "population": "2.46 million",
+    "ethnicities": "Fang, Shira-Punu'Vii, Nzabi-Duma",
+    "languages": "French"
+  },
+  "GMB": {
+    "population": "2.52 million",
+    "ethnicities": "Mandinka/Jahanka, Fulani/Tukulur/Lorobo, Wolof",
+    "languages": "English"
+  },
+  "PSE": {
+    "population": "3.24 million",
+    "ethnicities": "Palestinian Arab, Jewish, other",
+    "languages": "Arabic"
+  },
+  "GEO": {
+    "population": "4.9 million",
+    "ethnicities": "Georgian, Azeri, Armenian",
+    "languages": "Georgian"
+  },
+  "DEU": {
+    "population": "84.12 million",
+    "ethnicities": "German, Turkish, Ukrainian",
+    "languages": "German"
+  },
+  "GHA": {
+    "population": "34.59 million",
+    "ethnicities": "Akan, Mole-Dagbani, Ewe",
+    "languages": "Asante"
+  },
+  "GIB": {
+    "population": "29.68 thousand",
+    "ethnicities": "Gibraltarian, other British, Spanish",
+    "languages": "English"
+  },
+  "GRC": {
+    "population": "10.46 million",
+    "ethnicities": "Greek, Albanian, other",
+    "languages": "Greek"
+  },
+  "GRL": {
+    "population": "57.75 thousand",
+    "ethnicities": "Greenlandic, Danish, Filipino",
+    "languages": "Greenlandic"
+  },
+  "GRD": {
+    "population": "114.62 thousand",
+    "ethnicities": "African descent, mixed, East Indian",
+    "languages": "English"
+  },
+  "GUM": {
+    "population": "169.53 thousand",
+    "ethnicities": "Native Hawaiian and other Pacific Islander, Asian, White",
+    "languages": "English"
+  },
+  "GTM": {
+    "population": "18.26 million",
+    "ethnicities": "Mestizo (mixed Indigenous-Spanish - in local Spanish called Ladino), Maya, Xinca (Indigenous, non-Maya)",
+    "languages": "Spanish"
+  },
+  "GGY": {
+    "population": "67.79 thousand",
+    "ethnicities": "Guernsey, UK and Ireland, Portugal",
+    "languages": "English"
+  },
+  "GNB": {
+    "population": "2.13 million",
+    "ethnicities": "Balanta, Fulani, Manjaco",
+    "languages": "Portuguese-based Creole"
+  },
+  "GIN": {
+    "population": "13.99 million",
+    "ethnicities": "Fulani (Peuhl), Malinke, Susu",
+    "languages": "French"
+  },
+  "GUY": {
+    "population": "794.1 thousand",
+    "ethnicities": "East Indian, African descent, mixed",
+    "languages": "English"
+  },
+  "HTI": {
+    "population": "11.75 million",
+    "ethnicities": "Black, mixed and White",
+    "languages": "French"
+  },
+  "HMD": {
+    "population": null,
+    "ethnicities": null,
+    "languages": null
+  },
+  "VAT": {
+    "population": "1.0 thousand",
+    "ethnicities": "Italian, Swiss, Argentinian",
+    "languages": "Italian"
+  },
+  "HND": {
+    "population": "9.53 million",
+    "ethnicities": "Mestizo (mixed Indigenous and European), Indigenous, African descent",
+    "languages": "Spanish"
+  },
+  "HKG": {
+    "population": "7.3 million",
+    "ethnicities": "Chinese, Filipino, Indonesian",
+    "languages": "Cantonese"
+  },
+  "HUN": {
+    "population": "9.86 million",
+    "ethnicities": "Hungarian, Romani, German",
+    "languages": "Hungarian"
+  },
+  "ISL": {
+    "population": "364.04 thousand",
+    "ethnicities": "Icelandic, Polish, Danish",
+    "languages": "Icelandic"
+  },
+  "IND": {
+    "population": "1.41 billion",
+    "ethnicities": "Indo-Aryan, Dravidian, other",
+    "languages": "Hindi"
+  },
+  "IDN": {
+    "population": "281.56 million",
+    "ethnicities": "Javanese, Sundanese, Malay",
+    "languages": "Bahasa Indonesia"
+  },
+  "IRN": {
+    "population": "88.39 million",
+    "ethnicities": "Persian, Azeri, Kurd",
+    "languages": "Persian Farsi"
+  },
+  "IRQ": {
+    "population": "42.08 million",
+    "ethnicities": "Arab, Kurdish, other",
+    "languages": "Arabic"
+  },
+  "IRL": {
+    "population": "5.23 million",
+    "ethnicities": "Irish, Irish travelers, other White",
+    "languages": "English"
+  },
+  "IMN": {
+    "population": "92.27 thousand",
+    "ethnicities": "White, Asian, Mixed",
+    "languages": "English"
+  },
+  "ISR": {
+    "population": "9.4 million",
+    "ethnicities": "Jewish, Arab, other",
+    "languages": "Hebrew"
+  },
+  "ITA": {
+    "population": "60.96 million",
+    "ethnicities": "Italian",
+    "languages": "Italian"
+  },
+  "JAM": {
+    "population": "2.82 million",
+    "ethnicities": "Black, mixed, East Indian",
+    "languages": "English"
+  },
+  "SJM": {
+    "population": "2.56 thousand",
+    "ethnicities": "Norwegian, foreign population",
+    "languages": "Norwegian"
+  },
+  "JPN": {
+    "population": "123.2 million",
+    "ethnicities": "Japanese, Chinese, Vietnam",
+    "languages": "Japanese"
+  },
+  "JEY": {
+    "population": "103.39 thousand",
+    "ethnicities": "Jersey, British, Portuguese/Madeiran",
+    "languages": "English"
+  },
+  "JOR": {
+    "population": "11.17 million",
+    "ethnicities": "Jordanian, Syrian, Palestinian",
+    "languages": "Arabic"
+  },
+  "KAZ": {
+    "population": "20.26 million",
+    "ethnicities": "Kazakh, Russian, Uzbek",
+    "languages": "Kazakh"
+  },
+  "KEN": {
+    "population": "58.25 million",
+    "ethnicities": "Kikuyu, Luhya, Kalenjin",
+    "languages": "English"
+  },
+  "KIR": {
+    "population": "116.55 thousand",
+    "ethnicities": "I-Kiribati, I-Kiribati/mixed, Tuvaluan",
+    "languages": "Gilbertese"
+  },
+  "PRK": {
+    "population": "26.3 million",
+    "ethnicities": "racially homogeneous, small Chinese community, few ethnic Japanese",
+    "languages": "Korean"
+  },
+  "KOR": {
+    "population": "52.08 million",
+    "ethnicities": "homogeneous",
+    "languages": "Korean"
+  },
+  "XKX": {
+    "population": "1.98 million",
+    "ethnicities": "Albanians, Bosniaks, Serbs",
+    "languages": "Albanian"
+  },
+  "KWT": {
+    "population": "3.14 million",
+    "ethnicities": "Kuwaiti, other Arab, Asian",
+    "languages": "Arabic"
+  },
+  "KGZ": {
+    "population": "6.17 million",
+    "ethnicities": "Kyrgyz, Uzbek, Russian",
+    "languages": "Kyrgyz"
+  },
+  "LAO": {
+    "population": "7.95 million",
+    "ethnicities": "Lao, Khmou, Hmong",
+    "languages": "Lao"
+  },
+  "LVA": {
+    "population": "1.8 million",
+    "ethnicities": "Latvian, Russian, Belarusian",
+    "languages": "Latvian"
+  },
+  "LBN": {
+    "population": "5.36 million",
+    "ethnicities": "Arab, Armenian, other",
+    "languages": "Arabic"
+  },
+  "LSO": {
+    "population": "2.23 million",
+    "ethnicities": "Sotho, other",
+    "languages": "Sesotho"
+  },
+  "LBR": {
+    "population": "5.44 million",
+    "ethnicities": "Kpelle, Bassa, Grebo",
+    "languages": "English"
+  },
+  "LBY": {
+    "population": "7.36 million",
+    "ethnicities": "Amazigh and Arab, other",
+    "languages": "Arabic"
+  },
+  "LIE": {
+    "population": "40.27 thousand",
+    "ethnicities": "Liechtensteiner, Swiss, Austrian",
+    "languages": "German"
+  },
+  "LTU": {
+    "population": "2.63 million",
+    "ethnicities": "Lithuanian, Polish, Russian",
+    "languages": "Lithuanian"
+  },
+  "LUX": {
+    "population": "671.25 thousand",
+    "ethnicities": "Luxembourger, Portuguese, French",
+    "languages": "Luxembourgish"
+  },
+  "MAC": {
+    "population": "644.43 thousand",
+    "ethnicities": "Chinese, Chinese and Portuguese, Portuguese",
+    "languages": "Cantonese"
+  },
+  "MDG": {
+    "population": "29.45 million",
+    "ethnicities": "Malayo-Indonesian (Merina and related Betsileo), Cotiers (mixed African, Malayo-Indonesian, and Arab ancestry - Betsimisaraka, Tsimihety, Antaisaka, Sakalava), French",
+    "languages": "Malagasy"
+  },
+  "MWI": {
+    "population": "21.76 million",
+    "ethnicities": "Chewa, Lomwe, Yao",
+    "languages": "English"
+  },
+  "MYS": {
+    "population": "34.56 million",
+    "ethnicities": "Bumiputera, Chinese, Indian",
+    "languages": "Bahasa Malaysia"
+  },
+  "MDV": {
+    "population": "388.86 thousand",
+    "ethnicities": "homogeneous mixture of Sinhalese, Dravidian, Arab, Australasian, and African",
+    "languages": "Dhivehi"
+  },
+  "MLI": {
+    "population": "21.99 million",
+    "ethnicities": "Bambara, Fulani (Peuhl), Sarakole/Soninke/Marka",
+    "languages": "Bambara"
+  },
+  "MLT": {
+    "population": "469.73 thousand",
+    "ethnicities": "Maltese",
+    "languages": "Maltese"
+  },
+  "MHL": {
+    "population": "82.01 thousand",
+    "ethnicities": "Marshallese, Filipino, other",
+    "languages": "Marshallese"
+  },
+  "MRT": {
+    "population": "4.33 million",
+    "ethnicities": "Black Moors (Haratines - Arabic-speaking descendants of African origin who are or were enslaved by White Moors), White Moors (of Arab-Amazigh descent, known as Beydane), Sub-Saharan Mauritanians (non-Arabic speaking, largely resident in or originating from the Senegal River Valley, including Halpulaar, Fulani, Soninke, Wolof, and Bambara ethnic groups)",
+    "languages": "Arabic"
+  },
+  "MUS": {
+    "population": "1.31 million",
+    "ethnicities": "Indo-Mauritian, Creole, Sino-Mauritian",
+    "languages": "Creole"
+  },
+  "MEX": {
+    "population": "130.74 million",
+    "ethnicities": "Mestizo (Indigenous-Spanish), predominantly Indigenous, Indigenous",
+    "languages": "Spanish only"
+  },
+  "FSM": {
+    "population": "99.6 thousand",
+    "ethnicities": "Chuukese/Mortlockese, Pohnpeian, Kosraean",
+    "languages": "English"
+  },
+  "MDA": {
+    "population": "3.6 million",
+    "ethnicities": "Moldovan, Romanian, Ukrainian",
+    "languages": "Moldovan/Romanian"
+  },
+  "MCO": {
+    "population": "31.81 thousand",
+    "ethnicities": "Monegasque, French, Italian",
+    "languages": "French"
+  },
+  "MNG": {
+    "population": "3.28 million",
+    "ethnicities": "Khalkh, Kazak, Durvud",
+    "languages": "Mongolian"
+  },
+  "MNE": {
+    "population": "599.85 thousand",
+    "ethnicities": "Montenegrin, Serbian, Bosniak",
+    "languages": "Serbian"
+  },
+  "MSR": {
+    "population": "5.47 thousand",
+    "ethnicities": "African/Black, mixed, Hispanic/Spanish",
+    "languages": "English"
+  },
+  "MAR": {
+    "population": "37.39 million",
+    "ethnicities": "Arab-Amazigh, other",
+    "languages": "Arabic"
+  },
+  "MOZ": {
+    "population": "33.35 million",
+    "ethnicities": "African, Mestizo, other (includes European, Indian, Pakistani, Chinese)",
+    "languages": "Makhuwa"
+  },
+  "NAM": {
+    "population": "2.8 million",
+    "ethnicities": "Ovambo, Kavangos, Herero",
+    "languages": "Oshiwambo languages"
+  },
+  "NRU": {
+    "population": "9.89 thousand",
+    "ethnicities": "Nauruan, I-Kiribati, Fijian",
+    "languages": "Nauruan"
+  },
+  "UMI": {
+    "population": "0",
+    "ethnicities": null,
+    "languages": null
+  },
+  "NPL": {
+    "population": "31.12 million",
+    "ethnicities": "Chhettri, Brahman-Hill, Magar",
+    "languages": "Nepali"
+  },
+  "NLD": {
+    "population": "17.77 million",
+    "ethnicities": "Dutch, EU (excluding Dutch), Turkish",
+    "languages": "Dutch"
+  },
+  "NCL": {
+    "population": "304.17 thousand",
+    "ethnicities": "Kanak, European, Wallisian, Futunian",
+    "languages": "French"
+  },
+  "NZL": {
+    "population": "5.16 million",
+    "ethnicities": "European, Maori, Chinese",
+    "languages": "English"
+  },
+  "NIC": {
+    "population": "6.68 million",
+    "ethnicities": "Mestizo (mixed Indigenous and White), White, Black",
+    "languages": "Spanish"
+  },
+  "NER": {
+    "population": "26.34 million",
+    "ethnicities": "Hausa, Zarma/Songhai, Tuareg",
+    "languages": "Hausa"
+  },
+  "NGA": {
+    "population": "236.75 million",
+    "ethnicities": "Hausa, Yoruba, Igbo (Ibo)",
+    "languages": "English"
+  },
+  "NIU": {
+    "population": "1.81 thousand",
+    "ethnicities": "Niuean, part-Niuean, non-Niuean",
+    "languages": "Niuean"
+  },
+  "NFK": {
+    "population": "1.74 thousand",
+    "ethnicities": "Australian, English, Pitcairn Islander",
+    "languages": "English"
+  },
+  "MKD": {
+    "population": "2.14 million",
+    "ethnicities": "Macedonian, Albanian, Turkish",
+    "languages": "Macedonian"
+  },
+  "MNP": {
+    "population": "51.12 thousand",
+    "ethnicities": "Asian, Native Hawaiian or other Pacific Islander, other",
+    "languages": "Philippine languages"
+  },
+  "NOR": {
+    "population": "5.51 million",
+    "ethnicities": "Norwegian, other European, other",
+    "languages": "Bokmal Norwegian"
+  },
+  "OMN": {
+    "population": "3.9 million",
+    "ethnicities": "Arab, Baluchi, South Asian (Indian, Pakistani, Sri Lankan, Bangladeshi)",
+    "languages": "Arabic"
+  },
+  "PAK": {
+    "population": "252.36 million",
+    "ethnicities": "Punjabi, Pashtun (Pathan), Sindhi",
+    "languages": "Punjabi"
+  },
+  "PLW": {
+    "population": "21.86 thousand",
+    "ethnicities": "Palauan (Micronesian with Malayan and Melanesian admixtures), Carolinian, Asian",
+    "languages": "Palauan"
+  },
+  "PAN": {
+    "population": "4.47 million",
+    "ethnicities": "Mestizo (mixed Indigenous and White), Indigenous, Black or African descent",
+    "languages": "Spanish"
+  },
+  "PNG": {
+    "population": "10.05 million",
+    "ethnicities": "Melanesian, Papuan, Negrito",
+    "languages": "Tok Pisin"
+  },
+  "PRY": {
+    "population": "7.52 million",
+    "ethnicities": "Mestizo (mixed Spanish and Indigenous ancestry), other",
+    "languages": "Spanish and Guarani"
+  },
+  "PER": {
+    "population": "32.6 million",
+    "ethnicities": "Mestizo (mixed Indigenous and White), Indigenous, White",
+    "languages": "Spanish"
+  },
+  "PHL": {
+    "population": "118.28 million",
+    "ethnicities": "Tagalog, Bisaya/Binisaya, Ilocano",
+    "languages": "Tagalog"
+  },
+  "PCN": {
+    "population": "50",
+    "ethnicities": "descendants of the Bounty mutineers and their Tahitian wives",
+    "languages": "English"
+  },
+  "POL": {
+    "population": "38.75 million",
+    "ethnicities": "Polish, Silesian, German",
+    "languages": "Polish"
+  },
+  "PRT": {
+    "population": "10.21 million",
+    "ethnicities": "Portuguese, citizens from Portugal’s former colonies in Africa, Asia (Han Chinese), and South America (Brazilian) and other foreign born",
+    "languages": "Portuguese"
+  },
+  "PRI": {
+    "population": "3.02 million",
+    "ethnicities": "White, Black/African American, other",
+    "languages": "Spanish"
+  },
+  "QAT": {
+    "population": "2.55 million",
+    "ethnicities": "non-Qatari, Qatari",
+    "languages": "Arabic"
+  },
+  "ROU": {
+    "population": "18.15 million",
+    "ethnicities": "Romanian, Hungarian, Romani",
+    "languages": "Romanian"
+  },
+  "RUS": {
+    "population": "140.82 million",
+    "ethnicities": "Russian, Tatar, Ukrainian",
+    "languages": "Russian"
+  },
+  "RWA": {
+    "population": "13.62 million",
+    "ethnicities": "Hutu, Tutsi, Twa",
+    "languages": "Kinyarwanda"
+  },
+  "BLM": {
+    "population": "7.09 thousand",
+    "ethnicities": "French, Portuguese, Caribbean",
+    "languages": "French"
+  },
+  "SHN": {
+    "population": "7.94 thousand",
+    "ethnicities": "St. Helena, UK, South Africa",
+    "languages": "English"
+  },
+  "KNA": {
+    "population": "55.13 thousand",
+    "ethnicities": "African descent, mixed, White",
+    "languages": "English"
+  },
+  "LCA": {
+    "population": "168.04 thousand",
+    "ethnicities": "Black/African descent, mixed, East Indian",
+    "languages": "English"
+  },
+  "MAF": {
+    "population": "33.0 thousand",
+    "ethnicities": "Creole (Mulatto), Black, Guadeloupe Mestizo (French-East Asian)",
+    "languages": "French"
+  },
+  "SPM": {
+    "population": "5.13 thousand",
+    "ethnicities": "Basques and Bretons (French fishermen)",
+    "languages": "French"
+  },
+  "VCT": {
+    "population": "100.65 thousand",
+    "ethnicities": "African descent, mixed, Indigenous",
+    "languages": "English"
+  },
+  "WSM": {
+    "population": "208.85 thousand",
+    "ethnicities": "Samoan, Samoan/New Zealander, other",
+    "languages": "Samoan (Polynesian)"
+  },
+  "SMR": {
+    "population": "35.09 thousand",
+    "ethnicities": "Sammarinese, Italian",
+    "languages": "Italian"
+  },
+  "STP": {
+    "population": "223.56 thousand",
+    "ethnicities": "Mestico, Angolares, Forros",
+    "languages": "Portuguese"
+  },
+  "SAU": {
+    "population": "36.54 million",
+    "ethnicities": "Arab, Afro-Asian",
+    "languages": "Arabic"
+  },
+  "SEN": {
+    "population": "18.85 million",
+    "ethnicities": "Wolof, Pulaar, Sereer",
+    "languages": "French"
+  },
+  "SRB": {
+    "population": "6.65 million",
+    "ethnicities": "Serb, Hungarian, Romani",
+    "languages": "Serbian"
+  },
+  "SYC": {
+    "population": "98.19 thousand",
+    "ethnicities": "predominantly Creole, French, Indian",
+    "languages": "Seychellois Creole"
+  },
+  "SLE": {
+    "population": "9.12 million",
+    "ethnicities": "Temne, Mende, Limba",
+    "languages": "English"
+  },
+  "SGP": {
+    "population": "6.03 million",
+    "ethnicities": "Chinese, Malay, Indian",
+    "languages": "English"
+  },
+  "SXM": {
+    "population": "46.22 thousand",
+    "ethnicities": "Saint Maarten, Dominican Republic, Haiti",
+    "languages": "English"
+  },
+  "SVK": {
+    "population": "5.56 million",
+    "ethnicities": "Slovak, Hungarian, Romani",
+    "languages": "Slovak"
+  },
+  "SVN": {
+    "population": "2.1 million",
+    "ethnicities": "Slovene, Serb, Croat",
+    "languages": "Slovene"
+  },
+  "SLB": {
+    "population": "726.8 thousand",
+    "ethnicities": "Melanesian, Polynesian, Micronesian",
+    "languages": "Melanesian pidgin"
+  },
+  "SOM": {
+    "population": "13.02 million",
+    "ethnicities": "predominantly Somali, Arabs, Bantus",
+    "languages": "Somali"
+  },
+  "ZAF": {
+    "population": "60.44 million",
+    "ethnicities": "Black African, Colored, White",
+    "languages": "isiZulu or Zulu"
+  },
+  "SGS": {
+    "population": "0",
+    "ethnicities": null,
+    "languages": null
+  },
+  "SSD": {
+    "population": "12.7 million",
+    "ethnicities": "Dinka (Jieng), Nuer (Naath), Shilluk (Chollo)",
+    "languages": "English"
+  },
+  "ESP": {
+    "population": "47.28 million",
+    "ethnicities": "Spanish, Moroccan, Romanian",
+    "languages": "Castilian Spanish"
+  },
+  "LKA": {
+    "population": "21.98 million",
+    "ethnicities": "Sinhalese, Sri Lankan Tamil, Sri Lankan Moors",
+    "languages": "Sinhala"
+  },
+  "SDN": {
+    "population": "50.47 million",
+    "ethnicities": "Sudanese Arab, Fur, Beja",
+    "languages": "Arabic"
+  },
+  "SUR": {
+    "population": "646.76 thousand",
+    "ethnicities": "Hindustani, Maroon, Creole",
+    "languages": "Dutch"
+  },
+  "SWE": {
+    "population": "10.59 million",
+    "ethnicities": "Swedish, Syrian, Iraqi",
+    "languages": "Swedish"
+  },
+  "CHE": {
+    "population": "8.86 million",
+    "ethnicities": "Swiss, German, Italian",
+    "languages": "German (or Swiss German)"
+  },
+  "SYR": {
+    "population": "23.87 million",
+    "ethnicities": "Arab, Alawite, Kurd",
+    "languages": "Arabic"
+  },
+  "TWN": {
+    "population": "23.6 million",
+    "ethnicities": "Han Chinese (including Holo, who compose approximately 70% of Taiwan's population, Hakka, and other groups originating in mainland China), indigenous Malayo-Polynesian peoples",
+    "languages": "Mandarin"
+  },
+  "TJK": {
+    "population": "10.39 million",
+    "ethnicities": "Tajik, Uzbek, other",
+    "languages": "Tajik"
+  },
+  "TZA": {
+    "population": "67.46 million",
+    "ethnicities": "mainland - African, other, Zanzibar - Arab, African, mixed Arab and African",
+    "languages": "Kiswahili or Swahili"
+  },
+  "THA": {
+    "population": "69.92 million",
+    "ethnicities": "Thai, Burmese, other",
+    "languages": "Thai"
+  },
+  "TLS": {
+    "population": "1.51 million",
+    "ethnicities": "Austronesian (Malayo-Polynesian) (includes Tetun, Mambai, Tokodede, Galoli, Kemak, Baikeno), Melanesian-Papuan (includes Bunak, Fataluku, Bakasai), small Chinese minority",
+    "languages": "Tetun Prasa"
+  },
+  "TGO": {
+    "population": "8.92 million",
+    "ethnicities": "Adja-Ewe/Mina, Kabye/Tem, Para-Gourma/Akan",
+    "languages": "French"
+  },
+  "TKL": {
+    "population": "2.45 thousand",
+    "ethnicities": "Tokelauan, part Tokelauan/Samoan, part Tokelauan/Tuvaluan",
+    "languages": "Tokelauan"
+  },
+  "TON": {
+    "population": "104.89 thousand",
+    "ethnicities": "Tongan, other (European, Fijian, Samoan, Indian, Chinese, other Pacific Islander, other Asian, other)",
+    "languages": "Tongan only"
+  },
+  "TTO": {
+    "population": "1.41 million",
+    "ethnicities": "East Indian, African descent, mixed - other",
+    "languages": "English"
+  },
+  "TUN": {
+    "population": "12.05 million",
+    "ethnicities": "Arab, European, Jewish and other",
+    "languages": "Arabic"
+  },
+  "TUR": {
+    "population": "84.12 million",
+    "ethnicities": "Turkish, Kurdish, other minorities",
+    "languages": "Turkish"
+  },
+  "TKM": {
+    "population": "5.74 million",
+    "ethnicities": "Turkmen, Uzbek, Russian",
+    "languages": "Turkmen"
+  },
+  "TCA": {
+    "population": "60.44 thousand",
+    "ethnicities": "Black, White, mixed",
+    "languages": "English"
+  },
+  "TUV": {
+    "population": "11.73 thousand",
+    "ethnicities": "Tuvaluan, Tuvaluan/I-Kiribati, Tuvaluan/other",
+    "languages": "Tuvaluan"
+  },
+  "UGA": {
+    "population": "49.28 million",
+    "ethnicities": "Baganda, Banyankole, Basoga",
+    "languages": "English"
+  },
+  "UKR": {
+    "population": "35.66 million",
+    "ethnicities": "Ukrainian, Russian, Belarusian",
+    "languages": "Ukrainian"
+  },
+  "ARE": {
+    "population": "10.03 million",
+    "ethnicities": "Emirati, South Asian, Indian",
+    "languages": "Arabic"
+  },
+  "USA": {
+    "population": "341.96 million",
+    "ethnicities": "White, Black or African American, Asian",
+    "languages": "English only"
+  },
+  "URY": {
+    "population": "3.43 million",
+    "ethnicities": "White, Black, Indigenous",
+    "languages": "Spanish"
+  },
+  "UZB": {
+    "population": "36.52 million",
+    "ethnicities": "Uzbek, Tajik, Kazakh",
+    "languages": "Uzbek"
+  },
+  "VUT": {
+    "population": "318.01 thousand",
+    "ethnicities": "Ni-Vanuatu, Other",
+    "languages": "Indigenous languages"
+  },
+  "VEN": {
+    "population": "31.25 million",
+    "ethnicities": "unspecified Spanish, Italian, Portuguese",
+    "languages": "Spanish"
+  },
+  "VNM": {
+    "population": "105.76 million",
+    "ethnicities": "Kinh (Viet), Tay, Thai",
+    "languages": "Vietnamese"
+  },
+  "VIR": {
+    "population": "104.38 thousand",
+    "ethnicities": "African-American or African descent, White, Indigenous",
+    "languages": "English"
+  },
+  "WLF": {
+    "population": "15.96 thousand",
+    "ethnicities": "Polynesian",
+    "languages": "Wallisian (indigenous Polynesian language)"
+  },
+  "YEM": {
+    "population": "32.14 million",
+    "ethnicities": "Arab, Afro-Arab, South Asian",
+    "languages": "Arabic"
+  },
+  "ZMB": {
+    "population": "20.8 million",
+    "ethnicities": "Bemba, Tonga, Chewa",
+    "languages": "Bemba"
+  },
+  "ZWE": {
+    "population": "17.15 million",
+    "ethnicities": "African, other",
+    "languages": "Shona"
+  }
+}

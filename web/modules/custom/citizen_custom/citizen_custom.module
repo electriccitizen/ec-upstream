@@ -5,6 +5,7 @@
  * Custom hooks and preprocesses for Citizen Custom module.
  */
 
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Database\Query\AlterableInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -118,6 +119,21 @@ function citizen_custom_page_attachments(array &$attachments) {
       'demographics' => [],
       'demographicsKey' => 'ISO_A3',
     ];
+  }
+
+  $demographics_path = DRUPAL_ROOT . '/modules/custom/citizen_custom/data/countries_demographics.json';
+  if (file_exists($demographics_path)) {
+    try {
+      $demographics = Json::decode(file_get_contents($demographics_path)) ?: [];
+      if (is_array($demographics)) {
+        $citizen_settings['worldCountriesLayer']['demographics'] = $demographics + $citizen_settings['worldCountriesLayer']['demographics'];
+      }
+    }
+    catch (\InvalidArgumentException $exception) {
+      \Drupal::logger('citizen_custom')->error('Unable to decode country demographics JSON: @message', [
+        '@message' => $exception->getMessage(),
+      ]);
+    }
   }
 }
 

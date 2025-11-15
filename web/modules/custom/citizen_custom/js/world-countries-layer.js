@@ -219,9 +219,10 @@
           });
 
           var label = getDefaultTooltip(feature, tooltipField);
-          label = formatDemographicsTooltip(label, demographics, demographicsConfig);
-          if (label) {
-            layer.bindTooltip(label, tooltipOptions);
+          var countryLabel = label ? '<div class="country-name">' + escapeHtml(label) + '</div>' : '';
+          var tooltipContent = formatDemographicsTooltip(countryLabel, demographics, demographicsConfig);
+          if (tooltipContent) {
+            layer.bindTooltip(tooltipContent, tooltipOptions);
           }
 
           layer.featureDemographics = demographics;

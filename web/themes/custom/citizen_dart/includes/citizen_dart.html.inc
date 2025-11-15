@@ -100,16 +100,4 @@ function citizen_dart_theme_suggestions_page_alter(array &$suggestions, array $v
 function citizen_dart_page_attachments_alter(array &$attachments) {
   $layer = &$attachments['#attached']['drupalSettings']['citizenCustom']['worldCountriesLayer'];
   $layer['mapSelectors'][] = '#geoleaflet-map';
-
-  // Example demographic entries (ISO_A3 codes by default).
-  $layer['demographics']['DNK'] = [
-    'population' => '5.9 million',
-    'ethnicities' => 'Danes, Turks',
-    'languages' => 'Danish',
-  ];
-  $layer['demographics']['URY'] = [
-    'population' => '3.5 million',
-    'ethnicities' => 'European, Afro-Uruguayan, Indigenous',
-    'languages' => 'Spanish',
-  ];
 }
