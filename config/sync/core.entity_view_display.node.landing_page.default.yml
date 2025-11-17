@@ -66,23 +66,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 3
             additional: {  }
-          78bff7f3-4b8e-49a8-8cd8-e1d836baa06c:
-            uuid: 78bff7f3-4b8e-49a8-8cd8-e1d836baa06c
-            region: content
-            configuration:
-              id: 'field_block:node:landing_page:field_call_to_action'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_revisions_entity_view
-                label: above
-                settings:
-                  view_mode: default
-                  link: ''
-                third_party_settings: {  }
-            weight: 4
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_onecol
