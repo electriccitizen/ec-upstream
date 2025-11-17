@@ -1,0 +1,31 @@
+uuid: a67e9709-9f61-451f-b90a-8739fed91b4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.buttons.field_eyebrow
+    - field.field.paragraph.buttons.field_link_multi
+    - paragraphs.paragraphs_type.buttons
+  module:
+    - link
+id: paragraph.buttons.preview
+targetEntityType: paragraph
+bundle: buttons
+mode: preview
+content:
+  field_link_multi:
+    type: link
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_eyebrow: true
+  search_api_excerpt: true

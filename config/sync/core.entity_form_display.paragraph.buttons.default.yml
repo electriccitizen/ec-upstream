@@ -1,0 +1,34 @@
+uuid: f79359cf-eab6-428f-b4c7-f9a0902939bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.buttons.field_eyebrow
+    - field.field.paragraph.buttons.field_link_multi
+    - paragraphs.paragraphs_type.buttons
+  module:
+    - link
+id: paragraph.buttons.default
+targetEntityType: paragraph
+bundle: buttons
+mode: default
+content:
+  field_eyebrow:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_link_multi:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

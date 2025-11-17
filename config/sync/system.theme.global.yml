@@ -2,9 +2,9 @@ _core:
   default_config_hash: 7_zZVPKeUTKX6LhFfYkp8TLvycZHohXrRHoRW5EUCNQ
 favicon:
   mimetype: image/vnd.microsoft.icon
-  path: ''
+  path: themes/custom/citizen_dart/images/favicons/favicon.ico
   url: ''
-  use_default: true
+  use_default: false
 features:
   comment_user_picture: true
   comment_user_verification: true

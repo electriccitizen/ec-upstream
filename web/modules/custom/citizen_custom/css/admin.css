@@ -127,6 +127,14 @@ button.disabled:hover {
   background-image: url('../icons/block-placer.svg');
 }
 
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-buttons>a:before {
+  background-image: url('../icons/buttons.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-call_to_action>a:before {
+  background-image: url('../icons/cta.svg');
+}
+
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-content_list>a:before {
   background-image: url('../icons/content-list.svg');
 }

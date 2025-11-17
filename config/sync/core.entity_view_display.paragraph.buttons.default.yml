@@ -1,0 +1,37 @@
+uuid: ab16b26e-f912-4493-a804-d92b042642aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.buttons.field_eyebrow
+    - field.field.paragraph.buttons.field_link_multi
+    - paragraphs.paragraphs_type.buttons
+  module:
+    - link
+id: paragraph.buttons.default
+targetEntityType: paragraph
+bundle: buttons
+mode: default
+content:
+  field_eyebrow:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_link_multi:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

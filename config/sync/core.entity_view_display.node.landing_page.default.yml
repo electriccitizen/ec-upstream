@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_call_to_action
     - field.field.node.landing_page.field_exclude_search
     - field.field.node.landing_page.field_image
+    - field.field.node.landing_page.field_intro
     - field.field.node.landing_page.field_meta_description
     - field.field.node.landing_page.field_paragraphs
     - field.field.node.landing_page.field_search_keywords
@@ -63,6 +65,23 @@ third_party_settings:
                   link_to_entity: false
                 third_party_settings: {  }
             weight: 3
+            additional: {  }
+          78bff7f3-4b8e-49a8-8cd8-e1d836baa06c:
+            uuid: 78bff7f3-4b8e-49a8-8cd8-e1d836baa06c
+            region: content
+            configuration:
+              id: 'field_block:node:landing_page:field_call_to_action'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 4
             additional: {  }
         third_party_settings: {  }
       -
@@ -128,6 +147,15 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  field_call_to_action:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 108
+    region: content
   field_exclude_search:
     type: boolean
     label: above
@@ -177,5 +205,6 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_intro: true
   layout_builder__layout: true
   search_api_excerpt: true

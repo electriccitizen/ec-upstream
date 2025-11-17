@@ -1,0 +1,47 @@
+uuid: aff645f4-6c7e-493a-b2af-f4b7631b22b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.call_to_action.field_eyebrow
+    - field.field.paragraph.call_to_action.field_headline
+    - field.field.paragraph.call_to_action.field_image
+    - field.field.paragraph.call_to_action.field_link
+    - image.style.paragraph_preview
+    - paragraphs.paragraphs_type.call_to_action
+  module:
+    - lazy
+    - media
+id: paragraph.call_to_action.preview
+targetEntityType: paragraph
+bundle: call_to_action
+mode: preview
+content:
+  field_headline:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: paragraph_preview
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      lazy:
+        lazy_image: '0'
+        placeholder_style: ''
+        data_uri: false
+    weight: 0
+    region: content
+hidden:
+  field_eyebrow: true
+  field_link: true
+  search_api_excerpt: true

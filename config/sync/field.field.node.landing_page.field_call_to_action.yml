@@ -1,0 +1,89 @@
+uuid: d9ade467-d4ad-441f-aff5-8bd37f6dd3de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_call_to_action
+    - node.type.landing_page
+  module:
+    - entity_reference_revisions
+id: node.landing_page.field_call_to_action
+field_name: field_call_to_action
+entity_type: node
+bundle: landing_page
+label: 'Call To Action'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 23
+        enabled: false
+      accordions:
+        weight: 22
+        enabled: false
+      block_placer:
+        weight: 24
+        enabled: false
+      buttons:
+        weight: 25
+        enabled: false
+      call_to_action:
+        weight: 26
+        enabled: false
+      content_list:
+        weight: 27
+        enabled: false
+      custom_embed:
+        weight: 28
+        enabled: false
+      form_placer:
+        weight: 29
+        enabled: false
+      gallery:
+        weight: 30
+        enabled: false
+      gallery_item:
+        weight: 31
+        enabled: false
+      horizontal_rule:
+        weight: 32
+        enabled: false
+      image:
+        weight: 33
+        enabled: false
+      layout_section:
+        weight: 34
+        enabled: false
+      layout_section_simple:
+        weight: 35
+        enabled: false
+      links_files:
+        weight: 36
+        enabled: false
+      portal:
+        weight: 37
+        enabled: false
+      portals:
+        weight: 38
+        enabled: false
+      quote:
+        weight: 39
+        enabled: false
+      text:
+        weight: 40
+        enabled: false
+      video:
+        weight: 41
+        enabled: false
+      view_placer:
+        weight: 42
+        enabled: false
+field_type: entity_reference_revisions
