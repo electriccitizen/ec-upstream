@@ -105,6 +105,10 @@ fieldset {
   max-width: $textMax;
   @include auto;
   padding-top: $spaceMd;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 2rem;
 
   .webform-element-help {
     margin: 0;
@@ -123,6 +127,21 @@ fieldset {
     }
   }
 
+
+
+  .js-form-type-datetime,.form-item-contact-name,.js-form-item-contact-email,.js-form-type-url  {
+    max-width: calc(50% - 8px);
+    .container-inline .js-form-type-date {
+      max-width: 100% 
+    }
+  }
+
+  .js-form-type-url {
+    input {
+      max-width: 100%;
+    }
+  }
+
   .form-actions {
     padding-top: $spaceMd;
     @include safeFlex(row, wrap, justify, start);
@@ -131,6 +150,8 @@ fieldset {
       margin-bottom: 0;
     }
   }
+
+
 }
 
 /* WEBFORM HEADINGS

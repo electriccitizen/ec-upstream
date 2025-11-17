@@ -1,0 +1,25 @@
+/* =============
+	 SECONDARY MENU
+------------------- */
+@use '../../../00-base' as *;
+
+.block-secondary-menu {
+
+  ul {
+    @include listReset;
+    @include safeFlex(row,nowrap,end,start);
+    column-gap: 2rem;
+    &.contextual-links {
+      display: none;
+    }
+  }
+  li {
+    a {
+      font-size: 14px; 
+      color: $darkGrey;
+      &:hover,&:focus {
+        color: $blue;
+      }
+    }
+  }
+}

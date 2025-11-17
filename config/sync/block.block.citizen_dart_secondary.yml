@@ -1,22 +1,22 @@
-uuid: c088c3bb-bb96-4ac5-9050-f30f0c54d280
+uuid: f440fa3a-fb0c-45a8-92bc-770519cb973f
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.main
+    - system.menu.secondary
   module:
     - menu_block
   theme:
     - citizen_dart
-id: citizen_dart_mainnavigation
+id: citizen_dart_secondary
 theme: citizen_dart
 region: header
-weight: -3
+weight: -6
 provider: null
-plugin: 'menu_block:main'
+plugin: 'menu_block:secondary'
 settings:
-  id: 'menu_block:main'
-  label: 'Main navigation'
+  id: 'menu_block:secondary'
+  label: Secondary
   label_display: '0'
   provider: menu_block
   follow: false
@@ -25,10 +25,10 @@ settings:
   label_link: false
   label_type: block
   level: 1
-  depth: 3
-  expand_all_items: true
-  parent: 'main:'
+  depth: 0
+  expand_all_items: false
+  parent: 'secondary:'
   render_parent: false
-  suggestion: main
+  suggestion: secondary
   hide_on_nonactive: false
 visibility: {  }

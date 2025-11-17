@@ -64,8 +64,7 @@
   @include placeholder;
 
   &:hover {
-    border-color: $inputBorderHover;
-    box-shadow: inset 0 0 0 1px $inputBorderHover;
+    background: $lightBlueTrans;
   }
 
   &:focus {
@@ -82,7 +81,7 @@
   font-weight: $formLabelWeight;
   color: $black;
   display: block;
-  margin-bottom: $spaceXs;
+  margin-bottom: $spaceXxs;
   padding-bottom: 0;
 }
 
@@ -128,6 +127,9 @@
       border-color: $checkboxHover;
       background-color: $checkboxBackHover;
       box-shadow: 0 0 0 1px $checkboxHover;
+      &:before {
+        background: $siteBack;
+      }
     }
 
     &:focus {
@@ -155,11 +157,12 @@
       border-radius: 50%;
 
       &:checked {
-        background-color: $red;
+        background-color: $blue;
 
         &:hover,
         &:focus {
-          background-color: $midGrey;
+          border-color: $blue;
+          background-color: $lightBlueTrans;
         }
       }
     }

@@ -56,7 +56,7 @@ $cautionTextHover : $black;
 --------------------- */
 $siteBack : $white;
 $unpub : $adminPink;
-$headerBack : linear-gradient(to right, $darkBlue 40%, $navy 100%);
+$headerBack : $siteBack;
 $prefooterBack : linear-gradient(to bottom right, $darkBlue 70%, #0d214d 100%);
 $prefooterText : $white;
 $prefooterLink : $white;
@@ -68,8 +68,8 @@ $footerLinkHover : $lightBlue;
 $borderRule : $black;
 $hamburger : $black;
 $hamburgerActive : $black;
-$searchIcon : $white;
-$searchIconHover : $lightBlue;
+$searchIcon : $darkGrey;
+$searchIconHover : $blue;
 $searchDropBack : rgba(7, 22, 56, 0.94);
 $searchDropText : $white;
 $searchDropPlace : $white;
@@ -87,17 +87,17 @@ $searchCloseBackHover : $black;
 --------------------- */
 $inputBorderColor : $borderRule;
 $inputBorderHover : $borderRule;
-$inputBorderFocus : $link;
+$inputBorderFocus : $blue;
 $placeColor : $adminGrey;
 $placeFocusColor : $placeColor;
 $validation : $brightRed;
 $checkbox : $link;
 $checkboxHover : $link;
-$checkboxBackHover : $lightGrey;
+$checkboxBackHover : $lightBlueTrans;
 $checkboxChecked : $link;
-$checkboxCheckedHover : $midGrey;
+$checkboxCheckedHover : $lightBlue;
 $checkboxCheckedBack : $link;
-$checkboxCheckedBackHover : $midGrey;
+$checkboxCheckedBackHover : $lightBlue;
 $selectArrow : $midGrey;
 $selectHighlight : $link;
 $progressBar : $grey;
@@ -152,11 +152,11 @@ $modalGalButtonShadowHover : $transBlack;
 /* NAVIGATION
 ---------------------- */
 //desktop
-$mmTopLink : $white;
-$mmTopLinkHover : $lightBlue;
+$mmTopLink : $navy;
+$mmTopLinkHover : $blue;
 $mmTopBackHover : $blue;
-$mmTopActive : $lightBlue;
-$mmTopActiveHover : $white;
+$mmTopActive : $blue;
+$mmTopActiveHover : $navy;
 $mmChildLink : $black;
 $mmChildLinkHover : $hoverLink;
 $mmChildActive : $black;

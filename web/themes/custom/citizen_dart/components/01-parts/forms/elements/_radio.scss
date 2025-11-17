@@ -49,6 +49,12 @@ form:not(.layout-builder-add-block):not(.layout-builder-update-block) {
       @include customOptions;
       position: relative;
 
+      &:hover {
+        &:before {
+          background: $blue;
+        }
+      }
+
       &:before {
         content: '';
         display: block;

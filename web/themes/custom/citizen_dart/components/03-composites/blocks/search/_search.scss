@@ -56,6 +56,7 @@
   .t-search {
     border: $inputBorderWidth solid transparent;
     color: $searchIcon;
+    font-size: 14px;
 
     &:hover,
     &:focus {
