@@ -5,8 +5,63 @@
 @use '../../../00-base' as *;
 
 .node-landing-page {
+  #node-section-1 {
+    margin-bottom: $elementSpace;
+    @include tab {
+      @include edgeToEdge;
+      position: relative;
+      overflow: hidden;
+      width: 100vw;
+    }
+  }
   .block-field-image {
-    @include edgeToEdge;
+
+    @include tab {
+      margin-bottom: 0;
+    }
+  }
+
+  .block-field.block-title {
+    @include tab {
+      text-align: left;
+      position: absolute;
+      height: 100%;
+      width: 700px;
+      top: 0;
+      left: 0;
+      padding-left: $siteMarginMobile;
+      background: $navy;
+      color: $white;
+      z-index: 1;
+      &:before {
+        content: '';
+        display: block;
+        background: linear-gradient(to left, transparent, $navy 60%);
+        width: 600px;
+        position: absolute;
+        bottom: -200px;
+        left: 740px;
+        height: 300%;
+        z-index: -1;
+        transform: rotate(30deg);
+      }
+    }
+    .field.title {
+      @include tab {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100vw;
+        transform: translateY(-50%);
+        .title-inner {
+          max-width: $contentStop;
+          @include auto;
+          .title-inner-inner {
+            max-width: 600px;
+          }
+        }
+      }
+    }
   }
 
   .block-field.block-body {

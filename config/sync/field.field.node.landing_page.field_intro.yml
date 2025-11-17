@@ -1,0 +1,19 @@
+uuid: b7a232a8-c45f-4d7b-a87b-b2250dc241c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro
+    - node.type.landing_page
+id: node.landing_page.field_intro
+field_name: field_intro
+entity_type: node
+bundle: landing_page
+label: Intro
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

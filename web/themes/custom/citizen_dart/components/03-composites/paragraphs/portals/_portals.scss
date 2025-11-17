@@ -10,10 +10,18 @@
     @include safeFlex(row, wrap, center, start);
     @include bleed(padding, 32px);
 
+    @include tab {
+      @include bleed(padding, 60px);
+    }
+
     & > div {
       margin-bottom: $spaceMd;
       max-width: 308px;
       width: 100%;
+
+      @include tab {
+        max-width: 50%;
+      }
     }
 
     a {
@@ -36,18 +44,23 @@
     .field-image {
       margin-bottom: $spaceXxs;
 
+      @include tab {
+        margin-bottom: $spaceSm;
+      }
+
       img {
         border: 1px solid $offWhite;
       }
     }
 
     .field-headline {
-      @include heading4;
+      @include heading3;
       text-align: center;
+      font-family: $displayHeader;
     }
 
     .field-long-text {
-      margin-top: $spaceXxs;
+      margin-top: $spaceXs;
       font-size: 2rem;
     }
   }
