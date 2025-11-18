@@ -2,6 +2,14 @@
    FOOTER BLOCK
 =================== */
 @use '../../../00-base' as *;
+@use 'sass:color';
+
+/* Copyright
+-------------- */
+.block-1 {
+  font-size: 2rem;
+  line-height: 1.7;
+}
 
 /* Footer Menu
 -------------- */
@@ -9,27 +17,34 @@
 
   ul:not(.contextual-links) {
     @include listReset;
-
+    display: flex;
+    column-gap: 2rem;
     li {
       position: relative;
 
       a {
-        display: block;
         color: $prefooterLink;
-
-        .footer-v1 & {
-          text-decoration: underline;
-        }
+        font-size: 2rem;
 
         &:hover,
         &:focus {
+          background-color: color.adjust($blue,$lightness: 5%);
           color: $prefooterLinkHover;
           @include transAll(.3s);
-
-          .footer-v1 & {
-            text-decoration: none;
-          }
         }
+      }
+    }
+  }
+}
+
+/* Social 
+-------------- */
+.block-social-media-links {
+  a {
+    &:hover,&:focus {
+      color: $navy;
+      circle {
+        fill: $lightBlue;
       }
     }
   }
@@ -40,7 +55,7 @@
 .block-4 {
   .copyright {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.75rem;
 
     @include tab {
       text-align: left;
@@ -65,19 +80,24 @@
 .block-ancillary-menu {
   ul:not(.contextual-links) {
     @include listReset;
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 2rem;
 
     li {
       position: relative;
 
       a {
         display: block;
+        text-transform: uppercase;
         color: $prefooterLink;
+        font-size: 1.75rem;
 
         &:hover,
         &:focus {
           color: $prefooterLinkHover;
           @include transAll(.3s);
-
+          background-color: $navy;
         }
       }
     }

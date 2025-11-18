@@ -89,3 +89,15 @@
     @include edgeToEdge;
   }
 }
+
+.is-front {
+  .widget-section .layout--twocol-section {
+    .layout__region--first {
+      .paragraph--type--view-placer {
+        @include tab {
+          border-right: 1px solid $navy;
+        }
+      }
+    }
+  } 
+}
