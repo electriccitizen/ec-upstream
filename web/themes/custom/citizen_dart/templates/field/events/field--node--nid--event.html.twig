@@ -40,19 +40,25 @@
 {% extends 'field.html.twig' %}
 
 {% block fieldSingleNo %}
-  {% if element['#object'].field_contact_name.0 %}
-    <div class="contact-name">
-      {{ element['#object'].field_contact_name.0.value }}
-    </div>
-  {% endif %}
-  {% if element['#object'].field_contact_email.0 %}
-    <div class="contact-email">
-      <strong>E:</strong> <a href="mailto:{{ element['#object'].field_contact_email.0.value }}">{{ element['#object'].field_contact_email.0.value }}</a>
-    </div>
-  {% endif %}
-  {% if element['#object'].field_contact_phone.0 %}
-    <div class="contact-phone">
-      <strong>P:</strong> <a href="">{{ element['#object'].field_contact_phone.0.value }}</a>
+  
+  {% if element['#object'].field_contact_name.0 or element['#object'].field_contact_email.0 or element['#object'].field_contact_phone.0 %}
+    <div class="contact-box">
+      <h2 class="block-title">Contact Information</h2>
+      {% if element['#object'].field_contact_name.0 %}
+        <div class="contact-name">
+          {{ element['#object'].field_contact_name.0.value }}
+        </div>
+      {% endif %}
+      {% if element['#object'].field_contact_email.0 %}
+        <div class="contact-email">
+          <strong>E:</strong> <a href="mailto:{{ element['#object'].field_contact_email.0.value }}">{{ element['#object'].field_contact_email.0.value }}</a>
+        </div>
+      {% endif %}
+      {% if element['#object'].field_contact_phone.0 %}
+        <div class="contact-phone">
+          <strong>P:</strong> <a href="">{{ element['#object'].field_contact_phone.0.value }}</a>
+        </div>
+      {% endif %}
     </div>
   {% endif %}
 {% endblock %}

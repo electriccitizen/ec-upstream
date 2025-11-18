@@ -227,10 +227,10 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: telephone_link
+                type: string
                 label: hidden
                 settings:
-                  title: ''
+                  link_to_entity: false
                 third_party_settings: {  }
             weight: 4
             additional: {  }

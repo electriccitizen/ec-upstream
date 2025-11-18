@@ -57,12 +57,13 @@
     border: $inputBorderWidth solid transparent;
     color: $searchIcon;
     font-size: 14px;
-
+    color: $darkGrey;
+  
     &:hover,
     &:focus {
-      color: $searchIconHover;
+      color: $blue;
+      background-color: $lightBlueTrans;
       outline: none;
-      text-decoration: none;
     }
 
     .material-icons {

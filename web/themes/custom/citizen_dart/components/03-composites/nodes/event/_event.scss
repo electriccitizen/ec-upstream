@@ -4,20 +4,136 @@
 
 @use '../../../00-base' as *;
 
+.node-type-event {
+  .overflow-guard {
+    overflow-x: hidden;
+  }
+}
+
 .node-event {
   max-width: $contentStop;
   @include auto;
 
   .block-field.block-title {
     max-width: 100%;
+    margin-bottom: 6rem;
 
     h1 {
       text-align: left;
     }
   }
 
+  .layout--twocol-quad-split {
+    .layout__region--first {
+      .block-field:not(.block-field-image){
+        margin-bottom: 0;
+        position: relative;
+        z-index: 1;
+        padding: 10px 20px;
+        background: $lightBlue2;
+        color: $navy;
+        &.block-field-dates {
+          padding-top: 32px;
+        }
+        &:last-child {
+          margin-bottom: 6rem;
+        }
+        .inline-label {
+          font-size: 1.75rem;
+          text-transform: uppercase;
+        }
+        a:not(.ec-button) {
+          color: $blue;
+          font-weight: $heavy;
+          text-decoration: underline;
+          &:hover,&:focus {
+            background-color: rgba(0,0,0,0.05);
+          }
+        }
+      }
+    }
+  }
+
+  .block-field-image {
+    margin-bottom: 6rem;
+  }
+
   .block-field-dates {
     @include metaText;
+    font-size: 2.5rem;
+  }
+
+  .field-advising-center {
+    .inline-label {
+      display: block;
+    }
+  }
+
+  .field-registration {
+    a.ec-button {
+      @include outlineButton($navy);
+      &:hover,&:focus {
+        background-color: $navy;
+        color: $white;
+      }
+    }
+  }
+
+  .block-field.block-body {
+    margin-bottom: 6rem;
+  }
+
+  .block-field.block-nid {
+    margin-bottom: 0;
+    .contact-box {
+      max-width: 400px;
+      margin: 0 auto 6rem;
+      padding: 20px 40px;
+      border: 1px solid $navy;
+      border-radius: 12px;
+
+      h2.block-title {
+        margin-bottom: $spaceXs;
+      }
+
+      .contact-name {
+        font-weight: $heavy;
+        color: $navy;
+      }
+
+      a {
+        &:hover,&:focus {
+          color: $link;
+          background: $lightBlueTrans;
+        }
+      }
+    }
+  }
+
+  .block-field-meeting-link {
+    margin-bottom: 6rem;
+    a {
+      &:hover,&:focus {
+        color: $link;
+        background: $lightBlueTrans;
+      }
+    }
+  }
+
+  .block-field-location {
+    h2.block-title {
+      margin-bottom: $spaceXs;
+    }
+    @include leafletPopup;
+    .leaflet-popup-content {
+      font-size: 1.75rem;
+      p {
+        margin-top: 0;
+      }
+    }
+    .leaflet-citizen-custom-world-layer-pane {
+      display: none !important;
+    }
   }
 
 }
@@ -28,7 +144,7 @@
     margin-bottom: $spaceXs;
     a {
       &:hover,&:focus {
-        background-color: $darkIce;
+        background: $lightBlueTrans;
       }
     }
   }
@@ -60,7 +176,7 @@
       &:hover,&:focus {
         color: $hoverLink;
         text-decoration: none;
-        background: $darkIce;
+        background: $lightBlueTrans;
       }
     }
   }

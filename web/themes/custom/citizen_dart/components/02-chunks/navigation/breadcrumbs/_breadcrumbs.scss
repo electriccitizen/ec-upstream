@@ -9,9 +9,13 @@
 
 .breadcrumb {
   max-width: $contentStop;
-  margin: $spaceXs auto 0;
-  border-top: 1px solid $navy;
-  padding: $spaceXs 0 0;
+  @include auto;
+
+  .role-anonymous & {
+    margin-top: $spaceXs;
+    border-top: 1px solid $navy;
+    padding: $spaceXs 0 0;
+  }
 
   ol {
     @include listReset;
@@ -29,7 +33,7 @@
 
       &:hover,
       &:focus {
-        color: $breadLinkHover;
+        background-color: $lightBlueTrans;
       }
     }
 

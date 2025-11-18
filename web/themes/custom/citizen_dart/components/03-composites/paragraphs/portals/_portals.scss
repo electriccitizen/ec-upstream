@@ -53,10 +53,28 @@
       }
     }
 
+    a {
+      &:hover,&:focus {
+        .field-headline {
+          background: $lightBlueTrans;
+          &:after {
+            right: -2rem;
+          }
+        }
+      }
+    }
     .field-headline {
       @include heading3;
       & {
         font-family: $displayHeader;
+        display: inline-block;
+        @include arrowLink;
+
+        &:after{
+          width: 18px;
+          height: 18px;
+          top: -1px;
+        }
       }
     }
 

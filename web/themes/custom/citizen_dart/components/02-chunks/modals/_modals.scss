@@ -12,6 +12,7 @@
   & {
     display: inline;
     background-color: transparent;
+    text-decoration: underline;
     color: $link;
     border: 0;
     padding: 0;
@@ -21,8 +22,8 @@
     cursor: pointer;
 
     &:hover,&:focus {
-      color: $hoverLink;
-      background-color: $darkIce;
+      text-decoration: none;
+      background-color: $lightBlueTrans;
     }
   }
 }

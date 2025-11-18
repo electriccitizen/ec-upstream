@@ -169,7 +169,7 @@ third_party_settings:
             configuration:
               id: 'field_block:node:event:field_location'
               label: Location
-              label_display: '0'
+              label_display: visible
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
@@ -183,8 +183,8 @@ third_party_settings:
                   use_overridden_map_settings: false
                   title: '[node:title]'
                   info_text:
-                    value: '[node:field_address]'
-                    format: plain_text
+                    value: '<p><strong>[node:field_address:organization]</strong><br>[node:field_address:address_line1]<br>[node:field_address:locality], [node:field_address:administrative_area] [node:field_address:postal_code]<br>[node:field_address:country_name]</p>'
+                    format: basic_html
                   replacement_patterns:
                     token_geolocation:
                       token_items: ''
@@ -645,12 +645,12 @@ third_party_settings:
                           max_width: 300
                           min_width: 50
                           max_height: 0
-                          auto_pan: false
-                          keep_in_view: true
+                          auto_pan: true
+                          keep_in_view: false
                           close_button: true
                           auto_close: false
                           close_on_escape_key: false
-                          class_name: ''
+                          class_name: info-box
                         enabled: true
                       geolocation_marker_scroll_to_id:
                         weight: 0
@@ -739,7 +739,7 @@ third_party_settings:
                     easeLinearity: 0.2
                     worldCopyJump: false
                     maxBoundsViscosity: 0.0
-                    keyboard: false
+                    keyboard: true
                     keyboardPanDelta: 80
                     scrollWheelZoom: false
                     wheelDebounceTime: 40

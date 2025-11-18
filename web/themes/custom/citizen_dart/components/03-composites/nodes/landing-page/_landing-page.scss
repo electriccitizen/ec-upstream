@@ -6,8 +6,12 @@
 
 .node-landing-page {
   #node-section-1 {
-    body:not(.has-main-image) & {
-      margin-top: $elementSpace;
+    body:not(.has-main-image).role-anonymous & {
+      margin-top: $spaceXs;
+      border-top: 1px solid $navy;
+      padding-top: 4rem;
+      max-width: $contentStop;
+      @include auto;
     }
     .has-main-image & {
       margin-bottom: $elementSpace;
@@ -27,6 +31,7 @@
   }
 
   .block-field.block-title {
+    margin-bottom: 6rem;
     .has-main-image & {
       @include tab {
         text-align: left;
@@ -43,7 +48,7 @@
       .field.title {
         @include tab {
           position: absolute;
-          top: 35%;
+          top: 50%;
           left: 0;
           width: 100vw;
           transform: translateY(-50%);
@@ -52,6 +57,9 @@
             @include auto;
             .title-inner-inner {
               max-width: 600px;
+              h1.page-title {
+                color: $white;
+              }
             }
           }
         }
@@ -100,4 +108,13 @@
       }
     }
   } 
+  .block-field.block-title {
+    .has-main-image & {
+      .field.title {
+        @include tab {
+          top: 35%;
+        }
+      }
+    }
+  }
 }

@@ -19,6 +19,7 @@
       color: $darkGrey;
       &:hover,&:focus {
         color: $blue;
+        background-color: $lightBlueTrans;
       }
     }
   }

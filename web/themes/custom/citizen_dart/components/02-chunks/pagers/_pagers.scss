@@ -8,6 +8,7 @@ $pagerLine: 3rem;
 %pagerItemStyle {
   display: block;
   min-width: 28px;
+  font-size: 2rem;
   height: 28px;
   padding: 0px 4px;
   line-height: $pagerLine;
@@ -37,6 +38,7 @@ $pagerLine: 3rem;
   margin-bottom: $spaceSm;
   width: 100%;
   text-align: center;
+  font-size: 2rem;
 
   @include tab {
     width: 50%;
@@ -129,6 +131,7 @@ $pagerLine: 3rem;
 
   // Hide all numbers by default for smart pager.
   .pager-smart {
+      font-size: 2rem;
 
     .pager__number,
     .pager__current {

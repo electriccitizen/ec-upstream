@@ -82,6 +82,7 @@ $h6Sm: 2rem;
   font-family: $displayHeader;
   font-size: $h1Sm;
   font-weight: $semi;
+  color: $navy;
 
   @include tab {
     font-size: $h1Mid;

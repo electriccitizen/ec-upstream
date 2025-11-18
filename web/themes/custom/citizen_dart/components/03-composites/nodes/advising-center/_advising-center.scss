@@ -62,6 +62,10 @@
   .block-field-website {
     a.ec-outline-button {
       @include outlineButton($navy);
+      &:hover,&:focus {
+        background-color: $navy;
+        color: $white;
+      }
     }
   }
 }
@@ -74,7 +78,7 @@
       display: inline-block;
 
       &:hover,&:focus {
-        background: $darkIce;
+        background: $lightBlueTrans;
       }
     }
   }
@@ -87,8 +91,10 @@
       margin-right: 1rem;
     }
     a {
+      text-decoration: underline;
       &:hover,&:focus {
-        background: $darkIce;
+        text-decoration: none;
+        background: $lightBlueTrans;
       }
     }
   }
