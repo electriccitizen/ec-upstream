@@ -1,0 +1,12 @@
+greeter:
+  version: 1.x
+  css:
+    theme:
+      css/educationusa_ai_greeter.css: {}
+  js:
+    js/educationusa_ai_greeter.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - ai_chatbot/deepchat
+

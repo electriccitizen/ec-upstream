@@ -1,0 +1,7 @@
+educationusa_ai_greeter.settings:
+  path: '/admin/config/educationusa/ai-greeter'
+  defaults:
+    _form: '\Drupal\educationusa_ai_greeter\Form\AIGreeterSettingsForm'
+    _title: 'EducationUSA AI Greeter'
+  requirements:
+    _permission: 'administer site configuration'

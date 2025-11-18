@@ -1,0 +1,10 @@
+name: EducationUSA AI Greeter
+type: module
+description: Provides an AI-powered greeter that wraps the Drupal AI DeepChat chatbot with audience selection and CTAs.
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - ai:ai
+  - ai_chatbot:ai_chatbot
+  - ai_assistant_api:ai_assistant_api
+
