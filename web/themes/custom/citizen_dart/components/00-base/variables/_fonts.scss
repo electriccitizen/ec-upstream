@@ -1,6 +1,7 @@
 /* ====================
    FONT VARIABLES
 ==================== */
+@use 'colors' as *;
 @use 'component-colors' as *;
 @use 'units' as *;
 
@@ -145,6 +146,14 @@ $h6Sm: 2rem;
   &+* {
     display: inline;
   }
+}
+
+@mixin eyebrow {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: $heavy;
+  color: $lightBlue2;
 }
 
 // H1 on banners.

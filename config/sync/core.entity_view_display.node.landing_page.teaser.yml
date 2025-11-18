@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_buttons
     - field.field.node.landing_page.field_call_to_action
     - field.field.node.landing_page.field_exclude_search
     - field.field.node.landing_page.field_image
@@ -39,6 +40,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_buttons: true
   field_call_to_action: true
   field_exclude_search: true
   field_image: true

@@ -55,4 +55,20 @@
     }
   }
 
+  Drupal.behaviors.removeEmptyLPRegion = {
+    attach: function (context, settings) {
+      once('emptyLayout', '.node-landing-page .node-section > .layout > .layout__region', context).forEach(emptyRegion =>  {
+        const hasElements = emptyRegion.childElementCount > 0;
+        const hasText = emptyRegion.textContent.trim().length > 0;
+        if (!hasElements && !hasText) {
+          const nodeSection = emptyRegion.closest('.node-section');
+          console.error('Layout region rendered empty', emptyRegion);
+          if (nodeSection) {
+            nodeSection.remove(); // Drop the entire section so blank regions are not rendered.
+          }
+        }
+      });
+    }
+  }
+
 })(jQuery, Drupal, once);

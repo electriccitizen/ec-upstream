@@ -262,3 +262,9 @@ fieldset.smartdate--widget .allday-label {
 .image-preview .focal-point-wrapper .image-style-thumbnail {
   min-width: 100%;
 }
+
+/* FIX FORM ITEMS NOT WRAPPING 
+--------------------------------*/
+.field--type-link td .form-item {
+  flex-wrap: wrap;
+}

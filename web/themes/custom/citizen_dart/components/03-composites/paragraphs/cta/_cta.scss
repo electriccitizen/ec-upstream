@@ -1,0 +1,73 @@
+/* =============
+   CTA WIDGET
+================ */
+
+@use '../../../00-base' as *;
+@use 'sass:color';
+
+.paragraph--type--call-to-action {
+
+  .widget-wrapper {
+    display: flex;
+    align-items: stretch;
+    max-width: 700px;
+    background: $blue;
+    color: $white;
+    border-radius: 12px;
+    overflow: hidden;
+    @include auto;
+  }
+
+  .field-image {
+    margin-bottom: $spaceXs;
+    @include smallTab {
+      flex: 0 0 350px;
+      margin-bottom: 0;
+      * {
+        height: 100%;
+      }
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+
+  .cta-text {
+    @include smallTab{
+      flex: 1 0 350px;
+      padding: 50px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .field-eyebrow {
+    @include eyebrow;
+
+    & {
+      margin-bottom: $spaceXxs;
+    }
+  }
+
+  .field-headline {
+    font-size: 2.75rem;
+    font-weight: $heavy;
+    margin-bottom: $spaceXs;
+    max-width: 75%;
+  }
+
+  .field-link {
+    a {
+      color: $lightBlue2;
+      font-size: 14px;
+      text-decoration: underline;
+
+      &:hover,&:focus {
+        color: $white;
+        text-decoration: none;
+        background-color: color.adjust($blue,$lightness: 10%);
+      }
+    }
+  }
+}
