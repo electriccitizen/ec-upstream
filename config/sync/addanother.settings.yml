@@ -18,6 +18,7 @@ button:
   high_education_institute: false
   student_success_story: false
   advising_center: false
+  migrated_content: false
 message:
   page: false
   event: false
@@ -32,6 +33,7 @@ message:
   high_education_institute: false
   student_success_story: false
   advising_center: false
+  migrated_content: true
 tab:
   page: true
   event: true
@@ -46,6 +48,7 @@ tab:
   high_education_institute: true
   student_success_story: true
   advising_center: true
+  migrated_content: false
 tab_edit:
   page: false
   event: false
@@ -60,3 +63,4 @@ tab_edit:
   high_education_institute: false
   student_success_story: false
   advising_center: false
+  migrated_content: false
