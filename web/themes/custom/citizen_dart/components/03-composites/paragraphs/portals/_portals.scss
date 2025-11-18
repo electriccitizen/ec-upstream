@@ -55,8 +55,9 @@
 
     .field-headline {
       @include heading3;
-      text-align: center;
-      font-family: $displayHeader;
+      & {
+        font-family: $displayHeader;
+      }
     }
 
     .field-long-text {

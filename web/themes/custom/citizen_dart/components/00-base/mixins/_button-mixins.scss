@@ -41,6 +41,7 @@
 @mixin button {
   background-color: $buttonBack;
   border: 1px solid $buttonBack;
+  border-radius: 4px;
   color: $buttonText;
   line-height: 1.15;
   padding: $buttonPadding;

@@ -3,10 +3,15 @@
 ------------------- */
 @use '../../../00-base' as *;
 
+.block-system-breadcrumb-block {
+  margin-bottom: $spaceMd !important;
+}
+
 .breadcrumb {
   max-width: $contentStop;
-  @include auto;
-  padding: $spaceMd 0 0;
+  margin: $spaceXs auto 0;
+  border-top: 1px solid $navy;
+  padding: $spaceXs 0 0;
 
   ol {
     @include listReset;
