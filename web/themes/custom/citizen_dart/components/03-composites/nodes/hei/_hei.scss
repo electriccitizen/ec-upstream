@@ -8,10 +8,61 @@
   .block-field.block-title {
     text-align: left;
     max-width: $contentStop;
+    margin-bottom: 6rem;
 
     .page-title {
       max-width: $textMax;
     }
+  }
+
+  .layout--twocol-sideleft {
+    .layout__region--first {
+      color: $navy;
+      padding: 32px 20px;
+      font-size: 2rem;
+      position: relative;
+      z-index: 1;
+      &:after{
+        content: '';
+        display: block;
+        width: 200vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $lightBlue2;
+        z-index: -1;
+      }
+
+      .block-field {
+        margin-bottom: $spaceSm;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        h2.block-title {
+          font-size: 13px;
+          text-transform: uppercase;
+          text-align: left;
+          margin-bottom: $spaceXxs;
+        }
+      }
+    }
+  }
+
+  .block-field-website {
+    a.ec-outline-button {
+      @include outlineButton($navy);
+      &:hover,&:focus {
+        color: $white;
+        background: $navy;
+      }
+    }
+  }
+
+  .block-field-image {
+    margin-bottom: 6rem;
   }
 }
 
