@@ -1,0 +1,23 @@
+educationusa_ai_greeter.settings:
+  type: config_object
+  label: 'EducationUSA AI Greeter settings'
+  mapping:
+    enabled:
+      type: boolean
+      label: 'Enable AI greeter'
+    front_only:
+      type: boolean
+      label: 'Show on front page only'
+    assistant:
+      type: string
+      label: 'AI Assistant ID'
+    label_student:
+      type: label
+      label: 'Student label'
+    label_hei:
+      type: label
+      label: 'Higher Education Institution label'
+    label_counselor:
+      type: label
+      label: 'High School Counselor label'
+

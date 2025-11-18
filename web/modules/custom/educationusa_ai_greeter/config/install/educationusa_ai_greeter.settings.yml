@@ -1,0 +1,7 @@
+enabled: true
+front_only: false
+assistant: ''
+label_student: "I’m a student"
+label_hei: 'I’m from a higher education institution'
+label_counselor: 'I’m a high school counselor'
+

@@ -1,0 +1,17 @@
+.ai-greeter { margin: 1rem 0; }
+.ai-greeter__intro { font-weight: 600; margin-bottom: .5rem; }
+.ai-greeter__audience-selector { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: .5rem; }
+.ai-greeter__audience-btn { padding: .4rem .75rem; border-radius: 4px; border: 1px solid #ccc; background: #f7f7f7; cursor: pointer; }
+.ai-greeter__audience-btn:hover { background: #efefef; }
+.ai-greeter__cta-group { display: flex; gap: .5rem; flex-wrap: wrap; margin: .5rem 0 1rem; }
+.ai-greeter__cta-btn { padding: .35rem .65rem; border-radius: 4px; border: 1px solid #cbd5e1; background: #e2e8f0; cursor: pointer; }
+.ai-greeter__cta-btn:hover { background: #dbe6f3; }
+
+.ai-greeter__chat-wrapper { position: relative; }
+.ai-greeter__chat-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.6); color: #334155; font-weight: 600; opacity: 0; pointer-events: none; transition: opacity .2s ease; }
+.ai-greeter__chat-wrapper--locked .ai-greeter__chat-overlay { opacity: 1; pointer-events: auto; }
+
+/* In-chat greeter buttons */
+.greeter-audience-buttons, .greeter-cta-buttons { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .5rem; }
+.greeter-audience-btn, .greeter-cta-btn { padding: .35rem .6rem; border-radius: 4px; border: 1px solid #cbd5e1; background: #e2e8f0; cursor: pointer; }
+.greeter-audience-btn:hover, .greeter-cta-btn:hover { background: #dbe6f3; }

@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Hooks and theme functions for EducationUSA AI Greeter module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function educationusa_ai_greeter_theme($existing, $type, $theme, $path) {
+  // Drupal 11 removed drupal_get_path(); use the extension list service.
+  $module_path = \Drupal::service('extension.list.module')->getPath('educationusa_ai_greeter');
+  return [
+    'educationusa_ai_greeter' => [
+      'variables' => [
+        'audiences' => [],
+        'deepchat' => NULL,
+        'wrapper_id' => '',
+      ],
+      'template' => 'educationusa_ai_greeter',
+      'path' => $module_path . '/templates',
+    ],
+  ];
+}
