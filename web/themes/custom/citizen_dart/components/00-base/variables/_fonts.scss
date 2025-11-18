@@ -32,6 +32,7 @@ $serif : Georgia, "Times New Roman", Times, serif;
 -------------------- */
 $light: 300;
 $regular: 400;
+$semi: 600;
 $heavy: 700;
 $x-heavy: 900;
 
@@ -80,6 +81,7 @@ $h6Sm: 2rem;
   @include headerGlobals;
   font-family: $displayHeader;
   font-size: $h1Sm;
+  font-weight: $semi;
 
   @include tab {
     font-size: $h1Mid;
