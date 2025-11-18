@@ -1,0 +1,45 @@
+uuid: 927814dc-0ecf-4532-9dac-02190f1249bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.migrated_content.ai_automator_status
+    - field.field.node.migrated_content.field_migrate_link
+    - field.field.node.migrated_content.field_migrated_content
+    - node.type.migrated_content
+  module:
+    - link
+    - text
+    - user
+id: node.migrated_content.default
+targetEntityType: node
+bundle: migrated_content
+mode: default
+content:
+  field_migrate_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_migrated_content:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  ai_automator_status: true
+  search_api_excerpt: true

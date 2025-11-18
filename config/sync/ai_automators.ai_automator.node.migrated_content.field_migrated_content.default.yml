@@ -1,0 +1,35 @@
+uuid: f693a873-acb9-4247-9675-1ad4f400aff4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.migrated_content.field_migrated_content
+id: node.migrated_content.field_migrated_content.default
+label: 'Migrated content Default'
+rule: scrapingbot_text_long
+input_mode: base
+weight: 100
+worker_type: direct
+entity_type: node
+bundle: migrated_content
+field_name: field_migrated_content
+edit_mode: false
+base_field: field_migrate_link
+prompt: ''
+token: ''
+plugin_config:
+  automator_enabled: 1
+  automator_rule: scrapingbot_text_long
+  automator_mode: base
+  automator_base_field: field_migrate_link
+  automator_edit_mode: 0
+  automator_label: 'Migrated content Default'
+  automator_weight: '100'
+  automator_worker_type: direct
+  automator_use_chrome: 1
+  automator_wait_for_network: 0
+  automator_proxy_country: US
+  automator_use_premium_proxy: 0
+  automator_crawler_mode: readibility
+  automator_crawler_tag: body
+  automator_crawler_remove: "style\r\nscript\r\n"
