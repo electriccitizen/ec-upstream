@@ -26,6 +26,13 @@ function citizen_dart_preprocess_field(&$variables) {
       $item['content']['#text'] = strip_tags($item['content']['#text']);
     }
   }
+
+  // Flag landing page fields when rendered on the front page for Twig checks.
+  if (!empty($variables['element']['#entity_type']) && $variables['element']['#entity_type'] === 'node'
+    && !empty($variables['element']['#bundle']) && $variables['element']['#bundle'] === 'landing_page'
+    && \Drupal::service('path.matcher')->isFrontPage()) {
+    $variables['is_front'] = TRUE;
+  }
 }
 
 /**

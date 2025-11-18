@@ -31,6 +31,17 @@
           {{ element['#object'].field_intro.0.value }}
         </div>
       {% endif %}
+      {% if is_front %}
+        <form class="ai-fake-form">
+          <div class="js-form-item-text">
+            <span class="howi">How Do I</span>
+            <input class="ai-search-input" placeholder="apply to college in the USA" type="text" />
+          </div>
+          <div class="form-actions">
+            <a href="#" class="ai-form-button"><span class="material-icons">search</span></a>
+          </div>
+        </form>
+      {% endif %}
     </div>
   </div>
 {% endblock %}
