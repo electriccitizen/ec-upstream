@@ -87,7 +87,7 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -
@@ -108,6 +108,25 @@ third_party_settings:
                 view_mode: view_mode
               formatter:
                 type: layout_paragraphs
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          0ad227dd-c56f-4294-928a-e31a0250c82b:
+            uuid: 0ad227dd-c56f-4294-928a-e31a0250c82b
+            region: content
+            configuration:
+              id: 'field_block:node:landing_page:field_call_to_action'
+              label: 'Call To Action'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_revisions_entity_view
                 label: hidden
                 settings:
                   view_mode: default

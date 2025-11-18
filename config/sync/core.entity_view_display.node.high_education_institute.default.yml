@@ -852,4 +852,5 @@ content:
     weight: 100
     region: content
 hidden:
+  field_meta_description: true
   search_api_excerpt: true

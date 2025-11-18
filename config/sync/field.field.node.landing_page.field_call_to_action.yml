@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_call_to_action
     - node.type.landing_page
+    - paragraphs.paragraphs_type.call_to_action
   module:
     - entity_reference_revisions
 id: node.landing_page.field_call_to_action
@@ -20,7 +21,8 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: null
+    target_bundles:
+      call_to_action: call_to_action
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
@@ -37,7 +39,7 @@ settings:
         enabled: false
       call_to_action:
         weight: 26
-        enabled: false
+        enabled: true
       content_list:
         weight: 27
         enabled: false
