@@ -15,3 +15,9 @@
     margin-bottom: $spaceMd;
   }
 }
+
+.home-news {
+  .views-row:not(:last-child) {
+    margin-bottom: $spaceSm;
+  }
+}
