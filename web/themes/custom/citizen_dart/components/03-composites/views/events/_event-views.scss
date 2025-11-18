@@ -56,3 +56,24 @@
   }
 }
 
+.home-events {
+  .views-row:not(:last-child) {
+    margin-bottom: $spaceSm;
+  }
+
+  .views-field-title {
+    font-size: 3.25rem;
+    font-weight: $heavy;
+    margin-bottom: $spaceXxs;
+    line-height: 1.25;
+    a {
+      &:hover,&:focus {
+        background: $lightBlueTrans;
+      }
+    }
+  }
+  .views-field-field-dates {
+    @include metaText;
+  }
+}
+

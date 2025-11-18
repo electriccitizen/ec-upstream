@@ -5,16 +5,19 @@
 @use '../../../00-base' as *;
 
 .paragraph--type--view-placer {
-  .field-widget-title {
+  .widget-title {
     text-align: left;
+    font-size: 3.5rem;
   }
 
   .field-link {
     margin-top: $spaceLg;
-
     a {
-      @include button;
-      margin-bottom: 0;
+      @include arrowLink;
+      & {
+        padding-top: 1rem;
+        border-top: 1px solid $darkBlue;
+      }
     }
   }
 }

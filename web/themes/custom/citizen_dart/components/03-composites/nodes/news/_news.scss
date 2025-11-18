@@ -20,3 +20,18 @@
     @include metaText;
   }
 }
+
+.node-teaser-news {
+  .node-field-title {
+    font-size: 3.25rem;
+    line-height: 1.25;
+    a {
+      &:hover,&:focus {
+        background: $lightBlueTrans;
+      }
+    }
+  }
+  .node-teaser-content {
+    margin-top: 2rem;
+  }
+}
