@@ -77,3 +77,16 @@
   }
 }
 
+.events-center {
+  @extend .home-events;
+  
+  h2.block-title {
+    text-align: left;
+    color: $navy;
+    width: 100%;
+    margin-left: 0;
+  }
+
+
+}
+

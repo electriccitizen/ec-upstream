@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.advising_center.field_website
     - filter.format.plain_text
     - node.type.advising_center
+    - views.view.events
   module:
     - address
     - geolocation
@@ -29,6 +30,7 @@ dependencies:
     - system
     - text
     - user
+    - views
   theme:
     - citizen_dart
 third_party_settings:
@@ -275,6 +277,19 @@ third_party_settings:
                 settings:
                   view_mode: default
                 third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          c798fee7-aa47-4877-ab86-83e05c940055:
+            uuid: c798fee7-aa47-4877-ab86-83e05c940055
+            region: content
+            configuration:
+              id: 'views_block:events-events_center'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: null
             weight: 3
             additional: {  }
         third_party_settings: {  }
