@@ -158,11 +158,9 @@
 
       &:checked {
         background-color: $blue;
-
-        &:hover,
-        &:focus {
+        &:hover {
+          box-shadow: 0;
           border-color: $blue;
-          background-color: $lightBlueTrans;
         }
       }
     }

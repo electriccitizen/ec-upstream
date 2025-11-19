@@ -18,6 +18,9 @@
       }
       .view-inner-right {
         flex: 1 1 auto;
+        .leaflet-citizen-custom-world-layer-pane {
+          display: none !important;
+        }
         & > .views-element-container {
           margin-bottom: $spaceXl;
         }
