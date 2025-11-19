@@ -220,6 +220,14 @@
         }
       }
 
+      &:last-child {
+        & > a {
+          & > .for {
+            display: none;
+          }
+        }
+      }
+
       & > a,
       & > span.nolink {
         color: $mmTopLink;
