@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.high_education_institute.field_education_system
     - field.field.node.high_education_institute.field_image
     - field.field.node.high_education_institute.field_location
+    - field.field.node.high_education_institute.field_meta_description
     - field.field.node.high_education_institute.field_number_of_students
     - field.field.node.high_education_institute.field_program_types
     - field.field.node.high_education_institute.field_website
@@ -218,6 +219,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 105
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
     region: content
   field_address:
     type: address_default
