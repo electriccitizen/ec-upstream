@@ -1,6 +1,6 @@
 EC-Upstream Local Development
 =============================
-Reviewed by Adam, 2025-04-04
+Reviewed by Adam, 2025-04-04 -- change to publish branch
 
 # Project Details
 - **NAME:** ec-upstream
