@@ -51,6 +51,7 @@
         text-transform: uppercase;
         text-align: left;
         margin-bottom: $spaceXxs;
+        letter-spacing: 5%;
       }
     }
   }
@@ -76,9 +77,11 @@
   .node-field-title {
     a{
       display: inline-block;
+      text-decoration: none !important;
 
       &:hover,&:focus {
         background: $lightBlueTrans;
+        text-decoration: underline !important;
       }
     }
   }
@@ -92,6 +95,7 @@
     }
     a {
       text-decoration: underline;
+
       &:hover,&:focus {
         text-decoration: none;
         background: $lightBlueTrans;

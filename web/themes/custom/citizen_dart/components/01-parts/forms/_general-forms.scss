@@ -127,7 +127,16 @@ fieldset {
     }
   }
 
+  .js-webform-states-hidden.js-form-wrapper {
+    width: 100%;
+    fieldset legend {
+      display: none;
+    }
+  }
 
+  .form-item-address-country-code {
+    margin-bottom: $spaceMd !important;
+  }
 
   .js-form-type-datetime,.form-item-contact-name,.js-form-item-contact-email,.js-form-type-url  {
     max-width: calc(50% - 8px);

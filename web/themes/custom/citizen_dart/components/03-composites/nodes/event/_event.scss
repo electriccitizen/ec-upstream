@@ -39,8 +39,9 @@
           margin-bottom: 6rem;
         }
         .inline-label {
-          font-size: 1.75rem;
+          font-size: 13px;
           text-transform: uppercase;
+          letter-spacing: 5%;
         }
         a:not(.ec-button) {
           color: $blue;
