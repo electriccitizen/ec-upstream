@@ -69,6 +69,34 @@
       }
     }
   }
+
+  .block-field-scholarships {
+    h2.block-title {
+      color: $navy;
+      text-align: left;
+      max-width: 100%;
+      margin-left: 0;
+    }
+
+    .scholarship-hei {
+      a {
+        font-size: 2.75rem;
+        font-weight: $heavy;
+        margin-bottom: $spaceXxs;
+        &:hover,&:focus {
+          text-decoration: underline;
+          background-color: $lightBlueTrans;
+        }
+      }
+    }
+    .scholarship-deadline {
+      .inline-label {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: $navy;
+      }
+    }
+  }
 }
 
 .node-teaser-advising-center {

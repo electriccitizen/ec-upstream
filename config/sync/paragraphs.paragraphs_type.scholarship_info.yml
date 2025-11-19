@@ -1,0 +1,10 @@
+uuid: 6162d628-8ab9-453c-af7f-980d03e7c7b1
+langcode: en
+status: true
+dependencies: {  }
+id: scholarship_info
+label: 'Scholarship Info'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

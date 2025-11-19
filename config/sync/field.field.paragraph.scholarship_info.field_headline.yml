@@ -1,0 +1,19 @@
+uuid: b1a3e3cb-3fe5-4cff-845c-05770ac03524
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_headline
+    - paragraphs.paragraphs_type.scholarship_info
+id: paragraph.scholarship_info.field_headline
+field_name: field_headline
+entity_type: paragraph
+bundle: scholarship_info
+label: Headline
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

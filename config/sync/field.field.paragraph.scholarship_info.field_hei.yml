@@ -1,0 +1,29 @@
+uuid: 1624549b-9d87-4c20-bc8a-61468eeee7c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hei
+    - node.type.high_education_institute
+    - paragraphs.paragraphs_type.scholarship_info
+id: paragraph.scholarship_info.field_hei
+field_name: field_hei
+entity_type: paragraph
+bundle: scholarship_info
+label: HEI
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      high_education_institute: high_education_institute
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

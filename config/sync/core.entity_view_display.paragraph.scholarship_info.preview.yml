@@ -1,0 +1,27 @@
+uuid: 4bccc016-0f75-4358-bc8a-cb00d1c27741
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.scholarship_info.field_deadline
+    - field.field.paragraph.scholarship_info.field_headline
+    - field.field.paragraph.scholarship_info.field_hei
+    - paragraphs.paragraphs_type.scholarship_info
+id: paragraph.scholarship_info.preview
+targetEntityType: paragraph
+bundle: scholarship_info
+mode: preview
+content:
+  field_headline:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_deadline: true
+  field_hei: true
+  search_api_excerpt: true

@@ -1,0 +1,94 @@
+uuid: 5064cb27-aedd-4553-b79f-5484db8f0b23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scholarships
+    - node.type.advising_center
+    - paragraphs.paragraphs_type.scholarship_info
+  module:
+    - entity_reference_revisions
+id: node.advising_center.field_scholarships
+field_name: field_scholarships
+entity_type: node
+bundle: advising_center
+label: Scholarships
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      scholarship_info: scholarship_info
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 24
+        enabled: false
+      accordions:
+        weight: 25
+        enabled: false
+      block_placer:
+        weight: 26
+        enabled: false
+      buttons:
+        weight: 27
+        enabled: false
+      call_to_action:
+        weight: 28
+        enabled: false
+      content_list:
+        weight: 29
+        enabled: false
+      custom_embed:
+        weight: 30
+        enabled: false
+      form_placer:
+        weight: 31
+        enabled: false
+      gallery:
+        weight: 32
+        enabled: false
+      gallery_item:
+        weight: 33
+        enabled: false
+      horizontal_rule:
+        weight: 34
+        enabled: false
+      image:
+        weight: 35
+        enabled: false
+      layout_section:
+        weight: 36
+        enabled: false
+      layout_section_simple:
+        weight: 37
+        enabled: false
+      links_files:
+        weight: 38
+        enabled: false
+      portal:
+        weight: 39
+        enabled: false
+      portals:
+        weight: 40
+        enabled: false
+      quote:
+        weight: 41
+        enabled: false
+      scholarship_info:
+        weight: 23
+        enabled: true
+      text:
+        weight: 42
+        enabled: false
+      video:
+        weight: 43
+        enabled: false
+      view_placer:
+        weight: 44
+        enabled: false
+field_type: entity_reference_revisions

@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.advising_center.field_location
     - field.field.node.advising_center.field_mailing_address
     - field.field.node.advising_center.field_region
+    - field.field.node.advising_center.field_scholarships
     - field.field.node.advising_center.field_service_level
     - field.field.node.advising_center.field_website
     - filter.format.plain_text
@@ -257,6 +258,25 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 5
             additional: {  }
+          009de7a7-6e6a-4949-bec3-0c4122259ceb:
+            uuid: 009de7a7-6e6a-4949-bec3-0c4122259ceb
+            region: content
+            configuration:
+              id: 'field_block:node:advising_center:field_scholarships'
+              label: 'Financial Aid'
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
         third_party_settings: {  }
 id: node.advising_center.default
 targetEntityType: node
@@ -269,6 +289,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 111
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
     region: content
   field_address:
     type: address_default
@@ -961,4 +986,5 @@ content:
     weight: 100
     region: content
 hidden:
+  field_scholarships: true
   search_api_excerpt: true

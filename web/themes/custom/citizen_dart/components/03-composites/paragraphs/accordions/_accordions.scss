@@ -43,6 +43,7 @@
         background: $accordHeaderBackHover;
         border-color: $accordHeaderBorderHover;
         @include transAll(.3s);
+        text-decoration: none;
       }
     }
   }
@@ -58,7 +59,7 @@
     }
 
     .inner-text {
-      padding: 6px 0 $spaceSm;
+      padding: 20px 0 $spaceSm;
       background: $accordContentBack;
     }
   }
