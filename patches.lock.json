@@ -1,0 +1,27 @@
+{
+    "_hash": "786016471666a69b0d616292cae35eff4a928e5516ab3c39f053f1c8c868c4a5",
+    "patches": {
+        "drupal/core": [
+            {
+                "package": "drupal/core",
+                "description": "Media library won't allow media in two fields with the same name on nodes",
+                "url": "https://www.drupal.org/files/issues/2023-02-28/3345064.patch",
+                "sha256": "9b2749b9478d994cda95e3095e7ad86ea5469be8e28be4e6ae06050d7c04dd87",
+                "depth": 2,
+                "extra": {
+                    "provenance": "root"
+                }
+            },
+            {
+                "package": "drupal/core",
+                "description": "Update module can get 'stuck' with 'no releases available', https://www.drupal.org/project/drupal/issues/2920285",
+                "url": "https://www.drupal.org/files/issues/2920285-update-status.patch",
+                "sha256": "a47548b904e521a8bcdb8083a443648c18a64aefae48acb03b471711402f10ef",
+                "depth": 2,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
+}
