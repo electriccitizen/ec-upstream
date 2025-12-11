@@ -1,0 +1,24 @@
+name: starterkit_example
+type: theme
+'base theme': stable9
+version: 1.0.0
+libraries:
+  - starterkit_example/base
+  - starterkit_example/messages
+  - core/normalize
+libraries-extend:
+  user/drupal.user:
+    - starterkit_example/user
+  core/drupal.dropbutton:
+    - starterkit_example/dropbutton
+  core/drupal.dialog:
+    - starterkit_example/dialog
+  file/drupal.file:
+    - starterkit_example/file
+  core/drupal.progress:
+    - starterkit_example/progress
+  core/drupal.tablesort:
+    - starterkit_example/drupal.tablesort
+description: ''
+core_version_requirement: ^11
+generator: 'starterkit_theme:11.2.5'

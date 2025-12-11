@@ -1,0 +1,22 @@
+uuid: 6d4ae4b7-7363-4c0c-9b70-9a5cf4d3c90b
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - citizen_sdc
+_core:
+  default_config_hash: gev70gb-Z6mJzOmMuRSImQ4Z2X7P1sxiO0BoNGwGziw
+id: citizen_sdc_help
+theme: citizen_sdc
+region: content
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

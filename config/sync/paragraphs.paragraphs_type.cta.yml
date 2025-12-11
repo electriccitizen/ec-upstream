@@ -1,0 +1,10 @@
+uuid: 5ec5ff4a-829a-4086-8141-e61f49e8f6bb
+langcode: en
+status: true
+dependencies: {  }
+id: cta
+label: 'Call To Action'
+icon_uuid: null
+icon_default: null
+description: 'A component that allows a headline with additional text and a button.'
+behavior_plugins: {  }

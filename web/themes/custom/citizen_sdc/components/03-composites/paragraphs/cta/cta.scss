@@ -1,0 +1,61 @@
+/* ===============
+   CTA
+================= */
+@use '../../../00-base/variables/colors' as *;
+@use '../../../00-base/variables/units' as *;
+@use '../../../00-base/variables/fonts' as *;
+
+.paragraph--type--cta{
+  padding: 32px 40px;
+
+  .cta__body {
+    max-width: $textMax;
+    margin: 0 auto;
+  }
+
+  .cta__link {
+    display: block;
+    max-width: 180px;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  &.cta--primary {
+    background: red;
+    color: $white;
+
+    .cta__link {
+      background: $white;
+      color: $black;
+      &:hover,&:focus {
+        background: $lightGray;
+      }
+    }
+  }
+
+  &.cta--secondary {
+    background: black;
+    color: $white;
+
+    .cta__link {
+      background: red;
+      color: $white;
+      &:hover,&:focus {
+        background: $lightGray;
+      }
+    }
+  }
+
+  &.cta--tertiary {
+    background: $lightGray;
+    color: $black;
+
+    .cta__link {
+      background: red;
+      color: $white;
+      &:hover,&:focus {
+        background: $black;
+      }
+    }
+  }
+}

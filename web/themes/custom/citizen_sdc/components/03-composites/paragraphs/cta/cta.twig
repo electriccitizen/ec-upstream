@@ -1,0 +1,35 @@
+{#
+  CTA paragraph component.
+  BEM: .cta, .cta__headline, .cta__text, .cta__actions, .cta__link
+#}
+{% set heading_id = ('cta-' ~ headline)|clean_id %}
+{% set color_class = color_variant is defined and color_variant ? 'cta--' ~ color_variant|clean_class : '' %}
+{% set classes = [
+  'cta',
+  'paragraph',
+  'paragraph--type--cta',
+  color_class,
+]|filter(v => v) %}
+
+<section class="{{ classes|join(' ') }}" aria-labelledby="{{ heading_id }}">
+  <div class="cta__body">
+    <h2 class="cta__headline" id="{{ heading_id }}">{{ headline }}</h2>
+
+    {% if additional_text %}
+      <p class="cta__text">{{ additional_text }}</p>
+    {% endif %}
+
+    {% if link and link.url and link.title %}
+      <div class="cta__actions">
+        <a
+          class="cta__link"
+          href="{{ link.url }}"
+          {% if link.target is defined and link.target %}target="{{ link.target }}"{% endif %}
+          {% if link.rel is defined and link.rel %}rel="{{ link.rel }}"{% endif %}
+        >
+          {{ link.title }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>

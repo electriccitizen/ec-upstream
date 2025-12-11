@@ -1,0 +1,228 @@
+@use 'colors' as *;
+@use 'sass:color';
+
+/* ===========================
+    COMPONENT SPECIFIC COLORS
+=============================   */
+
+/* TEXT
+---------------------- */
+$baseText : $darkGray;
+$link : $red;
+$activeLink : $black;
+$hoverLink : $midGray;
+$breadLink : $link;
+$breadLinkHover : $hoverLink;
+$breadCurrent : $darkGray;
+
+/* BUTTONS
+---------------------- */
+$buttonBack : $link;
+$buttonBackHover : $gray;
+$buttonBackActive : color.adjust($gray, $lightness: -5%);
+$buttonText : $white;
+$buttonTextHover : $black;
+$buttonTextActive : $black;
+$submitBack : $link;
+$submitText : $white;
+$submitBackHover : $gray;
+$submitTextHover : $black;
+$resetBack : $darkGray;
+$resetText : $white;
+$resetBackHover : $gray;
+$resetTextHover : $black;
+$cautionBack : $midGray;
+$cautionText : $white;
+$cautionBackHover : $gray;
+$cautionTextHover : $black;
+
+/* SYSTEM
+--------------------- */
+$siteBack : $white;
+$unpub : $adminPink;
+$headerBack : $offWhite;
+$prefooterBack : $darkGray;
+$prefooterText : $offWhite;
+$prefooterLink : $adminGold;
+$prefooterLinkHover : $adminWhiteGold;
+$footerBack : $black;
+$footerText : $offWhite;
+$footerLink : $adminGold;
+$footerLinkHover : $adminWhiteGold;
+$borderRule : $black;
+$hamburger : $black;
+$hamburgerActive : $black;
+$searchIcon : $black;
+$searchIconHover : $link;
+$searchDropBack : rgba(35, 35, 35, 0.97);
+$searchDropText : $white;
+$searchDropPlace : $white;
+$searchDropPlaceFocus : $white;
+$searchDropInputBorder : $white;
+$searchDropInputFocus : $white;
+$searchDropSearchIcon : $white;
+$searchDropSearchIconHover : $link;
+$searchClose : $black;
+$searchCloseHover : $white;
+$searchCloseBack : $white;
+$searchCloseBackHover : $black;
+
+/* FORMS
+--------------------- */
+$inputBorderColor : $borderRule;
+$inputBorderHover : $borderRule;
+$inputBorderFocus : $link;
+$placeColor : $adminGray;
+$placeFocusColor : $placeColor;
+$validation : $brightRed;
+$checkbox : $link;
+$checkboxHover : $link;
+$checkboxBackHover : $lightGray;
+$checkboxChecked : $link;
+$checkboxCheckedHover : $midGray;
+$checkboxCheckedBack : $link;
+$checkboxCheckedBackHover : $midGray;
+$selectArrow : $midGray;
+$selectHighlight : $link;
+$progressBar : $gray;
+$progressMarker : $gray;
+$progressMarkerText : $black;
+$progressMarkerActive : $darkGray;
+$progressMarkerActiveText : $white;
+$sliderTrack : $gray;
+$sliderTrackHover : $link;
+$sliderKnob : $white;
+$datepickerHeader : $red;
+$datepickerHeaderElement : $white;
+$datepickerDays : $black;
+$datepickerDaysBack : $lightGray;
+$datepickerDate : $darkGray;
+$datepickerDateBack : $white;
+$datepickerDateBorder : $lightGray;
+$datepickerCurrent : $darkGray;
+$datepickerCurrentBack : $adminWhiteGold;
+$datepickerSelected : $black;
+$datepickerSelectedBack : $darkIce;
+$detailsWrapperBack : $offWhite;
+
+/* TABLES
+---------------- */
+$tableHeaderBack : $darkGray;
+$tableHeaderText : $white;
+$tableRowHeaderBack : $gray;
+$tableRowHeaderText : $black;
+$rowBorder : $borderRule;
+$evenRowBack : $siteBack;
+$evenRowText : $baseText;
+$oddRowBack : $lightGray;
+$oddRowText : $baseText;
+
+/* GALLERIES / MODALS
+----------------------------- */
+$sliderArrowBack : $transBlack;
+$modalBack : $adminTransGray;
+$modalContent : $baseText;
+$modalContentBack : $siteBack;
+$modalHeader : $white;
+$modalHeaderBack : $darkGray;
+$modalHeaderClose : $white;
+$modalHeaderCloseHover : $gray;
+$modalGalButton : $white;
+$modalGalButtonHover : $link;
+$modalGalButtonBackHover : $black;
+$modalGalButtonShadow : $transBlack;
+$modalGalButtonShadowHover : $transBlack;
+
+/* NAVIGATION
+---------------------- */
+//desktop
+$sfTopLink : $black;
+$sfTopLinkHover : $black;
+$sfTopBackHover : $lightGray;
+$sfTopActive : $link;
+$sfTopActiveHover : $link;
+$sfChildLink : $link;
+$sfChildLinkHover : $hoverLink;
+$sfChildActive : $black;
+$sfChildActiveHover : $hoverLink;
+$sfDropdown : $lightGray;
+
+//mobile
+$sfMobileDrop : $white;
+$sfMobileDropBorder : $black;
+$sfMobileItemBorder : $borderRule;
+$sfMobileTop : $link;
+$sfMobileTopBack : $white;
+$sfMobileTopExpanded : $hoverLink;
+$sfMobileTopBackExpanded : $lightGray;
+$sfMobileChild : $link;
+$sfMobileChildActive : $white;
+
+/* MENU BLOCK (Sidebar)
+--------------------- */
+$menuBlockTitle : $black;
+$menuBlockTitleHover : $hoverLink;
+$menuBlockTitleBack : $lightGray;
+$menuBack : $siteBack;
+$menuTop : $link;
+$menuTopHover : $hoverLink;
+$menuTopActive : $black;
+$menuTopActiveHover : $hoverLink;
+$menuChild : $link;
+$menuChildHover : $hoverLink;
+$menuChildActive : $link;
+$menuChildActiveHover : $hoverLink;
+
+/* WIDGET ANCHORS
+---------------------- */
+$anchors : $white;
+$anchorsBack : $link;
+$anchorsHover : $transWhite;
+$anchorsRules : $white;
+
+/* PAGERS
+--------------------- */
+$pagerBorder : $borderRule;
+$pagerBack : transparent;
+$pagerNumber : $link;
+$pagerNumberBack : transparent;
+$pagerNumberHover : $hoverLink;
+$pagerNumberBackHover : transparent;
+$pagerNumberActive : $white;
+$pagerNumberActiveBack : $link;
+$pagerNumberActiveHover : $white;
+$pagerNumberActiveBackHover : $hoverLink;
+$pagerLink : $link;
+$pagerLinkBack : transparent;
+$pagerLinkHover : $hoverLink;
+$pagerLinkBackHover : transparent;
+$resultsText : $baseText;
+
+/* ACCORDIONS
+------------------- */
+$accordHeader : $baseText;
+$accordHeaderHover : $white;
+$accordHeaderBorder : $darkGray;
+$accordHeaderBorderHover : $darkGray;
+$accordHeaderBack : $siteBack;
+$accordHeaderBackHover : $darkGray;
+$accordContentBack : $siteBack;
+$accordContentBorder : transparent;
+$accordActive : $white;
+$accordActiveHover : $white;
+$accordActiveBorder : $black;
+$accordActiveBorderHover : $darkGray;
+$accordActiveBack : $black;
+$accordActiveBackHover : $darkGray;
+
+/* MESSAGES
+------------------ */
+$messageText : $white;
+$messageBack : $darkGray;
+$messageGoodBorder : $adminGreen;
+$messageWarningBorder : $adminGold;
+$messageErrorBorder : $adminFuchsia;
+
+/* EMBEDDED DOC ICONS
+------------------- */
+$fileIcon: $midGray;

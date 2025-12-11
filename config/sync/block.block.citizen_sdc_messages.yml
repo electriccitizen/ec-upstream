@@ -1,0 +1,22 @@
+uuid: de5be4b2-5a9b-44fa-b781-2c81f6f86785
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - citizen_sdc
+_core:
+  default_config_hash: EUZo_g0tDFjOXrdXs8mYZaXx-iMDoxLctBPwnm1gky8
+id: citizen_sdc_messages
+theme: citizen_sdc
+region: content
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

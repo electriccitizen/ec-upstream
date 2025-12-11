@@ -1,0 +1,22 @@
+uuid: c5776f96-a7c5-41fb-ab14-94cdce1ce29b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - citizen_sdc
+_core:
+  default_config_hash: jQHtGFoiMSMKUSxx-inTvcCSIz43A5mNdXP_WEiMqDo
+id: citizen_sdc_local_tasks
+theme: citizen_sdc
+region: content
+weight: -6
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

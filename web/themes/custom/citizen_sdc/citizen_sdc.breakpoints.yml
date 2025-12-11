@@ -1,0 +1,35 @@
+citizen_sdc.mobile:
+  label: Mobile
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x
+citizen_sdc.tab:
+  label: Tablet
+  mediaQuery: '(min-width:496px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x
+citizen_sdc.desk:
+  label: Desk
+  mediaQuery: '(min-width:896px)'
+  weight: 2
+  multipliers:
+    - 1x
+citizen_sdc.middesk:
+  label: Mid Desk
+  mediaQuery: '(min-width:1144px)'
+  weight: 2
+  multipliers:
+    - 1x
+citizen_sdc.largedesk:
+  label: Large Desk
+  mediaQuery: '(min-width:1320px)'
+  weight: 2
+  multipliers:
+    - 1x
+

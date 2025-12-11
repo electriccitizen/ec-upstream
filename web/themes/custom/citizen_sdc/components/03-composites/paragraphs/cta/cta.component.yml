@@ -1,0 +1,46 @@
+component:
+  id: citizen_sdc:cta
+  label: 'Call To Action'
+  description: 'CTA paragraph: headline, supporting text, and a button link.'
+  status: experimental
+
+props:
+  type: object
+  additionalProperties: false
+  required:
+    - headline
+    - link
+  properties:
+    headline:
+      type: string
+      title: Headline
+      description: 'Primary CTA title.'
+    additional_text:
+      type: string
+      title: 'Additional text'
+      description: 'Optional supporting copy.'
+    link:
+      type: object
+      title: Link
+      description: 'CTA destination and text.'
+      required:
+        - url
+        - title
+      properties:
+        url:
+          type: string
+          format: uri
+          title: URL
+        title:
+          type: string
+          title: 'Link text'
+    color_variant:
+      type: string
+      title: 'Color variant'
+      description: 'Applies a modifier class for themed color sets.'
+      enum:
+        - primary
+        - secondary
+        - tertiary
+
+slots: {}

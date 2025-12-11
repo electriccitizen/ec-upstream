@@ -1,0 +1,25 @@
+uuid: 3e0bd10f-3615-4f9a-b60a-0fb24844ccb4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:28a9b8e5-8032-4eb8-801d-5353b5d05c0a'
+  module:
+    - block_content
+  theme:
+    - citizen_sdc
+id: citizen_sdc_copyright
+theme: citizen_sdc
+region: footer
+weight: -4
+provider: null
+plugin: 'block_content:28a9b8e5-8032-4eb8-801d-5353b5d05c0a'
+settings:
+  id: 'block_content:28a9b8e5-8032-4eb8-801d-5353b5d05c0a'
+  label: Copyright
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -33,7 +33,6 @@ dependencies:
     - node
     - path
     - redirect
-    - responsive_preview
     - shortcut
     - smart_date_recur
     - system
@@ -53,7 +52,6 @@ permissions:
   - 'access entity usage statistics'
   - 'access help pages'
   - 'access media overview'
-  - 'access responsive preview'
   - 'access site reports'
   - 'access taxonomy overview'
   - 'access trash'
