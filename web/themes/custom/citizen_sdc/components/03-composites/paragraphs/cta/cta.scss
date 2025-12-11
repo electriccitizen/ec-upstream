@@ -3,9 +3,8 @@
 ================= */
 @use '../../../00-base/variables/colors' as *;
 @use '../../../00-base/variables/units' as *;
-@use '../../../00-base/variables/fonts' as *;
 
-.paragraph--type--cta{
+.cta {
   padding: 32px 40px;
 
   .cta__body {
