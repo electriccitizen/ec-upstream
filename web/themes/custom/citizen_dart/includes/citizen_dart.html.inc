@@ -5,6 +5,7 @@
  * Includes all preprocess and alter hooks related to HTML and pages.
  */
 
+use Drupal\Core\Template\Attribute;
 use Drupal\Core\Url;
 
 /**
@@ -20,16 +21,26 @@ function citizen_dart_preprocess_html(&$variables) {
     if ((!$node instanceof NodeInterface) && (isset($vid))) {
       $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($vid);
     }
-    // Set published or unpublished.
-    if ($node->status[0]->value == '1') {
-      $variables['attributes']['class'][] = 'published';
+    // Add classes to the <html> element.
+    if (!isset($variables['attributes'])) {
+      $variables['attributes'] = new Attribute();
+    }
+
+    if ($variables['attributes'] instanceof Attribute) {
+      // Set published or unpublished.
+      $variables['attributes']->addClass($node->status[0]->value == '1' ? 'published' : 'unpublished');
+
+      // Check for main image.
+      if ($node->hasField('field_image') && !$node->get('field_image')->isEmpty()) {
+        $variables['attributes']->addClass('has-main-image');
+      }
     }
     else {
-      $variables['attributes']['class'][] = 'unpublished';
-    }
-    // Check for main image.
-    if ($node->hasField('field_image') && !$node->get('field_image')->isEmpty()) {
-      $variables['attributes']['class'][] = 'has-main-image';
+      // Fallback if something provides attributes as an array.
+      $variables['attributes']['class'][] = ($node->status[0]->value == '1') ? 'published' : 'unpublished';
+      if ($node->hasField('field_image') && !$node->get('field_image')->isEmpty()) {
+        $variables['attributes']['class'][] = 'has-main-image';
+      }
     }
   }
   // Get the mtime of the critical.css file for cache-busting.
