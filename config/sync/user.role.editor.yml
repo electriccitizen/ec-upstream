@@ -23,7 +23,6 @@ dependencies:
     - menu_admin_per_menu
     - node
     - path
-    - responsive_preview
     - shortcut
     - smart_date_recur
     - system
@@ -40,7 +39,6 @@ permissions:
   - 'access content overview'
   - 'access help pages'
   - 'access media overview'
-  - 'access responsive preview'
   - 'access toolbar'
   - 'access user profiles'
   - 'access webform overview'

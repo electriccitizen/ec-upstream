@@ -72,7 +72,6 @@ dependencies:
   - pathologic
   - redirect
   - responsive_image
-  - responsive_preview
   - role_delegation
   - search_api
   - search_api_db

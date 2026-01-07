@@ -55,6 +55,7 @@ settings:
       properties:
         reversed: false
         startIndex: true
+        styles: true
       multiBlock: true
     ckeditor5_paste_filter_pasteFilter:
       enabled: true
@@ -150,8 +151,6 @@ settings:
         - '<drupal-entity data-* alt title>'
         - '<article data-* class>'
         - '<a hreflang target id title>'
-        - '<ul type>'
-        - '<ol type>'
         - '<h2 id class>'
         - '<h3 id class>'
         - '<h4 id class>'
