@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0028e269a8b2fb8c994fec364b6894c4",
+    "content-hash": "b877fa569f0c74d26839d57ac1908b59",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5976,66 +5976,6 @@
             "homepage": "https://www.drupal.org/project/redirect",
             "support": {
                 "source": "https://git.drupalcode.org/project/redirect"
-            }
-        },
-        {
-            "name": "drupal/responsive_preview",
-            "version": "2.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/responsive_preview.git",
-                "reference": "2.3.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/responsive_preview-2.3.0.zip",
-                "reference": "2.3.0",
-                "shasum": "cc8dd1533d3d443e72642e15271149079b653d5e"
-            },
-            "require": {
-                "drupal/core": "^9.2 || ^10 || ^11"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.3.0",
-                    "datestamp": "1760252783",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "chr.fritsch",
-                    "homepage": "https://www.drupal.org/user/2103716"
-                },
-                {
-                    "name": "eatings",
-                    "homepage": "https://www.drupal.org/user/105524"
-                },
-                {
-                    "name": "jessebeach",
-                    "homepage": "https://www.drupal.org/user/748566"
-                },
-                {
-                    "name": "rajeshreeputra",
-                    "homepage": "https://www.drupal.org/user/3418561"
-                },
-                {
-                    "name": "willzyx",
-                    "homepage": "https://www.drupal.org/user/1043862"
-                }
-            ],
-            "description": "Provides a component that previews a page in various device dimensions.",
-            "homepage": "https://www.drupal.org/project/responsive_preview",
-            "support": {
-                "source": "https://git.drupalcode.org/project/responsive_preview"
             }
         },
         {
