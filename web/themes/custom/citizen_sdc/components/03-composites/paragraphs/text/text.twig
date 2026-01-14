@@ -1,0 +1,19 @@
+{% set classes = [
+  'text',
+  'paragraph',
+  'paragraph--type--text'
+] %}
+
+<section class="{{ classes|join(' ') }}">
+  {% if title %}
+    <h2 class="widget-title">{{ title }}</h2>
+  {% endif %}
+
+  <div class="widget-content">
+    {% if slots is defined and slots.content is defined and slots.content %}
+      {{ slots.content }}
+    {% else %}
+      {{ text|raw }}
+    {% endif %}
+  </div>
+</section>

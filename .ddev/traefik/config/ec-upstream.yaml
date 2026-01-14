@@ -1,0 +1,77 @@
+#ddev-generated
+# If you remove the ddev-generated line above you
+# are responsible for maintaining this file. DDEV will not then
+# update it, for example if you add `additional_hostnames`, etc.
+
+http:
+  routers:
+    ec-upstream-web-80-http:
+      entrypoints:
+        - http-33000
+      rule: HostRegexp(`^ec-upstream\.ddev\.site$`)
+      
+      service: "ec-upstream-web-80"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "ec-upstream-redirectHttps"
+    ec-upstream-web-8025-http:
+      entrypoints:
+        - http-8025
+      rule: HostRegexp(`^ec-upstream\.ddev\.site$`)
+      
+      service: "ec-upstream-web-8025"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "ec-upstream-redirectHttps"
+    
+    
+    
+    ec-upstream-web-80-https:
+      entrypoints:
+        - http-33001
+      rule: HostRegexp(`^ec-upstream\.ddev\.site$`)
+      
+      service: "ec-upstream-web-80"
+      ruleSyntax: v3
+      
+      tls: true
+      
+    ec-upstream-web-8025-https:
+      entrypoints:
+        - http-8026
+      rule: HostRegexp(`^ec-upstream\.ddev\.site$`)
+      
+      service: "ec-upstream-web-8025"
+      ruleSyntax: v3
+      
+      tls: true
+      
+    
+
+  middlewares:
+    ec-upstream-redirectHttps:
+      redirectScheme:
+        scheme: https
+        permanent: true
+
+  services:
+    ec-upstream-web-80:
+      loadbalancer:
+        servers:
+          - url: http://ddev-ec-upstream-web:80
+        
+    ec-upstream-web-8025:
+      loadbalancer:
+        servers:
+          - url: http://ddev-ec-upstream-web:8025
+        
+    
+    
+    
+
+tls:
+  certificates:
+    - certFile: /mnt/ddev-global-cache/traefik/certs/ec-upstream.crt
+      keyFile: /mnt/ddev-global-cache/traefik/certs/ec-upstream.key
