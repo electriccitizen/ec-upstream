@@ -1,0 +1,20 @@
+/* ============
+   ALERT
+================ */
+
+@use '../../../00-base/index' as *;
+
+.node-alert{
+  max-width: $textMax;
+  @include auto;
+  .field-urgency > div{
+    padding: 8px 16px;
+    &.regular{
+      background: $yellow100;
+    }
+    &.urgent{
+      background: $red100;
+      color: $white;
+    }
+  }
+}

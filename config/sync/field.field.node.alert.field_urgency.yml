@@ -1,0 +1,23 @@
+uuid: b3ec505f-ff5e-45ee-a336-c8e55958cb95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_urgency
+    - node.type.alert
+  module:
+    - options
+id: node.alert.field_urgency
+field_name: field_urgency
+entity_type: node
+bundle: alert
+label: Urgency
+description: 'Select the urgency of the alert. Urgent alerts will be red. Regular alerts will be yellow.'
+required: true
+translatable: false
+default_value:
+  -
+    value: regular
+default_value_callback: ''
+settings: {  }
+field_type: list_string

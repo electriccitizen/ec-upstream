@@ -1,0 +1,71 @@
+/* ==================
+    ALERT VIEWS
+==================== */
+
+@use '../../../00-base/index' as *;
+
+
+/* ALERT BLOCK
+------------- */
+.alerts.alert-block{
+	.views-row{
+		text-align: center;
+    padding: 10px $siteMarginMobile;
+    position: relative;
+    z-index: 1;
+
+    &:not(:last-child) {
+			margin-bottom: 4px;
+		}
+
+    &:after{
+      @include fullBack($yellow100);
+    }
+
+    &.urgent{
+      color: $white;
+
+      &:after{
+        background: $red100;
+      }
+
+      a {
+        color: $transWhite;
+
+        &.close-x {
+          border-color: $white;
+        }
+
+        &:hover,&:focus {
+          color: $white;
+
+          &.close-x {
+            color: $black;
+          }
+        }
+      }
+    }
+
+    .close-x {
+      position: absolute;
+      top: calc(50% - 12px);
+      right: 0;
+      @include safeFlex(column,nowrap,center,center);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      text-decoration: none;
+      border: 1px solid $black;
+			color: $black;
+			@include transAll(.3s);
+
+			&:hover,&:focus {
+				background-color: $white;
+			}
+    }
+
+    .views-field-body .field-content > *:last-child{
+      margin-bottom: 0;
+    }
+	}
+}//end alert block

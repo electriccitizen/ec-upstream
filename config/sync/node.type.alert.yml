@@ -1,0 +1,17 @@
+uuid: 95fa3adc-4a7a-4ef5-bbf0-3f0cf24a84d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Alert
+type: alert
+description: 'Add an alert visible at the top of the site.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

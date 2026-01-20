@@ -1,0 +1,132 @@
+uuid: 2b21386f-9d4c-4b35-8b8b-f25eff00c566
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.alert.body
+    - field.field.node.alert.field_end_date
+    - field.field.node.alert.field_start_date
+    - field.field.node.alert.field_urgency
+    - node.type.alert
+  module:
+    - layout_builder
+    - layout_discovery
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          36c162cf-e76c-457e-b344-679beea22ea0:
+            uuid: 36c162cf-e76c-457e-b344-679beea22ea0
+            region: content
+            configuration:
+              id: 'field_block:node:alert:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          8f597411-f60e-499e-be4a-2edc009f70e8:
+            uuid: 8f597411-f60e-499e-be4a-2edc009f70e8
+            region: content
+            configuration:
+              id: 'field_block:node:alert:body'
+              label: 'Alert Text'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          cfa0f042-ada4-41cc-93b9-a05ba2f9fceb:
+            uuid: cfa0f042-ada4-41cc-93b9-a05ba2f9fceb
+            region: content
+            configuration:
+              id: 'field_block:node:alert:field_urgency'
+              label: Urgency
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: list_default
+                label: inline
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          5e1788fe-97c3-4bd3-85b0-4bdfc8c9b82d:
+            uuid: 5e1788fe-97c3-4bd3-85b0-4bdfc8c9b82d
+            region: content
+            configuration:
+              id: 'field_block:node:alert:field_start_date'
+              label: 'Display Start Date'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: short
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          58c414a1-1ed5-408b-95fa-caf5821f6fb3:
+            uuid: 58c414a1-1ed5-408b-95fa-caf5821f6fb3
+            region: content
+            configuration:
+              id: 'field_block:node:alert:field_end_date'
+              label: 'Display End Date'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: short
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+        third_party_settings: {  }
+id: node.alert.default
+targetEntityType: node
+bundle: alert
+mode: default
+content: {  }
+hidden:
+  body: true
+  field_end_date: true
+  field_start_date: true
+  field_urgency: true
+  links: true
+  search_api_excerpt: true

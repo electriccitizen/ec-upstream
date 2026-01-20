@@ -1,0 +1,21 @@
+uuid: ba999b6b-77b8-4c74-ad95-4952439de112
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_end_date
+    - node.type.alert
+  module:
+    - datetime
+id: node.alert.field_end_date
+field_name: field_end_date
+entity_type: node
+bundle: alert
+label: 'Display End Date'
+description: 'Enter the date/time this alert should stop being displayed. '
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

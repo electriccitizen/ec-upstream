@@ -12,6 +12,7 @@ dependencies:
     - media.type.document
     - media.type.image
     - media.type.remote_video
+    - node.type.alert
     - node.type.bios
     - node.type.event
     - node.type.landing_page
@@ -71,6 +72,7 @@ permissions:
   - 'cancel account'
   - 'cancel smart date recur instances'
   - 'change own username'
+  - 'create alert content'
   - 'create basic block content'
   - 'create bios content'
   - 'create document media'
@@ -88,7 +90,9 @@ permissions:
   - 'create terms in news_categories'
   - 'create url aliases'
   - 'create webform'
+  - 'delete alert revisions'
   - 'delete all revisions'
+  - 'delete any alert content'
   - 'delete any basic block content'
   - 'delete any basic block content revisions'
   - 'delete any bios content'
@@ -112,6 +116,7 @@ permissions:
   - 'delete landing_page revisions'
   - 'delete media'
   - 'delete news revisions'
+  - 'delete own alert content'
   - 'delete own bios content'
   - 'delete own document media'
   - 'delete own event content'
@@ -128,6 +133,7 @@ permissions:
   - 'delete support_book revisions'
   - 'delete terms in event_categories'
   - 'delete terms in news_categories'
+  - 'edit any alert content'
   - 'edit any basic block content'
   - 'edit any bios content'
   - 'edit any document media'
@@ -143,6 +149,7 @@ permissions:
   - 'edit any webform'
   - 'edit any webform submission'
   - 'edit layout paragraphs plugin config'
+  - 'edit own alert content'
   - 'edit own bios content'
   - 'edit own document media'
   - 'edit own event content'
@@ -161,6 +168,7 @@ permissions:
   - 'purge node entities'
   - 'reschedule smart date recur instances'
   - 'restore node entities'
+  - 'revert alert revisions'
   - 'revert all revisions'
   - 'revert any basic block content revisions'
   - 'revert any newsletter block content revisions'
@@ -178,6 +186,7 @@ permissions:
   - 'use text format limited_html'
   - 'use text format support_html'
   - 'use text format webform_default'
+  - 'view alert revisions'
   - 'view all media revisions'
   - 'view all revisions'
   - 'view any basic block content history'

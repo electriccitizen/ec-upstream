@@ -1,0 +1,42 @@
+uuid: 66fe43bf-0a03-41dc-bed3-1b998d011a10
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.alert.body
+    - field.field.node.alert.field_end_date
+    - field.field.node.alert.field_start_date
+    - field.field.node.alert.field_urgency
+    - node.type.alert
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.alert.teaser
+targetEntityType: node
+bundle: alert
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_end_date: true
+  field_start_date: true
+  field_urgency: true
+  search_api_excerpt: true

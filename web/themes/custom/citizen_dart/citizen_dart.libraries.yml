@@ -17,6 +17,9 @@ accordion:
     components/03-composites/paragraphs/accordions/accordions.js: {}
   dependencies:
     - core/drupal.debounce
+alert:
+  js:
+    components/03-composites/views/alerts/alert.js: {}
 drawers:
   js:
     components/02-chunks/drawers/drawers.js: {}

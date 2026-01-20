@@ -6,11 +6,13 @@ dependencies:
     - filter.format.basic_html
     - filter.format.limited_html
     - filter.format.webform_default
+    - node.type.alert
   module:
     - ckeditor5_premium_features_wproofreader
     - file
     - filter
     - media
+    - node
     - shortcut
     - system
     - toolbar
@@ -30,4 +32,5 @@ permissions:
   - 'use text format basic_html'
   - 'use text format limited_html'
   - 'use text format webform_default'
+  - 'view alert revisions'
   - 'view media'

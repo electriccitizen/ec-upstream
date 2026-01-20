@@ -4,6 +4,7 @@
 
 //no code should be added to index files
 
+@forward 'alerts/alert-views';
 @forward 'general-views';
 @forward 'bios/bio-views';
 @forward 'content-list/content-list-views';
