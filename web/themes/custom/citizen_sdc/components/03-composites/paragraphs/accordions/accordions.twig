@@ -1,0 +1,28 @@
+{% set classes = [
+  'accordions',
+  'paragraph',
+  'paragraph--type--accordions',
+]|filter(v => v) %}
+
+<section class="{{ classes|join(' ') }}">
+  {% if title %}
+    <h2 class="widget-title">{{ title }}</h2>
+  {% endif %}
+
+  <div class="field field-accordion-items">
+    {% for item in items %}
+      <div class="accordion-item collapsed" data-accordion-id="{{ loop.index }}">
+        <div class="accordion-header" role="button" aria-controls="{{ item.id }}" aria-expanded="false">
+          <a href="#">{{ item.header }}</a>
+        </div>
+        <div class="accordion-content" id="{{ item.id }}" aria-hidden="true" inert>
+          <div class="field field-long-text text-long collapse">
+            <div class="inner-text">
+              {{ item.text }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
