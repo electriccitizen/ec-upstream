@@ -1,0 +1,35 @@
+{% set classes = [
+  'image',
+  'paragraph',
+  'paragraph--type--image',
+  size ? 'image-size-' ~ size
+]|filter(v => v) %}
+
+<figure class="{{ classes|join(' ') }}">
+  {% if title %}
+    <h2 class="widget-title">{{ title }}</h2>
+  {% endif %}
+
+  <div class="image-wrapper image-size-{{ size }}">
+    {% if link and link.url %}
+      <a href="{{ link.url }}" aria-label="{{ link.title is defined and link.title ? 'Go to ' ~ link.title : 'View image' }}">
+    {% endif %}
+
+    {% if slots is defined and slots.image %}
+      {{ slots.image }}
+    {% elseif image_id %}
+      {# Fallback render by media id if provided #}
+      {{ drupal_entity('media', image_id, size == 'column' ? 'full' : 'default') }}
+    {% endif %}
+
+    {% if link and link.url %}
+      </a>
+    {% endif %}
+
+    {% if caption %}
+      <figcaption>
+        {{ caption }}
+      </figcaption>
+    {% endif %}
+  </div>
+</figure>
