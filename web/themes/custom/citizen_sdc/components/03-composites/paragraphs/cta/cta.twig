@@ -11,7 +11,7 @@
   color_class,
 ]|filter(v => v) %}
 
-<section class="{{ classes|join(' ') }}" aria-labelledby="{{ heading_id }}">
+<div class="{{ classes|join(' ') }}" aria-labelledby="{{ heading_id }}">
   <div class="cta__body">
     <h2 class="cta__headline" id="{{ heading_id }}">{{ headline }}</h2>
 
@@ -32,4 +32,4 @@
       </div>
     {% endif %}
   </div>
-</section>
+</div>

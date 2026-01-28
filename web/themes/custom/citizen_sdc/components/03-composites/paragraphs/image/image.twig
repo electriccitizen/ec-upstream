@@ -5,7 +5,7 @@
   size ? 'image-size-' ~ size
 ]|filter(v => v) %}
 
-<figure class="{{ classes|join(' ') }}">
+<div class="{{ classes|join(' ') }}">
   {% if title %}
     <h2 class="widget-title">{{ title }}</h2>
   {% endif %}
@@ -27,9 +27,9 @@
     {% endif %}
 
     {% if caption %}
-      <figcaption>
+      <div>
         {{ caption }}
-      </figcaption>
+      </div>
     {% endif %}
   </div>
-</figure>
+</div>
