@@ -1,0 +1,17 @@
+component:
+  id: citizen_sdc:horizontal-rule
+  label: 'Horizontal Rule'
+  description: 'Horizontal rule with optional constrained width.'
+  status: experimental
+
+props:
+  type: object
+  additionalProperties: false
+  properties:
+    width:
+      type: string
+      title: 'Width behavior'
+      description: 'full (edge-to-edge) or text (constrained).'
+      enum:
+        - full
+        - text

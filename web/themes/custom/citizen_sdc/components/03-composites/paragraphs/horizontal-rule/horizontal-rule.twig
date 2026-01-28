@@ -1,0 +1,11 @@
+{% set width_class = width == 'text' ? 'text' : 'full' %}
+{% set classes = [
+  'horizontal-rule',
+  'paragraph',
+  'paragraph--type--horizontal-rule',
+  width_class
+]|filter(v => v) %}
+
+<div class="{{ classes|join(' ') }}">
+  <hr>
+</div>
