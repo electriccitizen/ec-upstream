@@ -1,0 +1,43 @@
+{% set classes = [
+  'quote',
+  'paragraph',
+  'paragraph--type--quote'
+]|filter(v => v) %}
+
+<div class="{{ classes|join(' ') }}">
+  {% if title %}
+    <h2 class="widget-title">{{ title }}</h2>
+  {% endif %}
+
+  <div class="widget-wrapper">
+    {% if slots is defined and slots.image_content %}
+      {{ slots.image_content }}
+    {% elseif image %}
+      <div class="field field-image">
+        {{ image|raw }}
+      </div>
+    {% endif %}
+
+    <div class="quote-text-wrapper">
+      {% if (slots is defined and slots.quote_content) or quote %}
+        <div class="field field-quote text-plain-long">
+          <span class="quote-pre">“</span>
+          {% if slots is defined and slots.quote_content %}
+            {{ slots.quote_content }}
+          {% else %}
+            {{ quote|raw }}
+          {% endif %}
+          <span class="quote-post">”</span>
+        </div>
+      {% endif %}
+
+      {% if slots is defined and slots.source_content %}
+        {{ slots.source_content }}
+      {% elseif source %}
+        <div class="field field-source">
+          {{ source|raw }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

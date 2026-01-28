@@ -37,22 +37,24 @@
  */
 #}
 
-{% extends 'paragraph.html.twig' %}
+{#
+  Paragraph Quote wrapper that passes field values into the Quote SDC component.
+#}
 
-{% block widgetContent %}
+{% set quote = content.field_quote.0['#context'].value ?? '' %}
+{% set source = content.field_source ?? '' %}
 
-  {{ content.field_image }}
-
-	<div class="quote-text-wrapper">
-		{% if content.field_quote.0 %}
-			{% autoescape false %}
-				<div class="field field-quote text-plain-long">
-					<span class="quote-pre">“</span>{{ content.field_quote.0['#context'].value }}<span class="quote-post">”</span>
-				</div>
-			{% endautoescape %}
-		{% endif %}
-		{{ content.field_source }}
-	</div>
-	
-{% endblock %}
+{{ include([
+  'citizen_sdc:quote',
+  '@citizen_sdc/components/03-composites/paragraphs/quote/quote.twig'
+], {
+  title: paragraph.field_widget_title.value,
+  quote: quote,
+  source: source,
+  slots: {
+    image_content: content.field_image,
+    quote_content: quote,
+    source_content: content.field_source
+  }
+}, with_context = false, ignore_missing = true) }}
   

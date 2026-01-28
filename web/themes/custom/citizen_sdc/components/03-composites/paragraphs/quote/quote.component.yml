@@ -1,0 +1,35 @@
+component:
+  id: citizen_sdc:quote
+  label: 'Quote'
+  description: 'Quote paragraph with optional image and source.'
+  status: experimental
+
+props:
+  type: object
+  additionalProperties: false
+  properties:
+    title:
+      type: string
+      title: 'Widget title'
+      description: 'Optional heading displayed above the quote.'
+    quote:
+      type: string
+      title: 'Quote text'
+    source:
+      type: string
+      title: 'Quote source'
+    image:
+      type: string
+      title: 'Rendered image markup'
+      description: 'Optional image markup.'
+
+slots:
+  quote_content:
+    title: 'Quote markup'
+    description: 'Rendered quote field.'
+  source_content:
+    title: 'Source markup'
+    description: 'Rendered source field.'
+  image_content:
+    title: 'Image markup'
+    description: 'Rendered image field.'
