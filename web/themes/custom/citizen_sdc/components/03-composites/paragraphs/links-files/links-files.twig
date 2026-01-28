@@ -1,0 +1,21 @@
+{% set classes = [
+  'links-files',
+  'paragraph',
+  'paragraph--type--links-files'
+]|filter(v => v) %}
+
+<div class="{{ classes|join(' ') }}">
+  {% if title %}
+    <h2 class="widget-title">{{ title }}</h2>
+  {% endif %}
+
+  {% if items %}
+    <div class="field links-files{% if multi_col %} multi-col{% endif %}">
+      {% for item in items %}
+        <div class="lf-item {{ item.type }}" data-item="{{ loop.index }}">
+          {{ item.content|raw }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
