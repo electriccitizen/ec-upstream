@@ -1,0 +1,44 @@
+component:
+  id: citizen_sdc:gallery
+  label: 'Gallery'
+  description: 'Gallery paragraph supporting lightbox and slider types.'
+  status: experimental
+  library: citizen_sdc/galleries
+
+props:
+  type: object
+  additionalProperties: false
+  required:
+    - type
+    - items
+  properties:
+    title:
+      type: string
+      title: 'Widget title'
+    type:
+      type: string
+      title: 'Gallery type'
+      enum: [lightbox, slider]
+    items:
+      type: array
+      title: 'Gallery items'
+      items:
+        type: object
+        additionalProperties: false
+        required:
+          - id
+          - thumb
+          - full
+        properties:
+          id:
+            type: string
+            title: 'Media ID'
+          thumb:
+            type: string
+            title: 'Thumbnail markup'
+          full:
+            type: string
+            title: 'Full-size markup'
+          caption:
+            type: string
+            title: 'Optional caption HTML'

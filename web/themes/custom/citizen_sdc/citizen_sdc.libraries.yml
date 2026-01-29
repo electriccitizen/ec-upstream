@@ -23,3 +23,33 @@ accordion:
   dependencies:
     - core/drupal
     - core/once
+featherlight:
+  version: 1.7.13
+  css:
+    theme:
+      js-libraries/featherlight/featherlight.css: {}
+      js-libraries/featherlight/featherlight.gallery.css: {}
+  js:
+    js-libraries/featherlight/featherlight.min.js: { minified: true }
+    js-libraries/featherlight/featherlight.gallery.min.js: { minified: true }
+  dependencies:
+    - core/jquery
+galleries:
+  js:
+    components/03-composites/paragraphs/gallery/gallery.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/jquery
+    - citizen_sdc/featherlight
+    - citizen_sdc/slick
+slick:
+  version: 1.8.1
+  css:
+    theme:
+      js-libraries/slick/slick.css: {}
+      js-libraries/slick/slick-theme.css: {}
+  js:
+    js-libraries/slick/slick.min.js: { minified: true }
+  dependencies:
+    - core/jquery
