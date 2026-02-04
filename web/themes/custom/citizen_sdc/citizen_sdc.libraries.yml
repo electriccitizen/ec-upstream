@@ -23,6 +23,10 @@ accordion:
   dependencies:
     - core/drupal
     - core/once
+portals:
+  css:
+    theme:
+      components/03-composites/paragraphs/portals/portals.css: {}
 featherlight:
   version: 1.7.13
   css:
