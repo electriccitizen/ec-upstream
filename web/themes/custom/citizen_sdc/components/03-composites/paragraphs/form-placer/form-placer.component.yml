@@ -1,0 +1,19 @@
+component:
+  id: citizen_sdc:form-placer
+  label: 'Form Placer'
+  description: 'Embeds a selected webform within page content.'
+  status: experimental
+  library: citizen_sdc/form-placer
+
+props:
+  type: object
+  additionalProperties: false
+  required:
+    - form
+  properties:
+    form:
+      type: string
+      title: 'Rendered form markup'
+    show_title:
+      type: boolean
+      title: 'Whether to show the form title'

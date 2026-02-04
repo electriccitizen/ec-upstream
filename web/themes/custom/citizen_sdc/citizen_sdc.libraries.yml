@@ -14,7 +14,6 @@ fonts:
   css:
     theme:
       https://fonts.googleapis.com/css?family=Open+Sans:ital,wght@0,400;;0,700;1,400: { type: external, preprocess: false }
-accordion:
   js:
     components/03-composites/paragraphs/accordions/accordions.js: {}
   dependencies:

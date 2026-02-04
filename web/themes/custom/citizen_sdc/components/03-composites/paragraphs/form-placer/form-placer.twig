@@ -1,0 +1,13 @@
+{% set classes = [
+  'form-placer',
+  'paragraph',
+  'paragraph--type--form-placer',
+]|filter(v => v) %}
+
+<div class="{{ classes|join(' ') }}">
+  {% if form %}
+    <div class="form-placer-form">
+      {{ form }}
+    </div>
+  {% endif %}
+</div>
