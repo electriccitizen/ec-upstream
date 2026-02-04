@@ -44,12 +44,25 @@
 {# check for a paragraph id #}
 {% if paragraph.id.value %}
   {# render the custom list view only if there are results form the views pre_render_hook #}
-  {% if drupal_view('content_list',listType, paragraph.id.value)|render|striptags|trim|length > 0 %}
-    <div class="paragraph paragraph--type--content-list content-{{ contentType ~ '-list'}}" data-quickedit-entity-id="paragraph/{{ paragraph.id.value }}">
-      {{ content.field_widget_title }}
-      {{ drupal_view('content_list',listType, paragraph.id.value) }}
-      {{ content.field_link }}
-    </div>
+  {% set rendered_view = drupal_view('content_list', listType, paragraph.id.value) %}
+  {% if rendered_view|render|striptags|trim|length > 0 %}
+    {% set link_item = paragraph.field_link.0 ?? null %}
+    {% set link = link_item ? {
+      url: link_item.url ? link_item.url.toString() : '',
+      title: link_item.title ?? '',
+      target: link_item.options.attributes.target ?? '',
+      rel: link_item.options.attributes.rel ?? ''
+    } : {} %}
+
+    {{ include([
+      'citizen_sdc:content-list',
+      '@citizen_sdc/components/03-composites/paragraphs/content-list/content-list.twig'
+    ], {
+      title: paragraph.field_widget_title.value,
+      content_type: contentType,
+      view: rendered_view,
+      link: link
+    }, with_context = false, ignore_missing = true) }}
   {% endif %}
 {% else %}
 	<p><strong>Content placer widgets are not available in preview until the node is saved after they have been added.</strong></p>

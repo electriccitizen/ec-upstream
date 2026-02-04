@@ -1,0 +1,41 @@
+component:
+  id: citizen_sdc:content-list
+  label: 'Content List'
+  description: 'Lists content from a contextual view with optional CTA.'
+  status: experimental
+  library: citizen_sdc/content-list
+
+props:
+  type: object
+  additionalProperties: false
+  required:
+    - view
+    - content_type
+  properties:
+    title:
+      type: string
+      title: 'Widget title'
+    content_type:
+      type: string
+      title: 'Content type machine name'
+      description: 'Used for contextual class names.'
+    view:
+      type: string
+      title: 'Rendered view markup'
+    link:
+      type: object
+      title: 'Optional call-to-action link'
+      properties:
+        url:
+          type: string
+          format: uri
+          title: 'URL'
+        title:
+          type: string
+          title: 'Link text'
+        target:
+          type: string
+          title: 'Target attribute'
+        rel:
+          type: string
+          title: 'Rel attribute'
