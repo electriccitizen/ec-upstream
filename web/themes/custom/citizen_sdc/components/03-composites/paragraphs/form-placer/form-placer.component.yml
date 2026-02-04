@@ -11,6 +11,9 @@ props:
   required:
     - form
   properties:
+    title:
+      type: string
+      title: 'Widget title'
     form:
       type: string
       title: 'Rendered form markup'

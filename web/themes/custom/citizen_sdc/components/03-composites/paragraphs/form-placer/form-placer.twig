@@ -1,10 +1,16 @@
+{% set show_title_class = show_title ? 'form-placer--show-form-title' : 'form-placer--hide-form-title' %}
 {% set classes = [
   'form-placer',
   'paragraph',
   'paragraph--type--form-placer',
+  show_title_class,
 ]|filter(v => v) %}
 
 <div class="{{ classes|join(' ') }}">
+  {% if title %}
+    <h2 class="widget-title">{{ title }}</h2>
+  {% endif %}
+
   {% if form %}
     <div class="form-placer-form">
       {{ form }}
