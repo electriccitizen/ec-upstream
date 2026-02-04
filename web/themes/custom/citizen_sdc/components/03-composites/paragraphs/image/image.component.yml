@@ -1,0 +1,43 @@
+component:
+  id: citizen_sdc:image
+  label: 'Image'
+  description: 'Image paragraph with optional link and caption.'
+  status: experimental
+
+props:
+  type: object
+  additionalProperties: false
+  required:
+    - size
+  properties:
+    title:
+      type: string
+      title: 'Widget title'
+      description: 'Optional heading displayed above the image.'
+    size:
+      type: string
+      title: 'Image size'
+      description: 'Size key used for styling (e.g., original, column).'
+    image_id:
+      type: string
+      title: 'Media entity ID'
+      description: 'Media entity ID to render.'
+    link:
+      type: object
+      title: 'Optional link wrapper'
+      properties:
+        url:
+          type: string
+          title: 'Link URL'
+        title:
+          type: string
+          title: 'Link title'
+    caption:
+      type: string
+      title: 'Caption'
+      description: 'Optional caption text.'
+
+slots:
+  image:
+    title: 'Rendered image'
+    description: 'Rendered media element.'

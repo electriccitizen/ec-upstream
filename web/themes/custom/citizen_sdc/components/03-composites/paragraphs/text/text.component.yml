@@ -1,0 +1,26 @@
+component:
+  id: citizen_sdc:text
+  label: 'Text'
+  description: 'Text paragraph with WYSIWYG content.'
+  status: experimental
+
+props:
+  type: object
+  additionalProperties: false
+  required:
+    - text
+  properties:
+    title:
+      type: string
+      title: 'Widget title'
+      description: 'Optional heading displayed above the text.'
+    text:
+      type: string
+      title: 'Body text'
+      description: 'Rich text content (HTML allowed).'
+
+slots:
+  content:
+    title: 'Content'
+    description: 'Content of the text paragraph.'
+

@@ -37,11 +37,18 @@
  */
 #}
 
-{% extends 'paragraph.html.twig' %}
+{#
+  Paragraph Layout Section (simple) wrapper that passes field values into the Layout Section SDC component.
+#}
 
-{% block widgetInner %}
-	<div class="widget-simple-section">
-		{{- content -}}
-	</div>
-{% endblock %}
+{{ include([
+  'citizen_sdc:layout-section',
+  '@citizen_sdc/components/03-composites/paragraphs/layout-section/layout-section.twig'
+], {
+  title: paragraph.field_section_title.value,
+  variant: 'simple',
+  slots: {
+    content: content|without('field_section_title')
+  }
+}, with_context = false, ignore_missing = true) }}
 

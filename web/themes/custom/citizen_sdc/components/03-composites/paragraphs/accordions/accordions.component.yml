@@ -1,0 +1,37 @@
+component:
+  id: citizen_sdc:accordions
+  label: 'Accordions'
+  description: 'Accordion paragraph with collapsible items.'
+  status: experimental
+  library: citizen_sdc/accordion
+
+props:
+  type: object
+  additionalProperties: false
+  required:
+    - items
+  properties:
+    title:
+      type: string
+      title: 'Widget title'
+      description: 'Optional heading displayed above the accordion set.'
+    items:
+      type: array
+      title: 'Accordion items'
+      items:
+        type: object
+        additionalProperties: false
+        required:
+          - id
+          - header
+          - text
+        properties:
+          id:
+            type: string
+            title: 'Unique ID for aria-controls'
+          header:
+            type: string
+            title: 'Accordion header'
+          text:
+            type: string
+            title: 'Accordion body (HTML allowed)'

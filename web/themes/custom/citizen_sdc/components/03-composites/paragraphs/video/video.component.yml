@@ -1,0 +1,23 @@
+component:
+  id: citizen_sdc:video
+  label: 'Video'
+  description: 'Video paragraph that renders a media embed with optional title.'
+  status: experimental
+
+props:
+  type: object
+  additionalProperties: false
+  properties:
+    title:
+      type: string
+      title: 'Widget title'
+      description: 'Optional heading displayed above the video.'
+    video:
+      type: string
+      title: 'Rendered video markup'
+      description: 'Rendered HTML for the media entity when no slot content is provided.'
+
+slots:
+  content:
+    title: 'Video content'
+    description: 'Rendered video field content.'

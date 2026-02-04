@@ -1,0 +1,35 @@
+component:
+  id: citizen_sdc:links-files
+  label: 'Links & Files'
+  description: 'List of links and file/media items.'
+  status: experimental
+
+props:
+  type: object
+  additionalProperties: false
+  required:
+    - items
+  properties:
+    title:
+      type: string
+      title: 'Widget title'
+    multi_col:
+      type: boolean
+      title: 'Use multi-column layout'
+      default: false
+    items:
+      type: array
+      title: 'Items'
+      items:
+        type: object
+        additionalProperties: false
+        required:
+          - type
+          - content
+        properties:
+          type:
+            type: string
+            enum: [link, file]
+          content:
+            type: string
+            title: 'Rendered HTML for the item'

@@ -1,0 +1,58 @@
+{% set classes = [
+  'gallery',
+  'paragraph',
+  'paragraph--type--gallery',
+  type
+]|filter(v => v) %}
+
+{{ attach_library('citizen_sdc/galleries') }}
+{% if type == 'lightbox' %}
+  {{ attach_library('citizen_sdc/featherlight') }}
+{% else %}
+  {{ attach_library('citizen_sdc/slick') }}
+{% endif %}
+
+<div class="{{ classes|join(' ') }}">
+  {% if title %}
+    <div class="widget-title">{{ title }}</div>
+  {% endif %}
+
+  <div class="widget-wrapper">
+    <div class="gallery-type {{ type }}">
+      <div class="gallery-wrapper">
+
+      {% if type == 'lightbox' %}
+        {% for item in items %}
+          <div class="featherlight-gal image-gal" href="#item{{ item.id }}" rel="gallery-{{ title|default('gallery')|clean_id }}">
+            {{ item.thumb|raw }}
+
+            <div class="featherlight-hidden" id="item{{ item.id }}">
+              {{ item.full|raw }}
+              {% if item.caption %}
+                <div class="field field-caption string-long">
+                  {{ item.caption|raw }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+
+      {% else %}
+        <div class="field field-gallery-items">
+          {% for item in items %}
+            <div class="gallery-slide">
+              {{ item.full|raw }}
+              {% if item.caption %}
+                <div class="field field-caption string-long">
+                  {{ item.caption|raw }}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      </div>
+    </div>
+  </div>
+</div>
