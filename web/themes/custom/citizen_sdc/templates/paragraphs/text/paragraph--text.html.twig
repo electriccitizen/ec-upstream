@@ -4,9 +4,7 @@
 
 {{ include('citizen_sdc:text', {
   title: paragraph.field_widget_title.value,
-  text: paragraph.field_long_text.processed ?? '',
   slots: {
     content: content.field_long_text
   }
 }, with_context = false) }}
-

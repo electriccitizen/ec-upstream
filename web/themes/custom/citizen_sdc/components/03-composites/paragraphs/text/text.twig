@@ -10,10 +10,6 @@
   {% endif %}
 
   <div class="widget-content">
-    {% if slots is defined and slots.content is defined and slots.content %}
-      {{ slots.content }}
-    {% else %}
-      {{ text|raw }}
-    {% endif %}
+    {{ slots.content }}
   </div>
 </div>
