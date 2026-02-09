@@ -1,0 +1,27 @@
+uuid: e4f6fd9f-f6f8-4175-92fe-4647b721f260
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_variation
+field_name: field_variation
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: borders
+      label: Borders
+    -
+      value: background_color
+      label: 'Background Color'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,34 @@
+uuid: 121be326-f71b-4993-9615-fd068f625b38
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.ancillary
+  module:
+    - menu_block
+  theme:
+    - dripyard_base
+id: dripyard_base_ancillary
+theme: dripyard_base
+region: footer
+weight: -5
+provider: null
+plugin: 'menu_block:ancillary'
+settings:
+  id: 'menu_block:ancillary'
+  label: Ancillary
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  display_empty: false
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'ancillary:'
+  render_parent: false
+  suggestion: ancillary
+  hide_on_nonactive: false
+visibility: {  }

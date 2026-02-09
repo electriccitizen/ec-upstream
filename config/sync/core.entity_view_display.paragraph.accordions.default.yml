@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.accordions.field_accordion_items
+    - field.field.paragraph.accordions.field_variation
     - field.field.paragraph.accordions.field_widget_title
     - paragraphs.paragraphs_type.accordions
   module:
     - entity_reference_revisions
+    - options
 _core:
   default_config_hash: XKVZ5Td58smhFzmlHunld46LAdv8LdZIfoN2NvOm3rg
 id: paragraph.accordions.default
@@ -21,6 +23,13 @@ content:
     settings:
       view_mode: default
       link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_variation:
+    type: list_default
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content

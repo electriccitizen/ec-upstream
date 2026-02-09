@@ -1,0 +1,20 @@
+uuid: 8bcef980-b3cd-401f-9d64-91d56e23b3ed
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dripyard_base
+_core:
+  default_config_hash: 5GJ2p4I_EeFqtPksYve78IDxw9QB5FY2HZ9VKymHoX4
+id: dripyard_base_local_actions
+theme: dripyard_base
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

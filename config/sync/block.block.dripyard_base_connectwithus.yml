@@ -1,0 +1,25 @@
+uuid: 67e6019f-7a3b-41d9-9985-b0ebe2fbbcda
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:social_media_links:9c4fce3f-caea-493f-a187-40935606dbc8'
+  module:
+    - block_content
+  theme:
+    - dripyard_base
+id: dripyard_base_connectwithus
+theme: dripyard_base
+region: footer
+weight: -6
+provider: null
+plugin: 'block_content:9c4fce3f-caea-493f-a187-40935606dbc8'
+settings:
+  id: 'block_content:9c4fce3f-caea-493f-a187-40935606dbc8'
+  label: 'Connect with Us'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

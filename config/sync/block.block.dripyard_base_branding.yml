@@ -1,0 +1,25 @@
+uuid: eb78b56b-f95b-4a36-af71-8dd34d39c84e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dripyard_base
+_core:
+  default_config_hash: 9NbN6s35sLKnO8KhDJKCKxTKAnNnRo69nxpk-LzaMXM
+id: dripyard_base_branding
+theme: dripyard_base
+region: header
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

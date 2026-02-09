@@ -1,0 +1,25 @@
+uuid: 19aa41aa-caa1-4a26-a830-d3a909ecca12
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - greatlakes
+_core:
+  default_config_hash: lkEHV7_Zt_-Nu0ekDPAGhYEb-d4G3YSlRCA3VOGD8gI
+id: greatlakes_site_branding
+theme: greatlakes
+region: header
+weight: -10
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

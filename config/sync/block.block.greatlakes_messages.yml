@@ -1,0 +1,22 @@
+uuid: bcddb64b-4285-4c4b-a683-29325604264e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - greatlakes
+_core:
+  default_config_hash: ulFmwdviz9k0NOLBLIAWXK7558MeRdcdkYwP7fNd-n4
+id: greatlakes_messages
+theme: greatlakes
+region: fixed_bottom_right
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

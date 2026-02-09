@@ -1,0 +1,34 @@
+uuid: 6996a5b3-2f1f-44fa-8502-90378473a2eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - dripyard_base
+id: dripyard_base_mainnavigation
+theme: dripyard_base
+region: header
+weight: -5
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  display_empty: false
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 3
+  expand_all_items: true
+  parent: 'main:'
+  render_parent: false
+  suggestion: main
+  hide_on_nonactive: false
+visibility: {  }

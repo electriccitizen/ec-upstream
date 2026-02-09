@@ -1,0 +1,22 @@
+uuid: 5179a9e0-8a03-4fd5-9018-9b46eb8138fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - greatlakes_subtheme
+_core:
+  default_config_hash: 12haT4bJItnnpnAnMBvn8YOB_tujWqe3DwArmCb1hdE
+id: greatlakes_subtheme_help
+theme: greatlakes_subtheme
+region: highlighted
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

@@ -1,0 +1,28 @@
+uuid: c5e1b5a4-b0b9-4695-9059-6837abd2ae6d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - greatlakes_subtheme
+_core:
+  default_config_hash: YxAo9ayazTgdKuOni5wAJm4eIjb7kdOxzgcMpFFftUw
+id: greatlakes_subtheme_primary_local_tasks
+theme: greatlakes_subtheme
+region: content
+weight: -10
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/user/login\r\n/user/register\r\n/user/password"

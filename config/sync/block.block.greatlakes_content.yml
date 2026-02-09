@@ -1,0 +1,22 @@
+uuid: fe1599f3-1ea1-4275-9ed9-ae63bdd5bc0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - greatlakes
+_core:
+  default_config_hash: x2S3COooSO5rbt9VCZPxQF2Q3n4edbFlkpgQm7BF0XY
+id: greatlakes_content
+theme: greatlakes
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

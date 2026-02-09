@@ -1,0 +1,22 @@
+uuid: 5bf8c54f-dec7-459c-8fc6-36f9043d969f
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - greatlakes_subtheme
+_core:
+  default_config_hash: 6gTfuBI3wMrPUvLFKd7dh4gyks2olXPgqr05-DaALdE
+id: greatlakes_subtheme_breadcrumbs
+theme: greatlakes_subtheme
+region: highlighted
+weight: -4
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

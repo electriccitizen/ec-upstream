@@ -1,0 +1,22 @@
+uuid: 58c3cff3-8531-4813-ab88-cdcde406457a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dripyard_base
+_core:
+  default_config_hash: jQHtGFoiMSMKUSxx-inTvcCSIz43A5mNdXP_WEiMqDo
+id: dripyard_base_local_tasks
+theme: dripyard_base
+region: content
+weight: -6
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,0 +1,23 @@
+uuid: dbb82009-684a-473e-ae78-a3fac3f14e2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_variation
+    - paragraphs.paragraphs_type.accordions
+  module:
+    - options
+id: paragraph.accordions.field_variation
+field_name: field_variation
+entity_type: paragraph
+bundle: accordions
+label: Variation
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: borders
+default_value_callback: ''
+settings: {  }
+field_type: list_string

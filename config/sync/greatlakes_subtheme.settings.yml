@@ -1,0 +1,47 @@
+_core:
+  default_config_hash: G-kwgeN3PoMRUe15TqTrRAVrR2DszYg6Ma83pf8uWJM
+social_media_links:
+  bluesky: ''
+  discord: ''
+  facebook: ''
+  github: ''
+  instagram: ''
+  linkedin: ''
+  mastodon: ''
+  pinterest: ''
+  reddit: ''
+  snapchat: ''
+  telegram: ''
+  threads: ''
+  tiktok: ''
+  twitch: ''
+  twitter: ''
+  whatsapp: ''
+  youtube: ''
+theme_colors:
+  color_scheme: ''
+  colors:
+    base_primary_color: '#1d5813'
+    base_primary_color_brightness: dark
+  site_theme: white
+layout_settings:
+  container_max_width: '1800'
+  border_radius_sm: '2'
+  border_radius_md: '4'
+  border_radius_lg: '8'
+  border_radius_button: '3'
+favicon:
+  use_default: false
+  path: ''
+features:
+  comment_user_picture: false
+  comment_user_verification: true
+  favicon: false
+  node_user_picture: false
+logo:
+  use_default: true
+third_party_settings:
+  shortcut:
+    module_link: true
+license_uuid: 376c7aea-e2de-48f0-8ae4-a82f620f5922
+dripyard_uid: 21

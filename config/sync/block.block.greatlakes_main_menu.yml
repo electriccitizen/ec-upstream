@@ -1,0 +1,27 @@
+uuid: 7c63a0f2-78d7-4311-ad00-05b14cb9ff5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - greatlakes
+_core:
+  default_config_hash: gMz3cB_NNIjGOMbVIdUneVWlq3eHI_rsaIVVTgOyg3c
+id: greatlakes_main_menu
+theme: greatlakes
+region: header_popover_left
+weight: -5
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 3
+  expand_all_items: true
+visibility: {  }

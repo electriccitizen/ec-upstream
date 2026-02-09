@@ -1,0 +1,20 @@
+uuid: ef1e81d1-2235-469e-8da3-1e7237200a8e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - greatlakes_subtheme
+_core:
+  default_config_hash: Re3ThlzO8f7ZIKkPR7siGhDgxO7RIcaSF2trYfnM8TQ
+id: greatlakes_subtheme_page_title
+theme: greatlakes_subtheme
+region: highlighted
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

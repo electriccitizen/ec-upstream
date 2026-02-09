@@ -1,0 +1,36 @@
+uuid: 24e5802e-f18a-4840-b86a-05d27c3c1553
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - menu_block
+  theme:
+    - dripyard_base
+_core:
+  default_config_hash: 2VA69XayHZewRlk5D2y0nLUtkrvITcyLRTCOsCDiJUA
+id: dripyard_base_footer
+theme: dripyard_base
+region: sidebar_first
+weight: -5
+provider: null
+plugin: 'menu_block:footer'
+settings:
+  id: 'menu_block:footer'
+  label: Quicklinks
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  display_empty: false
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'footer:'
+  render_parent: false
+  suggestion: footer
+  hide_on_nonactive: false
+visibility: {  }
