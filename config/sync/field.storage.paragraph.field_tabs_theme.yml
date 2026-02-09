@@ -1,0 +1,24 @@
+uuid: fc95b531-d81d-4777-8372-995da38eaaa3
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_tabs_theme
+field_name: field_tabs_theme
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: inherit_white_light_dark_black_primary
+      label: Inherit
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,8 @@
+{% embed 'dripyard_base:tab' with {
+  title: paragraph.field_tab_title.value,
+  icon: paragraph.field_tab_icon.value
+} %}
+  {% block tab_panel_content %}
+    {{ content.field_tab_content }}
+  {% endblock %}
+{% endembed %}

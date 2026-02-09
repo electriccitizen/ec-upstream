@@ -1,0 +1,10 @@
+uuid: 5f3db284-c9b6-4930-a433-75a7bd640122
+langcode: en
+status: true
+dependencies: {  }
+id: tab_item
+label: 'Tab Item'
+icon_uuid: null
+icon_default: null
+description: 'Adds WYSIWYG content inside tabs.'
+behavior_plugins: {  }

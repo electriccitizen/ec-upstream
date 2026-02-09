@@ -1,0 +1,21 @@
+uuid: 78a39e05-59bb-4e9c-8c11-a86040e0d3c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icon_size
+    - paragraphs.paragraphs_type.tabs_group
+  module:
+    - options
+id: paragraph.tabs_group.field_icon_size
+field_name: field_icon_size
+entity_type: paragraph
+bundle: tabs_group
+label: 'Icon Size'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

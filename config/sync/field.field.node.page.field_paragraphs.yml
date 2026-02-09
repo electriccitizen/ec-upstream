@@ -14,6 +14,7 @@ dependencies:
     - paragraphs.paragraphs_type.layout_section_simple
     - paragraphs.paragraphs_type.links_files
     - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.tabs_group
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.video
   module:
@@ -45,6 +46,7 @@ settings:
       text: text
       video: video
       layout_section_simple: layout_section_simple
+      tabs_group: tabs_group
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
@@ -56,8 +58,11 @@ settings:
       block_placer:
         weight: -36
         enabled: false
-      content_placer:
-        weight: -27
+      content_list:
+        weight: 27
+        enabled: false
+      cta:
+        weight: 28
         enabled: false
       custom_embed:
         weight: -37
@@ -83,9 +88,6 @@ settings:
       layout_section_simple:
         weight: -24
         enabled: true
-      layout_section_single:
-        weight: -23
-        enabled: false
       links_files:
         weight: -31
         enabled: true
@@ -98,10 +100,19 @@ settings:
       quote:
         weight: -30
         enabled: true
+      tab_item:
+        weight: 23
+        enabled: false
+      tabs_group:
+        weight: 41
+        enabled: true
       text:
         weight: -29
         enabled: true
       video:
         weight: -28
         enabled: true
+      view_placer:
+        weight: 44
+        enabled: false
 field_type: entity_reference_revisions

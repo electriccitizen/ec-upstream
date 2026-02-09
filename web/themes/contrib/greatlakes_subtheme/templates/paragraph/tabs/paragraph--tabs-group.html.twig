@@ -1,0 +1,11 @@
+{% embed 'dripyard_base:tab-group' with {
+  centered: paragraph.field_tabs_centered.value,
+  placement: paragraph.field_tabs_placement.value ?: 'top',
+  theme: paragraph.field_tabs_theme.value ?: 'inherit',
+  icon_size: paragraph.field_icon_size.value ?: 'small',
+  icon_placement: paragraph.field_icon_placement.value ?: 'vertical'
+} %}
+  {% block tabs %}
+    {{ content.field_tab_items }}
+  {% endblock %}
+{% endembed %}

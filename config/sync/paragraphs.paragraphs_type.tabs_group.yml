@@ -1,0 +1,10 @@
+uuid: 174e231e-04b2-4acf-9c53-5ca990e6b7be
+langcode: en
+status: true
+dependencies: {  }
+id: tabs_group
+label: 'Tabs Group'
+icon_uuid: null
+icon_default: null
+description: 'Creates structure for tab items.'
+behavior_plugins: {  }

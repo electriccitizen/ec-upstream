@@ -1,0 +1,21 @@
+uuid: 8b8cfbd4-f56e-4497-a127-8c2302fa4753
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tabs_placement
+    - paragraphs.paragraphs_type.tabs_group
+  module:
+    - options
+id: paragraph.tabs_group.field_tabs_placement
+field_name: field_tabs_placement
+entity_type: paragraph
+bundle: tabs_group
+label: 'Tabs Placement'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -18,6 +18,7 @@ dependencies:
     - paragraphs.paragraphs_type.links_files
     - paragraphs.paragraphs_type.portals
     - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.tabs_group
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.view_placer
@@ -55,6 +56,7 @@ settings:
       text: text
       video: video
       view_placer: view_placer
+      tabs_group: tabs_group
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
@@ -107,6 +109,12 @@ settings:
         enabled: true
       quote:
         weight: -27
+        enabled: true
+      tab_item:
+        weight: 40
+        enabled: false
+      tabs_group:
+        weight: 41
         enabled: true
       text:
         weight: -26

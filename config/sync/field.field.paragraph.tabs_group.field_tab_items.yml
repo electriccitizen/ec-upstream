@@ -1,0 +1,94 @@
+uuid: df5021b9-d267-48cf-a82d-a0e0858a1891
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tab_items
+    - paragraphs.paragraphs_type.tab_item
+    - paragraphs.paragraphs_type.tabs_group
+  module:
+    - entity_reference_revisions
+id: paragraph.tabs_group.field_tab_items
+field_name: field_tab_items
+entity_type: paragraph
+bundle: tabs_group
+label: 'Tab Items'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      tab_item: tab_item
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 24
+        enabled: false
+      accordions:
+        weight: 25
+        enabled: false
+      block_placer:
+        weight: 26
+        enabled: false
+      content_list:
+        weight: 27
+        enabled: false
+      cta:
+        weight: 28
+        enabled: false
+      custom_embed:
+        weight: 29
+        enabled: false
+      form_placer:
+        weight: 30
+        enabled: false
+      gallery:
+        weight: 31
+        enabled: false
+      gallery_item:
+        weight: 32
+        enabled: false
+      horizontal_rule:
+        weight: 33
+        enabled: false
+      image:
+        weight: 34
+        enabled: false
+      layout_section:
+        weight: 35
+        enabled: false
+      layout_section_simple:
+        weight: 36
+        enabled: false
+      links_files:
+        weight: 37
+        enabled: false
+      portal:
+        weight: 38
+        enabled: false
+      portals:
+        weight: 39
+        enabled: false
+      quote:
+        weight: 40
+        enabled: false
+      tab_item:
+        weight: 23
+        enabled: true
+      tabs_group:
+        weight: 41
+        enabled: false
+      text:
+        weight: 42
+        enabled: false
+      video:
+        weight: 43
+        enabled: false
+      view_placer:
+        weight: 44
+        enabled: false
+field_type: entity_reference_revisions

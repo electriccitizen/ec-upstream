@@ -1,0 +1,22 @@
+uuid: 32b0597e-c9e1-4cf4-bcef-84143fd5f952
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tab_content
+    - paragraphs.paragraphs_type.tab_item
+  module:
+    - text
+id: paragraph.tab_item.field_tab_content
+field_name: field_tab_content
+entity_type: paragraph
+bundle: tab_item
+label: 'Tab Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

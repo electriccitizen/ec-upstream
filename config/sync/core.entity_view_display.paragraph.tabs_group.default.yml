@@ -1,0 +1,69 @@
+uuid: f44a720f-dbaa-49b3-b7f5-a678e4df580e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tabs_group.field_icon_placement
+    - field.field.paragraph.tabs_group.field_icon_size
+    - field.field.paragraph.tabs_group.field_tab_items
+    - field.field.paragraph.tabs_group.field_tabs_centered
+    - field.field.paragraph.tabs_group.field_tabs_placement
+    - field.field.paragraph.tabs_group.field_tabs_theme
+    - paragraphs.paragraphs_type.tabs_group
+  module:
+    - entity_reference_revisions
+    - options
+id: paragraph.tabs_group.default
+targetEntityType: paragraph
+bundle: tabs_group
+mode: default
+content:
+  field_icon_placement:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_icon_size:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_tab_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tabs_centered:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_tabs_placement:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_tabs_theme:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

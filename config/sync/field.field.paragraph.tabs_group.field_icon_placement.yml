@@ -1,0 +1,21 @@
+uuid: 357c8955-89eb-4401-8c45-c388d6cae114
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icon_placement
+    - paragraphs.paragraphs_type.tabs_group
+  module:
+    - options
+id: paragraph.tabs_group.field_icon_placement
+field_name: field_icon_placement
+entity_type: paragraph
+bundle: tabs_group
+label: 'Icon Placement'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

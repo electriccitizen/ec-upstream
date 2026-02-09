@@ -1,0 +1,21 @@
+uuid: 9acb47d8-2c60-4acb-9e80-a79f2de9f149
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tabs_centered
+    - paragraphs.paragraphs_type.tabs_group
+id: paragraph.tabs_group.field_tabs_centered
+field_name: field_tabs_centered
+entity_type: paragraph
+bundle: tabs_group
+label: 'Tabs Centered'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

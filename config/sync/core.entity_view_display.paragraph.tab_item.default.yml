@@ -1,0 +1,32 @@
+uuid: 9cbdce31-c37c-4d84-b57d-1dae8fe2f771
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tab_item.field_tab_content
+    - field.field.paragraph.tab_item.field_tab_title
+    - paragraphs.paragraphs_type.tab_item
+  module:
+    - text
+id: paragraph.tab_item.default
+targetEntityType: paragraph
+bundle: tab_item
+mode: default
+content:
+  field_tab_content:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_tab_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
