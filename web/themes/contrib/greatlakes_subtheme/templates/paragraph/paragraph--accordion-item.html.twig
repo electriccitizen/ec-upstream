@@ -1,0 +1,9 @@
+{# Renders each item Paragraph as an SDC item #}
+{% embed 'dripyard_base:accordion-item' with {
+  title: paragraph.field_accordion_header.value,
+  open: false
+} %}
+  {% block accordion_item_content %}
+    {{ content.field_long_text }}
+  {% endblock %}
+{% endembed %}

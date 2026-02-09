@@ -1,0 +1,10 @@
+{# Renders the group wrapper and lets the item field render inside #}
+{% embed 'dripyard_base:accordion-group' with {
+  variation: 'borders',   # or 'background-color'
+  theme: 'inherit'        # or any theme enum the component supports
+} %}
+  {% block accordion_group_content %}
+    {{ content.field_widget_title }}
+    {{ content.field_accordion_items }}
+  {% endblock %}
+{% endembed %}
