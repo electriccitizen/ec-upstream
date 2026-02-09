@@ -1,0 +1,179 @@
+/*
+ * @file
+ * Popover menu.
+ */
+
+.popover-menu {
+  --popover-menu-default-font-size: var(--body-l-size);
+  --popover-menu-level-1-font-size: var(--h1-size);
+  --popover-menu-level-2-font-size: var(--h3-size);
+  --popover-menu-link-color: var(--theme-text-color-medium);
+  --popover-menu-link-background-hover: transparent;
+  --popover-menu-link-vertical-spacing: var(--spacing-xxs);
+  --popover-menu-link-horizontal-spacing: var(--sp2);
+  --popover-menu-active-trail-background: transparent;
+  --popover-menu-submenu-indentation: var(--sp);
+
+  @media (width < 350px) {
+    --popover-menu-level-1-font-size: var(--h2-size);
+  }
+}
+
+.popover-menu__list {
+  flex-basis: 100%;
+  margin: var(--spacing-xxxs) 0;
+  padding: 0;
+  padding-inline: var(--popover-menu-submenu-indentation) 0;
+  list-style: none;
+  overflow: clip;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: height 0.2s linear, visibility 0.2s, margin 0.2s linear;
+
+    @media (width > 800px) {
+      transition: height 0.2s linear, margin 0.2s linear;
+    }
+  }
+
+  [aria-expanded="false"] + & {
+    margin-block: 0;
+    height: 0;
+    visibility: hidden;
+
+    @media (scripting: none) {
+      height: unset;
+      visibility: unset;
+    }
+  }
+}
+
+.popover-menu__list--level-1 {
+  height: auto;
+  visibility: unset;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.popover-menu__list--level-2 {
+  padding: 0;
+
+  /* This needs to match .header-popover__main in `header-popover.css`. We can
+  radically simplify this once anchor positioning is available. */
+  @media (width > 800px) {
+    position: absolute;
+    top: 0;
+    inset-inline-end: 0;
+    width: 45%;
+    height: 100%;
+  }
+}
+
+.popover-menu__list--level-3 {
+  margin-block: var(--spacing-xxs);
+}
+
+.popover-menu__list-item {
+  display: flex;
+  flex-wrap: wrap;
+  margin-block: var(--spacing-xxxs);
+  font-size: var(--popover-menu-default-font-size);
+  font-weight: normal;
+}
+
+.popover-menu__list-item--level-1 {
+  margin-top: var(--spacing-xxs);
+  font-weight: 500;
+}
+
+.popover-menu__list-item--level-2 {
+  @media (width > 800px) {
+    border-bottom: solid 1px var(--header-popover-border-color);
+  }
+}
+
+.popover-menu__link[class] {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--popover-menu-link-vertical-spacing) var(--popover-menu-link-horizontal-spacing);
+  text-decoration: none;
+  color: var(--popover-menu-link-color);
+  text-align: start;
+  outline-offset: -3px;
+
+  &:hover {
+    background-color: var(--popover-menu-link-background-hover);
+  }
+
+  &:not(.popover-menu__link--level-1) {
+    padding-inline-start: var(--sp4);
+  }
+
+  &:has(+ .popover-menu__button-toggle) {
+    padding-inline-end: 0;
+  }
+}
+
+.popover-menu__link--level-1[class] {
+  font-size: var(--popover-menu-level-1-font-size);
+}
+
+.popover-menu__link--level-2[class] {
+  font-size: var(--popover-menu-level-2-font-size);
+}
+
+.popover-menu__link--button[class] {
+  padding-inline-end: 0;
+}
+
+.popover-menu__link--active-trail {
+  background-color: var(--popover-menu-active-trail-background);
+  font-weight: 600;
+}
+
+.popover-menu__button-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: solid 1px transparent;
+  color: var(--popover-menu-link-color);
+
+  &:hover {
+    background-color: var(--popover-menu-link-background-hover);
+  }
+
+  &:focus-visible {
+    outline-offset: -4px;
+  }
+}
+
+.popover-menu__button-icon {
+  display: block;
+  width: 8px;
+  margin-inline: var(--sp2);
+  aspect-ratio: 1;
+  rotate: -45deg;
+  border-left: solid 2px currentColor;
+  border-bottom: solid 2px currentColor;
+  color: var(--popover-menu-link-color);
+  translate: 0 -1px;
+
+  [aria-expanded="true"] > & {
+    rotate: 135deg;
+    translate: 0 3px;
+  }
+
+  .popover-menu__link--level-1 + .popover-menu__button-toggle &,
+  .popover-menu__link--level-1 & {
+    rotate: 225deg;
+    width: 16px;
+    translate: 0;
+    transition: rotate 0.2s;
+
+    &:dir(rtl) {
+      rotate: 45deg;
+    }
+  }
+}

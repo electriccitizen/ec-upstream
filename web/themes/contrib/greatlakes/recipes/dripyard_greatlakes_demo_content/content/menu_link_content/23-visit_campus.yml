@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: b7d0bcd2-165b-41d4-a1b9-6033f5974a60
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    632ebbe6-ffdd-4f47-b57b-1a6352b0611e: menu_link_content
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Visit Campus'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      uri: 'internal:/visit'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: -50
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:632ebbe6-ffdd-4f47-b57b-1a6352b0611e'
+  revision_translation_affected:
+    -
+      value: true

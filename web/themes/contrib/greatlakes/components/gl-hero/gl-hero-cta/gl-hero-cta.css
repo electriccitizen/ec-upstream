@@ -1,0 +1,66 @@
+/*
+ * @file
+ * Styles for Hero CTA
+ */
+
+.gl-hero-cta {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.gl-hero-cta__link {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: var(--gl-hero-cta-item-alignment, center);
+  text-decoration: none;
+  transition: background-color 0.2s;
+  padding-block: var(--gl-hero-cta-padding-block, 44px);
+  padding-inline: var(--gl-hero-cta-padding-inline, 20px);
+
+  &[class] {
+    color: var(--gl-hero-text-color);
+  }
+
+  &:is(a) {
+    --hover-bg: color-mix(in oklch, var(--theme-surface) 30%, transparent);
+    --direction: to top right;
+
+    position: relative;
+
+    &:dir(rtl) {
+      --direction: to top left;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &:focus-visible {
+      outline: 0; /* Focus is handled around the <span>. */
+
+      span {
+        outline: var(--focus-ring-style) var(--focus-ring-width) var(--theme-focus-ring-color);
+      }
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      inset-inline-start: 0;
+      width: 200%;
+      height: 100%;
+      content: "";
+      background-image: linear-gradient(var(--direction), var(--hover-bg), transparent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  }
+}
+
+.gl-hero-cta__link-inner[class] {
+  position: relative; /* Establish stacking context to appear above pseudo-element. */
+  margin: 0;
+}

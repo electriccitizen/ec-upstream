@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 616cf341-dc9a-4d3a-80ff-790baac75e8a
+  bundle: dripyard_event_listing_item
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Commencement Ceremony'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: 'Celebrate the achievements of our graduating class at the annual commencement ceremony. Family and friends are invited to join us for this special milestone.'
+      format: basic_html
+      summary: ''
+  dripyard_date:
+    -
+      value: '2025-05-17T09:00:00'
+  dripyard_link:
+    -
+      uri: 'internal:/'
+      title: 'Graduation Info'
+      options: {  }
+  dripyard_location:
+    -
+      value: 'Memorial Stadium'
+  dripyard_title:
+    -
+      value: 'Commencement Ceremony'
+      format: plain_text

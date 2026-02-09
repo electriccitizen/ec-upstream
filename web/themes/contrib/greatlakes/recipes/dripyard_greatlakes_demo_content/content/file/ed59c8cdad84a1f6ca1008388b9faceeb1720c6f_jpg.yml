@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 746fc054-1b3e-4934-a743-fcefbe156f1d
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: ed59c8cdad84a1f6ca1008388b9faceeb1720c6f.jpg
+  uri:
+    -
+      value: 'public://ed59c8cdad84a1f6ca1008388b9faceeb1720c6f.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 12134412
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1754407777

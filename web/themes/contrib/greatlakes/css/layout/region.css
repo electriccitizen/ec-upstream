@@ -1,0 +1,51 @@
+/*
+ * @file
+ * Styling for Great Lakes regions.
+ */
+
+/*
+ * Region fixed hero.
+ */
+.region--fixed-hero {
+  --region-fixed-hero-height: max(700px, calc(90dvh - var(--drupal-displace-offset-top, 0px) - var(--drupal-displace-offset-bottom, 0px)));
+
+  min-height: var(--region-fixed-hero-height);
+
+  .is-canvas & {
+    --region-fixed-hero-height: 800px;
+  }
+}
+
+.region--fixed-hero__fixed {
+  position: fixed;
+  top: var(--drupal-displace-offset-top, 0);
+  inset-inline: 0;
+  min-height: var(--region-fixed-hero-height);
+  margin-inline: auto;
+}
+
+/*
+ * Special treatment for highlighted region.
+ */
+.region-highlighted {
+  --background: var(--theme-surface-alt);
+
+  position: relative; /* Show above fixed hero. */
+  background: var(--background);
+  padding-bottom: var(--spacing-m);
+
+  @media (forced-colors: active) {
+    border-image: none;
+    border-bottom: solid 1px transparent;
+  }
+
+  .page-title {
+    margin-bottom: var(--spacing-m);
+  }
+}
+
+.region-content {
+  .has-fixed-hero & {
+    margin-bottom: 0;
+  }
+}

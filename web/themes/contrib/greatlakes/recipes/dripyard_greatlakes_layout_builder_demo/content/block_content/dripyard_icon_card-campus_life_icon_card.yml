@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: fd463716-a977-4683-bca3-782dd77be98d
+  bundle: dripyard_icon_card
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Campus Life (icon card)'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: 'Join a community of engaged students with diverse interests, clubs, and activities.'
+      format: plain_text
+      summary: ''
+  dripyard_icon:
+    -
+      value: users
+  dripyard_link:
+    -
+      uri: 'internal:/student-life'
+      title: ''
+      options: {  }
+  dripyard_no_background:
+    -
+      value: false
+  dripyard_orientation:
+    -
+      value: portrait
+  dripyard_title:
+    -
+      value: 'Vibrant Campus Life'
+      format: plain_text

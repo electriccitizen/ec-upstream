@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 81f889b0-27d8-401e-99c3-281dc5a22868
+  bundle: dripyard_icon_card
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Research Opportunities (icon card)'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: 'Engage in cutting-edge research alongside faculty mentors across diverse disciplines.'
+      format: plain_text
+      summary: ''
+  dripyard_icon:
+    -
+      value: magnifying-glass-chart
+  dripyard_link:
+    -
+      uri: 'internal:/research'
+      title: ''
+      options: {  }
+  dripyard_no_background:
+    -
+      value: false
+  dripyard_orientation:
+    -
+      value: portrait
+  dripyard_title:
+    -
+      value: 'Research Excellence'
+      format: plain_text

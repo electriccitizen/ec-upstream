@@ -1,0 +1,49 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: ccbdefba-8074-47a4-b974-29c639bf8bb7
+  bundle: dripyard_hero
+  default_langcode: en
+  depends:
+    856ea3d9-6d12-47f3-87a3-f34f42b734fe: media
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Home Page Hero'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  dripyard_align_x:
+    -
+      value: start
+  dripyard_align_y:
+    -
+      value: bottom
+  dripyard_ctas:
+    -
+      uri: 'internal:/'
+      title: 'Where bold minds engineer the future.'
+      options: {  }
+    -
+      uri: 'internal:/'
+      title: 'Institute of Engineering & Applied Science.'
+      options: {  }
+  dripyard_image_media:
+    -
+      entity: 856ea3d9-6d12-47f3-87a3-f34f42b734fe
+  dripyard_text_color:
+    -
+      value: white
+  dripyard_component_theme:
+    -
+      value: dark
+  dripyard_title:
+    -
+      value: '<p>Great Lakes<br>Institute</p>'
+      format: dripyard_superbasic

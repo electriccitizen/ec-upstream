@@ -1,0 +1,5 @@
+.shortcut-wrapper:has(.page-title),
+.page-title {
+  max-width: 1000px;
+  margin-top: var(--spacing-component);
+}

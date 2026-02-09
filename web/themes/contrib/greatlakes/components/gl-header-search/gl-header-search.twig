@@ -1,0 +1,22 @@
+{% set content_id = 'header-search-content'|clean_unique_id %}
+
+<search{{ attributes.addClass('header-search') }}>
+  <button class="header-search__trigger" type="button" aria-expanded="false" aria-controls="{{ content_id }}">
+    <span class="visually-hidden">{{ 'Show search'|t }}</span>
+    <div class="header-search__search-icon">
+      {{ source(componentMetadata.path ~ '/images/search.svg') }}
+    </div>
+    <span class="header-search__close-icon"></span>
+  </button>
+  <dialog id="{{ content_id }}" class="header-search__content theme--primary">
+    <div class="header-search__content-container container">
+      <button aria-controls="{{ popover_id }}" class="header-search__popover-close">
+        <span class="visually-hidden">{{ 'Close'|t }}</span>
+        <span class="header-search__popover-close-icon"></span>
+      </button>
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+    </div>
+  </dialog>
+</search>

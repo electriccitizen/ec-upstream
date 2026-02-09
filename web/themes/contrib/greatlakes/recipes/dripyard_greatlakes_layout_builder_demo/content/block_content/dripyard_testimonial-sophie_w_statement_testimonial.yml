@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 9d0ddf21-e244-4708-b3e7-c9fc5d18498f
+  bundle: dripyard_testimonial
+  default_langcode: en
+  depends:
+    68475853-64bd-4abe-b486-7dae21c1ede4: media
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Sophie W Statement (testimonial)'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: '<p>“I have made lifelong friendships that I would have never imagined before coming to Great Lake Institute. The university and the people here have helped shape me into the person I am now.”</p>'
+      format: dripyard_superbasic
+      summary: ''
+  dripyard_image_media:
+    -
+      entity: 68475853-64bd-4abe-b486-7dae21c1ede4
+  dripyard_testimonial_citation:
+    -
+      value: 'Sophie W.'
+  dripyard_testimonial_reversed:
+    -
+      value: false

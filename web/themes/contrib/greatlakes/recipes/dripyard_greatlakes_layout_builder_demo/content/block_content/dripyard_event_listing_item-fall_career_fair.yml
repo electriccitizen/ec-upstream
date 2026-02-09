@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: e4db0938-15e0-45d4-98f0-2af95a5b3f61
+  bundle: dripyard_event_listing_item
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Fall Career Fair'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: 'Connect with over 80 employers from various industries. Bring your resume, dress professionally, and be ready to explore internship and full-time opportunities.'
+      format: basic_html
+      summary: ''
+  dripyard_date:
+    -
+      value: '2025-09-24T11:00:00'
+  dripyard_link:
+    -
+      uri: 'internal:/career-services/career-fair'
+      title: 'Employer List'
+      options: {  }
+  dripyard_location:
+    -
+      value: 'Recreation Center'
+  dripyard_title:
+    -
+      value: 'Fall Career Fair'
+      format: plain_text

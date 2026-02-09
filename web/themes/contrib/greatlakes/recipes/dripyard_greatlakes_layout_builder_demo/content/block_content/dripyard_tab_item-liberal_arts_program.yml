@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: f37ad1e3-be31-4077-82d8-cd3acbdbf644
+  bundle: dripyard_tab_item
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Liberal Arts Program'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: '<p>Explore the breadth of human knowledge through our liberal arts program. Students develop critical thinking, communication, and analytical skills while studying literature, history, philosophy, psychology, and the natural sciences. Perfect preparation for graduate school or diverse career paths.</p>'
+      format: basic_html
+      summary: ''
+  dripyard_icon:
+    -
+      value: book-open
+  dripyard_title:
+    -
+      value: 'Liberal Arts & Sciences'
+      format: plain_text

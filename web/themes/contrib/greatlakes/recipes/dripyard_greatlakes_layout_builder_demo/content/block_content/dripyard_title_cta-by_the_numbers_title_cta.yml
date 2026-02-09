@@ -1,0 +1,26 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: b50e0f7f-a50f-4920-9ff0-80508904fbb6
+  bundle: dripyard_title_cta
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'By the numbers (title cta)'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  dripyard_component_layout:
+    -
+      value: center
+  dripyard_title:
+    -
+      value: '<p>By the numbers</p>'
+      format: dripyard_superbasic

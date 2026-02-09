@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: b2394af2-ebc1-4922-9652-df1b1798b2d8
+  bundle: dripyard_media
+  default_langcode: en
+  depends:
+    08af5cfc-7520-4cd0-95c1-800bd0fcb593: media
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'DrupalCon Atlanta (media)'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  dripyard_media:
+    -
+      entity: 08af5cfc-7520-4cd0-95c1-800bd0fcb593

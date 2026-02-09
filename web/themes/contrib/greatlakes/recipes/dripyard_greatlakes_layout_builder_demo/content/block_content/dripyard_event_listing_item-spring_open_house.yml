@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 4f46d250-809b-44dc-990d-2b53683057cc
+  bundle: dripyard_event_listing_item
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Spring Open House'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: 'Join us for our annual Spring Open House! Explore our beautiful campus, meet faculty and students, and learn about our academic programs. Tours, presentations, and refreshments provided.'
+      format: basic_html
+      summary: ''
+  dripyard_date:
+    -
+      value: '2025-04-19T17:30:00'
+  dripyard_link:
+    -
+      uri: 'internal:/'
+      title: 'Learn More'
+      options: {  }
+  dripyard_location:
+    -
+      value: 'Student Union Building'
+  dripyard_title:
+    -
+      value: 'Spring Open House'
+      format: plain_text

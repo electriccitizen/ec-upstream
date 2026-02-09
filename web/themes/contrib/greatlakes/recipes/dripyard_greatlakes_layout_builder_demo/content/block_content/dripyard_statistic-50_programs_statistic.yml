@@ -1,0 +1,28 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 96749b2b-de27-497a-ab77-f7948a9258af
+  bundle: dripyard_statistic
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: '50 Programs (statistic)'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  dripyard_statistic:
+    -
+      value: 50+
+  dripyard_statistic_first_line:
+    -
+      value: Programs
+  dripyard_statistic_second_line:
+    -
+      value: 'Undergraduate and graduate degrees'

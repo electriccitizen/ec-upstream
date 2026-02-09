@@ -1,0 +1,803 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 3b0a9cb7-c985-4e95-af05-5e8a8d2f4b1c
+  bundle: dripyard_landing_page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Great Lakes University Home Page'
+  created:
+    -
+      value: 1745292300
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /greatlakes-home-page
+      langcode: en
+  dripyard_hide_page_title:
+    -
+      value: true
+  layout_builder__layout:
+    -
+      section:
+        layout_id: dripyard_layout_dynamic
+        layout_settings:
+          column_count: 1
+          row_count: 1
+          two_column_layout: '50% / 50%'
+          three_column_layout: '33% / 33% / 33%'
+          section_width: edge-to-edge
+          content_width: max-width
+          cell_align_x: ''
+          cell_align_y: ''
+          margin_top: zero
+          margin_bottom: zero
+          padding_top: large
+          padding_bottom: medium
+          column_gutter: ''
+          row_gutter: ''
+          additional_classes: ''
+          dripyard_theme: inherit
+          dripyard_layout: default
+          label: 'Programs CTA'
+          context_mapping: {  }
+        components:
+          86b89ab5-2f4a-4c70-8d9b-4431975be4a4:
+            uuid: 86b89ab5-2f4a-4c70-8d9b-4431975be4a4
+            region: cell_1
+            configuration:
+              id: 'block_content:c842bc98-f9d5-4990-a6fb-5a363638373a'
+              label: 'Discover Programs'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: dripyard_layout_dynamic
+        layout_settings:
+          column_count: 1
+          row_count: 2
+          two_column_layout: '50% / 50%'
+          three_column_layout: '33% / 33% / 33%'
+          section_width: edge-to-edge
+          content_width: max-width
+          cell_align_x: ''
+          cell_align_y: ''
+          margin_top: zero
+          margin_bottom: ''
+          padding_top: zero
+          padding_bottom: ''
+          column_gutter: ''
+          row_gutter: ''
+          additional_classes: ''
+          dripyard_theme: inherit
+          dripyard_layout: default
+          label: 'Programs Information'
+          context_mapping: {  }
+        components:
+          78d964aa-ec6f-4d45-9cfd-b6c1566cb4e7:
+            uuid: 78d964aa-ec6f-4d45-9cfd-b6c1566cb4e7
+            region: cell_1
+            configuration:
+              id: 'block_content:f44ca359-a0da-4d7c-929d-15b0fe44ea8a'
+              label: 'Great Lakes Intro (basic block)'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          348426ab-87c8-42b5-990d-ec1c25567827:
+            uuid: 348426ab-87c8-42b5-990d-ec1c25567827
+            region: cell_2
+            configuration:
+              id: 'views_block:dripyard_article_cards-card_full_image'
+              label: ''
+              label_display: 0
+              provider: views
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: dripyard_layout_dynamic
+        layout_settings:
+          column_count: 1
+          row_count: 1
+          two_column_layout: '50% / 50%'
+          three_column_layout: '33% / 33% / 33%'
+          section_width: edge-to-edge
+          content_width: max-width
+          cell_align_x: ''
+          cell_align_y: ''
+          margin_top: ''
+          margin_bottom: ''
+          padding_top: ''
+          padding_bottom: zero
+          column_gutter: ''
+          row_gutter: ''
+          additional_classes: ''
+          dripyard_theme: light
+          dripyard_layout: default
+          label: 'Upcoming Events CTA'
+          context_mapping: {  }
+        components:
+          83672288-a350-4750-8a47-a1a0fd60d9de:
+            uuid: 83672288-a350-4750-8a47-a1a0fd60d9de
+            region: cell_1
+            configuration:
+              id: 'block_content:4cc4da4b-c3ea-4d37-b0f8-96e622e85947'
+              label: "What's going on (title cta)"
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: dripyard_layout_dynamic
+        layout_settings:
+          column_count: 1
+          row_count: 1
+          two_column_layout: '50% / 50%'
+          three_column_layout: '33% / 33% / 33%'
+          section_width: edge-to-edge
+          content_width: max-width
+          cell_align_x: ''
+          cell_align_y: ''
+          margin_top: ''
+          margin_bottom: ''
+          padding_top: medium
+          padding_bottom: ''
+          column_gutter: ''
+          row_gutter: ''
+          additional_classes: ''
+          dripyard_theme: light
+          dripyard_layout: default
+          label: 'Upcoming Events List'
+          context_mapping: {  }
+        components:
+          af1c6794-25a0-4224-b06d-a3a6d838f4b8:
+            uuid: af1c6794-25a0-4224-b06d-a3a6d838f4b8
+            region: cell_1
+            configuration:
+              id: 'views_block:dripyard_event_listing-events_blocks'
+              label: ''
+              label_display: 0
+              provider: views
+              views_label: ''
+              items_per_page: null
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: dripyard_layout_dynamic
+        layout_settings:
+          column_count: 1
+          row_count: 1
+          two_column_layout: '50% / 50%'
+          three_column_layout: '33% / 33% / 33%'
+          section_width: edge-to-edge
+          content_width: max-width
+          cell_align_x: ''
+          cell_align_y: ''
+          margin_top: ''
+          margin_bottom: ''
+          padding_top: ''
+          padding_bottom: ''
+          column_gutter: ''
+          row_gutter: ''
+          additional_classes: ''
+          dripyard_theme: inherit
+          dripyard_layout: default
+          label: Testimonials
+          context_mapping: {  }
+        components:
+          24b2411e-66ce-4fcc-9ad6-e8b14b527d1a:
+            uuid: 24b2411e-66ce-4fcc-9ad6-e8b14b527d1a
+            region: cell_1
+            configuration:
+              id: 'block_content:9d0ddf21-e244-4708-b3e7-c9fc5d18498f'
+              label: 'Sophie W Statement (testimonial)'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: dripyard_layout_dynamic
+        layout_settings:
+          column_count: 1
+          row_count: 1
+          two_column_layout: '50% / 50%'
+          three_column_layout: '33% / 33% / 33%'
+          section_width: edge-to-edge
+          content_width: max-width
+          cell_align_x: ''
+          cell_align_y: ''
+          margin_top: ''
+          margin_bottom: ''
+          padding_top: ''
+          padding_bottom: zero
+          column_gutter: ''
+          row_gutter: ''
+          additional_classes: ''
+          dripyard_theme: inherit
+          dripyard_layout: default
+          label: 'By The Numbers CTA'
+          context_mapping: {  }
+        components:
+          50ab9e64-2d58-4b46-9569-75436c013d01:
+            uuid: 50ab9e64-2d58-4b46-9569-75436c013d01
+            region: cell_1
+            configuration:
+              id: 'block_content:b50e0f7f-a50f-4920-9ff0-80508904fbb6'
+              label: 'By the numbers (title cta)'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: dripyard_layout_dynamic
+        layout_settings:
+          column_count: 3
+          row_count: 1
+          two_column_layout: '50% / 50%'
+          three_column_layout: '33% / 33% / 33%'
+          section_width: edge-to-edge
+          content_width: max-width
+          cell_align_x: ''
+          cell_align_y: ''
+          margin_top: ''
+          margin_bottom: ''
+          padding_top: medium
+          padding_bottom: ''
+          column_gutter: ''
+          row_gutter: ''
+          additional_classes: ''
+          dripyard_theme: inherit
+          dripyard_layout: default
+          label: 'By The Numbers Data'
+          context_mapping: {  }
+        components:
+          6e433ba5-2802-423a-a940-8c480ac95a16:
+            uuid: 6e433ba5-2802-423a-a940-8c480ac95a16
+            region: cell_1
+            configuration:
+              id: 'block_content:1b4de993-8601-4e65-a239-310af4e6cf36'
+              label: 'Student-Faculty Ratio'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          8e12fbd5-b3a9-44e7-916f-4b58bf19483f:
+            uuid: 8e12fbd5-b3a9-44e7-916f-4b58bf19483f
+            region: cell_2
+            configuration:
+              id: 'block_content:96749b2b-de27-497a-ab77-f7948a9258af'
+              label: 'Graduate Employment Rate'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          7b3722ff-e348-4f7b-8082-fb71cc00154a:
+            uuid: 7b3722ff-e348-4f7b-8082-fb71cc00154a
+            region: cell_3
+            configuration:
+              id: 'block_content:a8bfcd37-2537-47e0-8ed0-315c4edc0e26'
+              label: '120 Awards (statistic)'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: dripyard_layout_dynamic
+        layout_settings:
+          column_count: 2
+          row_count: 1
+          two_column_layout: '50% / 50%'
+          three_column_layout: '33% / 33% / 33%'
+          section_width: edge-to-edge
+          content_width: max-width
+          cell_align_x: ''
+          cell_align_y: ''
+          margin_top: ''
+          margin_bottom: ''
+          padding_top: ''
+          padding_bottom: ''
+          column_gutter: ''
+          row_gutter: ''
+          additional_classes: ''
+          dripyard_theme: inherit
+          dripyard_layout: default
+          label: 'Video Section'
+          context_mapping: {  }
+        components:
+          ee9692ec-f665-4155-b84e-917cf2b440ef:
+            uuid: ee9692ec-f665-4155-b84e-917cf2b440ef
+            region: cell_1
+            configuration:
+              id: 'block_content:7d1f46c7-1033-4f50-b26f-2bfc30122fb6'
+              label: 'Undergraduate Programs'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          85f73300-f776-494c-9295-5c469335d8a3:
+            uuid: 85f73300-f776-494c-9295-5c469335d8a3
+            region: cell_2
+            configuration:
+              id: 'block_content:b2394af2-ebc1-4922-9652-df1b1798b2d8'
+              label: 'DrupalCon Atlanta (media)'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: dripyard_layout_dynamic
+        layout_settings:
+          column_count: 1
+          row_count: 1
+          two_column_layout: '50% / 50%'
+          three_column_layout: '33% / 33% / 33%'
+          section_width: edge-to-edge
+          content_width: max-width
+          cell_align_x: ''
+          cell_align_y: ''
+          margin_top: ''
+          margin_bottom: ''
+          padding_top: ''
+          padding_bottom: zero
+          column_gutter: ''
+          row_gutter: ''
+          additional_classes: ''
+          dripyard_theme: primary
+          dripyard_layout: default
+          label: 'Student Experience CTA'
+          context_mapping: {  }
+        components:
+          1abd64fa-4ad5-4d24-b9e1-b3061cc8333d:
+            uuid: 1abd64fa-4ad5-4d24-b9e1-b3061cc8333d
+            region: cell_1
+            configuration:
+              id: 'block_content:a6856e73-1dbe-4312-b949-2cc8656dff39'
+              label: 'Visit Campus'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: dripyard_layout_dynamic
+        layout_settings:
+          column_count: 2
+          row_count: 1
+          two_column_layout: '50% / 50%'
+          three_column_layout: '33% / 33% / 33%'
+          section_width: edge-to-edge
+          content_width: max-width
+          cell_align_x: ''
+          cell_align_y: ''
+          margin_top: ''
+          margin_bottom: ''
+          padding_top: medium
+          padding_bottom: ''
+          column_gutter: large
+          row_gutter: ''
+          additional_classes: ''
+          dripyard_theme: primary
+          dripyard_layout: default
+          label: 'Student Experience'
+          context_mapping: {  }
+        components:
+          c5df3e60-6a9f-4d65-a64a-d524523c00a3:
+            uuid: c5df3e60-6a9f-4d65-a64a-d524523c00a3
+            region: cell_1
+            configuration:
+              id: 'block_content:31a4968e-0f92-4450-a198-ab6e78c79ab4'
+              label: 'Students reviewing code (media)'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          348a6f17-4bf8-470d-a425-9f03d2114c23:
+            uuid: 348a6f17-4bf8-470d-a425-9f03d2114c23
+            region: cell_2
+            configuration:
+              id: 'block_content:7c2becdf-cd2f-467e-8eab-af7b596a2098'
+              label: 'Student Experience'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: dripyard_layout_dynamic
+        layout_settings:
+          column_count: 1
+          row_count: 1
+          two_column_layout: '50% / 50%'
+          three_column_layout: '33% / 33% / 33%'
+          section_width: edge-to-edge
+          content_width: max-width
+          cell_align_x: ''
+          cell_align_y: ''
+          margin_top: ''
+          margin_bottom: ''
+          padding_top: ''
+          padding_bottom: zero
+          column_gutter: ''
+          row_gutter: ''
+          additional_classes: ''
+          dripyard_theme: dark
+          dripyard_layout: default
+          label: 'Stay Connected CTA'
+          context_mapping: {  }
+        components:
+          c1f452eb-397e-46c4-ac21-90b4029d2cd1:
+            uuid: c1f452eb-397e-46c4-ac21-90b4029d2cd1
+            region: cell_1
+            configuration:
+              id: 'block_content:538dc58f-dd62-4c56-b442-bce94bb95fdc'
+              label: 'Latest News'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: dripyard_layout_dynamic
+        layout_settings:
+          column_count: 1
+          row_count: 1
+          two_column_layout: '50% / 50%'
+          three_column_layout: '33% / 33% / 33%'
+          section_width: edge-to-edge
+          content_width: max-width
+          cell_align_x: ''
+          cell_align_y: ''
+          margin_top: ''
+          margin_bottom: ''
+          padding_top: medium
+          padding_bottom: ''
+          column_gutter: ''
+          row_gutter: ''
+          additional_classes: ''
+          dripyard_theme: dark
+          dripyard_layout: default
+          label: 'Newes Listing'
+          context_mapping: {  }
+        components:
+          bcc6dde0-97d2-4681-b0b5-929f8454fa4a:
+            uuid: bcc6dde0-97d2-4681-b0b5-929f8454fa4a
+            region: cell_1
+            configuration:
+              id: 'views_block:dripyard_article_cards-card'
+              label: ''
+              label_display: 0
+              provider: views
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: dripyard_layout_dynamic
+        layout_settings:
+          column_count: 1
+          row_count: 1
+          two_column_layout: '50% / 50%'
+          three_column_layout: '33% / 33% / 33%'
+          section_width: edge-to-edge
+          content_width: max-width
+          cell_align_x: ''
+          cell_align_y: ''
+          margin_top: ''
+          margin_bottom: ''
+          padding_top: ''
+          padding_bottom: ''
+          column_gutter: ''
+          row_gutter: ''
+          additional_classes: ''
+          dripyard_theme: inherit
+          dripyard_layout: default
+          label: FAQ
+          context_mapping: {  }
+        components:
+          964c2b00-af80-4c12-b7c0-c6cd5b87e454:
+            uuid: 964c2b00-af80-4c12-b7c0-c6cd5b87e454
+            region: cell_1
+            configuration:
+              id: 'block_content:fee523d7-2cbc-4f02-bfe8-fec310becfcb'
+              label: 'Admissions Process'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          a21a04ca-35fd-40e5-b461-a034a229196b:
+            uuid: a21a04ca-35fd-40e5-b461-a034a229196b
+            region: cell_1
+            configuration:
+              id: 'block_content:dcd3b080-3797-472a-b820-1f830d198b0e'
+              label: 'Financial Aid'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 1
+            additional: {  }
+          401fc514-a875-42d3-83e3-0d0904759a22:
+            uuid: 401fc514-a875-42d3-83e3-0d0904759a22
+            region: cell_1
+            configuration:
+              id: 'block_content:9483a012-6b5b-4eb3-8c11-409cd8c32593'
+              label: 'Campus Housing'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: dripyard_layout_dynamic
+        layout_settings:
+          column_count: 1
+          row_count: 1
+          two_column_layout: '50% / 50%'
+          three_column_layout: '33% / 33% / 33%'
+          section_width: edge-to-edge
+          content_width: max-width
+          cell_align_x: ''
+          cell_align_y: ''
+          margin_top: ''
+          margin_bottom: ''
+          padding_top: ''
+          padding_bottom: ''
+          column_gutter: ''
+          row_gutter: ''
+          additional_classes: ''
+          dripyard_theme: inherit
+          dripyard_layout: default
+          label: 'Academic Programs'
+          context_mapping: {  }
+        components:
+          0db275fd-f287-4c8c-8fa8-4ebd1315700e:
+            uuid: 0db275fd-f287-4c8c-8fa8-4ebd1315700e
+            region: cell_1
+            configuration:
+              id: 'block_content:d4b27a61-3040-44b9-8062-1ad02c409233'
+              label: 'Business Program'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 1
+            additional: {  }
+          82b58227-1230-4130-9641-f7adbf5dd0f0:
+            uuid: 82b58227-1230-4130-9641-f7adbf5dd0f0
+            region: cell_1
+            configuration:
+              id: 'block_content:a75f5ece-7400-490d-8a3e-ccdf747dc2be'
+              label: 'Education Program'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 2
+            additional: {  }
+          519dbd33-a5d9-49fb-943b-acb69d2a72a0:
+            uuid: 519dbd33-a5d9-49fb-943b-acb69d2a72a0
+            region: cell_1
+            configuration:
+              id: 'block_content:f37ad1e3-be31-4077-82d8-cd3acbdbf644'
+              label: 'Liberal Arts Program'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 3
+            additional: {  }
+          319ddcab-1068-4262-820d-904c17645e1d:
+            uuid: 319ddcab-1068-4262-820d-904c17645e1d
+            region: cell_1
+            configuration:
+              id: 'block_content:ee69b3d5-a2ae-42e8-9928-32e5859a3117'
+              label: 'Demo Tab Wrapper'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+    -
+      section:
+        layout_id: dripyard_layout_dynamic
+        layout_settings:
+          column_count: 4
+          row_count: 1
+          two_column_layout: '50% / 50%'
+          three_column_layout: '33% / 33% / 33%'
+          section_width: edge-to-edge
+          content_width: max-width
+          cell_align_x: ''
+          cell_align_y: ''
+          margin_top: ''
+          margin_bottom: ''
+          padding_top: ''
+          padding_bottom: ''
+          column_gutter: ''
+          row_gutter: ''
+          additional_classes: ''
+          dripyard_theme: black
+          dripyard_layout: default
+          label: 'University Features'
+          context_mapping: {  }
+        components:
+          151eb13a-e5b7-4289-95a1-dd001237ba31:
+            uuid: 151eb13a-e5b7-4289-95a1-dd001237ba31
+            region: cell_2
+            configuration:
+              id: 'block_content:fd463716-a977-4683-bca3-782dd77be98d'
+              label: 'Campus Life'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          07ce12f1-7ef6-46d2-90c4-d012a7bf175c:
+            uuid: 07ce12f1-7ef6-46d2-90c4-d012a7bf175c
+            region: cell_1
+            configuration:
+              id: 'block_content:8f9d6aa6-d514-48f3-91fb-b69a478b2671'
+              label: 'Career Services'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 3
+            additional: {  }
+          9644b238-b0f6-442e-a6fe-b75d2c315775:
+            uuid: 9644b238-b0f6-442e-a6fe-b75d2c315775
+            region: cell_3
+            configuration:
+              id: 'block_content:81f889b0-27d8-401e-99c3-281dc5a22868'
+              label: 'Research Opportunities'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          23e09df8-7510-4f13-bf7f-b204e0091681:
+            uuid: 23e09df8-7510-4f13-bf7f-b204e0091681
+            region: cell_4
+            configuration:
+              id: 'block_content:a775b89d-ed62-485d-9847-9fe952700386'
+              label: 'Academic Excellence'
+              label_display: 0
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }

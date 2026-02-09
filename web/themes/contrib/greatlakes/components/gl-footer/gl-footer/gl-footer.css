@@ -1,0 +1,79 @@
+/*
+ * @file
+ * Styles for site footer.
+ */
+
+.site-footer {
+  --footer-surface: var(--theme-surface);
+  --footer-spacing: var(--spacing-xl);
+  --footer-text-color-soft: var(--theme-text-color-soft);
+  --footer-text-color-medium: var(--theme-text-color-medium);
+  --footer-link-color: var(--theme-text-color-loud);
+  --footer-border-color: var(--theme-border-color-alt);
+  --footer-horizontal-border-image: linear-gradient(0deg, var(--footer-border-color) 1px, transparent 0) fill 0 / / 0 100vw 0 100vw;
+
+  position: relative;
+  z-index: 5;
+  container-type: inline-size;
+  background-color: var(--footer-surface);
+  color: var(--footer-text-color-medium);
+
+  &[class] a {
+    color: var(--footer-link-color);
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in oklch, currentColor 50%, transparent);
+    transition: text-decoration 0.2s, text-underline-offset 0.2s, text-decoration-color 0.2s;
+    box-shadow: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.7ex;
+      text-decoration-color: currentColor;
+    }
+  }
+
+  .text-content {
+    font-size: inherit;
+  }
+}
+
+.site-footer__container[class] {
+  row-gap: 0;
+}
+
+.site-footer__top {
+  grid-column: 1 / -1;
+  padding-block: var(--footer-spacing);
+  border-image: var(--footer-horizontal-border-image);
+}
+
+.site-footer__left {
+  grid-column: 1 / -1;
+  padding-block: var(--footer-spacing);
+  border-image: var(--footer-horizontal-border-image);
+
+  @container (width > 700px) {
+    grid-column: 1 / 9;
+  }
+}
+
+.site-footer__right {
+  --padding-inline: min(calc((100cqw - var(--container-max-percentage))/2), var(--spacing-xs)); /* 20px or 2cqw - Used by menu-vertical-simple component. */
+
+  grid-column: 1 / -1;
+  padding-bottom: var(--footer-spacing);
+  border-image: var(--footer-horizontal-border-image);
+
+  @container (width > 700px) {
+    grid-column: span 4 / -1;
+    padding-block: var(--footer-spacing);
+    padding-inline: var(--padding-inline);
+    border-image: none;
+    border-inline: solid 1px var(--footer-border-color);
+  }
+}
+
+.site-footer__bottom {
+  grid-column: 1 / -1;
+  padding-block: var(--spacing-m);
+}

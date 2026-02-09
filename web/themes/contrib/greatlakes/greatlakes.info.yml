@@ -1,0 +1,29 @@
+# Licensed to: tim@electriccitizen.com (376c7aea-e2de-48f0-8ae4-a82f620f5922)
+name: Great Lakes
+type: theme
+base theme: dripyard_base
+description: A highly accessible, flexible, and beautiful theme from the friendly Drupal experts at <a href="https://www.dripyard.com" target="_blank">DripYard</a>.
+core_version_requirement: ^11.2
+libraries:
+  - greatlakes/global
+libraries-override:
+  dripyard_base/themes: greatlakes/themes
+  dripyard_base/variables: greatlakes/variables
+libraries-extend:
+  core/components.dripyard_base--layout-dynamic:
+    - greatlakes/layout-dynamic
+regions:
+  fixed_hero: Fixed hero
+  header: Header
+  header_popover_top: Header popover content (top)
+  header_popover_left: Header popover content (left)
+  header_popover_right: Header popover content (right)
+  header_popover_bottom: Header popover content (bottom)
+  highlighted: Highlighted
+  content: Content
+  fixed_bottom_right: Fixed bottom right (messages)
+  footer_top: Footer top
+  footer_left: Footer left
+  footer_right: Footer right
+  footer_bottom: Footer bottom
+dripyard_theme_level: primary

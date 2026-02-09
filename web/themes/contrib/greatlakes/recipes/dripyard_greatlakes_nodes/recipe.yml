@@ -1,0 +1,7 @@
+name: Dripyard GreatLakes Nodes
+type: Dripyard
+description: 'Provides node types for Dripyard GreatLakes'
+recipes:
+  - 'dripyard_node_article_cards'
+config:
+  strict: false

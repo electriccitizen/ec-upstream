@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 1670fb54-1a76-4631-a626-eb5941add31c
+  bundle: dripyard_event_listing_item
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Freshman Orientation'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: 'Welcome new students to the Great Lakes family! Three days of activities, campus tours, academic advising, and social events to help you transition to college life.'
+      format: basic_html
+      summary: ''
+  dripyard_date:
+    -
+      value: '2025-08-26T08:00:00'
+  dripyard_link:
+    -
+      uri: 'internal:/orientation'
+      title: 'Orientation Schedule'
+      options: {  }
+  dripyard_location:
+    -
+      value: 'Campus Wide'
+  dripyard_title:
+    -
+      value: 'Freshman Orientation'
+      format: plain_text

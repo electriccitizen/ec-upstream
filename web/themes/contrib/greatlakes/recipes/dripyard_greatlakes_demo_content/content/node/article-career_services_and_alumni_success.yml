@@ -1,0 +1,61 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 8b656e72-461c-4207-a458-33c1ffff41b9
+  bundle: article
+  default_langcode: en
+  depends:
+    bf05ff7c-67ab-4628-9643-13fe0335dec9: file
+    7h912h99-358d-7993-1842-5h2h3fg0h7ef: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Career Services and Alumni Success'
+  created:
+    -
+      value: 1745292200
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+  body:
+    -
+      value: "<p>Great Lakes University's Career Services Center is dedicated to helping students and alumni achieve their professional goals. From resume writing and interview preparation to job search strategies and networking opportunities, we provide comprehensive support throughout your career journey.</p><p>Our strong alumni network spans across industries and geographic regions, providing valuable connections and mentorship opportunities for current students. Alumni regularly return to campus for career fairs, panel discussions, and networking events, sharing their expertise and opening doors for the next generation of Lakers.</p><p>With a 94% employment rate within six months of graduation, Great Lakes University graduates are well-prepared to enter the workforce or continue their education in graduate programs. Our career outcomes reflect the quality of education and support our students receive throughout their university experience.</p>"
+      format: basic_html
+      summary: ''
+  comment:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1754403342
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_image:
+    -
+      entity: bf05ff7c-67ab-4628-9643-13fe0335dec9
+      alt: 'Students reviewing progress on the latest project. '
+      title: ''
+      width: 4096
+      height: 3072
+  field_tags:
+    -
+      entity: 7h912h99-358d-7993-1842-5h2h3fg0h7ef

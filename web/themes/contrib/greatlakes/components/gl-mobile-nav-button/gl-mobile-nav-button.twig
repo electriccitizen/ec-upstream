@@ -1,0 +1,9 @@
+<button
+  {{ attributes
+    .addClass('mobile-nav-button')
+    .setAttribute('aria-expanded', false)
+    .setAttribute('aria-controls', controls_id) }}
+  >
+  <span class="visually-hidden">{{ 'Primary menu'|t }}</span>
+  <span class="mobile-nav-button__icon"></span>
+</button>

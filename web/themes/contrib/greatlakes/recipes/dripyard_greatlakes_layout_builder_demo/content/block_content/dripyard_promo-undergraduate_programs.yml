@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 7d1f46c7-1033-4f50-b26f-2bfc30122fb6
+  bundle: dripyard_promo
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Undergraduate Programs'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: '<p>Choose from over 40 undergraduate programs designed to prepare you for success in your chosen field. Our small class sizes ensure personalized attention from faculty who are passionate about teaching.</p>'
+      format: basic_html
+      summary: ''
+  dripyard_align_x:
+    -
+      value: start
+  dripyard_align_y:
+    -
+      value: center
+  dripyard_ctas:
+    -
+      uri: 'internal:/undergraduate-programs'
+      title: 'Explore Programs'
+      options: {  }
+  dripyard_eyebrow:
+    -
+      value: 'Undergraduate Education'
+  dripyard_title:
+    -
+      value: '<p>Build Your Future with a Degree That Matters</p>'
+      format: dripyard_superbasic

@@ -1,0 +1,36 @@
+/*
+ * @file
+ * Sticky site header.
+ */
+.site-header {
+  position: sticky;
+  top: var(--drupal-displace-offset-top, 0);
+  inset-inline: 0;
+  margin-inline: auto;
+  background: var(--theme-surface-alt);
+  z-index: 5;
+  color: var(--theme-text-color-loud);
+
+  .region--fixed-hero + & {
+    background: var(--theme-surface);
+  }
+
+  .header-logo {
+    margin-inline-end: auto;
+  }
+}
+
+.site-header__container[class] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: solid 2px var(--neutral-500);
+
+  /* @todo this can be removed when Safari supports `position: sticky` children
+     underneath `container-type: inline.` */
+  &[class] {
+    width: min(var(--container-width), 92%);
+  }
+}

@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 74e764d6-cc34-4be9-9b19-7922ca3bd04d
+  bundle: dripyard_event_listing_item
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Distinguished Speaker Series'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: 'Join us for an inspiring lecture by renowned environmental scientist Dr. Sarah Martinez, who will discuss "Climate Change and Community Resilience" in our ongoing speaker series.'
+      format: basic_html
+      summary: ''
+  dripyard_date:
+    -
+      value: '2025-05-04T10:30:00'
+  dripyard_link:
+    -
+      uri: 'internal:/'
+      title: 'Reserve Seats'
+      options: {  }
+  dripyard_location:
+    -
+      value: 'Thompson Lecture Hall'
+  dripyard_title:
+    -
+      value: 'Distinguished Speaker Series'
+      format: plain_text

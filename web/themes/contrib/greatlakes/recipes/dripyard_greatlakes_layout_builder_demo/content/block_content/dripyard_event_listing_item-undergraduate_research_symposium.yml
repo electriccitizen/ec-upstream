@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 13987719-7617-4165-9543-3aec1e8509bd
+  bundle: dripyard_event_listing_item
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Undergraduate Research Symposium'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: 'Celebrate student scholarship at our annual research symposium. Students from all disciplines will present their research projects through poster sessions and oral presentations.'
+      format: basic_html
+      summary: ''
+  dripyard_date:
+    -
+      value: '2025-04-23T18:30:00'
+  dripyard_link:
+    -
+      uri: 'internal:/'
+      title: 'View Program'
+      options: {  }
+  dripyard_location:
+    -
+      value: 'Academic Hall Auditorium'
+  dripyard_title:
+    -
+      value: 'Undergraduate Research Symposium'
+      format: plain_text

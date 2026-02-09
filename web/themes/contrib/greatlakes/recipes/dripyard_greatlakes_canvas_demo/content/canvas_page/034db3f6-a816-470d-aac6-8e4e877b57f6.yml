@@ -1,0 +1,950 @@
+_meta:
+  version: '1.0'
+  entity_type: canvas_page
+  uuid: 034db3f6-a816-470d-aac6-8e4e877b57f6
+  default_langcode: en
+  depends:
+    12d30042-6d4f-4eac-a014-dfb118d5ead0: file
+    68475853-64bd-4abe-b486-7dae21c1ede4: media
+    9b945596-c06f-4e47-b782-38a42f7da357: file
+    3350ed14-b0cf-4ed1-bd34-548b38ad9410: media
+default:
+  revision_user:
+    -
+      target_id: 1
+
+  status:
+    -
+      value: true
+  owner:
+    -
+      target_id: 1
+
+  title:
+    -
+      value: 'Canvas Home Page'
+  components:
+    -
+      uuid: c8f4e831-fc5f-4bb6-b85e-d5969868c6e0
+      component_id: sdc.dripyard_base.layout-dynamic
+      inputs:
+        theme: inherit
+        column_count: '1'
+        row_count: '1'
+        two_column_layout: '50% / 50%'
+        three_column_layout: '33% / 33% / 33%'
+        cell_align_x: default
+        cell_align_y: default
+        section_width: edge-to-edge
+        content_width: max-width
+        margin_top: zero
+        margin_bottom: zero
+        padding_top: large
+        padding_bottom: large
+        column_gutter: default
+        row_gutter: default
+    -
+      parent_uuid: c8f4e831-fc5f-4bb6-b85e-d5969868c6e0
+      slot: header
+      uuid: 2ee55e06-5445-4639-bbc2-c6fb54cdba5c
+      component_id: sdc.dripyard_base.title-cta
+      inputs:
+        layout: default
+        title: 'Discover Your Path to Success'
+        heading_style: h2
+        button_text: 'Explore All Programs'
+        button_href:
+          uri: 'internal:/'
+          options: {  }
+        button_style: primary
+        button_target: false
+    -
+      parent_uuid: c8f4e831-fc5f-4bb6-b85e-d5969868c6e0
+      slot: cell_1
+      uuid: bc0b1b60-da1a-4df6-9c51-af9996c038b2
+      component_id: sdc.dripyard_base.text
+      inputs:
+        text:
+          value: '<p>At the Great Lakes Institute of Engineering &amp; Applied Science, we prepare professionals with strong technical knowledge, critical thinking, and a global outlook. Our graduates are equipped to work across scientific, industrial, and social sectors, contributing to the development of technologies and solutions that are sustainable, inclusive, and socially responsible.</p>'
+          format: canvas_html_block
+        style: body_m
+        color: medium
+        center: false
+    -
+      parent_uuid: c8f4e831-fc5f-4bb6-b85e-d5969868c6e0
+      slot: cell_1
+      uuid: dc7c2703-4978-4801-8031-a8442533d627
+      component_id: block.views_block.dripyard_article_cards-card_full_image
+      inputs:
+        label: 'Article Cards: Dripyard Card Full Image'
+        label_display: '0'
+        views_label: ''
+        items_per_page: null
+    -
+      uuid: afe2165b-85ee-45b0-9be6-c37f8da46782
+      component_id: sdc.dripyard_base.layout-dynamic
+      inputs:
+        theme: light
+        column_count: 1
+        row_count: 1
+        two_column_layout: '50% / 50%'
+        three_column_layout: '33% / 33% / 33%'
+        cell_align_x: default
+        cell_align_y: default
+        section_width: edge-to-edge
+        content_width: max-width
+        margin_top: zero
+        margin_bottom: zero
+        padding_top: large
+        padding_bottom: large
+        column_gutter: default
+        row_gutter: default
+    -
+      parent_uuid: afe2165b-85ee-45b0-9be6-c37f8da46782
+      slot: header
+      uuid: e812cfec-0e3e-4df8-8f6b-6da9b0cfdb26
+      component_id: sdc.dripyard_base.title-cta
+      inputs:
+        layout: default
+        title: "What's going on? "
+        heading_style: h2
+        button_text: 'See all events'
+        button_href:
+          uri: 'internal:/'
+          options: {  }
+        button_style: primary
+        button_target: false
+    -
+      parent_uuid: afe2165b-85ee-45b0-9be6-c37f8da46782
+      slot: cell_1
+      uuid: c615bb46-4d97-41f1-b91a-f252e60bd73f
+      component_id: sdc.dripyard_base.event-listing-item
+      inputs:
+        title: 'Spring Open House '
+        url:
+          uri: 'internal:/'
+          options: {  }
+        date_time_stamp_begin:
+          value: '2026-04-19T14:30:00.000Z'
+        description: 'Join us for our annual Spring Open House! Explore our beautiful campus, meet faculty and students, and learn about our academic programs. Tours, presentations, and refreshments provided.'
+        formatted_time: '5:30 PM'
+        location: 'Student Union Building'
+    -
+      parent_uuid: afe2165b-85ee-45b0-9be6-c37f8da46782
+      slot: cell_1
+      uuid: a5191477-e4e7-4452-bdba-b346cbb96e32
+      component_id: sdc.dripyard_base.event-listing-item
+      inputs:
+        title: 'Undergraduate Research Symposium '
+        url:
+          uri: 'internal:/'
+          options: {  }
+        date_time_stamp_begin:
+          value: '2026-04-23T18:30:00.000Z'
+        description: 'Celebrate student scholarship at our annual research symposium. Students from all disciplines will present their research projects through poster sessions and oral presentations.'
+        formatted_time: '6:30 PM'
+        location: 'Academic Hall Auditorium'
+    -
+      parent_uuid: afe2165b-85ee-45b0-9be6-c37f8da46782
+      slot: cell_1
+      uuid: 61a2f477-0164-43fd-8f9e-89fb75bd06a6
+      component_id: sdc.dripyard_base.event-listing-item
+      inputs:
+        title: 'Alumni Networking Reception '
+        url:
+          uri: 'internal:/'
+          options: {  }
+        date_time_stamp_begin:
+          value: '2026-05-12T15:30:00.000Z'
+        description: 'Connect with fellow Great Lakes alumni in your area. Enjoy cocktails, appetizers, and meaningful conversations while building professional networks that last a lifetime.'
+        formatted_time: '3:30'
+        location: 'Alumni Center'
+    -
+      parent_uuid: afe2165b-85ee-45b0-9be6-c37f8da46782
+      slot: cell_1
+      uuid: d5e9f5f9-e482-49a8-a3b3-5030b93bada5
+      component_id: sdc.dripyard_base.event-listing-item
+      inputs:
+        title: 'Distinguished Speaker Series '
+        url:
+          uri: 'internal:/'
+          options: {  }
+        date_time_stamp_begin:
+          value: '2026-05-04T10:30:00.000Z'
+        description: 'Join us for an inspiring lecture by renowned environmental scientist Dr. Sarah Martinez, who will discuss "Climate Change and Community Resilience" in our ongoing speaker series.'
+        formatted_time: '5:30 PM'
+        location: 'Student Union Building'
+    -
+      parent_uuid: afe2165b-85ee-45b0-9be6-c37f8da46782
+      slot: cell_1
+      uuid: 1030e26e-a609-4909-b542-abdfd7d7261f
+      component_id: sdc.dripyard_base.event-listing-item
+      inputs:
+        title: 'Spring Open House '
+        url:
+          uri: 'internal:/'
+          options: {  }
+        date_time_stamp_begin:
+          value: '2026-04-19T14:30:00.000Z'
+        description: 'Join us for our annual Spring Open House! Explore our beautiful campus, meet faculty and students, and learn about our academic programs. Tours, presentations, and refreshments provided.'
+        formatted_time: '5:30 PM'
+        location: 'Student Union Building'
+    -
+      uuid: 34f15c41-dc73-49ec-a9c8-874b49f85dc9
+      component_id: sdc.dripyard_base.layout-dynamic
+      inputs:
+        theme: inherit
+        column_count: '1'
+        row_count: '1'
+        two_column_layout: '50% / 50%'
+        three_column_layout: '33% / 33% / 33%'
+        cell_align_x: default
+        cell_align_y: default
+        section_width: edge-to-edge
+        content_width: max-width
+        margin_top: zero
+        margin_bottom: zero
+        padding_top: large
+        padding_bottom: large
+        column_gutter: default
+        row_gutter: default
+    -
+      parent_uuid: 34f15c41-dc73-49ec-a9c8-874b49f85dc9
+      slot: cell_1
+      uuid: 5662abd8-c784-4c0d-9075-aa4db160a3b4
+      component_id: sdc.dripyard_base.testimonial-canvas
+      inputs:
+        image:
+          CANVAS_ENTITY_REFERENCE:
+            target_uuid: 68475853-64bd-4abe-b486-7dae21c1ede4
+            target_type: media
+        quote: 'I have made lifelong friendships that I would have never imagined before coming to Great Lake Institute. The university and the people here have helped shape me into the person I am now.'
+        citation: 'Sophie, W.'
+        reversed: false
+        theme: inherit
+    -
+      uuid: 321d4c0f-b498-4bfb-9534-7cbabfc70da8
+      component_id: sdc.dripyard_base.layout-dynamic
+      inputs:
+        theme: inherit
+        column_count: 3
+        row_count: 1
+        two_column_layout: '50% / 50%'
+        three_column_layout: '33% / 33% / 33%'
+        cell_align_x: default
+        cell_align_y: default
+        section_width: edge-to-edge
+        content_width: max-width
+        margin_top: zero
+        margin_bottom: zero
+        padding_top: large
+        padding_bottom: large
+        column_gutter: default
+        row_gutter: default
+    -
+      parent_uuid: 321d4c0f-b498-4bfb-9534-7cbabfc70da8
+      slot: header
+      uuid: 8526e387-fb95-47b6-b28b-004df37f5d97
+      component_id: sdc.dripyard_base.title-cta
+      inputs:
+        layout: center
+        title: 'By the numbers'
+        heading_style: h2
+        button_text: 'Learn more'
+        button_href:
+          uri: 'https://www.drupal.org'
+          options: {  }
+        button_style: default
+        button_target: false
+    -
+      parent_uuid: 321d4c0f-b498-4bfb-9534-7cbabfc70da8
+      slot: cell_1
+      uuid: c5d17175-64d5-4958-99cc-3305764c18d1
+      component_id: sdc.dripyard_base.statistic
+      inputs:
+        statistic: '1200'
+        first_line: Students
+        second_line: 'Enrolled from 45 countries'
+        href: /
+    -
+      parent_uuid: 321d4c0f-b498-4bfb-9534-7cbabfc70da8
+      slot: cell_2
+      uuid: 6089f5df-4b5c-4dbf-8e64-bcf09f5d8b0e
+      component_id: sdc.dripyard_base.statistic
+      inputs:
+        statistic: 50+
+        first_line: Programs
+        second_line: 'Undergraduate and graduate degrees'
+        href: /
+    -
+      parent_uuid: 321d4c0f-b498-4bfb-9534-7cbabfc70da8
+      slot: cell_3
+      uuid: 9a861291-cb23-4f90-8315-a4361e2e7275
+      component_id: sdc.dripyard_base.statistic
+      inputs:
+        statistic: '120'
+        first_line: Awards
+        second_line: 'Research and teaching excellence'
+        href: /
+    -
+      uuid: e3cc997b-32f8-43b8-8f22-028d65a8d5b2
+      component_id: sdc.dripyard_base.layout-dynamic
+      inputs:
+        theme: inherit
+        column_count: 2
+        row_count: 1
+        two_column_layout: '50% / 50%'
+        three_column_layout: '33% / 33% / 33%'
+        cell_align_x: default
+        cell_align_y: center
+        section_width: edge-to-edge
+        content_width: max-width
+        margin_top: zero
+        margin_bottom: zero
+        padding_top: large
+        padding_bottom: large
+        column_gutter: default
+        row_gutter: default
+    -
+      parent_uuid: e3cc997b-32f8-43b8-8f22-028d65a8d5b2
+      slot: cell_1
+      uuid: 1f4091c6-95c6-4bcc-8e3b-3695466f96ad
+      component_id: sdc.dripyard_base.heading
+      inputs:
+        text: 'Undergraduate Education'
+        html_element: div
+        style: body_m
+        center: false
+        margin_top: zero
+        margin_bottom: zero
+    -
+      parent_uuid: e3cc997b-32f8-43b8-8f22-028d65a8d5b2
+      slot: cell_1
+      uuid: 9abc560e-d6b0-4a44-abea-87dd33b26016
+      component_id: sdc.dripyard_base.heading
+      inputs:
+        text: 'Build Your Future with a Degree That Matters'
+        html_element: h2
+        style: h2
+        center: false
+        margin_top: zero
+        margin_bottom: zero
+    -
+      parent_uuid: e3cc997b-32f8-43b8-8f22-028d65a8d5b2
+      slot: cell_1
+      uuid: 974af14c-9f4d-4d71-96b7-bee2501b7d0a
+      component_id: sdc.dripyard_base.text
+      inputs:
+        text:
+          value: '<p>Choose from over 40 undergraduate programs designed to prepare you for success in your chosen field. Our small class sizes ensure personalized attention from faculty who are passionate about teaching.</p>'
+          format: canvas_html_block
+        style: body_m
+        color: medium
+        center: false
+    -
+      parent_uuid: e3cc997b-32f8-43b8-8f22-028d65a8d5b2
+      slot: cell_1
+      uuid: ae027c00-80b6-4aa9-9c77-4a95a6921f93
+      component_id: sdc.dripyard_base.flex-wrapper
+      inputs:
+        theme: inherit
+        wrap: true
+        align_x: start
+        align_y: center
+        margin_top: zero
+        margin_bottom: zero
+        padding_top: zero
+        padding_bottom: zero
+        column_gutter: small
+        row_gutter: small
+    -
+      parent_uuid: ae027c00-80b6-4aa9-9c77-4a95a6921f93
+      slot: content
+      uuid: 244c5139-7ea2-4aec-bce9-30a3a39301ac
+      component_id: sdc.dripyard_base.button
+      inputs:
+        text: 'Explore Programs'
+        href:
+          uri: 'internal:/'
+          options: {  }
+        style: primary
+        size: medium
+        target: false
+        suffix_icon: arrow-right
+    -
+      parent_uuid: e3cc997b-32f8-43b8-8f22-028d65a8d5b2
+      slot: cell_2
+      uuid: 288e2dc1-1115-4812-bd13-e417dde49796
+      component_id: sdc.dripyard_base.video-youtube
+      inputs:
+        url: 'https://www.youtube.com/watch?v=lTBim0nMD5s'
+        title: 'Driesnote DrupalCon Vienna 2025'
+        border_radius: medium
+    -
+      uuid: 67fade3e-910a-4804-b1d7-f64bf4bf7829
+      component_id: sdc.dripyard_base.layout-dynamic
+      inputs:
+        theme: primary
+        column_count: 2
+        row_count: 1
+        two_column_layout: '50% / 50%'
+        three_column_layout: '33% / 33% / 33%'
+        cell_align_x: default
+        cell_align_y: default
+        section_width: edge-to-edge
+        content_width: max-width
+        margin_top: zero
+        margin_bottom: zero
+        padding_top: large
+        padding_bottom: large
+        column_gutter: default
+        row_gutter: default
+    -
+      parent_uuid: 67fade3e-910a-4804-b1d7-f64bf4bf7829
+      slot: header
+      uuid: 2d4fa4ad-fcb7-496b-aa72-01794c46a427
+      component_id: sdc.dripyard_base.title-cta
+      inputs:
+        layout: default
+        title: 'Experience Great Lakes '
+        heading_style: h2
+        button_text: 'Schedule Your Visit'
+        button_href:
+          uri: 'internal:/'
+          options: {  }
+        button_style: primary
+        button_target: false
+    -
+      parent_uuid: 67fade3e-910a-4804-b1d7-f64bf4bf7829
+      slot: cell_1
+      uuid: 4ced6e52-e479-43d8-b9be-20622d5ebc7a
+      component_id: sdc.dripyard_base.canvas-image
+      inputs:
+        image:
+          CANVAS_ENTITY_REFERENCE:
+            target_uuid: 3350ed14-b0cf-4ed1-bd34-548b38ad9410
+            target_type: media
+        width: 800
+        loading: lazy
+    -
+      parent_uuid: 67fade3e-910a-4804-b1d7-f64bf4bf7829
+      slot: cell_2
+      uuid: 33c7f872-908c-4934-a8d3-b3a91582dc74
+      component_id: sdc.dripyard_base.heading
+      inputs:
+        text: 'Undergraduate Education'
+        html_element: div
+        style: body_m
+        center: false
+        margin_top: zero
+        margin_bottom: zero
+    -
+      parent_uuid: 67fade3e-910a-4804-b1d7-f64bf4bf7829
+      slot: cell_2
+      uuid: f9fa6e44-b2dd-4022-b190-b2354e3e33b0
+      component_id: sdc.dripyard_base.heading
+      inputs:
+        text: 'Experience Great Lakes'
+        html_element: h2
+        style: h2
+        center: false
+        margin_top: zero
+        margin_bottom: zero
+    -
+      parent_uuid: 67fade3e-910a-4804-b1d7-f64bf4bf7829
+      slot: cell_2
+      uuid: 5d9e26be-e6d8-4f24-be6c-06faf718f146
+      component_id: sdc.dripyard_base.text
+      inputs:
+        text:
+          value: '<p>At Great Lakes University, education extends beyond the classroom. Discover opportunities for leadership, service, athletics, and personal growth that will shape your character and career.</p>'
+          format: canvas_html_block
+        style: body_m
+        color: medium
+        center: false
+    -
+      parent_uuid: 67fade3e-910a-4804-b1d7-f64bf4bf7829
+      slot: cell_2
+      uuid: 303b5815-81a9-4f7c-9667-5f58eeacd0f5
+      component_id: sdc.dripyard_base.flex-wrapper
+      inputs:
+        theme: inherit
+        wrap: true
+        align_x: start
+        align_y: center
+        margin_top: zero
+        margin_bottom: zero
+        padding_top: zero
+        padding_bottom: zero
+        column_gutter: small
+        row_gutter: small
+    -
+      parent_uuid: 303b5815-81a9-4f7c-9667-5f58eeacd0f5
+      slot: content
+      uuid: b15e3ef7-4aac-4532-bcd0-98fe47ccf66c
+      component_id: sdc.dripyard_base.button
+      inputs:
+        text: 'Visit Camput'
+        href:
+          uri: 'internal:/'
+          options: {  }
+        style: primary
+        size: medium
+        target: false
+        suffix_icon: arrow-right
+    -
+      parent_uuid: 303b5815-81a9-4f7c-9667-5f58eeacd0f5
+      slot: content
+      uuid: 412d386e-aa1c-4dba-bcd4-be951825bc8e
+      component_id: sdc.dripyard_base.button
+      inputs:
+        text: 'Take Virtual Tour'
+        href:
+          uri: 'internal:/'
+          options: {  }
+        style: default
+        size: medium
+        target: false
+        suffix_icon: arrow-right
+    -
+      uuid: 1bf4c267-b88f-4dd7-a1fe-fbcd92467f40
+      component_id: sdc.dripyard_base.layout-dynamic
+      inputs:
+        theme: dark
+        column_count: 1
+        row_count: 1
+        two_column_layout: '50% / 50%'
+        three_column_layout: '33% / 33% / 33%'
+        cell_align_x: default
+        cell_align_y: default
+        section_width: edge-to-edge
+        content_width: max-width
+        margin_top: zero
+        margin_bottom: zero
+        padding_top: large
+        padding_bottom: large
+        column_gutter: default
+        row_gutter: default
+    -
+      parent_uuid: 1bf4c267-b88f-4dd7-a1fe-fbcd92467f40
+      slot: header
+      uuid: 582f63de-72d2-4aa8-a085-2a4ec3500806
+      component_id: sdc.dripyard_base.title-cta
+      inputs:
+        layout: default
+        title: 'Stay Connected with Campus Life '
+        heading_style: h2
+        button_text: 'Read All News'
+        button_href:
+          uri: 'internal:/'
+          options: {  }
+        button_style: primary
+        button_target: false
+    -
+      parent_uuid: 1bf4c267-b88f-4dd7-a1fe-fbcd92467f40
+      slot: cell_1
+      uuid: 40e43055-7725-4c1e-b79c-5014545da6d8
+      component_id: block.views_block.dripyard_article_cards-card
+      inputs:
+        label: 'Article Cards: Dripyard Card'
+        label_display: '0'
+        views_label: ''
+        items_per_page: null
+    -
+      uuid: e05d94b8-2d37-4eed-9873-6f3a0b9fb4fb
+      component_id: sdc.dripyard_base.layout-dynamic
+      inputs:
+        theme: inherit
+        column_count: '1'
+        row_count: '1'
+        two_column_layout: '50% / 50%'
+        three_column_layout: '33% / 33% / 33%'
+        cell_align_x: default
+        cell_align_y: default
+        section_width: edge-to-edge
+        content_width: max-width
+        margin_top: zero
+        margin_bottom: zero
+        padding_top: large
+        padding_bottom: large
+        column_gutter: default
+        row_gutter: default
+    -
+      parent_uuid: e05d94b8-2d37-4eed-9873-6f3a0b9fb4fb
+      slot: cell_1
+      uuid: ad8b3db4-5b48-417d-a54b-a7d76ad08f63
+      component_id: sdc.dripyard_base.accordion-group
+      inputs:
+        theme: inherit
+        variation: background-color
+    -
+      parent_uuid: ad8b3db4-5b48-417d-a54b-a7d76ad08f63
+      slot: accordion_group_content
+      uuid: b03b086c-915b-47c4-b217-065e6ea8c771
+      component_id: sdc.dripyard_base.accordion-item
+      inputs:
+        title: 'How do I apply to Great Lakes University?'
+        open: false
+    -
+      parent_uuid: b03b086c-915b-47c4-b217-065e6ea8c771
+      slot: accordion_item_content
+      uuid: cecd7b4c-7a2a-4701-91bc-0d4ae0a80b42
+      component_id: sdc.dripyard_base.text
+      inputs:
+        text:
+          value: '<p>Our streamlined application process makes it easy to join the Great Lakes family. Simply complete our online application, submit your transcripts, provide letters of recommendation, and write a personal essay. Our admissions team is here to guide you through every step.</p>'
+          format: canvas_html_block
+        style: body_m
+        color: medium
+        center: false
+    -
+      parent_uuid: ad8b3db4-5b48-417d-a54b-a7d76ad08f63
+      slot: accordion_group_content
+      uuid: 7c167360-c496-432e-be99-a2f4c9418021
+      component_id: sdc.dripyard_base.accordion-item
+      inputs:
+        title: 'What financial aid options are available?'
+        open: false
+    -
+      parent_uuid: 7c167360-c496-432e-be99-a2f4c9418021
+      slot: accordion_item_content
+      uuid: 162adef6-599d-42fe-b0fe-5dfae415034a
+      component_id: sdc.dripyard_base.text
+      inputs:
+        text:
+          value: '<p>Great Lakes University is committed to making education affordable. We offer merit-based scholarships, need-based grants, work-study programs, and federal student loans. Over 90% of our students receive some form of financial assistance.</p>'
+          format: canvas_html_block
+        style: body_m
+        color: medium
+        center: false
+    -
+      parent_uuid: ad8b3db4-5b48-417d-a54b-a7d76ad08f63
+      slot: accordion_group_content
+      uuid: 25406171-6f00-4886-9e56-6eed3895f349
+      component_id: sdc.dripyard_base.accordion-item
+      inputs:
+        title: 'What are the housing options on campus?'
+        open: false
+    -
+      parent_uuid: 25406171-6f00-4886-9e56-6eed3895f349
+      slot: accordion_item_content
+      uuid: bf49b443-9e55-4628-b9a6-68bb5fbe3e04
+      component_id: sdc.dripyard_base.text
+      inputs:
+        text:
+          value: '<p>Our residential life program offers traditional residence halls, suite-style living, and apartment-style housing for upperclassmen. All residence halls feature study lounges, recreational facilities, and 24/7 security. Living on campus is a great way to build lifelong friendships and stay connected to campus activities.</p>'
+          format: canvas_html_block
+        style: body_m
+        color: medium
+        center: false
+    -
+      parent_uuid: e05d94b8-2d37-4eed-9873-6f3a0b9fb4fb
+      slot: cell_1
+      uuid: 33f5edfa-909a-4ed8-a68c-0168f939c29e
+      component_id: sdc.dripyard_base.layout-dynamic
+      inputs:
+        theme: inherit
+        column_count: '1'
+        row_count: '1'
+        two_column_layout: '50% / 50%'
+        three_column_layout: '33% / 33% / 33%'
+        cell_align_x: default
+        cell_align_y: default
+        section_width: edge-to-edge
+        content_width: max-width
+        margin_top: zero
+        margin_bottom: zero
+        padding_top: large
+        padding_bottom: large
+        column_gutter: default
+        row_gutter: default
+    -
+      parent_uuid: 33f5edfa-909a-4ed8-a68c-0168f939c29e
+      slot: cell_1
+      uuid: d3df4b4c-60e5-4498-bc21-68eb4e1d79a5
+      component_id: sdc.dripyard_base.tab-group
+      inputs:
+        canvas_edit_mode: true
+        centered: false
+        placement: top
+        theme: inherit
+        icon_size: small
+        icon_placement: vertical
+    -
+      parent_uuid: d3df4b4c-60e5-4498-bc21-68eb4e1d79a5
+      slot: tabs
+      uuid: 534fb07a-c326-48a9-89bc-1cd9bc04ba1d
+      component_id: sdc.dripyard_base.tab
+      inputs:
+        title: 'Business Administration'
+        icon: chart-line
+    -
+      parent_uuid: 534fb07a-c326-48a9-89bc-1cd9bc04ba1d
+      slot: tab_panel_content
+      uuid: e566211e-8990-496d-aed8-0695c36f3187
+      component_id: sdc.dripyard_base.text
+      inputs:
+        text:
+          value: '<p>Our AACSB-accredited business program prepares students for success in the global marketplace. With concentrations in management, marketing, finance, and entrepreneurship, students gain practical skills through internships, case studies, and real-world projects.</p>'
+          format: canvas_html_block
+        style: body_m
+        color: medium
+        center: false
+    -
+      parent_uuid: d3df4b4c-60e5-4498-bc21-68eb4e1d79a5
+      slot: tabs
+      uuid: a1d0768d-b460-4675-8208-efc3c6e75f3f
+      component_id: sdc.dripyard_base.tab
+      inputs:
+        title: 'Teacher Education'
+        icon: chalkboard-user
+    -
+      parent_uuid: a1d0768d-b460-4675-8208-efc3c6e75f3f
+      slot: tab_panel_content
+      uuid: 8a768b58-060c-4431-b707-51fa06af5528
+      component_id: sdc.dripyard_base.text
+      inputs:
+        text:
+          value: '<p>Shape the next generation through our comprehensive teacher education program. Students gain hands-on experience in local schools while learning the latest pedagogical approaches. Graduates are prepared to teach in elementary, middle, and high school settings.</p>'
+          format: canvas_html_block
+        style: body_m
+        color: medium
+        center: false
+    -
+      parent_uuid: d3df4b4c-60e5-4498-bc21-68eb4e1d79a5
+      slot: tabs
+      uuid: e706685d-3234-4368-9124-be71206daa5f
+      component_id: sdc.dripyard_base.tab
+      inputs:
+        title: 'Liberal Arts & Sciences'
+        icon: book-open
+    -
+      parent_uuid: e706685d-3234-4368-9124-be71206daa5f
+      slot: tab_panel_content
+      uuid: 4d510ee4-6bb0-4333-990d-0f284e2af5ce
+      component_id: sdc.dripyard_base.text
+      inputs:
+        text:
+          value: '<p>Our AACSB-accredited business program prepares students for success in the global marketplace. With concentrations in management, marketing, finance, and entrepreneurship, students gain practical skills through internships, case studies, and real-world projects.</p>'
+          format: canvas_html_block
+        style: body_m
+        color: medium
+        center: false
+    -
+      uuid: 6c2b2283-d199-475a-8651-6a8454e6511d
+      component_id: sdc.dripyard_base.layout-dynamic
+      inputs:
+        theme: dark
+        column_count: 1
+        row_count: 1
+        two_column_layout: '50% / 50%'
+        three_column_layout: '33% / 33% / 33%'
+        cell_align_x: default
+        cell_align_y: default
+        section_width: edge-to-edge
+        content_width: max-width
+        margin_top: zero
+        margin_bottom: zero
+        padding_top: large
+        padding_bottom: large
+        column_gutter: default
+        row_gutter: default
+    -
+      parent_uuid: 6c2b2283-d199-475a-8651-6a8454e6511d
+      slot: cell_1
+      uuid: 0d676168-d351-4c47-a118-179d3da0f1e4
+      component_id: sdc.dripyard_base.carousel
+      inputs:
+        label: 'Product features'
+        pager: true
+        navigation_position: hidden
+        slides_per_view: 4
+        rows: 1
+        canvas_edit_mode: true
+    -
+      parent_uuid: 0d676168-d351-4c47-a118-179d3da0f1e4
+      slot: carousel_items
+      uuid: 82d18438-79fc-414e-bcae-fe7c4e3cc4d0
+      component_id: sdc.dripyard_base.icon-card
+      inputs:
+        title: 'Career Success'
+        icon: briefcase
+        href:
+          uri: 'internal:/'
+          options: {  }
+        no_background: false
+        layout: portrait
+        icon_size: large
+        body: 'Comprehensive career services to help you land your dream job after graduation.'
+    -
+      parent_uuid: 0d676168-d351-4c47-a118-179d3da0f1e4
+      slot: carousel_items
+      uuid: 16e4b509-0ff6-4f1b-8c6f-e014a5d96327
+      component_id: sdc.dripyard_base.icon-card
+      inputs:
+        title: 'Vibrant Campus Life'
+        icon: users
+        href:
+          uri: 'internal:/'
+          options: {  }
+        no_background: false
+        layout: portrait
+        icon_size: large
+        body: 'Join a community of engaged students with diverse interests, clubs, and activities.'
+    -
+      parent_uuid: 0d676168-d351-4c47-a118-179d3da0f1e4
+      slot: carousel_items
+      uuid: 167601d8-c62e-4a80-a5f2-93c0531eb21a
+      component_id: sdc.dripyard_base.icon-card
+      inputs:
+        title: 'Research Excellence'
+        icon: magnifying-glass-chart
+        href:
+          uri: 'internal:/'
+          options: {  }
+        no_background: false
+        layout: portrait
+        icon_size: large
+        body: 'Engage in cutting-edge research alongside faculty mentors across diverse disciplines.'
+    -
+      parent_uuid: 0d676168-d351-4c47-a118-179d3da0f1e4
+      slot: carousel_items
+      uuid: e405aa36-dbe2-44b9-9cad-6e4dfafccd79
+      component_id: sdc.dripyard_base.icon-card
+      inputs:
+        title: 'Academic Excellence'
+        icon: graduation-cap
+        href:
+          uri: 'internal:/'
+          options: {  }
+        no_background: false
+        layout: portrait
+        icon_size: large
+        body: 'Discover rigorous programs taught by dedicated faculty who are committed to your success.'
+    -
+      parent_uuid: 0d676168-d351-4c47-a118-179d3da0f1e4
+      slot: carousel_items
+      uuid: a7b3c9e1-f2d4-4a5b-9c8e-1f3d5e7a9b2c
+      component_id: sdc.dripyard_base.icon-card
+      inputs:
+        title: 'Study Abroad'
+        icon: earth-americas
+        href:
+          uri: 'internal:/'
+          options: {  }
+        no_background: false
+        layout: portrait
+        icon_size: large
+        body: 'Expand your worldview through international study opportunities in over 30 countries.'
+    -
+      parent_uuid: 0d676168-d351-4c47-a118-179d3da0f1e4
+      slot: carousel_items
+      uuid: b4c8d1e5-a3f6-4d7e-8b9c-2a4f6d8e1c3b
+      component_id: sdc.dripyard_base.icon-card
+      inputs:
+        title: 'Modern Facilities'
+        icon: building-columns
+        href:
+          uri: 'internal:/'
+          options: {  }
+        no_background: false
+        layout: portrait
+        icon_size: large
+        body: 'State-of-the-art classrooms, labs, and technology to support innovative learning.'
+    -
+      parent_uuid: 0d676168-d351-4c47-a118-179d3da0f1e4
+      slot: carousel_items
+      uuid: c5d9e2f6-b4a7-4e8f-9c1d-3b5a7e9f2d4c
+      component_id: sdc.dripyard_base.icon-card
+      inputs:
+        title: 'Small Class Sizes'
+        icon: people-group
+        href:
+          uri: 'internal:/'
+          options: {  }
+        no_background: false
+        layout: portrait
+        icon_size: large
+        body: 'Personalized attention with an average class size of 18 students per faculty member.'
+    -
+      parent_uuid: 0d676168-d351-4c47-a118-179d3da0f1e4
+      slot: carousel_items
+      uuid: d6e1f3a7-c5b8-4f9a-9d2e-4c6b8f1a3e5d
+      component_id: sdc.dripyard_base.icon-card
+      inputs:
+        title: 'Athletic Programs'
+        icon: trophy
+        href:
+          uri: 'internal:/'
+          options: {  }
+        no_background: false
+        layout: portrait
+        icon_size: large
+        body: 'Compete at the highest level with 18 varsity sports and championship facilities.'
+    -
+      parent_uuid: 0d676168-d351-4c47-a118-179d3da0f1e4
+      slot: carousel_items
+      uuid: e7f2a4b8-d6c9-4a1b-ae3f-5d7c9a2b4f6e
+      component_id: sdc.dripyard_base.icon-card
+      inputs:
+        title: 'Community Service'
+        icon: hand-holding-heart
+        href:
+          uri: 'internal:/'
+          options: {  }
+        no_background: false
+        layout: portrait
+        icon_size: large
+        body: 'Make a difference through service-learning projects and community partnerships.'
+    -
+      parent_uuid: 0d676168-d351-4c47-a118-179d3da0f1e4
+      slot: carousel_items
+      uuid: f8a3b5c9-e7d1-4b2c-bf4a-6e8d1c3b5a7f
+      component_id: sdc.dripyard_base.icon-card
+      inputs:
+        title: 'Internship Network'
+        icon: handshake
+        href:
+          uri: 'internal:/'
+          options: {  }
+        no_background: false
+        layout: portrait
+        icon_size: large
+        body: 'Gain real-world experience through partnerships with leading employers nationwide.'
+    -
+      parent_uuid: 0d676168-d351-4c47-a118-179d3da0f1e4
+      slot: carousel_items
+      uuid: a9b4c6d8-f8e2-4c3d-8a5b-7f9e2d4c6b8a
+      component_id: sdc.dripyard_base.icon-card
+      inputs:
+        title: 'Student Support'
+        icon: user-check
+        href:
+          uri: 'internal:/'
+          options: {  }
+        no_background: false
+        layout: portrait
+        icon_size: large
+        body: 'Comprehensive academic advising, tutoring, and wellness services for your success.'
+    -
+      parent_uuid: 0d676168-d351-4c47-a118-179d3da0f1e4
+      slot: carousel_items
+      uuid: b1c5d7e9-a9f3-4d4e-9b6c-8a1f3e5d7c9b
+      component_id: sdc.dripyard_base.icon-card
+      inputs:
+        title: 'Sustainability Focus'
+        icon: leaf
+        href:
+          uri: 'internal:/'
+          options: {  }
+        no_background: false
+        layout: portrait
+        icon_size: large
+        body: 'Leading the way in environmental stewardship with green campus initiatives.'
+  path:
+    -
+      alias: /greatlakes-home-page
+      langcode: en
+  revision_translation_affected:
+    -
+      value: true

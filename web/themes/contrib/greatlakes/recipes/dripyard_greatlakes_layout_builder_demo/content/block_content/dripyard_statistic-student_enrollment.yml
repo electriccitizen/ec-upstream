@@ -1,0 +1,28 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 1b4de993-8601-4e65-a239-310af4e6cf36
+  bundle: dripyard_statistic
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Student Enrollment'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  dripyard_statistic:
+    -
+      value: '1200'
+  dripyard_statistic_first_line:
+    -
+      value: 'Students '
+  dripyard_statistic_second_line:
+    -
+      value: 'Enrolled from 45 countries'

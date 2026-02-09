@@ -1,0 +1,25 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Header Popover
+status: stable
+noUi: true
+props:
+  type: object
+  required:
+    - popover_id
+  properties:
+    popover_id:
+      type: string
+      title: Popover ID
+slots:
+  content_top:
+    type: object
+    title: Top content slot
+  content_left:
+    type: object
+    title: Left content slot
+  content_right:
+    type: object
+    title: Right content slot
+  content_bottom:
+    type: object
+    title: Bottom content slot

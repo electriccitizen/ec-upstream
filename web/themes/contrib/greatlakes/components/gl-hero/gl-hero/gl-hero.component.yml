@@ -1,0 +1,78 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Hero
+status: stable
+group: Dripyard Heros
+props:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      title: Title
+      type: string
+      examples:
+        - Great Lakes Institute
+    theme:
+      title: Theme
+      type: string
+      enum:
+        - inherit
+        - white
+        - light
+        - dark
+        - black
+        - primary
+      meta:enum:
+        inherit: Inherit
+        white: White
+        light: Light
+        dark: Dark
+        black: Black
+        primary: Primary
+      examples: [ inherit ]
+    align_x:
+      title: Alignment - horizontal
+      type: string
+      enum:
+        - start
+        - center
+        - end
+      meta:enum:
+        start: Start
+        center: Center
+        end: End
+      default: start
+    align_y:
+      title: Alignment - vertical
+      type: string
+      enum:
+        - top
+        - center
+        - bottom
+      meta:enum:
+        top: Top
+        center: Center
+        bottom: Bottom
+      default: center
+    text_color:
+      title: Text color
+      type: string
+      enum:
+        - inherit
+        - black
+        - white
+        - primary
+      meta:enum:
+        inherit: Inherit
+        black: Black
+        white: White
+        primary: Primary
+      default: inherit
+      examples: [ 'inherit' ]
+slots:
+  hero_media:
+    title: Image or video
+  hero_content:
+    title: Hero content
+  hero_ctas:
+    title: Hero links

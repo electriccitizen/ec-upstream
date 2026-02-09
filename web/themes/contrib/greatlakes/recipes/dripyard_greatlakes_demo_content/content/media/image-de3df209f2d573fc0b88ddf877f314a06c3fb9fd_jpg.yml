@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 68475853-64bd-4abe-b486-7dae21c1ede4
+  bundle: image
+  default_langcode: en
+  depends:
+    12d30042-6d4f-4eac-a014-dfb118d5ead0: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: de3df209f2d573fc0b88ddf877f314a06c3fb9fd.jpg
+  created:
+    -
+      value: 1754409008
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+  field_media_image:
+    -
+      entity: 12d30042-6d4f-4eac-a014-dfb118d5ead0
+      alt: 'Sophie W. Class of 2024 Great Lakes Institute'
+      title: ''
+      width: 4096
+      height: 2731

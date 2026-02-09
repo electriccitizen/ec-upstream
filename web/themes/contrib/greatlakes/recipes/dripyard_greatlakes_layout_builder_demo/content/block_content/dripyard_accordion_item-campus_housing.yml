@@ -1,0 +1,28 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 9483a012-6b5b-4eb3-8c11-409cd8c32593
+  bundle: dripyard_accordion_item
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Campus Housing'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: '<p>Our residential life program offers traditional residence halls, suite-style living, and apartment-style housing for upperclassmen. All residence halls feature study lounges, recreational facilities, and 24/7 security. Living on campus is a great way to build lifelong friendships and stay connected to campus activities.</p>'
+      format: basic_html
+      summary: ''
+  dripyard_title:
+    -
+      value: 'What are the housing options on campus?'
+      format: plain_text

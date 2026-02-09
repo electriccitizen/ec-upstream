@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: a6856e73-1dbe-4312-b949-2cc8656dff39
+  bundle: dripyard_title_cta
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Visit Campus'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  dripyard_component_layout:
+    -
+      value: default
+  dripyard_cta:
+    -
+      uri: 'internal:/visit'
+      title: 'Schedule Your Visit'
+      options: {  }
+  dripyard_title:
+    -
+      value: '<p>Experience Great Lakes</p>'
+      format: dripyard_superbasic

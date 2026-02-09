@@ -1,0 +1,46 @@
+# Licensed to: tim@electriccitizen.com (376c7aea-e2de-48f0-8ae4-a82f620f5922)
+name: greatlakes_subtheme
+type: theme
+'base theme': greatlakes
+description: ''
+core_version_requirement: ^11
+
+libraries:
+  - greatlakes_subtheme/base
+  - greatlakes/global
+  
+version: 1.0.0
+generator: 'greatlakes_subtheme:unknown-version'
+
+#
+# Libraries extend will add custom libraries to specified libraries
+# @see https://www.drupal.org/docs/develop/theming-drupal/adding-assets-css-js-to-a-drupal-theme-via-librariesyml
+#
+
+# libraries-extend:
+
+# In this, case we extend dripyard_base's user-login-form library with
+# our own of the same name.
+
+#   dripyard_base/user-login-form:
+#     - testtheme/user-login-form
+
+# Here we extend dripyard_base's status-message SDC library with our own.
+
+#  core/components.dripyard_base--status-messages:
+#    - testtheme/status-messages
+
+regions:
+  fixed_hero: Fixed hero
+  header: Header
+  header_popover_top: Header popover content (top)
+  header_popover_left: Header popover content (left)
+  header_popover_right: Header popover content (right)
+  header_popover_bottom: Header popover content (bottom)
+  highlighted: Highlighted
+  content: Content
+  fixed_bottom_right: Fixed bottom right (messages)
+  footer_top: Footer top
+  footer_left: Footer left
+  footer_right: Footer right
+  footer_bottom: Footer bottom

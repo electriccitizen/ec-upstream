@@ -1,0 +1,8 @@
+/*
+ * @file
+ * Theme specific style overrides for cards.
+ */
+
+ .card {
+  --card-border-radius: var(--radius-sm);
+ }

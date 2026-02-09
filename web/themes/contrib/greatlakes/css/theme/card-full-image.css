@@ -1,0 +1,8 @@
+/*
+ * @file
+ * Theme specific style overrides for full image cards.
+ */
+
+.card-full-image {
+  --card-full-image-border-radius: var(--radius-sm);
+}

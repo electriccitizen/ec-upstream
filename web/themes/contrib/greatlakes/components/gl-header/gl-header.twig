@@ -1,0 +1,17 @@
+{% set popover_id = 'site-header-popover-' ~ random() %}
+<header{{ attributes.addClass('site-header')}}>
+  <div class="container site-header__container">
+    {{ header }}
+    {{ include('greatlakes:gl-mobile-nav-button', {
+      controls_id: popover_id,
+    }, with_context = false) }}
+  </div>
+
+  {{ include('greatlakes:header-popover', {
+    popover_id,
+    popover_content_top,
+    popover_content_left,
+    popover_content_right,
+    popover_content_bottom,
+  }, with_context = false) }}
+</header>

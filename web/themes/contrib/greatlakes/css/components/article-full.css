@@ -1,0 +1,17 @@
+/*
+ * Styles for article full view mode.
+ */
+
+
+.article,
+.article .grid-area--content {
+  > *:has(+ *) {
+    margin-bottom: var(--spacing-component-internal);
+  }
+}
+
+.article__image {
+  img {
+    width: 100%;
+  }
+}

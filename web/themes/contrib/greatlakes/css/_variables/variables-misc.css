@@ -1,0 +1,14 @@
+/*
+ * @file
+ * Misc variables.
+ */
+
+:root {
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 40px;
+  --radius-button: var(--radius-lg);
+  --focus-ring-width: 3px;
+  --focus-ring-style: dotted;
+  --focus-ring-color: currentColor;
+}

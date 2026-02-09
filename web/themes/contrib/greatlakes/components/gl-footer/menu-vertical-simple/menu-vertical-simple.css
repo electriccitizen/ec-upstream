@@ -1,0 +1,32 @@
+/**
+ * @file
+ * Styling for the simple vertical menu.
+ */
+
+ .menu-vertical-simple {
+  --menu-vertical-simple-item-padding-block: 10px;
+  --menu-vertical-simple-item-padding-inline: var(--padding-inline);
+  --menu-vertical-simple--border-color: var(--theme-border-color-alt);
+  --menu-vertical-simple-font-size: var(--body-l);
+ }
+
+.menu-vertical-simple__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-vertical-simple__item {
+  margin-block: 0;
+  margin-inline: calc(-1 * var(--menu-vertical-simple-item-padding-inline));
+  padding: 0;
+  list-style: none;
+  border-bottom: solid 1px var(--menu-vertical-simple--border-color);
+}
+
+.menu-vertical-simple__link {
+  display: block;
+  padding-block: var(--menu-vertical-simple-item-padding-block);
+  padding-inline: var(--menu-vertical-simple-item-padding-inline);
+  text-decoration: none;
+}

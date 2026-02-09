@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 7a12ed6a-3de0-4c81-9320-ca7d4c15d275
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    ad2a8e3f-30e4-42be-b56e-33d043cb7ed4: menu_link_content
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Sports Teams'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      uri: 'internal:/sports'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: -50
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:ad2a8e3f-30e4-42be-b56e-33d043cb7ed4'
+  revision_translation_affected:
+    -
+      value: true

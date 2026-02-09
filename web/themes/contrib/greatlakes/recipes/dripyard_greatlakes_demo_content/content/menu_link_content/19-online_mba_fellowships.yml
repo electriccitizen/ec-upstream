@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 616bd3a2-62f3-418b-abfb-9360a2db1d72
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    6e78c757-10fe-4fc1-830f-45d51b64dc00: menu_link_content
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Online MBA Fellowships '
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      uri: 'internal:/'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: -48
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:6e78c757-10fe-4fc1-830f-45d51b64dc00'
+  revision_translation_affected:
+    -
+      value: true

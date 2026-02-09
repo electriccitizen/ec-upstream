@@ -1,0 +1,61 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 9d306043-636c-43aa-b483-fe9c752b5108
+  bundle: article
+  default_langcode: en
+  depends:
+    4bd5ae8f-73f6-4955-adaa-da6206a3c62e: file
+    5f790f77-136b-5771-9620-3f0f1de8f5cd: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Campus Life and Student Activities'
+  created:
+    -
+      value: 1745292000
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+  body:
+    -
+      value: "<p>Life at Great Lakes University extends far beyond the classroom. With over 60 student organizations, NCAA Division III athletics, and a vibrant campus community, there's something for everyone to get involved in and make lasting connections.</p><p>Student government provides opportunities for leadership and advocacy, while academic honor societies recognize scholarly achievement. Greek life offers brotherhood and sisterhood experiences, and service organizations allow students to give back to the community. Our campus programming board organizes concerts, speakers, and social events throughout the year.</p><p>Athletics play a central role in campus life, with 18 varsity sports teams competing in the Great Lakes Athletic Conference. Whether you're a student-athlete or a fan cheering from the stands, Laker pride runs deep throughout our community.</p>"
+      format: basic_html
+      summary: ''
+  comment:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1754402866
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_image:
+    -
+      entity: 4bd5ae8f-73f6-4955-adaa-da6206a3c62e
+      alt: 'Students attending a fraternity event on campus.'
+      title: ''
+      width: 3872
+      height: 2585
+  field_tags:
+    -
+      entity: 5f790f77-136b-5771-9620-3f0f1de8f5cd

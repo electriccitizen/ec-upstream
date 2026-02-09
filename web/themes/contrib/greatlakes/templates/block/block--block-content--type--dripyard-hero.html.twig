@@ -1,0 +1,34 @@
+{% set block_content = content['#block_content'] %}
+{% set in_layout_builder = elements['#in_preview'] %}
+
+{% if in_layout_builder %}
+  <div{{ attributes }}>
+    {{ title_prefix }}
+    {{ title_suffix }}
+{% endif %}
+
+{% embed 'greatlakes:gl-hero' with {
+  ctas: props.dripyard_cta,
+  title: props.dripyard_title|default(''),
+  image: content.dripyard_image_media|add_suggestion('bare'),
+  theme: props.dripyard_component_theme|default('inherit'),
+  align_x: block_content.dripyard_align_x|first.value|default('start'),
+  align_y: block_content.dripyard_align_y|first.value|default('center'),
+  text_color: block_content.dripyard_text_color|first.value|default('inherit'),
+} only %}
+  {% block hero_media %}
+    {{ image }}
+  {% endblock %}
+  {% block hero_ctas %}
+    {% for cta in ctas %}
+      {{ include('greatlakes:gl-hero-cta', {
+        href: cta.href,
+        text: cta.text,
+      }, with_context = false) }}
+    {% endfor %}
+  {% endblock %}
+{% endembed %}
+
+{% if in_layout_builder %}
+  </div>
+{% endif %}

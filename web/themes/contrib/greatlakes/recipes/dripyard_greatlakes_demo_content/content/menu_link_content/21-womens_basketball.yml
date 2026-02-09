@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 9fad1bf7-8992-4a42-b92d-28173c14f5c1
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    ad2a8e3f-30e4-42be-b56e-33d043cb7ed4: menu_link_content
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: "Women's Basketball"
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      uri: 'internal:/'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: -46
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:ad2a8e3f-30e4-42be-b56e-33d043cb7ed4'
+  revision_translation_affected:
+    -
+      value: true

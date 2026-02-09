@@ -1,0 +1,30 @@
+/*
+ * Fonts.
+ *
+ * ⚠️ Note when making changes here, be sure to change font preloading in
+ * `templates/includes/html-header.twig`
+ */
+
+@font-face {
+  font-display: block;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../fonts/dm-sans/dm-sans-v16-latin_latin-ext-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../../fonts/dm-sans/dm-sans-v16-latin_latin-ext-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: block;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../../fonts/dm-sans/dm-sans-v16-latin_latin-ext-700.woff2') format('woff2');
+}

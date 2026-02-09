@@ -1,0 +1,23 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: GL Hero CTA
+status: stable
+group: Dripyard Heros
+props:
+  type: object
+  required:
+    - text
+    - href
+  properties:
+    text:
+      title: CTA text
+      type: string
+      examples:
+        - Book a Demo
+        - Get Started
+    href:
+      title: Link URL
+      type: string
+      format: uri-reference
+      examples:
+        - 'https://example.com'
+        - '/contact'

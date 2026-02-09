@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 8d46294f-e1a0-41de-ab61-58b4956bcc51
+  bundle: dripyard_event_listing_item
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Alumni Networking Reception'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: 'Connect with fellow Great Lakes alumni in your area. Enjoy cocktails, appetizers, and meaningful conversations while building professional networks that last a lifetime.'
+      format: basic_html
+      summary: ''
+  dripyard_date:
+    -
+      value: '2025-05-02T15:30:00'
+  dripyard_link:
+    -
+      uri: 'internal:/'
+      title: 'RSVP Required'
+      options: {  }
+  dripyard_location:
+    -
+      value: 'Alumni Center'
+  dripyard_title:
+    -
+      value: 'Alumni Networking Reception'
+      format: plain_text

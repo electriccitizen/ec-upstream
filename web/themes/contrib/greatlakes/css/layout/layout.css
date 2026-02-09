@@ -1,0 +1,11 @@
+/*
+ * @file
+ * Various layout utility classes essential to the layout of the site.
+ */
+
+.site-main {
+  position: relative;
+  padding-top: var(--spacing-component);
+  background: var(--theme-surface);
+  z-index: 2;
+}

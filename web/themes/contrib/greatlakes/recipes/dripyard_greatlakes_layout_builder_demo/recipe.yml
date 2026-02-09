@@ -1,0 +1,25 @@
+name: Dripyard GreatLakes Layout Builder Demo
+type: Dripyard
+description: 'This recipe provides a Layout Builder based install of https://greatlakes.dripyard.com. It includes a landing page with various blocks and configurations.'
+install:
+  - layout_builder
+  - layout_discovery
+recipes:
+  - 'dripyard_greatlakes_blocks'
+  - 'dripyard_node_landing_pages'
+  - 'dripyard_greatlakes_demo_content'
+config:
+  strict: false
+  actions:
+    system.site:
+      simpleConfigUpdate:
+        page:
+          front: '/greatlakes-home-page'
+    core.menu.static_menu_link_overrides:
+      simpleConfigUpdate:
+        definitions.standard__front_page:
+          menu_name: main
+          enabled: false
+          expanded: false
+          parent: false
+          weight: -50

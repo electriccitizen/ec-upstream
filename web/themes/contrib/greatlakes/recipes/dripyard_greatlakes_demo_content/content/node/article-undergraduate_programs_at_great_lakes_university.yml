@@ -1,0 +1,61 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: ceb9ed04-7405-4c11-9137-f237c0e140cb
+  bundle: article
+  default_langcode: en
+  depends:
+    5abbfcc5-0672-470f-a321-6cfe84fd02f8: file
+    4e689e66-025a-4660-8519-2e9e0cd7f4bc: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Undergraduate Programs at Great Lakes University'
+  created:
+    -
+      value: 1745291959
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+  body:
+    -
+      value: "<p>Great Lakes University offers over 40 undergraduate degree programs across four schools: the School of Business, School of Education, School of Liberal Arts and Sciences, and School of Applied Sciences. Our academic programs are designed to provide students with both theoretical knowledge and practical skills needed for success in their chosen careers.</p><p>What sets our programs apart is our commitment to small class sizes, hands-on learning experiences, and close mentorship from faculty. Students have opportunities to engage in undergraduate research, complete internships with local and regional employers, and participate in study abroad programs that broaden their global perspective.</p><p>Whether you're interested in pursuing a career in business, education, healthcare, or the arts, Great Lakes University provides the foundation for your success. Our graduates consistently report high satisfaction rates and strong employment outcomes, with 94% finding employment or continuing their education within six months of graduation.</p>"
+      format: basic_html
+      summary: ''
+  comment:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1754402764
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_image:
+    -
+      entity: 5abbfcc5-0672-470f-a321-6cfe84fd02f8
+      alt: 'Student reviewing the latest research on their laptop.'
+      title: ''
+      width: 2300
+      height: 4096
+  field_tags:
+    -
+      entity: 4e689e66-025a-4660-8519-2e9e0cd7f4bc

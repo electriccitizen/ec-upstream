@@ -1,0 +1,262 @@
+/*
+ * @file
+ * Styles for our primary hero.
+ */
+
+.gl-hero {
+  --gl-hero-height: var(--region-fixed-hero-height, clamp(700px, 80vh, 1000px));
+  --gl-hero-text-color: var(--theme-text-color-loud);
+  --gl-hero-border-color: var(--gl-hero-text-color);
+  --gl-hero-horizontal-border-image-to-both: linear-gradient(0deg, var(--gl-hero-border-color) 1px, transparent 0) fill 0 / / 0 100vw 0 100vw;
+  --gl-hero-horizontal-border-image-to-right: linear-gradient(0deg, var(--gl-hero-border-color) 1px, transparent 0) fill 0 / / 0 100vw 0 0;
+  --gl-hero-horizontal-border-image-to-left: linear-gradient(0deg, var(--gl-hero-border-color) 1px, transparent 0) fill 0 / / 0 0 0 100vw;
+  --gl-hero-cta-item-alignment: center;
+  --gl-hero-cta-padding-block-value: 44px;
+  --gl-hero-cta-padding-block: var(--gl-hero-cta-padding-block-value) var(--gl-hero-cta-padding-block-value);
+  --gl-hero-cta-padding-inline-value: 20px;
+  --gl-hero-cta-padding-inline: var(--gl-hero-cta-padding-inline-value) var(--gl-hero-cta-padding-inline-value);
+
+  position: relative; /* Anchor image. */
+
+  container-type: inline-size; /* We define it here, because we cannot define this on the region template, because Safari will then not fix the region. */
+  color: var(--gl-hero-text-color);
+
+  &.theme--dark {
+    --theme-text-color-medium: var(--white);
+  }
+
+  &.theme--light {
+    --theme-text-color-medium: var(--black);
+  }
+
+  .layout-builder & {
+    margin-top: 0;
+  }
+}
+
+.gl-hero--text-color-white[class][class] {
+  --gl-hero-text-color: var(--white);
+}
+
+.gl-hero--text-color-black[class][class] {
+  --gl-hero-text-color: var(--black);
+}
+
+.gl-hero--text-color-primary[class][class] {
+  --gl-hero-text-color: var(--theme-text-color-primary);
+}
+
+.gl-hero__media {
+  width: 100%;
+
+  &::after {
+    content: "";
+    background-image: linear-gradient(to bottom in oklch, rgb(0 0 0 / 60%), rgb(0 0 0 / 20%));
+  }
+
+  .video-player,
+  .video-player__container {
+    display: contents;
+  }
+
+  &::after,
+  video,
+  img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    inset-inline: 0;
+    margin-inline: auto;
+  }
+}
+
+.gl-hero__container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  height: var(--gl-hero-height);
+
+  @media (width > 1000px) {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  @media (width > 1300px) {
+    grid-template-columns: 3fr 1fr;
+  }
+}
+
+.gl-hero__main {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 20px;
+  padding-block: 56px;
+  border-image: linear-gradient(0deg, var(--gl-hero-border-color) 1px, transparent 0) fill 0 / / 0 50vw 0 50vw;
+
+  @media (width > 1000px) {
+    grid-column: 1;
+    padding-inline-end: 20px;
+    border-image: none;
+    border-inline-end: solid 1px var(--gl-hero-border-color);
+  }
+
+  .gl-hero--align-x-start & {
+    align-items: start;
+  }
+
+  .gl-hero--align-x-center & {
+    align-items: center;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .gl-hero--align-x-end & {
+    align-items: end;
+    text-align: end;
+  }
+
+  .gl-hero--align-y-top & {
+    justify-content: start;
+  }
+
+  .gl-hero--align-y-center & {
+    justify-content: center;
+  }
+
+  .gl-hero--align-y-bottom & {
+    justify-content: end;
+  }
+}
+
+.gl-hero__main-content {
+  font-size: var(--body-l-size);
+  line-height: var(--body-l-line-height);
+  letter-spacing: var(--body-l-letter-spacing);
+
+  > p {
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.gl-hero__side {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(auto, 1fr);
+
+  .gl-hero-cta {
+    --gl-hero-cta-padding-inline: 0;
+
+    border-image: var(--gl-hero-horizontal-border-image-to-both);
+  }
+
+  @media (width > 400px) {
+    /* If there are only 2 items, or if there are 4 or more. */
+    &:where(:has(.gl-hero-cta:nth-child(2):last-child, .gl-hero-cta:nth-child(4))) {
+      grid-template-columns: repeat(2, 1fr);
+
+      .gl-hero-cta {
+        border-image: none;
+
+        &:where(:nth-child(odd)) {
+          --gl-hero-cta-padding-inline: 0 var(--gl-hero-cta-padding-inline-value);
+
+          border-inline-end: solid 1px var(--gl-hero-border-color);
+        }
+
+        &:where(:nth-child(even)) {
+          --gl-hero-cta-padding-inline: var(--gl-hero-cta-padding-inline-value) 0;
+
+          border-image: var(--gl-hero-horizontal-border-image-to-both);
+        }
+      }
+    }
+  }
+
+  @media (width > 600px) {
+    /* If there are exactly 3 items. */
+    &:where(:has(.gl-hero-cta:nth-child(3):last-child)) {
+      grid-template-columns: repeat(3, 1fr);
+
+      .gl-hero-cta {
+        --gl-hero-cta-padding-inline: var(--gl-hero-cta-padding-inline-value) var(--gl-hero-cta-padding-inline-value);
+
+        border-image: none;
+        border-inline-end: solid 1px var(--gl-hero-border-color);
+
+        &:where(:first-child) {
+          --gl-hero-cta-padding-inline: 0 var(--gl-hero-cta-padding-inline-value);
+        }
+
+        &:where(:last-child) {
+          --gl-hero-cta-padding-inline: var(--gl-hero-cta-padding-inline-value) 0;
+
+          border-inline-end: none;
+        }
+      }
+    }
+  }
+
+  @media (width > 1000px) {
+    grid-template-columns: auto;
+
+    .gl-hero-cta {
+      --gl-hero-cta-padding-block: var(--gl-hero-cta-padding-block-value) var(--gl-hero-cta-padding-block-value);
+      --gl-hero-cta-padding-inline: var(--gl-hero-cta-padding-inline-value) var(--gl-hero-cta-padding-inline-value);
+
+      border-image: var(--gl-hero-horizontal-border-image-to-right);
+
+      &:dir(rtl) {
+        border-image: var(--gl-hero-horizontal-border-image-to-left);
+      }
+
+      &:last-child {
+        border-image: none;
+      }
+    }
+
+    /* Has at least two items. */
+    &:has(.gl-hero-cta:nth-child(2)) {
+      & .gl-hero-cta:first-child {
+        --gl-hero-cta-item-alignment: start;
+      }
+
+      & .gl-hero-cta:last-child {
+        --gl-hero-cta-item-alignment: end;
+      }
+    }
+  }
+}
+
+.gl-hero-title {
+  font-size: 4rem;
+  line-height: 0.8;
+  letter-spacing: var(--title-letter-spacing);
+  color: var(--gl-hero-text-color);
+  font-weight: bold;
+
+  @media (width > 400px) {
+    font-size: 4.5rem; /* 72px */
+  }
+
+  @media (width > 600px) {
+    font-size: 7rem; /* 112px */
+  }
+
+  @media (width > 1000px) {
+    font-size: 10rem; /* 160px */
+  }
+}

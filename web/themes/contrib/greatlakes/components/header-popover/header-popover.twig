@@ -1,0 +1,34 @@
+<dialog id="{{ popover_id }}" class="header-popover theme--primary">
+  <div class="header-popover__container container">
+    <div class="header-popover__top">
+      {% block content_top %}
+        <img class="header-popover__logo" src="/themes/contrib/greatlakes/logo.svg" alt="">
+        {{ popover_content_top }}
+      {% endblock %}
+      <button aria-controls="{{ popover_id }}" class="header-popover__close">
+        <span class="visually-hidden">{{ 'Close'|t }}</span>
+        <span class="header-popover__close-icon"></span>
+      </button>
+    </div>
+    <div class="header-popover__main">
+      <div class="header-popover__main-left">
+        {% block content_left %}
+          {{ popover_content_left }}
+        {% endblock %}
+      </div>
+      <div class="header-popover__main-right">
+        <div class="header-popover__main-right-content">
+          {% block content_right %}
+            {{ popover_content_right }}
+          {% endblock %}
+        </div>
+      </div>
+
+    </div>
+    <div class="header-popover__bottom">
+      {% block content_bottom %}
+        {{ popover_content_bottom }}
+      {% endblock %}
+    </div>
+  </div>
+</dialog>

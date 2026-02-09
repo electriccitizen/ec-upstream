@@ -1,0 +1,123 @@
+/*
+ * @file
+ * Styles for header navigation popover.
+ */
+.header-popover {
+  --header-popover-padding-block: 0 62px;
+  --header-popover-padding-inline: 0;
+  --header-popover-background-color: var(--theme-surface);
+  --header-popover-top-height: 74px;
+  --header-popover-border-color: color-mix(in oklch, var(--white) 30%, transparent);
+
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  background-color: var(--header-popover-background-color);
+  margin: 0;
+  padding-block: var(--header-popover-padding-block);
+  padding-inline: var(--header-popover-padding-inline);
+  color: var(--theme-text-color-loud);
+
+  .header-logo img {
+    filter: invert(100%);
+  }
+
+  /* Contextual region can interfere with menu positioning, so reset it. */
+  :where(.contextual-region) {
+    position: static;
+  }
+
+  /* @todo Refactor when FF supports style queries. */
+  &::after {
+    content: 'mobile';
+    display: none;
+
+    @media (width > 800px) {
+      content: 'desktop';
+    }
+  }
+}
+
+.header-popover__container[class] {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto;
+}
+
+.header-popover__top {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-popover-top-height);
+  border-image: linear-gradient(0deg, var(--header-popover-border-color) 1px, transparent 0) fill 0 / / 0 50vw 0 50vw;
+}
+
+.header-popover__logo {
+  margin-inline-end: auto;
+  filter: invert(100%);
+}
+
+.header-popover__close {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  aspect-ratio: 1;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+}
+
+.header-popover__close-icon {
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    inset-inline: 0;
+    width: 30px;
+    height: 0;
+    margin-inline: auto;
+    content: "";
+    border: 1px solid currentColor;
+    rotate: -45deg;
+  }
+
+  &::after {
+    rotate: 45deg;
+  }
+}
+
+.header-popover__main {
+  position: relative; /* Anchor level 2 submenus. */
+  display: grid;
+  grid-template-columns: auto;
+  grid-column: 1 / -1;
+
+  @media (width > 800px) {
+    grid-template-columns: 55fr 45fr;
+    height: calc(100dvh - var(--header-popover-top-height));
+  }
+}
+
+.header-popover__main-left {
+  padding-block: 34px;
+}
+
+.header-popover__main-right  {
+  @media (width > 800px) {
+    border-inline-start: solid 1px var(--header-popover-border-color);
+    border-inline-end: solid 1px var(--header-popover-border-color);
+  }
+}
+
+.header-popover__main-right-content {
+  padding: 24px;
+}
+
+.header-popover__bottom {
+  grid-column: 1;
+}

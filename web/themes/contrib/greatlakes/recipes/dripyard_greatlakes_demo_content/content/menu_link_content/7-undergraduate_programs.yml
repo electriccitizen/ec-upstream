@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: f9df2982-1613-4a19-8d64-48205252682a
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    6e78c757-10fe-4fc1-830f-45d51b64dc00: menu_link_content
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Undergraduate Programs'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      uri: 'internal:/undergraduate-programs'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: -50
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:6e78c757-10fe-4fc1-830f-45d51b64dc00'
+  revision_translation_affected:
+    -
+      value: true

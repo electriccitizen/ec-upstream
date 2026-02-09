@@ -1,0 +1,61 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: bacce972-15fa-4ae7-bf7c-9fb2dc72ace3
+  bundle: article
+  default_langcode: en
+  depends:
+    746fc054-1b3e-4934-a743-fcefbe156f1d: file
+    6g801g88-247c-6882-0731-4g1g2ef9g6de: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Admissions and Financial Aid'
+  created:
+    -
+      value: 1745292100
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+  body:
+    -
+      value: '<p>Great Lakes University is committed to making higher education accessible and affordable for all qualified students. Our holistic admissions process considers not just academic achievement, but also leadership potential, community involvement, and personal character.</p><p>We offer comprehensive financial aid packages that combine merit scholarships, need-based grants, work-study opportunities, and federal student loans. Our financial aid office works closely with families to create personalized funding plans that make a Great Lakes education possible.</p><p>The application process is straightforward: submit your application online, provide official transcripts, secure letters of recommendation, and write a personal statement. Our admissions counselors are available to guide you through every step and answer any questions you may have about joining the Laker family.</p>'
+      format: basic_html
+      summary: ''
+  comment:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1754402866
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_image:
+    -
+      entity: 746fc054-1b3e-4934-a743-fcefbe156f1d
+      alt: 'Students attending an event in our state of the art auditorium. '
+      title: ''
+      width: 4096
+      height: 3245
+  field_tags:
+    -
+      entity: 6g801g88-247c-6882-0731-4g1g2ef9g6de

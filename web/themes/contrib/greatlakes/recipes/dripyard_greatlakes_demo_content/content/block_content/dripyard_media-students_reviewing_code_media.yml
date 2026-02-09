@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 31a4968e-0f92-4450-a198-ab6e78c79ab4
+  bundle: dripyard_media
+  default_langcode: en
+  depends:
+    3350ed14-b0cf-4ed1-bd34-548b38ad9410: media
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Students reviewing code (media)'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  dripyard_media:
+    -
+      entity: 3350ed14-b0cf-4ed1-bd34-548b38ad9410

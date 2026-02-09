@@ -1,0 +1,32 @@
+name: Dripyard GreatLakes Demo Content
+type: Dripyard
+description: 'This recipe provides the demo content for GreatLakes use to build https://greatlakes.dripyard.com including article nodes, and block content.'
+recipes:
+  - 'dripyard_greatlakes_blocks'
+  - 'dripyard_greatlakes_nodes'
+config:
+  strict: false
+  actions:
+    greatlakes.settings:
+      simpleConfigUpdate:
+        social_media_links:
+          facebook: 'https://facebook.com/greatlakesuniversity'
+          instagram: 'https://instagram.com/greatlakesuniv'
+          linkedin: 'https://linkedin.com/school/great-lakes-university'
+          twitter: 'https://twitter.com/greatlakesuniv'
+          youtube: 'https://youtube.com/greatlakesuniversity'
+    block.block.greatlakes_homepagehero:
+      placeBlockInDefaultTheme:
+        plugin: 'block_content:ccbdefba-8074-47a4-b974-29c639bf8bb7'
+        region: fixed_hero
+        settings:
+          label: 'Home Page Hero'
+          label_display: visible
+          status: true
+          info: ''
+          view_mode: full
+        visibility:
+          request_path:
+            id: request_path
+            negate: false
+            pages: '<front>'

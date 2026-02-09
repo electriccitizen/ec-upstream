@@ -1,0 +1,26 @@
+{% set classes = [
+  'gl-hero',
+  'full-width',
+  align_x ? 'gl-hero--align-x-' ~ align_x|clean_class,
+  align_y ? 'gl-hero--align-y-' ~ align_y|clean_class,
+  theme and theme != 'inherit' ? 'theme--' ~ theme|clean_class,
+  text_color ? 'gl-hero--text-color-' ~ text_color|clean_class,
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="gl-hero__media">
+    {% block hero_media %}{% endblock %}
+  </div>
+  <div class="gl-hero__container container">
+    <div class="gl-hero__main">
+      <h1 class="gl-hero-title">{{ title }}</h1>
+      <div class="gl-hero__main-content">
+        {% block hero_below %}{% endblock %}
+      </div>
+    </div>
+    <div class="gl-hero__side">
+      {% block hero_ctas %}{% endblock %}
+    </div>
+  </div>
+</div>

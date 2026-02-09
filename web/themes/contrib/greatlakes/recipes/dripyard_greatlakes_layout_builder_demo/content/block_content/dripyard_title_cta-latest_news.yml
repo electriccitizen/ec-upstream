@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 538dc58f-dd62-4c56-b442-bce94bb95fdc
+  bundle: dripyard_title_cta
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Latest News'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  dripyard_component_layout:
+    -
+      value: default
+  dripyard_cta:
+    -
+      uri: 'internal:/news'
+      title: 'Read All News'
+      options: {  }
+  dripyard_title:
+    -
+      value: '<p>Stay Connected with Campus Life</p>'
+      format: dripyard_superbasic

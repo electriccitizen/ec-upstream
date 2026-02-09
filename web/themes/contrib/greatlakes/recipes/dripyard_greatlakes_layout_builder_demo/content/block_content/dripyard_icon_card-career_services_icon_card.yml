@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 8f9d6aa6-d514-48f3-91fb-b69a478b2671
+  bundle: dripyard_icon_card
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Career Services (icon card)'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: 'Comprehensive career services to help you land your dream job after graduation.'
+      format: plain_text
+      summary: ''
+  dripyard_icon:
+    -
+      value: briefcase
+  dripyard_link:
+    -
+      uri: 'internal:/career-services'
+      title: ''
+      options: {  }
+  dripyard_no_background:
+    -
+      value: false
+  dripyard_orientation:
+    -
+      value: portrait
+  dripyard_title:
+    -
+      value: 'Career Success'
+      format: plain_text

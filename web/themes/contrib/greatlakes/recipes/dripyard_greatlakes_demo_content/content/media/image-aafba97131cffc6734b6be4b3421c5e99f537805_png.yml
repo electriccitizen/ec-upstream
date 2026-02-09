@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 856ea3d9-6d12-47f3-87a3-f34f42b734fe
+  bundle: image
+  default_langcode: en
+  depends:
+    495f7775-0438-4ed8-a2e9-74ddd5b7760f: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: aafba97131cffc6734b6be4b3421c5e99f537805.png
+  created:
+    -
+      value: 1754406793
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+  field_media_image:
+    -
+      entity: 495f7775-0438-4ed8-a2e9-74ddd5b7760f
+      alt: 'Great Lakes Institute'
+      title: ''
+      width: 1123
+      height: 731

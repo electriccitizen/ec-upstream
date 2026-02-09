@@ -1,0 +1,46 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 7c2becdf-cd2f-467e-8eab-af7b596a2098
+  bundle: dripyard_promo
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Student Experience'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: '<p>At Great Lakes University, education extends beyond the classroom. Discover opportunities for leadership, service, athletics, and personal growth that will shape your character and career.</p>'
+      format: dripyard_superbasic
+      summary: ''
+  dripyard_align_x:
+    -
+      value: start
+  dripyard_align_y:
+    -
+      value: center
+  dripyard_ctas:
+    -
+      uri: 'internal:/visit-campus'
+      title: 'Visit Campus'
+      options: {  }
+    -
+      uri: 'internal:/virtual-tour'
+      title: 'Take Virtual Tour'
+      options: {  }
+  dripyard_eyebrow:
+    -
+      value: 'Experience Great Lakes'
+  dripyard_title:
+    -
+      value: '<p>More Than Just a Degree</p>'
+      format: dripyard_superbasic

@@ -1,0 +1,23 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: GL Header
+status: stable
+noUi: true
+props:
+  type: object
+  properties: {}
+slots:
+  header:
+    type: object
+    title: Header slot
+  popover_content_top:
+    type: object
+    title: Popover top content
+  popover_content_left:
+    type: object
+    title: Popover left content
+  popover_content_right:
+    type: object
+    title: Popover right content
+  popover_content_bottom:
+    type: object
+    title: Popover bottom content

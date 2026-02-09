@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 7abb3f3e-3453-4cbc-bdae-fc44ad3d6c4a
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    390e522c-de7e-4bca-aa30-304e07576f36: menu_link_content
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Our History'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      uri: 'internal:/history'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: -50
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:390e522c-de7e-4bca-aa30-304e07576f36'
+  revision_translation_affected:
+    -
+      value: true

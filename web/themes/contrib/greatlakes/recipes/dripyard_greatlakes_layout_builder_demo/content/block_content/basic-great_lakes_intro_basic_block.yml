@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: f44ca359-a0da-4d7c-929d-15b0fe44ea8a
+  bundle: basic
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Great Lakes Intro (basic block)'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: '<p>At the Great Lakes Institute of Engineering &amp; Applied Science, we prepare professionals with strong technical knowledge, critical thinking, and a global outlook. Our graduates are equipped to work across scientific, industrial, and social sectors, contributing to the development of technologies and solutions that are sustainable, inclusive, and socially responsible.</p>'
+      format: dripyard_superbasic
+      summary: ''

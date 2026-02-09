@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: a75f5ece-7400-490d-8a3e-ccdf747dc2be
+  bundle: dripyard_tab_item
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Education Program'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: '<p>Shape the next generation through our comprehensive teacher education program. Students gain hands-on experience in local schools while learning the latest pedagogical approaches. Graduates are prepared to teach in elementary, middle, and high school settings.</p>'
+      format: basic_html
+      summary: ''
+  dripyard_icon:
+    -
+      value: chalkboard-user
+  dripyard_title:
+    -
+      value: 'Teacher Education'
+      format: plain_text

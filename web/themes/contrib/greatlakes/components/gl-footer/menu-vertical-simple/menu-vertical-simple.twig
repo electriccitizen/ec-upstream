@@ -1,0 +1,10 @@
+<div class="menu-vertical-simple">
+  <ul{{ attributes.addClass('menu-vertical-simple__list') }}>
+    {# Footer menu intentionally does not support nested submenus. #}
+    {% for item in items %}
+      <li{{ item.attributes.addClass('menu-vertical-simple__item') }}>
+        {{ link(item.title, item.url, { 'class': 'menu-vertical-simple__link' }) }}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

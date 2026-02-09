@@ -1,0 +1,11 @@
+/*
+ * Overrides to Layout Dynamic SDC.
+ */
+
+.layout-dynamic {
+  /* .region-content under .has-fixed-hero already has a margin bottom of 0,
+    so no need to apply a negative margin. */
+  :where(.has-fixed-hero .region-content .block-system-main-block > &:last-child) {
+    margin-bottom: revert;
+  }
+}
