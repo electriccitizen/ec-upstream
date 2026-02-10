@@ -1,0 +1,23 @@
+uuid: 435adbda-6b84-46b6-bc17-19a4ce811f85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_style
+    - paragraphs.paragraphs_type.text
+  module:
+    - options
+id: paragraph.text.field_text_style
+field_name: field_text_style
+entity_type: paragraph
+bundle: text
+label: 'Text Style'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: body_m
+default_value_callback: ''
+settings: {  }
+field_type: list_string

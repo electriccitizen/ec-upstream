@@ -1,0 +1,13 @@
+{# templates/paragraphs/text/paragraph--text.html.twig #}
+{% set style = paragraph.field_text_style.value|default('body_m') %}
+{% set color = paragraph.field_text_color.value|default('medium') %}
+{% set center = paragraph.field_text_center.value|default(false) %}
+{% set modifier_classes = paragraph.field_text_modifiers.value %}
+
+{{ include('dripyard_base:text', {
+  text: content.field_long_text,   # WYSIWYG output
+  style: style,
+  color: color,
+  center: center,
+  modifier_classes: modifier_classes
+}, with_context = false) }}

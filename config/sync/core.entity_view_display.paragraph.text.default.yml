@@ -4,9 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.text.field_long_text
+    - field.field.paragraph.text.field_text_center
+    - field.field.paragraph.text.field_text_color
+    - field.field.paragraph.text.field_text_modifiers
+    - field.field.paragraph.text.field_text_style
     - paragraphs.paragraphs_type.text
   module:
     - layout_builder
+    - options
     - text
 third_party_settings:
   layout_builder:
@@ -25,6 +30,38 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_text_center:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_text_color:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_text_modifiers:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_text_style:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   search_api_excerpt: true

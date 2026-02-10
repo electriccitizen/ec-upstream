@@ -1,0 +1,30 @@
+uuid: e5436e99-5df9-4fab-aee3-065caf6323e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_text_style
+field_name: field_text_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: body_l
+      label: Large
+    -
+      value: body_m
+      label: Medium
+    -
+      value: body_s
+      label: Small
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
