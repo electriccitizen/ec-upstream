@@ -6,6 +6,11 @@
   icon_placement: paragraph.field_icon_placement.value ?: 'vertical'
 } %}
   {% block tabs %}
-    {{ content.field_tab_items }}
+    {# Render tab items without field wrappers so <sl-tab> elements slot correctly. #}
+    {% for key, item in content.field_tab_items %}
+      {% if key|first != '#' %}
+        {{ item }}
+      {% endif %}
+    {% endfor %}
   {% endblock %}
 {% endembed %}

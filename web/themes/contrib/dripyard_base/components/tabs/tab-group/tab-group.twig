@@ -10,7 +10,7 @@
 <div{{ attributes.addClass(classes) }}>
   <div class="tabs__container">
     <sl-tab-group class="sl-tab-group" placement="{{ placement|default('top') }}">
-      <link rel="stylesheet" href="{{ '/' ~ componentMetadata.path ~ '/tab-group.css' }}">
+      <link rel="stylesheet" href="{{ '/web/' ~ componentMetadata.path ~ '/tab-group.css' }}">
       {% block tabs %}{% endblock %}
     </sl-tab-group>
   </div>
