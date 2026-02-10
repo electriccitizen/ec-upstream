@@ -1,0 +1,44 @@
+uuid: a5ae83cc-2bcc-45db-aae7-fe826ba49eb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.card.field_body
+    - field.field.paragraph.card.field_eyebrow_text
+    - field.field.paragraph.card.field_flip_layout
+    - field.field.paragraph.card.field_image
+    - field.field.paragraph.card.field_link
+    - field.field.paragraph.card.field_title
+    - image.style.paragraph_preview
+    - paragraphs.paragraphs_type.card
+  module:
+    - lazy
+    - media
+id: paragraph.card.preview
+targetEntityType: paragraph
+bundle: card
+mode: preview
+content:
+  field_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: paragraph_preview
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      lazy:
+        lazy_image: '0'
+        placeholder_style: ''
+        data_uri: false
+    weight: 0
+    region: content
+hidden:
+  field_body: true
+  field_eyebrow_text: true
+  field_flip_layout: true
+  field_link: true
+  field_title: true
+  search_api_excerpt: true

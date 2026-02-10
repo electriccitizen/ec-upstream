@@ -1,0 +1,23 @@
+uuid: 89769a96-c16e-4733-a5f3-fb781ad92c66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_flip_layout
+    - paragraphs.paragraphs_type.card
+id: paragraph.card.field_flip_layout
+field_name: field_flip_layout
+entity_type: paragraph
+bundle: card
+label: 'Flip Layout'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

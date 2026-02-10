@@ -1,0 +1,14 @@
+{# Paragraph Card -> dripyard_base Card SDC #}
+{% set href = paragraph.field_link.0.url|default(null) %}
+{% set theme = paragraph.field_theme.value|default('inherit') %}
+{% set flip_layout = paragraph.field_flip_layout.value|default(false) %}
+
+{{ include('dripyard_base:card', {
+  image: content.field_image,
+  eyebrow_text: content.field_eyebrow_text,
+  title: paragraph.field_title.value,
+  body: content.field_body,
+  href: href,
+  theme: theme,
+  flip_layout: flip_layout
+}, with_context = false) }}

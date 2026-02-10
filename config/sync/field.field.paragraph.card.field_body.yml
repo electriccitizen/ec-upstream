@@ -1,0 +1,24 @@
+uuid: f692ddf4-235c-4d99-a1e3-39c104285276
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - filter.format.basic_html
+    - paragraphs.paragraphs_type.card
+  module:
+    - text
+id: paragraph.card.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: card
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long
