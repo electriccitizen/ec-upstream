@@ -1,0 +1,46 @@
+uuid: cd4c5cbf-b517-4cf4-bb15-6fd4ca1bd565
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.testimonial.field_citation
+    - field.field.paragraph.testimonial.field_image
+    - field.field.paragraph.testimonial.field_quote
+    - field.field.paragraph.testimonial.field_reversed
+    - image.style.paragraph_preview
+    - paragraphs.paragraphs_type.testimonial
+  module:
+    - lazy
+    - media
+id: paragraph.testimonial.preview
+targetEntityType: paragraph
+bundle: testimonial
+mode: preview
+content:
+  field_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: paragraph_preview
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      lazy:
+        lazy_image: '0'
+        placeholder_style: ''
+        data_uri: false
+    weight: 0
+    region: content
+  field_quote:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_citation: true
+  field_reversed: true
+  search_api_excerpt: true

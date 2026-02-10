@@ -1,0 +1,18 @@
+uuid: 115b3aef-a3ec-48cd-b029-61a3402976bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_reversed
+field_name: field_reversed
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

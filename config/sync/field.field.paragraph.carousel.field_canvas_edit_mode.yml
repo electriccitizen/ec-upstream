@@ -1,0 +1,21 @@
+uuid: c08e1c71-8271-45c9-a5b1-6cc8416c2435
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_canvas_edit_mode
+    - paragraphs.paragraphs_type.carousel
+id: paragraph.carousel.field_canvas_edit_mode
+field_name: field_canvas_edit_mode
+entity_type: paragraph
+bundle: carousel
+label: 'Canvas Edit Mode'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

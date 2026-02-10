@@ -1,0 +1,19 @@
+uuid: 2f1dd730-cc55-4629-9f99-414ecb1587cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_label
+    - paragraphs.paragraphs_type.carousel
+id: paragraph.carousel.field_label
+field_name: field_label
+entity_type: paragraph
+bundle: carousel
+label: Label
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,30 @@
+uuid: 6f33db91-b5c6-4d11-bc85-724708dc679d
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_navigation_position
+field_name: field_navigation_position
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: hidden
+      label: Hidden
+    -
+      value: inside
+      label: Inside
+    -
+      value: outside
+      label: Outside
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,11 @@
+{# Paragraph Testimonial -> dripyard_base Testimonial SDC #}
+{% set theme = paragraph.field_theme.value|default('inherit') %}
+{% set reversed = paragraph.field_reversed.value|default(false) %}
+
+{{ include('dripyard_base:testimonial', {
+  image: content.field_image,              # image/media render array
+  quote: paragraph.field_quote.value,      # required
+  citation: paragraph.field_citation.value,
+  reversed: reversed,
+  theme: theme
+}, with_context = false) }}

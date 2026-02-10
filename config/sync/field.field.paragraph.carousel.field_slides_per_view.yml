@@ -1,0 +1,25 @@
+uuid: 4a473119-ad36-4b4f-b388-6f864b1c2002
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slides_per_view
+    - paragraphs.paragraphs_type.carousel
+id: paragraph.carousel.field_slides_per_view
+field_name: field_slides_per_view
+entity_type: paragraph
+bundle: carousel
+label: 'Slides Per View'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 1
+  max: 6
+  prefix: ''
+  suffix: ''
+field_type: integer

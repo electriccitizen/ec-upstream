@@ -1,0 +1,21 @@
+uuid: c23cf6c1-2ac8-4cf9-9200-73b6c80b7a9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pager
+    - paragraphs.paragraphs_type.carousel
+id: paragraph.carousel.field_pager
+field_name: field_pager
+entity_type: paragraph
+bundle: carousel
+label: Pager
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

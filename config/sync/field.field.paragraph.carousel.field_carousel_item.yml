@@ -1,0 +1,103 @@
+uuid: 30b66f86-14bc-4aa2-8354-037ff295eee6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_item
+    - paragraphs.paragraphs_type.carousel
+    - paragraphs.paragraphs_type.testimonial
+  module:
+    - entity_reference_revisions
+id: paragraph.carousel.field_carousel_item
+field_name: field_carousel_item
+entity_type: paragraph
+bundle: carousel
+label: 'Carousel Item'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      testimonial: testimonial
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 26
+        enabled: false
+      accordions:
+        weight: 27
+        enabled: false
+      block_placer:
+        weight: 28
+        enabled: false
+      card:
+        weight: 29
+        enabled: false
+      carousel:
+        weight: 25
+        enabled: false
+      content_list:
+        weight: 30
+        enabled: false
+      cta:
+        weight: 31
+        enabled: false
+      custom_embed:
+        weight: 32
+        enabled: false
+      form_placer:
+        weight: 33
+        enabled: false
+      gallery:
+        weight: 34
+        enabled: false
+      gallery_item:
+        weight: 35
+        enabled: false
+      horizontal_rule:
+        weight: 36
+        enabled: false
+      image:
+        weight: 37
+        enabled: false
+      layout_section:
+        weight: 38
+        enabled: false
+      layout_section_simple:
+        weight: 39
+        enabled: false
+      links_files:
+        weight: 40
+        enabled: false
+      portal:
+        weight: 41
+        enabled: false
+      portals:
+        weight: 42
+        enabled: false
+      quote:
+        weight: 43
+        enabled: false
+      tab_item:
+        weight: 44
+        enabled: false
+      tabs_group:
+        weight: 45
+        enabled: false
+      testimonial:
+        weight: 47
+        enabled: true
+      text:
+        weight: 46
+        enabled: false
+      video:
+        weight: 47
+        enabled: false
+      view_placer:
+        weight: 48
+        enabled: false
+field_type: entity_reference_revisions

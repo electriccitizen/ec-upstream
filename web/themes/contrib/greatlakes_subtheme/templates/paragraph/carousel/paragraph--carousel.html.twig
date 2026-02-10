@@ -1,0 +1,21 @@
+{# Paragraph Carousel -> dripyard_base Carousel SDC #}
+{% set nav_position = paragraph.field_navigation_position.value|default('inside') %}
+{% set slides_per_view = paragraph.field_slides_per_view.value|default(1) %}
+{% set rows = paragraph.field_rows.value|default(1) %}
+{% set pager = paragraph.field_pager.value|default(false) %}
+{% set canvas_edit_mode = paragraph.field_canvas_edit_mode.value|default(false) %}
+
+{% embed 'dripyard_base:carousel' with {
+  label: paragraph.field_label.value,
+  pager: pager,
+  navigation_position: nav_position,
+  slides_per_view: slides_per_view,
+  rows: rows,
+  canvas_edit_mode: canvas_edit_mode
+} only %}
+  {% block carousel_items %}
+    {% for item in content.field_carousel_items %}
+      {{ item }}
+    {% endfor %}
+  {% endblock %}
+{% endembed %}

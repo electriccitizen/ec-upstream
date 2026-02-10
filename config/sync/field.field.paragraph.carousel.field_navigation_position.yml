@@ -1,0 +1,23 @@
+uuid: 9fc9055f-560e-4e07-a504-a1d70130fc24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_navigation_position
+    - paragraphs.paragraphs_type.carousel
+  module:
+    - options
+id: paragraph.carousel.field_navigation_position
+field_name: field_navigation_position
+entity_type: paragraph
+bundle: carousel
+label: 'Navigation Position'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: inside
+default_value_callback: ''
+settings: {  }
+field_type: list_string

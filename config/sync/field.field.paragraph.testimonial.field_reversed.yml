@@ -1,0 +1,21 @@
+uuid: c3833f1c-e781-4f83-a471-6c6ed0201b8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reversed
+    - paragraphs.paragraphs_type.testimonial
+id: paragraph.testimonial.field_reversed
+field_name: field_reversed
+entity_type: paragraph
+bundle: testimonial
+label: Reversed
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
