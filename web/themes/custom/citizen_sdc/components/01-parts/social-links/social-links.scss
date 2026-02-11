@@ -1,0 +1,26 @@
+/* ================
+	 FIELDS
+============== */
+
+@use '../../00-base/00-variables/units' as *;
+@use '../../00-base/00-variables/general-mixins' as *;
+
+.field-platforms {
+  margin-bottom: -$spaceXxs;
+
+  .platform-links {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    @include listReset;
+    
+    li {
+      margin-bottom: $spaceXxs;
+    }
+
+    svg {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}

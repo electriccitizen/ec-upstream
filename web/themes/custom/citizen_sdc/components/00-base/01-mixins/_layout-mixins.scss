@@ -118,15 +118,14 @@ $column-right-px: 433;
 }
 
 @mixin edgeToEdge {
-  margin-left: $siteMarginMobile * -1;
-  margin-right: $siteMarginMobile * -1;
+  margin-left: $siteMargin * -1;
+  margin-right: $siteMargin * -1;
 }
 
 @mixin auto {
   margin-left: auto;
   margin-right: auto;
 }
-
 
 @mixin edgeReset {
   margin-left: 0;

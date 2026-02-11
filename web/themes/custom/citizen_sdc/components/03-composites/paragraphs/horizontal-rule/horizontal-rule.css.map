@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../../00-base/00-variables/_units.scss","../../../00-base/01-mixins/_layout-mixins.scss","horizontal-rule.scss"],"names":[],"mappings":"AAoBA,MACE,kBACA,mBACA,qBCiHA,kJAEE,UD7HM,MCgHR,iBACA,kBChHA,qCACE","file":"horizontal-rule.css"}
+{"version":3,"sourceRoot":"","sources":["../../../00-base/00-variables/_units.scss","../../../00-base/01-mixins/_layout-mixins.scss","horizontal-rule.scss"],"names":[],"mappings":"AAoBA,MACE,kBACA,mBACA,qBCgHA,kJAEE,UD5HM,MCgHR,iBACA,kBChHA,qCACE","file":"horizontal-rule.css"}

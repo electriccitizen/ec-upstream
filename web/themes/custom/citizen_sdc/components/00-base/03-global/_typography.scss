@@ -58,29 +58,20 @@ h6+ul {
   margin-top: 0;
 }
 
-/* BLOCK, SECTION AND WIDGET HEADINGS
--------------------------- */
-.block-title {
-  max-width: $textMax;
-  text-align: center;
-  @include auto;
+ul {
+  list-style-type: disc;
 }
 
-h2.block-title {
-  @include blockTitle;
-}
+ol {
+  list-style-type: decimal;
 
-h2.section-title {
-  @include blockTitle;
-  font-size: 3rem;
-  max-width: $textMax + 40px;
-}
+  &[type="A"] {
+    list-style-type: lower-alpha;
+  }
 
-.widget-title,
-.field-widget-title {
-  @include blockTitle;
-  letter-spacing: 0;
-  text-transform: none;
+  &[type="I"] {
+    list-style-type: upper-roman;
+  }
 }
 
 /* TEXT STYLES
@@ -206,14 +197,27 @@ blockquote {
   article:not(:last-child):not([data-quickedit-entity-id*=media]) {
     margin-bottom: $spaceMd;
   }
+
+  ul,
+  ol {
+    overflow: hidden;
+    margin: $spaceXs 0 $spaceMd;
+    padding: 0 0 0 3.5rem;
+
+    ul,
+    ol {
+      margin: $spaceXs 0;
+      padding: 0 0 0 2.5rem;
+    }
+  }
 }
 
-/* ICONS
---------------- */
-svg {
-  fill: currentColor;
+/* BUTTONS
+-------------- */
+.ec-button {
+  @include button;
+}
 
-  use {
-    fill: currentColor;
-  }
+.button-danger-robinson {
+  @include warningButton;
 }

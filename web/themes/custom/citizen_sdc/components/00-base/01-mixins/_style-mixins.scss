@@ -19,13 +19,6 @@
   }
 }
 
-@mixin listReset {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-
 @mixin vertRule($rulePosition, $ruleHeight, $ruleColor) {
   content: '';
   display: block;
@@ -133,4 +126,20 @@
   }
 }
 
+@mixin warning {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 
+  & > div {
+    max-width: $textMax + 40px;
+    border: 1px solid $borderRule;
+    padding: 40px 30px;
+  }
+
+  #block-citizen-SDC-content {
+    padding-top: 0 !important;
+  }
+}

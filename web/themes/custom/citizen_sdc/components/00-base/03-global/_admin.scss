@@ -6,7 +6,6 @@
 
 /* GIN TOOLBAR
 --------------------- */
-
 // Fix rem usage of flyout menu sub items from Gin toolbar.
 #gin-toolbar-bar {
   body.gin--vertical-toolbar & {
@@ -131,6 +130,25 @@
         margin-bottom: -1px;
       }
     }
+  }
+}
+
+/* SECONDARY TASK BUTTONS
+------------------ */
+#block-citizen-dart-local-tasks .tabs.secondary a {
+  background: $link !important;
+  border-color: $link;
+  color: $white;
+  padding: .5rem 1.5rem;
+  font-weight: bold;
+
+  &:hover,
+  &:focus,
+  &.is-active {
+    background: $white !important;
+    color: $link;
+    border-color: $link;
+    outline: 0;
   }
 }
 
