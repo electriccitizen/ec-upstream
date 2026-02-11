@@ -2,7 +2,7 @@
    TEXTFIELD
 ================= */
 
-@use '../../../00-base' as *;
+@use '../01-mixins/form-mixins' as *;
 
 .js-form-type-textfield {
   input {

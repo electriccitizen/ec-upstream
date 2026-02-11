@@ -36,3 +36,11 @@
   margin: 0;
   padding: 0;
 }
+
+@mixin clearFix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}

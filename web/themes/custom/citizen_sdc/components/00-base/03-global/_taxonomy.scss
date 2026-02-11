@@ -2,7 +2,9 @@
    TAXONOMY TERM PAGES
 ================= */
 
-@use '../../00-base' as *;
+@use '../00-variables/units' as *;
+@use '../01-mixins/breakpoint-mixins' as *;
+@use '../01-mixins/layout-mixins' as *;
 
 .path-taxonomy {
   .term-title {
@@ -10,8 +12,8 @@
   }
 
   .taxonomy-term {
-    @include auto;
     max-width: $textMax;
+    @include auto;
 
     .view-header {
       .block-title {

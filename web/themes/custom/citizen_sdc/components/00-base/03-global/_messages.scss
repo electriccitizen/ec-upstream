@@ -1,7 +1,12 @@
 /* ================
 	 MESSAGES
 ============== */
-@use '../../00-base' as *;
+
+@use '../00-variables/colors' as *;
+@use '../00-variables/component-colors' as *;
+@use '../00-variables/units' as *;
+@use '../01-mixins/layout-mixins' as *;
+@use '../01-mixins/type-mixins' as *;
 
 .drupal-message {
   padding: $spaceMd 2.5rem $spaceMd 5.5rem;
@@ -16,7 +21,7 @@
   @include auto;
 
   a {
-    color: $adminGold;
+    color: $messageLink;
 
     &:hover,
     &:focus {

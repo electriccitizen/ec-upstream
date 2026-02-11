@@ -1,7 +1,11 @@
 /* ===============
 	 TABLES
 ============== */
-@use '../00-variables' as *;
+
+@use '../../00-base/00-variables/colors' as *;
+@use '../../00-base/00-variables/component-colors' as *;
+@use '../../00-base/00-variables/fonts' as *;
+@use '../../00-base/01-mixins/type-mixins' as *;
 @use 'sass:color';
 
 %tableSort {

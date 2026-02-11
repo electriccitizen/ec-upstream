@@ -2,13 +2,14 @@
    PAGES GLOBAL
 =============== */
 
-@use '../../00-base' as *;
+@use '../00-variables/units' as *;
+@use '../01-mixins/layout-mixins' as *;
 
 html > body:not(.is-front):not(.path-node) {
   .layout-content {
-    @include auto;
     max-width: $contentStop + px(40);
-    padding: 0 $siteMarginMobile $siteBottomSpace;
+    padding: 0 $siteMargin $elementSpace;
+    @include auto;
   }
 
   #block-citizen-sdc-content {

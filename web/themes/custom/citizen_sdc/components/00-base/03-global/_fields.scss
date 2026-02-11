@@ -1,7 +1,9 @@
 /* ================
 	 FIELDS
 ============== */
-@use '../../00-base' as *;
+
+@use '../00-variables/fonts' as *;
+@use '../01-mixins/general-mixins' as *;
 
 .field {
   span.inline-label {

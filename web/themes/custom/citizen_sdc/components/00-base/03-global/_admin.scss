@@ -1,8 +1,15 @@
 /* ==================
- FRONT-END ADMIN ELEMENTS STYLES
+ FRONT-END ADMIN ELEMENT STYLES
 ====================*/
 
-@use '../../00-base' as *;
+@use '../00-variables/colors' as *;
+@use '../00-variables/component-colors' as *;
+@use '../00-variables/fonts' as *;
+@use '../00-variables/units' as *;
+@use '../01-mixins/breakpoint-mixins' as *;
+@use '../01-mixins/button-mixins' as *;
+@use '../01-mixins/general-mixins' as *;
+@use '../01-mixins/layout-mixins' as *;
 
 /* GIN TOOLBAR
 --------------------- */
@@ -73,10 +80,10 @@
   }
 
   .tabs {
-    @include listReset;
     display: flex;
     flex-wrap: wrap;
     border-bottom: 1px solid $borderRule;
+    @include listReset;
 
     li {
       @include onlySmall {
@@ -155,7 +162,6 @@
 /* MODERATION SIDEBAR
 ----------------- */
 .moderation-sidebar-actions {
-
   a,
   input.button {
 
@@ -225,7 +231,7 @@
     }
 
     summary,
-    input:where(:not([type="checkbox"], [type="radio"], [type="file"])),
+    input:where(:not([type="checkbox"],[type="radio"],[type="file"])),
     textarea {
       font-size: 14px !important;
     }
@@ -271,13 +277,11 @@
       #edit-revert,
       a#edit-cancel {
         @include warningButton;
-        margin-top: 1rem;
+
+        &{
+          margin-top: 1rem;
+        }
       }
     }
   }
-}
-
-// Hide the builder label and only show it when in Layout Builder.
-.builder-label {
-  display: none;
 }

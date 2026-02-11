@@ -1,18 +1,35 @@
 /* FILE
 =========== */
 
-@use '../../../00-base/' as *;
-
-.js-form-type-managed-file,
-.form-item-file-upload-field,
-.js-form-item-file-upload-field {
-  @include fileUpload;
-}
+@use '../00-variables/component-colors' as *;
+@use '../00-variables/fonts' as *;
+@use '../00-variables/units' as *;
+@use '../01-mixins/button-mixins' as *;
 
 .js-form-type-webform-document-file,
 .form-item-document-upload,
-.js-form-item-document-upload {
-  @include fileUpload;
+.js-form-item-document-upload,
+.js-form-type-managed-file,
+.form-item-file-upload-field,
+.js-form-item-file-upload-field {
+
+  input.js-form-submit,
+  input.form-submit {
+    @include submitButton;
+
+    & {
+      font-size: 1.5rem;
+      padding: 1rem 4rem;
+    }
+  }
+
+  // "Allowed upload file types" description.
+  .description {
+    font-size: 2rem;
+    line-height: 1.25;
+    opacity: .7;
+    margin-bottom: $spaceXs;
+  }
 
   label.button {
     display: inline-block;

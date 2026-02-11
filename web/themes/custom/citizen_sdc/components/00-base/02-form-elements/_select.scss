@@ -2,7 +2,12 @@
 	SELECT INPUT
 ==================== */
 
-@use '../../../00-base' as *;
+@use '../00-variables/colors' as *;
+@use '../00-variables/component-colors' as *;
+@use '../00-variables/fonts' as *;
+@use '../00-variables/units' as *;
+@use '../01-mixins/form-mixins' as *;
+@use '../01-mixins/type-mixins' as *;
 
 /* SELECT 2
 ----------------- */
@@ -39,7 +44,16 @@ body,
   .select2-container--default {
 
     .select2-selection--single {
-      @include inputSelect;
+      width: 100%;
+      font-size: 2rem;
+      border: $inputBorderWidth solid $inputBorderColor;
+      border-radius: 0;
+      height: auto;
+      background: $siteBack;
+
+      &.select2--container--focus {
+        box-shadow: 0 2px 2px rgba(35, 35, 35, 0.3);
+      }
 
       &:hover {
         box-shadow: inset 0 0 0 1px $inputBorderHover;
@@ -71,7 +85,6 @@ body,
         background-image: none;
         top: 9px;
         right: 10px;
-        @include transFormAnimate;
 
         // Hide default select2 arrow.
         b {
@@ -91,21 +104,28 @@ body,
     }
 
     .select2-selection--multiple {
-      @include inputSelect;
+      width: 100%;
+      height: 44px;
+      font-size: 2rem;
+      border: $inputBorderWidth solid $inputBorderColor;
+      border-radius: 0;
+      height: auto;
+      background: $siteBack;
       padding: 8px 3.5rem 6px 1.5rem;
       position: static;
-      height: 44px;
-
+     
       &:after {
         content: '';
-        @include safeFlex(row, no-wrap, center, center);
-        @include setDimensions(24px, 24px);
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 24px;
+        height: 24px;
         position: absolute;
-        background-image: none;
-        @include materialIconOutline(\e5cf);
+        background-image: none;  
         top: 12px;
         right: 12px;
-        @include transFormAnimate;
+        @include materialIconOutline(\e5cf);
       }
 
       &:hover {
@@ -149,7 +169,7 @@ body,
         height: 28px;
 
         input.select2-search__field {
-          color: $darkGrey;
+          color: $darkGray;
           @include placeholder;
 
           &:focus {
@@ -175,7 +195,8 @@ body,
 
       .select2-selection--single {
         .select2-selection__arrow {
-          @include rotate(180);
+          transform: rotate(180deg);
+          transition: transform .3s ease;
         }
       }
 
@@ -183,7 +204,8 @@ body,
         border-width: 2px;
 
         &:after {
-          @include rotate(180);
+          transform: rotate(180deg);
+          transition: transform .3s ease;
         }
 
         .select2-search--inline {
@@ -196,11 +218,8 @@ body,
           }
         }
       }
-
     }
-
   }
-
 }
 
 /* SELECT 2 DROPDOWNS

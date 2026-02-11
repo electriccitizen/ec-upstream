@@ -23,14 +23,6 @@
   }
 }
 
-@mixin clearFix {
-  &::after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-}
-
 /**
  * Two-column flex layout where:
  * - column-gap fluidly scales WITH THE CONTAINER (not the viewport)

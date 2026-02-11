@@ -2,7 +2,14 @@
    TYPOGRAPHY
 ============== */
 
-@use '../../00-base' as *;
+@use '../00-variables/colors' as *;
+@use '../00-variables/component-colors' as *;
+@use '../00-variables/fonts' as *;
+@use '../00-variables/units' as *;
+@use '../01-mixins/animation-mixins' as *;
+@use '../01-mixins/button-mixins' as *;
+@use '../01-mixins/general-mixins' as *;
+@use '../01-mixins/type-mixins' as *;
 
 /* HEADING STYLING
 ------------------- */

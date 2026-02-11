@@ -2,16 +2,14 @@
  GLOBAL SITE STYLES
 ====================*/
 
-@use '../../00-base' as *;
+@use '../00-variables/component-colors' as *;
+@use '../00-variables/units' as *;
+@use '../01-mixins/layout-mixins' as *;
 
 [dir="ltr"] {
   body {
     width: 100%;
     box-sizing: border-box;
-
-    &.responsive-preview-frame {
-      padding-left: 0 !important;
-    }
   }
 }
 
