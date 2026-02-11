@@ -2,7 +2,14 @@
  WYSIWYG STYLES
 ============================ */
 
-@use '00-base' as *;
+@use '00-base/00-variables/colors' as *;
+@use '00-base/00-variables/component-colors' as *;
+@use '00-base/00-variables/units' as *;
+@use '00-base/01-mixins/button-mixins' as *;
+@use '00-base/01-mixins/layout-mixins' as *;
+@use '00-base/01-mixins/media-mixins' as *;
+@use '00-base/01-mixins/type-mixins' as *;
+
 
 /* WYSIWYG for editors
 ---------------*/
@@ -26,7 +33,7 @@
     }
 
     mark.marker-yellow {
-      background-color: #fff01f;
+      background-color: $yellowMarker;
     }
 
     ul figure.drupal-media {
