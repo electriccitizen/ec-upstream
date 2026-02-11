@@ -2,7 +2,10 @@
 	QUOTE WIDGET
 ======================= */
 
-@use '../../../00-base' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+@use '../../../00-base/01-mixins/type-mixins' as *;
 
 .paragraph--type--quote {
   @include textConstrain;
@@ -13,7 +16,8 @@
 
   .widget-wrapper {
     @include smallTab {
-      @include safeFlex(row, wrap, start, start);
+      display: flex;
+      flex-wrap: wrap;
     }
   }
 

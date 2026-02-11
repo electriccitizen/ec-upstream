@@ -1,7 +1,9 @@
 /* ================
 	 MEDIA
 ============== */
-@use '../variables' as *;
+@use '../00-variables/colors' as *;
+@use '../00-variables/component-colors' as *;
+@use 'animation-mixins' as *;
 @use 'general-mixins' as *;
 
 @mixin imageBase {
@@ -19,13 +21,6 @@
     opacity: .7;
     @include transAll(.3s);
   }
-}
-
-@mixin caption {
-  text-align: center;
-  font-size: 2rem;
-  font-style: italic;
-  color: $midGray;
 }
 
 @mixin responsiveVideo {

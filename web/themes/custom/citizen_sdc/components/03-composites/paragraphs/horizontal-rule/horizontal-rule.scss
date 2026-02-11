@@ -2,7 +2,8 @@
    HORIZONTAL RULE WIDGET
 ==================== */
 
-@use '../../../00-base' as *;
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
 
 .paragraph--type--horizontal-rule {
   &.text {

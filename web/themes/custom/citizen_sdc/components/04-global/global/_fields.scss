@@ -32,9 +32,10 @@
 
   .platform-links {
     @include listReset;
-    @include safeFlex(row, wrap, start, start);
-    @include bleed(padding, 12px);
-
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    
     li {
       margin-bottom: $spaceXxs;
     }

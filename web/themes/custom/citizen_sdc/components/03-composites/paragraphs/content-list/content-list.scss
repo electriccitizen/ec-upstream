@@ -2,7 +2,9 @@
   CONTENT LIST WIDGET
 ================= */
 
-@use '../../../00-base' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/button-mixins' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
 
 .paragraph--type--content-list {
   @include textConstrain;
@@ -16,7 +18,10 @@
 
     a {
       @include button;
-      margin-bottom: 0;
+
+      &{
+        margin-bottom: 0;
+      }
     }
   }
 }

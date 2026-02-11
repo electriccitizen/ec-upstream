@@ -2,12 +2,15 @@
 	LAYOUT SECTION
 ===================== */
 
-@use '../../../00-base' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+@use '../../../00-base/01-mixins/type-mixins' as *;
 
 .paragraph--type--layout-section {
   .field-section-title {
     @include textConstrain;
     @include heading3;
+    
     & {
       text-align: center;
       margin-bottom: $spaceSm;

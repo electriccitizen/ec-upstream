@@ -75,7 +75,8 @@
 
   .tabs {
     @include listReset;
-    @include safeFlex(row, wrap, null, null);
+    display: flex;
+    flex-wrap: wrap;
     border-bottom: 1px solid $borderRule;
 
     li {
@@ -232,7 +233,8 @@
   .layout-builder-discard-changes,
   .layout-builder-revert-overrides {
     .form-actions {
-      @include safeFlex(row, wrap, start, start);
+      display: flex;
+      flex-wrap: wrap;
 
       & > input {
         margin-right: 1.5rem;

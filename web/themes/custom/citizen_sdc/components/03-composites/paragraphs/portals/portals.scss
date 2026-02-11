@@ -2,13 +2,19 @@
    PORTALS WIDGET
 ================= */
 
-@use '../../../00-base' as *;
+@use '../../../00-base/00-variables/colors' as *;
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/animation-mixins' as *;
+@use '../../../00-base/01-mixins/type-mixins' as *;
 
 .paragraph--type--portals {
   .field-portals {
     margin-bottom: -$spaceMd;
-    @include safeFlex(row, wrap, center, start);
-    @include bleed(padding, 32px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 32px;
 
     & > div {
       margin-bottom: $spaceMd;
@@ -46,7 +52,10 @@
 
     .field-headline {
       @include heading4;
-      text-align: center;
+
+      &{
+        text-align: center;
+      }
     }
 
     .field-long-text {

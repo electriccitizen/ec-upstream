@@ -2,18 +2,25 @@
    GALLERY WIDGET
 ==================== */
 
-@use '../../../00-base' as *;
-
-// Alias to match upstream variable naming.
-$midGrey: $midGray;
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/fonts' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+@use '../../../00-base/01-mixins/media-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
+@use '../../../00-base/01-mixins/type-mixins' as *;
 
 .paragraph--type--gallery {
   max-width: 100%;
 
   .lightbox {
     .gallery-wrapper {
-      @include safeFlex(row, wrap, center, start);
-      @include bleed(padding, 32px);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      column-gap: 32px;
+
       & {
         margin-bottom: -$spaceMd;
       }
@@ -53,44 +60,6 @@ $midGrey: $midGray;
 
       img {
         width: 100%;
-      }
-    }
-  }
-}
-
-@mixin outsideSliderArrows($arrowSpace, $arrowColor, $arrowHover) {
-  padding-left: $arrowSpace;
-  padding-right: $arrowSpace;
-
-  // Override arrow padding when there are not enough slick items to have a
-  // slider or buttons.
-  .slick-list:only-child {
-    @include edgeToEdge;
-  }
-
-  .slick-arrow {
-
-    &.slick-prev {
-      left: 0;
-
-      &:before {
-        border-right-color: $arrowColor;
-      }
-
-      &:hover:before {
-        border-right-color: $arrowHover;
-      }
-    }
-
-    &.slick-next {
-      right: 0;
-
-      &:before {
-        border-left-color: $arrowColor;
-      }
-
-      &:hover:before {
-        border-left-color: $arrowHover;
       }
     }
   }
@@ -148,7 +117,10 @@ $midGrey: $midGray;
           background: $sliderArrowBack;
           border-radius: 50%;
           font-size: 20px;
-          @include safeFlex(column,nowrap,center,center);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-content: center;
           @include materialIcon('arrow_back');
         }
       }
@@ -157,7 +129,7 @@ $midGrey: $midGray;
       &:focus {
         span {
           border-right-color: $link;
-          @include transition(border-right-color, 0.3s, ease);
+          transition: border-right-color 0.3s ease-in-out;
 
           &:before {
             background: $modalGalButtonBackHover;
@@ -189,7 +161,10 @@ $midGrey: $midGray;
           background: $sliderArrowBack;
           border-radius: 50%;
           font-size: 20px;
-          @include safeFlex(column,nowrap,center,center);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-content: center;
           @include materialIcon('arrow_forward');
         }
       }
@@ -198,7 +173,7 @@ $midGrey: $midGray;
       &:focus {
         span {
           border-left-color: $link;
-          @include transition(border-left-color, 0.3s, ease);
+          transition: border-left-color 0.3s ease-in-out;
 
           &:before {
             background: $modalGalButtonBackHover;
@@ -244,7 +219,7 @@ $midGrey: $midGray;
     z-index: 1;
     height: 100%;
     top: 0;
-    @include translate(0, 0);
+    translate: 0 0;
     width: 15%;
     min-width: 60px;
 
@@ -262,7 +237,10 @@ $midGrey: $midGray;
       &:before {
         left: 20px;
         font-size: 20px;
-        @include safeFlex(column,nowrap,center,center);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
         @include materialIcon('arrow_back');
         background: $sliderArrowBack;
         border-radius: 50%;
@@ -273,7 +251,7 @@ $midGrey: $midGray;
 
         &:before {
           border-right-color: $link;
-          @include transition(border-right-color, 0.3s, ease);
+          transition: border-right-color 0.3s ease-in-out;
         }
       }
     }
@@ -284,10 +262,13 @@ $midGrey: $midGray;
       &:before {
         right: 20px;
         font-size: 20px;
-        @include safeFlex(column,nowrap,center,center);
-        @include materialIcon('arrow_forward');
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
         background: $sliderArrowBack;
         border-radius: 50%;
+        @include materialIcon('arrow_forward');
       }
 
       &:hover,
@@ -295,18 +276,13 @@ $midGrey: $midGray;
 
         &:before {
           border-left-color: $link;
-          @include transition(border-left-color, 0.3s, ease);
+          transition: border-left-color 0.3s ease-in-out;
         }
       }
     }
   }
 
   .field-caption {
-    width: 100%;
-    margin-top: $spaceXs;
-    color: $midGrey;
-    font-size: 2rem;
-    font-style: italic;
-    text-align: center;
+    @include caption;
   }
 }

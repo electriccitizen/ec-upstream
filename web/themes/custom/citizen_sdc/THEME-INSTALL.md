@@ -2,9 +2,9 @@
 
 ## ABOUT CITIZEN SDC THEME
 
-For Drupal 9, Citizen SDC uses the Stable theme starting place, and is meant to expand on that to theme this website.
+For Drupal 11, Citizen SDC (single directory component) uses the Stable9 theme starting place, and is meant to expand on that to theme this website.
 
-This theme is compiled using SDC Sass via the SDC VM. This is the fastest, cleanest, most modern way of using Sass. All Sass is written in partial _scss files which are forwarded to a single _index.scss file in each folder of the theme. These index files are then compiled in the main style.scss file and ouput to compressed CSS using the command line.
+This theme is compiled using SDC Sass via the SDC VM. This is the fastest, cleanest, most modern way of using Sass. All Sass for SDC components (01-parts thru 03-composites) is written in .scss files compiled directly in each SDC folder (SDC folders can be identified by having a .components.yml). 00-base holds all the non-SDC base styles for the site (variables, mixins, form elements, global non-SDC styles, etc). 00-base files are included in SDC .scss files via @use as needed and some are also forwarded to the main style.scss that outputs global non-SDC CSS.
 
 ## GETTING STARTED
 
@@ -19,23 +19,18 @@ brew install sass/sass/sass
 (d) cd into the folder for Citizen SDC and you are ready to start running the theme. The theme can be ran in multiple different ways from the theme root:
 (d1) Create a .bash_profile or .zshrc alias for the sass watch command:
 ```
-sass --watch components:components  --style compressed
+sass --watch components  --style compressed
 ```
-Using a profile will allow your to simply type whatever the profile is and the theme command will run, watch and compile the Sass.
-(d2) Add a package.json file to the theme (if you do this, do not commit it to the repo) and create a script to run the same theme command. This is a theme-specific version of creating a profile alias.
-(d3) Simply run the verbose theme command from the project root:
-```
-sass --watch scss:dist  --style compressed
-```
+(d2) or just run the command manually from the command line while in the theme root.
 
 ## WORKING
 
 (a) cd into the Citizen SDC folder
-(b) run whichever theme command you prefer from above.
+(b) run your alias command or the full command above.
 
 ## ADDITIONAL
 
-Generally, all preprocess hooks should be put into a relevant include file, located in the /includes folder, as opposed to directly into citizen_sdc.theme.
+All preprocess hooks should be put into a relevant include file, located in the /includes folder, as opposed to directly into citizen_sdc.theme.
 
 ## Code Standards
 
@@ -45,12 +40,12 @@ and [Twig coding standards](https://www.drupal.org/docs/develop/coding-standards
 
 ## File Structure
 
-Citizen SDC applies a variation of the atmoic design structure. All mixins and variables are kept in folders in 00-Base. Site building elements scale up from there in 01-Parts, 02-Chunks, 03-Composites. Miscellaneous, front-end admin, print and other global files are stored in 04-Assembly.  CKE.scss uses parts of the main theme to compile the styles for the CKE5 Editor in a separate style sheet.
+Citizen SDC applies a variation of the atmoic design structure. All mixins and variables are kept in folders in 00-Base. All non-SDC form element and global styles are also kept in 00-base and are compiled into styles.css.
 
-Individual stylesheets in each main folder are all forwarded into single index files at each level. Example: _parts_index indexes all the main files in 01-parts.  There is also a _form_index files in 01-parts/forms that forwards the individual form element files to the parts_index which passes them onto the styles.scss sheet.  No SASS code should be written in index files.  For general SASS (like global paragraph theming), use a _general file at the same level as the index file.
+Site building elements scale up from there in 01-Parts, 02-Chunks, and 03-Composites. These folders all hold SDC components. If you are adding non-SDC files/folders to these parent folders you are likely incorrect.
 
-This method of forwarding via _index wills is recommended to prevent namspacing loops and to ensure that base variables and mixins and can be safely and easily used anywhere in the theme.
+SDC component folders should all have a .component.yml outlining the structure of the component (props and slots) and a .twig file that has the component's HTML structure with variables/blocks drawn from the props and slots of the .component.yml file that will be replaced either when the SDC component is inherited into other SDC components or into Drupal.
 
-Critical CSS is called in the `<head>` and is indexed in specific _critical files in 01-Parts, 02-Chunks and 03-Composites.
+SDC components can optionally have .scss and JS files. Any .scss file in an SDC component *must not start with _* so that it compiles its .css into its SDC folder so Drupal can correctly attach it to the component when rendered.
 
-When adding a new .scss file anywhere in the, simple make sure that it is forwarded in its immediate parent's index file. To have all variables and mixins available in the new file simply include the base folder: `@use '../../00-base' as *;` at the start of the file.
+If the SDC component is going to be rendered in Drupal, there must be a Drupal .html.twig template in /templates that inherits the .twig template from the SDC component and changes its variables into Drupal output variables.

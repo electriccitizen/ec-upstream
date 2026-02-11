@@ -1,1 +1,17 @@
-:root{--tab-size: 800px;--desk-size: 984px;--large-size: 1600px}@font-face{font-family:"Material Icons";font-style:normal;font-weight:400;src:url(../fonts/MaterialIcons.woff2) format("woff2"),url(../fonts/MaterialIcons-Regular.ttf) format("truetype")}@font-face{font-family:"Material Icons Outlined";font-style:normal;font-weight:400;src:url(../fonts/MaterialIconsOutlined.woff2) format("woff2"),url(../fonts/MaterialIconsOutlined-Regular.otf) format("opentype")}.material-icons{font-family:"Material Icons"}.material-icons-outlined{font-family:"Material Icons Outlined"}@-webkit-keyframes fadeIn{from{opacity:0}50%{opacity:.5}100%{opacity:1}}@-moz-keyframes fadeIn{from{opacity:0}50%{opacity:.5}100%{opacity:1}}@-o-keyframes fadeIn{from{opacity:0}50%{opacity:.5}100%{opacity:1}}@keyframes fadeIn{from{opacity:0}50%{opacity:.5}100%{opacity:1}}.fadeIn{-webkit-animation:fadeIn 1.5s 1;-moz-animation:fadeIn 1.5s 1;-o-animation:fadeIn 1.5s 1;animation:fadeIn 1.5s 1}.paragraph--type--view-placer .widget-title{text-align:left}.paragraph--type--view-placer .view-placer__link{margin-top:6rem}.paragraph--type--view-placer .view-placer__link a{background-color:#bf0e0e;border:1px solid #bf0e0e;color:#fff;line-height:1.15;padding:2rem 3.5rem;display:inline-block;vertical-align:top;text-decoration:none;text-align:center;text-transform:uppercase;font-family:"Open Sans",Helvetica,Arial,sans-serif;font-weight:700;font-size:2rem;margin-bottom:4rem;margin-bottom:0}.paragraph--type--view-placer .view-placer__link a:hover,.paragraph--type--view-placer .view-placer__link a:focus{color:#000;background-color:#ccc;border-color:#ccc;transition:all .3s ease;-moz-transition:all .3s ease;-webkit-transition:all .3s ease;-webkit-transform:translateZ(0);text-decoration:none;outline:0}.paragraph--type--view-placer .view-placer__link a:active{color:#000;background-color:hsl(0,0%,75%);border-color:hsl(0,0%,75%)}.text-with-summary .paragraph--type--view-placer .view-placer__link a+.ec-button,.text-with-summary .paragraph--type--view-placer .view-placer__link a+.ec-button-outline,.text-long .paragraph--type--view-placer .view-placer__link a+.ec-button,.text-long .paragraph--type--view-placer .view-placer__link a+.ec-button-outline{margin-left:1.5rem}.paragraph--type--view-placer .view-placer__link a.js-hide{display:none}/*# sourceMappingURL=view-placer.css.map */
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 5 | @use '../../../00-base' as *;
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   components/03-composites/paragraphs/view-placer/view-placer.scss 5:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 5 \2502  @use '../../../00-base' as *;\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   components/03-composites/paragraphs/view-placer/view-placer.scss 5:1  root stylesheet";
+}

@@ -2,7 +2,8 @@
    TEXT WIDGET
 ================= */
 
-@use '../../../00-base' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
 
 .paragraph--type--text {
   @include textConstrain;

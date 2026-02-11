@@ -1,8 +1,8 @@
 /* ===============
    CTA
 ================= */
-@use '../../../00-base/variables/colors' as *;
-@use '../../../00-base/variables/units' as *;
+@use '../../../00-base/00-variables/colors' as *;
+@use '../../../00-base/00-variables/units' as *;
 
 .cta {
   padding: 32px 40px;
@@ -52,6 +52,7 @@
     .cta__link {
       background: red;
       color: $white;
+      
       &:hover,&:focus {
         background: $black;
       }

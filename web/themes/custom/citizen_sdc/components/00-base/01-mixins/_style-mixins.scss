@@ -2,7 +2,7 @@
 	STYLE MIXINS
 ======================= */
 
-@use '../variables' as *;
+@use '../00-variables/component-colors' as *;
 @use 'sass:math';
 
 @mixin overlay($overlayColor) {
@@ -178,7 +178,28 @@
   }
 }
 
-@mixin setDimensions($width, $height) {
-  width: #{$width};
-  height: #{$height};
+@mixin bannerTitle {
+  position: relative;
+  opacity: 0;
+  @include animation('fadeIn 1.2s 1 forwards');
+
+  .block-field-image {
+    position: relative;
+    @include overlay;
+    @include edgeToEdge;
+  }
+
+  .block-title {
+    @include tab {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      @include translate(-50%, -50%);
+
+      h1 {
+        color: $white;
+      }
+    }
+  }
 }

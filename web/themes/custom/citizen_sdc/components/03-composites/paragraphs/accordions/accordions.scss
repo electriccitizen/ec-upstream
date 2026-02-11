@@ -1,7 +1,13 @@
 /* ===============
    ACCORDIONS
 ================= */
-@use '../../../00-base' as *;
+
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/fonts' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/animation-mixins' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
 
 .paragraph--type--accordions {
   @include textConstrain;

@@ -2,41 +2,12 @@
 	 BUTTONS
 ================== */
 
-@use '../variables' as *;
+@use '../00-variables/component-colors' as *;
+@use '../00-variables/fonts' as *;
+@use '../00-variables/units' as *;
+@use 'animation-mixins' as *;
 @use 'general-mixins' as *;
 @use 'layout-mixins' as *;
-
-@mixin dropbutton {
-
-  input,
-  .button,
-  a,
-  button {
-    border-radius: 0 !important;
-    box-shadow: none;
-    background: $siteBack;
-    text-shadow: none;
-    border-color: $borderRule;
-    font-size: 2rem;
-    color: $baseText;
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      background-color: $buttonTextHover !important;
-      background-image: none !important;
-      border-radius: 0 !important;
-      box-shadow: none;
-      outline: 0;
-    }
-
-    &:active {
-      background: $buttonBackActive;
-      border-radius: 0;
-      box-shadow: none;
-    }
-  }
-}
 
 @mixin button {
   background-color: $buttonBack;
@@ -59,9 +30,9 @@
     color: $buttonTextHover;
     background-color: $buttonBackHover;
     border-color: $buttonBackHover;
-    @include transAll(.3s);
     text-decoration: none;
     outline: 0;
+    @include transAll(.3s);
   }
 
   &:active {
@@ -115,14 +86,20 @@
 
 @mixin submitButton {
   @include button;
-  background: $submitBack;
-  color: $submitText;
-  padding: $submitPadding;
-  height: 44px;
-  line-height: 1;
-  @include safeFlex(column, nowrap, center, center);
-  min-width: 120px;
-  cursor: pointer;
+
+  & {
+    background: $submitBack;
+    color: $submitText;
+    padding: $submitPadding;
+    height: 44px;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    min-width: 120px;
+    cursor: pointer;
+  }
 
   &:hover,
   &:focus {
@@ -140,9 +117,12 @@
 
 @mixin cautionButton {
   @include submitButton;
-  background: $cautionBack;
-  color: $cautionText;
-  border-color: $cautionBack;
+
+  & {
+    background: $cautionBack;
+    color: $cautionText;
+    border-color: $cautionBack;
+  }
 
   &:hover,
   &:focus {
@@ -160,9 +140,12 @@
 
 @mixin warningButton {
   @include submitButton;
-  background: $resetBack;
-  color: $resetText;
-  border-color: $resetBack;
+
+  & {
+    background: $resetBack;
+    color: $resetText;
+    border-color: $resetBack;
+  }
 
   &:hover,
   &:focus {

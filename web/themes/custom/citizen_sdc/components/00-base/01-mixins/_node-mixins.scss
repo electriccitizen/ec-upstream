@@ -2,7 +2,7 @@
    NODES
 =================== */
 
-@use '../variables' as *;
+@use '../00-variables' as *;
 @use 'layout-mixins' as *;
 
 @mixin sectionLimit {
@@ -17,7 +17,10 @@
 
 @mixin warning {
   min-height: 400px;
-  @include safeFlex(column, nowrap, center, center);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 
   & > div {
     max-width: $textMax + 40px;

@@ -2,7 +2,6 @@
 	MIXINS
 ======================= */
 
-@use '../variables' as *;
 @use "sass:list";
 
 @mixin animation($animate...) {
@@ -57,4 +56,11 @@
 
 .fadeIn {
   @include animation('fadeIn 1.5s 1');
+}
+
+@mixin transAll($time) {
+  transition: all $time ease;
+  -moz-transition: all $time ease;
+  -webkit-transition: all $time ease;
+  -webkit-transform: translateZ(0);
 }

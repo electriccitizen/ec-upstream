@@ -1,0 +1,59 @@
+/* ============
+	LAYOUT MIXINS
+======================= */
+
+@use '../00-variables/units' as *;
+
+@mixin smallTab {
+  @media screen and (min-width: $smallTab) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media screen and (min-width: $tab) {
+    @content;
+  }
+}
+
+@mixin desk {
+  @media screen and (min-width: $desk) {
+    @content;
+  }
+}
+
+@mixin contentStop {
+  @media screen and (min-width: $contentStop) {
+    @content;
+  }
+}
+
+@mixin largeScreen {
+  @media screen and (min-width: $largeScreen) {
+    @content;
+  }
+}
+
+@mixin onlyMobile {
+  @media screen and (max-width: $onlyMobile) {
+    @content;
+  }
+}
+
+@mixin onlyTab {
+  @media screen and (min-width: $tab) and (max-width: $desk) {
+    @content;
+  }
+}
+
+@mixin onlySmall {
+  @media screen and (max-width: $onlySmall) {
+    @content;
+  }
+}
+
+@mixin onlyPhone {
+  @media screen and (max-width: $onlyPhone) {
+    @content;
+  }
+}

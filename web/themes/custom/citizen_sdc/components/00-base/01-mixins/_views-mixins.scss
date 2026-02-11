@@ -2,7 +2,7 @@
     global views settings
 ==================== */
 
-@use '../variables' as *;
+@use '../00-variables' as *;
 @use 'layout-mixins' as *;
 
 @mixin viewsTitle {

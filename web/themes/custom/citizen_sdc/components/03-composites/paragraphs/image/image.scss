@@ -2,25 +2,29 @@
    IMAGE WIDGET
 ==================== */
 
-@use '../../../00-base' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+@use '../../../00-base/01-mixins/media-mixins' as *;
 
 .paragraph--type--image{
 
   .image-wrapper{
     @include auto;
-    &.image-size-original{
+
+    &.image-size-original {
       img{
         width: auto;
         max-width: 100%;
         @include auto;
       }
     }
-    figcaption{
+
+    figcaption {
       margin-top: $spaceXxs;
     }
-    a{
 
-      img{
+    a {
+      img {
         @include imageHover;
       }
     }
