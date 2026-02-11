@@ -84,14 +84,6 @@ $checkboxCheckedBack : $link;
 $checkboxCheckedBackHover : $midGray;
 $selectArrow : $midGray;
 $selectHighlight : $link;
-$progressBar : $gray;
-$progressMarker : $gray;
-$progressMarkerText : $black;
-$progressMarkerActive : $darkGray;
-$progressMarkerActiveText : $white;
-$sliderTrack : $gray;
-$sliderTrackHover : $link;
-$sliderKnob : $white;
 $datepickerHeader : $red;
 $datepickerHeaderElement : $white;
 $datepickerDays : $black;
@@ -102,7 +94,7 @@ $datepickerDateBorder : $lightGray;
 $datepickerCurrent : $darkGray;
 $datepickerCurrentBack : $adminWhiteGold;
 $datepickerSelected : $black;
-$datepickerSelectedBack : $darkIce;
+$datepickerSelectedBack : $lightGray;
 $detailsWrapperBack : $offWhite;
 
 /* TABLES
@@ -120,7 +112,7 @@ $oddRowText : $baseText;
 /* GALLERIES / MODALS
 ----------------------------- */
 $sliderArrowBack : $transBlack;
-$modalBack : $adminTransGray;
+$modalBack : $transBlack;
 $modalContent : $baseText;
 $modalContentBack : $siteBack;
 $modalHeader : $white;
@@ -136,49 +128,42 @@ $modalGalButtonShadowHover : $transBlack;
 /* NAVIGATION
 ---------------------- */
 //desktop
-$sfTopLink : $black;
-$sfTopLinkHover : $black;
-$sfTopBackHover : $lightGray;
-$sfTopActive : $link;
-$sfTopActiveHover : $link;
-$sfChildLink : $link;
-$sfChildLinkHover : $hoverLink;
-$sfChildActive : $black;
-$sfChildActiveHover : $hoverLink;
-$sfDropdown : $lightGray;
+$mmTopLink : $black;
+$mmTopLinkHover : $black;
+$mmTopBackHover : $lightGray;
+$mmTopActive : $link;
+$mmTopActiveHover : $link;
+$mmChildLink : $link;
+$mmChildLinkHover : $hoverLink;
+$mmChildActive : $black;
+$mmChildActiveHover : $hoverLink;
+$mmDropdown : $lightGray;
 
 //mobile
-$sfMobileDrop : $white;
-$sfMobileDropBorder : $black;
-$sfMobileItemBorder : $borderRule;
-$sfMobileTop : $link;
-$sfMobileTopBack : $white;
-$sfMobileTopExpanded : $hoverLink;
-$sfMobileTopBackExpanded : $lightGray;
-$sfMobileChild : $link;
-$sfMobileChildActive : $white;
+$mmMobileDrop : $white;
+$mmMobileDropBorder : $black;
+$mmMobileItemBorder : $borderRule;
+$mmMobileTop : $link;
+$mmMobileTopBack : $white;
+$mmMobileTopExpanded : $hoverLink;
+$mmMobileTopBackExpanded : $lightGray;
+$mmMobileChild : $link;
+$mmMobileChildActive : $white;
 
-/* MENU BLOCK (Sidebar)
+/* SECTION MENU 
 --------------------- */
-$menuBlockTitle : $black;
-$menuBlockTitleHover : $hoverLink;
-$menuBlockTitleBack : $lightGray;
-$menuBack : $siteBack;
-$menuTop : $link;
-$menuTopHover : $hoverLink;
-$menuTopActive : $black;
-$menuTopActiveHover : $hoverLink;
-$menuChild : $link;
-$menuChildHover : $hoverLink;
-$menuChildActive : $link;
-$menuChildActiveHover : $hoverLink;
-
-/* WIDGET ANCHORS
----------------------- */
-$anchors : $white;
-$anchorsBack : $link;
-$anchorsHover : $transWhite;
-$anchorsRules : $white;
+$smBlockTitle : $black;
+$smBlockTitleHover : $hoverLink;
+$smBlockTitleBack : $lightGray;
+$smBack : $siteBack;
+$smTopLink : $link;
+$smTopLinkHover : $hoverLink;
+$smTopActive : $black;
+$smTopActiveHover : $hoverLink;
+$smChildLink : $link;
+$smChildLinkHover : $hoverLink;
+$smChildActive : $link;
+$smChildActiveHover : $hoverLink;
 
 /* PAGERS
 --------------------- */
@@ -225,4 +210,4 @@ $messageErrorBorder : $adminFuchsia;
 
 /* EMBEDDED DOC ICONS
 ------------------- */
-$fileIcon: $midGray;
+$fileIcon : $midGray;
