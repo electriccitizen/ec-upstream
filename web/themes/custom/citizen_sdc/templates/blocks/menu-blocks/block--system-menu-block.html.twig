@@ -32,7 +32,7 @@
  */
 #}
 {% set heading_id = 'block-' ~ content['#menu_name'] ~ 'menu' %}
-{% set attributes = attributes.addClass('block-menu--system-menu') %}
+{% set attributes = attributes.addClass('block-menu__system-menu') %}
 
 {% if configuration.label %}
   {% set blockTitle = configuration.label|clean_class %}

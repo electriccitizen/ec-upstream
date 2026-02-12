@@ -37,15 +37,15 @@
  */
 #}
 
-<div{{ attributes|without('class') }} class="paragraph paragraph--type--{{ paragraph.bundle|clean_class  }}{% if paragraph.id.value %} paragraphs-item-{{ paragraph.id.value }}{% endif %}">
+<div{{ attributes|without('class') }} class="paragraph paragraph__{{ paragraph.bundle|clean_class  }}{% if paragraph.id.value %} paragraph--{{ paragraph.id.value }}{% endif %}">
 	{% block widget %}
 		{% block widgetTitle %}
 			{% if content.field_widget_title.0 %}
-				<div class="widget-title">{{- content.field_widget_title.0['#context'].value -}}</div>
+				<div class="paragraph__title">{{- content.field_widget_title.0['#context'].value -}}</div>
 			{% endif %}
 		{% endblock %}
 		{% block widgetInner %}
-			<div class="widget-wrapper">
+			<div class="paragraph__wrapper">
 				{% block widgetContent %}
 					{{- content|without('field_widget_title') -}}
 				{% endblock %}

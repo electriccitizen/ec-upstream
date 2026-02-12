@@ -11,7 +11,7 @@
  */
 #}
 
-{% set classes = 'form form--' ~ attributes.id %}
+{% set classes = 'form form__' ~ attributes.id %}
 
 {{ include('citizen_sdc:form-base', {
   attr: attributes.addClass(classes),

@@ -26,7 +26,7 @@
  */
 #}
 {% if content.0['#field_name']|clean_class %}
-  {% set fieldName = 'block-field--' ~ content.0['#field_name']|clean_class %}
+  {% set fieldName = 'block-field__' ~ content.0['#field_name']|clean_class %}
 {% endif %}
 {% set classes = [
 	  'block-field',

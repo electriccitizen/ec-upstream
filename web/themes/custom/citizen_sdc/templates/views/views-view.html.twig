@@ -33,8 +33,8 @@
 {%
   set classes = [
     'view',
-    css_name|clean_class,
-    view.current_display|clean_class,
+    'view__' ~ css_name|clean_class,
+    'view__' ~ css_name|clean_class ~ '--' ~ view.current_display|clean_class,
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
@@ -49,7 +49,7 @@
 
   {% block viewHeader %}
     {% if header %}
-      <div class="view-header">
+      <div class="view__header">
         {{ header }}
       </div>
     {% endif %}
@@ -65,7 +65,7 @@
   
   {% block viewRows %}
     {% if rows %}
-      <div class="view-content">
+      <div class="view__content">
         {{ rows }}
       </div>
     {% endif %}
@@ -73,7 +73,7 @@
 
   {% block viewEmpty %}
     {% if empty %}
-      <div class="view-empty">
+      <div class="view__empty">
         {{ empty }}
       </div>
     {% endif %}
@@ -91,7 +91,7 @@
 
   {% block viewFooter %}
       {% if footer %}
-      <div class="view-footer">
+      <div class="view__footer">
         {{- footer|without('result') -}}
       </div>
       {% if footer.result %}

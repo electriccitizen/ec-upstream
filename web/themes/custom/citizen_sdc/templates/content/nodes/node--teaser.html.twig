@@ -74,7 +74,7 @@
 
 {% set classes = [
   'node-teaser',
-  'node-teaser--' ~ node.type.0.target_id|clean_class
+  'node-teaser__' ~ node.type.0.target_id|clean_class
 ] %}
 
 <article{{ attributes.addClass(classes) }}>

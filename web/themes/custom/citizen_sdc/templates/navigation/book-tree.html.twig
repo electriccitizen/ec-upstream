@@ -41,7 +41,7 @@
           item.is_expanded ? 'menu-item--expanded',
           item.is_collapsed ? 'menu-item--collapsed',
           item.in_active_trail ? 'menu-item--active-trail',
-          'item-level-' ~ (menu_level + 1),
+          'item-level__' ~ (menu_level + 1),
         ]
       %}
       <li{{ item.attributes.addClass(classes) }}>

@@ -37,7 +37,7 @@
  */
 #}
 
-{% set classes = 'field field--' ~ field_name|clean_class ~ ' field--' ~ field_type|clean_class %}
+{% set classes = 'field field__' ~ field_name|clean_class ~ ' field__' ~ field_type|clean_class %}
   
 {# no label #}
 {%- if label_hidden -%}
@@ -82,7 +82,7 @@
         <div class="label">{{- label -}}</div>
       {%- endif -%}
       {%- if multiple -%}
-        <div class="field--multi-item">
+        <div class="field__multi-item">
       {%- endif -%}
       {% block fieldLabel %}
         {%- for item in items -%}

@@ -22,7 +22,7 @@
  */
 #}
 {% for type, messages in message_list %}
-  <div role="contentinfo" class="drupal-message {{ status_headings[type]|clean_class }}" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
+  <div role="contentinfo" class="drupal-message drupal-message--{{ status_headings[type]|clean_class }}" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
     {% if type == 'error' %}
       <div role="alert">
     {% endif %}

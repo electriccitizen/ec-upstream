@@ -50,15 +50,15 @@
 	{{ parent() }}
   <div class="revisions-actions">
   	<div class="action-wrapper">
-  		<a class="button-submit" href="/node/{{ node }}/revisions">Back to Revisions</a>
-  		<a class="button-warning" href="/node/{{ node }}/revisions/{{ currentId.vid.0.value }}/revert">Revert Revision</a>
-  		<a class="button-danger-robinson" href="/node/{{ node }}/revisions/{{ currentId.vid.0.value }}/delete">Delete Revision</a>
+  		<a class="ec-button ec-button--submit" href="/node/{{ node }}/revisions">Back to Revisions</a>
+  		<a class="ec-button ec-button--reset" href="/node/{{ node }}/revisions/{{ currentId.vid.0.value }}/revert">Revert Revision</a>
+  		<a class="ec-button ec-button--warning" href="/node/{{ node }}/revisions/{{ currentId.vid.0.value }}/delete">Delete Revision</a>
   	</div>
 	</div>
 {% endblock %}
 
 {% block pageContent %}
-	<div class="node-revision">
+	<div class="node-content__revision">
 		{{ parent() }}
 	</div>
 {% endblock %}

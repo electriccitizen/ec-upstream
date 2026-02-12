@@ -15,8 +15,8 @@
 
 {% set classes = [
 	'media-item',
-	'media-item--' ~ media.bundle.0.target_id|clean_class,
-	'media-item--' ~ view_mode|clean_class
+	'media-item__' ~ media.bundle.0.target_id|clean_class,
+	'media-item__' ~ media.bundle.0.target_id|clean_class ~ '--' ~ view_mode|clean_class
 ] %}
 
 <article{{ attributes|without('data-quickedit-entity-id').addClass(classes) }} data-quickedit-entity-id="media/{{ media.mid.0.value }}">

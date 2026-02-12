@@ -33,7 +33,7 @@
         {{ row.content }}
       </div>
     {% endfor %}
-    <div id="drawer-{{ rando }}" class="drawer-content not-fade" aria-hidden="true">
+    <div id="drawer-{{ rando }}" class="drawer-content drawer-content--not-fade" aria-hidden="true">
     {% for row in rows|filter(row => row.content['#row'].index >= 6) %}
       <div{{ row.attributes.addClass(row_classes) }}>
         {{ row.content }}
@@ -46,7 +46,7 @@
         {{ row.content }}
       </div>
     {% endfor %}
-    <div id="drawer-{{ rando }}" class="drawer-content not-fade" aria-hidden="true">
+    <div id="drawer-{{ rando }}" class="drawer-content drawer-content--not-fade" aria-hidden="true">
     {% for row in rows|filter(row => row.attributes.class != 'site-management' and row.content['#row'].index >= 6) %}
       <div{{ row.attributes.addClass(row_classes) }}>
         {{ row.content }}
@@ -54,5 +54,5 @@
     {% endfor %}
     </div>
   {% endif %}
-  <a href="#" class="drawer-toggle drawer-above pre-hide-toggle" aria-controls="drawer-{{ rando }}" aria-expanded="false">See all results</a>
+  <a href="#" class="drawer-toggle drawer-toggle--drawer-above drawer-toggle--pre-hide-toggle" aria-controls="drawer-{{ rando }}" aria-expanded="false">See all results</a>
 {% endblock %}

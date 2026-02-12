@@ -73,7 +73,7 @@
 
 {% set classes = [
   'node-listing',
-  'node-listing--' ~ node.type.0.target_id|clean_class
+  'node-listing__' ~ node.type.0.target_id|clean_class
 ] %}
 
 <article{{ attributes.addClass(classes) }}>
