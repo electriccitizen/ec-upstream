@@ -225,6 +225,10 @@ blockquote {
   @include button;
 }
 
-.button-danger-robinson {
-  @include warningButton;
+.ec-button--reset {
+  @include resetButton;
+}
+
+.ec-button--warning {
+  @include cautionButton;
 }

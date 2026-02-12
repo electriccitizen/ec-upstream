@@ -103,15 +103,15 @@
 
   &:hover,
   &:focus {
-    background: $buttonBackHover;
-    border-color: $buttonBackHover;
-    color: $buttonTextHover;
+    background: $submitBackHover;
+    border-color: $submitBackHover;
+    color: $submitTextHover;
   }
 
   &:active {
-    background: $buttonBackActive;
-    border-color: $buttonBackActive;
-    color: $buttonTextActive;
+    background: $submitBackActive;
+    border-color: $submitBackActive;
+    color: $submitTextActive;
   }
 }
 
@@ -126,19 +126,19 @@
 
   &:hover,
   &:focus {
-    background: $buttonBackHover;
-    border-color: $buttonBackHover;
-    color: $buttonTextHover;
+    background: $cautionBackHover;
+    border-color: $cautionBackHover;
+    color: $cautionTextHover;
   }
 
   &:active {
-    background: $buttonBackActive;
-    border-color: $buttonBackActive;
-    color: $buttonTextActive;
+    background: $cautionBackActive;
+    border-color: $cautionBackActive;
+    color: $cautionTextActive;
   }
 }
 
-@mixin warningButton {
+@mixin resetButton {
   @include submitButton;
 
   & {
@@ -149,14 +149,14 @@
 
   &:hover,
   &:focus {
-    background: $buttonBackHover;
-    border-color: $buttonBackHover;
-    color: $buttonTextHover;
+    background: $resetBackHover;
+    border-color: $resetBackHover;
+    color: $resetTextHover;
   }
 
   &:active {
-    background: $buttonBackActive;
-    border-color: $buttonBackActive;
-    color: $buttonTextActive;
+    background: $resetBackActive;
+    border-color: $resetBackActive;
+    color: $resetTextActive;
   }
 }

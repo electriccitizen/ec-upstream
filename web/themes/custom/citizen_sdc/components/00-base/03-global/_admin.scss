@@ -161,21 +161,54 @@
 
 /* DIALOGS
 ----------------- */
-.ui-dialog .ui-dialog-title {
-  white-space: normal;
-}
+.ui-dialog {
+  &:not(.ui-dialog-off-canvas) {
+    padding: 0;
+  }
 
-.ui-dialog-off-canvas + .select2-container--open {
-  height: 40px;
+  .ui-dialog-titlebar {
+    .ui-dialog-title {
+      white-space: normal;
+      font-size: 2.25rem;
+    }
+  }
 
-  .select2-dropdown {
-    font-size: 1.75rem;
-    width: 100% !important;
+  .ui-dialog-buttonpane {
+    .button {
+      @include button;
 
-    &.select2-dropdown--below {
-      position: absolute;
-      top: 100%;
-      left: 0;
+      &:last-child {
+        background: $resetBack;
+        border-color: $resetBack;
+        color: $resetText;
+
+        &:hover,&:focus {
+          background: $resetBackHover;
+          border-color: $resetBackHover;
+          color: $resetTextHover;
+        }
+
+        &:active {
+          background: $resetBackActive;
+          border-color: $resetBackActive;
+          color: $resetTextActive;
+        }
+      }
+    }
+  }
+
+  .ui-dialog-off-canvas + .select2-container--open {
+    height: 40px;
+
+    .select2-dropdown {
+      font-size: 1.75rem;
+      width: 100% !important;
+
+      &.select2-dropdown--below {
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
     }
   }
 }
@@ -263,7 +296,7 @@
 
       #edit-revert,
       a#edit-cancel {
-        @include warningButton;
+        @include resetButton;
 
         &{
           margin-top: 1rem;
