@@ -146,3 +146,6 @@ upstream/web/
 /web/sites/default/settings.docksal.php
 /.docksal/docksal-local.env
 /.docksal/docksal-local.yml
+
+# Ignore theme dist if it gets generated from running old commands
+/web/themes/citizen_sdc/dist
