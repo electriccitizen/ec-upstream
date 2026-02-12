@@ -9,7 +9,7 @@ props:
   properties:
     attr:
       type: object
-      description: Drupal Attributes object for the <form>.
+      description: 'Drupal Attributes object for the <form>'
 
 slots:
   form:

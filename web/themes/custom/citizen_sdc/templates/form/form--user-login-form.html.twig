@@ -13,6 +13,6 @@
 
 {{ include('citizen_sdc:login', {
   title: 'Login',
-  attr: attributes,
+  attr: attributes.addClass('form form--user-login'),
   form: children
 }, with_context = false) }}

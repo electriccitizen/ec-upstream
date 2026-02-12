@@ -15,7 +15,7 @@ props:
       description: 'User login title.'
     attr:
       type: object
-      description: 'Drupal Attributes object for the <form.'
+      description: 'Drupal Attributes object for the <form'
 
 slots:
   form:

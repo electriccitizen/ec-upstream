@@ -40,7 +40,7 @@
 {% extends 'field.html.twig' %}
 
 {% block fieldMultiNoItems %}
-	<span class="inline-label">Roles: </span>
+	<span class="label label--inline">Roles: </span>
   {%- for item in items -%}
     <span{{ item.attributes }}>{{ item.content }}{% if not loop.last %}, {% endif %}</span>
   {%- endfor -%}

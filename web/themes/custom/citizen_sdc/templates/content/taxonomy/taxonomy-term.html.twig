@@ -25,7 +25,8 @@
 #}
 {% set classes = [
 	'term-page',
-	'vocab-' ~ term.vid.0.target_id|clean_class
+  'taxonomy-vocab'
+	'taxonomy-vocab--' ~ term.vid.0.target_id|clean_class
 ] %}
 
 <div{{ attributes.addClass(classes) }}>

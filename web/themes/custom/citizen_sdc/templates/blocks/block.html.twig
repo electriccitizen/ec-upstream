@@ -28,19 +28,19 @@
 
 {% if plugin_id %}
   {% if 'views_block' in plugin_id  %}
-    {% set pluginClass = 'views-block block-' ~ content['#name']|clean_class ~ ' block-' ~ content['#display_id']|clean_class%}
+    {% set pluginClass = 'block--views-block block--' ~ content['#name']|clean_class ~ ' block--' ~ content['#display_id']|clean_class%}
   {% else %}
-    {% set pluginClass = 'block-' ~ plugin_id|clean_class %}
+    {% set pluginClass = 'block--' ~ plugin_id|clean_class %}
   {% endif %}
 {% endif %}
 {% if content['#block_content'].bundle %}
-  {% set bundleClass = 'block-' ~ content['#block_content'].bundle|clean_class %}
+  {% set bundleClass = 'block--' ~ content['#block_content'].bundle|clean_class %}
 {% endif %}
 {% if content['#block_content'].info.0.value %}
-  {% set titleClass = 'block-' ~ content['#block_content'].info.0.value|clean_class %}
+  {% set titleClass = 'block--' ~ content['#block_content'].info.0.value|clean_class %}
 {% endif %}
 {% if elements.content['#block_content'].id() %}
-  {% set idClass = 'block-' ~ elements.content['#block_content'].id() %}
+  {% set idClass = 'block--' ~ elements.content['#block_content'].id() %}
 {% endif %}
 
 {% set drupalClasses = [
@@ -54,7 +54,7 @@
 
 
 {% block blockAttributes %}
-	<div{% if (content['#block_content'].bundle|clean_class == 'basic') or (content['#block_content'].bundle|clean_class == 'teaser-block-type') or (content['#block_content'].bundle|clean_class == 'contact-accordion-block') or (content['#block_content'].bundle|clean_class == 'paragraphs') %} data-quickedit-entity-id="block_content/{{ elements.content['#block_content'].id() }}"{% endif %}{{ attributes.addClass(drupalClasses) }}>
+	<div{{ attributes.addClass(drupalClasses) }}>
 {% endblock %}
   {% block blockSetup %}
     {{ title_prefix }}

@@ -43,9 +43,9 @@
 {% block fieldSingleNo %}
 	{%- if item.content.address_line1['#value'] -%}
 	  {%- if item.content.organization['#value'] -%}
-	    <div class="organization">{{ item.content.organization['#value'] }}</div>
+	    <div class="address--organization">{{ item.content.organization['#value'] }}</div>
 	  {%- endif -%}
-	  <div class="address-wrapper">
+	  <div class="address--wrapper">
 		  {%- if item.content.address_line1['#value'] -%}
 		    {{ item.content.address_line1['#value'] }}
 		  {%- endif -%}

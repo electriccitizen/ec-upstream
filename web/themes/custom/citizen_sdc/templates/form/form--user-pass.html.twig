@@ -13,6 +13,6 @@
 
 {{ include('citizen_sdc:password-reset', {
   title: 'Reset Password',
-  attr: attributes,
+  attr: attributes.addClass('form form--user-login'),
   form: children
 }, with_context = false) }}

@@ -73,9 +73,9 @@
 
 {% set classes = [
   'node-content',
-  'node-' ~ node.type.0.target_id|clean_class,
-  'node-' ~ node.id,
-  'node-' ~ view_mode|clean_class,
+  'node-content--' ~ node.type.0.target_id|clean_class,
+  'node-content--' ~ node.id,
+  'node-content--' ~ view_mode|clean_class,
 ] %}
 
 <article{{ attributes.addClass(classes) }}>

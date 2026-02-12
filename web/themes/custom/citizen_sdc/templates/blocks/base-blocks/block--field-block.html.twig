@@ -26,7 +26,7 @@
  */
 #}
 {% if content.0['#field_name']|clean_class %}
-  {% set fieldName = 'block-' ~ content.0['#field_name']|clean_class %}
+  {% set fieldName = 'block-field--' ~ content.0['#field_name']|clean_class %}
 {% endif %}
 {% set classes = [
 	  'block-field',
@@ -36,7 +36,6 @@
 <div{{ attributes.addClass(classes) }}>
   {% block blockContent %}
     {{ title_prefix }}
-    <div class="builder-label">{{ configuration.label }}</div>
     {% if label %}
       <h2 class="block-title">{{ configuration.label }}</h2>
     {% endif %}
