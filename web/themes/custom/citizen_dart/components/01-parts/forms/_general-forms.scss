@@ -365,38 +365,6 @@ h1.webform-title {
     max-width: 400px;
   }
 
-  .js-form-type-password {
-    position: relative;
-
-    .password-reset {
-      position: absolute;
-      top: 12px;
-      right: 0;
-      font-size: 2rem;
-    }
-
-    .show-password {
-      position: absolute;
-      top: 54px;
-      right: 12px;
-      font-size: 1.4rem;
-      color: $midGrey;
-
-      &:hover,
-      &:focus {
-        color: $hoverLink;
-      }
-    }
-
-    input#edit-pass {
-      padding-right: 56px;
-    }
-
-    .description {
-      padding-top: 1rem;
-    }
-  }
-
   .description,
   p {
     font-size: 1.4rem;
