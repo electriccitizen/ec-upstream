@@ -2,78 +2,29 @@
    WEBFORM
 ================= */
 
-@use '../../../00-base/00-variables/colors' as *;
-@use '../../../00-base/00-variables/component-colors' as *;
-@use '../../../00-base/00-variables/fonts' as *;
+
 @use '../../../00-base/00-variables/units' as *;
-@use '../../../00-base/01-mixins/form-mixins' as *;
-@use '../../../00-base/01-mixins/general-mixins' as *;
+@use '../../../00-base/01-mixins/button-mixins' as *;
 @use '../../../00-base/01-mixins/layout-mixins' as *;
 
-// Wipe browser appearance of form inputs.
-input[type=text],
-input[type=search],
-input[type=url],
-input[type=number],
-textarea,
-input[type="search"] {
-  @include browserWipe;
-}
+.user-access-form {
+  max-width: $desk;
+  @include auto;
 
-.has-error {
-  border-color: $validation;
-}
-
-.form-item {
-  width: 100%;
-  margin-bottom: $formElementSpace;
-
-  label {
-    @include formLabel;
-  }
-}
-
-.form-required,
-.js-form-required {
-  position: relative;
-  @include required;
-}
-
-.description {
-  font-size: 2rem;
-}
-
-input + .description {
-  padding-top: $spaceXs;
-}
-
-fieldset {
-  border: none;
-  padding: 0;
-  margin: 0;
-
-  legend {
-    font-weight: $heavy;
-    font-size: 2.5rem;
-    margin-bottom: $spaceXs;
-  }
-}
-
-.ui-autocomplete {
-  .ui-dialog-off-canvas & {
-    background: $siteBack;
+  h1{
+    margin-bottom: $elementSpace;
   }
 
-  .ui-menu-item-wrapper {
-    display: block;
-    font-size: 2rem !important;
+  .form-item:not([type="submit"]) {
+    max-width: 400px;
+  }
 
-    &.ui-state-active {
-      background: $link;
-      border-color: $link;
-      color: $white;
-      text-decoration: none;
-      margin: 0;
-    }
+  .description,
+  p {
+    font-size: 1.4rem;
+  }
+
+  #edit-submit.button {
+    @include button;
   }
 }

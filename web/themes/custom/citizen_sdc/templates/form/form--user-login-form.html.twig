@@ -10,13 +10,9 @@
  * @see template_preprocess_form()
  */
 #}
-<div class="user-access-form">
-  {% block formTitle %}
-    <h1>Login</h1>
-  {% endblock %}
-  {% block form %}
-    <form{{ attributes }}>
-      {{ children }}
-    </form>
-  {% endblock %}
-</div>
+
+{{ include('citizen_sdc:login', {
+  title: 'Login',
+  attr: attributes,
+  form: children
+}, with_context = false) }}

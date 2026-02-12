@@ -1,7 +1,7 @@
 component:
   id: citizen_sdc:login
   label: 'Form'
-  description: 'Form built using the Webform contrib module UI.'
+  description: 'User login form'
   status: experimental
 
 props:
@@ -9,18 +9,10 @@ props:
   required:
     - title
   properties:
-
     title:
       type: string
-      description: 'Webform title.'
-
-    webformPlacer:
-      type: boolean
-      default: false
-
-    showFormTitle:
-      type: boolean
-      default: true
+      title: 'Login'
+      description: 'User login title.'
 
 slots:
   form:
