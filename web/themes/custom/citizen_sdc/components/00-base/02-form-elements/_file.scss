@@ -14,12 +14,14 @@
 .js-form-item-file-upload-field {
 
   input.js-form-submit,
-  input.form-submit {
+  input.form-submit,
+  label.button {
     @include submitButton;
 
     & {
       font-size: 1.5rem;
-      padding: 1rem 4rem;
+      padding: 1rem 2rem;
+      max-width: 120px;
     }
   }
 
@@ -28,22 +30,7 @@
     font-size: 2rem;
     line-height: 1.25;
     opacity: .7;
+    margin-top: $spaceXxs;
     margin-bottom: $spaceXs;
-  }
-
-  label.button {
-    display: inline-block;
-    color: $buttonText;
-    padding: $buttonPadding;
-    font-size: $button;
-
-    &:hover,
-    &:focus {
-      color: $buttonTextHover;
-    }
-
-    &:active {
-      color: $buttonTextActive;
-    }
   }
 }
