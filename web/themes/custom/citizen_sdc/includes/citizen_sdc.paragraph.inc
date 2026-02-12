@@ -13,8 +13,8 @@ function citizen_sdc_preprocess_paragraph__form_placer(&$variables) {
   if (isset($paragraph->field_form_title->value)) {
     $form_title = $paragraph->field_form_title->value;
     $webform = $variables['elements']['field_form'][0]['#webform'];
-    $webform->set('webformPlacer', TRUE);
-    $webform->set('showFormTitle', $form_title);
+    $webform->set('webform_placer', TRUE);
+    $webform->set('show_placer_title', $form_title);
   }
 }
 

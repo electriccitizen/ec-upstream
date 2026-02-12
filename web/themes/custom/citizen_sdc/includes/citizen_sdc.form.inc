@@ -16,11 +16,12 @@ use Drupal\webform\Entity\Webform;
 function citizen_sdc_preprocess_webform(&$variables) {
   $webform_id = $variables["element"]["#webform_id"];
   $webform = Webform::load($webform_id);
+  // Expose flags set by the paragraph form placer so SDC props receive them.
   if ($webform->get('webform_placer')) {
-    $variables['webform_placer'] = TRUE;
+    $variables['webformPlacer'] = TRUE; 
   }
-  if ($webform->get('show_placer_title')) {
-    $variables['show_placer_title'] = TRUE;
+  if ($webform->get('show_placer_title') == 1) {
+    $variables['showFormTitle'] = TRUE;
   }
   $variables['title'] = $webform->label();
 }
