@@ -9,12 +9,6 @@
 @use '../../../00-base/01-mixins/form-mixins' as *;
 @use '../../../00-base/01-mixins/type-mixins' as *;
 
-#views-form-wrapper {
-  background: purple;
-}
-select {
-  background-color: green !important;
-}
 
 /* SELECT 2
 ----------------- */
