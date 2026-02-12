@@ -70,7 +70,7 @@ class SiteSearchForm extends FormBase {
       '#default_value' => '',
       '#placeholder' => 'Enter keyword(s)',
       '#attributes' => [
-        'class' => ['site-search-fulltext'],
+        'class' => ['site-search--fulltext'],
       ],
     ];
 

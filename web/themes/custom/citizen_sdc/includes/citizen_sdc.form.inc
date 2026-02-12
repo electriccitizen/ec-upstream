@@ -35,10 +35,10 @@ function citizen_sdc_form_alter(&$form, FormStateInterface $form_state, $form_id
   }
   if (strpos($form_id, 'views_exposed_form') === 0) {
     if (isset($form['actions']['submit'])) {
-      $form['actions']['submit']['#attributes']['class'][] = 'views-submit';
+      $form['actions']['submit']['#attributes']['class'][] = 'views--submit';
     }
     if (isset($form['actions']['reset'])) {
-      $form['actions']['reset']['#attributes']['class'][] = 'views-reset';
+      $form['actions']['reset']['#attributes']['class'][] = 'views--reset';
     }
   }
 }
