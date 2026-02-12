@@ -23,7 +23,6 @@
   font-family: $header;
   font-weight: $heavy;
   font-size: $button;
-  margin-bottom: $spaceMd;
 
   &:hover,
   &:focus {
@@ -43,9 +42,10 @@
 
   .text-with-summary &,
   .text-long & {
-
-    &+.ec-button,
-    &+.ec-button-outline {
+    margin-bottom: $spaceMd;
+    
+    & + .ec-button,
+    & + .ec-button-outline {
       margin-left: 1.5rem;
     }
   }

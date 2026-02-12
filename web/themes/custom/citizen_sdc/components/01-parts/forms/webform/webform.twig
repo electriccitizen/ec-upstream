@@ -21,14 +21,16 @@
  * @ingroup themeable
  */
 #}
+<div class="webform-wrapper">
+	{% if webformPlacer and showFormTitle %}
+    <div class="widget-title">{{ title }}</div>
+  {% elseif not webformPlacer %}
+    <h1 class="webform-title">{{ title }}</h1>
+  {% endif %}
 
-{{ dd() }}
-
-{{ include('citizen_sdc:webform', {
-  title: title,
-  webformPlacer: webformPlacer,
-  showFormTitle: showFormTitle,
-  form: children
-}, with_context = false) }}
-
-
+	<form{{ attributes }}>
+    {{ title_prefix }}
+    {{ form }}
+    {{ title_suffix }}
+  </form>
+</div>

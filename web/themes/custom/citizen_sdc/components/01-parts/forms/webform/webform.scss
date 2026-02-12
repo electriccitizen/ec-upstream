@@ -1,0 +1,116 @@
+/* ===============
+   WEBFORM
+================= */
+
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/fonts' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/button-mixins' as *;
+@use '../../../00-base/01-mixins/form-mixins' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+
+.path-webform {
+  
+  .webform-wrapper {
+    max-width: $textMax;
+    @include auto;
+
+    h1.webform-title {
+      max-width: $textMax;
+      text-align: center;
+      @include auto;
+    }
+
+    .webform-submission-form {
+      padding-top: $spaceMd;
+
+      .has-error {
+        border-color: $validation;
+      }
+
+      .form-item {
+        margin-bottom: $formElementSpace;
+
+        label {
+          @include formLabel;
+        }
+
+        .description {
+          font-size: 2rem;
+        }
+
+        input {
+          & + .description {
+            padding-top: $spaceXxs;
+          }
+        }
+      }
+
+      .form-required,
+      .js-form-required {
+        position: relative;
+        @include required;
+      }
+
+      fieldset {
+        border: none;
+        padding: 0;
+        margin: 0;
+
+        legend {
+          font-weight: $heavy;
+          font-size: 2.5rem;
+          margin-bottom: $spaceXs;
+        }
+
+        &.webform-composite-hidden-title {
+          margin-top: 0;
+          margin-bottom: $spaceMd;
+        }
+      }
+
+      .webform-element-help {
+        margin: 0;
+        height: 2rem;
+        width: 2rem;
+        line-height: 2rem;
+        top: -5px;
+        border: 0;
+        background: $link;
+        position: relative;
+
+        &:hover,
+        &:focus {
+          outline: none;
+          background: $hoverLink;
+        }
+      }
+
+      .form-actions {
+        padding-top: $spaceMd;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        input[type=submit].button {
+          @include submitButton;
+        }
+      }
+    }
+  }
+}
+
+.webform-confirmation {
+  max-width: $textMax;
+  @include auto;
+  border: $inputBorderWidth solid $inputBorderColor;
+  padding: 2.5rem;
+  text-align: center;
+
+  .webform-confirmation__back {
+    a {
+      @include button;
+      margin-bottom: 0;
+    }
+  }
+}

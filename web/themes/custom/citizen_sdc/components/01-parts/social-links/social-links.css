@@ -1,17 +1,1 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 6 | @use '../../00-base/00-variables/general-mixins' as *;
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   components/01-parts/social-links/social-links.scss 6:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 6 \2502  @use '../../00-base/00-variables/general-mixins' as *;\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   components/01-parts/social-links/social-links.scss 6:1  root stylesheet";
-}
+:root{--tab-size: 800px;--desk-size: 984px;--large-size: 1600px}.field-platforms{margin-bottom:-1rem}.field-platforms .platform-links{display:flex;flex-wrap:wrap;column-gap:12px;list-style:none;margin:0;padding:0}.field-platforms .platform-links li{margin-bottom:1rem}.field-platforms .platform-links svg{width:4rem;height:4rem}/*# sourceMappingURL=social-links.css.map */
