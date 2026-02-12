@@ -1,20 +1,26 @@
-(function ($, Drupal, once) {
+
+// Modern vanilla JS behaviors (no jQuery dependency).
+(function (Drupal, once) {
 
   /* BACK TO TOP
   ------------------ */
   Drupal.behaviors.backToTop = {
     attach: function (context, settings) {
       once('backTop', 'html.js', context).forEach(backTop => {
-        window.addEventListener('scroll', function () {
-          var back = window.innerHeight * 0.8;
-          if (window.scrollY > back) {
-            document.querySelector('.back-anchor').style.display = 'block';
-          } else {
-            document.querySelector('.back-anchor').style.display = 'none';
-          }
+        const backAnchor = document.querySelector('.back-anchor');
+        const backAnchorLink = backAnchor?.querySelector('a');
+
+        if (!backAnchor || !backAnchorLink) {
+          return;
+        }
+
+        window.addEventListener('scroll', () => {
+          const threshold = window.innerHeight * 0.8;
+          backAnchor.style.display = window.scrollY > threshold ? 'block' : 'none';
         });
-        document.querySelector('.back-anchor a').addEventListener('click', function (e) {
-          e.preventDefault();
+
+        backAnchorLink.addEventListener('click', (event) => {
+          event.preventDefault();
           window.scrollTo({
             top: document.body.offsetTop - 10,
             behavior: 'smooth'
@@ -23,36 +29,32 @@
       });
     }
   }
+  
   Drupal.behaviors.widthCheck = {
     attach: function (context, settings) {
       once('desktopSizing', 'body', context).forEach(() => {
         // Get desktop width from CSS vars set in 00-base/00-variables/_units.scss.
-        let deskWidth = window.getComputedStyle(document.documentElement).getPropertyValue('--desk-size');
-        if (!deskWidth) {
-          // As a backup, just in case the browser doesn't support CSS vars.
-          deskWidth = "984px";
-        }
-        deskWidth = deskWidth.replace("px", "");
-        let currentSize = "";
-        widthCheck();
+        const rootStyles = window.getComputedStyle(document.documentElement);
+        const cssDeskWidth = rootStyles.getPropertyValue('--desk-size');
+        const fallbackDeskWidth = '984px';
+        const deskWidth = Number.parseInt(cssDeskWidth || fallbackDeskWidth, 10);
+        let currentSize = '';
 
-        window.addEventListener('resize', widthCheck);
-
-        function widthCheck() {
+        const widthCheck = () => {
           const oldSize = currentSize;
-          if ($('body').width() >= deskWidth) {
-            currentSize = "desk";
-          }
-          else {
-            currentSize = "mobile";
-          }
+          const bodyWidth = document.documentElement.clientWidth;
+          currentSize = bodyWidth >= deskWidth ? 'desk' : 'mobile';
+
           if (oldSize !== currentSize) {
-            $("body").removeClass("size-" + oldSize);
-            $("body").addClass("size-" + currentSize);
+            document.body.classList.remove(`size-${oldSize}`);
+            document.body.classList.add(`size-${currentSize}`);
           }
-        }
+        };
+
+        widthCheck();
+        window.addEventListener('resize', widthCheck);
       });
     }
   }
 
-})(jQuery, Drupal, once);
+})(Drupal, once);
