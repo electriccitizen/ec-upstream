@@ -8,100 +8,97 @@
 @use '../00-variables/units' as *;
 @use '../01-mixins/form-mixins' as *;
 @use '../01-mixins/type-mixins' as *;
+@use "sass:color";
 
-.form-checkboxes,
+%customBox {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+
+.checkboxes--wrapper {
+  legend {
+    @include formLabel;
+  }
+}
+
 .js-webform-checkboxes {
   margin-bottom: -$spaceXxs;
   display: flex;
   flex-wrap: wrap;
-
-  fieldset & {
-    margin-left: -2rem;
-    margin-right: -2rem;
-  }
 }
-
-.checkboxes--wrapper {
-  padding: 0;
-
-  legend {
-    @include formLabel;
-  }
-
-  .fieldset-wrapper {
-    margin: 0;
-  }
-}
-
 
 .js-form-type-checkbox {
   width: auto;
   margin-right: 3rem;
   position: relative;
   margin-bottom: 1rem;
-  margin-top: 1rem;
-
-  label,
-  input {
-    display: inline-block;
-  }
-
-  label {
-    font-weight: $regular;
-    margin-bottom: 0;
-  }
 
   input[type="checkbox"] {
-    margin-right: .6rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+
+    &:hover,&:focus {
+      & + label {
+        color: $midGray;
+        &:before {
+          border-color: $inputBorderHover;
+          box-shadow: inset 0 0 0 1px $inputBorderHover;
+        }
+      }
+    }
+
+    &:checked {
+      & + label {
+        &:before {
+          background-color: $inputSelected;
+          border-color: $inputSelected;
+        }
+
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      &:hover, &:focus {
+        & + label { 
+          &:before {
+            background-color: color.change($inputSelected, $alpha: 0.5);
+          }
+        }
+      }
+    }
   }
 
   label {
     display: block;
-    padding: 0 0 0 35px;
-  }
+    padding: 0 0 0 32px;
+    cursor: pointer;
+    font-weight: $regular;
+    font-size: $baseSize;
+    margin-bottom: 0;
 
-  input,
-  input+label::before {
-    position: absolute;
-    top: 3px;
-    height: 20px;
-    left: 0;
-    width: 20px;
-  }
+    &:before {
+      border: 1px solid $borderRule;
+      @extend %customBox;
+    }
 
-  input+label::before {
-    border: 1px solid $checkboxChecked;
-    content: "";
-  }
-
-  input+label::after {
-    content: "";
-    opacity: 0;
-    @include materialIconOutline(\e5ca);
-    height: 20px;
-    width: 20px;
-    position: absolute;
-    left: 1px;
-    top: 4px;
-    font-size: 19px;
-    transition: opacity 0.2s ease-in-out;
-  }
-
-  input:checked+label::after {
-    opacity: 1;
-    background-color: $checkboxChecked;
-    color: $white;
-  }
-
-  input:hover+label::before,
-  input:focus+label::before {
-    box-shadow: 0 0 0 2px $checkboxChecked;
-    outline: 3px solid transparent;
-  }
-
-  input:checked:hover+label::after,
-  input:checked:focus+label::after {
-    box-shadow: 0 0 0 2px $checkboxChecked;
-    outline: 3px solid transparent;
+    &:after {
+      opacity: 0;
+      font-size: 20px;
+      transition: opacity 0.2s ease-in-out;
+      color: $white;
+      @extend %customBox;
+      @include materialIconOutline(\e5ca);
+    }
   }
 }
