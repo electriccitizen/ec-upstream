@@ -6,18 +6,13 @@
 @use '../00-variables/units' as *;
 @use '../01-mixins/layout-mixins' as *;
 
-[dir="ltr"] {
-  body {
-    width: 100%;
-    box-sizing: border-box;
-  }
-}
 
-.overflow-guard {
-  background: $siteBack;
+body {
   width: 100%;
+  box-sizing: border-box;
+  background: $siteBack;
 
-  .unpublished & {
+  &.unpublished {
     background: $unpub;
   }
 
@@ -28,35 +23,10 @@
       box-sizing: inherit;
     }
   }
-
-  .main-page-content {
-    padding: 0;
-  }
 }
 
 .container-inline div {
   display: inline;
-}
-
-#block-citizen-sdc-help {
-  padding: $elementSpace 0;
-  max-width: $contentStop;
-  @include auto;
-
-  h2 {
-    margin-bottom: $spaceSm;
-    font-size: 3rem;
-  }
-
-  p {
-    margin-bottom: $spaceXs;
-    font-size: 2rem;
-
-    small {
-      font-size: 1.75rem;
-      font-style: italic;
-    }
-  }
 }
 
 /* SKIP NAV

@@ -44,29 +44,6 @@
   }
 }
 
-// Fix responsive preview in Gin secondary.
-.gin-secondary-toolbar {
-  #responsive-preview-toolbar-tab {
-    button {
-      margin-bottom: 0;
-
-      &.responsive-preview-icon {
-        font-size: 14px;
-      }
-    }
-
-    ul.responsive-preview-options {
-      button.responsive-preview-device {
-        font-size: 12px;
-      }
-    }
-
-    a.responsive-preview-configure {
-      font-size: 10px;
-    }
-  }
-}
-
 /* ADMIN NODE EDIT TABS
 ----------------- */
 #block-citizen-sdc-local-tasks {
