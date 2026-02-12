@@ -2,7 +2,8 @@
   VIEW PLACER WIDGET
 ================= */
 
-@use '../../../00-base' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/button-mixins' as *;
 
 .paragraph--type--view-placer {
   .widget-title {

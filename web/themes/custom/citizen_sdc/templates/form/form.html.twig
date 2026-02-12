@@ -10,6 +10,8 @@
  * @see template_preprocess_form()
  */
 #}
-<form{{ attributes }}>
-  {{ children }}
-</form>
+
+{{ include('citizen_sdc:form-base', {
+  attr: attributes,
+  form: children
+}, with_context = false) }}
