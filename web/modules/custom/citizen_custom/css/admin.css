@@ -2,13 +2,6 @@
   ADMIN CSS
 =========================*/
 
-/* hide default drupal preview button
----------------------------- */
-#edit-gin-actions input[data-drupal-selector="edit-preview"],
-#edit-gin-sticky-actions input[data-drupal-selector="gin-sticky-edit-preview"] {
-  display: none;
-}
-
 /* style disabled buttons in gin
 --------------------------------- */
 button[disabled],

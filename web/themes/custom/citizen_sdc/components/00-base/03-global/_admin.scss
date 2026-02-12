@@ -44,6 +44,16 @@
   }
 }
 
+/* DRUPAL PREVIEW TOOLBAR 
+-------------------------- */
+.node-preview-container {
+  .node-preview-form-select {
+    .js-form-item-view-mode {
+      display: none;
+    }
+  }
+}
+
 /* ADMIN NODE EDIT TABS
 ----------------- */
 #block-citizen-sdc-local-tasks {
