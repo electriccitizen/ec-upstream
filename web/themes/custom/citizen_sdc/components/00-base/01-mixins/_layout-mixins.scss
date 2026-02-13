@@ -125,8 +125,8 @@ $column-right-px: 433;
 }
 
 @mixin textConstrain {
-  .node-section >.layout--onecol &,
-  .widget-section >.layout--onecol & {
+  .node-section >.layout__onecol &,
+  .widget-section >.layout__onecol & {
     max-width: $textMax;
     @include auto;
   }

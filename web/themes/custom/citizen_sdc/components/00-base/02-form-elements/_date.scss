@@ -6,44 +6,14 @@
 @use '../00-variables/units' as *;
 @use '../01-mixins/form-mixins' as *;
 
-.field--type-datetime {
-  margin-bottom: $formElementSpace;
-
-  .label {
-    @include formLabel;
-  }
-
-  .description {
-    margin-top: -$spaceSm;
-  }
-}
-
-.field--type-daterange {
-  legend {
-    @include formLabel;
-  }
-
-  .description {
-    margin-top: -$spaceSm;
-  }
-
-  .fieldset-wrapper {
-    .label {
-      font-size: 2rem;
-      font-weight: $heavy;
-      margin-bottom: 3px;
-    }
-  }
-}
-
-.js-form-type-date,
-.form-item-html-5-date {
+.js-form-type--date,
+.form-item--html-5-date {
   input {
     @include textInput;
   }
 }
 
-.js-form-type-webform-time {
+.js-form-type--webform-time {
   input {
     @include textInput;
 
@@ -53,17 +23,17 @@
   }
 }
 
-.js-form-type-datetime {
+.js-form-type--datetime {
   .container-inline {
     display: flex;
 
-    .js-form-type-date {
+    .js-form-type--date {
       max-width: 230px;
       margin-right: 10px;
       margin-bottom: 0;
     }
 
-    .js-form-type-webform-time {
+    .js-form-type--webform-time {
       max-width: 120px;
       margin-bottom: 0;
     }
@@ -71,7 +41,7 @@
 
 }
 
-.js-form-type-datelist {
+.js-form-type--datelist {
   .container-inline {
     display: flex;
     flex-wrap: wrap;

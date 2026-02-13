@@ -20,6 +20,11 @@
   max-width: $contentStop;
   @include auto;
 
+  &:before {
+    position: relative;
+    top: .7rem;
+  }
+
   a {
     color: $messageLink;
 
@@ -29,27 +34,16 @@
     }
   }
 
-  &.error-message,
-  &.warning-message,
-  &.status-message {
-
-    &:before {
-      position: relative;
-      top: 0.7rem;
-    }
-  }
-
-  &.error-message {
+  &.drupal-message--error-message {
     border-color: $messageErrorBorder;
 
     &:before {
       @include materialIconOutline(\e888);
       color: $messageErrorBorder;
-
     }
   }
 
-  &.warning-message {
+  &.drupal-message--warning-message {
     border-color: $messageWarningBorder;
 
     &:before {
@@ -58,7 +52,7 @@
     }
   }
 
-  &.status-message {
+  &.drupal-message--status-message {
     border-color: $messageGoodBorder;
 
     &:before {

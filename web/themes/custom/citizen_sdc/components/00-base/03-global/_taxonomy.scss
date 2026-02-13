@@ -6,22 +6,22 @@
 @use '../01-mixins/breakpoint-mixins' as *;
 @use '../01-mixins/layout-mixins' as *;
 
-.path-taxonomy {
-  .term-title {
+.path--taxonomy {
+  .term-page__title {
     margin-bottom: $elementSpace;
   }
 
-  .taxonomy-term {
+  .view--taxonomy-term {
     max-width: $textMax;
     @include auto;
 
-    .view-header {
+    .view__header {
       .block-title {
         padding-top: $spaceMd;
       }
     }
 
-    .view-content {
+    .view__content {
       @include tab {
         width: 100%;
       }

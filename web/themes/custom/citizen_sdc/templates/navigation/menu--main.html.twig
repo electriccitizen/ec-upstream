@@ -26,8 +26,12 @@
 #}
 
 {% block mobileToggle %}
-<a id="main-navigation"></a>
-<div class="nav-toggle-container hide"><a href="#" id="main-nav-toggle"><span>Show main navigation</span></a></div>
+  <a id="main-navigation"></a>
+  <div class="menu-toggle hide">
+    <a href="#" id="main-nav-toggle" class="menu-toggle__trigger">
+      <span>Show main navigation</span>
+    </a>
+  </div>
 {% endblock %}
 
 {{ menus.menu_links(items, attributes, 0) }}

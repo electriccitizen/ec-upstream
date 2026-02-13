@@ -48,7 +48,7 @@
 -------------------------- */
 .node-preview-container {
   .node-preview-form-select {
-    .js-form-item__view-mode {
+    .js-form-item--view-mode {
       display: none;
     }
   }
@@ -144,6 +144,14 @@
     border-color: $link;
     outline: 0;
   }
+}
+
+/* HELP 
+-------------- */
+#block-citizen-sdc-help{
+  padding: 0 $siteMargin;
+  max-width: calc($contentStop + (2 * $siteMargin));
+  @include auto;
 }
 
 /* MODERATION SIDEBAR
@@ -277,17 +285,19 @@
   }
 }
 
-.block-system-main-block {
+.block--system-main-block {
   .layout-builder-form,
   .layout-builder-discard-changes,
   .layout-builder-revert-overrides {
     .form-actions {
       display: flex;
       flex-wrap: wrap;
+      gap: 2rem;
+      padding: 0 $siteMargin;
+      max-width: calc($contentStop + (2 * $siteMargin));
+      @include auto;
 
       & > input {
-        margin-right: 1.5rem;
-        margin-top: 1rem;
         min-width: 204px !important;
       }
 
@@ -302,10 +312,11 @@
       #edit-revert,
       a#edit-cancel {
         @include resetButton;
+      }
 
-        &{
-          margin-top: 1rem;
-        }
+      #edit-preview-toggle {
+        margin-top: 1rem;
+        order: 99;
       }
     }
   }

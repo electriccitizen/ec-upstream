@@ -51,9 +51,9 @@
 	{%- if logged_in -%}
 		{{ parent() }}
 	{%- else -%}
-		<main role="main">
-      <div class="layout-content">
-        <div class="restricted-node">
+		<main role="main-content">
+      <div class="main-content__layout">
+        <div class="main-content__error-content">
           <div>You must be <a href="/user">logged in</a> to view {% block restrictedAnonMessage %}webforms{% endblock %}.</div>
         </div>
       </div>

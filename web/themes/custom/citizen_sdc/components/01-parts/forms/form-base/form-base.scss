@@ -33,17 +33,17 @@ input[type="search"] {
   }
 }
 
-.form-required,
-.js-form-required {
+.form--required,
+.js-form--required {
   position: relative;
   @include required;
 }
 
-.description {
+.form-item__description {
   font-size: 2rem;
 }
 
-input + .description {
+input + .form-item__description {
   padding-top: $spaceXs;
 }
 

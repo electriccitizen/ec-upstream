@@ -40,8 +40,8 @@
     border-color: $buttonBackActive;
   }
 
-  .text-with-summary &,
-  .text-long & {
+  .field--text-with-summary &,
+  .field--text-long & {
     margin-bottom: $spaceMd;
     
     & + .ec-button,
@@ -75,8 +75,8 @@
     border-color: $buttonBackActive;
   }
 
-  .text-with-summary &,
-  .text-long & {
+  .field--text-with-summary &,
+  .field--text-long & {
     padding: 0;
     background: none;
     border: none;

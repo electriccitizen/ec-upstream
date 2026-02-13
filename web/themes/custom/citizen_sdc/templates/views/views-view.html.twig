@@ -33,8 +33,8 @@
 {%
   set classes = [
     'view',
-    'view__' ~ css_name|clean_class,
-    'view__' ~ css_name|clean_class ~ '--' ~ view.current_display|clean_class,
+    'view--' ~ css_name|clean_class,
+    'view--' ~ css_name|clean_class ~ '--' ~ view.current_display|clean_class,
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}

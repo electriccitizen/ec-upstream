@@ -46,19 +46,15 @@
 
 {% extends "page.html.twig" %}
 
-{% block pageMeta %}
-	{{ parent() }}
-  <div class="revisions-actions">
-  	<div class="action-wrapper">
-  		<a class="ec-button ec-button--submit" href="/node/{{ node }}/revisions">Back to Revisions</a>
-  		<a class="ec-button ec-button--reset" href="/node/{{ node }}/revisions/{{ currentId.vid.0.value }}/revert">Revert Revision</a>
-  		<a class="ec-button ec-button--warning" href="/node/{{ node }}/revisions/{{ currentId.vid.0.value }}/delete">Delete Revision</a>
-  	</div>
-	</div>
-{% endblock %}
-
 {% block pageContent %}
-	<div class="node-content__revision">
-		{{ parent() }}
-	</div>
+  <div class="main-content__revision">
+    <div class="revision-actions">
+      <div class="revision-actions__wrapper">
+        <a class="ec-button ec-button--submit" href="/node/{{ node.id }}/revisions">Back to Revisions</a>
+        <a class="ec-button ec-button--reset" href="#">!!! NEED TO GET PATH FOR CURRENT REVISION - Revert Revision</a>
+        <a class="ec-button ec-button--warning" href="#">!!! NEED TO GET PATH FOR CURRENT REVISION - Delete Revision</a>
+      </div>
+    </div>
+    {{ parent() }}
+  </div>
 {% endblock %}

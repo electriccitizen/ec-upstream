@@ -20,8 +20,8 @@ h1 {
 h2 {
   @include heading2;
 
-  .text-long &,
-  .text-with-summary & {
+  .field--text-long &,
+  .field--text-with-summary & {
     margin-bottom: $spaceLg;
   }
 }
@@ -29,8 +29,8 @@ h2 {
 h3 {
   @include heading3;
 
-  .text-long &,
-  .text-with-summary & {
+  .field--text-long &,
+  .field--text-with-summary & {
     margin-bottom: $spaceMd;
   }
 }
@@ -38,8 +38,8 @@ h3 {
 h4 {
   @include heading4;
 
-  .text-long &,
-  .text-with-summary & {
+  .field--text-long &,
+  .field--text-with-summary & {
     margin-bottom: $spaceSm;
   }
 }
@@ -47,8 +47,8 @@ h4 {
 h5 {
   @include heading5;
 
-  .text-long &,
-  .text-with-summary & {
+  .field--text-long &,
+  .field--text-with-summary & {
     margin-bottom: $spaceXs;
   }
 }
@@ -118,8 +118,8 @@ a {
     color: $hoverLink;
     text-decoration: underline;
 
-    .text-with-summary &,
-    .text-long & {
+    .field--text-with-summary &,
+    .field--text-long & {
       @include transAll(.3s);
     }
   }
@@ -189,8 +189,8 @@ blockquote {
   @include quote;
 }
 
-.text-with-summary,
-.text-long {
+.field--text-with-summary,
+.field--text-long {
   @include clearFix;
 
   &>*:last-child {

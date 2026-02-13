@@ -73,21 +73,21 @@
 
 {% set classes = [
   'node-listing',
-  'node-listing__' ~ node.type.0.target_id|clean_class
+  'node-listing--' ~ node.type.0.target_id|clean_class
 ] %}
 
 <article{{ attributes.addClass(classes) }}>
   {% block nodeImage %}
     {% if content.field_image %}
-      <div class="node-field-image">
+      <div class="node-listing__image">
         {{ content.field_image }}
       </div>
     {% endif %}
   {% endblock %}
   {% block node %}
-    <div class="node-listing-content">
+    <div class="node-listing__content">
       {% block nodeTitle %}
-        <h2{{ title_attributes.addClass("node-field-title") }}>
+        <h2{{ title_attributes.addClass("node-listing__title") }}>
           <a href="{{- url -}}" rel="bookmark">{{- label.0['#context'].value -}}</a>
         </h2>
       {% endblock %}

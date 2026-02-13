@@ -9,12 +9,11 @@
 @use '../../../00-base/01-mixins/form-mixins' as *;
 @use '../../../00-base/01-mixins/layout-mixins' as *;
 
-  
 .webform-wrapper {
   max-width: $textMax;
   @include auto;
 
-  h1.webform-title {
+  h1.webform-wrapper__title {
     max-width: $textMax;
     text-align: center;
     @include auto;
@@ -34,19 +33,19 @@
         @include formLabel;
       }
 
-      & > .description {
+      & > .form-item__description {
         font-size: 2rem;
       }
 
       & > input {
-        & + .description {
+        & + .form-item__description {
           padding-top: $spaceXxs;
         }
       }
     }
 
-    .form-required,
-    .js-form-required {
+    .form--required,
+    .js-form--required {
       position: relative;
       @include required;
     }

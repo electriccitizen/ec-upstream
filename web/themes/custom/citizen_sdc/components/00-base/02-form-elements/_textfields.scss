@@ -4,56 +4,33 @@
 
 @use '../01-mixins/form-mixins' as *;
 
-.js-form-type-textfield {
-  input {
-    @include textInput;
+//set class arrays for form-item mixin styling
+$text-inputs: textfield, email, password, textarea, number, tel, url, date-time-daypicker-time; 
+
+ @each $type in $text-inputs {
+  .js-form-type--#{$type} {
+    input {
+      @include textInput;
+    }
   }
 }
 
-.js-form-type-email {
-  input {
-    @include textInput;
-  }
+.js-form-type--number {
+  max-width: 160px;
 }
 
-.js-form-type-password,
-.form-item-password {
-  input {
-    @include textInput;
-  }
+.js-form-type--tel {
+  max-width: 240px;
 }
 
-.js-form-type-number {
-  input {
-    @include textInput;
-    max-width: 160px;
-  }
+.js-form-type--url {
+  max-width: 360px;
 }
 
-.js-form-type-tel {
-  input {
-    @include textInput;
-    max-width: 240px;
-  }
-}
-
-.js-form-type-url {
-  input {
-    @include textInput;
-    max-width: 360px;
-  }
-}
-
-.js-form-type-textarea {
-  textarea {
-    @include textInput;
-    line-height: 1.4;
-  }
+.js-form-type--textarea {
+  line-height: 1.4;
 }
 
 .form-item-date-time-daypicker-time {
-  input {
-    @include textInput;
-    max-width: 120px;
-  }
+  max-width: 120px;
 }

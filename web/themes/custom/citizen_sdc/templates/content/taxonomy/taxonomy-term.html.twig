@@ -25,8 +25,8 @@
 #}
 {% set classes = [
 	'term-page',
-  'taxonomy-vocab'
-	'taxonomy-vocab__' ~ term.vid.0.target_id|clean_class
+  'taxonomy-vocab',
+	'taxonomy-vocab--' ~ term.vid.0.target_id|clean_class
 ] %}
 
 <div{{ attributes.addClass(classes) }}>
@@ -34,7 +34,7 @@
   {% if not page %}
     <h2><a href="{{ url }}">{{ name[0]['#context'].value }}</a></h2>
   {% else %}
-  	<h1 class="term-title">{{ name[0]['#context'].value }}</h1>
+  	<h1 class="term-page__title">{{ name[0]['#context'].value }}</h1>
   {% endif %}
   {{ title_suffix }}
   {{ content }}

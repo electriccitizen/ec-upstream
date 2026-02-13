@@ -37,7 +37,7 @@
  */
 #}
 
-{% set classes = 'field field__' ~ field_name|clean_class ~ ' field__' ~ field_type|clean_class %}
+{% set classes = 'field field--' ~ field_name|replace({'field_': ''})|clean_class ~ ' field--' ~ field_type|clean_class %}
   
 {# no label #}
 {%- if label_hidden -%}
@@ -75,11 +75,11 @@
   {% block fieldLabelClasses %}
     <div{{ attributes.addClass(classes) }}>
       {%- if (label_display == 'inline') -%}
-        <span class="label label--inline">{{- label -}}:</span>
+        <span class="field__label field__label--inline">{{- label -}}:</span>
       {% elseif (label_display == 'visually_hidden') %}
-        <div class="label visually-hidden">{{- label -}}</div>
+        <div class="field__label visually-hidden">{{- label -}}</div>
       {%- else -%}
-        <div class="label">{{- label -}}</div>
+        <div class="field__label">{{- label -}}</div>
       {%- endif -%}
       {%- if multiple -%}
         <div class="field__multi-item">

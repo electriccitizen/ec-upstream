@@ -6,7 +6,7 @@
 @use '../01-mixins/general-mixins' as *;
 
 .field {
-  span.inline-label {
+  .field__label--inline {
     font-weight: $heavy;
     margin-right: 1rem;
 
@@ -21,8 +21,8 @@
     }
   }
 
-  &.long-text,
-  &.text-with-summary {
+  &.field--long-text,
+  &.field--text-with-summary {
     @include clearFix;
   }
 }

@@ -69,7 +69,7 @@
 	            {%
 	              set column_classes = [
 	                'views-field',
-	                'views-field__' ~ fields[key],
+	                'views-field--' ~ fields[key],
 	              ]
 	            %}
 	          {% endif %}
@@ -108,7 +108,7 @@
 		              ]
 		            %}
 		            {% for field in column.fields %}
-		              {% set column_classes = column_classes|merge(['views-field__' ~ field]) %}
+		              {% set column_classes = column_classes|merge(['views-field--' ~ field]) %}
 		            {% endfor %}
 		          {% endif %}
 		          <td{{ column.attributes.addClass(column_classes) }}>

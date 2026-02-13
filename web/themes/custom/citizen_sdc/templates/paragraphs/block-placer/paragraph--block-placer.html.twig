@@ -43,7 +43,7 @@
 	{% set blockId = content.field_block.0['#block_content'].id.0.value %}
 	{% set blockType = content.field_block.0['#block_content'].bundle|clean_class %}
 	{% set blockLabel = content.field_block.0['#block_content'].label|clean_class %}
-	<div data-quickedit-entity-id="{{ blockId }}" class="block block-{{ blockLabel }} block-{{ blockType }}">	
+	<div data-quickedit-entity-id="{{ blockId }}" class="block block--{{ blockLabel }} block--{{ blockType }}">	
 		{{ drupal_entity('block_content',blockId) }}
 	</div>
 {% endblock %}

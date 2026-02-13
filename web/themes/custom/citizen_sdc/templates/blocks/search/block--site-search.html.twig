@@ -16,13 +16,13 @@
 
 {% block blockContent %}
   {{ attach_library('citizen_sdc/search-block') }}
-  <div class="search-toggle--open">
-    <button class="open-search" aria-label="{{ "Toggle Search"|t }}" aria-controls="search-form-wrapper">
+  <div class="block--site-search__toggle--open">
+    <button class="block--site-search__trigger--open" aria-label="{{ "Toggle Search"|t }}" aria-controls="search-form-wrapper">
       <span class="material-icons">&#xE8B6;</span>
     </button>
   </div>
-	<div class="search-toggle--close">
-    <button class="close-search" role="button" aria-label="{{ "Close Search"|t }}" aria-controls="search-form-wrapper">
+	<div class="block--site-search__toggle--close">
+    <button class="block--site-search__trigger--close" role="button" aria-label="{{ "Close Search"|t }}" aria-controls="search-form-wrapper">
       <span class="material-icons">&#xE5CD;</span></button>
   </div>
 	<div id="search-form-wrapper" aria-hidden="true">

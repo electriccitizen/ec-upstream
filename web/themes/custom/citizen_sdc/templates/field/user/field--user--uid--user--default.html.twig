@@ -40,16 +40,16 @@
 {% extends 'field.html.twig' %}
 
 {% block fieldSingleNo %}
-  <div class="user-actions user-actions__account">
-		<div class="user-action user-action__edit-link">
+  <div class="user-actions user-actions--account">
+		<div class="user-actions__edit-link">
 			<a href="/user/{{ element['#object'].uid.0.value }}/edit">Edit Profile</a>
 		</div>
-		<div class="user-action user-action__logout-link">
+		<div class="user-actions__logout-link">
 			<a href="/user/logout">Logout</a>
 		</div>
 	</div>
 
-	<div class="user-actions user-actions__tasks">
+	<div class="user-actions user-actions--tasks">
 		<a href="/admin/content" class="ec-button">View Content</a>
 		<a href="/node/add" class="ec-button">+ Add Content</a>
 		<a href="{{ path('entity.node.canonical', {'node':'18'}) }}" class="ec-button">Support Book</a>

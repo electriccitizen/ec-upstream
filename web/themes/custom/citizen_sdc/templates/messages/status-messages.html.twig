@@ -24,7 +24,7 @@
 {% for type, messages in message_list %}
   <div role="contentinfo" class="drupal-message drupal-message--{{ status_headings[type]|clean_class }}" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
     {% if type == 'error' %}
-      <div role="alert">
+      <div role="alert" class="drupal-message__content">
     {% endif %}
       {% if status_headings[type] %}
         <h2 class="visually-hidden">{{ status_headings[type] }}</h2>

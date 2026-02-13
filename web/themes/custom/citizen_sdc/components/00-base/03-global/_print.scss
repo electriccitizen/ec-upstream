@@ -8,14 +8,14 @@
 
   // Hide extraneous settings.
   #block-citizen-sdc-mainnavigation,
-  .block-system-breadcrumb-block,
+  .block-system--breadcrumb-block,
   #block-secondary-menu,
   #block-page-menu,
   #block-search-form,
-  .paragraph--type--video,
+  .paragraph--video,
   .body ul.social-links,
   .views-exposed-form,
-  .block-addtoany-block,
+  .block--social-share,
   .block-local-tasks-block {
     display: none;
   }
@@ -25,7 +25,7 @@
   .site-header {
     border-bottom: 1px solid $borderRule;
 
-    .block-system-branding-block {
+    .block--system-branding-block {
       max-width: 200px;
     }
   }
@@ -38,7 +38,7 @@
 
   /* FOOTER
   -----------*/
-  footer .footer-inner .block:not(:last-child) {
+  footer .site-footer__inner .block:not(:last-child) {
     margin-bottom: 0;
   }
 }

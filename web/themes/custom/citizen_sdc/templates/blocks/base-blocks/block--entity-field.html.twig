@@ -28,9 +28,9 @@
 {%
   set classes = [
     'entity-field',
-    'entity-field__' ~ content.field['#field_name']|clean_class,
-    'enitty-field__' ~ content.field['#field_type']|clean_class,
-    'enitty-field__' ~ content.field['#entity_type']|clean_class
+    'entity-field--' ~ content.field['#field_name']|clean_class,
+    'enitty-field--' ~ content.field['#field_type']|clean_class,
+    'enitty-field--' ~ content.field['#entity_type']|clean_class
   ]
 %}
 
@@ -38,7 +38,7 @@
   {% block blockContent %}
     {{ title_prefix }}
     {% if label %}
-      <h2 class="block-title">{{ label }}</h2>
+      <h2 class="block__title">{{ label }}</h2>
     {% endif %}
     {{ title_suffix }}
     {% block content %}

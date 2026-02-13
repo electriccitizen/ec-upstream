@@ -23,9 +23,9 @@
 #}
 <div class="webform-wrapper">
 	{% if webformPlacer and showFormTitle %}
-    <div class="widget-title">{{ title }}</div>
+    <div class="webform-wrapper__widget-title">{{ title }}</div>
   {% elseif not webformPlacer %}
-    <h1 class="webform-title">{{ title }}</h1>
+    <h1 class="webform-wrapper__title">{{ title }}</h1>
   {% endif %}
 
 	<form{{ attr }}>

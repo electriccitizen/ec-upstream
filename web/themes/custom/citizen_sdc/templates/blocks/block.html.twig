@@ -26,41 +26,22 @@
  */
 #}
 
-{% if plugin_id %}
-  {% if 'views_block' in plugin_id  %}
-    {% set pluginClass = 'block__views-block block__views-block--' ~ content['#name']|clean_class ~ ' block__views-block--' ~ content['#display_id']|clean_class%}
-  {% else %}
-    {% set pluginClass = 'block__' ~ plugin_id|clean_class %}
-  {% endif %}
-{% endif %}
-{% if content['#block_content'].bundle %}
-  {% set bundleClass = 'block__' ~ content['#block_content'].bundle|clean_class %}
-{% endif %}
-{% if content['#block_content'].info.0.value %}
-  {% set titleClass = 'block__' ~ content['#block_content'].info.0.value|clean_class %}
-{% endif %}
-{% if elements.content['#block_content'].id() %}
-  {% set idClass = 'block__' ~ elements.content['#block_content'].id() %}
-{% endif %}
-
-{% set drupalClasses = [
-	'block',
-  pluginClass,
-  bundleClass,
-  titleClass,
-  idClass,
-  plClasses
+{% set classes = [
+  'block',
+  plugin_id ? 'block--' ~ plugin_id|clean_class,
+  content['#block_content'].bundle ? 'block--' ~ content['#block_content'].bundle|clean_class,
+  content['#block_content'].info.0.value ? 'block--' ~ content['#block_content'].info.0.value|clean_class,
+  elements.content['#block_content'].id() ? 'block--' ~ elements.content['#block_content'].id(),
 ] %}
 
-
 {% block blockAttributes %}
-	<div{{ attributes.addClass(drupalClasses) }}>
+	<div{{ attributes.addClass(classes) }}>
 {% endblock %}
   {% block blockSetup %}
     {{ title_prefix }}
     {% block blockLabel %}
       {% if label %}
-        <h2 class="block-title">{% block labelText %}{{ label }}{% endblock %}</h2>
+        <h2 class="block__title">{% block labelText %}{{ label }}{% endblock %}</h2>
       {% endif %}
     {% endblock %}
     {{ title_suffix }}

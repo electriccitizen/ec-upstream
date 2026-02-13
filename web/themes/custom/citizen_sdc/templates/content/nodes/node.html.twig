@@ -73,8 +73,8 @@
 
 {% set classes = [
   'node-content',
-  'node-content__' ~ node.type.0.target_id|clean_class,
-  'node-content__' ~ node.type.0.target_id|clean_class ~ '--' ~ node.id,
+  'node-content--' ~ node.type.0.target_id|clean_class,
+  'node-content--' ~ node.id,
 ] %}
 
 <article{{ attributes.addClass(classes) }}>
@@ -100,14 +100,14 @@
 	    </footer>
 	  {%- endif -%}
 	{% endblock %}
-  <div class="main-node-content">
+  <div class="node-content__main">
     {% block node %}
 		  {%- if content._layout_builder -%}
 		    {% if content._layout_builder.0 %}
 		      {%- for key, layoutSection in content._layout_builder -%}
 		      	{% if key|first != "#" %}
 			        {% block layoutSectionContent %}
-			          <section id="node-section-{{ loop.index }}" class="node-section">
+			          <section id="node-section-{{ loop.index }}" class="node-content__section">
 			            {{- layoutSection -}}
 			          </section>
 			        {% endblock %}

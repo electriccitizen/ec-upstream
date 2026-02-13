@@ -31,7 +31,7 @@ body {
 
 /* SKIP NAV
 ------------- */
-.layout-container > a.visually-hidden.focusable {
+ a.skip-nav {
 
   &:focus,&:focus-within {
     position: fixed !important;
