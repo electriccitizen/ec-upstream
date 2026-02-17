@@ -7,7 +7,7 @@
 //set class arrays for form-item mixin styling
 $text-inputs: textfield, email, password, textarea, number, tel, url, date-time-daypicker-time; 
 
- @each $type in $text-inputs {
+@each $type in $text-inputs {
   .js-form-type--#{$type} {
     input {
       @include textInput;

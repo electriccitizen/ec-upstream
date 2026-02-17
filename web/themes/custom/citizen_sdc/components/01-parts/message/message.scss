@@ -1,0 +1,66 @@
+/* ===============
+   WEBFORM
+================= */
+
+@use '../../00-base/00-variables/colors' as *;
+@use '../../00-base/00-variables/component-colors' as *;
+@use '../../00-base/00-variables/units' as *;
+@use '../../00-base/01-mixins/layout-mixins' as *;
+@use '../../00-base/01-mixins/type-mixins' as *;
+
+.drupal-message {
+  padding: $spaceMd 2.5rem $spaceMd 5.5rem;
+  margin: $spaceMd 0;
+  background-image: none;
+  font-size: 2.25rem;
+  background-color: $messageBack;
+  color: $messageText;
+  border-left: 1rem solid;
+  box-shadow: none;
+  max-width: $contentStop;
+  @include auto;
+
+  .drupal-message__content{
+    &:before {
+      position: relative;
+      top: 0.7rem;
+    }
+
+    a {
+      color: $adminGold;
+
+      &:hover,
+      &:focus {
+        opacity: .6;
+      }
+    }
+  }
+
+  &.drupal-message--error{
+    border-color: $messageErrorBorder;
+
+    .drupal-message__content:before {
+      @include materialIconOutline(\e888);
+      color: $messageErrorBorder;
+
+    }
+  }
+
+  &.drupal-message--warning {
+    border-color: $messageWarningBorder;
+
+    .drupal-message__content:before {
+      @include materialIconOutline(\e002);
+      color: $messageWarningBorder;
+    }
+  }
+
+  &.drupal-message--status {
+    border-color: $messageGoodBorder;
+
+    .drupal-message__content:before {
+      @include materialIconOutline(\e5ca);
+      color: $messageGoodBorder;
+    }
+  }
+}

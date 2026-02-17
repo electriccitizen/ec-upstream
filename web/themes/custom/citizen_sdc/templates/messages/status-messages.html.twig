@@ -21,7 +21,17 @@
  *   - class: HTML classes.
  */
 #}
-{% for type, messages in message_list %}
+
+{{ include('citizen_sdc:message', {
+  attr: attributes,
+  type: type,
+  message_list: message_list,
+  messages: messages,
+  status: status_headings[type],
+  modifier: type|clean_class
+}, with_context = false) }}
+
+{# {% for type, messages in message_list %}
   <div role="contentinfo" class="drupal-message drupal-message--{{ status_headings[type]|clean_class }}" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
     {% if type == 'error' %}
       <div role="alert" class="drupal-message__content">
@@ -42,4 +52,4 @@
       </div>
     {% endif %}
   </div>
-{% endfor %}
+{% endfor %} #}
