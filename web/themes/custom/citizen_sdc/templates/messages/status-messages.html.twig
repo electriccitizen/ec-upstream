@@ -30,26 +30,3 @@
   status: status_headings[type],
   modifier: type|clean_class
 }, with_context = false) }}
-
-{# {% for type, messages in message_list %}
-  <div role="contentinfo" class="drupal-message drupal-message--{{ status_headings[type]|clean_class }}" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
-    {% if type == 'error' %}
-      <div role="alert" class="drupal-message__content">
-    {% endif %}
-      {% if status_headings[type] %}
-        <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
-      {% endif %}
-      {% if messages|length > 1 %}
-        <ul>
-          {% for message in messages %}
-            <li>{{ message }}</li>
-          {% endfor %}
-        </ul>
-      {% else %}
-        {{ messages|first }}
-      {% endif %}
-    {% if type == 'error' %}
-      </div>
-    {% endif %}
-  </div>
-{% endfor %} #}
