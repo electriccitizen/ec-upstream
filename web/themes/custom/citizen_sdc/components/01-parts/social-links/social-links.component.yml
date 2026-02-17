@@ -1,7 +1,7 @@
 component:
-  id: citizen_sdc:cta
-  label: 'Call To Action'
-  description: 'CTA paragraph: headline, supporting text, and a button link.'
+  id: citizen_sdc:social-links
+  label: 'Social Links'
+  description: 'Preformatted links to social media platforms'
   status: experimental
 
 props:
