@@ -9,7 +9,7 @@
 
 .user-access-form {
   max-width: $desk;
-  @include auto;
+  margin: 0 auto $elementSpace;
 
   h1{
     margin-bottom: $elementSpace;

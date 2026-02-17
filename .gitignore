@@ -149,3 +149,4 @@ upstream/web/
 
 # Ignore theme dist if it gets generated from running old commands
 /web/themes/citizen_sdc/dist
+/web/themes/custom/citizen_sdc/dist
