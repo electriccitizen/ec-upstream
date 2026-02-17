@@ -41,7 +41,7 @@
 
 {% block fieldSingleNo %}
 	{% if '<table>' in item.content['#text'] or '<table class="table">' in item.content['#text'] %}
-		{{ attach_library('citizen_sdc/table') }}
+		{{ attach_library('core/components.citizen_sdc--table') }}
 	{% endif %}
 	{{ parent() }}
 {% endblock %}

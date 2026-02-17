@@ -10,6 +10,15 @@ global:
     - core/drupalSettings
     - core/once
     - core/normalize
+basicTable:
+  version: 2.0.0
+  css:
+    theme:
+      components-addons/basictable/basictable.css: { minified: false }
+  js:
+    components-addons/basictable/jquery.basictable.min.js: { minified: true }
+  dependencies:
+    - core/jquery
 fonts:
   css:
     theme:
@@ -23,3 +32,4 @@ select2:
     components-addons/select2/select2.min.js: { minified: true }
   dependencies:
     - core/jquery
+

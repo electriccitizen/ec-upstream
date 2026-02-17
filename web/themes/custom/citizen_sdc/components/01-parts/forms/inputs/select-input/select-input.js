@@ -5,8 +5,6 @@
   Drupal.behaviors.select2 = {
     attach: function (context, settings) {
       once('selects', 'select', context).forEach(() => {
-
-        console.log('selecting');
         
         // Helper function to mimic jQuery's $(document).ready().
         function documentReady(callback) {

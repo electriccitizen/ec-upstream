@@ -5,6 +5,8 @@
 @use '../../00-base/00-variables/colors' as *;
 @use '../../00-base/00-variables/component-colors' as *;
 @use '../../00-base/00-variables/fonts' as *;
+@use '../../00-base/00-variables/units' as *;
+@use '../../00-base/01-mixins/breakpoint-mixins' as *;
 @use '../../00-base/01-mixins/type-mixins' as *;
 @use 'sass:color';
 
@@ -75,55 +77,27 @@
 
 /* DEFAULT TABLE STYLES
 -------------------------- */
-@mixin table {
-  width: 100%;
-  border-spacing: unset;
-  border: 1px solid $rowBorder;
-  display: table;
-  table-layout: fixed;
-
-  caption {
-    font-weight: $heavy;
-    margin-bottom: $spaceXs;
-  }
-
-  td {
-    padding: 1rem 2rem .5rem;
-    font-size: 2rem;
-    vertical-align: top;
-
-    &:first-child {
-      padding-left: 3.5rem;
-    }
-
-    &:last-child {
-      padding-right: 3.5rem;
-    }
-  }
-
-  thead {
+.field--text-with-summary,
+.field--text-long,
+.view-content,
+.webform-submission-form {
+  table {
     width: 100%;
+    border-spacing: unset;
+    border: 1px solid $rowBorder;
+    display: table;
+    table-layout: fixed;
+    margin-bottom: $spaceMd;
 
-    tr {
-      width: 100%;
+    caption {
+      font-weight: $heavy;
+      margin-bottom: $spaceXs;
     }
 
-    th {
-      background: $tableHeaderBack;
-      color: $tableHeaderText;
-      padding: 2.5rem 2rem;
-      text-align: left;
-      border-bottom: 3px solid $tableHeaderBack;
+    td {
+      padding: 1rem 2rem .5rem;
+      font-size: 2rem;
       vertical-align: top;
-      max-width: 67%;
-
-      a {
-        @extend %tableSort;
-      }
-
-      &.is-active {
-        @extend %tableSortActive;
-      }
 
       &:first-child {
         padding-left: 3.5rem;
@@ -132,114 +106,148 @@
       &:last-child {
         padding-right: 3.5rem;
       }
-
-      &:not(:last-child){
-        border-right: 1px solid rgba(255,255,255,0.4);
-      }
     }
-  }
 
-  tbody {
-    width: 100%;
-
-    tr {
+    thead {
       width: 100%;
 
-      td{
-        &:not(:last-child){
-          @include tab{
-            border-right: 1px solid $midGray;
-          }
-        }
-      }
-      
-      &:not(:last-child) td {
-        border-bottom: 1px solid $rowBorder;
-      }
-
-      &:nth-of-type(odd) {
-        background: $oddRowBack;
-
-        td {
-          color: $oddRowText;
-        }
-      }
-
-      &:nth-of-type(even) {
-        background: $evenRowBack;
-
-        td {
-          color: $evenRowText;
-        }
+      tr {
+        width: 100%;
       }
 
       th {
-        background: $tableRowHeaderBack;
-        color: $tableRowHeaderText;
+        background: $tableHeaderBack;
+        color: $tableHeaderText;
+        padding: 2.5rem 2rem;
         text-align: left;
-        padding-left: 3.5rem;
-        padding-right: 2rem;
-      }
+        border-bottom: 3px solid $tableHeaderBack;
+        vertical-align: top;
+        max-width: 67%;
 
-      &:not(:last-child) {
-        th {
-          border-bottom: 1px solid $rowBorder;
-        }
-      }
-
-      // Give a bit extra room in the row on mobile.
-      @include onlyMobile {
-        td {
-          padding: 1rem $siteMarginMobile;
+        a {
+          @extend %tableSort;
         }
 
-        //style headers
-        &>td.st-key {
-          text-transform: uppercase;
-          font-weight: $heavy;
+        &.is-active {
+          @extend %tableSortActive;
         }
-      }
-    }
-  }
 
-  // Responsive Tables uses bt for mobile styles.
-  &.bt {
-    &.no-header {
-      tbody {
-        tr:first-child {
-          display: none;
+        &:first-child {
+          padding-left: 3.5rem;
+        }
+
+        &:last-child {
+          padding-right: 3.5rem;
+        }
+
+        &:not(:last-child){
+          border-right: 1px solid rgba(255,255,255,0.4);
         }
       }
     }
 
     tbody {
-      tr:last-child {
-        td:not(:last-child) {
-          border-bottom: 1px solid $borderRule;
+      width: 100%;
+
+      tr {
+        width: 100%;
+
+        td{
+          &:not(:last-child){
+            @include tab{
+              border-right: 1px solid $midGray;
+            }
+          }
         }
-      }
+        
+        &:not(:last-child) td {
+          border-bottom: 1px solid $rowBorder;
+        }
 
-      tr:nth-of-type(odd) td:before {
-        background: $tableHeaderBack;
-        color: $tableHeaderText;
-      }
+        &:nth-of-type(odd) {
+          background: $oddRowBack;
 
-      td {
-        padding: 0 !important;
+          td {
+            color: $oddRowText;
+          }
+        }
 
-        &:before {
-          content: attr(data-th);
-          border-right: 1px solid $borderRule;
+        &:nth-of-type(even) {
+          background: $evenRowBack;
+
+          td {
+            color: $evenRowText;
+          }
+        }
+
+        th {
           background: $tableRowHeaderBack;
           color: $tableRowHeaderText;
-          padding: 1rem 3rem;
+          text-align: left;
+          padding-left: 3.5rem;
+          padding-right: 2rem;
         }
 
-        span.bt-content {
-          padding: 1rem 3rem;
+        &:not(:last-child) {
+          th {
+            border-bottom: 1px solid $rowBorder;
+          }
+        }
+
+        // Give a bit extra room in the row on mobile.
+        @include onlyMobile {
+          td {
+            padding: 1rem $siteMargin;
+          }
+
+          //style headers
+          &>td.st-key {
+            text-transform: uppercase;
+            font-weight: $heavy;
+          }
+        }
+      }
+    }
+
+    // Responsive Tables uses bt for mobile styles.
+    &.bt {
+      &.no-header {
+        tbody {
+          tr:first-child {
+            display: none;
+          }
         }
       }
 
+      tbody {
+        tr:last-child {
+          td:not(:last-child) {
+            border-bottom: 1px solid $borderRule;
+          }
+        }
+
+        tr:nth-of-type(odd) td:before {
+          background: $tableHeaderBack;
+          color: $tableHeaderText;
+        }
+
+        td {
+          padding: 0 !important;
+
+          &:before {
+            content: attr(data-th);
+            border-right: 1px solid $borderRule;
+            background: $tableRowHeaderBack;
+            color: $tableRowHeaderText;
+            padding: 1rem 3rem;
+          }
+
+          span.bt-content {
+            padding: 1rem 3rem;
+          }
+        }
+
+      }
     }
   }
 }
