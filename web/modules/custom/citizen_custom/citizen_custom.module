@@ -290,16 +290,17 @@ function citizen_custom_preprocess_paragraph__content_list(&$variables) {
 
   $view->setDisplay($display_id);
   $view->setArguments([$paragraph->id()]);
+  $view->preExecute([$paragraph->id()]);
   $view->execute();
 
   if (!empty($view->result)) {
-    $renderable = $view->buildRenderable($display_id, [$paragraph->id()]);
+    $rendered = $view->render();
 
     // Preserve cache metadata from the view.
-    $cache_metadata = CacheableMetadata::createFromRenderArray($renderable);
+    $cache_metadata = CacheableMetadata::createFromRenderArray($rendered);
     $cache_metadata->applyTo($variables);
 
-    $variables['content_list_view'] = $renderable;
+    $variables['content_list_view'] = $rendered;
     $variables['content_list_has_results'] = TRUE;
   }
   else {
