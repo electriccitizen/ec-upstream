@@ -1,0 +1,27 @@
+citizen_custom.settings:
+  type: config_object
+  label: 'Citizen Custom settings'
+  mapping:
+    content_list:
+      type: mapping
+      label: 'Content list settings'
+      mapping:
+        term_to_bundle_map:
+          type: sequence
+          label: 'Term name to bundle map'
+          sequence:
+            type: string
+            label: 'Bundle machine name'
+        display_filters:
+          type: sequence
+          label: 'Display filter configuration'
+          sequence:
+            type: mapping
+            label: 'Display filter'
+            mapping:
+              category_field:
+                type: string
+                label: 'Category field on paragraph'
+              view_filter:
+                type: string
+                label: 'View filter identifier'

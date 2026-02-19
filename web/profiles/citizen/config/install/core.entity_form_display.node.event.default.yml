@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.event.field_dates
     - field.field.node.event.field_event_location
     - field.field.node.event.field_image
-    - field.field.node.event.field_list_widget
     - field.field.node.event.field_metatags
     - node.type.event
   module:
@@ -474,7 +473,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_list_widget: true
   path: true
   sticky: true
   uid: true

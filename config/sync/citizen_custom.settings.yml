@@ -1,0 +1,11 @@
+content_list:
+  term_to_bundle_map:
+    Events: event
+    News: news
+  display_filters:
+    events_list:
+      category_field: field_events_category
+      view_filter: field_category_target_id
+    news_list:
+      category_field: field_news_category
+      view_filter: field_category_target_id

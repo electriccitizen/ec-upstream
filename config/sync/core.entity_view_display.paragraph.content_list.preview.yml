@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.content_list.field_content_list_type
     - field.field.paragraph.content_list.field_content_type
     - field.field.paragraph.content_list.field_events_category
     - field.field.paragraph.content_list.field_limit_list
@@ -11,16 +12,17 @@ dependencies:
     - field.field.paragraph.content_list.field_news_category
     - field.field.paragraph.content_list.field_widget_title
     - paragraphs.paragraphs_type.content_list
+  module:
+    - options
 id: paragraph.content_list.preview
 targetEntityType: paragraph
 bundle: content_list
 mode: preview
 content:
-  field_content_type:
-    type: entity_reference_label
+  field_content_list_type:
+    type: list_default
     label: inline
-    settings:
-      link: false
+    settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
@@ -33,6 +35,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_content_type: true
   field_events_category: true
   field_limit_list: true
   field_link: true
