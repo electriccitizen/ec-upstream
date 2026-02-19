@@ -126,29 +126,46 @@ function citizen_custom_update_10001(&$sandbox) {
 }
 
 /**
- * Remove old field_content_type field from content_list paragraphs.
- *
- * Run this in a later deploy after confirming the migration is stable.
- * Uncomment this function when ready for Deploy 2.
+ * Remove old field_content_type, field_list_widget, and list_widget taxonomy.
  */
-function _citizen_custom_update_10002_DEPLOY2(&$sandbox) {
-  $field_storage_config = \Drupal::entityTypeManager()->getStorage('field_storage_config');
-  $field_config = \Drupal::entityTypeManager()->getStorage('field_config');
+function citizen_custom_update_10002(&$sandbox) {
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $field_config = $entity_type_manager->getStorage('field_config');
+  $field_storage_config = $entity_type_manager->getStorage('field_storage_config');
 
-  // Delete the field instance first.
+  // Delete all list_widget taxonomy terms so the vocabulary can be removed.
+  $vocab = $entity_type_manager->getStorage('taxonomy_vocabulary')->load('list_widget');
+  if ($vocab) {
+    $terms = $entity_type_manager->getStorage('taxonomy_term')->loadByProperties(['vid' => 'list_widget']);
+    foreach ($terms as $term) {
+      $term->delete();
+    }
+  }
+
+  // Delete old paragraph field_content_type (entity reference to taxonomy).
   $instance = $field_config->load('paragraph.content_list.field_content_type');
   if ($instance) {
     $instance->delete();
   }
-
-  // Delete the field storage.
   $storage = $field_storage_config->load('paragraph.field_content_type');
   if ($storage) {
     $storage->delete();
   }
 
-  // Purge field data.
-  field_purge_batch(100);
+  // Delete field_list_widget from node bundles.
+  foreach (['event', 'news'] as $bundle) {
+    $instance = $field_config->load("node.$bundle.field_list_widget");
+    if ($instance) {
+      $instance->delete();
+    }
+  }
+  $storage = $field_storage_config->load('node.field_list_widget');
+  if ($storage) {
+    $storage->delete();
+  }
 
-  return t('Removed old field_content_type field from content_list paragraphs.');
+  // Purge field data.
+  field_purge_batch(500);
+
+  return t('Removed field_content_type, field_list_widget, and list_widget taxonomy.');
 }

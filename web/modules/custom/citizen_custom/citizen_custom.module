@@ -270,18 +270,9 @@ function citizen_custom_preprocess_paragraph__content_list(&$variables) {
     return;
   }
 
-  // Determine content type from new field, with fallback to old field.
   $content_type = NULL;
   if ($paragraph->hasField('field_content_list_type') && !$paragraph->get('field_content_list_type')->isEmpty()) {
     $content_type = $paragraph->get('field_content_list_type')->value;
-  }
-  elseif ($paragraph->hasField('field_content_type') && !$paragraph->get('field_content_type')->isEmpty()) {
-    $term = $paragraph->get('field_content_type')->entity;
-    if ($term) {
-      $config = \Drupal::config('citizen_custom.settings');
-      $map = $config->get('content_list.term_to_bundle_map') ?? [];
-      $content_type = $map[$term->getName()] ?? NULL;
-    }
   }
 
   if (!$content_type) {

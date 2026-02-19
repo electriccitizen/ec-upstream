@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.content_list.field_content_list_type
-    - field.field.paragraph.content_list.field_content_type
     - field.field.paragraph.content_list.field_events_category
     - field.field.paragraph.content_list.field_limit_list
     - field.field.paragraph.content_list.field_link
@@ -70,5 +69,4 @@ content:
     weight: 0
     region: content
 hidden:
-  field_content_type: true
   search_api_excerpt: true

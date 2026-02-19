@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.content_list.field_content_list_type
-    - field.field.paragraph.content_list.field_content_type
     - field.field.paragraph.content_list.field_events_category
     - field.field.paragraph.content_list.field_limit_list
     - field.field.paragraph.content_list.field_link
@@ -35,7 +34,6 @@ content:
     weight: 0
     region: content
 hidden:
-  field_content_type: true
   field_events_category: true
   field_limit_list: true
   field_link: true

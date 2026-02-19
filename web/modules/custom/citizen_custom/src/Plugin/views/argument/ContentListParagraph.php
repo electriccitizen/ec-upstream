@@ -60,19 +60,8 @@ class ContentListParagraph extends NumericArgument {
 
     $content_type = NULL;
 
-    // Primary: read from new list_string field.
     if ($paragraph->hasField('field_content_list_type') && !$paragraph->get('field_content_list_type')->isEmpty()) {
       $content_type = $paragraph->get('field_content_list_type')->value;
-    }
-    // Fallback: read from old entity_reference field (backward-compat).
-    elseif ($paragraph->hasField('field_content_type') && !$paragraph->get('field_content_type')->isEmpty()) {
-      $term = $paragraph->get('field_content_type')->entity;
-      if ($term) {
-        $config = \Drupal::config('citizen_custom.settings');
-        $map = $config->get('content_list.term_to_bundle_map') ?? [];
-        $term_name = $term->getName();
-        $content_type = $map[$term_name] ?? NULL;
-      }
     }
 
     if (empty($content_type)) {
