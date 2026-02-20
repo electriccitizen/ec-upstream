@@ -1,7 +1,4 @@
 content_list:
-  term_to_bundle_map:
-    Events: event
-    News: news
   display_filters:
     event_list:
       category_field: field_events_category

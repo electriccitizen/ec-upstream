@@ -6,12 +6,6 @@ citizen_custom.settings:
       type: mapping
       label: 'Content list settings'
       mapping:
-        term_to_bundle_map:
-          type: sequence
-          label: 'Term name to bundle map'
-          sequence:
-            type: string
-            label: 'Bundle machine name'
         display_filters:
           type: sequence
           label: 'Display filter configuration'

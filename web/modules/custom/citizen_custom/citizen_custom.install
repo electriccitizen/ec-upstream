@@ -133,13 +133,14 @@ function citizen_custom_update_10002(&$sandbox) {
   $field_config = $entity_type_manager->getStorage('field_config');
   $field_storage_config = $entity_type_manager->getStorage('field_storage_config');
 
-  // Delete all list_widget taxonomy terms so the vocabulary can be removed.
+  // Delete all list_widget taxonomy terms and the vocabulary itself.
   $vocab = $entity_type_manager->getStorage('taxonomy_vocabulary')->load('list_widget');
   if ($vocab) {
     $terms = $entity_type_manager->getStorage('taxonomy_term')->loadByProperties(['vid' => 'list_widget']);
     foreach ($terms as $term) {
       $term->delete();
     }
+    $vocab->delete();
   }
 
   // Delete old paragraph field_content_type (entity reference to taxonomy).
