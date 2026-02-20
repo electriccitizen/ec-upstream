@@ -3,7 +3,7 @@ content_list:
     Events: event
     News: news
   display_filters:
-    events_list:
+    event_list:
       category_field: field_events_category
       view_filter: field_category_target_id
     news_list:

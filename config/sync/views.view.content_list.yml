@@ -319,8 +319,8 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_dates'
-  events_list:
-    id: events_list
+  event_list:
+    id: event_list
     display_title: Events
     display_plugin: embed
     position: 1
