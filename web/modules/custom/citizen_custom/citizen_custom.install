@@ -29,8 +29,8 @@ function citizen_custom_update_10001(&$sandbox) {
       'cardinality' => 1,
       'settings' => [
         'allowed_values' => [
-          ['value' => 'event', 'label' => 'Events'],
-          ['value' => 'news', 'label' => 'News'],
+          'event' => 'Events',
+          'news' => 'News',
         ],
       ],
     ])->save();
