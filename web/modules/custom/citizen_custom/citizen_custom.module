@@ -288,18 +288,23 @@ function citizen_custom_preprocess_paragraph__content_list(&$variables) {
     return;
   }
 
-  $view->setDisplay($display_id);
+  if (!$view->setDisplay($display_id)) {
+    $variables['content_list_has_results'] = FALSE;
+    return;
+  }
+
   $view->setArguments([$paragraph->id()]);
   $view->preExecute([$paragraph->id()]);
   $view->execute();
 
+  // Always render the view so cache metadata (e.g., node_list tag) propagates
+  // even when there are no results. Without this, an empty list would be
+  // permanently cached and never update when new content is published.
+  $rendered = $view->render();
+  $cache_metadata = CacheableMetadata::createFromRenderArray($rendered);
+  $cache_metadata->applyTo($variables);
+
   if (!empty($view->result)) {
-    $rendered = $view->render();
-
-    // Preserve cache metadata from the view.
-    $cache_metadata = CacheableMetadata::createFromRenderArray($rendered);
-    $cache_metadata->applyTo($variables);
-
     $variables['content_list_view'] = $rendered;
     $variables['content_list_has_results'] = TRUE;
   }
