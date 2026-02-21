@@ -36,7 +36,7 @@ props:
     drawer_style:
       type: string
       title: 'Drawer Style'
-      description: 'Sets style of the drawer as it transitions to/from the drawer toggle'
+      description: 'Sets style of the drawer as it transitions to/from the drawer toggle. NOTE: Fade should only be used when the toggle is below the drawer.'
       enum:
         - fade
         - sharp

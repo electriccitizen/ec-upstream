@@ -61,11 +61,11 @@
       {%- endfor -%}
     {% endset %}
     {{ include('citizen_sdc:drawer', {
-      toggle_position: 'above',
+      toggle_position: 'below',
       drawer_style: 'sharp',
       rando: random(100),
       toggle_open_text: 'See All Dates',
-      toggle_closed_text: 'See Less Dates',
+      toggle_close_text: 'See Less Dates',
       drawer: drawer_content,
     }, with_context = false) }}
   {% endif %}

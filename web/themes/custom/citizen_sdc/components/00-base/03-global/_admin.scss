@@ -228,7 +228,7 @@
 
 /* OFF CANVAS
 ----------------- */
-.ui-dialog.ui-dialog-off-canvas.ui-widget.ui-widget-content {
+#drupal-off-canvas-wrapper.ui-dialog.ui-dialog-off-canvas.ui-widget.ui-widget-content {
   .ui-dialog-titlebar {
     .ui-dialog-title {
       font-size: 15px !important;
@@ -253,6 +253,10 @@
 
   .ui-widget-content.ui-dialog-content {
     font-size: 16px !important;
+
+    .inline-block-create-button {
+      display: none;
+    }
 
     button,
     .ui-button {
