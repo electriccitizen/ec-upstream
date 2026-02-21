@@ -10,7 +10,7 @@
 
 {% extends 'breadcrumb.html.twig' %}
 
-{% block trail %}
+{% block trail_items %}
   {{ parent() }}
   <li>{{ currentNode.title.value }}</li>
 {% endblock %}

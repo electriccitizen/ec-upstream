@@ -1,0 +1,42 @@
+/* ===============
+  BREADCRUMBS
+================= */
+
+@use '../../00-base/00-variables/component-colors' as *;
+@use '../../00-base/00-variables/units' as *;
+@use '../../00-base/01-mixins/animation-mixins' as *;
+@use '../../00-base/01-mixins/general-mixins' as *;
+@use '../../00-base/01-mixins/layout-mixins' as *;
+
+.breadcrumb {
+  max-width: $contentStop;
+  @include auto;
+  padding: $spaceMd 0 0;
+
+  ol {
+    @include listReset;
+  }
+
+  li {
+    display: inline-block;
+    color: $breadCurrent;
+    font-size: 2rem;
+
+    a {
+      padding-right: .5rem;
+      color: $breadLink;
+      @include transAll(.3s);
+
+      &:hover,
+      &:focus {
+        color: $breadLinkHover;
+      }
+    }
+
+    &:not(:last-of-type) {
+      &:after {
+        content: "\00BB";
+      }
+    }
+  }
+}

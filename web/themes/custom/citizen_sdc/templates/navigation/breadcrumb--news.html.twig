@@ -10,10 +10,9 @@
 
 {% extends 'breadcrumb.html.twig' %}
 
-{% block trail %}
+{% extends 'breadcrumb.html.twig' %}
+
+{% block trail_items %}
   {{ parent() }}
-  <li>
-    <a href="{{ path('entity.node.canonical',{'node':10}) }}">News</a>
-  </li>
   <li>{{ currentNode.title.value }}</li>
 {% endblock %}

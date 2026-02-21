@@ -1,0 +1,8 @@
+{% if breadcrumb and breadcrumb|length > 1 %}
+  <nav class="breadcrumb">
+    <span class="visually-hidden">{{ breadcrumb_label|t }}</span>
+    <ol class="breadcrumb__list">
+      {{ trail }}
+    </ol>
+  </nav>
+{% endif %}
