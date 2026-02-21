@@ -232,3 +232,7 @@ blockquote {
 .ec-button--warning {
   @include cautionButton;
 }
+
+.button--clean {
+  @include buttonWipe;
+}

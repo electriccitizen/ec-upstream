@@ -1,5 +1,5 @@
 {% if toggle_position != 'below' %}
-  <button class="drawer-toggle drawer-toggle--{{ toggle_position }}" aria-controls="drawer-{{ rando }}" aria-expanded="false" data-toggle-open="{{ toggle_open_text }}" data-toggle-close="{{ toggle_close_text }}">{{ toggle_open_text }}</button>
+  <button class="drawer-toggle drawer-toggle--{{ toggle_position }} button--clean" aria-controls="drawer-{{ rando }}" aria-expanded="false" data-toggle-open="{{ toggle_open_text }}" data-toggle-close="{{ toggle_close_text }}">{{ toggle_open_text }}</button>
 {% endif %}
 
 <div id="drawer-{{ rando }}" class="drawer-content drawer-content--{{ drawer_style }}" aria-hidden="true">
@@ -7,5 +7,5 @@
 </div>
 
 {% if toggle_position == 'below' %}
-  <button class="drawer-toggle drawer-toggle--{{ toggle_position }}" aria-controls="drawer-{{ rando }}" aria-expanded="false" data-toggle-open="{{ toggle_open_text }}" data-toggle-close="{{ toggle_close_text }}">{{ toggle_open_text }}</button>
+  <button class="drawer-toggle drawer-toggle--{{ toggle_position }} button--clean" aria-controls="drawer-{{ rando }}" aria-expanded="false" data-toggle-open="{{ toggle_open_text }}" data-toggle-close="{{ toggle_close_text }}">{{ toggle_open_text }}</button>
 {% endif %}

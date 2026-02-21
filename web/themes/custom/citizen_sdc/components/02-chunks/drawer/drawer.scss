@@ -13,11 +13,9 @@
 .drawer-toggle {
   position: relative;
   display: inline-block;
-  @include buttonWipe;
-
-  & {
-    color: $link;
-    font-weight: $heavy;
+  color: $link;
+  font-weight: $heavy;
+  &.button--clean {
     padding-right: 3.5rem;
     margin-top: $spaceXxs;
   }

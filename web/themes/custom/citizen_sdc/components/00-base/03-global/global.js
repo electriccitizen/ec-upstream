@@ -1,34 +1,6 @@
 
 // Modern vanilla JS behaviors (no jQuery dependency).
 (function (Drupal, once) {
-
-  /* BACK TO TOP
-  ------------------ */
-  Drupal.behaviors.backToTop = {
-    attach: function (context, settings) {
-      once('backTop', 'html.js', context).forEach(backTop => {
-        const backAnchor = document.querySelector('.back-anchor');
-        const backAnchorLink = backAnchor?.querySelector('a');
-
-        if (!backAnchor || !backAnchorLink) {
-          return;
-        }
-
-        window.addEventListener('scroll', () => {
-          const threshold = window.innerHeight * 0.8;
-          backAnchor.style.display = window.scrollY > threshold ? 'block' : 'none';
-        });
-
-        backAnchorLink.addEventListener('click', (event) => {
-          event.preventDefault();
-          window.scrollTo({
-            top: document.body.offsetTop - 10,
-            behavior: 'smooth'
-          });
-        });
-      });
-    }
-  }
   
   Drupal.behaviors.widthCheck = {
     attach: function (context, settings) {
