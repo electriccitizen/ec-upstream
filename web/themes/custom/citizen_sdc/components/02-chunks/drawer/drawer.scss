@@ -1,0 +1,52 @@
+/* ===============
+  DRAWER
+================= */
+
+@use '../../00-base/00-variables/component-colors' as *;
+@use '../../00-base/00-variables/fonts' as *;
+@use '../../00-base/00-variables/units' as *;
+@use '../../00-base/01-mixins/general-mixins' as *;
+@use '../../00-base/01-mixins/type-mixins' as *;
+
+
+.drawer-toggle {
+  position: relative;
+  display: inline-block;
+  @include buttonWipe;
+
+  & {
+    color: $link;
+    font-weight: $heavy;
+    padding-right: 2.5rem;
+    margin-top: $spaceXxs;
+  }
+
+  &:hover,
+  &:focus {
+    &:after {
+      color: $hoverLink;
+    }
+  }
+
+  &:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 2rem;
+    margin-left: .5rem;
+    font-size: 24px;
+    @include materialIconOutline(\e5cf);
+  }
+
+  &.active-drawer {
+    &:after {
+      transform: rotate(180deg);
+      transition: transform .3s ease;
+    }
+  }
+}
+
+.drawer-content {
+  
+}
+

@@ -39,8 +39,7 @@
 {% extends 'field.html.twig' %}
 
 {% block fieldMultiNoItems %}
-  {{ attach_library('citizen_sdc/drawers') }}
-  {% set rando = random(10) %}
+  
   {%- for item in items -%}
     {% if loop.first %}
       <div{{ item.attributes.addClass('first-date') }}>
@@ -49,9 +48,9 @@
       </div>
     {% endif %}
   {%- endfor -%}
+
   {% if items.1 %}
-    <a href="#" class="drawer-toggle drawer-toggle--drawer-below" aria-controls="drawer-{{ rando }}" aria-expanded="false" data-toggle="dates">See all dates</a>
-    <div id="drawer-{{ rando }}" class="drawer-content drawer-content--not-fade" aria-hidden="true">
+    {% set drawer_content %}
       {%- for item in items -%}
         {% if not loop.first %}
           <div{{ item.attributes }}>
@@ -60,6 +59,14 @@
           </div>
         {% endif %}
       {%- endfor -%}
-    </div>
+    {% endset %}
+    {{ include('citizen_sdc:drawer', {
+      toggle_position: 'above',
+      drawer_style: 'sharp',
+      rando: random(100),
+      toggle_open_text: 'See All Dates',
+      toggle_closed_text: 'See Less Dates',
+      drawer: drawer_content,
+    }, with_context = false) }}
   {% endif %}
 {% endblock %}
