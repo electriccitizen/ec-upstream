@@ -88,16 +88,6 @@
       }
     }
 
-    figure.drupal-media {
-      margin: 0 0 $spaceSm;
-
-      .image.default {
-        img {
-          min-width: unset;
-        }
-      }
-    }
-
     mark.marker-yellow {
       background-color: $yellowMarker;
     }
@@ -113,24 +103,38 @@
 
     .drupal-media.ck-widget {
       width: 100%;
-
-      .document {
-        text-align: left;
-      }
     }
 
-    .drupal-media-style-align-center {
-      max-width: 100%;
-      width: 100%;
+    figure.drupal-media {
+      margin: 0 0 $spaceXs;
 
-      article {
-        @include auto;
+      &.drupal-media-style-align-left {
+        margin-right: $spaceXs;
+      }
+
+      &.drupal-media-style-align-right {
+        margin-left: $spaceXs;
+      }
+
+      &.drupal-media-style-align-center {
+        max-width: 100%;
+        width: 100%;
+
+        article {
+          @include auto;
+        }
+      }
+
+      .image.default {
+        img {
+          min-width: unset;
+        }
       }
     }
   }
 
-  .remote-video {
-    .field-media-oembed-video {
+  .media-item--remote-video {
+    .field--media-oembed-video {
       position: relative;
       padding-bottom: 56.25%;
 

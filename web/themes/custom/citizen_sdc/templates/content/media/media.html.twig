@@ -13,15 +13,11 @@
  */
 #}
 
-{% set classes = [
-	'media-item',
-	'media-item--' ~ media.bundle.0.target_id|clean_class,
-	'media-item--' ~ media.bundle.0.target_id|clean_class ~ '--' ~ view_mode|clean_class
-] %}
-
-<article{{ attributes|without('data-quickedit-entity-id').addClass(classes) }} data-quickedit-entity-id="media/{{ media.mid.0.value }}">
-  {{ title_suffix.contextual_links }}
-  {% if content %}
-    {{ content }}
-  {% endif %}
-</article>
+{{ include('citizen_sdc:media', {
+  media: content,
+  bundle: media.bundle.0.target_id,
+  display: view_mode,
+  attr: attributes,
+  media_id: media.mid.0.value,
+  suffix: title_suffix.contextual_links
+}, with_context = false) }}

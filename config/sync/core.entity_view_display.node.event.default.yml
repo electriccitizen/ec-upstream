@@ -18,7 +18,7 @@ dependencies:
     - system
     - user
   theme:
-    - citizen_dart
+    - citizen_sdc
 third_party_settings:
   layout_builder:
     enabled: true

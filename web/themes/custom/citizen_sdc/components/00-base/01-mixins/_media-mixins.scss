@@ -4,7 +4,8 @@
 @use '../00-variables/colors' as *;
 @use '../00-variables/component-colors' as *;
 @use 'animation-mixins' as *;
-@use 'general-mixins' as *;
+@use 'layout-mixins' as *;
+@use 'type-mixins' as *;
 
 @mixin imageBase {
   display: block;
@@ -49,12 +50,8 @@
 }
 
 @mixin largeEmbed {
-  width: 640px;
-  max-width: 100%;
-}
-
-@mixin fullEmbed {
   width: 100%;
+  max-width: 100%;
 }
 
 @mixin defaultEmbed {

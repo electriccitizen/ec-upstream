@@ -132,6 +132,7 @@ settings:
     ckeditor5_plugin_pack_highlight__highlight:
       options: {  }
       use_default_markers: true
+      attach_styles: false
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<cite>'
