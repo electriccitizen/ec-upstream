@@ -12,10 +12,10 @@ props:
     title:
       type: string
       description: 'Webform title.'
-    webformPlacer:
+    webform_placer:
       type: boolean
       default: false
-    showFormTitle:
+    show_form_title:
       type: boolean
       default: true
 

@@ -18,10 +18,10 @@ function citizen_sdc_preprocess_webform(&$variables) {
   $webform = Webform::load($webform_id);
   // Expose flags set by the paragraph form placer so SDC props receive them.
   if ($webform->get('webform_placer')) {
-    $variables['webformPlacer'] = TRUE; 
+    $variables['webform_placer'] = TRUE; 
   }
   if ($webform->get('show_placer_title') == 1) {
-    $variables['showFormTitle'] = TRUE;
+    $variables['show_form_title'] = TRUE;
   }
   $variables['title'] = $webform->label();
 }
