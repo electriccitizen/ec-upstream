@@ -1,10 +1,16 @@
+{% set menuTopClasses = [
+  'menu__level--top', 
+  menu_name is defined and menu_name ? 'menu--' ~ menu_name : ''  
+] %}
+
+
 {% if menu_items %}
-  {% if menu_level == 0 %}
-    <ul{{ attr }}>
-  {% else %}
-    <ul>
-  {% endif %}
-  {{ menu_items }}
+  <ul{% if menu_level == 0 %}
+        {{ attr.addClass(menuTopClasses) }}
+        {% if menu_name is defined and menu_name %} id="menu-{{ menu_name }}"{% endif %}
+      {% else %}
+        aria-hidden="true"
+      {% endif %}>
+    {{ menu_items }}
   </ul>
 {% endif %}
-

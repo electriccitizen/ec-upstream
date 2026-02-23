@@ -19,37 +19,37 @@
  */
 #}
 
-{% set menu_items %}
-  
-  {% for item in items %}
-    {%
-      set classes = [
-        'menu-item',
-        item.is_expanded ? 'menu-item--expanded',
-        item.is_collapsed ? 'menu-item--collapsed',
-        item.in_active_trail ? 'menu-item--active-trail',
-        'item-level__' ~ (menu_level + 1),
-      ]
-    %}
-    <li{{ item.attributes.addClass(classes) }}>
-      <a href="{{ "nolink" not in item.link_classes ? item.url : "#" }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
-      {% if item.below %}
-        <a href="#" class="menu-item__toggle">{{ "Expand Menu Item"|t }}</a>
-        {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-      {% endif %}
-    </li>
-  {% endfor %}
-{% endset %}
-
 {% import _self as menus %}
+{{ menus.menu_links(items, attributes, menu_name, 0) }}
 
-{{ menus.menu_links(menu_items, attributes, 0) }}
-
-{% macro menu_links(menu_items, attributes, menu_level) %}
+{% macro menu_links(items, attributes, menu_name, menu_level) %}
   {% import _self as menus %}
+
+  {% set menu_items %}
+    {% for item in items %}
+      {%
+        set classes = [
+          'menu-item',
+          item.is_expanded ? 'menu-item--expanded',
+          item.is_collapsed ? 'menu-item--collapsed',
+          item.in_active_trail ? 'menu-item--active-trail',
+          'item-level__' ~ (menu_level + 1),
+        ]
+      %}
+      <li{{ item.attributes.addClass(classes) }}>
+        <a href="{{ "nolink" not in item.link_classes ? item.url : "#" }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
+        {% if item.below %}
+          <button href="#" class="menu-item__toggle" aria-expanded="false">{{ "Expand Menu"|t }}</button>
+          {{ menus.menu_links(item.below, attributes, menu_name, menu_level + 1) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  {% endset %}
+  
   {{ include('citizen_sdc:menu-base', {
     menu_level: menu_level,
     attr: attributes,
+    menu_name: menu_name,
     menu_items: menu_items
   }, with_context = false) }}
 {% endmacro %}

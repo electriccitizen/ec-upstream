@@ -12,6 +12,9 @@ props:
     menu_level:
       type: integer
       description: 'The level of the menu loop being rendered'
+    menu_name:
+      type: string
+      description: 'Machine name of the menu (used for top-level id attribute)'
     attr:
       type: object
       description: 'Drupal Attributes object for the top level menu <ul>'
