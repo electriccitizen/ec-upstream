@@ -9,4 +9,18 @@
 @use '../../../../00-base/01-mixins/general-mixins' as *;
 @use '../../../../00-base/01-mixins/layout-mixins' as *;
 
+.block-menu {
+  .contextual {
+    display: none;
+  }
+}
 
+ul.menu {
+  display: flex;
+  flex-wrap: wrap;
+  @include listReset;
+
+  ul {
+    @include listReset;
+  }
+}
