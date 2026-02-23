@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme override to display a toolbar menu.
+ * Theme override to display a menu.
  *
  * Available variables:
  * - menu_name: The machine name of the menu.
@@ -18,22 +18,14 @@
  *   - in_active_trail: TRUE if the link is in the active trail.
  */
 #}
+
 {% import _self as menus %}
+{{ menus.menu_links(items, attributes, menu_name, 0) }}
 
-{#
-  We call a macro which calls itself to render the full tree.
-  @see http://twig.sensiolabs.org/doc/tags/macro.html
-#}
-{{ menus.menu_links(items, attributes, 0) }}
-
-{% macro menu_links(items, attributes, menu_level) %}
+{% macro menu_links(items, attributes, menu_name, menu_level) %}
   {% import _self as menus %}
-  {% if items %}
-    {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('toolbar-menu') }}>
-    {% else %}
-      <ul class="toolbar-menu">
-    {% endif %}
+
+  {% set menu_items %}
     {% for item in items %}
       {%
         set classes = [
@@ -41,15 +33,23 @@
           item.is_expanded ? 'menu-item--expanded',
           item.is_collapsed ? 'menu-item--collapsed',
           item.in_active_trail ? 'menu-item--active-trail',
+          'item-level__' ~ (menu_level + 1),
         ]
       %}
       <li{{ item.attributes.addClass(classes) }}>
-        {{ link(item.title, item.url) }}
+        <a href="{{ "nolink" not in item.link_classes ? item.url : "#" }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
         {% if item.below %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          <button href="#" class="menu-item__toggle" aria-expanded="false">{{ "Expand Menu"|t }}</button>
+          {{ menus.menu_links(item.below, attributes, menu_name, menu_level + 1) }}
         {% endif %}
       </li>
     {% endfor %}
-    </ul>
-  {% endif %}
+  {% endset %}
+  
+  {{ include('citizen_sdc:menu-ancillary', {
+    menu_level: menu_level,
+    attr: attributes,
+    menu_name: menu_name,
+    menu_items: menu_items
+  }, with_context = false) }}
 {% endmacro %}
