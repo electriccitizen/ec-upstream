@@ -26,12 +26,8 @@
 #}
 
 {% block mobileToggle %}
-  <a id="main-navigation"></a>
-  <div class="menu-toggle hide">
-    <a href="#" id="main-nav-toggle" class="menu-toggle__trigger">
-      <span>Show main navigation</span>
-    </a>
-  </div>
+<a id="main-navigation"></a>
+<div class="nav-toggle-container hide"><a href="#" id="main-nav-toggle"><span>Show main navigation</span></a></div>
 {% endblock %}
 
 {{ menus.menu_links(items, attributes, 0) }}
@@ -51,13 +47,13 @@
           item.is_expanded ? 'menu-item--expanded',
           item.is_collapsed ? 'menu-item--collapsed',
           item.in_active_trail ? 'menu-item--active-trail',
-          'item-level__' ~ (menu_level + 1),
+          'item-level-' ~ (menu_level + 1),
         ]
       %}
       <li{{ item.attributes.addClass(classes) }}>
         <a href="{{ "nolink" not in item.link_classes ? item.url : "#" }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
         {% if item.below %}
-          <a href="#" class="menu-item__toggle">{{ "Expand Menu Item"|t }}</a>
+          <a href="#" class="menu-item-expand">{{ "Expand Menu Item"|t }}</a>
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
       </li>

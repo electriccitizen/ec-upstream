@@ -1,0 +1,22 @@
+component:
+  id: citizen_sdc:menu-base
+  label: 'Menu Base'
+  description: 'Generic structure for Drupal menus'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - menu_level
+  properties:
+    menu_level:
+      type: integer
+      description: 'The level of the menu loop being rendered'
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the top level menu <ul>'
+
+slots:
+  menu_items:
+    title: Menu Content
+    description: Content of the menu

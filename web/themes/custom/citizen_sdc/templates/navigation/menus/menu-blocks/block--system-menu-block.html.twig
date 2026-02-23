@@ -31,18 +31,12 @@
  * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
  */
 #}
-{% set heading_id = 'block-' ~ content['#menu_name'] ~ 'menu' %}
-{% set attributes = attributes.addClass('block-menu--system-menu') %}
 
-{% if configuration.label %}
-  {% set blockTitle = configuration.label|clean_class %}
-{% endif %}
-<nav aria-label="{{ configuration.label }}" id="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby', 'id').addClass(blockTitle,heading_id) }}>
-  {# Label. If not displayed, we still provide it for screen readers. #}
-  <h2 class="block-menu__title{% if not configuration.label_display %} visually-hidden{% endif %}">{{ configuration.label }}</h2>
-  {{ title_suffix }}
-  {# Menu. #}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
-</nav>
+{{ include('citizen_sdc:menu-block-base', {
+  attr: attributes,
+  menu_name: content['#menu_name'],
+  show_menu_block_title: configuration.label_display,
+  menu_block_title: configuration.label,
+  title_suffix: title_suffix,
+  menu: content
+}, with_context = false) }}
