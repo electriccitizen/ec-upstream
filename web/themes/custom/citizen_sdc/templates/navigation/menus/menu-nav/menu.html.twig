@@ -20,9 +20,10 @@
 #}
 
 {% import _self as menus %}
-{{ menus.menu_links(items, attributes, menu_name, 0) }}
 
-{% macro menu_links(items, attributes, menu_name, menu_level) %}
+{{ menus.menu_links(items, attributes, menu_name, component_name|default('citizen_sdc:menu-base'), 0) }}
+
+{% macro menu_links(items, attributes, menu_name, component_name, menu_level) %}
   {% import _self as menus %}
 
   {% set menu_items %}
@@ -40,13 +41,13 @@
         <a href="{{ "nolink" not in item.link_classes ? item.url : "#" }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
         {% if item.below %}
           <button href="#" class="menu-item__toggle" aria-expanded="false">{{ "Expand Menu"|t }}</button>
-          {{ menus.menu_links(item.below, attributes, menu_name, menu_level + 1) }}
+          {{ menus.menu_links(item.below, attributes, menu_name, component_name, menu_level + 1) }}
         {% endif %}
       </li>
     {% endfor %}
   {% endset %}
   
-  {{ include('citizen_sdc:menu-base', {
+  {{ include(component_name, {
     menu_level: menu_level,
     attr: attributes,
     menu_name: menu_name,
