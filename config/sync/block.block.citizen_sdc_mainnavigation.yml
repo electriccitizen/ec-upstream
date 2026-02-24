@@ -11,7 +11,7 @@ dependencies:
 id: citizen_sdc_mainnavigation
 theme: citizen_sdc
 region: header
-weight: -5
+weight: -6
 provider: null
 plugin: 'menu_block:main'
 settings:

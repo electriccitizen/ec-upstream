@@ -10,8 +10,8 @@ dependencies:
     - citizen_sdc
 id: citizen_sdc_secondary
 theme: citizen_sdc
-region: header
-weight: 0
+region: preheader
+weight: -7
 provider: null
 plugin: 'menu_block:secondary'
 settings:
