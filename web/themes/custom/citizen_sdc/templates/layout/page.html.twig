@@ -45,14 +45,42 @@
 #}
 
 <div class="layout-container">
+
+  <section class="skip-navigation" role="complementary" aria-label="{{ "Skip Navigation"|t }}">
+    <a href="#main-navigation" class="skip-navigation__link visually-hidden focusable">
+      {%- trans %}Skip to main navigation{% endtrans -%}
+    </a>
+    <a href="#main-content" class="skip-navigation__link visually-hidden focusable">
+      {%- trans %}Skip to main content{% endtrans -%}
+    </a>
+  </section>
+
+  {% block pageAlert %}
+		{% if page.alert %}
+			<section class="site-alert" role="complementary" aria-label="{{ "Alert"|t }}">
+				<div class="site-alert__inner">
+					{% block alertContent %}
+						{{ page.alert }}
+					{% endblock %}
+				</div>
+			</section>
+		{% endif %}
+	{% endblock %}
+
+  {% block pagePreheader %}
+		{% if page.preheader %}
+			<section class="site-preheader" role="complementary" aria-label="{{ "Preheader"|t }}">
+				<div class="site-preheader__inner">
+					{% block preheaderContent %}
+						{{ page.preheader }}
+					{% endblock %}
+				</div>
+			</section>
+		{% endif %}
+	{% endblock %}
+
 	{% block pageHeader %}
 		<header role="banner" class="site-header">
-			<a href="#main-navigation" class="skip-nav visually-hidden focusable">
-				{%- trans %}Skip to main navigation{% endtrans -%}
-			</a>
-			<a href="#main-content" class="skip-nav visually-hidden focusable">
-				{%- trans %}Skip to main content{% endtrans -%}
-			</a>
 			{% block headerContent %}
 				{{ page.header }}
 			{% endblock %}

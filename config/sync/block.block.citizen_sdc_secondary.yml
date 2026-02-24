@@ -1,0 +1,34 @@
+uuid: 44a55f11-9fdf-472d-8dd2-192ac8f3566e
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.secondary
+  module:
+    - menu_block
+  theme:
+    - citizen_sdc
+id: citizen_sdc_secondary
+theme: citizen_sdc
+region: header
+weight: 0
+provider: null
+plugin: 'menu_block:secondary'
+settings:
+  id: 'menu_block:secondary'
+  label: Secondary
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  display_empty: false
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'secondary:'
+  render_parent: false
+  suggestion: secondary
+  hide_on_nonactive: false
+visibility: {  }

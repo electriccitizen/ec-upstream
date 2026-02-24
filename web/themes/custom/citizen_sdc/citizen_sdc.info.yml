@@ -11,6 +11,8 @@ ckeditor5-stylesheets:
   - components/cke.css
 base theme: stable9
 regions:
+  alert: Alert
+  preheader: Pre-Header
   header: Header
   content: Content
   prefooter: Pre-Footer
