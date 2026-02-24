@@ -11,24 +11,8 @@
 
 /* MOBILE MENU TOGGLE
 ------------------ */
-#main-nav-toggle {
-  height: 40px;
-  width: 40px;
-  position: absolute;
-  top: -6px;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-
-  @include desk{
-    display: none;
-  }
-
-  &.open {
-    
-  }
+#block-menu-main {
+  position: relative;
 }
 
 /* GLOBAL
@@ -44,7 +28,6 @@
 
   ul {
     list-style-type: none;
-    display: none;
   }
 
   li {
@@ -60,32 +43,48 @@
   #menu-main {
     background: $mmMobileDrop;
     border-bottom: 8px solid $mmMobileDropBorder;
-    left: -$siteMargin;
-    overflow: hidden;
+    left: 0;
     position: absolute;
-    top: calc(100% + 20px);
+    top: 100%;
     text-align: left;
-    width: calc(100% + $siteMargin * 2);
+    width: 100%;
+    overflow: hidden;
+    transition: height 500ms ease, opacity 350ms ease;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 
-    &:not(.accordion--open) {
-      display: none;
+    &.menu-main--open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
     }
 
+    &.menu-main--hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    &.menu-main--closing {
+      opacity: 0;
+    }
+
+    ul[aria-hidden='true'] {
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    
     .menu-item__toggle {
       @include menuItemToggle;
     }
 
-    .open {
-      & > .menu-item__toggle {
-        &:after {
-          transform: rotate(180deg);
-          transition: transform .5s ease;
-        }
-      }
-    }
-
     // top level mobile
     .menu-item__level-1 {
+      overflow: hidden;
+
       &:not(:last-child) {
         border-bottom: 1px solid $mmMobileItemBorder;
       }
@@ -108,6 +107,17 @@
         }
       }
 
+      & > .menu-item__toggle {
+        background: red;
+
+        &:hover,&:focus {
+          background: black;
+        }
+        &:after {
+          color: white;
+        } 
+      }
+
       &.open {
         & > .menu-item__link {
           color: $mmMobileTopExpanded;
@@ -116,14 +126,13 @@
       }
 
       ul {
-        padding-bottom: 3rem;
-        padding-left: 2rem;
         background-color: $mmMobileTopBackExpanded;
       }
     }
 
     //second level & below
     .menu-item__level-2 {
+      overflow: hidden;
 
       .menu-item__link {
         line-height: 1;
@@ -138,6 +147,15 @@
         &.menu-item__link--active {
           color: $mmMobileChildActive;
         }
+      }
+
+      .menu-item__toggle {
+        background: blue;
+        height: 40px;
+        &:after {
+          color: white;
+          height: 40px;
+        } 
       }
     }
 
