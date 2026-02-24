@@ -138,6 +138,7 @@
       const childUl = li.querySelector(':scope > ul');
       setAriaExpanded(toggle, false);
       setAriaHidden(childUl, true);
+      setToggleText(toggle, 'Expand Menu');
       if (childUl) {
         childUl.style.height = '0px';
         childUl.style.overflow = '';
@@ -154,6 +155,7 @@
     li.classList.add(MENU_OPEN_CLASS);
     setAriaExpanded(toggle, true);
     setAriaHidden(childUl, false);
+    setToggleText(toggle, 'Collapse Menu');
     applyDropdownOverflowClass(childUl, li);
   };
 
@@ -164,10 +166,13 @@
     li.classList.remove(MENU_OPEN_CLASS, SHIFT_LEFT_CLASS, SHIFT_RIGHT_CLASS);
     setAriaExpanded(toggle, false);
     setAriaHidden(childUl, true);
+    setToggleText(toggle, 'Expand Menu');
   };
 
-  const focusTopLevelItems = (menu) => Array.from(menu.querySelectorAll(':scope > li > a, :scope > li > button, :scope > li > span, :scope > li ' + ITEM_TOGGLE_SELECTOR))
-    .filter((el) => el instanceof HTMLElement);
+  const focusTopLevelItems = (menu) => Array.from(menu.querySelectorAll(':scope > li')).map((li) => {
+    const control = li.querySelector(':scope > .menu-item__toggle, :scope > a, :scope > button, :scope > [tabindex]');
+    return control instanceof HTMLElement ? control : null;
+  }).filter(Boolean);
 
   const debounce = Drupal.debounce
     ? Drupal.debounce
@@ -189,6 +194,7 @@
       if (!mainMenu || !toggleBtn) return;
 
       const modeState = { mobile: null };
+      let lastInputWasPointer = false;
 
       const setDesktopMode = () => {
         toggleBtn.removeAttribute('aria-expanded');
@@ -268,11 +274,13 @@
               li.classList.remove(MENU_OPEN_CLASS);
               setAriaExpanded(itemToggle, false);
               setAriaHidden(childUl, true);
+              setToggleText(itemToggle, 'Expand Menu');
               closeMenu(childUl);
             } else {
               li.classList.add(MENU_OPEN_CLASS);
               setAriaExpanded(itemToggle, true);
               setAriaHidden(childUl, false);
+              setToggleText(itemToggle, 'Collapse Menu');
               openMenu(childUl);
             }
           } else {
@@ -286,6 +294,9 @@
           }
         }
       });
+
+      nav.addEventListener('pointerdown', () => { lastInputWasPointer = true; });
+      nav.addEventListener('keydown', () => { lastInputWasPointer = false; });
 
       nav.addEventListener('mouseover', (event) => {
         if (modeState.mobile) return;
@@ -305,6 +316,7 @@
 
       nav.addEventListener('focusin', (event) => {
         if (modeState.mobile) return;
+        if (!lastInputWasPointer) return;
         const li = event.target.closest(EXPANDED_LI_SELECTOR);
         if (li && nav.contains(li)) openExpandedItem(li);
       });
