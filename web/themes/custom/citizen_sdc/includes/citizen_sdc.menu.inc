@@ -21,9 +21,24 @@ function citizen_sdc_preprocess_menu(&$variables) {
 function _menu_item_classes_recursive(array &$items) {
   foreach ($items as &$item) {
     $item['link_classes'] = [];
-    if (!$item['url']->isExternal() && $item['url']->isRouted() && $item['url']->getRouteName() === '<nolink>') {
-      $item['link_classes'][] = 'nolink';
+    $url = $item['url'];
+
+    if (!$url->isExternal() && $url->isRouted()) {
+      if ($url->getRouteName() === '<nolink>') {
+        $item['link_classes'][] = 'nolink';
+      }
     }
+
+    // Treat menu links that use "#" as their URL as intentional dummy links.
+    // toString() is safe here and avoids getUri() which can throw on routed URLs.
+    if (!$url->isExternal()) {
+      $url_string = $url->toString();
+      if ($url_string === '' || $url_string === '#') {
+        $item['link_classes'][] = 'hash-link';
+        $item['href'] = '#';
+      }
+    }
+
     if (!empty($item['below'])) {
       $item['link_classes'][] = 'menuparent';
       _menu_item_classes_recursive($item['below']);

@@ -41,11 +41,15 @@
         {% if 'nolink' in item.link_classes %}
           <span class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</span>
         {% else %}
-          <a href="{{ item.url ? item.url : "#" }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
-          {% if item.below %}
-            <button href="#" class="menu-item__toggle" aria-expanded="false">{{ "Expand Menu"|t }}</button>
-            {{ menus.menu_links(item.below, attributes, menu_name, component_name, menu_level + 1) }}
+          {% set href = item.href is defined
+            ? item.href
+            : (item.url and item.url.toString() ? item.url.toString() : '#')
+          %}
+          <a href="{{ href }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
         {% endif %}
+        {% if item.below %}
+          <button href="#" class="menu-item__toggle" aria-expanded="false">{{ "Expand Menu"|t }}</button>
+          {{ menus.menu_links(item.below, attributes, menu_name, component_name, menu_level + 1) }}
         {% endif %}
       </li>
     {% endfor %}
