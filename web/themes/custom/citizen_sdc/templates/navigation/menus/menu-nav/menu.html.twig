@@ -34,14 +34,18 @@
           item.is_expanded ? 'menu-item--expanded',
           item.is_collapsed ? 'menu-item--collapsed',
           item.in_active_trail ? 'menu-item--active-trail',
-          'item-level__' ~ (menu_level + 1),
+          'menu-item__level-' ~ (menu_level + 1),
         ]
       %}
       <li{{ item.attributes.addClass(classes) }}>
-        <a href="{{ "nolink" not in item.link_classes ? item.url : "#" }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
-        {% if item.below %}
-          <button href="#" class="menu-item__toggle" aria-expanded="false">{{ "Expand Menu"|t }}</button>
-          {{ menus.menu_links(item.below, attributes, menu_name, component_name, menu_level + 1) }}
+        {% if 'nolink' in item.link_classes %}
+          <span class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</span>
+        {% else %}
+          <a href="{{ item.url ? item.url : "#" }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
+          {% if item.below %}
+            <button href="#" class="menu-item__toggle" aria-expanded="false">{{ "Expand Menu"|t }}</button>
+            {{ menus.menu_links(item.below, attributes, menu_name, component_name, menu_level + 1) }}
+        {% endif %}
         {% endif %}
       </li>
     {% endfor %}

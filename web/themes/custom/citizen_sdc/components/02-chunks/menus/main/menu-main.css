@@ -1,0 +1,18 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 24 | /   @include menuShift {
+ * 25 | |     display: none;
+ * 26 | \   }
+ *    '
+ *   components/02-chunks/menus/main/menu-main.scss 24:3  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 24 \2502  \250c    @include menuShift {\a 25 \2502  \2502      display: none;\a 26 \2502  \2514    }\a    \2575 \a   components/02-chunks/menus/main/menu-main.scss 24:3  root stylesheet";
+}

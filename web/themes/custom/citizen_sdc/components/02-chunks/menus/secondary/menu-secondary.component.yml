@@ -1,6 +1,6 @@
 component:
   id: citizen_sdc:menu-secondary
-  label: 'Menu Secondary'
+  label: 'Secondary Menu'
   description: 'Secondary menu structure for utility links in the header'
   status: experimental
 

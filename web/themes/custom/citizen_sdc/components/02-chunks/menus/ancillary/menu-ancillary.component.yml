@@ -1,6 +1,6 @@
 component:
   id: citizen_sdc:menu-ancillary
-  label: 'Menu Ancillary'
+  label: 'Ancillary Menu'
   description: 'Ancillary menu structure for footer legalese links'
   status: experimental
 
