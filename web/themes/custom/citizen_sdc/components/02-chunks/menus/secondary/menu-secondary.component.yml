@@ -1,7 +1,7 @@
 component:
-  id: citizen_sdc:menu-footer
-  label: 'Menu Footer'
-  description: 'Footer menu structure for main footer links'
+  id: citizen_sdc:menu-secondary
+  label: 'Menu Secondary'
+  description: 'Secondary menu structure for utility links in the header'
   status: experimental
 
 props:
