@@ -20,31 +20,35 @@ function citizen_sdc_preprocess_menu(&$variables) {
  */
 function _menu_item_classes_recursive(array &$items) {
   foreach ($items as &$item) {
-    $item['link_classes'] = [];
+    // Base class for all menu links.
+    $item['link_classes'] = ['menu-item__link'];
     $url = $item['url'];
 
+    // If the link is not a link, add that as a class.
     if (!$url->isExternal() && $url->isRouted()) {
       if ($url->getRouteName() === '<nolink>') {
-        $item['link_classes'][] = 'nolink';
+        $item['link_classes'][] = 'menu-item__link--no-link';
       }
     }
 
     // Treat menu links that use "#" as their URL as intentional dummy links.
-    // toString() is safe here and avoids getUri() which can throw on routed URLs.
     if (!$url->isExternal()) {
       $url_string = $url->toString();
-      if ($url_string === '' || $url_string === '#') {
-        $item['link_classes'][] = 'hash-link';
+      if ($url->getRouteName() != '<nolink>' && ($url_string === '' || $url_string === '#')) {
+        $item['link_classes'][] = 'menu-item__link--hash-link';
         $item['href'] = '#';
       }
     }
 
+    // Add a class for menu parents.
     if (!empty($item['below'])) {
-      $item['link_classes'][] = 'menuparent';
+      $item['link_classes'][] = 'menu-item__link--menu-parent';
       _menu_item_classes_recursive($item['below']);
     }
+
+    // Add an active class.
     if ($item['url']->toString() === \Drupal::request()->getRequestUri()) {
-      $item['link_classes'][] = 'is-active';
+      $item['link_classes'][] = 'menu-item__link--active';
     }
   }
 }

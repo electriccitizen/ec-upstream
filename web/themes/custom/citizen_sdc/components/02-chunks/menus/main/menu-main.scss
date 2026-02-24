@@ -21,7 +21,7 @@
   justify-content: center;
   align-content: center;
 
-  @include menuShift {
+  @include desk{
     display: none;
   }
 
@@ -49,31 +49,6 @@
   li {
     list-style: none;
     position: relative;
-  }
-
-  li.item-level-1.mobile-secondary {
-    border-bottom: none;
-
-    @include menuShift {
-      display: none;
-    }
-
-    & > a {
-
-      &:not(.menu-item-expand) {
-        background: $mmMobileTopBack;
-        color: $mmMobileTop;
-        padding: 2.5rem 4rem;
-        line-height: 1.15;
-        font-size: 2.25rem;
-        display: block;
-        position: relative;
-      }
-
-      &.menu-item-expand {
-        height: 42px;
-      }
-    }
   }
 }
 
@@ -134,15 +109,15 @@
         }
       }
     }
-    
+
     // top level mobile
-    li.item-level-1 {
+    li.menu-item__level-1 {
       &:not(:last-child) {
         border-bottom: 1px solid $mmMobileItemBorder;
       }
 
       & > a,
-      & > span.nolink {
+      & > span.no-link {
         background: $mmMobileTopBack;
         color: $mmMobileTop;
         padding: 2.5rem 4rem;

@@ -1,10 +1,128 @@
 /* Error: Undefined mixin.
- *    ,
- * 24 | /   @include menuShift {
- * 25 | |     display: none;
- * 26 | \   }
- *    '
- *   components/02-chunks/menus/main/menu-main.scss 24:3  root stylesheet */
+ *     ,
+ * 57  | / @include mobileMenu {
+ * 58  | | 
+ * 59  | |   #main-menu {
+ * 60  | |     background: $mmMobileDrop;
+ * 61  | |     border-bottom: 8px solid $mmMobileDropBorder;
+ * 62  | |     left: -$siteMargin;
+ * 63  | |     overflow: hidden;
+ * 64  | |     position: absolute;
+ * 65  | |     top: calc(100% + 20px);
+ * 66  | |     text-align: left;
+ * 67  | |     width: calc(100% + $siteMargin * 2);
+ * 68  | | 
+ * 69  | |     &:not(.accordion--open) {
+ * 70  | |       display: none;
+ * 71  | |     }
+ * 72  | | 
+ * 73  | |     a.menu-item__toggle {
+ * 74  | |       background: transparent;
+ * 75  | |       display: block;
+ * 76  | |       height: 60px;
+ * 77  | |       padding: 0;
+ * 78  | |       position: absolute;
+ * 79  | |       right: 0;
+ * 80  | |       text-align: left;
+ * 81  | |       text-indent: -9000px;
+ * 82  | |       top: 0;
+ * 83  | |       width: 60px;
+ * 84  | |       z-index: 1;
+ * 85  | | 
+ * 86  | |       &:after {
+ * 87  | |         @include materialIconOutline(\e5cf);
+ * 88  | |         display: flex;
+ * 89  | |         flex-direction: column;
+ * 90  | |         justify-content: center;
+ * 91  | |         align-content: center;
+ * 92  | |         width: 60px;
+ * 93  | |         height: 100%;
+ * 94  | |         position: absolute;
+ * 95  | |         right: 10px;
+ * 96  | |         top: 0;
+ * 97  | |         text-indent: 0;
+ * 98  | |       }
+ * 99  | |       @include menuShift {
+ * 100 | |         display: none;
+ * 101 | |       }
+ * 102 | |     }
+ * 103 | | 
+ * 104 | |     .open {
+ * 105 | |       & > a.menu-item__toggle {
+ * 106 | |         &:after {
+ * 107 | |           transform: rotate(180deg);
+ * 108 | |           transition: transform .5s ease;
+ * 109 | |         }
+ * 110 | |       }
+ * 111 | |     }
+ * 112 | | 
+ * 113 | |     // top level mobile
+ * 114 | |     li.menu-item__level-1 {
+ * 115 | |       &:not(:last-child) {
+ * 116 | |         border-bottom: 1px solid $mmMobileItemBorder;
+ * 117 | |       }
+ * 118 | | 
+ * 119 | |       & > a,
+ * 120 | |       & > span.no-link {
+ * 121 | |         background: $mmMobileTopBack;
+ * 122 | |         color: $mmMobileTop;
+ * 123 | |         padding: 2.5rem 4rem;
+ * 124 | |         line-height: 1.15;
+ * 125 | |         font-size: 2.25rem;
+ * 126 | |         display: block;
+ * 127 | |         position: relative;
+ * 128 | | 
+ * 129 | |         &:hover,&:focus {
+ * 130 | |           text-decoration: none;
+ * 131 | |         }
+ * 132 | |       }
+ * 133 | | 
+ * 134 | |       &.open {
+ * 135 | |         & > a,
+ * 136 | |         & > span.nolink {
+ * 137 | |           color: $mmMobileTopExpanded;
+ * 138 | |           background: $mmMobileTopBackExpanded;
+ * 139 | |         }
+ * 140 | |       }
+ * 141 | | 
+ * 142 | |       ul {
+ * 143 | |         padding-bottom: 3rem;
+ * 144 | |         padding-left: 2rem;
+ * 145 | |         background-color: $mmMobileTopBackExpanded;
+ * 146 | |       }
+ * 147 | |     }
+ * 148 | | 
+ * 149 | |     //second level & below mobile
+ * 150 | |     li.item-level-2 {
+ * 151 | | 
+ * 152 | |       a {
+ * 153 | |         line-height: 1;
+ * 154 | |         font-size: 2rem;
+ * 155 | |         padding: 1.5rem 2rem;
+ * 156 | |         color: $white;
+ * 157 | |         display: block;
+ * 158 | |         &:hover,&:focus {
+ * 159 | |           text-decoration: none;
+ * 160 | |         }
+ * 161 | | 
+ * 162 | |         &.menu-item-expand {
+ * 163 | |           height: 40px;
+ * 164 | |           &:after {
+ * 165 | |             height: 40px;
+ * 166 | |             font-size: 21px;
+ * 167 | |           }
+ * 168 | |         }
+ * 169 | |       }
+ * 170 | |     }
+ * 171 | |     li.item-level-3 {
+ * 172 | |       a {
+ * 173 | |         font-size: 1.75rem;
+ * 174 | |       }
+ * 175 | |     }
+ * 176 | |   }
+ * 177 | \ }
+ *     '
+ *   components/02-chunks/menus/main/menu-main.scss 57:1  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -14,5 +132,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 24 \2502  \250c    @include menuShift {\a 25 \2502  \2502      display: none;\a 26 \2502  \2514    }\a    \2575 \a   components/02-chunks/menus/main/menu-main.scss 24:3  root stylesheet";
+  content: "Error: Undefined mixin.\a     \2577 \a 57  \2502  \250c  @include mobileMenu {\a 58  \2502  \2502  \a 59  \2502  \2502    #main-menu {\a 60  \2502  \2502      background: $mmMobileDrop;\a 61  \2502  \2502      border-bottom: 8px solid $mmMobileDropBorder;\a 62  \2502  \2502      left: -$siteMargin;\a 63  \2502  \2502      overflow: hidden;\a 64  \2502  \2502      position: absolute;\a 65  \2502  \2502      top: calc(100% + 20px);\a 66  \2502  \2502      text-align: left;\a 67  \2502  \2502      width: calc(100% + $siteMargin * 2);\a 68  \2502  \2502  \a 69  \2502  \2502      &:not(.accordion--open) {\a 70  \2502  \2502        display: none;\a 71  \2502  \2502      }\a 72  \2502  \2502  \a 73  \2502  \2502      a.menu-item__toggle {\a 74  \2502  \2502        background: transparent;\a 75  \2502  \2502        display: block;\a 76  \2502  \2502        height: 60px;\a 77  \2502  \2502        padding: 0;\a 78  \2502  \2502        position: absolute;\a 79  \2502  \2502        right: 0;\a 80  \2502  \2502        text-align: left;\a 81  \2502  \2502        text-indent: -9000px;\a 82  \2502  \2502        top: 0;\a 83  \2502  \2502        width: 60px;\a 84  \2502  \2502        z-index: 1;\a 85  \2502  \2502  \a 86  \2502  \2502        &:after {\a 87  \2502  \2502          @include materialIconOutline(\\e5cf);\a 88  \2502  \2502          display: flex;\a 89  \2502  \2502          flex-direction: column;\a 90  \2502  \2502          justify-content: center;\a 91  \2502  \2502          align-content: center;\a 92  \2502  \2502          width: 60px;\a 93  \2502  \2502          height: 100%;\a 94  \2502  \2502          position: absolute;\a 95  \2502  \2502          right: 10px;\a 96  \2502  \2502          top: 0;\a 97  \2502  \2502          text-indent: 0;\a 98  \2502  \2502        }\a 99  \2502  \2502        @include menuShift {\a 100 \2502  \2502          display: none;\a 101 \2502  \2502        }\a 102 \2502  \2502      }\a 103 \2502  \2502  \a 104 \2502  \2502      .open {\a 105 \2502  \2502        & > a.menu-item__toggle {\a 106 \2502  \2502          &:after {\a 107 \2502  \2502            transform: rotate(180deg);\a 108 \2502  \2502            transition: transform .5s ease;\a 109 \2502  \2502          }\a 110 \2502  \2502        }\a 111 \2502  \2502      }\a 112 \2502  \2502  \a 113 \2502  \2502      // top level mobile\a 114 \2502  \2502      li.menu-item__level-1 {\a 115 \2502  \2502        &:not(:last-child) {\a 116 \2502  \2502          border-bottom: 1px solid $mmMobileItemBorder;\a 117 \2502  \2502        }\a 118 \2502  \2502  \a 119 \2502  \2502        & > a,\a 120 \2502  \2502        & > span.no-link {\a 121 \2502  \2502          background: $mmMobileTopBack;\a 122 \2502  \2502          color: $mmMobileTop;\a 123 \2502  \2502          padding: 2.5rem 4rem;\a 124 \2502  \2502          line-height: 1.15;\a 125 \2502  \2502          font-size: 2.25rem;\a 126 \2502  \2502          display: block;\a 127 \2502  \2502          position: relative;\a 128 \2502  \2502  \a 129 \2502  \2502          &:hover,&:focus {\a 130 \2502  \2502            text-decoration: none;\a 131 \2502  \2502          }\a 132 \2502  \2502        }\a 133 \2502  \2502  \a 134 \2502  \2502        &.open {\a 135 \2502  \2502          & > a,\a 136 \2502  \2502          & > span.nolink {\a 137 \2502  \2502            color: $mmMobileTopExpanded;\a 138 \2502  \2502            background: $mmMobileTopBackExpanded;\a 139 \2502  \2502          }\a 140 \2502  \2502        }\a 141 \2502  \2502  \a 142 \2502  \2502        ul {\a 143 \2502  \2502          padding-bottom: 3rem;\a 144 \2502  \2502          padding-left: 2rem;\a 145 \2502  \2502          background-color: $mmMobileTopBackExpanded;\a 146 \2502  \2502        }\a 147 \2502  \2502      }\a 148 \2502  \2502  \a 149 \2502  \2502      //second level & below mobile\a 150 \2502  \2502      li.item-level-2 {\a 151 \2502  \2502  \a 152 \2502  \2502        a {\a 153 \2502  \2502          line-height: 1;\a 154 \2502  \2502          font-size: 2rem;\a 155 \2502  \2502          padding: 1.5rem 2rem;\a 156 \2502  \2502          color: $white;\a 157 \2502  \2502          display: block;\a 158 \2502  \2502          &:hover,&:focus {\a 159 \2502  \2502            text-decoration: none;\a 160 \2502  \2502          }\a 161 \2502  \2502  \a 162 \2502  \2502          &.menu-item-expand {\a 163 \2502  \2502            height: 40px;\a 164 \2502  \2502            &:after {\a 165 \2502  \2502              height: 40px;\a 166 \2502  \2502              font-size: 21px;\a 167 \2502  \2502            }\a 168 \2502  \2502          }\a 169 \2502  \2502        }\a 170 \2502  \2502      }\a 171 \2502  \2502      li.item-level-3 {\a 172 \2502  \2502        a {\a 173 \2502  \2502          font-size: 1.75rem;\a 174 \2502  \2502        }\a 175 \2502  \2502      }\a 176 \2502  \2502    }\a 177 \2502  \2514  }\a     \2575 \a   components/02-chunks/menus/main/menu-main.scss 57:1  root stylesheet";
 }

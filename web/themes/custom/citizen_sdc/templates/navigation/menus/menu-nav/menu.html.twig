@@ -38,7 +38,7 @@
         ]
       %}
       <li{{ item.attributes.addClass(classes) }}>
-        {% if 'nolink' in item.link_classes %}
+        {% if 'menu-item__link--no-link' in item.link_classes %}
           <span class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</span>
         {% else %}
           {% set href = item.href is defined
