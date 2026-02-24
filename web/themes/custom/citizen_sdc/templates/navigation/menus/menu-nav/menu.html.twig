@@ -48,7 +48,7 @@
           <a href="{{ href }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
         {% endif %}
         {% if item.below %}
-          <button href="#" class="menu-item__toggle" aria-expanded="false">{{ "Expand Menu"|t }}</button>
+          <button href="#" class="menu-item__toggle button--clean" aria-expanded="false">{{ "Expand Menu"|t }}</button>
           {{ menus.menu_links(item.below, attributes, menu_name, component_name, menu_level + 1) }}
         {% endif %}
       </li>

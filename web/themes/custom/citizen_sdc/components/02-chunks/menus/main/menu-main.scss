@@ -4,8 +4,9 @@
 
 @use '../../../00-base/00-variables/component-colors' as *;
 @use '../../../00-base/00-variables/fonts' as *;
-@use '../../../00-base/01-mixins/animation-mixins' as *;
+@use '../../../00-base/00-variables/units' as *;
 @use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
 @use '../../../00-base/01-mixins/type-mixins' as *;
 
 /* MOBILE MENU TOGGLE
@@ -56,7 +57,7 @@
 ------------------ */
 @include mobileMenu {
 
-  #main-menu {
+  #menu-main {
     background: $mmMobileDrop;
     border-bottom: 8px solid $mmMobileDropBorder;
     left: -$siteMargin;
@@ -70,39 +71,12 @@
       display: none;
     }
 
-    a.menu-item__toggle {
-      background: transparent;
-      display: block;
-      height: 60px;
-      padding: 0;
-      position: absolute;
-      right: 0;
-      text-align: left;
-      text-indent: -9000px;
-      top: 0;
-      width: 60px;
-      z-index: 1;
-
-      &:after {
-        @include materialIconOutline(\e5cf);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        width: 60px;
-        height: 100%;
-        position: absolute;
-        right: 10px;
-        top: 0;
-        text-indent: 0;
-      }
-      @include menuShift {
-        display: none;
-      }
+    .menu-item__toggle {
+      @include menuItemToggle;
     }
 
     .open {
-      & > a.menu-item__toggle {
+      & > .menu-item__toggle {
         &:after {
           transform: rotate(180deg);
           transition: transform .5s ease;
@@ -111,13 +85,12 @@
     }
 
     // top level mobile
-    li.menu-item__level-1 {
+    .menu-item__level-1 {
       &:not(:last-child) {
         border-bottom: 1px solid $mmMobileItemBorder;
       }
 
-      & > a,
-      & > span.no-link {
+      & > .menu-item__link {
         background: $mmMobileTopBack;
         color: $mmMobileTop;
         padding: 2.5rem 4rem;
@@ -129,11 +102,14 @@
         &:hover,&:focus {
           text-decoration: none;
         }
+
+        &.menu-item__link--active {
+          color: $mmMobileChildActive;
+        }
       }
 
       &.open {
-        & > a,
-        & > span.nolink {
+        & > .menu-item__link {
           color: $mmMobileTopExpanded;
           background: $mmMobileTopBackExpanded;
         }
@@ -146,87 +122,60 @@
       }
     }
 
-    //second level & below mobile
-    li.item-level-2 {
+    //second level & below
+    .menu-item__level-2 {
 
-      a {
+      .menu-item__link {
         line-height: 1;
         font-size: 2rem;
         padding: 1.5rem 2rem;
-        color: $white;
+        color: $mmMobileChild;
         display: block;
         &:hover,&:focus {
           text-decoration: none;
         }
 
-        &.menu-item-expand {
-          height: 40px;
-          &:after {
-            height: 40px;
-            font-size: 21px;
-          }
+        &.menu-item__link--active {
+          color: $mmMobileChildActive;
         }
       }
     }
-    li.item-level-3 {
-      a {
+
+    .menu-item__level-3 {
+      .menu-item__link {
         font-size: 1.75rem;
       }
     }
   }
 }
 
-/* menuShift FISH
+/* DESKTOP SPECIFIC
 ---------------- */
-@include menuShift {
-  #block-main-menu ul.menu-main-navigation {
-    @include safeFlex(row, wrap, end, null);
-    margin-bottom: 1rem;
+@include deskMenu {
+  #menu-main {
+    column-gap: 24px;
 
     // top level
-    li.item-level-1 {
-      &:hover,&:focus {
-        & > a {
-          background: $mmTopBackHover;
-          color: $mmTopLinkHover;
-          text-decoration: none;
-          &:not(.menuparent):before {
-            width: 100%;
-            transition: width .3s ease-out;
-          }
-        }
-      }
-
+    .menu-item__level-1 {
       &.open {
-        & > a.menuparent {
-          &.menuparent {
-            &:after {
-              transform: rotate(180deg);
-            }
-          }
-        }
         & > ul {
           display: block;
-          padding: 1.5rem 0 3rem;
-          z-index: 10;
         }
       }
 
       &.menu-item--active-trail {
-        &:hover > a,&:focus > a {
-          color: $mmTopActiveHover;
-          &:not(.menuparent):before  {
-            background: $white;
+        &:hover,&:focus {
+          & > .menu-item__link,& > .menu-item__toggle {
+            color: $mmTopActiveHover;
           }
         }
 
-        & > a {
+        & > .menu-item__link,& > .menu-item__toggle {
           color: $mmTopActive;
         }
       }
 
-      & > a,
-      & > span.nolink {
+      & > .menu-item__link {
         background: $mmTopBackHover;
         color: $mmTopLink;
         padding: 1.5rem 1.5rem;
@@ -235,40 +184,20 @@
         display: block;
         position: relative;
 
-        &:not(.menuparent):before {
+        &:not(.menu-item__link--menuparent):before {
           content: '';
           display: block;
           width: 0;
           height: 2px;
-          background: $teal;
           position: absolute;
           top: 100%;
           left: 0;
-        }
-
-        &.menu-item-expand {
-          display: none;
-        }
-
-        &.menuparent {
-          &:after {
-            content: '';
-            display: inline-block;
-            margin-left: 1rem;
-            height: 8px;
-            width: 8px;
-            background-image: none;
-            background-image: url(../images/elements/menu-caret.svg);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            @include transFormAnimate;
-          }
         }
       }
 
       //first level dropdown
       & > ul {
+        display: none;
         padding: 0 0 2.5rem;
         background: $mmDropdown;
         left: 0;
@@ -280,8 +209,8 @@
     }
 
     // second level and below
-    li.item-level-2 {
-      &.active-trail {
+    li.menu-item__level-2 {
+      &.menu-item--active-trail {
         color: $mmChildActive;
       }
 
@@ -290,13 +219,6 @@
       }
 
       &.open {
-        & > a.menuparent{
-
-          &:after {
-            transform: translateX(6px);
-          }
-        }
-
         & > ul {
           display: block;
         }

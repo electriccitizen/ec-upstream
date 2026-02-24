@@ -32,17 +32,13 @@
  */
 #}
 
-{% set menu %}
-  {% block menuContent %}
-    {{ content }}
-  {% endblock %}
-{% endset %}
+{% extends 'block--system-menu-block.html.twig' %}
 
-{{ include('citizen_sdc:menu-block-base', {
-  attr: attributes,
-  menu_name: content['#menu_name'],
-  show_menu_block_title: configuration.label_display,
-  menu_block_title: configuration.label,
-  title_suffix: title_suffix,
-  menu: menu
-}, with_context = false) }}
+{% block menuContent %}
+  <div class="block-menu__toggle-wrapper">
+    <button class="block-menu__toggle button--clean" data-open-text="Open Menu" data-close-text="Close Menu" aria-controls="menu-main">
+      <span class="visually-hidden">Open Menu</span>
+    </button>
+  </div>
+  {{ parent() }}
+{% endblock %}

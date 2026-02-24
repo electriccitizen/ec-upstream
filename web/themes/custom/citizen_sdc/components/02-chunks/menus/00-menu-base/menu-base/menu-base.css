@@ -1,1 +1,1 @@
-:root{--tab-size: 800px;--desk-size: 984px;--large-size: 1600px}.block-menu .contextual{display:none}ul.menu{list-style:none;margin:0;padding:0}@media screen and (min-width: 800px){ul.menu{display:flex;flex-wrap:wrap}}ul.menu ul{list-style:none;margin:0;padding:0}/*# sourceMappingURL=menu-base.css.map */
+.block-menu .contextual{display:none}ul.menu{list-style:none;margin:0;padding:0}@media screen and (min-width: 800px){ul.menu{display:flex;flex-wrap:wrap}}ul.menu ul{list-style:none;margin:0;padding:0}/*# sourceMappingURL=menu-base.css.map */

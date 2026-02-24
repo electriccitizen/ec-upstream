@@ -3,8 +3,6 @@ global:
   css:
     theme:
       components/style.css: {}
-  js:
-    components/00-base/03-global/global.js: {}
   dependencies:
     - core/drupal
     - core/drupalSettings

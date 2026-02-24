@@ -134,7 +134,7 @@ $modalGalButtonShadowHover : $transBlack;
 //desktop
 $mmTopLink : $black;
 $mmTopLinkHover : $black;
-$mmTopBackHover : $lightGray;
+$mmTopBackHover : transparent;
 $mmTopActive : $link;
 $mmTopActiveHover : $link;
 $mmChildLink : $link;
@@ -148,11 +148,12 @@ $mmMobileDrop : $white;
 $mmMobileDropBorder : $black;
 $mmMobileItemBorder : $borderRule;
 $mmMobileTop : $link;
+$mmMobileTopActive : $black;
 $mmMobileTopBack : $white;
 $mmMobileTopExpanded : $hoverLink;
 $mmMobileTopBackExpanded : $lightGray;
 $mmMobileChild : $link;
-$mmMobileChildActive : $white;
+$mmMobileChildActive : $black;
 
 /* SECTION MENU 
 --------------------- */

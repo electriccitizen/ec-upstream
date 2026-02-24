@@ -143,3 +143,32 @@
     padding-top: 0 !important;
   }
 }
+
+@mixin menuItemToggle {
+  background: transparent;
+  display: block;
+  height: 60px;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  text-align: left;
+  text-indent: -9000px;
+  top: 0;
+  width: 60px;
+  z-index: 1;
+  cursor: pointer;
+
+  &:after {
+    content: '>';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    text-indent: 0;
+  }
+}

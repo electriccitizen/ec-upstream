@@ -9,6 +9,7 @@ $em-base: 8px;
 $smallTab: 520px;
 $tab: 800px;
 $desk: 984px;
+$deskMenu: 1020px;
 $contentStop: 1200px;
 $largeScreen: 1600px;
 $textMax: 800px;
@@ -16,13 +17,7 @@ $onlyTab: $tab $desk - 1px;
 $onlySmall: $tab - 1px;
 $onlyPhone: $smallTab - 1px;
 $onlyMobile: $desk - 1px;
-
-// Used by JS to make sure the SCSS vars can be used.
-:root {
-  --tab-size: #{$tab};
-  --desk-size: #{$desk};
-  --large-size: #{$largeScreen};
-}
+$mobileMenu: $deskMenu - 1px;
 
 /* SPACING & LAYOUT VARIABLES
 ----------------------------- */

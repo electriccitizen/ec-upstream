@@ -22,6 +22,12 @@
   }
 }
 
+@mixin deskMenu {
+  @media screen and (min-width: $deskMenu) {
+    @content;
+  }
+}
+
 @mixin contentStop {
   @media screen and (min-width: $contentStop) {
     @content;
@@ -54,6 +60,13 @@
 
 @mixin onlyPhone {
   @media screen and (max-width: $onlyPhone) {
+    @content;
+  }
+}
+
+
+@mixin mobileMenu {
+  @media screen and (max-width: $mobileMenu) {
     @content;
   }
 }
