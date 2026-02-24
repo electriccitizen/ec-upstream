@@ -1,11 +1,10 @@
-((Drupal, once, _) => {
+((Drupal, once) => {
   const deskMenu = 984;
   const ROOT_NAV_SELECTOR = '#block-menu-main';
   const MAIN_MENU_SELECTOR = '#menu-main';
   const TOGGLE_SELECTOR = '.block-menu__toggle';
   const TOGGLE_ACTIVE_CLASS = 'block-menu__toggle--active';
   const EXPANDED_LI_SELECTOR = 'li.menu-item--expanded';
-  const MENU_PARENT_LINK_SELECTOR = '.menu-item__link--menu-parent';
   const ITEM_TOGGLE_SELECTOR = '.menu-item__toggle';
   const MENU_OPEN_CLASS = 'menu-item--open';
   const SHIFT_LEFT_CLASS = 'menu-item--dropdown-shift-left';
@@ -327,4 +326,4 @@
       });
     },
   };
-})(Drupal, once, drupalSettings?.underscore || window._);
+})(Drupal, once);
