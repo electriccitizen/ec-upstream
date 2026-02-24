@@ -1,18 +1,16 @@
 /* ===============
-  ANCILLARY MENU
+  FOOTER MENU
 ================= */
 
 @use '../../../00-base/00-variables/component-colors' as *;
 @use '../../../00-base/01-mixins/animation-mixins' as *;
 @use '../../../00-base/01-mixins/breakpoint-mixins' as *;
 
-.menu--ancillary {
-
+.menu--footer {
   @include tab {
-    column-gap: 16px;
-    font-size: 2rem;
+    flex-direction: column;
   }
-  
+
   a {
     display: block;
     color: $prefooterLink;
@@ -21,7 +19,6 @@
     &:focus {
       color: $prefooterLinkHover;
       @include transAll(.3s);
-
     }
   }
 }

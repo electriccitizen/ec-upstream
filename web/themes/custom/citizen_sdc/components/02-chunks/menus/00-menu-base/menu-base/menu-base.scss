@@ -1,6 +1,8 @@
 /* ===============
   MENU BASE
 ================= */
+
+@use '../../../../00-base/01-mixins/breakpoint-mixins' as *;
 @use '../../../../00-base/01-mixins/general-mixins' as *;
 
 .block-menu {
@@ -10,9 +12,12 @@
 }
 
 ul.menu {
-  display: flex;
-  flex-wrap: wrap;
   @include listReset;
+
+  @include tab {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   ul {
     @include listReset;
