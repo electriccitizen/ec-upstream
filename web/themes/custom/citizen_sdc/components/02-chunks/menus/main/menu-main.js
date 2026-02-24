@@ -53,13 +53,10 @@
     }
   };
 
-  const openMenu = (el) => {
+  const animateHeight = (el, opening, onEnd) => {
     if (!el) return;
-    el.classList.remove(MENU_MAIN_CLOSING_CLASS, MENU_MAIN_HIDDEN_CLASS);
-    el.classList.add(MENU_MAIN_OPEN_CLASS);
     const current = el.getBoundingClientRect().height;
-    const target = el.scrollHeight;
-    if (current === target) return;
+    const target = opening ? el.scrollHeight : 0;
     el.style.overflow = 'hidden';
     el.style.height = `${current}px`;
     requestAnimationFrame(() => {
@@ -68,33 +65,10 @@
     });
     const cleanup = () => {
       el.style.transition = '';
-      el.style.height = 'auto';
       el.style.overflow = '';
+      el.style.height = opening ? 'auto' : '0px';
       el.removeEventListener('transitionend', cleanup);
-    };
-    el.addEventListener('transitionend', cleanup);
-    setTimeout(cleanup, 400);
-  };
-
-  const closeMenu = (el) => {
-    if (!el) return;
-    if (el.classList.contains(MENU_MAIN_HIDDEN_CLASS) && !el.classList.contains(MENU_MAIN_OPEN_CLASS)) return;
-    const current = el.getBoundingClientRect().height;
-    el.style.overflow = 'hidden';
-    el.style.height = `${current}px`;
-    el.classList.add(MENU_MAIN_CLOSING_CLASS);
-    requestAnimationFrame(() => {
-      el.style.transition = 'height 200ms ease';
-      el.style.height = '0px';
-    });
-    const cleanup = () => {
-      el.style.transition = '';
-      el.style.height = '0px';
-      el.style.overflow = '';
-      el.classList.remove(MENU_MAIN_CLOSING_CLASS);
-      el.classList.remove(MENU_MAIN_OPEN_CLASS);
-      el.classList.add(MENU_MAIN_HIDDEN_CLASS);
-      el.removeEventListener('transitionend', cleanup);
+      if (onEnd) onEnd();
     };
     el.addEventListener('transitionend', cleanup);
     setTimeout(cleanup, 400);
@@ -131,42 +105,26 @@
     menuUl.querySelectorAll(`.${MOBILE_SEARCH_CLASS}, .${MOBILE_SECONDARY_CLASS}`).forEach((li) => li.remove());
   };
 
+  const setSubmenuState = (li, open, { animate = false, manageOverflow = false } = {}) => {
+    if (!li) return;
+    const toggle = li.querySelector(ITEM_TOGGLE_SELECTOR);
+    const childUl = li.querySelector(':scope > ul');
+    if (!toggle || !childUl) return;
+    li.classList.toggle(MENU_OPEN_CLASS, open);
+    if (!open) li.classList.remove(SHIFT_LEFT_CLASS, SHIFT_RIGHT_CLASS);
+    setAriaExpanded(toggle, open);
+    setAriaHidden(childUl, !open);
+    setToggleText(toggle, open ? 'Collapse Menu' : 'Expand Menu');
+    if (manageOverflow && open) applyDropdownOverflowClass(childUl, li);
+    if (animate) {
+      animateHeight(childUl, open);
+    } else {
+      childUl.style.height = open ? 'auto' : '0px';
+    }
+  };
+
   const resetSubmenus = (root) => {
-    root.querySelectorAll(EXPANDED_LI_SELECTOR).forEach((li) => {
-      li.classList.remove(MENU_OPEN_CLASS, SHIFT_LEFT_CLASS, SHIFT_RIGHT_CLASS);
-      const toggle = li.querySelector(ITEM_TOGGLE_SELECTOR);
-      const childUl = li.querySelector(':scope > ul');
-      setAriaExpanded(toggle, false);
-      setAriaHidden(childUl, true);
-      setToggleText(toggle, 'Expand Menu');
-      if (childUl) {
-        childUl.style.height = '0px';
-        childUl.style.overflow = '';
-        childUl.style.transition = '';
-        childUl.style.display = '';
-      }
-    });
-  };
-
-  const openExpandedItem = (li) => {
-    if (!li) return;
-    const toggle = li.querySelector(ITEM_TOGGLE_SELECTOR);
-    const childUl = li.querySelector(':scope > ul');
-    li.classList.add(MENU_OPEN_CLASS);
-    setAriaExpanded(toggle, true);
-    setAriaHidden(childUl, false);
-    setToggleText(toggle, 'Collapse Menu');
-    applyDropdownOverflowClass(childUl, li);
-  };
-
-  const closeExpandedItem = (li) => {
-    if (!li) return;
-    const toggle = li.querySelector(ITEM_TOGGLE_SELECTOR);
-    const childUl = li.querySelector(':scope > ul');
-    li.classList.remove(MENU_OPEN_CLASS, SHIFT_LEFT_CLASS, SHIFT_RIGHT_CLASS);
-    setAriaExpanded(toggle, false);
-    setAriaHidden(childUl, true);
-    setToggleText(toggle, 'Expand Menu');
+    root.querySelectorAll(EXPANDED_LI_SELECTOR).forEach((li) => setSubmenuState(li, false, { animate: false }));
   };
 
   const focusTopLevelItems = (menu) => Array.from(menu.querySelectorAll(':scope > li')).map((li) => {
@@ -249,13 +207,20 @@
               setAriaExpanded(toggleBtn, false);
               setAriaHidden(mainMenu, true);
               setToggleText(toggleBtn, toggleBtn.dataset.openText || 'Open Menu');
-              closeMenu(mainMenu);
+              mainMenu.classList.add(MENU_MAIN_CLOSING_CLASS);
+              animateHeight(mainMenu, false, () => {
+                mainMenu.classList.remove(MENU_MAIN_OPEN_CLASS);
+                mainMenu.classList.remove(MENU_MAIN_CLOSING_CLASS);
+                mainMenu.classList.add(MENU_MAIN_HIDDEN_CLASS);
+              });
             } else {
               toggleBtn.classList.add(TOGGLE_ACTIVE_CLASS);
               setAriaExpanded(toggleBtn, true);
               setAriaHidden(mainMenu, false);
               setToggleText(toggleBtn, toggleBtn.dataset.closeText || 'Close Menu');
-              openMenu(mainMenu);
+              mainMenu.classList.remove(MENU_MAIN_CLOSING_CLASS, MENU_MAIN_HIDDEN_CLASS);
+              mainMenu.classList.add(MENU_MAIN_OPEN_CLASS);
+              animateHeight(mainMenu, true);
             }
           }
           return;
@@ -264,33 +229,13 @@
         const itemToggle = target.closest(ITEM_TOGGLE_SELECTOR);
         if (itemToggle) {
           const li = itemToggle.closest(EXPANDED_LI_SELECTOR);
-          const childUl = li?.querySelector(':scope > ul');
-          if (!li || !childUl) return;
+          if (!li) return;
           const isOpen = itemToggle.getAttribute('aria-expanded') === 'true';
-
+          event.preventDefault();
           if (modeState.mobile) {
-            event.preventDefault();
-            if (isOpen) {
-              li.classList.remove(MENU_OPEN_CLASS);
-              setAriaExpanded(itemToggle, false);
-              setAriaHidden(childUl, true);
-              setToggleText(itemToggle, 'Expand Menu');
-              closeMenu(childUl);
-            } else {
-              li.classList.add(MENU_OPEN_CLASS);
-              setAriaExpanded(itemToggle, true);
-              setAriaHidden(childUl, false);
-              setToggleText(itemToggle, 'Collapse Menu');
-              openMenu(childUl);
-            }
+            setSubmenuState(li, !isOpen, { animate: true });
           } else {
-            // desktop click/keyboard toggle
-            event.preventDefault();
-            if (isOpen) {
-              closeExpandedItem(li);
-            } else {
-              openExpandedItem(li);
-            }
+            setSubmenuState(li, !isOpen, { animate: false, manageOverflow: !isOpen });
           }
         }
       });
@@ -302,7 +247,7 @@
         if (modeState.mobile) return;
         const li = event.target.closest?.(EXPANDED_LI_SELECTOR);
         if (!li || !nav.contains(li)) return;
-        openExpandedItem(li);
+        setSubmenuState(li, true, { manageOverflow: true, animate: false });
       });
 
       nav.addEventListener('mouseout', (event) => {
@@ -311,14 +256,14 @@
         const related = event.relatedTarget;
         if (!li || !nav.contains(li)) return;
         if (related && li.contains(related)) return;
-        closeExpandedItem(li);
+        setSubmenuState(li, false, { animate: false });
       });
 
       nav.addEventListener('focusin', (event) => {
         if (modeState.mobile) return;
         if (!lastInputWasPointer) return;
         const li = event.target.closest(EXPANDED_LI_SELECTOR);
-        if (li && nav.contains(li)) openExpandedItem(li);
+        if (li && nav.contains(li)) setSubmenuState(li, true, { manageOverflow: true, animate: false });
       });
 
       nav.addEventListener('focusout', (event) => {
@@ -327,7 +272,7 @@
         if (!li || !nav.contains(li)) return;
         const related = event.relatedTarget;
         if (related && li.contains(related)) return;
-        closeExpandedItem(li);
+        setSubmenuState(li, false, { animate: false });
       });
 
       nav.addEventListener('keydown', (event) => {
@@ -344,16 +289,16 @@
               const parentLi = toggle.closest(EXPANDED_LI_SELECTOR);
               const open = toggle.getAttribute('aria-expanded') === 'true';
               if (open) {
-                closeExpandedItem(parentLi);
+                setSubmenuState(parentLi, false, { animate: false });
               } else {
-                openExpandedItem(parentLi);
+                setSubmenuState(parentLi, true, { manageOverflow: true, animate: false });
               }
             }
           }
 
           if (key === 'Escape' && li) {
             event.preventDefault();
-            closeExpandedItem(li);
+            setSubmenuState(li, false, { animate: false });
             const parentToggle = li.querySelector(ITEM_TOGGLE_SELECTOR);
             parentToggle?.focus();
           }
