@@ -9,11 +9,20 @@
 @use '../../../00-base/01-mixins/style-mixins' as *;
 @use '../../../00-base/01-mixins/type-mixins' as *;
 
-/* MOBILE MENU TOGGLE
------------------- */
+//remove once we do header theming
 #block-menu-main {
   position: relative;
 }
+
+
+/* MOBILE MENU TOGGLE
+------------------ */
+.block-menu__toggle-wrapper {
+  @include deskMenu {
+    display: none;
+  }
+}
+
 
 /* GLOBAL
 ------------ */
@@ -24,7 +33,6 @@
   z-index: 497;
   font-family: $header;
   font-weight: $heavy;
-  letter-spacing: 1px;
 
   ul {
     list-style-type: none;
@@ -97,6 +105,7 @@
         font-size: 2.25rem;
         display: block;
         position: relative;
+        cursor: pointer;
 
         &:hover,&:focus {
           text-decoration: none;
@@ -170,14 +179,29 @@
 /* DESKTOP SPECIFIC
 ---------------- */
 @include deskMenu {
+
   #menu-main {
     column-gap: 24px;
+    position: static;
+    justify-content: flex-end;
+
+    //global item controls
+    ul {
+      display: none;
+    }
+
+    .menu-item--open {
+      & > ul {
+        display: block;
+      }
+    }
 
     // top level
     .menu-item__level-1 {
-      &.open {
-        & > ul {
-          display: block;
+      &:hover,&:focus,&.menu-item--open {
+        background: $mmTopBackHover;
+        & > .menu-item__link,& > .menu-item__toggle {
+          color: $mmTopLinkHover;
         }
       }
 
@@ -190,6 +214,13 @@
 
         & > .menu-item__link,& > .menu-item__toggle {
           color: $mmTopActive;
+        }
+      }
+
+      &.menu-item--dropdown-shift-left {
+        & > ul {
+          left: auto;
+          right: 0;
         }
       }
 
@@ -215,7 +246,6 @@
 
       //first level dropdown
       & > ul {
-        display: none;
         padding: 0 0 2.5rem;
         background: $mmDropdown;
         left: 0;
@@ -228,23 +258,18 @@
 
     // second level and below
     li.menu-item__level-2 {
-      &.menu-item--active-trail {
-        color: $mmChildActive;
-      }
-
       &:hover,&:focus {
         color: $mmChildActiveHover;
       }
 
-      &.open {
-        & > ul {
-          display: block;
-        }
+      &.menu-item--active-trail {
+        color: $mmChildActive;
+      }
 
-        &:first-child {
-          & > ul {
-            top: -10px;
-          }
+      &.menu-item--dropdown-shift-left {
+        & > ul {
+          left: auto;
+          right: 100%;
         }
       }
 
@@ -263,7 +288,7 @@
         }
       }
 
-      a {
+      .menu-item__link {
         display: inline-block;
         line-height: 1.2;
         padding: 1.5rem 2.5rem;

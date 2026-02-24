@@ -4,6 +4,10 @@ component:
   description: 'Main menu structure'
   status: experimental
 
+libraryOverrides:
+  dependencies:
+    - core/drupal.debounce
+
 props:
   type: object
   required:

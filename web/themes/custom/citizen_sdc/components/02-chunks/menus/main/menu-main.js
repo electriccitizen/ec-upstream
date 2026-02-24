@@ -169,6 +169,16 @@
   const focusTopLevelItems = (menu) => Array.from(menu.querySelectorAll(':scope > li > a, :scope > li > button, :scope > li > span, :scope > li ' + ITEM_TOGGLE_SELECTOR))
     .filter((el) => el instanceof HTMLElement);
 
+  const debounce = Drupal.debounce
+    ? Drupal.debounce
+    : (fn, wait = 150) => {
+        let t;
+        return (...args) => {
+          clearTimeout(t);
+          t = setTimeout(() => fn.apply(undefined, args), wait);
+        };
+      };
+
   Drupal.behaviors.mainNavigation = {
     attach(context) {
       const nav = once('mainNav', context.querySelectorAll(ROOT_NAV_SELECTOR)).pop();
@@ -218,9 +228,7 @@
       };
 
       handleModeChange();
-      once('mainNavResize', window).forEach(() => {
-        window.addEventListener('resize', _.debounce(handleModeChange, 150));
-      });
+      window.addEventListener('resize', debounce(handleModeChange, 150));
 
       nav.addEventListener('click', (event) => {
         const target = event.target;
