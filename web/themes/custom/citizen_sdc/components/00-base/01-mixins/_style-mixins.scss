@@ -157,17 +157,18 @@
   cursor: pointer;
 
   &:after {
-    content: '>';
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
+    content: '';
+    width: 18px;
+    height: 18px;
     position: absolute;
-    right: 0;
-    top: 0;
-    text-indent: 0;
+    right: calc(50% - 9px);
+    top: calc(50% - 9px);
     z-index: 2;
+    background-color: $mmMobileTop;
+    mask-image: url('caret-down.svg');
+    mask-repeat: no-repeat;
+    mask-size: 18px;
+    mask-position: center;
+    transition: transform .3s ease;
   }
 }

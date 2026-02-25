@@ -18,8 +18,31 @@
 /* MOBILE MENU TOGGLE
 ------------------ */
 .block-menu__toggle-wrapper {
+  text-align: right;
+
   @include deskMenu {
     display: none;
+  }
+
+  .block-menu__toggle {
+    display: block;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    background-color: $menuToggle;
+    mask-image: url('hamburger.svg');
+    mask-repeat: no-repeat;
+    mask-size: 24px;
+    mask-position: center;
+
+    &:hover,&:focus {
+      background-color: $menuToggleHover;
+    }
+
+    &.block-menu__toggle--active {
+      mask-image: url('close.svg');
+      mask-size: 16px;
+    }
   }
 }
 
@@ -92,15 +115,16 @@
     // top level mobile
     .menu-item__level-1 {
       overflow: hidden;
+      background: $mmMobileTopBack;
 
       &:not(:last-child) {
         border-bottom: 1px solid $mmMobileItemBorder;
       }
 
       & > .menu-item__link {
-        background: $mmMobileTopBack;
         color: $mmMobileTop;
-        padding: 2.5rem 4rem;
+        width: 100%;
+        padding: 2.5rem 3rem 2.5rem;
         line-height: 1.15;
         font-size: 2.25rem;
         display: block;
@@ -111,31 +135,27 @@
           text-decoration: none;
         }
 
+        &.menu-item__link--menu-parent {
+          width: calc(100% - 60px);
+        }
+
         &.menu-item__link--active {
           color: $mmMobileChildActive;
         }
       }
 
-      & > .menu-item__toggle {
-        background: red;
+      &.menu-item--open {
+        background: $mmMobileTopBackExpanded;
 
-        &:hover,&:focus {
-          background: black;
-        }
-        &:after {
-          color: white;
-        } 
-      }
-
-      &.open {
         & > .menu-item__link {
-          color: $mmMobileTopExpanded;
-          background: $mmMobileTopBackExpanded;
+          color: $mmMobileTopExpanded;  
         }
-      }
-
-      ul {
-        background-color: $mmMobileTopBackExpanded;
+        & > .menu-item__toggle {
+          &:after {
+            transform: rotate(180deg);
+            background-color: $mmMobileTopExpanded;
+          }
+        }
       }
     }
 
@@ -143,14 +163,31 @@
     .menu-item__level-2 {
       overflow: hidden;
 
+      &:last-child {
+        padding-bottom: 2rem;
+      }
+
+      &.menu-item--open {
+        .menu-item__toggle {
+          &:after {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
       .menu-item__link {
         line-height: 1;
         font-size: 2rem;
-        padding: 1.5rem 2rem;
+        padding: 1.5rem 3rem;
         color: $mmMobileChild;
         display: block;
+
         &:hover,&:focus {
           text-decoration: none;
+        }
+
+        &.menu-item__link--menu-parent {
+          width: calc(100% - 40px);
         }
 
         &.menu-item__link--active {
@@ -159,11 +196,13 @@
       }
 
       .menu-item__toggle {
-        background: blue;
         height: 40px;
+
         &:after {
-          color: white;
-          height: 40px;
+          height: 16px;
+          width: 16px;
+          mask-size: 16px;
+          background-color: $mmMobileChild;
         } 
       }
     }
@@ -171,6 +210,23 @@
     .menu-item__level-3 {
       .menu-item__link {
         font-size: 1.75rem;
+        padding: 1rem 4rem;
+      }
+    }
+
+    .menu-item--mobile-secondary {
+      background-color: $mmMobileSecondaryBack;
+      padding: 1rem 0;
+      
+      a{
+        display: block;
+        padding: 1rem 3rem;
+        font-size: 2rem;
+        color: $mmMobileSecondary;
+
+        &.menu-item__link--active {
+          color: $mmMobileSecondaryActive;
+        }
       }
     }
   }
