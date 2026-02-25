@@ -32,20 +32,14 @@
  */
 #}
 
-{{ attach_library('citizen_sdc/section-menu') }}
+{% extends 'block--system-menu-block.html.twig' %}
 
-{% set attributes = attributes|without('role', 'aria-labelledby', 'id') %}
-
-<nav aria-label="{{ "Section Menu"|t }}" id="block-section-menu"{{ attributes }} class="block-menu block-menu--system-menu block-menu--section-menu">
-  {{ title_prefix }}
-  <h2 id="section-menu-title" class="block-menu__title{% if not configuration.label_display %} visually-hidden{% endif %}">
-    <a href="#" class="block-menu__toggle" aria-label="{{ "Mobile Section Menu Toggle"|t }}"><span class="material-icons">&#xE5D2;</span>{{ configuration.label }}
-    </a>
-  </h2>
-  {{ title_suffix }}
-  <div id="section-menu-wrapper">
-    {% block sectionMenu %}
-      {{ content }}
-    {% endblock %}
+{% block menuContent %}
+  <div class="block-menu--section__toggle-wrapper">
+    <h2 class="block-menu__mobile-title">In this Section</h2>
+    <button id="section-menu-toggle" class="block-menu__toggle button--clean" data-open-text="Open Menu" data-close-text="Close Menu" aria-controls="menu-section">
+      <span>Open Menu</span>
+    </button>
   </div>
-</nav>
+  {{ parent() }}
+{% endblock %}
