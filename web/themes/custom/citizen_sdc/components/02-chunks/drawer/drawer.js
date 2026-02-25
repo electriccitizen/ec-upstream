@@ -86,7 +86,7 @@
             const closeText = toggle.dataset.toggleClose;
 
             toggle.setAttribute('aria-expanded', String(isOpen));
-            toggle.classList.toggle('active-drawer', isOpen);
+            toggle.classList.toggle('drawer-toggle--active-drawer', isOpen);
             toggle.textContent = isOpen && closeText ? closeText : openText;
           });
         };

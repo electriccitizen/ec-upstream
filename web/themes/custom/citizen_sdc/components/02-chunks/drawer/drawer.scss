@@ -15,15 +15,19 @@
   display: inline-block;
   color: $link;
   font-weight: $heavy;
-  &.button--clean {
-    padding-right: 3.5rem;
-    margin-top: $spaceXxs;
-  }
-
+  
   &:hover,
   &:focus {
     color: $hoverLink;
-    cursor: pointer;
+
+    &:after {
+      background-color: $hoverLink;
+    }
+  }
+
+  &.button--clean {
+    padding-right: 3.5rem;
+    margin-top: $spaceXxs;
   }
 
   &:after {
@@ -31,14 +35,19 @@
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 24px;
-    @include materialIconOutline(\e5cf);
+    width: 24px;
+    height: 100%;
+    background-color: $link;
+    mask-image: url(caret-down.svg);
+    mask-repeat: no-repeat;
+    mask-size: 12px;
+    mask-position: center;
+    transition: transform .3s ease;
   }
 
-  &.active-drawer {
+  &.drawer-toggle--active-drawer {
     &:after {
       transform: rotate(180deg);
-      transition: transform .3s ease;
     }
   }
 
