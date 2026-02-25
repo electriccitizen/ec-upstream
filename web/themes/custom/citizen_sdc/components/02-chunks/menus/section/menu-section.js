@@ -7,9 +7,9 @@
   const ITEM_TOGGLE_SELECTOR = '.menu-item__toggle';
   const EXPANDED_LI_SELECTOR = 'li.menu-item--expanded';
   const MENU_OPEN_CLASS = 'menu-item--open';
-  const MENU_SECTION_OPEN_CLASS = 'menu-section--open';
-  const MENU_SECTION_HIDDEN_CLASS = 'menu-section--hidden';
-  const MENU_SECTION_CLOSING_CLASS = 'menu-section--closing';
+  const MENU_SECTION_OPEN_CLASS = 'menu--open';
+  const MENU_SECTION_HIDDEN_CLASS = 'menu--hidden';
+  const MENU_SECTION_CLOSING_CLASS = 'menu--closing';
 
   const isMobile = () => window.innerWidth < deskMenu;
 

@@ -11,9 +11,9 @@
   const SHIFT_RIGHT_CLASS = 'menu-item--dropdown-shift-right';
   const MOBILE_SEARCH_CLASS = 'menu-item--mobile-search';
   const MOBILE_SECONDARY_CLASS = 'menu-item--mobile-secondary';
-  const MENU_MAIN_OPEN_CLASS = 'menu-main--open';
-  const MENU_MAIN_HIDDEN_CLASS = 'menu-main--hidden';
-  const MENU_MAIN_CLOSING_CLASS = 'menu-main--closing';
+  const MENU_MAIN_OPEN_CLASS = 'menu--open';
+  const MENU_MAIN_HIDDEN_CLASS = 'menu--hidden';
+  const MENU_MAIN_CLOSING_CLASS = 'menu--closing';
   const SECONDARY_MENU_SELECTOR = '#menu-secondary';
   const MOBILE_SEARCH_HTML = `
     <li class="menu-item menu-item__level-1 ${MOBILE_SEARCH_CLASS}">

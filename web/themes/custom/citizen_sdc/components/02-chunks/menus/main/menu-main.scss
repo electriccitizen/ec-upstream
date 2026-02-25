@@ -83,19 +83,19 @@
     visibility: hidden;
     pointer-events: none;
 
-    &.menu-main--open {
+    &.menu--open {
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
     }
 
-    &.menu-main--hidden {
+    &.menu--hidden {
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
     }
 
-    &.menu-main--closing {
+    &.menu--closing {
       opacity: 0;
     }
 
