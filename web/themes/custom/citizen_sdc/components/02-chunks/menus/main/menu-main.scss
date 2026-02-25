@@ -217,7 +217,7 @@
     .menu-item--mobile-secondary {
       background-color: $mmMobileSecondaryBack;
       padding: 1rem 0;
-      
+
       a{
         display: block;
         padding: 1rem 3rem;
@@ -237,8 +237,9 @@
 @include deskMenu {
 
   #menu-main {
-    column-gap: 24px;
-    position: static;
+    column-gap: 8px;
+    position: relative;
+    z-index: 2;
     justify-content: flex-end;
 
     //global item controls
@@ -256,8 +257,19 @@
     .menu-item__level-1 {
       &:hover,&:focus,&.menu-item--open {
         background: $mmTopBackHover;
-        & > .menu-item__link,& > .menu-item__toggle {
+
+        & > .menu-item__link {
           color: $mmTopLinkHover;
+          text-decoration: none;
+
+          &:not(.menu-item__link--menu-parent):after {
+            width: 100%;
+          }
+        }
+
+        & > .menu-item__toggle {
+          background-color: $mmTopLinkHover;
+          transform: rotate(180deg);
         }
       }
 
@@ -281,41 +293,67 @@
       }
 
       & > .menu-item__link {
-        background: $mmTopBackHover;
         color: $mmTopLink;
-        padding: 1.5rem 1.5rem;
+        padding: 1rem 1.5rem;
         line-height: 1.15;
-        font-size: 1.75rem;
+        font-size: 2.25rem;
         display: block;
         position: relative;
 
-        &:not(.menu-item__link--menuparent):before {
-          content: '';
-          display: block;
-          width: 0;
-          height: 2px;
-          position: absolute;
-          top: 100%;
-          left: 0;
+        &:not(.menu-item__link--menu-parent) {
+          &:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            position: absolute;
+            z-index: 1;
+            bottom: 1px;
+            left: 0;
+            background: $mmTopLinkHover;
+            transition: width .3s ease;
+          }
         }
+
+        &.menu-item__link--menu-parent {
+          padding-right: 3rem;
+        }
+      }
+
+      & > .menu-item__toggle {
+        background-color: $mmTopLink;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: calc(50% - 12px);
+        right: 0;
+        text-indent: -9000px;
+        font-size: 0;
+        mask-image: url(caret-down.svg);
+        mask-repeat: no-repeat;
+        mask-size: 12px;
+        mask-position: center;
+        transition: transform .3s ease, color .3s ease;
       }
 
       //first level dropdown
       & > ul {
-        padding: 0 0 2.5rem;
         background: $mmDropdown;
         left: 0;
-        padding: 2.5rem 0 0;
+        padding: 1rem 0;
         position: absolute;
         top: 100%;
-        width: 200px;
+        width: 240px;
       }
     }
 
     // second level and below
     li.menu-item__level-2 {
-      &:hover,&:focus {
-        color: $mmChildActiveHover;
+      &:hover,&:focus,&.menu-item--open {
+        & > .menu-item__toggle {
+          background-color: $mmChildLinkHover;
+          transform: rotate(90deg);
+        }
       }
 
       &.menu-item--active-trail {
@@ -345,38 +383,35 @@
       }
 
       .menu-item__link {
-        display: inline-block;
+        display: block;
         line-height: 1.2;
-        padding: 1.5rem 2.5rem;
-        font-size: 1.75rem;
+        padding: 1rem 2.5rem;
+        font-size: 2rem;
         color: $mmChildLink;
 
         &:hover,
         &:focus {
-          color: $mmChildLinkHover
+          color: $mmChildLinkHover;
+          text-decoration: underline from-font;
+          text-decoration-thickness: 2px;
         }
+      }
 
-        &.menuparent {
-          &:after {
-            content: '';
-            display: inline-block;
-            position: relative;
-            right: 0;
-            margin-left: 1rem;
-            height: 8px;
-            width: 8px;
-            background-image: none;
-            background-image: url(../images/elements/menu-caret-right.svg);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            transition: transform 0.3s ease-out;
-          }
-        }
-
-        &.menu-item-expand {
-          display: none;
-        }
+      .menu-item__toggle {
+        background-color: $mmTopLink;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: calc(50% - 12px);
+        right: 8px;
+        text-indent: -9000px;
+        transform: rotate(270deg);
+        font-size: 0;
+        mask-image: url(caret-down.svg);
+        mask-repeat: no-repeat;
+        mask-size: 10px;
+        mask-position: center;
+        transition: transform .3s ease, color .3s ease;
       }
     }
   }
