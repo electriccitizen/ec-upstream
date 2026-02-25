@@ -32,14 +32,21 @@
  */
 #}
 
-{% extends 'block--system-menu-block.html.twig' %}
-
-{% block menuContent %}
+{% set menu %}
   <div class="block-menu--section__toggle-wrapper">
     <h2 class="block-menu__mobile-title">In this Section</h2>
     <button id="section-menu-toggle" class="block-menu__toggle button--clean" data-open-text="Open Menu" data-close-text="Close Menu" aria-controls="menu-section">
       <span>Open Menu</span>
     </button>
   </div>
-  {{ parent() }}
-{% endblock %}
+  {{ content }}
+{% endset %}
+
+{{ include('citizen_sdc:menu-block-base', {
+  attr: attributes,
+  menu_name: 'section',
+  show_menu_block_title: configuration.label_display,
+  menu_block_title: configuration.label,
+  title_suffix: title_suffix,
+  menu: menu
+}, with_context = false) }}

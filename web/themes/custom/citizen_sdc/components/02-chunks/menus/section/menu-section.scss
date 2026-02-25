@@ -1,5 +1,5 @@
 /* ===============
-  SECONDARY MENU
+  SECTION MENU
 ================= */
 
 @use '../../../00-base/00-variables/component-colors' as *;
@@ -10,52 +10,56 @@
 @use '../../../00-base/01-mixins/type-mixins' as *;
 
 //remove once we do header theming
-#block-menu-main {
+#block-menu-section {
   position: relative;
-}
 
-
-/* MOBILE MENU TOGGLE
------------------- */
-.block-menu--main__toggle-wrapper {
-  text-align: right;
-
-  @include deskMenu {
-    display: none;
-  }
-
-  .block-menu__toggle {
-    display: block;
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
-    background-color: $menuToggle;
-    mask-image: url('hamburger.svg');
-    mask-repeat: no-repeat;
-    mask-size: 24px;
-    mask-position: center;
-
-    &:hover,&:focus {
-      background-color: $menuToggleHover;
-    }
-
-    &.block-menu__toggle--active {
-      mask-image: url('close.svg');
-      mask-size: 16px;
+  @include onlyMobile {
+    .block-menu__title {
+      display: none;
     }
   }
+
+  .block-menu--section__toggle-wrapper {
+    text-align: right;
+
+    @include desk {
+      display: none;
+    }
+
+    .block-menu__toggle {
+      display: block;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      background-color: $menuToggle;
+      mask-image: url('hamburger.svg');
+      mask-repeat: no-repeat;
+      mask-size: 24px;
+      mask-position: center;
+
+      &:hover,&:focus {
+        background-color: $menuToggleHover;
+      }
+
+      &.block-menu__toggle--active {
+        mask-image: url('close.svg');
+        mask-size: 16px;
+      }
+    }
+  }
 }
 
-
-/* GLOBAL
------------- */
-#menu-main {
+#menu-section {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  z-index: 497;
   font-family: $header;
   font-weight: $heavy;
+  column-gap: 8px;
+  position: relative;
+  z-index: 2;
+  flex-direction: column;
+  background: pink;
 
   ul {
     list-style-type: none;
@@ -65,354 +69,9 @@
     list-style: none;
     position: relative;
   }
-}
 
-/* MOBILE-SPECIFIC
------------------- */
-@include mobileMenu {
-
-  #menu-main {
-    background: $mmMobileDrop;
-    border-bottom: 8px solid $mmMobileDropBorder;
-    left: 0;
-    position: absolute;
-    top: 100%;
-    text-align: left;
-    width: 100%;
-    overflow: hidden;
-    transition: height 500ms ease, opacity 350ms ease;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    &.menu-main--open {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-
-    &.menu-main--hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    &.menu-main--closing {
-      opacity: 0;
-    }
-
-    ul[aria-hidden='true'] {
-      height: 0;
-      overflow: hidden;
-      visibility: hidden;
-      pointer-events: none;
-    }
+  // top level
+  .menu-item__level-1 {
     
-    .menu-item__toggle {
-      @include menuItemToggle;
-    }
-
-    // top level mobile
-    .menu-item__level-1 {
-      overflow: hidden;
-      background: $mmMobileTopBack;
-
-      &:not(:last-child) {
-        border-bottom: 1px solid $mmMobileItemBorder;
-      }
-
-      & > .menu-item__link {
-        color: $mmMobileTop;
-        width: 100%;
-        padding: 2.5rem 3rem 2.5rem;
-        line-height: 1.15;
-        font-size: 2.25rem;
-        display: block;
-        position: relative;
-        cursor: pointer;
-
-        &:hover,&:focus {
-          text-decoration: none;
-        }
-
-        &.menu-item__link--menu-parent {
-          width: calc(100% - 60px);
-        }
-
-        &.menu-item__link--active {
-          color: $mmMobileChildActive;
-        }
-      }
-
-      &.menu-item--open {
-        background: $mmMobileTopBackExpanded;
-
-        & > .menu-item__link {
-          color: $mmMobileTopExpanded;  
-        }
-        & > .menu-item__toggle {
-          &:after {
-            transform: rotate(180deg);
-            background-color: $mmMobileTopExpanded;
-          }
-        }
-      }
-    }
-
-    //second level & below
-    .menu-item__level-2 {
-      overflow: hidden;
-
-      &:last-child {
-        padding-bottom: 2rem;
-      }
-
-      &.menu-item--open {
-        .menu-item__toggle {
-          &:after {
-            transform: rotate(180deg);
-          }
-        }
-      }
-
-      .menu-item__link {
-        line-height: 1;
-        font-size: 2rem;
-        padding: 1.5rem 3rem;
-        color: $mmMobileChild;
-        display: block;
-
-        &:hover,&:focus {
-          text-decoration: none;
-        }
-
-        &.menu-item__link--menu-parent {
-          width: calc(100% - 40px);
-        }
-
-        &.menu-item__link--active {
-          color: $mmMobileChildActive;
-        }
-      }
-
-      .menu-item__toggle {
-        height: 40px;
-
-        &:after {
-          height: 16px;
-          width: 16px;
-          mask-size: 16px;
-          background-color: $mmMobileChild;
-        } 
-      }
-    }
-
-    .menu-item__level-3 {
-      .menu-item__link {
-        font-size: 1.75rem;
-        padding: 1rem 4rem;
-      }
-    }
-
-    .menu-item--mobile-secondary {
-      background-color: $mmMobileSecondaryBack;
-      padding: 1rem 0;
-
-      a{
-        display: block;
-        padding: 1rem 3rem;
-        font-size: 2rem;
-        color: $mmMobileSecondary;
-
-        &.menu-item__link--active {
-          color: $mmMobileSecondaryActive;
-        }
-      }
-    }
-  }
-}
-
-/* DESKTOP SPECIFIC
----------------- */
-@include deskMenu {
-
-  #menu-main {
-    column-gap: 8px;
-    position: relative;
-    z-index: 2;
-    justify-content: flex-end;
-
-    //global item controls
-    ul {
-      display: none;
-    }
-
-    .menu-item--open {
-      & > ul {
-        display: block;
-      }
-    }
-
-    // top level
-    .menu-item__level-1 {
-      &:hover,&:focus,&.menu-item--open {
-        background: $mmTopBackHover;
-
-        & > .menu-item__link {
-          color: $mmTopLinkHover;
-          text-decoration: none;
-
-          &:not(.menu-item__link--menu-parent):after {
-            width: 100%;
-          }
-        }
-
-        & > .menu-item__toggle {
-          background-color: $mmTopLinkHover;
-          transform: rotate(180deg);
-        }
-      }
-
-      &.menu-item--active-trail {
-        &:hover,&:focus {
-          & > .menu-item__link,& > .menu-item__toggle {
-            color: $mmTopActiveHover;
-          }
-        }
-
-        & > .menu-item__link,& > .menu-item__toggle {
-          color: $mmTopActive;
-        }
-      }
-
-      &.menu-item--dropdown-shift-left {
-        & > ul {
-          left: auto;
-          right: 0;
-        }
-      }
-
-      & > .menu-item__link {
-        color: $mmTopLink;
-        padding: 1rem 1.5rem;
-        line-height: 1.15;
-        font-size: 2.25rem;
-        display: block;
-        position: relative;
-
-        &:not(.menu-item__link--menu-parent) {
-          &:after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            position: absolute;
-            z-index: 1;
-            bottom: 1px;
-            left: 0;
-            background: $mmTopLinkHover;
-            transition: width .3s ease;
-          }
-        }
-
-        &.menu-item__link--menu-parent {
-          padding-right: 3rem;
-        }
-      }
-
-      & > .menu-item__toggle {
-        background-color: $mmTopLink;
-        width: 24px;
-        height: 24px;
-        position: absolute;
-        top: calc(50% - 12px);
-        right: 0;
-        text-indent: -9000px;
-        font-size: 0;
-        mask-image: url(caret-down.svg);
-        mask-repeat: no-repeat;
-        mask-size: 12px;
-        mask-position: center;
-        transition: transform .3s ease, color .3s ease;
-      }
-
-      //first level dropdown
-      & > ul {
-        background: $mmDropdown;
-        left: 0;
-        padding: 1rem 0;
-        position: absolute;
-        top: 100%;
-        width: 240px;
-      }
-    }
-
-    // second level and below
-    li.menu-item__level-2 {
-      &:hover,&:focus,&.menu-item--open {
-        & > .menu-item__toggle {
-          background-color: $mmChildLinkHover;
-          transform: rotate(90deg);
-        }
-      }
-
-      &.menu-item--active-trail {
-        color: $mmChildActive;
-      }
-
-      &.menu-item--dropdown-shift-left {
-        & > ul {
-          left: auto;
-          right: 100%;
-        }
-      }
-
-      ul {
-        background: $mmDropdown;
-        left: 100%;
-        margin: 0;
-        padding: 5px 0 15px;
-        position: absolute;
-        top: 0px;
-        min-width: 200px;
-
-        &.right-to-left {
-          left: auto;
-          right: 100%;
-        }
-      }
-
-      .menu-item__link {
-        display: block;
-        line-height: 1.2;
-        padding: 1rem 2.5rem;
-        font-size: 2rem;
-        color: $mmChildLink;
-
-        &:hover,
-        &:focus {
-          color: $mmChildLinkHover;
-          text-decoration: underline from-font;
-          text-decoration-thickness: 2px;
-        }
-      }
-
-      .menu-item__toggle {
-        background-color: $mmTopLink;
-        width: 24px;
-        height: 24px;
-        position: absolute;
-        top: calc(50% - 12px);
-        right: 8px;
-        text-indent: -9000px;
-        transform: rotate(270deg);
-        font-size: 0;
-        mask-image: url(caret-down.svg);
-        mask-repeat: no-repeat;
-        mask-size: 10px;
-        mask-position: center;
-        transition: transform .3s ease, color .3s ease;
-      }
-    }
   }
 }

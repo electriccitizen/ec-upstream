@@ -1,13 +1,11 @@
 /* ===============
-  SECONDARY MENU
+  MAIN MENU
 ================= */
 
 @use '../../../00-base/00-variables/component-colors' as *;
 @use '../../../00-base/00-variables/fonts' as *;
-@use '../../../00-base/00-variables/units' as *;
 @use '../../../00-base/01-mixins/breakpoint-mixins' as *;
 @use '../../../00-base/01-mixins/style-mixins' as *;
-@use '../../../00-base/01-mixins/type-mixins' as *;
 
 //remove once we do header theming
 #block-menu-main {

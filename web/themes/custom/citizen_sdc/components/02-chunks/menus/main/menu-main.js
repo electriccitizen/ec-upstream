@@ -1,5 +1,5 @@
 ((Drupal, once) => {
-  const deskMenu = 984;
+  const deskMenu = 1020;
   const ROOT_NAV_SELECTOR = '#block-menu-main';
   const MAIN_MENU_SELECTOR = '#menu-main';
   const TOGGLE_SELECTOR = '#main-menu-toggle';
