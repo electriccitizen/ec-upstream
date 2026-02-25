@@ -20,8 +20,8 @@
   &:focus {
     color: $hoverLink;
 
-    &:after {
-      background-color: $hoverLink;
+    .drawer-toggle__icon {
+      fill: $hoverLink;
     }
   }
 
@@ -30,28 +30,33 @@
     margin-top: $spaceXxs;
   }
 
-  &:after {
-    content: '';
+  .drawer-toggle__icon {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 24px;
-    height: 100%;
-    background-color: $link;
-    mask-image: url(caret-down.svg);
-    mask-repeat: no-repeat;
-    mask-size: 12px;
-    mask-position: center;
+    top: 5px;
+    right: 5px;
+    width: 14px;
+    fill: $link;
     transition: transform .3s ease;
+    transform: rotate(180deg);
   }
 
   &.drawer-toggle--active-drawer {
-    &:after {
-      transform: rotate(180deg);
+    .drawer-toggle__icon {
+      transform: rotate(360deg);
+    }
+
+    &.drawer-toggle--above {
+      .drawer-toggle__icon {
+        transform: rotate(180deg);
+      }
     }
   }
 
   &.drawer-toggle--above {
+    .drawer-toggle__icon {
+      transform: rotate(0deg);
+    }
+
     & + .drawer-content {
       padding-top: $spaceXxs;
     }

@@ -84,10 +84,15 @@
           relatedToggles.forEach((toggle) => {
             const openText = toggle.dataset.toggleOpen;
             const closeText = toggle.dataset.toggleClose;
+            const label = toggle.querySelector('.drawer-toggle__text');
 
             toggle.setAttribute('aria-expanded', String(isOpen));
             toggle.classList.toggle('drawer-toggle--active-drawer', isOpen);
-            toggle.textContent = isOpen && closeText ? closeText : openText;
+
+            // Only update the text node so icons and other markup stay intact.
+            if (label) {
+              label.textContent = isOpen && closeText ? closeText : openText;
+            }
           });
         };
 
