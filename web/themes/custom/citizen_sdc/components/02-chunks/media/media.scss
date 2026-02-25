@@ -8,10 +8,6 @@
 @use '../../00-base/01-mixins/layout-mixins' as *;
 @use '../../00-base/01-mixins/type-mixins' as *;
 
-img {
-  @include imageBase;
-}
-
 figure.media-item {
   margin: 0;
 }
@@ -39,6 +35,10 @@ article.media-item {
 .field--text-long {
   .media-item {
     margin: 0 0 $spaceMd 0;
+
+    img {
+      @include imageBase;
+    }
 
     &.align-left {
       float: none;
@@ -78,8 +78,8 @@ article.media-item {
     }
 
     &.media-item--default {
-    @include defaultEmbed;
-  }
+      @include defaultEmbed;
+    }
   }
 }
 
