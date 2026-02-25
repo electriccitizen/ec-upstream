@@ -12,6 +12,7 @@
 //remove once we do header theming
 #block-menu-section {
   position: relative;
+  padding: 100px 0;
 
   @include onlyMobile {
     .block-menu__title {
@@ -20,7 +21,6 @@
   }
 
   .block-menu--section__toggle-wrapper {
-    text-align: right;
 
     @include desk {
       display: none;
@@ -60,6 +60,18 @@
   z-index: 2;
   flex-direction: column;
   background: pink;
+  overflow: hidden;
+  transition: height 500ms ease, opacity 350ms ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  @include desk {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    overflow: auto;
+  }
 
   ul {
     list-style-type: none;
@@ -70,8 +82,48 @@
     position: relative;
   }
 
+  &.menu-section--open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  &.menu-section--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &.menu-section--closing {
+    opacity: 0;
+  }
+
   // top level
-  .menu-item__level-1 {
-    
+  .menu-item{
+    position: relative;
+
+    .menu-item__link {
+      display: block;
+      padding: 1rem 4rem 1rem 2rem;
+    }
+
+    .menu-item__toggle {
+      position: absolute;
+      width: 24px;
+      height: 30px;
+      top: 0;
+      right: 0;
+      background: red;
+      text-indent: -9000px;
+      font-size: 0;
+    }
+
+    ul[aria-hidden='true'] {
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+      pointer-events: none;
+    }
   }
 }
+
