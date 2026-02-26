@@ -14,17 +14,17 @@
   position: relative;
   padding: 100px 0;
 
-  @include onlyMobile {
-    .block-menu__title {
-      display: none;
-    }
-  }
-
   .block-menu__title {
     display: block;
     padding: 2rem 3rem;
     background: $smBlockTitleBack;
     font-size: 2.75rem;
+  }
+
+  @include onlyMobile {
+    .block-menu__title {
+      display: none;
+    }
   }
 
   .block-menu--section__toggle-wrapper {

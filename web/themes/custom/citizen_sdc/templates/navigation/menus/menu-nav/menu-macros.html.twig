@@ -1,8 +1,8 @@
 {% macro menu_links(items, menu_name, menu_level) %}
   {% import _self as menus %}
 
-  {# Normalize menu_level to an integer; fallback to 0 if not a digit string #}
-  {% set current_level = menu_level is defined and (menu_level matches '/^\d+$/') ? (menu_level + 0) : 0 %}
+  {# Normalize menu_level to a numeric value; fallback to 0 #}
+  {% set current_level = menu_level is defined and menu_level is not null ? (menu_level + 0) : 0 %}
 
   {% for item in items %}
     {%

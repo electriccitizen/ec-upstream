@@ -338,10 +338,18 @@
       & > ul {
         background: $mmDropdown;
         left: 0;
-        padding: 1rem 0;
         position: absolute;
         top: 100%;
         width: 240px;
+
+        & > li {
+          &:first-child {
+            padding-top: 1rem;
+          }
+          &:last-child {
+            padding-bottom: 1rem;
+          }
+        }
       }
     }
 
@@ -369,10 +377,18 @@
         background: $mmDropdown;
         left: 100%;
         margin: 0;
-        padding: 5px 0 15px;
         position: absolute;
         top: 0px;
         min-width: 200px;
+
+        & > li {
+          &:first-child {
+            padding-top: 5px;
+          }
+          &:last-child {
+            padding-bottom: 15px;
+          }
+        }
 
         &.right-to-left {
           left: auto;
