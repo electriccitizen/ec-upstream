@@ -21,47 +21,52 @@
 
 {% import _self as menus %}
 
-{{ menus.menu_links(items, attributes, menu_name, component_name|default('citizen_sdc:menu-base'), 0) }}
+{% set chosen_component = component_name|default('citizen_sdc:menu-base') %}
 
-{% macro menu_links(items, attributes, menu_name, component_name, menu_level) %}
+{# Build full menu markup (all levels) once, then hand it to the SDC wrapper. #}
+{% set menu_markup %}
+  {{ menus.menu_links(items, menu_name, 0) }}
+{% endset %}
+
+{{ include(chosen_component, {
+  menu_level: 0,
+  attr: attributes,
+  menu_name: menu_name,
+  menu_items: menu_markup
+}, with_context = false) }}
+
+{% macro menu_links(items, menu_name, menu_level) %}
   {% import _self as menus %}
 
-{# Normalize menu_level to an integer; fallback to 0 if not a digit string #}
-{% set current_level = menu_level is defined and (menu_level matches '/^\\d+$/') ? (menu_level + 0) : 0 %}
+  {# Normalize menu_level to an integer; fallback to 0 if not a digit string #}
+  {% set current_level = menu_level is defined and (menu_level matches '/^\\d+$/') ? (menu_level + 0) : 0 %}
 
-  {% set menu_items %}
-    {% for item in items %}
-      {%
-        set classes = [
-          'menu-item',
-          item.is_expanded ? 'menu-item--expanded',
-          item.is_collapsed ? 'menu-item--collapsed',
-          item.in_active_trail ? 'menu-item--active-trail',
-          'menu-item__level-' ~ (current_level + 1),
-        ]
-      %}
-      <li{{ item.attributes.addClass(classes) }}>
-        {% if 'menu-item__link--no-link' in item.link_classes %}
-          <span class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</span>
-        {% else %}
-          {% set href = item.href is defined
-            ? item.href
-            : (item.url and item.url.toString() ? item.url.toString() : '#')
-          %}
-          <a href="{{ href }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
-        {% endif %}
-        {% if item.below %}
-          <button href="#" class="menu-item__toggle button--clean" aria-expanded="false">{{ "Expand Menu"|t }}</button>
-          {{ menus.menu_links(item.below, attributes, menu_name, component_name, current_level + 1) }}
-        {% endif %}
-      </li>
-    {% endfor %}
-  {% endset %}
-  
-  {{ include(component_name, {
-    menu_level: current_level,
-    attr: attributes,
-    menu_name: menu_name,
-    menu_items: menu_items
-  }, with_context = false) }}
+  {% for item in items %}
+    {%
+      set classes = [
+        'menu-item',
+        item.is_expanded ? 'menu-item--expanded',
+        item.is_collapsed ? 'menu-item--collapsed',
+        item.in_active_trail ? 'menu-item--active-trail',
+        'menu-item__level-' ~ (current_level + 1),
+      ]
+    %}
+    <li{{ item.attributes.addClass(classes) }}>
+      {% if 'menu-item__link--no-link' in item.link_classes %}
+        <span class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</span>
+      {% else %}
+        {% set href = item.href is defined
+          ? item.href
+          : (item.url and item.url.toString() ? item.url.toString() : '#')
+        %}
+        <a href="{{ href }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
+      {% endif %}
+      {% if item.below %}
+        <button href="#" class="menu-item__toggle button--clean" aria-expanded="false">{{ "Expand Menu"|t }}</button>
+        <ul aria-hidden="true">
+          {{ menus.menu_links(item.below, menu_name, current_level + 1) }}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
 {% endmacro %}
