@@ -1,3 +1,7 @@
+{# Ensure we have an Attributes object and a numeric menu_level #}
+{% set attr = attr is defined and attr ? attr : create_attribute() %}
+{% set menu_level = menu_level is defined ? menu_level : 0 %}
+
 {% set menuTopClasses = [
   'menu',
   'menu__level--top', 
