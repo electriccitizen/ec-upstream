@@ -26,6 +26,9 @@
 {% macro menu_links(items, attributes, menu_name, component_name, menu_level) %}
   {% import _self as menus %}
 
+{# Normalize menu_level to an integer to avoid PHP 8.3 string + int TypeError #}
+{% set current_level = menu_level ? menu_level : 0 %}
+
   {% set menu_items %}
     {% for item in items %}
       {%
@@ -34,7 +37,7 @@
           item.is_expanded ? 'menu-item--expanded',
           item.is_collapsed ? 'menu-item--collapsed',
           item.in_active_trail ? 'menu-item--active-trail',
-          'menu-item__level-' ~ (menu_level + 1),
+          'menu-item__level-' ~ (current_level + 1),
         ]
       %}
       <li{{ item.attributes.addClass(classes) }}>
@@ -49,14 +52,14 @@
         {% endif %}
         {% if item.below %}
           <button href="#" class="menu-item__toggle button--clean" aria-expanded="false">{{ "Expand Menu"|t }}</button>
-          {{ menus.menu_links(item.below, attributes, menu_name, component_name, menu_level + 1) }}
+          {{ menus.menu_links(item.below, attributes, menu_name, component_name, current_level + 1) }}
         {% endif %}
       </li>
     {% endfor %}
   {% endset %}
   
   {{ include(component_name, {
-    menu_level: menu_level,
+    menu_level: current_level,
     attr: attributes,
     menu_name: menu_name,
     menu_items: menu_items
