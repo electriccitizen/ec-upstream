@@ -233,6 +233,10 @@
 
   blockquote {
     @include quote;
+
+    p {
+      margin: 0 0 .5em;
+    }
   }
 
 

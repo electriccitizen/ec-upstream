@@ -20,10 +20,26 @@
     }
   }
 
+  .block-menu__title {
+    display: block;
+    padding: 2rem 3rem;
+    background: $smBlockTitleBack;
+    font-size: 2.75rem;
+  }
+
   .block-menu--section__toggle-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    background: $smBlockTitleBack;
 
     @include desk {
       display: none;
+    }
+
+    .block-menu__mobile-title {
+      display: block;
+      width: calc(100% - 40px);
     }
 
     .block-menu__toggle {
@@ -31,14 +47,15 @@
       cursor: pointer;
       width: 32px;
       height: 32px;
-      background-color: $menuToggle;
+      background-color: $smMobileMenuToggle;
       mask-image: url('hamburger.svg');
       mask-repeat: no-repeat;
       mask-size: 24px;
       mask-position: center;
 
       &:hover,&:focus {
-        background-color: $menuToggleHover;
+        background-color: $smMobileMenuToggleHover;
+        transition: background-color .3s ease;
       }
 
       &.block-menu__toggle--active {
@@ -59,7 +76,7 @@
   position: relative;
   z-index: 2;
   flex-direction: column;
-  background: pink;
+  background: $smBack;
   @include mobileMenuDrawer;
 
   @include desk {
@@ -69,40 +86,145 @@
     overflow: auto;
   }
 
-  ul {
+  ul[aria-hidden='true'] {
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    pointer-events: none;
     list-style-type: none;
   }
 
   li {
     list-style: none;
     position: relative;
-  }
-
-  // top level
-  .menu-item{
-    position: relative;
+    
+    &.menu-item--open {
+      .menu-item__toggle {
+        &:after {
+          transform: rotate(180deg);
+          transition: transform .3s ease, background-color .3s ease;
+        }
+      }
+    }
 
     .menu-item__link {
       display: block;
-      padding: 1rem 4rem 1rem 2rem;
+      transition: color .3s ease;
+    }
+
+    .menu-item__toggle:after {
+      transition: background-color .3s ease;
+    }
+  }
+
+  // top level
+  .menu-item__level-1 {
+    &:first-child {
+      padding-top: 1rem;
+    }
+    &:last-child {
+      padding-bottom: 1rem;
+    }
+
+    .menu-item__link {
+      display: block;
+      padding: 1rem 5rem 1rem 3rem;
+      color: $smTopLink;
+
+      &:hover,&:focus {
+        color: $smTopLinkHover;
+      }
+
+      &.menu-item--active-trail {
+        .menu-item__toggle {
+          &:hover,&:focus {
+            &:after {
+              background-color: $smTopActiveHover;
+            }
+          }
+
+          &:after {
+            background-color: $smTopActive;
+          }
+        }
+      }
     }
 
     .menu-item__toggle {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      top: 0;
-      right: 0;
-      background: red;
-      text-indent: -9000px;
-      font-size: 0;
+      @include menuItemToggle;
+
+      & {
+        width: 64px;
+        height: 40px;
+        &:after {
+          top: calc(50% - 8px);
+          right: 30px;
+          mask-size: 16px;
+          background-color: $smTopLink;
+        }
+      }
+
+      &:hover,&:focus {
+        &:after {
+          background-color: $smTopLinkHover;
+        }
+      }
+    }
+  }
+
+  //sub levels
+  .menu-item:not(.menu-item__level-1) {
+    &:first-child {
+      padding-top: .5rem;
+    }
+    &:last-child {
+      padding-bottom: .5rem;
     }
 
-    ul[aria-hidden='true'] {
-      height: 0;
-      overflow: hidden;
-      visibility: hidden;
-      pointer-events: none;
+    .menu-item__link {
+      display: block;
+      font-size: 2rem;
+      padding: .5rem 5rem .5rem 5rem;
+      color: $smChildLink;
+
+      &:hover,&:focus {
+        color: $smChildLinkHover;
+      }
+
+      &.menu-item--active-trail {
+        .menu-item__toggle {
+          &:hover,&:focus {
+            &:after {
+              background-color: $smChildActiveHover;
+            }
+          }
+
+          &:after {
+            background-color: $smChildActive;
+          }
+        }
+      }
+    }
+
+    .menu-item__toggle {
+      @include menuItemToggle;
+
+      & {
+        width: 64px;
+        height: 30px;
+        &:after {
+          top: calc(50% - 7px);
+          right: 31px;
+          mask-size: 14px;
+          background-color: $smTopLink;
+        }
+      }
+
+      &:hover,&:focus {
+        &:after {
+          background-color: $smTopLinkHover;
+        }
+      }
     }
   }
 }

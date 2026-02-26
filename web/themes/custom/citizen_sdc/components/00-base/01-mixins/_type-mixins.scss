@@ -3,6 +3,7 @@
 ============== */
 
 @use '../00-variables/colors' as *;
+@use '../00-variables/component-colors' as *;
 @use '../00-variables/fonts' as *;
 @use '../00-variables/units' as *;
 @use '../01-mixins/animation-mixins' as *;
@@ -96,38 +97,37 @@
   font-family: $serif;
 }
 
+//pixel sizes helpful for CKE control
 @mixin quote {
-  margin: 0 0 $spaceXs;
+  margin: 0;
   position: relative;
   font-family: $serif;
   font-style: italic;
-  font-size: 3rem;
-  padding-bottom: $spaceXs;
-
+  font-size: 24px;
+  padding-top: 8px;
+  padding-left: 40px;
   @include tab {
-    font-size: 4.5rem;
-    padding-bottom: 0;
+    font-size: 36px;
+    padding-left: 56px;
   }
 
-  p {
-    display: inline;
-  }
+  &:before {
+    content: "“";
+    display: block;
+    width: 36px;
+    font-size: 64px;
+    line-height: 1;
+    position: absolute;
+    top: -4px;
+    left: 0;
+    color: $quoteMark;
+    background-color: transparent;
 
-  .quote-pre {
-    color: $transBlack;
-    font-size: 14rem;
-    line-height: .1rem;
-    margin-right: 2rem;
-    vertical-align: -6.4rem;
-  }
-
-  .quote-post {
-    color: $transBlack;
-    content: "”";
-    font-size: 8rem;
-    line-height: .1rem;
-    vertical-align: -3.2rem;
-    display: inline-block;
+    @include tab {
+      width: 50px;
+      top: -8px;
+      font-size: 88px;
+    }
   }
 }
 

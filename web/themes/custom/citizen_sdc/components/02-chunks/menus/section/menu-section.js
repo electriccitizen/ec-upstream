@@ -101,6 +101,30 @@
       if (!sectionMenu || !toggleBtn) return;
 
       const modeState = { mobile: null };
+      let mobileTitleItem = null;
+
+      const addMobileTitleLink = () => {
+        if (mobileTitleItem) return;
+        const titleLink = nav.querySelector('.block-menu__title > a');
+        if (!titleLink) return;
+
+        const clonedLink = titleLink.cloneNode(true);
+        clonedLink.classList.add('menu-item__link');
+
+        const li = document.createElement('li');
+        li.classList.add('menu-item', 'menu-item__level-1');
+        li.appendChild(clonedLink);
+
+        sectionMenu.prepend(li);
+        mobileTitleItem = li;
+      };
+
+      const removeMobileTitleLink = () => {
+        if (mobileTitleItem && mobileTitleItem.parentElement === sectionMenu) {
+          sectionMenu.removeChild(mobileTitleItem);
+        }
+        mobileTitleItem = null;
+      };
 
       const setDesktopMode = () => {
         toggleBtn.removeAttribute('aria-expanded');
@@ -111,10 +135,12 @@
         sectionMenu.classList.remove(MENU_SECTION_OPEN_CLASS, MENU_SECTION_HIDDEN_CLASS, MENU_SECTION_CLOSING_CLASS);
         nav.querySelectorAll(`${SECTION_MENU_SELECTOR} ul`).forEach((ul) => { ul.style.height = ''; });
         resetSubmenus(nav);
+        removeMobileTitleLink();
         modeState.mobile = false;
       };
 
       const setMobileMode = () => {
+        addMobileTitleLink();
         setAriaExpanded(toggleBtn, false);
         setAriaHidden(sectionMenu, true);
         toggleBtn.classList.remove(TOGGLE_ACTIVE_CLASS);

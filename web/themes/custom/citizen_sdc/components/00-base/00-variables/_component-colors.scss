@@ -14,6 +14,7 @@ $hoverLink : $midGray;
 $breadLink : $link;
 $breadLinkHover : $hoverLink;
 $breadCurrent : $darkGray;
+$quoteMark : $midGray;
 
 /* BUTTONS
 ---------------------- */
@@ -144,7 +145,6 @@ $mmDropdown : $lightGray;
 //mobile
 $menuToggle : $link;
 $menuToggleHover : $hoverLink;
-
 $mmMobileDrop : $white;
 $mmMobileDropBorder : $black;
 $mmMobileItemBorder : $borderRule;
@@ -161,10 +161,12 @@ $mmMobileSecondaryBack : $mmMobileDrop;
 
 /* SECTION MENU 
 --------------------- */
+$smMobileMenuToggle : $link;
+$smMobileMenuToggleHover : $black;
 $smBlockTitle : $black;
 $smBlockTitleHover : $hoverLink;
 $smBlockTitleBack : $lightGray;
-$smBack : $siteBack;
+$smBack : $offWhite;
 $smTopLink : $link;
 $smTopLinkHover : $hoverLink;
 $smTopActive : $black;
