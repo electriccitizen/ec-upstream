@@ -1,0 +1,19 @@
+{#
+  Paragraph CTA wrapper that passes field values into the CTA component.
+  Default color variant is "primary".
+#}
+
+{% set link_item = paragraph.field_link.0 ?? null %}
+{% set link = link_item ? {
+  url: link_item.url ? link_item.url.toString() : '',
+  title: link_item.title ?: (link_item.url ? link_item.url.toString() : ''),
+  target: link_item.options.attributes.target ?? '',
+  rel: link_item.options.attributes.rel ?? ''
+} : null %}
+
+{{ include('citizen_sdc:cta', {
+  headline: paragraph.field_headline.value,
+  additional_text: paragraph.field_additional_text.value,
+  link: link,
+  color_variant: 'primary'
+}, with_context = false) }}

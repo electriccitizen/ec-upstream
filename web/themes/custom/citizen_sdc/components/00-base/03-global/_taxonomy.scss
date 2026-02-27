@@ -1,0 +1,48 @@
+/* ===============
+   TAXONOMY TERM PAGES
+================= */
+
+@use '../00-variables/units' as *;
+@use '../01-mixins/breakpoint-mixins' as *;
+@use '../01-mixins/layout-mixins' as *;
+
+.path--taxonomy {
+  .term-page__title {
+    margin-bottom: $elementSpace;
+  }
+
+  .view--taxonomy-term {
+    max-width: $textMax;
+    @include auto;
+
+    .view__header {
+      .block-title {
+        padding-top: $spaceMd;
+      }
+    }
+
+    .view__content {
+      @include tab {
+        width: 100%;
+      }
+
+      .views-row {
+        margin-bottom: $spaceSm;
+
+        h3 {
+          font-size: 2rem;
+          margin-bottom: $spaceXxs;
+        }
+
+        .views-field-body,
+        .views-field-field-meta-description {
+          font-size: 1.75rem;
+        }
+      }
+    }
+  }
+
+  .feed-icon {
+    display: none;
+  }
+}

@@ -1,0 +1,27 @@
+/* ===============
+  ANCILLARY MENU
+================= */
+
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/01-mixins/animation-mixins' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+
+.menu--ancillary {
+
+  @include tab {
+    column-gap: 16px;
+    font-size: 2rem;
+  }
+  
+  .menu-item__link {
+    display: block;
+    color: $prefooterLink;
+
+    &:hover,
+    &:focus {
+      color: $prefooterLinkHover;
+      @include transAll(.3s);
+
+    }
+  }
+}

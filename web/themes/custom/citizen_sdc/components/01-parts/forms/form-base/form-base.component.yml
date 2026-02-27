@@ -1,0 +1,15 @@
+component:
+  id: citizen_sdc:form-base
+  label: 'Form Base'
+  description: 'Generic form structure for Drupal forms'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the <form>'
+
+slots:
+  form:

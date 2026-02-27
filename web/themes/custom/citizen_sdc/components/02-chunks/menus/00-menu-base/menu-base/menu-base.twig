@@ -1,0 +1,21 @@
+{# Ensure we have an Attributes object and a numeric menu_level #}
+{% set attr = attr is defined and attr ? attr : create_attribute() %}
+{% set menu_level = menu_level is defined ? menu_level : 0 %}
+
+{% set menuTopClasses = [
+  'menu',
+  'menu__level--top', 
+  menu_name is defined and menu_name ? 'menu--' ~ menu_name : ''  
+] %}
+
+
+{% if menu_items %}
+  <ul{% if menu_level == 0 %}
+        {{ attr.addClass(menuTopClasses) }}
+        {% if menu_name is defined and menu_name %} id="menu-{{ menu_name }}"{% endif %}
+      {% else %}
+        aria-hidden="true"
+      {% endif %}>
+    {{ menu_items }}
+  </ul>
+{% endif %}

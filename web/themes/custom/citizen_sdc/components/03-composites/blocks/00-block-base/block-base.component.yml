@@ -1,0 +1,24 @@
+component:
+  id: citizen_sdc:block-base
+  label: 'Block Base'
+  description: 'Generic structure for Drupal blocks'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the block'
+    title_prefix:
+      type: object
+      description: 'Placeholder for contextual links'
+    title:
+      type: string
+      description: 'The name of the block'
+    title_suffix:
+      type: object
+      description: 'Placeholder for contextual links'
+
+slots:
+  block:

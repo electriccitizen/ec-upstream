@@ -1,0 +1,35 @@
+{% macro menu_links(items, menu_name, menu_level) %}
+  {% import _self as menus %}
+
+  {# Normalize menu_level to a numeric value; fallback to 0 #}
+  {% set current_level = menu_level is defined and menu_level is not null ? (menu_level + 0) : 0 %}
+
+  {% for item in items %}
+    {%
+      set classes = [
+        'menu-item',
+        item.is_expanded ? 'menu-item--expanded',
+        item.is_collapsed ? 'menu-item--collapsed',
+        item.in_active_trail ? 'menu-item--active-trail',
+        'menu-item__level-' ~ (current_level + 1),
+      ]
+    %}
+    <li{{ item.attributes.addClass(classes) }}>
+      {% if 'menu-item__link--no-link' in item.link_classes %}
+        <span class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</span>
+      {% else %}
+        {% set href = item.href is defined
+          ? item.href
+          : (item.url and item.url.toString() ? item.url.toString() : '#')
+        %}
+        <a href="{{ href }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
+      {% endif %}
+      {% if item.below %}
+        <button href="#" class="menu-item__toggle button--clean" aria-expanded="false">{{ "Expand Menu"|t }}</button>
+        <ul aria-hidden="true">
+          {{ menus.menu_links(item.below, menu_name, current_level + 1) }}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+{% endmacro %}

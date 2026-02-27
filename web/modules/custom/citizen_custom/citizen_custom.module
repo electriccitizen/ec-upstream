@@ -58,10 +58,10 @@ function citizen_custom_preprocess_html(&$variables) {
   $userRole = $user->getRoles();
   foreach ($userRole as $role) {
     if ($role != 'authenticated') {
-      $variables['attributes']['class'][] = 'role-' . $role;
+      $variables['attributes']['class'][] = 'role role--' . $role;
     }
     if ($user->id() == '1') {
-      $variables['attributes']['class'][] = 'role-super-user';
+      $variables['attributes']['class'][] = 'role role--super-user';
     }
   }
 }

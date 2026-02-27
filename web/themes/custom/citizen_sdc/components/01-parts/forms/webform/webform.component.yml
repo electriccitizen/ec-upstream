@@ -1,0 +1,23 @@
+component:
+  id: citizen_sdc:webform
+  label: 'Webform'
+  description: 'Form built using the Webform contrib module UI.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      type: string
+      description: 'Webform title.'
+    webform_placer:
+      type: boolean
+      default: false
+    show_form_title:
+      type: boolean
+      default: true
+
+slots:
+  form:

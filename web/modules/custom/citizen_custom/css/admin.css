@@ -112,7 +112,7 @@ button.disabled:hover {
 }
 
 /* CUSTOM ICONS ARE ALL DOWNLOADED FROM MATERIAL ICONS */
-.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-accordions>a:before {
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-accordions>a:before,.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-accordions>a:before  {
   background-image: url('../icons/accordions.svg');
 }
 

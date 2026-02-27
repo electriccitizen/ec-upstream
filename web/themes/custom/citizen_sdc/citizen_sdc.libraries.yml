@@ -1,0 +1,33 @@
+global:
+  header: false
+  css:
+    theme:
+      components/style.css: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/once
+    - core/normalize
+basicTable:
+  version: 2.0.0
+  css:
+    theme:
+      components-addons/basictable/basictable.css: { minified: false }
+  js:
+    components-addons/basictable/jquery.basictable.min.js: { minified: true }
+  dependencies:
+    - core/jquery
+fonts:
+  css:
+    theme:
+      https://fonts.googleapis.com/css?family=Open+Sans:ital,wght@0,400;;0,700;1,400: { type: external, preprocess: false }
+select2:
+  version: 4.1.0-rc.0
+  css:
+    theme:
+      components-addons/select2/select2.min.css: { minified: true }
+  js:
+    components-addons/select2/select2.min.js: { minified: true }
+  dependencies:
+    - core/jquery
+

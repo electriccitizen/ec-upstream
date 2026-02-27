@@ -1,0 +1,13 @@
+<div class="webform-wrapper">
+	{% if webform_placer and show_form_title %}
+    <div class="webform-wrapper__widget-title">{{ title }}</div>
+  {% elseif not webform_placer %}
+    <h1 class="webform-wrapper__title">{{ title }}</h1>
+  {% endif %}
+
+	<form{{ attr }}>
+    {{ prefix }}
+    {{ form }}
+    {{ suffix }}
+  </form>
+</div>

@@ -1,0 +1,10 @@
+{#
+  Paragraph Video wrapper that passes field values into the Video SDC component.
+#}
+
+{{ include('citizen_sdc:video', {
+  title: paragraph.field_widget_title.value,
+  slots: {
+    content: content.field_video
+  }
+}, with_context = false) }}

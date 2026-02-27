@@ -1,0 +1,30 @@
+{#
+  Paragraph Gallery wrapper that passes field values into the Gallery SDC component.
+#}
+
+{% set gallery_type = content.field_gallery_type.0['#markup']|clean_class %}
+{% set items = [] %}
+
+{%- for key, item in content.field_gallery_items -%}
+  {%- if key|first != '#' and item['#paragraph'].field_image.0.target_id > 0 -%}
+    {% set media_id = item['#paragraph'].field_image.0.target_id %}
+    {% set caption = item['#paragraph'].field_caption.0.value ?? '' %}
+    {% set thumb = drupal_entity('media', media_id, 'large_thumb') %}
+    {% set full = drupal_entity('media', media_id, 'large') %}
+    {% set items = items|merge([{
+      id: media_id,
+      thumb: thumb,
+      full: full,
+      caption: caption
+    }]) %}
+  {%- endif -%}
+{%- endfor -%}
+
+{{ include([
+  'citizen_sdc:gallery',
+  '@citizen_sdc/components/03-composites/paragraphs/gallery/gallery.twig'
+], {
+  title: paragraph.field_widget_title.value,
+  type: gallery_type,
+  items: items
+}, with_context = false, ignore_missing = true) }}

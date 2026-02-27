@@ -34,35 +34,47 @@
   ------------------------------------ */
   Drupal.behaviors.searchHighlight = {
     attach: function (context, settings) {
-      once('highlight', '#views-exposed-form-site-search-site-search-block', context).forEach(searchBlock => {
-        const searchInput = document.getElementById('edit-site-search-api-fulltext');
+      once('highlight', '#views-exposed-form-site-search-site-search-block', context)
+        .forEach(searchBlock => {
+          const searchInput = document.getElementById('edit-site-search-api-fulltext');
 
-        if (searchInput && searchInput.value) {
-          const searchString = searchInput.value.split(' ');
+          if (searchInput && searchInput.value) {
 
-          function wrapInTag(element, opts) {
-            const tag = opts.tag,
-              words = opts.words || [],
-              regex = new RegExp(words.join('|'), 'gi'),
-              replacement = '<' + tag + '>$&</' + tag + '>';
+            // Remove quotes and split into words
+            const searchString = searchInput.value
+              .replace(/["“”]/g, '')
+              .split(/\s+/)
+              .filter(Boolean);
 
-            element.innerHTML = element.textContent.replace(regex, replacement);
-          }
+            // Escape regex characters in each word
+            const escapeRegex = str =>
+              str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-          const bodyElements = document.querySelectorAll('.views-field-field-meta-description');
+            function wrapInTag(element, opts) {
+              const tag = opts.tag;
+              const words = (opts.words || []).map(escapeRegex);
 
-          if (bodyElements.length > 0) {
-            bodyElements.forEach(function (element) {
-              wrapInTag(element, {
-                tag: 'mark class="search-highlight"',
-                words: searchString
+              if (!words.length) return;
+
+              const regex = new RegExp(`(${words.join('|')})`, 'gi');
+              const replacement = `<${tag}>$1</${tag.split(' ')[0]}>`;
+
+              element.innerHTML = element.textContent.replace(regex, replacement);
+            }
+
+            const bodyElements = document.querySelectorAll('.views-field-field-meta-description');
+
+            if (bodyElements.length > 0) {
+              bodyElements.forEach(element => {
+                wrapInTag(element, {
+                  tag: 'mark class="search-highlight"',
+                  words: searchString
+                });
               });
-            });
+            }
           }
-        }
-
-      });
+        });
     }
-  }
+  };
 
 })(Drupal, once);

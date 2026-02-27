@@ -1,0 +1,16 @@
+/* ==================
+  VIEWS MIXINS
+==================== */
+
+@use '../00-variables' as *;
+@use 'layout-mixins' as *;
+
+@mixin viewsTitle {
+  @include heading4;
+  margin-bottom: $spaceXxs;
+}
+
+@mixin viewsMeta {
+  @include metaText;
+  margin-bottom: $spaceSm;
+}

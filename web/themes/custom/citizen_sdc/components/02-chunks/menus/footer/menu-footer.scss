@@ -1,0 +1,24 @@
+/* ===============
+  FOOTER MENU
+================= */
+
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/01-mixins/animation-mixins' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+
+.menu--footer {
+  @include tab {
+    flex-direction: column;
+  }
+
+  .menu-item__link {
+    display: block;
+    color: $prefooterLink;
+
+    &:hover,
+    &:focus {
+      color: $prefooterLinkHover;
+      @include transAll(.3s);
+    }
+  }
+}

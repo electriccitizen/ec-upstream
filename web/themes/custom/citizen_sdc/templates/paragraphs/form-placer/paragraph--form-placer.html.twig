@@ -1,0 +1,16 @@
+{#
+  Paragraph Form Placer wrapper that passes the rendered webform into the Form Placer SDC component.
+#}
+
+{% set rendered_form = content.field_form ?? '' %}
+{% set widget_title = paragraph.field_widget_title.value ?? '' %}
+{% set show_form_title = (paragraph.field_form_title.value ?? '0') == '1' %}
+
+{{ include([
+  'citizen_sdc:form-placer',
+  '@citizen_sdc/components/03-composites/paragraphs/form-placer/form-placer.twig'
+], {
+  title: widget_title,
+  form: rendered_form,
+  show_title: show_form_title
+}, with_context = false, ignore_missing = true) }}

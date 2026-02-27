@@ -1,0 +1,9 @@
+{#
+  Paragraph Horizontal Rule wrapper that passes field values into the Horizontal Rule SDC component.
+#}
+
+{% set width = elements['#paragraph'].field_width.0.value|default('full') %}
+
+{{ include('citizen_sdc:horizontal-rule', {
+  width: width
+}, with_context = false) }}

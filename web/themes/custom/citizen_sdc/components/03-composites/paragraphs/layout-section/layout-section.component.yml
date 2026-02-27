@@ -1,0 +1,23 @@
+component:
+  id: citizen_sdc:layout-section
+  label: 'Layout Section'
+  description: 'Section wrapper with optional title and variant styles.'
+  status: experimental
+
+props:
+  type: object
+  additionalProperties: false
+  properties:
+    title:
+      type: string
+      title: 'Section title'
+    variant:
+      type: string
+      title: 'Variant'
+      enum: [default, simple]
+      default: default
+
+slots:
+  content:
+    title: 'Content'
+    description: 'Inner rendered content of the section.'

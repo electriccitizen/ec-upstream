@@ -12,8 +12,6 @@ dependencies:
     - paragraphs.paragraphs_type.horizontal_rule
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.layout_section_simple
-    - paragraphs.paragraphs_type.links_files
-    - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.video
   module:
@@ -40,8 +38,6 @@ settings:
       gallery: gallery
       horizontal_rule: horizontal_rule
       image: image
-      links_files: links_files
-      quote: quote
       text: text
       video: video
       layout_section_simple: layout_section_simple

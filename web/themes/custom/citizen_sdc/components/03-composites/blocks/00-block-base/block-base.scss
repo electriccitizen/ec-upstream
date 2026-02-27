@@ -1,0 +1,12 @@
+/* ============
+   BLOCK BASE
+============== */
+
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+
+h2.block-title {
+  max-width: $textMax;
+  text-align: center;
+  @include auto;
+}

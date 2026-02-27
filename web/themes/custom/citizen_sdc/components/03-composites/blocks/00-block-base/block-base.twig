@@ -1,0 +1,11 @@
+
+
+
+<div{{ attr.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if title %}
+    <h2 class="block__title">{{ title }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {{ block }}
+</div>

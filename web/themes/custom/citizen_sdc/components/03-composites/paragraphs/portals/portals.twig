@@ -1,0 +1,53 @@
+{% set classes = [
+  'portals',
+  'paragraph',
+  'paragraph--type--portals',
+]|filter(v => v) %}
+
+<div class="{{ classes|join(' ') }}">
+  {% if title %}
+    <h2 class="widget-title">{{ title }}</h2>
+  {% endif %}
+
+  {% if items is not empty %}
+    <div class="field field-portals">
+      {% for portal in items %}
+        <div class="portal-item">
+          {% set link_url = portal.link.url ?? '' %}
+          {% set link_target = portal.link.target ?? '' %}
+          {% set link_rel = portal.link.rel ?? '' %}
+
+          {% if link_url %}
+            <a href="{{ link_url }}" class="portal-link"{% if link_target %} target="{{ link_target }}"{% endif %}{% if link_rel %} rel="{{ link_rel }}"{% endif %}>
+              {% if portal.image %}
+                <div class="field-image">
+                  {{ portal.image }}
+                </div>
+              {% endif %}
+              {% if portal.headline %}
+                <div class="field-headline">{{ portal.headline }}</div>
+              {% endif %}
+            </a>
+          {% else %}
+            <div class="portal-link">
+              {% if portal.image %}
+                <div class="field-image">
+                  {{ portal.image }}
+                </div>
+              {% endif %}
+              {% if portal.headline %}
+                <div class="field-headline">{{ portal.headline }}</div>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if portal.long_text %}
+            <div class="field-long-text text-long">
+              {{ portal.long_text }}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

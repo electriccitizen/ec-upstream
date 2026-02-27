@@ -1,0 +1,17 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Text
+status: stable
+description: Text paragraph with WYSIWYG content.
+props:
+  type: object
+  required:
+    - text
+  properties:
+    title:
+      type: string
+      title: Widget title
+      description: Optional heading displayed above the text.
+slots:
+  content:
+    title: Content
+    description: Content of the text paragraph.

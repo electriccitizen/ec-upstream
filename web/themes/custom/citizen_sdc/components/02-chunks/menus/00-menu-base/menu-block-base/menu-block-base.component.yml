@@ -1,0 +1,31 @@
+component:
+  id: citizen_sdc:menu-block-base
+  label: 'Menu Block Base'
+  description: 'Generic structure for Drupal menu blocks'
+  status: experimental
+
+props:
+  type: object
+  required: 
+    - menu_name
+    - show_menu_block
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the menu <nav>'
+    menu_name:
+      type: string
+      description: 'The name of the menu'
+    show_menu_block_title:
+      type: string
+      description: 'Defines if the block label should be shown'
+      enum: [visible, 0]
+    menu_block_title: 
+      type: string
+      description: 'The configured block label of the menu (set in block layout or layout builder)'
+    title_suffix:
+      type: object
+      description: 'Placeholder for contextual links'
+
+slots:
+  menu:

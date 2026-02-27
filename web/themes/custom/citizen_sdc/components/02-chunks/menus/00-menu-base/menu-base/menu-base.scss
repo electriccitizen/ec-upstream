@@ -1,0 +1,26 @@
+/* ===============
+  MENU BASE
+================= */
+
+@use '../../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../../00-base/01-mixins/general-mixins' as *;
+
+.block-menu {
+
+  &:not.layout-builder-block .contextual {
+    display: none;
+  }
+}
+
+ul.menu {
+  @include listReset;
+
+  @include tab {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  ul {
+    @include listReset;
+  }
+}

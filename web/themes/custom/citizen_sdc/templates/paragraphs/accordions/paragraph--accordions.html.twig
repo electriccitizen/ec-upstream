@@ -1,0 +1,25 @@
+{#
+  Paragraph Accordions wrapper that passes field values into the Accordions SDC component.
+#}
+
+{% set items = [] %}
+{%- for key, accordion in content.field_accordion_items -%}
+  {% if key|first != '#' %}
+    {% set control_id = 'accordion-content-' ~ paragraph.id() ~ '-' ~ (key + 1) %}
+    {% set text = {
+      '#type': 'processed_text',
+      '#text': accordion['#paragraph'].field_long_text.0.value ?? '',
+      '#format': accordion['#paragraph'].field_long_text.0.format
+    } %}
+    {% set items = items|merge([{
+      id: control_id,
+      header: accordion['#paragraph'].field_accordion_header.0.value,
+      text: text
+    }]) %}
+  {% endif %}
+{%- endfor %}
+
+{{ include('citizen_sdc:accordions', {
+  title: paragraph.field_widget_title.value,
+  items: items
+}, with_context = false) }}

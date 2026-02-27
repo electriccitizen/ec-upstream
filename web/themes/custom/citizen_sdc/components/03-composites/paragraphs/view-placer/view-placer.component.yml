@@ -1,0 +1,21 @@
+component:
+  id: citizen_sdc:view-placer
+  label: 'View Placer'
+  description: 'Embeds a selected view display within page content.'
+  status: experimental
+
+props:
+  type: object
+  additionalProperties: false
+  required:
+    - view
+  properties:
+    title:
+      type: string
+      title: 'Widget title'
+    view:
+      type: string
+      title: 'Rendered view markup'
+    link:
+      type: string
+      title: 'Optional call-to-action link markup'

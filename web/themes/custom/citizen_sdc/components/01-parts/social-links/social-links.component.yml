@@ -1,0 +1,15 @@
+component:
+  id: citizen_sdc:social-links
+  label: 'Social Links'
+  description: 'Preformatted links to social media platforms'
+  status: experimental
+
+props:
+  type: object
+  additionalProperties: false
+  required:
+    - social_links
+  properties:
+    social_links:
+      type: array
+      description: 'URLs to social media platforms'

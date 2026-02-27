@@ -1,0 +1,63 @@
+/* ====================
+   FONT VARIABLES
+==================== */
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/themes/custom/citizen_sdc/fonts/MaterialIcons.woff2) format('woff2'),
+    url(/themes/custom/citizen_sdc/fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Material Icons Outlined';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/themes/custom/citizen_sdc/fonts/MaterialIconsOutlined.woff2) format('woff2'),
+    url(/themes/custom/citizen_sdc/fonts/MaterialIconsOutlined-Regular.otf) format('opentype');
+}
+
+/*  FAMILIES
+-------------------- */
+$header : "Open Sans", Helvetica, Arial, sans-serif;
+$displayHeader : "Open Sans", Helvetica, Arial, sans-serif;
+$bodyFont : "Open Sans", Helvetica, Arial, sans-serif;
+$serif : Georgia, "Times New Roman", Times, serif;
+
+/*  WEIGHTS
+-------------------- */
+$light: 300;
+$regular: 400;
+$heavy: 700;
+$x-heavy: 900;
+
+/*  SIZES
+-------------------- */
+$baseSize: 2.25rem;
+$formLabelSize: 2.5rem;
+$formLabelWeight: 700;
+$button: 2rem;
+
+//h1 sizes
+$h1Sm: 4rem;
+$h1Mid: 5.5rem;
+$h1Lg: 7rem;
+
+//h2 sizes
+$h2Sm: 3rem;
+$h2Md: 3.5rem;
+$h2Lg: 4rem;
+
+//h3 sizes
+$h3Sm: 3rem;
+$h3Mid: 3.5rem;
+
+//h4 sizes
+$h4Sm: 2.75rem;
+
+//h5 sizes
+$h5Sm: 2.5rem;
+
+//h6 sizes
+$h6Sm: 2rem;

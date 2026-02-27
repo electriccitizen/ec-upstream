@@ -1,0 +1,12 @@
+{% set classes = [
+	'media-item',
+	'media-item--' ~ bundle|clean_class,
+	'media-item--' ~ display|clean_class
+] %}
+
+<article{{ attr|without('data-quickedit-entity-id').addClass(classes) }} data-quickedit-entity-id="media/{{ media_id }}">
+  {{ suffix }}
+  {% if media %}
+    {{ media }}
+  {% endif %}
+</article>

@@ -1,0 +1,48 @@
+component:
+  id: citizen_sdc:drawer
+  label: 'Drawer'
+  description: 'Expandable drawer to show/hide additional content.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - togglePosition
+    - toggleOpenText
+    - toggleCloseText
+    - rando
+    - drawerStyle
+  properties:
+    toggle_position:
+      type: string
+      title: 'Toggle Position'
+      description: 'Sets the drawer control link above or below the drawer'
+      enum:
+        - above
+        - below
+      default: above
+    toggle_open_text:
+      type: string
+      title: 'Toggle Open Text'
+      description: 'The text a user will click to open the drawer content'
+    toggle_close_text:
+      type: string
+      title: 'Toggle Close Text'
+      description: 'The text a user will click to close the drawer content'
+    rando:
+      type: string
+      title: 'Random Number'
+      description: 'A number randomly generate by Twig to create a unique ID for the drawer'
+    drawer_style:
+      type: string
+      title: 'Drawer Style'
+      description: 'Sets style of the drawer as it transitions to/from the drawer toggle. NOTE: Fade should only be used when the toggle is below the drawer.'
+      enum:
+        - fade
+        - sharp
+      default: sharp
+
+slots:
+  drawer:
+    title: Drawer Content
+    description: Content of the drawer

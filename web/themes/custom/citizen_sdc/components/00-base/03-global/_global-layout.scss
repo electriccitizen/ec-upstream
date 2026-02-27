@@ -1,0 +1,48 @@
+/* ==================
+ GLOBAL SITE STYLES
+====================*/
+
+@use '../00-variables/component-colors' as *;
+@use '../00-variables/units' as *;
+@use '../01-mixins/layout-mixins' as *;
+
+
+body {
+  width: 100%;
+  box-sizing: border-box;
+  background: $siteBack;
+
+  &.unpublished {
+    background: $unpub;
+  }
+
+  div {
+    box-sizing: border-box;
+
+    * {
+      box-sizing: inherit;
+    }
+  }
+}
+
+.container-inline div {
+  display: inline;
+}
+
+/* SKIP NAV
+------------- */
+ a.skip-nav {
+
+  &:focus,&:focus-within {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: block;
+    width: 100%;
+    background: $siteBack;
+    padding: .5rem 3rem;
+    opacity: 1;
+    font-size: 12px;
+  }
+}

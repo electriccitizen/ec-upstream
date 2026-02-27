@@ -1,0 +1,24 @@
+{#  Paragraph Image wrapper that passes field values into the Image SDC component. #}
+
+{% set size = content.field_size.0['#markup'] %}
+{% set caption = content.field_caption.0['#context'].value %}
+{% set image_id = content.field_image.0['#plain_text'] %}
+{% set link_item = content.field_link.0 ?? null %}
+{% set link = link_item ? {
+  url: link_item['#url'],
+  title: link_item['#title']
+} : null %}
+{% set rendered_image = size == 'column'
+  ? drupal_entity('media', image_id, 'full')
+  : drupal_entity('media', image_id, 'default') %}
+
+{{ include('citizen_sdc:image', {
+  title: paragraph.field_widget_title.value,
+  size: size,
+  image_id: image_id,
+  link: link,
+  caption: caption,
+  slots: {
+    image: rendered_image
+  }
+}, with_context = false) }}

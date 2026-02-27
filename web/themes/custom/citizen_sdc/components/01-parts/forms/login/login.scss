@@ -1,0 +1,25 @@
+/* ===============
+  USER LOGIN FORM
+================= */
+
+
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/button-mixins' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+
+.user-access-form {
+  max-width: $desk;
+  margin: 0 auto $elementSpace;
+
+  h1{
+    margin-bottom: $elementSpace;
+  }
+
+  .form-item:not([type="submit"]) {
+    max-width: 400px;
+  }
+
+  #edit-submit.button {
+    @include button;
+  }
+}

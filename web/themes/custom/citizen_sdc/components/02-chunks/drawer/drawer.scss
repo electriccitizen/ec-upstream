@@ -1,0 +1,80 @@
+/* ===============
+  DRAWER
+================= */
+
+@use '../../00-base/00-variables/component-colors' as *;
+@use '../../00-base/00-variables/fonts' as *;
+@use '../../00-base/00-variables/units' as *;
+@use '../../00-base/01-mixins/general-mixins' as *;
+@use '../../00-base/01-mixins/style-mixins' as *;
+@use '../../00-base/01-mixins/type-mixins' as *;
+
+
+.drawer-toggle {
+  position: relative;
+  display: inline-block;
+  color: $link;
+  font-weight: $heavy;
+  
+  &:hover,
+  &:focus {
+    color: $hoverLink;
+
+    .drawer-toggle__icon {
+      fill: $hoverLink;
+    }
+  }
+
+  &.button--clean {
+    padding-right: 3.5rem;
+    margin-top: $spaceXxs;
+  }
+
+  .drawer-toggle__icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 14px;
+    fill: $link;
+    transition: transform .3s ease;
+    transform: rotate(180deg);
+  }
+
+  &.drawer-toggle--active-drawer {
+    .drawer-toggle__icon {
+      transform: rotate(360deg);
+    }
+
+    &.drawer-toggle--above {
+      .drawer-toggle__icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &.drawer-toggle--above {
+    .drawer-toggle__icon {
+      transform: rotate(0deg);
+    }
+
+    & + .drawer-content {
+      padding-top: $spaceXxs;
+    }
+  }
+}
+
+.drawer-content--fade {
+  & + .drawer-toggle--below {
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 60px;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      @include gradient(bottom, $siteBack, 12%, transparent);
+    }
+  }
+}
+

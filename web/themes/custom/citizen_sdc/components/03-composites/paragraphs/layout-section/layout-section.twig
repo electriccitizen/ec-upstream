@@ -1,0 +1,21 @@
+{% set variant_class = variant == 'simple' ? 'layout-section--simple' : 'layout-section--default' %}
+{% set classes = [
+  'layout-section',
+  'paragraph',
+  'paragraph--type--layout-section',
+  variant_class
+]|filter(v => v) %}
+
+<div class="{{ classes|join(' ') }}">
+  <div class="{{ variant == 'simple' ? 'widget-simple-section' : 'widget-section' }}">
+    {% if title %}
+      <div class="field field-section-title string">
+        <h2>{{ title }}</h2>
+      </div>
+    {% endif %}
+
+    {% if slots is defined and slots.content %}
+      {{ slots.content }}
+    {% endif %}
+  </div>
+</div>

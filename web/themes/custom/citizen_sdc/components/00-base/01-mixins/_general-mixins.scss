@@ -1,0 +1,48 @@
+/* ============
+	GENERAL MIXINS
+======================= */
+
+@use 'sass:math';
+
+@mixin showContent($time) {
+  max-height: 0;
+  transition: max-height #{$time} ease-out;
+  overflow: hidden;
+}
+
+@mixin browserWipe {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@mixin buttonWipe {
+  @include browserWipe;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+@mixin visuallyHidden {
+  position: absolute;
+  left: -900vw;
+  top: 0;
+  font-size: 1px;
+  opacity: .1;
+}
+
+@mixin listReset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin clearFix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}

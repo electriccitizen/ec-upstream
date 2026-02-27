@@ -1,0 +1,16 @@
+{#
+  Paragraph View Placer wrapper that passes selected view output into the View Placer SDC component.
+#}
+
+{% set rendered_view = content.field_view ?? '' %}
+{% set rendered_link = content.field_link ?? '' %}
+{% set widget_title = paragraph.field_widget_title.value ?? '' %}
+
+{{ include([
+  'citizen_sdc:view-placer',
+  '@citizen_sdc/components/03-composites/paragraphs/view-placer/view-placer.twig'
+], {
+  title: widget_title,
+  view: rendered_view,
+  link: rendered_link
+}, with_context = false, ignore_missing = true) }}

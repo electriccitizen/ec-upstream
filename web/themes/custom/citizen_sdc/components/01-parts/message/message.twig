@@ -1,0 +1,18 @@
+{% for type, messages in message_list %}
+  <div role="contentinfo" class="drupal-message drupal-message--{{ type }}" aria-label="{{ type }}"{{ attr }}>
+    <div role="{% if type == 'error' %}alert{% else %}status{% endif %}" class="drupal-message__content">
+      {% if type %}
+        <div class="visually-hidden drupal-message__status">{{ type }}</div>
+      {% endif %}
+      {% if messages|length > 1 %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        {{ messages|first }}
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}

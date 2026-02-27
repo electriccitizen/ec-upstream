@@ -1,0 +1,35 @@
+component:
+  id: citizen_sdc:message
+  label: 'Message'
+  description: 'Drupal status messages'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - type
+  properties:
+    type:
+      type: object
+      description: 'Identifier for each message within the list'
+    status:
+      type: string
+      status: 'Status' 
+      description: 'The status of the message'
+    modifier:
+      type: string 
+      description: 'The cleaned status of the message used as a styling modifier'
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the <message>'
+    message_list:
+      type: array
+      description: 'The messages listed in the message block'
+      properties:
+        messages:
+          type: array
+          description: 'Messages within the message list'
+          properties:
+          message:
+            type: string
+            description: 'Mesages within the message list'
