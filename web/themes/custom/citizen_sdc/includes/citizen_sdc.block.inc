@@ -19,23 +19,3 @@ function citizen_sdc_theme_suggestions_block_alter(array &$suggestions, array $v
     array_splice($suggestions, 3, 0, 'block__' . $variables['elements']['content']['#block_content']->id());
   }
 }
-
-/**
- * Implements hook_preprocess_block().
- */
-function citizen_sdc_preprocess_block(&$variables) {
-  // Remove contextual links from header blocks.
-  if (isset($variables['elements']['#id'])) {
-    $block_id = $variables['elements']['#id'];
-    $block = Block::load($block_id);
-    $region = $block->getRegion();
-    if ($region == 'header') {
-      if (isset($variables['elements']['#contextual_links'])) {
-        unset($variables['elements']['#contextual_links']);
-      }
-      if (isset($variables['attributes']['class'][0])) {
-        unset($variables['attributes']['class'][0]);
-      }
-    }
-  }
-}
