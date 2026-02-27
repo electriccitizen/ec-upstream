@@ -277,15 +277,15 @@ display:
         type: full
         options:
           offset: 0
-          pagination_heading_level: h4
+          pagination_heading_level: h3
           items_per_page: 6
           total_pages: null
           id: 0
           tags:
-            next: "Next\_»"
-            previous: "«\_Prev"
-            first: '« First'
-            last: 'Last »'
+            next: Next
+            previous: Previous
+            first: ''
+            last: ''
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -294,7 +294,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 5
+          quantity: 3
       exposed_form:
         type: basic
         options:
@@ -468,17 +468,7 @@ display:
       relationships: {  }
       use_ajax: false
       header: {  }
-      footer:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: false
-          content: "<span class=\"results-count\">Results: @start - @end of @total</span>\r\n<span class=\"count-shim\">@page_count</span>"
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1

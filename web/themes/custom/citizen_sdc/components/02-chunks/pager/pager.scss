@@ -1,0 +1,108 @@
+/* ===============
+  PAGER
+================= */
+
+@use '../../00-base/00-variables/component-colors' as *;
+@use '../../00-base/00-variables/units' as *;
+@use '../../00-base/01-mixins/general-mixins' as *;
+
+.pager__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid $pagerBorder;
+  @include listReset;
+
+  & {
+    padding-top: $spaceXs;
+  }
+}
+
+.pager__item a{
+  background-color: $pagerLinkBack;
+  color: $pagerLink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover,
+  &:focus {
+    background-color: $pagerLinkBackHover;
+    color: $pagerLinkHover;
+    text-decoration: none;
+    transition: color .3s ease;
+  }
+}
+
+.pager__item--has-arrow {
+  a {
+    &:hover,&:focus {
+      background-color: transparent;
+
+      svg {
+        fill: $pagerLinkHover;
+      }
+    }
+  }
+  .pager__item--arrow {
+    width: 10px;
+    height: 10px;
+    fill: $pagerLink;
+    position: relative;
+  }
+}
+
+.pager__number {
+  &.is-active a {
+    color: $pagerLinkActive;
+    background-color: $pagerLinkActiveBack;
+
+    &:hover,&:focus {
+      color: $pagerLinkActiveHover;
+      background-color: $pagerLinkActiveBackHover;
+    }
+  }
+
+  a {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid $pagerBorder;
+    font-size: 2rem;
+  }
+}
+
+.pager__item--previous {
+  margin-right: 2rem;
+  a {
+    &:hover,&:focus {
+
+      .pager__item--arrow {
+        left: -1rem;
+        transition: left .3s ease, fill .3s ease;
+      }
+    }
+    .pager__item--arrow {
+      left: 0;
+      margin-right: .5rem;
+    }
+  }
+}
+
+.pager__item--next {
+  margin-left: 2rem;
+  a {
+    &:hover,&:focus {
+      .pager__item--arrow {
+        right: -1rem;
+        transition: right .3s ease, fill .3s ease;
+      }
+    }
+    .pager__item--arrow {
+      right: 0;
+      margin-left: .5rem;
+    }
+  }
+}

@@ -196,20 +196,14 @@ $spbChildActiveHover : $hoverLink;
 /* PAGERS
 --------------------- */
 $pagerBorder : $borderRule;
-$pagerBack : transparent;
-$pagerNumber : $link;
-$pagerNumberBack : transparent;
-$pagerNumberHover : $hoverLink;
-$pagerNumberBackHover : transparent;
-$pagerNumberActive : $white;
-$pagerNumberActiveBack : $link;
-$pagerNumberActiveHover : $white;
-$pagerNumberActiveBackHover : $hoverLink;
 $pagerLink : $link;
 $pagerLinkBack : transparent;
-$pagerLinkHover : $hoverLink;
-$pagerLinkBackHover : transparent;
-$resultsText : $baseText;
+$pagerLinkHover : $black;
+$pagerLinkBackHover : $lightGray;
+$pagerLinkActive : $black;
+$pagerLinkActiveBack : $lightGray;
+$pagerLinkActiveHover : $black;
+$pagerLinkActiveBackHover : color.adjust($lightGray, $lightness:-12%);
 
 /* ACCORDIONS
 ------------------- */

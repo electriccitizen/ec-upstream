@@ -30,65 +30,23 @@
  */
 #}
 
-{# this template automatically turns regular Drupal pagers into a custom smart pager that changes the functionality based on the amount of pages in the view #}
-
-{{ attach_library('citizen_sdc/pager') }}
-
-{% if items %}
-  <nav class="pager" aria-label="{{ 'Pagination'|t }}">
-    <div id="pagination-heading" class="visually-hidden">{{ 'Pagination'|t }}</div>
-
-    {% block pager %}
-      <ul class="pager__items js-pager__items">
-
-        {# Print previous item but disable if we are on the first page. #}
-
-        {% block previous %}
-          <li class="pager__item pager__item--previous{% if not items.previous %} disabled{% endif %}">
-            <a href="{{ items.previous.href }}" title="{{ 'Go to previous page'|t }}" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
-              <span class="visually-hidden">{{ 'Previous page'|t }}</span>
-              <span aria-hidden="true">{{ items.previous.text|default('« Prev'|t) }}</span>
-            </a>
-          </li>
-        {% endblock %}
-
-        {# Now generate the actual pager piece. #}
-        {% block pages %}
-
-          <li class="pager__current">
-            {%- trans %}Page{% endtrans %} {{ current }} {% trans %}of {% endtrans %} <span class="page-total"></span>
-          </li>
-
-          {% for key, item in items.pages %}
-  					{% block pagerItem %}
-	            <li class="pager__item{{ current == key ? ' is-active' : '' }} pager__number" data-page="{{ key }}"{% if key > 5 %} data-hide="true"{% endif %}>
-	              {% if current == key %}
-	                {% set title = 'Current page'|t %}
-	              {% else %}
-	                {% set title = 'Go to page @key'|t({'@key': key}) %}
-	              {% endif %}
-	              <a href="{{ item.href }}" title="{{ title }}"{{ item.attributes|without('href', 'title') }}>
-	                <span class="visually-hidden">
-	                  {{ current == key ? 'Current page'|t : 'Page'|t }}
-	                </span>
-	                {{- key -}}
-	              </a>
-	            </li>
-	          {% endblock %}
-          {% endfor %}
-        {% endblock %}
-
-        {# Print next item but disable if we are on the last page. #}
-        {% block next %}
-          <li class="pager__item pager__item--next{% if not items.next %} disabled{% endif %}">
-            <a href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }}>
-              <span class="visually-hidden">{{ 'Next page'|t }}</span>
-              <span aria-hidden="true">{{ items.next.text|default('Next »'|t) }}</span>
-            </a>
-          </li>
-        {% endblock %}
-
-      </ul>
-    {% endblock %}
-  </nav>
-{% endif %}
+{{ include('citizen_sdc:pager', {
+  pages: items.pages,
+  current: current,
+  first: items.first,
+  first_href: items.first.href,
+  first_attr: items.first.attributes,
+  first_text: items.first.text,
+  previous: items.previous,
+  previous_href: items.previous.href,
+  previous_attr: items.previous.attributes,
+  previous_text: items.previous.text,
+  next: items.next,
+  next_href: items.next.href,
+  next_attr: items.next.attributes,
+  next_text: items.next.text,
+  last: items.last,
+  last_href: items.last.href,
+  last_attr: items.last.attributes,
+  last_text: items.last.text,
+}, with_context = false) }}

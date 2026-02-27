@@ -1,0 +1,68 @@
+component:
+  id: citizen_sdc:pager
+  label: 'Pager'
+  description: 'Views pager element'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - pages
+  properties:
+    items:
+      type: array
+      description: 'Pager Elements'
+    first:
+      type: object
+      description: 'Link to first page'
+    first_href:
+      type: string
+      description: 'URL of the first page'
+    first_attr:
+      type: object
+      description: 'Link to first page'
+    first_text:
+      type: string
+      description: 'Text of the first link'
+    previous:
+      type: object
+      description: 'Link to previous page'
+    previous_href:
+      type: string
+      description: 'URL of the first page'
+    previous_attr:
+      type: object
+      description: 'Link to first page'
+    previous_text:
+      type: string
+      description: 'Text of the previous link'
+    pages:
+      type: object
+      description: 'Pager numbered links (keyed by page number, each with href and attributes)'
+    current:
+      type: [integer, string]
+      description: 'Current page number'
+    next:
+      type: object
+      description: 'Link to next page'
+    next_href:
+      type: string
+      description: 'URL of the next page'
+    next_attr:
+      type: object
+      description: 'Link to next page'
+    next_text:
+      type: string
+      description: 'Text of the next link'
+    last:
+      type: object
+      description: 'Link to last page'
+    last_href:
+      type: string
+      description: 'URL of the last page'
+    last_attr:
+      type: object
+      description: 'Link to last page'
+    last_text:
+      type: string
+      description: 'Text of the last link'
