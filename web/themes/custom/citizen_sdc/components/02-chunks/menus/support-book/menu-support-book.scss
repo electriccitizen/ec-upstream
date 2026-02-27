@@ -1,0 +1,237 @@
+/* ===============
+  SECTION MENU
+================= */
+
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/fonts' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
+@use '../../../00-base/01-mixins/type-mixins' as *;
+
+//remove once we do header theming
+#block-menu-support-book {
+  position: relative;
+  padding: 100px 0;
+
+  .block-menu__title {
+    display: block;
+    padding: 2rem 3rem;
+    background: $spbBlockTitleBack;
+    font-size: 2.75rem;
+  }
+
+  @include onlyMobile {
+    .block-menu__title {
+      display: none;
+    }
+  }
+
+  .block-menu--support-book__toggle-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    background: $spbBlockTitleBack;
+
+    @include desk {
+      display: none;
+    }
+
+    .block-menu__mobile-title {
+      display: block;
+      width: calc(100% - 40px);
+    }
+
+    .block-menu__toggle {
+      display: block;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      background-color: $spbMobileMenuToggle;
+      mask-image: url('hamburger.svg');
+      mask-repeat: no-repeat;
+      mask-size: 24px;
+      mask-position: center;
+
+      &:hover,&:focus {
+        background-color: $spbMobileMenuToggleHover;
+        transition: background-color .3s ease;
+      }
+
+      &.block-menu__toggle--active {
+        mask-image: url('close.svg');
+        mask-size: 16px;
+      }
+    }
+  }
+}
+
+#menu-support-book {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-family: $header;
+  font-weight: $heavy;
+  column-gap: 8px;
+  position: relative;
+  z-index: 2;
+  flex-direction: column;
+  background: $spbBack;
+  @include mobileMenuDrawer;
+
+  @include desk {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    overflow: auto;
+  }
+
+  ul[aria-hidden='true'] {
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    pointer-events: none;
+    list-style-type: none;
+  }
+
+  li {
+    list-style: none;
+    position: relative;
+    
+    &.menu-item--open {
+      .menu-item__toggle {
+        &:after {
+          transform: rotate(180deg);
+          transition: transform .3s ease, background-color .3s ease;
+        }
+      }
+    }
+
+    &.menu-item--support-type--site-management {
+      body:not(.role--super-user,.role--administrator,.role--site_manager) & {
+        display: none;
+      }
+    }
+
+    .menu-item__link {
+      display: block;
+      transition: color .3s ease;
+    }
+
+    .menu-item__toggle:after {
+      transition: background-color .3s ease;
+    }
+  }
+
+  // top level
+  .menu-item__level-1 {
+    &:first-child {
+      padding-top: 1rem;
+    }
+    &:last-child {
+      padding-bottom: 1rem;
+    }
+
+    .menu-item__link {
+      display: block;
+      padding: 1rem 5rem 1rem 3rem;
+      color: $spbTopLink;
+
+      &:hover,&:focus {
+        color: $spbTopLinkHover;
+      }
+
+      &.menu-item--active-trail {
+        .menu-item__toggle {
+          &:hover,&:focus {
+            &:after {
+              background-color: $spbTopActiveHover;
+            }
+          }
+
+          &:after {
+            background-color: $spbTopActive;
+          }
+        }
+      }
+    }
+
+    .menu-item__toggle {
+      @include menuItemToggle;
+
+      & {
+        width: 64px;
+        height: 40px;
+        &:after {
+          top: calc(50% - 8px);
+          right: 30px;
+          mask-size: 16px;
+          background-color: $spbTopLink;
+        }
+      }
+
+      &:hover,&:focus {
+        &:after {
+          background-color: $spbTopLinkHover;
+        }
+      }
+    }
+  }
+
+  //sub levels
+  .menu-item:not(.menu-item__level-1) {
+    &:first-child {
+      padding-top: .5rem;
+    }
+    &:last-child {
+      padding-bottom: .5rem;
+    }
+
+    .menu-item__link {
+      display: block;
+      font-size: 2rem;
+      padding: .5rem 5rem .5rem 5rem;
+      color: $spbChildLink;
+
+      &:hover,&:focus {
+        color: $spbChildLinkHover;
+      }
+
+      &.menu-item--active-trail {
+        .menu-item__toggle {
+          &:hover,&:focus {
+            &:after {
+              background-color: $spbChildActiveHover;
+            }
+          }
+
+          &:after {
+            background-color: $spbChildActive;
+          }
+        }
+      }
+    }
+
+    .menu-item__toggle {
+      @include menuItemToggle;
+
+      & {
+        width: 64px;
+        height: 30px;
+        &:after {
+          top: calc(50% - 7px);
+          right: 31px;
+          mask-size: 14px;
+          background-color: $spbTopLink;
+        }
+      }
+
+      &:hover,&:focus {
+        &:after {
+          background-color: $spbTopLinkHover;
+        }
+      }
+    }
+  }
+}
+

@@ -6,7 +6,8 @@
 @use '../../../../00-base/01-mixins/general-mixins' as *;
 
 .block-menu {
-  .contextual {
+
+  &:not.layout-builder-block .contextual {
     display: none;
   }
 }
