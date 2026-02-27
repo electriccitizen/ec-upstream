@@ -34,23 +34,20 @@
   elements.content['#block_content'].id() ? 'block--' ~ elements.content['#block_content'].id(),
 ] %}
 
-{% block blockAttributes %}
-	<div{{ attributes.addClass(classes) }}>
-{% endblock %}
-  {% block blockSetup %}
-    {{ title_prefix }}
-    {% block blockLabel %}
-      {% if label %}
-        <h2 class="block__title">{% block labelText %}{{ label }}{% endblock %}</h2>
-      {% endif %}
-    {% endblock %}
-    {{ title_suffix }}
-    {% block blockContent %}
-      {{ content }}
-    {% endblock %}
+{% set block %}
+  {% block blockContent %}
+    {{ content }}
   {% endblock %}
-</div>
+{% endset %}
 
+{{ include('citizen_sdc:block-base', {
+  attr: attributes,
+  classes: classes,
+  title: label,
+  title_prefix: title_prefix,
+  title_suffix: title_suffix,
+  block: block
+}, with_context = false) }}
 
 
 
