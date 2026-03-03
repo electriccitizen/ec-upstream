@@ -1,0 +1,10 @@
+component:
+  id: citizen_sdc:block-about
+  label: 'Block About'
+  description: 'Content of the basic about block in the footer'
+  status: experimental
+
+slots:
+  body:
+    title: 'Body'
+    description: 'The rendered body field content'
