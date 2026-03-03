@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.basic
     - block_content.type.newsletter
+    - block_content.type.social_links
     - filter.format.limited_html
     - filter.format.support_html
     - filter.format.webform_default
@@ -81,6 +82,7 @@ permissions:
   - 'create newsletter block content'
   - 'create page content'
   - 'create remote_video media'
+  - 'create social_links block content'
   - 'create support_book content'
   - 'create terms in event_categories'
   - 'create terms in news_categories'
@@ -100,6 +102,7 @@ permissions:
   - 'delete any newsletter block content revisions'
   - 'delete any page content'
   - 'delete any remote_video media'
+  - 'delete any social_links block content'
   - 'delete any support_book content'
   - 'delete any webform'
   - 'delete any webform submission'
@@ -134,6 +137,7 @@ permissions:
   - 'edit any newsletter block content'
   - 'edit any page content'
   - 'edit any remote_video media'
+  - 'edit any social_links block content'
   - 'edit any support_book content'
   - 'edit any webform'
   - 'edit any webform submission'
