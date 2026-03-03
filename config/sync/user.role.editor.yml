@@ -43,6 +43,7 @@ permissions:
   - 'access user profiles'
   - 'access webform overview'
   - 'administer main menu items'
+  - 'administer nodes'
   - 'administer secondary menu items'
   - 'cancel smart date recur instances'
   - 'change own username'
