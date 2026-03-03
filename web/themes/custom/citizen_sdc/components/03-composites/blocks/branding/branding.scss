@@ -1,0 +1,48 @@
+/* =================
+   BRANDING BLOCK
+=================== */
+
+@use '../../../00-base/00-variables/colors' as *;
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+
+.block--system-branding-block {
+  a {
+    display: block;
+
+    img {
+      border: 1px solid transparent;
+      display: block;
+      width: 100%;
+    }
+
+    .branding__site-name {
+      font-size: 3rem;
+      color: $white;
+      display: none;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+
+      img {
+        border-color: $borderRule;
+      }
+
+      .branding__site-name {
+        color: $black;
+      }
+    }
+
+    @include tab {
+      .branding__site-name {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .branding__tagline {
+    display: none;
+  }
+}

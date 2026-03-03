@@ -1,0 +1,24 @@
+component:
+  id: citizen_sdc:branding
+  label: 'Branding'
+  description: 'Branding block with site logo, name, and slogan'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    site_logo:
+      type: string
+      description: 'URL of the site logo image'
+    logo_width:
+      type: integer
+      description: 'Width of the logo image in pixels'
+    logo_height:
+      type: integer
+      description: 'Height of the logo image in pixels'
+    site_name:
+      type: string
+      description: 'The name of the site'
+    site_slogan:
+      type: string
+      description: 'The slogan of the site'

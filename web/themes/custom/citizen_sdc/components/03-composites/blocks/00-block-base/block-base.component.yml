@@ -12,7 +12,7 @@ props:
       description: 'Drupal Attributes object for the block'
     title_prefix:
       type: object
-      description: 'Placeholder for contextual links'
+      description: 'Placeholder for module and theme output before the block title'
     title:
       type: string
       description: 'The name of the block'
