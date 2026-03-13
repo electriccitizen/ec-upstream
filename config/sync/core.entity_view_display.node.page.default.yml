@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_claude_text
     - field.field.node.page.field_image
     - field.field.node.page.field_meta_description
     - field.field.node.page.field_paragraphs
@@ -150,6 +151,32 @@ third_party_settings:
             weight: 0
             additional: {  }
         third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          ee11d4f6-6b3a-42d7-8b8b-e8cecfa48a85:
+            uuid: ee11d4f6-6b3a-42d7-8b8b-e8cecfa48a85
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_claude_text'
+              label: 'Claude Text'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -177,6 +204,7 @@ content:
     region: content
 hidden:
   body: true
+  field_claude_text: true
   field_image: true
   field_paragraphs: true
   search_api_excerpt: true
