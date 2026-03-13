@@ -1,0 +1,19 @@
+uuid: aeb9d5a8-e709-4d7f-89cd-14cdce80b30d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_claude_text
+    - node.type.page
+id: node.page.field_claude_text
+field_name: field_claude_text
+entity_type: node
+bundle: page
+label: 'Claude Text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

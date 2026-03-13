@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_claude_text
     - field.field.node.page.field_image
     - field.field.node.page.field_meta_description
     - field.field.node.page.field_paragraphs
@@ -37,6 +38,14 @@ content:
       trim_length: 600
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_claude_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   field_image: true
