@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.event.field_dates
     - field.field.node.event.field_event_location
     - field.field.node.event.field_image
-    - field.field.node.event.field_list_widget
     - field.field.node.event.field_metatags
     - node.type.event
   module:
@@ -468,14 +467,6 @@ targetEntityType: node
 bundle: event
 mode: default
 content:
-  field_list_widget:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 101
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }

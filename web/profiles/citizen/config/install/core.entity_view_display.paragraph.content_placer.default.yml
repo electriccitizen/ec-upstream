@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.content_placer.field_bios_list_type
-    - field.field.paragraph.content_placer.field_content_type
     - field.field.paragraph.content_placer.field_events_category
     - field.field.paragraph.content_placer.field_events_list_type
     - field.field.paragraph.content_placer.field_limit_list
@@ -27,14 +26,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 5
-    region: content
-  field_content_type:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
     region: content
   field_events_category:
     type: entity_reference_label

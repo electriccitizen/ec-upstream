@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.content_placer.field_bios_list_type
-    - field.field.paragraph.content_placer.field_content_type
     - field.field.paragraph.content_placer.field_events_category
     - field.field.paragraph.content_placer.field_events_list_type
     - field.field.paragraph.content_placer.field_limit_list
@@ -25,14 +24,6 @@ targetEntityType: paragraph
 bundle: content_placer
 mode: preview
 content:
-  field_content_type:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_widget_title:
     type: string
     label: inline
