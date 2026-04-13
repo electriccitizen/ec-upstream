@@ -1,6 +1,6 @@
 EC-Upstream Local Development
 =============================
-Reviewed by Adam, 2025-11-19
+Reviewed by Brian, 2026-04-13
 
 # Project Details
 - **NAME:** ec-upstream
@@ -8,7 +8,6 @@ Reviewed by Adam, 2025-11-19
 - **LOCAL URL:** https://ec-upstream.ddev.site
 - **BRANCH:** main
 - **HOSTING:** [Pantheon Dashboard](https://dashboard.pantheon.io/sites/b043b678-2567-403a-aafc-947c7d9a76de#dev/code)
-)
 - **CIRCLE CI:** [Logs](https://app.circleci.com/pipelines/github/electriccitizen/ec-upstream) 
 
 ## Requirements and platform docs
@@ -19,7 +18,7 @@ Reviewed by Adam, 2025-11-19
 
 # Local Development Setup
 
-Follow these steps to install a local development environment with DDev.
+Follow these steps to install a local development environment with DDEV.
 
 ```
 cd ~/Projects
@@ -43,7 +42,7 @@ ddev drush uli
 
 Open the generated login URL and you should be set to go.
 
-# Refreshing your local environment with DDev
+# Refreshing your local environment with DDEV
 Whenever you start a new task, you'll want to refresh your local environment to pull in the latest changes from other developers.
 
 ```
@@ -95,11 +94,11 @@ To re-enable it again, run the command that enabled it during installation:
 `ddev sniffon`
 
 # Theming
-The active theme for this project is **citizen_patterns**:
-`~/Projects/ec-upstream/web/themes/citizen_patterns`
+The active theme for this project is **citizen_dart**:
+`~/Projects/ec-upstream/web/themes/custom/citizen_dart`
 
 See the THEME-INSTALL.md file inside of the theme root for install instructions.
-[THEME-INSTALL.md](/web/themes/citizen_patterns/THEME-INSTALL.md)
+[THEME-INSTALL.md](/web/themes/custom/citizen_dart/THEME-INSTALL.md)
 
 # Drush aliases
 
@@ -126,7 +125,7 @@ Whenever you create a Github pull request, a new Pantheon multidev is created in
 
 # Project Legend
 
-## DDev
+## DDEV
 php_version: "8.3"
 webserver_type: nginx-fpm
 database:
@@ -142,7 +141,7 @@ Enable xdebug by running `ddev xdebug`. It will remain enabled for the entirety 
 
 1. Turn on the listener in PHPStorm
 2. Add a breakpoint at the top of web/index.php
-3. Visit a page on the
+3. Visit a page on the site
 4. This should prompt a dialog that sets up your server
 5. The defaults should work
 
