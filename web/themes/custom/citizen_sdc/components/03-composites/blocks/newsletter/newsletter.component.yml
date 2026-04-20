@@ -1,0 +1,17 @@
+component:
+  id: citizen_sdc:newsletter
+  label: 'Newsletter'
+  description: 'Newsletter block with intro text and an embedded third-party signup form'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    form_embed:
+      type: string
+      description: 'Raw HTML markup for the newsletter signup form embed'
+
+slots:
+  intro:
+    title: 'Intro'
+    description: 'Rendered body field text introducing the newsletter signup'

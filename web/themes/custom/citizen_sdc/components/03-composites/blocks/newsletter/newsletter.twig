@@ -1,0 +1,10 @@
+{% if intro %}
+  {{ intro }}
+{% endif %}
+{% if form_embed %}
+  <div class="form-embed">
+    {% autoescape false %}
+      {{- form_embed -}}
+    {% endautoescape %}
+  </div>
+{% endif %}
