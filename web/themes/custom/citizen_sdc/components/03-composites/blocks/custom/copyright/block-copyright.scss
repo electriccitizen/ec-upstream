@@ -1,0 +1,28 @@
+/* =================
+   BLOCK COPYRIGHT
+=================== */
+
+@use '../../../../00-base/01-mixins/breakpoint-mixins' as *;
+
+.block--4 {
+  .copyright {
+    text-align: center;
+    font-size: 2rem;
+
+    @include tab {
+      text-align: left;
+    }
+
+    &__year {
+      padding-right: .25em;
+
+      & + * {
+        display: inline;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
