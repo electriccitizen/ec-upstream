@@ -5,6 +5,10 @@
 @use '../../../../00-base/01-mixins/breakpoint-mixins' as *;
 
 .block--4 {
+  @include onlySmall {
+    width: 100%;
+  }
+
   .copyright {
     text-align: center;
     font-size: 2rem;
