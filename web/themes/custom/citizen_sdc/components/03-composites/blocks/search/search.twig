@@ -1,0 +1,13 @@
+<div class="site-search__toggle site-search__toggle--open">
+  <button type="button" class="site-search__trigger site-search__trigger--open" aria-label="{{ 'Toggle Search'|t }}" aria-controls="search-form-wrapper">
+    <span class="material-icons" aria-hidden="true" focusable="false">&#xE8B6;</span>
+  </button>
+</div>
+<div class="site-search__toggle site-search__toggle--close">
+  <button type="button" class="site-search__trigger site-search__trigger--close" aria-label="{{ 'Close Search'|t }}" aria-controls="search-form-wrapper">
+    <span class="material-icons" aria-hidden="true" focusable="false">&#xE5CD;</span>
+  </button>
+</div>
+<div id="search-form-wrapper" aria-hidden="true">
+  {{ form }}
+</div>

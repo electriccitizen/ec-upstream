@@ -1,0 +1,225 @@
+/* =================
+   SITE SEARCH BLOCK
+=================== */
+
+@use '../../../00-base/00-variables/colors' as *;
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/fonts' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/general-mixins' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+
+%searchBlockPlaceholder {
+  &::placeholder {
+    opacity: 1;
+    color: $searchDropPlace;
+  }
+}
+
+%searchBlockPlaceholderFocus {
+  &::placeholder {
+    opacity: .2;
+    color: $searchDropPlaceFocus;
+  }
+}
+
+.block--site-search {
+  /* Placement in site header */
+  position: static;
+  display: inline-block;
+  text-align: right;
+
+  @include desk {
+    width: calc(100% - 240px);
+  }
+
+  .contextual {
+    display: none;
+  }
+
+  /* Open toggle */
+  .site-search__toggle--open {
+    display: inline-block;
+  }
+
+  .site-search__trigger--open {
+    @include buttonWipe;
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    border: $inputBorderWidth solid transparent;
+    color: $searchIcon;
+
+    &:hover,
+    &:focus {
+      color: $searchIconHover;
+      outline: none;
+    }
+
+    .material-icons {
+      font-size: 24px;
+    }
+
+    @include desk {
+      top: 0;
+    }
+  }
+
+  /* Close toggle */
+  .site-search__toggle--close {
+    height: 48px;
+    width: 48px;
+    display: none;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    z-index: 502;
+  }
+
+  .site-search__trigger--close {
+    @include buttonWipe;
+    height: 100%;
+    width: 100%;
+    background: $searchCloseBack;
+    color: $searchClose;
+    font-family: $header;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease-out;
+
+    &:hover,
+    &:focus {
+      background: $searchCloseBackHover;
+      color: $searchCloseHover;
+      outline: none;
+    }
+  }
+
+  /* Slide-down form wrapper */
+  #search-form-wrapper {
+    width: calc(100% + #{$siteMargin} * 2);
+    position: absolute;
+    top: -20px;
+    left: -$siteMargin;
+    z-index: 500;
+    @include showContent(.5s);
+
+    @include contentStop {
+      width: 100vw;
+      left: calc(-50vw + #{$contentStop} / 2);
+    }
+  }
+
+  /* Search form */
+  #site-search-form {
+    position: relative;
+    width: 100%;
+    padding: 80px $siteMargin;
+    text-align: center;
+    background: $searchDropBack;
+
+    @include desk {
+      padding: 160px $siteMargin;
+    }
+
+    .js-form-type-textfield,
+    .form-item {
+      padding: 1.5rem 0;
+      width: 100%;
+      margin-bottom: 0;
+      max-width: 800px;
+      @include auto;
+
+      label {
+        @include visuallyHidden;
+      }
+
+      input {
+        width: 100%;
+        background: transparent;
+        padding: 8px 4px;
+        color: $searchDropText;
+        border: $inputBorderWidth solid transparent;
+        border-bottom-color: $searchDropInputBorder;
+        border-radius: 0;
+        @extend %searchBlockPlaceholder;
+
+        &:-webkit-autofill {
+          -webkit-box-shadow: 0 0 0 1000px $searchDropInputFocus inset;
+        }
+
+        @include tab {
+          font-size: 2.5rem;
+        }
+
+        &:hover {
+          border-color: $searchDropInputFocus;
+          box-shadow: inset 0 0 0 1px $searchDropInputFocus;
+        }
+
+        &:focus {
+          outline: none;
+          border-color: $inputBorderFocus;
+          box-shadow: inset 0 0 0 1px $inputBorderFocus;
+          @extend %searchBlockPlaceholderFocus;
+        }
+      }
+    }
+
+    .form-actions {
+      max-width: 800px;
+      @include auto;
+      position: relative;
+
+      .form-submit {
+        position: absolute;
+        top: -46px;
+        right: 5px;
+        height: 32px;
+        width: 32px;
+        background: transparent;
+        z-index: 2;
+        text-indent: -9000px;
+        cursor: pointer;
+        padding: 0;
+        min-width: 0;
+        border: 0;
+
+        @include tab {
+          top: -48px;
+          right: 12px;
+        }
+
+        &:focus,
+        &:hover {
+          border: 0;
+          box-shadow: none;
+          outline: none;
+
+          & + .material-icons {
+            color: $searchDropSearchIconHover;
+          }
+        }
+      }
+
+      .material-icons {
+        color: $searchDropSearchIcon;
+        font-size: 3rem;
+        position: absolute;
+        top: -45px;
+        right: 8px;
+        cursor: pointer;
+
+        @include tab {
+          font-size: 3.5rem;
+          top: -48px;
+          right: 12px;
+        }
+      }
+    }
+  }
+}

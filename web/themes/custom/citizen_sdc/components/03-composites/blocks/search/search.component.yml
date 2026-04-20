@@ -1,0 +1,10 @@
+component:
+  id: citizen_sdc:search
+  label: 'Site Search'
+  description: 'Custom site search block with toggle/close buttons and the rendered search form'
+  status: experimental
+
+slots:
+  form:
+    title: 'Form'
+    description: 'The rendered site search form render array from the citizen_custom SiteSearchForm'
