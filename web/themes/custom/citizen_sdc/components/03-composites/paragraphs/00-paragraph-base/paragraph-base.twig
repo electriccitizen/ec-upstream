@@ -1,0 +1,9 @@
+{# Fall back to a fresh Attribute when the caller doesn't pass `attr`, so
+   direct `include('citizen_sdc:paragraph-base')` calls still get the BEM
+   classes and data-animate attribute. #}
+{% set paragraph_attr = (attr ?: create_attribute())
+  .addClass(['paragraph', 'paragraph--' ~ modifier_class])
+  .setAttribute('data-animate', animate|default('yes')) %}
+<div{{ paragraph_attr }}>
+  {{ content }}
+</div>
