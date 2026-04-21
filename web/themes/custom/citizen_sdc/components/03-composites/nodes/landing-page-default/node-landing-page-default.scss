@@ -1,0 +1,31 @@
+/* =================
+   NODE LANDING PAGE DEFAULT
+=================== */
+
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
+
+.node-content--landing-page {
+  margin-bottom: $elementSpace;
+
+  .block-field--field-image {
+    margin-bottom: $elementSpace;
+
+    img {
+      @include image100W;
+    }
+  }
+
+  .block-field--title {
+    margin-bottom: $elementSpace;
+    .node-title {
+      text-align: center;
+    }
+  }
+
+  .block-field--body {
+    @include auto;
+    max-width: $textMax;
+  }
+}
