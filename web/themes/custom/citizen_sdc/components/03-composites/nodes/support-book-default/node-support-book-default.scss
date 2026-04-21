@@ -1,0 +1,25 @@
+/* =================
+   NODE SUPPORT BOOK DEFAULT
+=================== */
+
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/type-mixins' as *;
+
+.node-content--support-book {
+  max-width: $contentStop;
+  margin: 0 auto $elementSpace;
+
+  .block--system-breadcrumb-block {
+    margin-bottom: $elementSpace;
+  }
+
+  .block-field--field-last-reviewed {
+    margin-top: $spaceXs;
+    margin-bottom: $elementSpace;
+    @include metaText;
+  }
+
+  .block-field--body {
+    max-width: 100%;
+  }
+}

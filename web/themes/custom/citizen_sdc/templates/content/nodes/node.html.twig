@@ -3,33 +3,16 @@
  * @file
  * Default node template for the full view mode. Delegates to node-base.
  *
- * Handles Layout Builder section wrapping here (keeps the base clean of any
- * render-array iteration logic). Content types with their own default SDC
- * (node-[type]-default) typically ship their own Drupal template override.
+ * Content types with their own default SDC (node-[type]-default) typically
+ * ship their own Drupal template override at node--[type]--full.html.twig.
  */
 #}
-{% set node_content %}
-  {%- if content._layout_builder -%}
-    {% if content._layout_builder.0 %}
-      {%- for key, layoutSection in content._layout_builder -%}
-        {% if key|first != '#' %}
-          <section id="node-section-{{ loop.index }}" class="node-content__section">
-            {{- layoutSection -}}
-          </section>
-        {% endif %}
-      {%- endfor -%}
-    {% else %}
-      {{- content -}}
-    {% endif %}
-  {%- else -%}
-    {{- content -}}
-  {%- endif -%}
-{% endset %}
+{% import '@citizen_sdc/macros/node-layout-sections.html.twig' as node_macros %}
 
 {{ include('citizen_sdc:node-base', {
   attr: attributes,
   modifier_class: node.type.0.target_id|clean_class,
   title_prefix: title_prefix,
   title_suffix: title_suffix,
-  content: node_content,
+  content: node_macros.wrap_layout_builder_sections(content),
 }, with_context = false) }}

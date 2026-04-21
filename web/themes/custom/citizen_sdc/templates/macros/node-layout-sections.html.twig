@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Reusable Twig macros for node templates.
+ *
+ * Usage:
+ *   {% import '@citizen_sdc/macros/node-layout-sections.html.twig' as node_macros %}
+ *   {{ include('citizen_sdc:node-{type}-default', {
+ *     attr: attributes,
+ *     title_prefix: title_prefix,
+ *     title_suffix: title_suffix,
+ *     content: node_macros.wrap_layout_builder_sections(content),
+ *   }, with_context = false) }}
+ *
+ * Drupal's Twig loader resolves `@citizen_sdc/...` to
+ * `themes/custom/citizen_sdc/templates/...` via the automatic theme namespace.
+ */
+#}
+
+{#
+/**
+ * Wrap Layout Builder sections in <section class="node-content__section"> tags.
+ *
+ * When a node bundle has Layout Builder enabled, template_preprocess_node
+ * hands us `content._layout_builder`, a keyed array where each section render
+ * is keyed by its uuid. We walk it (skipping render-array metadata keys like
+ * `#cache`) and emit one <section> per LB section with a stable id.
+ *
+ * When LB is not enabled (or the layout is empty), we fall through and
+ * render `content` as-is so non-LB default views still work.
+ *
+ * @param content  The node render array (expects `_layout_builder` sub-key
+ *                 when LB is active on the bundle).
+ */
+#}
+{% macro wrap_layout_builder_sections(content) %}
+  {%- if content._layout_builder -%}
+    {% if content._layout_builder.0 %}
+      {%- for key, layoutSection in content._layout_builder -%}
+        {% if key|first != '#' %}
+          <section id="node-section-{{ loop.index }}" class="node-content__section">
+            {{- layoutSection -}}
+          </section>
+        {% endif %}
+      {%- endfor -%}
+    {% else %}
+      {{- content -}}
+    {% endif %}
+  {%- else -%}
+    {{- content -}}
+  {%- endif -%}
+{% endmacro %}

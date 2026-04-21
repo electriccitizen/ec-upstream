@@ -9,11 +9,9 @@
 @use '../../../00-base/01-mixins/style-mixins' as *;
 @use '../../../00-base/01-mixins/type-mixins' as *;
 
-//remove once we do header theming
 #block-menu-support-book {
-  position: relative;
-  padding: 100px 0;
-
+  margin-bottom: $elementSpace;
+  
   .block-menu__title {
     display: block;
     padding: 2rem 3rem;

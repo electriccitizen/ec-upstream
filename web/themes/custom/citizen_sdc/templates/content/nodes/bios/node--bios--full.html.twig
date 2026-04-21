@@ -1,32 +1,14 @@
 {#
 /**
  * @file
- * Bios default/full view — delegates to node-bios-default SDC. Mirrors the
- * Layout Builder section-wrapping logic from the generic node.html.twig so
- * sections render inside `.node-content__section` wrappers.
+ * Bios default/full view — delegates to node-bios-default SDC.
  */
 #}
-{% set node_content %}
-  {%- if content._layout_builder -%}
-    {% if content._layout_builder.0 %}
-      {%- for key, layoutSection in content._layout_builder -%}
-        {% if key|first != '#' %}
-          <section id="node-section-{{ loop.index }}" class="node-content__section">
-            {{- layoutSection -}}
-          </section>
-        {% endif %}
-      {%- endfor -%}
-    {% else %}
-      {{- content -}}
-    {% endif %}
-  {%- else -%}
-    {{- content -}}
-  {%- endif -%}
-{% endset %}
+{% import '@citizen_sdc/macros/node-layout-sections.html.twig' as node_macros %}
 
 {{ include('citizen_sdc:node-bios-default', {
   attr: attributes,
   title_prefix: title_prefix,
   title_suffix: title_suffix,
-  content: node_content,
+  content: node_macros.wrap_layout_builder_sections(content),
 }, with_context = false) }}
