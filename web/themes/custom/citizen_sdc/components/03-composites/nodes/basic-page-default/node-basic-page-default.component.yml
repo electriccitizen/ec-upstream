@@ -1,0 +1,23 @@
+component:
+  id: citizen_sdc:node-basic-page-default
+  label: 'Node Basic Page (Default)'
+  description: 'Default view-mode wrapper for basic page nodes (bundle machine name `page`). Delegates to node-base with modifier_class=page (matches the machine name, yielding `.node-content--page` — same class dart uses and what the generic `node.html.twig` fallback produces). The folder and SDC id use `basic-page` for readability; the CSS class + Drupal template file use `page`.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the <article> wrapper'
+    title_prefix:
+      type: object
+      description: 'Placeholder for module and theme output before the node'
+    title_suffix:
+      type: object
+      description: 'Placeholder for contextual links'
+
+slots:
+  content:
+    title: 'Content'
+    description: 'Rendered node content — Layout Builder sections pre-wrapped by the Drupal template'
