@@ -1,0 +1,82 @@
+/* =================
+   NODE BIOS DEFAULT
+=================== */
+
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
+@use '../../../00-base/01-mixins/type-mixins' as *;
+
+
+.node-content--bios {
+  margin-bottom: $elementSpace;
+
+  .node-content__section {
+    max-width: $textMax;
+    @include auto;
+  }
+
+  .block--system-breadcrumb-block {
+    margin-bottom: $elementSpace;
+  }
+
+  .block-field--field-headshot {
+    max-width: 320px;
+    @include auto;
+
+    @include tab {
+      @include edgeReset;
+    }
+
+    img {
+      @include image100W;
+    }
+  }
+
+  .block-field--title {
+    @include tab {
+      text-align: left;
+    }
+  }
+
+  .block-field--field-position {
+    @include heading4;
+    margin-top: $spaceSm;
+    text-align: center;
+
+    @include tab {
+      text-align: left;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: $spaceMd;
+    }
+  }
+
+  .block-field--field-email {
+    margin-bottom: $spaceXxs;
+
+    & + .block-field--body {
+      margin-top: 0;
+    }
+
+    .block__title {
+      @include inlineBlockTitle;
+    }
+  }
+
+  .block-field--field-phone {
+    .block__title {
+      @include inlineBlockTitle;
+    }
+  }
+
+  .block-field--body {
+    margin-top: $elementSpace;
+
+    @include tab {
+      margin-right: 0;
+    }
+  }
+}
