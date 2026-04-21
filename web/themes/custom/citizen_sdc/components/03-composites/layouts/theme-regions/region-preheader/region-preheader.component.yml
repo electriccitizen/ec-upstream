@@ -1,0 +1,10 @@
+component:
+  id: citizen_sdc:region-preheader
+  label: 'Preheader Region'
+  description: 'Preheader region rendered above the main site header. Wrapped in a complementary <section>.'
+  status: experimental
+
+slots:
+  content:
+    title: 'Content'
+    description: 'Rendered output of the page.preheader region'

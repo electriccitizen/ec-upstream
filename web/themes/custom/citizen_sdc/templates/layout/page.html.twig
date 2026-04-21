@@ -56,78 +56,55 @@
   </section>
 
   {% block pageAlert %}
-		{% if page.alert %}
-			<section class="site-alert" role="complementary" aria-label="{{ "Alert"|t }}">
-				<div class="site-alert__inner">
-					{% block alertContent %}
-						{{ page.alert }}
-					{% endblock %}
-				</div>
-			</section>
-		{% endif %}
-	{% endblock %}
+    {% if page.alert %}
+      {{ include('citizen_sdc:region-alert', {
+        content: page.alert,
+      }, with_context = false) }}
+    {% endif %}
+  {% endblock %}
 
   {% block pagePreheader %}
-		{% if page.preheader %}
-			<section class="site-preheader" role="complementary" aria-label="{{ "Preheader"|t }}">
-				<div class="site-preheader__inner">
-					{% block preheaderContent %}
-						{{ page.preheader }}
-					{% endblock %}
-				</div>
-			</section>
-		{% endif %}
-	{% endblock %}
-
-	{% block pageHeader %}
-		<header role="banner" class="site-header">
-			{% block headerContent %}
-				{{ page.header }}
-			{% endblock %}
-		</header>
-	{% endblock %}
-
-	{% block pageMain %}
-		<main role="main" class="main-content">
-			<a id="main-content" tabindex="-2"></a>{# link is in html.html.twig #}
-
-			{% block mainContent %}
-				<div class="main-content__layout">
-					{% block pageContent %}
-						{{ page.content }}
-					{% endblock %}
-				</div>{# /.layout-content #}
-			{% endblock %}
-
-		</main>
-	{% endblock %}
-
-	{% block pagePreFooter %}
-		{% if page.prefooter %}
-			<section class="site-prefooter" role="complementary" aria-label="{{ "Prefooter"|t }}">
-				<div class="site-prefooter__inner">
-					{% block prefooterContent %}
-						{{ page.prefooter }}
-					{% endblock %}
-				</div>
-			</section>
-		{% endif %}
-	{% endblock %}
-
-	{% block pageFooter %}
-		{% if page.footer %}
-			<footer role="contentinfo" class="site-footer">
-			<div class="site-footer__inner">
-				{% block footerContent %}
-					{{ page.footer }}
-				{% endblock %}
-			</div>
-      {% set backIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.81 9.84" fill="#ffffff"><path d="M0,9.14l.34.34.37.37,10.2-4.18,10.31,4.13.31-.31.29-.29L10.9,0,0,9.14Z"/></svg>' %}
-			{{ include('citizen_sdc:back-top', {
-        back_top_label: 'Back To Top',
-        back_top_icon: backIcon,
+    {% if page.preheader %}
+      {{ include('citizen_sdc:region-preheader', {
+        content: page.preheader,
       }, with_context = false) }}
-		</footer>
-		{% endif %}
-	{% endblock %}
+    {% endif %}
+  {% endblock %}
+
+  {% block pageHeader %}
+    {{ include('citizen_sdc:region-header', {
+      content: page.header,
+    }, with_context = false) }}
+  {% endblock %}
+
+  {% block pageMain %}
+    <main role="main" class="main-content">
+      <a id="main-content" tabindex="-2"></a>{# link is in html.html.twig #}
+
+      {% block mainContent %}
+        <div class="main-content__layout">
+          {% block pageContent %}
+            {{ page.content }}
+          {% endblock %}
+        </div>{# /.layout-content #}
+      {% endblock %}
+
+    </main>
+  {% endblock %}
+
+  {% block pagePreFooter %}
+    {% if page.prefooter %}
+      {{ include('citizen_sdc:region-prefooter', {
+        content: page.prefooter,
+      }, with_context = false) }}
+    {% endif %}
+  {% endblock %}
+
+  {% block pageFooter %}
+    {% if page.footer %}
+      {{ include('citizen_sdc:region-footer', {
+        content: page.footer,
+      }, with_context = false) }}
+    {% endif %}
+  {% endblock %}
 </div>

@@ -1,0 +1,10 @@
+component:
+  id: citizen_sdc:region-header
+  label: 'Header Region'
+  description: 'Main site header region. Rendered as <header role="banner">.'
+  status: experimental
+
+slots:
+  content:
+    title: 'Content'
+    description: 'Rendered output of the page.header region (branding, search, main menu, etc.)'
