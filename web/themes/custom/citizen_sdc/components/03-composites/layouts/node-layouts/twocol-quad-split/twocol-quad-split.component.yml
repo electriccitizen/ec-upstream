@@ -1,0 +1,38 @@
+component:
+  id: citizen_sdc:twocol-quad-split
+  label: 'Two Column Quad Split Layout'
+  description: 'Node layout with two left sidebar regions (first, second) stacked above each other and a right column that fills with a third region and the main content. Regions have independent column heights via CSS floats on desktop; collapses to a reordered single column on mobile.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the layout wrapper'
+    first_attr:
+      type: object
+      description: 'Drupal Attributes object for the first region wrapper'
+    second_attr:
+      type: object
+      description: 'Drupal Attributes object for the second region wrapper'
+    third_attr:
+      type: object
+      description: 'Drupal Attributes object for the third region wrapper'
+    content_attr:
+      type: object
+      description: 'Drupal Attributes object for the content region wrapper'
+
+slots:
+  first:
+    title: 'First'
+    description: 'Top region in the left sidebar column'
+  second:
+    title: 'Second'
+    description: 'Bottom region in the left sidebar column'
+  third:
+    title: 'Third'
+    description: 'Top region in the right content column'
+  content:
+    title: 'Content'
+    description: 'Main content region in the right column, flowing below third'

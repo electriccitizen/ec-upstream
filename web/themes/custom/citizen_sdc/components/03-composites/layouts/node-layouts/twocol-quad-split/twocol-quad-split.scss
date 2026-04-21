@@ -1,0 +1,111 @@
+/* =================
+   TWO COLUMN QUAD SPLIT LAYOUT
+=================== */
+
+@use '../../../../00-base/00-variables/units' as *;
+@use '../../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../../00-base/01-mixins/general-mixins' as *;
+@use '../../../../00-base/01-mixins/layout-mixins' as *;
+
+.layout--twocol-quad-split {
+  width: 100%;
+  max-width: $contentStop;
+  @include auto;
+  @include clearFix;
+
+  @include onlyMobile {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  /* Prevent inner field-level clearfix pseudo-elements from breaking float flow */
+  .field-long-text,
+  .text-long,
+  .text-with-summary {
+    &::after {
+      content: none;
+      clear: none !important;
+    }
+  }
+
+  .layout__region--first {
+    width: 100%;
+
+    @include onlyMobile {
+      order: 2;
+    }
+
+    @include desk {
+      float: left;
+      width: $sideBar;
+    }
+  }
+
+  .layout__region--second {
+    width: 100%;
+
+    @include onlyMobile {
+      order: 4;
+
+      & + .layout__region--third {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    @include desk {
+      float: left;
+      clear: left;
+      width: $sideBar;
+    }
+  }
+
+  .layout__region--third {
+    width: 100%;
+
+    @include onlyMobile {
+      order: 1;
+
+      &:only-child {
+        margin-bottom: $spaceLg !important;
+      }
+    }
+
+    @include desk {
+      width: calc(100% - #{$sideBar});
+      margin-left: $sideBar;
+      padding-left: $sectionGutter;
+
+      &:first-child {
+        width: 100%;
+        max-width: $textMax;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+      }
+    }
+  }
+
+  .layout__region--content {
+    width: 100%;
+
+    @include onlyMobile {
+      order: 3;
+    }
+
+    @include desk {
+      width: calc(100% - #{$sideBar});
+      margin-left: $sideBar;
+      padding-left: $sectionGutter;
+
+      &:first-child {
+        width: 100%;
+        max-width: $textMax;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+      }
+    }
+  }
+}
