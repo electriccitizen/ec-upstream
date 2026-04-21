@@ -1,32 +1,23 @@
 {#
 /**
  * @file
- * Default theme implementation to display a one-column layout.
+ * Layout template for the `twocol_sideleft` layout plugin. Delegates to
+ * the citizen_sdc:twocol-sideleft SDC.
  *
  * Available variables:
  * - content: The content for this layout.
  * - attributes: HTML attributes for the layout <div>.
+ * - region_attributes: HTML attributes for each region wrapper.
  *
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'layout',
-    'layout--twocol--sideleft',
-  ]
-%}
 {% if content %}
-  <div{{ attributes.addClass(classes) }}>
-    {% if content.first %}
-      <div {{ region_attributes.first.addClass('layout__region', 'layout__region--first') }}>
-        {{ content.first }}
-      </div>
-    {% endif %}
-    {% if content.content %}
-      <div {{ region_attributes.content.addClass('layout__region', 'layout__region--content') }}>
-        {{ content.content }}
-      </div>
-    {% endif %}
-  </div>
+  {{ include('citizen_sdc:twocol-sideleft', {
+    attr: attributes,
+    first_attr: region_attributes.first,
+    content_attr: region_attributes.content,
+    first: content.first,
+    content: content.content,
+  }, with_context = false) }}
 {% endif %}

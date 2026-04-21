@@ -1,32 +1,23 @@
 {#
 /**
  * @file
- * Default theme implementation to display a one-column layout.
+ * Layout template for the `twocol_sideright` layout plugin. Delegates to
+ * the citizen_sdc:twocol-sideright SDC.
  *
  * Available variables:
  * - content: The content for this layout.
  * - attributes: HTML attributes for the layout <div>.
+ * - region_attributes: HTML attributes for each region wrapper.
  *
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'layout',
-    'layout--twocol--sideright',
-  ]
-%}
 {% if content %}
-  <div{{ attributes.addClass(classes) }}>
-    {% if content.content %}
-      <div {{ region_attributes.content.addClass('layout__region', 'layout__region--content') }}>
-        {{ content.content }}
-      </div>
-    {% endif %}
-    {% if content.second %}
-      <div {{ region_attributes.second.addClass('layout__region', 'layout__region--second') }}>
-        {{ content.second }}
-      </div>
-    {% endif %}
-  </div>
+  {{ include('citizen_sdc:twocol-sideright', {
+    attr: attributes,
+    content_attr: region_attributes.content,
+    second_attr: region_attributes.second,
+    content: content.content,
+    second: content.second,
+  }, with_context = false) }}
 {% endif %}

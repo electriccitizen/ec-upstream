@@ -1,0 +1,39 @@
+/* =================
+   TWO COLUMN SIDEBAR RIGHT LAYOUT
+=================== */
+
+@use '../../../../00-base/00-variables/units' as *;
+@use '../../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../../00-base/01-mixins/layout-mixins' as *;
+
+.layout--twocol-sideright {
+  width: 100%;
+  max-width: $contentStop;
+  @include auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  .layout__region--content {
+    width: 100%;
+
+    @include desk {
+      &:not(:only-child) {
+        width: calc(100% - #{$sideBar});
+
+        &:not(.layout-builder__region) {
+          padding-right: $sectionGutter;
+        }
+      }
+    }
+  }
+
+  .layout__region--second {
+    width: 100%;
+
+    @include desk {
+      width: $sideBar;
+    }
+  }
+}
