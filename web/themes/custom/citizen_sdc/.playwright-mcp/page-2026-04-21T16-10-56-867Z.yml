@@ -1,0 +1,187 @@
+- generic [ref=e3]:
+  - complementary "Skip Navigation":
+    - link "Skip to main navigation" [ref=e4] [cursor=pointer]:
+      - /url: "#main-navigation"
+    - link "Skip to main content" [ref=e5] [cursor=pointer]:
+      - /url: "#main-content"
+  - complementary "Alert"
+  - complementary "Preheader" [ref=e6]:
+    - generic [ref=e8]:
+      - navigation "secondary menu" [ref=e9]:
+        - list [ref=e10]:
+          - listitem [ref=e11]:
+            - link "Another Secondary" [ref=e12] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e13]:
+            - link "Secondary Link" [ref=e14] [cursor=pointer]:
+              - /url: /gallery
+      - search [ref=e15]:
+        - button "Toggle Search" [ref=e16] [cursor=pointer]: 
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - generic [ref=e19]: Search
+            - textbox [ref=e20]:
+              - /placeholder: Enter keyword(s)
+          - button [ref=e21] [cursor=pointer]: Search
+          - generic [ref=e22] [cursor=pointer]: 
+  - banner [ref=e23]:
+    - generic [ref=e25]:
+      - link "Home" [ref=e27] [cursor=pointer]:
+        - /url: /
+        - img "Home" [ref=e28]
+      - navigation "main menu" [ref=e29]:
+        - list [ref=e30]:
+          - listitem [ref=e31]:
+            - generic [ref=e32]: Landing Pages
+            - button "Expand Menu" [ref=e33] [cursor=pointer]
+          - listitem [ref=e34]:
+            - link "Events" [ref=e35] [cursor=pointer]:
+              - /url: /events
+          - listitem [ref=e36]:
+            - link "External" [ref=e37] [cursor=pointer]:
+              - /url: https://www.google.com
+          - listitem [ref=e38]:
+            - link "Hashlink" [ref=e39] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e40]:
+            - link "Breadcrumb Test" [ref=e41] [cursor=pointer]:
+              - /url: /breadcrumbs
+            - button "Expand Menu" [ref=e42] [cursor=pointer]
+  - main [ref=e43]:
+    - article [ref=e47]:
+      - generic [ref=e48]:
+        - generic [ref=e51]:
+          - article [ref=e54]:
+            - img "asdf asdf" [ref=e57]
+          - heading "Home" [level=1] [ref=e60]
+        - generic [ref=e65]:
+          - paragraph [ref=e66]: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quae quidem vel cum periculo est quaerenda vobis; Ego quoque, inquit, didicerim libentius si quid attuleris, quam te reprehenderim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quae quidem vel cum periculo est quaerenda vobis; Ego quoque. Quae quidem vel cum periculo est quaerenda.
+          - group "This is a caption!" [ref=e67]:
+            - article [ref=e68]:
+              - img "People boarding airplane on tarmac" [ref=e70]
+            - generic [ref=e71]: This is a caption!
+        - generic [ref=e76]:
+          - generic [ref=e79]:
+            - heading "Section" [level=2] [ref=e81]
+            - generic [ref=e82]:
+              - article [ref=e87]:
+                - iframe [ref=e89]:
+                  - iframe [ref=f4e1]:
+                    - generic [active] [ref=f5e1]:
+                      - generic "YouTube Video Player" [ref=f5e3]
+                      - generic [ref=f5e5]:
+                        - generic:
+                          - generic:
+                            - button "Play video" [ref=f5e10] [cursor=pointer]
+                            - button "Hide player controls" [ref=f5e12] [cursor=pointer]
+                            - generic [ref=f5e14]:
+                              - generic [ref=f5e19]:
+                                - generic [ref=f5e20]:
+                                  - link "Harry Styles - Daylight (Official Video)" [ref=f5e21] [cursor=pointer]:
+                                    - /url: https://www.youtube.com/watch?v=-UJCMfuFtSQ
+                                  - link "HarryStylesVEVO" [ref=f5e22] [cursor=pointer]:
+                                    - /url: /channel/UCbOCbp5gXL8jigIBZLqMPrw
+                                    - generic [ref=f5e23]: HarryStylesVEVO
+                                - generic [ref=f5e24]:
+                                  - button [ref=f5e25] [cursor=pointer]
+                                  - generic [ref=f5e27]:
+                                    - generic: HarryStylesVEVO
+                              - generic [ref=f5e28]:
+                                - button "Share" [ref=f5e31] [cursor=pointer]:
+                                  - generic [ref=f5e35]:
+                                    - img
+                                - link "Watch on YouTube" [ref=f5e42] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=-UJCMfuFtSQ
+                                  - generic [ref=f5e45]:
+                                    - text: Watch on
+                                    - img [ref=f5e47]:
+                                      - generic [ref=f5e49]:
+                                        - img
+              - paragraph [ref=e94]: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facit enim ille duo seiuncta ultima bonorum, quae ut essent vera, coniungi debuerunt; Intellegi quidem, ut propter aliam quampiam rem, verbi gratia propter voluptatem, nos amemus;
+          - generic [ref=e97]:
+            - heading "Image caption test" [level=2] [ref=e99]
+            - generic [ref=e100]:
+              - generic [ref=e101]:
+                - generic [ref=e102]:
+                  - heading "Image paragraph" [level=2] [ref=e103]
+                  - article [ref=e105]:
+                    - img "some alt text" [ref=e108]
+                - generic [ref=e111]:
+                  - heading "Text paragraph" [level=4] [ref=e112]
+                  - paragraph [ref=e113]: However, we only display captions for WYSIWYG embedded images and the image and gallery paragraphs. Having a caption field on the media type, the caption field shows up when people are adding banners and headshots—which is misleading.
+              - generic [ref=e117]:
+                - group "This is a caption for a text paragraph!" [ref=e118]:
+                  - generic [ref=e119]: The referenced media source is missing and needs to be re-embedded.
+                  - generic [ref=e120]: This is a caption for a text paragraph!
+                - heading "Text paragraph" [level=4] [ref=e121]
+                - paragraph [ref=e122]: However, we only display captions for WYSIWYG embedded images and the image and gallery paragraphs. Having a caption field on the media type, the caption field shows up when people are adding banners and headshots—which is misleading.
+          - generic [ref=e132]:
+            - generic [ref=e133]:
+              - article [ref=e134]:
+                - img "adfa f" [ref=e137]
+              - generic [ref=e138]: Caption for gallery item number 1!
+            - article [ref=e140]:
+              - img "sdf sdgs dg" [ref=e143]
+            - generic [ref=e144]:
+              - article [ref=e145]:
+                - img "asdf asdf" [ref=e148]
+              - generic [ref=e149]: Caption for gallery item number 3! Caption for gallery item number 3! Caption for gallery item number 3! Caption for gallery item number 3! Caption for gallery item number 3! Caption for gallery item number 3! Caption for gallery item number 3!
+  - complementary "Prefooter" [ref=e150]:
+    - generic [ref=e152]:
+      - generic [ref=e153]:
+        - heading "About Some Things" [level=2] [ref=e154]
+        - paragraph [ref=e156]:
+          - text: Like clouds, chickens and pigs.
+          - text: Or turnips and bunnies
+      - navigation "footer menu" [ref=e157]:
+        - heading "Quicklinks" [level=2] [ref=e158]
+        - list [ref=e159]:
+          - listitem [ref=e160]:
+            - link "Footer Link 1" [ref=e161] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e162]:
+            - link "Footer Link 2" [ref=e163] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e164]:
+            - link "Footer Link 3" [ref=e165] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e166]:
+        - heading "Stay in Touch" [level=2] [ref=e167]
+        - paragraph [ref=e168]: Sign up for us to bug you!
+        - generic [ref=e172]:
+          - generic [ref=e173]: "* indicates required"
+          - textbox "Email Address *" [ref=e175]
+          - textbox [ref=e177]
+          - button "Subscribe" [ref=e180] [cursor=pointer]
+  - contentinfo [ref=e181]:
+    - generic [ref=e183]:
+      - list [ref=e185]:
+        - listitem [ref=e186]:
+          - link "Facebook" [ref=e187] [cursor=pointer]:
+            - /url: https://facebook.com
+            - img [ref=e188]
+        - listitem [ref=e195]:
+          - link "X" [ref=e196] [cursor=pointer]:
+            - /url: https://x.com
+            - img [ref=e197]
+        - listitem [ref=e202]:
+          - link "LinkedIn" [ref=e203] [cursor=pointer]:
+            - /url: https://linkedin.com
+            - img [ref=e204]
+        - listitem [ref=e209]:
+          - link "Youtube" [ref=e210] [cursor=pointer]:
+            - /url: https://youtube.com
+            - img [ref=e211]
+      - navigation "ancillary menu" [ref=e216]:
+        - list [ref=e217]:
+          - listitem [ref=e218]:
+            - link "Privacy Policy" [ref=e219] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e220]:
+            - link "Terms" [ref=e221] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e223]:
+        - text: ©2026
+        - paragraph [ref=e224]: Copycat
+    - button "Back To Top" [ref=e225] [cursor=pointer]:
+      - img [ref=e226]

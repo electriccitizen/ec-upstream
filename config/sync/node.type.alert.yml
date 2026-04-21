@@ -1,0 +1,17 @@
+uuid: 3dbba56c-0253-4b4e-8bfa-6903da955c69
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Alert
+type: alert
+description: 'Time-sensitive alert that displays in the site alert region while its display range is active.'
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

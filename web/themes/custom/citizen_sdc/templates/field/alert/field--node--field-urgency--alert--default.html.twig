@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Alert urgency field (default/full view mode). Emits a `.urgency` element
+ * next to the inline label with a `.urgency--{value}` modifier driven by the
+ * selected list_string value, so editors get a colored visual cue of the
+ * urgency level behind the value text.
+ *
+ * Field suggestion `field--node--field-urgency--alert--default` is generated
+ * by Layout Builder's FieldBlock pipeline (which appends bundle + view_mode
+ * to the field template suggestion list).
+ */
+#}
+{% set urgency_value = element['#items'][0].value ?? 'standard' %}
+{% set classes = ['field', 'field--urgency', 'field--list-string'] %}
+{% set item_classes = ['urgency', 'urgency--' ~ urgency_value|clean_class] %}
+
+<div{{ attributes.addClass(classes) }}>
+  {%- if label_display == 'inline' -%}
+    <span class="field__label field__label--inline">{{- label -}}:</span>
+  {%- elseif label_display == 'visually_hidden' -%}
+    <div class="field__label visually-hidden">{{- label -}}</div>
+  {%- elseif not label_hidden -%}
+    <div class="field__label">{{- label -}}</div>
+  {%- endif -%}
+  {%- for item in items -%}
+    <div{{ item.attributes.addClass(item_classes) }}>
+      {{- item.content -}}
+    </div>
+  {%- endfor -%}
+</div>

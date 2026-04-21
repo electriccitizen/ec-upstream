@@ -1,0 +1,7 @@
+{% extends 'block.html.twig' %}
+
+{% block blockContent %}
+  {{ include('citizen_sdc:block-alert', {
+    endpoint: '/ajax/alert',
+  }, with_context = false) }}
+{% endblock %}

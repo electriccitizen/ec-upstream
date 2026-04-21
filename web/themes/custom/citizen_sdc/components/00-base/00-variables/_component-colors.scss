@@ -222,6 +222,15 @@ $accordActiveBorderHover : $darkGray;
 $accordActiveBack : $black;
 $accordActiveBackHover : $darkGray;
 
+/* ALERTS
+------------------- */
+$alertUrgentBack : $red;
+$alertUrgentText : $white;
+$alertUrgentHover : rgba(255,255,255,0.25);
+$alertStandardBack : $yellow;
+$alertStandardText : $black;
+$alertStandardHover : rgba(0,0,0,0.2);
+
 /* MESSAGES
 ------------------ */
 $messageText : $white;

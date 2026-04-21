@@ -1,0 +1,798 @@
+<?php
+use Drupal\block_content\Entity\BlockContent;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Site\Settings;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_help().
+ */
+function citizen_custom_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the citizen custom module.
+    case 'help.page.citizen_custom':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom glue module for Electric Citizen sites') . '</p>';
+      return $output;
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function citizen_custom_theme() {
+  return [
+    'citizen_custom' => [
+      'template' => 'citizen_custom',
+      'render element' => 'children',
+    ],
+    'program_search' => [
+      'variables' => [
+        'title' => 'Program Search',
+      ],
+    ],
+	  'social_share_block' => [
+      'variables' => [
+        'title' => 'Social Share',
+		    'data' => [],
+      ],
+    ],
+    'announcements_ajax'=>[
+      'render element'=>'children',
+      'template' => 'announcements-ajax',
+      'variables'=>[
+        'nids'=>[],
+      ],
+    ],
+    'courses' => [
+      'variables'=> [
+        'program_title' => '',
+      'courses' => [],
+      'courseleaf_slug' => '',
+      ],
+    ],
+    'form__views_exposed_form_content_page_1' => [
+      'template' => 'form--views-exposed-form-content-page-1',
+    ],
+    'start_your_journey_block' => [
+      'variables' => [
+        'title' => t('Start Your Blugold Journey'),
+        'links' => [],
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function citizen_custom_preprocess_html(&$variables){
+ 	// Add role classes for current user to body.
+  $user = \Drupal::currentUser();
+  $userRole = $user->getRoles();
+  foreach($userRole as $role ){
+    if($role != 'authenticated'){
+      $variables['attributes']['class'][] = 'role-' . $role;
+    }
+    if($user->id() == '1'){
+    	$variables['attributes']['class'][] = 'role-super-user';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function citizen_custom_preprocess_block(&$variables) {
+  // Set custom help text.
+  if ($variables['plugin_id'] == 'help_block') {
+    $route_name = \Drupal::routeMatch()->getRouteName();
+    $parameters = \Drupal::routeMatch()->getCurrentRouteMatch()->getParameters();
+    if (isset($variables['content'][0]['#markup'])){
+      switch ($route_name) {
+        case 'layout_builder.defaults.node.view':
+          if($parameters->get('node_type')){
+            $nodeType = $parameters->get('node_type');
+            $cleanType = ucwords(str_replace("_"," ",$nodeType)) . ' ';
+          }
+          $output = '';
+          $output .= '<h2>' . $cleanType . t('Layout Builder') . '</h2>';
+          $output .= '<p><strong>' . t('WARNING: ') . '</strong>'. t('Changes to this layout will affect all non-customized ') . str_replace("_"," ",$nodeType) . t(' nodes.') . '</p>';
+          $output .= '<p><small>' . t('Forms and links inside the content of the layout builder tool have been disabled.') . '</small></p>';
+          $variables['content'][0]['#markup'] = $output;
+          break;
+        case 'layout_builder.overrides.node.view':
+          $output = '';
+          $output .= '<h2>' . t('Customize This Layout') . '</h2>';
+          $output .= '<p><strong>' . t('WARNING: ') . '</strong>'. t('Saving this layout (even without making changes) will turn this into a custom node. Custom nodes will not reflect any future global changes to the content type. If you are here in error, click "View" or "Edit" above to exit.') . '</p>';
+          $output .= '<p><small>' . t('Forms and links inside the content of the layout builder tool have been disabled.') . '</small></p>';
+          $variables['content'][0]['#markup'] = $output;
+          break;
+        case 'layout_builder.overrides.node.discard_changes':
+          $output = '';
+          $output .= '<h2>' . t('Discard Changes') . '</h2>';
+          $output .= '<p>' . t('Remove any non-saved changes made in layout customization.') . '</p>';
+          $variables['content'][0]['#markup'] = $output;
+          break;
+        case 'layout_builder.overrides.node.revert':
+          $output = '';
+          $output .= '<h2>' . t('Revert Custom Layout') . '</h2>';
+          $output .= '<p>' . t('Revert this layout to the default layout for this content type.') . '</p>';
+          $variables['content'][0]['#markup'] = $output;
+          break;
+      }
+
+    }
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function citizen_custom_page_attachments(array &$attachments) {
+	// Add custom admin theme files to admin pages.
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $attachments['#attached']['library'][] = 'citizen_custom/admin-global';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function citizen_custom_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $formId = $form['#id'];
+  $user = \Drupal::currentUser();
+  $userRole = $user->getRoles();
+  // Remove layout builder revision info access (to hide unneeded revision field).
+  if (strpos($form_id, 'layout_builder_form') > 0) {
+    $form['advanced']['#access'] = FALSE;
+    $form['revision_information']['#access'] = FALSE;
+    $form['revision']['#access'] = FALSE;
+  }
+}
+
+
+// display help text on image name field
+function citizen_custom_form_media_library_add_form_upload_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+	if(isset($form['media'][0]['fields']['name']['widget'][0]['value'])){
+		$form['media'][0]['fields']['name']['widget'][0]['value']['#description'] = \Drupal\Core\Field\FieldFilteredMarkup::create(t('Name the image file in this format: YYYYMMDD_subject<br>e.g., 20240218_Schofield in the snow'));
+	}
+}
+
+function citizen_custom_form_media_image_add_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+	$form['name']['widget'][0]['value']['#description'] = \Drupal\Core\Field\FieldFilteredMarkup::create(t('Name the image file in this format: YYYYMMDD_subject<br>e.g., 20240218_Schofield in the snow'));
+}
+
+
+/**
+ * Implements hook_node_form_alter().
+ */
+function citizen_custom_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $node = $form_state->getFormObject()->getEntity();
+  $user = \Drupal::currentUser();
+  $userRole = $user->getRoles();
+  if((in_array('editor', $userRole)) || (in_array('jobs_and_editor', $userRole)) || (in_array('section_manager', $userRole)) || (in_array('marketing_editor', $userRole))){
+    $form['field_hide_nav']['#access'] = FALSE;
+    $form['field_exclude_search']['#access'] = FALSE;
+  }else{
+    $form['field_hide_nav']['#access'] = TRUE;
+    $form['field_exclude_search']['#access'] = TRUE;
+  }
+
+  // Change promotion text to something more contextual.
+  if ($node->getType() == 'news') {
+    $form['promote']['widget']['value']['#title'] = 'Add to Featured Stories';
+  }
+  if ($node->getType() == 'contact') {
+    if (in_array($form_id, array('node_contact_edit_form', 'node_contact_form'))) {
+      $form['field_address']['widget'][0]['address']['#after_build'][] = 'citizen_custom_address_organization_label';
+    }
+  }
+  // Set help text for title field on testimonials
+  if ($node->getType() == 'testimonial' || $node->getType() == 'video_card') {
+    $form['title']['widget'][0]['value']['#description'] = '<p>' . t('This is the person\'s name.') . '</p>';
+  }
+}
+
+function citizen_custom_address_organization_label($element, $form_state) {
+  $element['organization']['#title'] = t('Building');
+  return $element;
+}
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function citizen_custom_local_tasks_alter(&$local_tasks) {
+  // Hide redirects settings from non admins.
+  $user = \Drupal::currentUser();
+  $userRole = $user->getRoles();
+  if(!in_array('administrator', $userRole)){
+    if(isset($local_tasks['redirect.list'])){
+      unset($local_tasks['redirect.list']);
+    }
+    if(isset($local_tasks['redirect.settings'])){
+      unset($local_tasks['redirect.settings']);
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * @see \Drupal\search\Form\SearchBlockForm
+ */
+function citizen_custom_form_program_search_form_alter(&$form, FormStateInterface $form_state) {
+  $form['form_build_id']['#access'] = FALSE;
+  $form['form_token']['#access'] = FALSE;
+  $form['form_id']['#access'] = FALSE;
+}
+
+// I don't know what this does but I'm copying program_search so I'll add it here for funzies.
+function citizen_custom_for_job_search_form_alter(&$form, FormStateInterface $form_state){
+	$form['form_build_id']['#access'] = false;
+	$form['form_token']['#access'] = false;
+	$form['form_id']['#access'] = false;
+}
+
+function citizen_custom_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+    /* Build custom select filters from node references for program search */
+    if ($form['#id'] == 'views-exposed-form-program-search-program-search') {
+      $storage = Drupal::getContainer()->get('entity_type.manager')->getStorage('node');
+      $nids = $storage->getQuery();
+      $nids = $nids->condition('type', 'college')
+      ->condition('status', 1)
+      ->sort('title')
+      ->accessCheck(TRUE)
+      ->execute();
+      if (!$nids) {
+      return FALSE;
+      }
+      $options = [];
+      $nodes = $storage->loadMultiple($nids);
+      $options[''] = '- Any -';
+      foreach ($nodes as $node) {
+        $options[$node->id()] = $node->getTitle();
+      }
+      $college_filter = 'college_filter';
+      $form[$college_filter]['#type'] = 'select';
+      $form[$college_filter]['#multiple'] = FALSE;
+      $form[$college_filter]['#options'] = $options;
+      unset($form[$college_filter]['#size']);
+    }
+
+    /* Build custom select lists for departments and programs on admin content & review displays */
+    if (($form['#id'] == 'views-exposed-form-content-page-1') || ($form['#id'] == 'views-exposed-form-facts-review') || ($form['#id'] == 'views-exposed-form-snapshots-review') || ($form['#id'] == 'views-exposed-form-testimonials-review') || ($form['#id'] == 'views-exposed-form-video-cards-review')) {
+      $storage = Drupal::getContainer()->get('entity_type.manager')->getStorage('node');
+
+      /* department filter */
+      $departmentNodes = $storage->getQuery();
+      $departmentNodes = $departmentNodes->condition('type', 'department')
+      ->sort('title')
+      ->accessCheck(TRUE)
+      ->execute();
+      if (!$departmentNodes) {
+        return FALSE;
+      }
+      $options = [];
+      $departments = $storage->loadMultiple($departmentNodes);
+      $options[''] = '- Any -';
+      foreach ($departments as $department) {
+        $options[$department->id()] = $department->getTitle();
+      }
+      $department_filter = 'field_departments_target_id';
+      $form[$department_filter]['#type'] = 'select';
+      $form[$department_filter]['#multiple'] = FALSE;
+      $form[$department_filter]['#options'] = $options;
+      unset($form[$department_filter]['#size']);
+
+      /* program filter */
+      $programNodes = $storage->getQuery();
+      $programNodes = $programNodes->condition('type', 'academic_program')
+      ->sort('title')
+      ->accessCheck(TRUE)
+      ->execute();
+      if (!$programNodes) {
+        return FALSE;
+      }
+      $options = [];
+      $programs = $storage->loadMultiple($programNodes);
+      $options[''] = '- Any -';
+      foreach ($programs as $program) {
+        $options[$program->id()] = $program->getTitle();
+      }
+      $program_filter = 'field_programs_target_id';
+      $form[$program_filter]['#type'] = 'select';
+      $form[$program_filter]['#multiple'] = FALSE;
+      $form[$program_filter]['#options'] = $options;
+      unset($form[$program_filter]['#size']);
+
+      /* college filter */
+      $collegeNodes = $storage->getQuery();
+      $collegeNodes = $collegeNodes->condition('type', 'college')
+      ->sort('title')
+      ->accessCheck(TRUE)
+      ->execute();
+      if (!$programNodes) {
+        return FALSE;
+      }
+      $options = [];
+      $colleges = $storage->loadMultiple($collegeNodes);
+      $options[''] = '- Any -';
+      foreach ($colleges as $college) {
+        $options[$college->id()] = $college->getTitle();
+      }
+      $college_filter = 'field_colleges_target_id';
+      $form[$college_filter]['#type'] = 'select';
+      $form[$college_filter]['#multiple'] = FALSE;
+      $form[$college_filter]['#options'] = $options;
+      unset($form[$college_filter]['#size']);
+    }
+
+    // Trim the Office terms to only those actually referenced by Job content.
+  if ($form['#id'] === 'views-exposed-form-job-search-default') {
+    if (isset($form['office']) && is_array($form['office'])) {
+      /** @var \Drupal\citizen_custom\Services\CitizenOfficeFilter $office_filter */
+      $office_filter = \Drupal::service('citizen_custom.citizen_office_filter');
+      $terms = $office_filter->getReferencedOffices();
+
+      // Remove the select filter if no referenced terms are found.
+      if (empty($terms)) {
+        unset($form['office']);
+        return $form;
+      }
+
+      $options = ['All' => t('- Any -')];
+      foreach ($terms as $tid => $term) {
+        $options[$tid] = $term->label();
+      }
+
+      // Update the options in the select filter.
+      $form['office']['#options'] = $options;
+    }
+  }
+}
+
+/**
+ * Implements hook_field_widget_single_element_form_alter()).
+ */
+function citizen_custom_field_widget_single_element_form_alter(&$element, FormStateInterface $form_state, $context) {
+  $field_definition = $context['items']->getFieldDefinition();
+  // Add paragraph type classes to paragraph previews.
+  if ($field_definition->getType() == 'entity_reference_revisions') {
+    if (isset($element['#paragraph_type'])) {
+      $type = $element['#paragraph_type'];
+      $element['top']['type']['#attributes']['class'][] = str_replace('_','-',$type);
+      if(isset($element['top']['type']['icon'])){
+        unset($element['top']['type']['icon']);
+      }
+    }
+  }
+}
+
+/**
+ * Implements views_pre_view().
+ */
+
+function citizen_custom_views_pre_view($view, $display_id, &$args) {
+	// Alters views to accept fields from related paragraphs to be used for filters.
+  if(isset($view->element['#name'])) {
+    if ((($view->element['#name'] === 'facts') && ($view->current_display === 'list')) || (($view->element['#name'] === 'news') && ($view->current_display === 'recent_three')) || (($view->element['#name'] === 'news') && ($view->current_display === 'recent_two')) || (($view->element['#name'] === 'video_cards') && ($view->current_display === 'recent_three')) || (($view->element['#name'] === 'bios') && ($view->current_display === 'profiles_list')) || (($view->element['#name'] === 'snapshots') && ($view->current_display === 'list')) || (($view->element['#name'] === 'testimonials') && ($view->current_display === 'list')) || (($view->element['#name'] === 'programs') && ($view->current_display === 'list'))) {
+      $filters = $view->display_handler->getOption('filters');
+      $sorts = $view->display_handler->getOption('sorts');
+      $paragraph_id = $view->args[0];
+
+      if ($paragraph_id){
+        $paragraph = Paragraph::load($paragraph_id);
+        //unset or alter colleges tag filter
+        if(isset($paragraph->field_college[0])){
+
+          //make an array out of the college set in the paragraph
+          $colleges = $paragraph->field_college[0]->target_id;
+          // replace the colleges_target_id filter with the paragraph college node (we need the double [value][value] because this is a content type reference instead of a term reference)
+          $filters['field_colleges_target_id']['value']['value'] = $colleges;
+        } else {
+          //if the college field is not used, then unset the colleges filter
+          if (isset($filters['field_colleges_target_id'])) {
+            unset($filters['field_colleges_target_id']);
+          }
+        }//end colleges filter
+        //unset or alter departments tag filter
+        if(isset($paragraph->field_department[0])){
+          //make an array out of the department set in the paragraph
+          $departments = $paragraph->field_department[0]->target_id;
+          // replace the departments_target_id filter with the paragraph department node (we need the double [value][value] because this is a content type reference instead of a term reference)
+          $filters['field_departments_target_id']['value']['value'] = $departments;
+        } else {
+          //if the college field is not used, then unset the colleges filter
+          if (isset($filters['field_departments_target_id'])) {
+            unset($filters['field_departments_target_id']);
+          }
+        }//end departments filter
+        //unset or alter degree type filter
+        if(isset($paragraph->field_degree_type[0])){
+          //make an array out of the degree types set in the paragraph
+          $degrees = [];
+          foreach ($paragraph->field_degree_type as $delta => $degree) {
+            $degrees[] = $degree->target_id;
+          }
+          // replace the degree type target id filter with the paragraph degree
+          $filters['field_degree_types_target_id']['value'] = $degrees;
+        } else {
+          //if the degree type field is not used, then unset the degree filter
+          if (isset($filters['field_degree_types_target_id'])) {
+            unset($filters['field_degree_types_target_id']);
+          }
+        }//end degree type filter
+        if(isset($paragraph->field_degree_level[0])){
+          //make an array out of the degree levels set in the paragraph
+          $degreeLevels = [];
+          foreach ($paragraph->field_degree_level as $delta => $degreeLevel) {
+            $degreeLevels[] = $degreeLevel->value;
+          }
+          // replace the degree level filter with the paragraph degree
+          $filters['field_degree_level_value']['value'] = $degreeLevels;
+        } else {
+          //if the degree level field is not used, then unset the degree filter
+          if (isset($filters['field_degree_level_value'])) {
+            unset($filters['field_degree_level_value']);
+          }
+        }//end degree level
+        //unset or alter program type filter
+        if(isset($paragraph->field_program_type[0])){
+          //make an array out of the program set in the paragraph
+          $programs = [];
+          foreach ($paragraph->field_program_type as $delta => $program) {
+            $programs[] = $program->target_id;
+          }
+          // replace the program type ttarget id filter with the paragraph program
+          $filters['field_program_type_target_id']['value'] = $programs;
+        } else {
+          //if the program type field is not used, then unset the program filter
+          if (isset($filters['field_program_type_target_id'])) {
+            unset($filters['field_program_type_target_id']);
+          }
+        }//end program type filter
+        //unset or alter campus filter
+        if(isset($paragraph->field_campus[0])){
+          //make an array out of the campus set in the paragraph
+          $campuses = [];
+          foreach ($paragraph->field_campus as $delta => $campus) {
+            $campuses[] = $campus->target_id;
+          }
+          // replace the campus type ttarget id filter with the paragraph program
+          $filters['field_campus_target_id']['value'] = $campuses;
+        } else {
+          //if the campus field is not used, then unset the campus filter
+          if (isset($filters['field_campus_target_id'])) {
+            unset($filters['field_campus_target_id']);
+          }
+        }//end campus filter
+        //unset or alter programs tag filter
+        if(isset($paragraph->field_program[0])){
+          //make an array out of the program set in the paragraph
+          $programs = $paragraph->field_program[0]->target_id;
+
+          // replace the programs_target_id filter with the paragraph program node (we need the double [value][value] because this is a content type reference instead of a term reference)
+          $filters['field_programs_target_id']['value']['value'] = $programs;
+        } else {
+          //if the program field is not used, then unset the programs filter
+          if (isset($filters['field_programs_target_id'])) {
+            unset($filters['field_programs_target_id']);
+          }
+        }//end programs filter
+        //unset or alter placement tag filter
+        if(isset($paragraph->field_placement_tag[0])){
+          //make an array out of the placement tag set in the paragraph
+          $placements = [];
+          foreach ($paragraph->field_placement_tag as $delta => $placement) {
+            $placements[] = $placement->target_id;
+          }
+          // replace the placement_tag_tid filter with the paragraph placement tag
+          $filters['field_placement_tags_target_id']['value'] = $placements;
+        } else {
+          //if the placement tag field is not used, then unset the placement tag filter
+          if (isset($filters['field_placement_tags_target_id'])) {
+            unset($filters['field_placement_tags_target_id']);
+          }
+        }//end placement tags filter
+
+        if(isset($paragraph->field_page_family[0])){
+          //make an array out of the page family set in the paragraph
+          $families = [];
+          foreach ($paragraph->field_page_family as $delta => $family) {
+            $families[] = $family->target_id;
+          }
+          // replace the page_families_tid filter with the paragraph page family
+          $filters['field_page_families_target_id']['value'] = $families;
+        } else {
+          //if the page family field is not used, then unset the page families filter
+          if (isset($filters['field_page_families_target_id'])) {
+            unset($filters['field_page_families_target_id']);
+          }
+        }//end page families filter
+
+        // pass office selection to view filter, or unset it if nothing is selected.
+        if(isset($paragraph->field_office[0])){
+          $offices = [];
+          foreach ($paragraph->field_office as $delta => $office) {
+            $offices[] = $office->target_id;
+          }
+          $filters['field_offices_target_id']['value'] = $offices;
+        } else {
+          if (isset($filters['field_offices_target_id'])) {
+            unset($filters['field_offices_target_id']);
+          }
+        }
+
+        if(isset($paragraph->field_type[0])){
+          //make an array out of the type set in the paragraph
+          $types = [];
+          foreach ($paragraph->field_type as $delta => $type) {
+            $types[] = $type->target_id;
+          }
+          // replace the story_type_tid filter with the paragraph type (need to check if the filter is there first since videos don't have them)
+          if (isset($filters['field_story_type_target_id'])) {
+	          $filters['field_story_type_target_id']['value'] = $types;
+	        }
+        } else {
+          //if the type field is not used, then unset the type filter
+          if (isset($filters['field_story_type_target_id'])) {
+            unset($filters['field_story_type_target_id']);
+          }
+        }//end filter
+
+        // make the view's snapshot_type filter match what the user selected in the paragraph
+        if(isset($paragraph->field_snapshot_type[0])){
+          // make an array out of the snapshot type set in the paragraph
+          $snapshot_types = [];
+          foreach($paragraph->field_snapshot_type as $delta => $snapshot_type){
+            $snapshot_types[] = $snapshot_type->target_id;
+          }
+
+          // replace the snapshot_type_target_id filter with the paragraph's snapshot type
+          if(isset($filters['field_snapshot_type_target_id'])){
+            $filters['field_snapshot_type_target_id']['value'] = $snapshot_types;
+          }
+        }else{
+          // the snapshot type field is not set in the paragraph, so unset it in the view
+          if(isset($filters['field_snapshot_type_target_id'])){
+            unset($filters['field_snapshot_type_target_id']);
+          }
+        }
+
+        // make the view's faculty/staff filter match what the user selected in the paragraph
+        if(isset($paragraph->field_faculty_staff[0])){
+          // make an array out of the faculty/staff choices set in the paragraph
+          $fac_staffs = [];
+          foreach($paragraph->field_faculty_staff as $delta => $fac_staff){
+            $fac_staffs[] = $fac_staff->value;
+          }
+
+          // replace the faculty/staff  filter with the paragraph's faculty/staff value
+          if(isset($filters['field_faculty_staff_value'])){
+            $filters['field_faculty_staff_value']['value'] = $fac_staffs;
+          }
+        }else{
+          //the faculty/staff field is not set in the paragraph, so unset it in the view
+          if(isset($filters['field_faculty_staff_value'])){
+            unset($filters['field_faculty_staff_value']);
+          }
+        }
+
+        $view->display_handler->setOption('filters', $filters);
+
+        // change the pager if the paragraph has a limit lists field used
+				if(isset($paragraph->field_limit_list[0]) && $paragraph->field_limit_list[0]->value != 0){
+					$per_page = $paragraph->field_limit_list[0]->value;
+					$pager = $view->display_handler->getOption('pager');
+					$pager['type'] = 'some';
+					$view->setItemsPerPage($per_page);
+					$view->display_handler->setOption('pager', $pager);
+				}
+
+				// change the sort on profiles lists view if randomize is used on the profiles list paragraph
+				if(isset($paragraph->field_randomize[0]) && $paragraph->field_randomize[0]->value == '1'){
+					unset($sorts['field_last_name_value']);
+				}else{
+					unset($sorts['random']);
+				}
+				$view->display_handler->setOption('sorts', $sorts);
+      }
+    }
+
+    // Define valid combinations of view names and display names.
+		$validCombinations = [
+		  ['view_name' => 'video_cards', 'display_names' => ['most_recent', 'second_recent']],
+		  ['view_name' => 'testimonials', 'display_names' => ['most_recent', 'second_recent']],
+		  ['view_name' => 'news', 'display_names' => ['most_recent', 'second_recent']],
+		  ['view_name' => 'snapshots', 'display_names' => ['most_recent', 'second_recent']],
+		];
+
+		foreach ($validCombinations as $combination) {
+		  if (
+		    ($view->element['#name'] == $combination['view_name']) &&
+		    in_array($view->current_display, $combination['display_names'])
+		  ) {
+		    $filters = $view->display_handler->getOption('filters');
+		    $paragraph_id = $view->args[0];
+
+		    if ($paragraph_id) {
+		      $paragraph = Paragraph::load($paragraph_id);
+		      $parentNode = $paragraph->parent_id;
+
+		      if ($parentNode && !empty($parentNode->value)) {
+		        $node = Node::load($parentNode->value);
+
+		        if ($node) {
+		          $nodeType = $node->getType();
+
+		          if ($nodeType == 'department' || $nodeType == 'academic_program') {
+		            $targetField = ($nodeType == 'department') ? 'field_departments_target_id' : 'field_programs_target_id';
+		            //$fieldValue = array_column($parentNode->getValue(), 'value');
+                //dd($parentNode->value);
+                $fieldValue = $parentNode->value;
+
+		            if (isset($filters[$targetField])) {
+		              $filters[$targetField]['value']['value'] = $fieldValue;
+		            }
+
+		            $oppositeField = ($nodeType == 'department') ? 'field_programs_target_id' : 'field_departments_target_id';
+		            unset($filters[$oppositeField]);
+		          }
+		        }
+		      }//end if parent node
+
+		      $view->display_handler->setOption('filters', $filters);
+		    }
+		  }//end for earch combination
+		}//end content carousel
+  }
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function citizen_custom_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+    // Check if the entity is of type node and if the content type is page.
+    if ($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'page') {
+        // Make sure the exclude search field exists on the node (to avoid unexpected errors) and get its value.
+        if ($entity->hasField('field_exclude_search') && !$entity->get('field_exclude_search')->isEmpty()) {
+            $exclude_search = $entity->get('field_exclude_search')->value;
+            // If the field is true, set noindex and nofollow meta tags for the node.
+            if ($exclude_search) {
+                $build['#attached']['html_head'][] = [
+                    [
+                        '#tag' => 'meta',
+                        '#attributes' => ['name' => 'robots', 'content' => 'noindex, nofollow, noarchive'],
+                    ],
+                    'noindex_nofollow',
+                ];
+            }
+        }
+    }
+}
+
+/**
+ * Adds Slate script tag to Slate form paragraph
+ *  Implements hook_preprocess_HOOK().
+ *
+ * @param $variables
+ *
+ * @return void
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function citizen_custom_preprocess_paragraph(&$variables) {
+  if (isset($variables['paragraph']) && $variables['paragraph']->getType() == 'slate_form') {
+    $script_tag_type_value = $variables["content"]["field_script_tag_type"][0]["#plain_text"] ?? "";
+    if ($script_tag_type_value !== '') {
+      if ($variables['view_mode'] === "default") {
+        $variables['content']['field_script_tag_type'][0]['#plain_text'] = '';
+        if ($script_tag_type_value !== 'Custom') {
+          $script_tag_type_id = $variables['paragraph']->get('field_script_tag_type')->getValue()[0]['target_id'];
+          $entityTypeManager = \Drupal::entityTypeManager();
+          $script_tag_type = $entityTypeManager->getStorage('taxonomy_term')->load($script_tag_type_id);
+          $slate_script_tag = $script_tag_type->get('field_slate_script_tag')->value;
+          $variables['content']['field_slate_script_tag']['#theme'] = "field";
+          $variables['content']['field_slate_script_tag']['#title'] = "Slate script tag";
+          $variables['content']['field_slate_script_tag']['#label_display'] = "hidden";
+          $variables['content']['field_slate_script_tag']['#view_mode'] = "default";
+          $variables['content']['field_slate_script_tag']['#language'] = "en";
+          $variables['content']['field_slate_script_tag']['#field_name'] = "field_slate_script_tag";
+          $variables['content']['field_slate_script_tag']['#field_type'] = "text";
+          $variables['content']['field_slate_script_tag']['#entity_type'] = "paragraph";
+          $variables['content']['field_slate_script_tag']['#bundle'] = "slate_form";
+          $variables['content']['field_slate_script_tag']['#is_multiple'] = false;
+          $variables['content']['field_slate_script_tag'][0]['#text'] = $slate_script_tag;
+          $variables['content']['field_slate_script_tag'][0]['#format'] = 'full_html';
+          $variables['content']['field_slate_script_tag'][0]['#type'] = "processed_text";
+          $variables['content']['field_slate_script_tag'][0]['#langcode'] = "en";
+        }
+      }
+    }
+  }
+}
+
+
+// load the bios nid so we can link to the Edit Profile page for this user
+// Profile = "bios" bundle
+function citizen_custom_preprocess_field__user__uid(&$variables){
+	$user_id = intval($variables['element'][0]['#markup']) ?? 0;
+	if(empty($user_id)) return;
+
+	$user = \Drupal\user\Entity\User::load($user_id);
+
+	$empl_id = $user->field_empl_id->getString();
+
+	// if this user does not have an empl_id, there is no profile, so do nothing.
+	if(empty($empl_id)) return;
+
+	// try to load a profile with this empl_id
+	$nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
+	$nid = $nodeStorage->getQuery()
+		->accessCheck(true)
+		->condition('type', 'bios')
+		->condition('field_empl_id', $empl_id)
+		->execute();
+
+	// if it couldn't find a profile, do nothing.
+	if(empty($nid)) return;
+
+	// grab the actual nid value from the returned array
+	$nid = reset($nid);
+
+	// put nid in $variables so we can access it in the twig template
+	// which is at templates/field/user/field--user--uid--user--default.html.twig
+	$variables['profile_nid'] = $nid;
+}
+
+
+// adds "should_show" to bios email field
+function citizen_custom_preprocess_field__node__field_email(&$variables){
+	if(isset($variables['element']['#object'])){
+		$node = $variables['element']['#object'];
+		$val = $node->field_show_email;
+		if($val){
+			$variables['items'][0]['content']['#should_show'] = boolval($val->getString());
+		}
+	}
+}
+
+
+// adds "should_show" to bios phone field
+function citizen_custom_preprocess_field__node__field_phone(&$variables){
+	if(isset($variables['element']['#object'])){
+		$node = $variables['element']['#object'];
+		$val = $node->field_show_phone;
+		if($val){
+			$variables['items'][0]['content']['#should_show'] = boolval($val->getString());
+		}
+	}
+}
+
+
+// remove two links from the way top-right corner "user toolbar" menu
+// so if somebody hovers over their username they will only get the "log out" link
+// this was done so users don't confuse their "profile" with their user account page
+// not to mention their user account page doesn't have any fields for users anyways.
+function citizen_custom_preprocess_links__toolbar_user(&$vars){
+	if(isset($vars['links']['account'])) unset($vars['links']['account']);
+	if(isset($vars['links']['account_edit'])) unset($vars['links']['account_edit']);
+}
+
+
+
+// custom 500 error page
+// this effectively overrides the un-styled "An error has occurred." page.
+set_exception_handler('citizen_custom_exception_handler');
+function citizen_custom_exception_handler(\Throwable $exception){
+	include('error.php');
+}

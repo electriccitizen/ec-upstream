@@ -1,0 +1,9 @@
+citizen_custom.alert_ajax:
+  path: '/ajax/alert'
+  defaults:
+    _controller: '\Drupal\citizen_custom\Controller\Alert::ajax'
+    _title: 'Alert AJAX'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE

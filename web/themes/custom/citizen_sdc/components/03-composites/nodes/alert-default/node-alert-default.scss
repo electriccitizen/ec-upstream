@@ -1,0 +1,40 @@
+/* =================
+   NODE ALERT DEFAULT
+=================== */
+
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+
+.node-content--alert {
+  max-width: $textMax;
+  margin: 0 auto $elementSpace;
+
+  .block-field--title {
+    margin-bottom: $elementSpace;
+  }
+
+  .block-field--field-alert-text {
+    margin-bottom: $elementSpace;
+  }
+
+  .block-field--field-display-range {
+    margin-bottom: $spaceXs
+  }
+  .block-field--field-urgency {
+    .urgency {
+      display: inline-block;
+      padding: 6px 12px;
+
+      &.urgency--standard {
+        background-color: $alertStandardBack;
+        color: $alertStandardText;
+      }
+
+      &.urgency--urgent {
+        background-color: $alertUrgentBack;
+        color: $alertUrgentText;
+      }
+    }
+  }
+}

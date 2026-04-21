@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Page template for alert nodes. Hides alert content from anonymous users,
+ * re-using the auth-check logic in page--support-book.html.twig and only
+ * swapping the restricted-access message.
+ *
+ * The `page__alert` suggestion is added by citizen_sdc_theme_suggestions_page_alter()
+ * in includes/citizen_sdc.html.inc.
+ */
+#}
+
+{% extends "page--support-book.html.twig" %}
+
+{% block restrictedAnonMessage %}alerts{% endblock %}

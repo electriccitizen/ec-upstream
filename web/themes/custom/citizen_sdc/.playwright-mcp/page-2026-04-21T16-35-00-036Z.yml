@@ -1,0 +1,209 @@
+- generic [active] [ref=e1]:
+  - group "Site administration toolbar":
+    - navigation "Toolbar items":
+      - heading "Toolbar items" [level=2] [ref=e2]
+      - generic:
+        - generic:
+          - navigation "Administration menu":
+            - heading "Administration menu" [level=3] [ref=e3]
+            - generic [ref=e4]:
+              - list [ref=e5]:
+                - listitem [ref=e6]:
+                  - link "Home" [ref=e7] [cursor=pointer]:
+                    - /url: /
+                - listitem [ref=e8]:
+                  - link "Content" [ref=e9] [cursor=pointer]:
+                    - /url: /admin/content
+                - listitem [ref=e10]:
+                  - link "Structure" [ref=e11] [cursor=pointer]:
+                    - /url: /admin/structure
+                - listitem [ref=e12]:
+                  - link "Appearance" [ref=e13] [cursor=pointer]:
+                    - /url: /admin/appearance
+                - listitem [ref=e14]:
+                  - link "Extend" [ref=e15] [cursor=pointer]:
+                    - /url: /admin/modules
+                - listitem [ref=e16]:
+                  - link "People" [ref=e17] [cursor=pointer]:
+                    - /url: /admin/people
+                - listitem [ref=e18]:
+                  - link "Reports" [ref=e19] [cursor=pointer]:
+                    - /url: /admin/reports
+                - listitem [ref=e20]:
+                  - link "Configuration" [ref=e21] [cursor=pointer]:
+                    - /url: /admin/config
+                - listitem [ref=e22]:
+                  - link "Help" [ref=e23] [cursor=pointer]:
+                    - /url: /admin/help
+              - button "Close" [ref=e24] [cursor=pointer]
+  - generic [ref=e26]:
+    - navigation "Breadcrumb" [ref=e29]:
+      - heading "Breadcrumb" [level=2] [ref=e30]
+      - list [ref=e31]:
+        - listitem:
+          - link "Edit Alert test one" [ref=e32] [cursor=pointer]:
+            - /url: /node/87/edit
+            - text: Edit
+            - emphasis [ref=e33]: Alert test one
+    - group "Site administration toolbar" [ref=e34]:
+      - navigation "Toolbar items" [ref=e35]:
+        - heading "Toolbar items" [level=2] [ref=e36]
+        - generic:
+          - generic:
+            - navigation
+        - button "Shortcuts" [ref=e38] [cursor=pointer]
+        - button "Devel" [ref=e40] [cursor=pointer]
+        - button "admin" [ref=e42] [cursor=pointer]
+  - generic [ref=e44]:
+    - complementary "Skip Navigation":
+      - link "Skip to main navigation" [ref=e45] [cursor=pointer]:
+        - /url: "#main-navigation"
+      - link "Skip to main content" [ref=e46] [cursor=pointer]:
+        - /url: "#main-content"
+    - complementary "Alert":
+      - button "Open configuration options" [ref=e47] [cursor=pointer]
+    - complementary "Preheader" [ref=e48]:
+      - generic [ref=e50]:
+        - navigation "secondary menu" [ref=e51]:
+          - button "Open configuration options" [ref=e52] [cursor=pointer]
+          - list [ref=e53]:
+            - listitem [ref=e54]:
+              - link "Another Secondary" [ref=e55] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e56]:
+              - link "Secondary Link" [ref=e57] [cursor=pointer]:
+                - /url: /gallery
+        - search [ref=e58]:
+          - button "Toggle Search" [ref=e59] [cursor=pointer]: 
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - generic [ref=e62]: Search
+              - textbox [ref=e63]:
+                - /placeholder: Enter keyword(s)
+            - button [ref=e64] [cursor=pointer]: Search
+            - generic [ref=e65] [cursor=pointer]: 
+    - banner [ref=e66]:
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - button "Open configuration options" [ref=e70] [cursor=pointer]
+          - link "Home" [ref=e71] [cursor=pointer]:
+            - /url: /
+            - img "Home" [ref=e72]
+        - navigation "main menu" [ref=e73]:
+          - button "Open configuration options" [ref=e74] [cursor=pointer]
+          - list [ref=e75]:
+            - listitem [ref=e76]:
+              - generic [ref=e77]: Landing Pages
+              - button "Expand Menu" [ref=e78] [cursor=pointer]
+            - listitem [ref=e79]:
+              - link "Events" [ref=e80] [cursor=pointer]:
+                - /url: /events
+            - listitem [ref=e81]:
+              - link "External" [ref=e82] [cursor=pointer]:
+                - /url: https://www.google.com
+            - listitem [ref=e83]:
+              - link "Hashlink" [ref=e84] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e85]:
+              - link "Breadcrumb Test" [ref=e86] [cursor=pointer]:
+                - /url: /breadcrumbs
+              - button "Expand Menu" [ref=e87] [cursor=pointer]
+    - main [ref=e88]:
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - button "Open Primary tabs configuration options" [ref=e92] [cursor=pointer]
+          - heading "Primary tabs" [level=2] [ref=e93]
+          - list [ref=e94]:
+            - listitem [ref=e95]:
+              - link "View" [ref=e96] [cursor=pointer]:
+                - /url: /alerts/alert-test-one
+            - listitem [ref=e97]:
+              - link "Edit" [ref=e98] [cursor=pointer]:
+                - /url: /node/87/edit
+            - listitem [ref=e99]:
+              - link "Delete" [ref=e100] [cursor=pointer]:
+                - /url: /node/87/delete
+            - listitem [ref=e101]:
+              - link "Revisions" [ref=e102] [cursor=pointer]:
+                - /url: /node/87/revisions
+            - listitem [ref=e103]:
+              - link "Devel" [ref=e104] [cursor=pointer]:
+                - /url: /devel/node/87
+        - article [ref=e106]:
+          - button "Open configuration options" [ref=e107] [cursor=pointer]
+          - generic [ref=e111]:
+            - heading "Alert test one" [level=1] [ref=e114]
+            - paragraph [ref=e117]:
+              - text: asdf asdfasf
+              - link "asdf adsfasdf" [ref=e118] [cursor=pointer]:
+                - /url: "#"
+              - text: asf asdfasdf asfd asdfadsfa dfaf
+            - generic [ref=e120]: "Display Range: 4/21 - 23/26, All day"
+            - generic [ref=e122]: "Urgency: Standard"
+    - complementary "Prefooter" [ref=e123]:
+      - generic [ref=e125]:
+        - generic [ref=e126]:
+          - heading "About Some Things" [level=2] [ref=e127]
+          - button "Open About Some Things configuration options" [ref=e128] [cursor=pointer]
+          - paragraph [ref=e130]:
+            - text: Like clouds, chickens and pigs.
+            - text: Or turnips and bunnies
+        - navigation "footer menu" [ref=e131]:
+          - heading "Quicklinks" [level=2] [ref=e132]
+          - button "Open Quicklinks configuration options" [ref=e133] [cursor=pointer]
+          - list [ref=e134]:
+            - listitem [ref=e135]:
+              - link "Footer Link 1" [ref=e136] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e137]:
+              - link "Footer Link 2" [ref=e138] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e139]:
+              - link "Footer Link 3" [ref=e140] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e141]:
+          - heading "Stay in Touch" [level=2] [ref=e142]
+          - button "Open Stay in Touch configuration options" [ref=e143] [cursor=pointer]
+          - paragraph [ref=e144]: Sign up for us to bug you!
+          - generic [ref=e148]:
+            - generic [ref=e149]: "* indicates required"
+            - textbox "Email Address *" [ref=e151]
+            - textbox [ref=e153]
+            - button "Subscribe" [ref=e156] [cursor=pointer]
+    - contentinfo [ref=e157]:
+      - generic [ref=e159]:
+        - generic [ref=e160]:
+          - button "Open configuration options" [ref=e161] [cursor=pointer]
+          - list [ref=e162]:
+            - listitem [ref=e163]:
+              - link "Facebook" [ref=e164] [cursor=pointer]:
+                - /url: https://facebook.com
+                - img [ref=e165]
+            - listitem [ref=e172]:
+              - link "X" [ref=e173] [cursor=pointer]:
+                - /url: https://x.com
+                - img [ref=e174]
+            - listitem [ref=e179]:
+              - link "LinkedIn" [ref=e180] [cursor=pointer]:
+                - /url: https://linkedin.com
+                - img [ref=e181]
+            - listitem [ref=e186]:
+              - link "Youtube" [ref=e187] [cursor=pointer]:
+                - /url: https://youtube.com
+                - img [ref=e188]
+        - navigation "ancillary menu" [ref=e193]:
+          - button "Open configuration options" [ref=e194] [cursor=pointer]
+          - list [ref=e195]:
+            - listitem [ref=e196]:
+              - link "Privacy Policy" [ref=e197] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e198]:
+              - link "Terms" [ref=e199] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e200]:
+          - button "Open configuration options" [ref=e201] [cursor=pointer]
+          - generic [ref=e202]:
+            - text: ©2026
+            - paragraph [ref=e203]: Copycat
+      - button "Back To Top" [ref=e204] [cursor=pointer]:
+        - img [ref=e205]

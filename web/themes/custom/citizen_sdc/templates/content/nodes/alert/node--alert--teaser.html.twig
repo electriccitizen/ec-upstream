@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Alert teaser — delegates to node-alert-teaser SDC. Pulled fresh by the
+ * citizen_custom/alert library from /ajax/alert on every page load.
+ */
+#}
+{# Use the base-field's `.value` (not `node.uuid`, which returns a FieldItemList
+   that can't be printed; and not `node.uuid()`, which the Twig sandbox blocks). #}
+{% set urgency_value = node.field_urgency.value|default('standard') %}
+
+{{ include('citizen_sdc:node-alert-teaser', {
+  uuid: node.uuid.value,
+  urgency: urgency_value,
+  content: content.field_alert_text,
+}, with_context = false) }}
