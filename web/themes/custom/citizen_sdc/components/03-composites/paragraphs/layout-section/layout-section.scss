@@ -18,6 +18,12 @@
   &--light-blue {
     background: $lightBlue;
   }
+
+  .paragraph--layout-section__title {
+    text-align: center;
+    max-width: $textMax;
+    margin: 0 auto $spaceXs;
+  }
 }
 
 // First **backless** layout-section drops its top padding — backgrounded

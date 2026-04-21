@@ -13,8 +13,11 @@ props:
     style_class:
       type: [string, 'null']
       description: '`field_style` taxonomy term label run through `clean_class` (e.g. `light-grey`, `light-blue`). When set, adds `paragraph--layout-section--{style_class}` as a BEM modifier on the wrapper. When null, adds `paragraph--layout-section--backless`.'
+    title:
+      type: [string, 'null']
+      description: 'Optional section title from field_section_title. When present, rendered as an `<h2 class="paragraph--layout-section__title">` above the section content.'
 
-# Intentionally no content slot: the layout_section bundle has no paragraph
-# field. Children render through the layout_paragraphs module (parent_id base
-# field + the layout plugin), not through the section's own render array.
-# The section is purely a wrapper.
+slots:
+  content:
+    title: 'Content'
+    description: 'Everything inside the section wrapper below the title — section-level fields added per-project (intro text, etc.) plus the layout_paragraphs-injected layout template + nested child paragraphs. The layout_section bundle itself has no paragraph field; children arrive in `content` via layout_paragraphs preprocess and are piped through to paragraph-base here.'

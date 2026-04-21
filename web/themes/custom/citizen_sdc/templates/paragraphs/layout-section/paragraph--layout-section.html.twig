@@ -3,8 +3,10 @@
  * @file
  * Layout-section paragraph — delegates to the layout-section SDC. Pulls the
  * field_style taxonomy label through clean_class to drive the section
- * background. Strips `field_section_title` from content — section titles are
- * replaced by widget titles on individual child paragraphs now.
+ * background, and passes field_section_title as a separate `title` prop so
+ * the SDC can render it as a semantically scoped H2. `field_section_title`
+ * and `field_style` are stripped from `content` so they don't render a
+ * second time via their default field templates.
  */
 #}
 {% set style_term = paragraph.field_style.0.entity %}
@@ -13,5 +15,6 @@
 {{ include('citizen_sdc:layout-section', {
   attr: attributes|without('class'),
   style_class: style_class,
+  title: paragraph.field_section_title.value,
   content: content|without('field_section_title', 'field_style'),
 }, with_context = false) }}
