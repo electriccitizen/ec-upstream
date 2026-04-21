@@ -1,0 +1,46 @@
+/* =================
+   BLOCK SOCIAL SHARE
+=================== */
+
+@use '../../../00-base/00-variables/colors' as *;
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/01-mixins/general-mixins' as *;
+
+.block--social-share {
+  .social-share {
+    @include listReset;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .social-share__link {
+    display: block;
+
+    &--facebook {
+      color: #4267B2;
+    }
+
+    &--x {
+      color: $black;
+    }
+
+    &--linkedin {
+      color: #2867B2;
+    }
+
+    &--email {
+      color: $link;
+    }
+
+    &:hover,
+    &:focus {
+      color: $hoverLink;
+    }
+  }
+
+  .social-share__icon {
+    width: 32px;
+    height: 32px;
+  }
+}
