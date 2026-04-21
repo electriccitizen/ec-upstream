@@ -20,7 +20,7 @@ props:
       enum:
         - 'yes'
         - 'no'
-      description: 'Whether this paragraph participates in the field-level scroll-in animation observer. Defaults to `yes`. Set to `no` for layout-wrapping bundles (layout-section, layout-section-simple, horizontal-rule) where the wrapper itself should not animate.'
+      description: 'Whether this paragraph participates in the field-level scroll-in animation observer. **Defaults to `no`** — per-bundle SDCs must opt in by passing `animate: ''yes''`. The opt-in default keeps the observer overhead off by default; a forgotten `animate` setting just means no animation (visible and easy to fix) rather than an always-running observer the dev didn''t know about.'
 
 slots:
   content:

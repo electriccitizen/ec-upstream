@@ -3,7 +3,7 @@
    classes and data-animate attribute. #}
 {% set paragraph_attr = (attr ?: create_attribute())
   .addClass(['paragraph', 'paragraph--' ~ modifier_class])
-  .setAttribute('data-animate', animate|default('yes')) %}
+  .setAttribute('data-animate', animate|default('no')) %}
 <div{{ paragraph_attr }}>
   {{ content }}
 </div>

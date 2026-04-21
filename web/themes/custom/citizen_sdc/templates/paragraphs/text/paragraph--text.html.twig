@@ -1,10 +1,10 @@
 {#
-  Paragraph Text wrapper that passes field values into the Text SDC component.
+/**
+ * @file
+ * Text paragraph — delegates to the text SDC.
+ */
 #}
-
 {{ include('citizen_sdc:text', {
-  title: paragraph.field_widget_title.value,
-  slots: {
-    content: content.field_long_text
-  }
+  attr: attributes|without('class'),
+  content: content.field_long_text,
 }, with_context = false) }}

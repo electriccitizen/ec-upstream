@@ -1,0 +1,20 @@
+component:
+  id: citizen_sdc:layout-section
+  label: 'Paragraph Layout Section'
+  description: 'Section-wrapping paragraph for the `layout_section` bundle. Reads `field_style` (section_styles taxonomy) and emits a BEM modifier on the wrapper — `paragraph--layout-section--{style_class}` (e.g. `--light-grey`, `--light-blue`), or `--backless` when no style is set. Delegates to paragraph-base with `animate: no` — section wrappers themselves should not participate in the scroll-in observer; their children do. Companion SDC `layout-section-simple` handles the `layout_section_simple` bundle (kept separate because the two bundles frequently diverge per-project in fields, design options, and SCSS).'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object from the paragraph template (class-stripped via `attributes|without(''class'')` so paragraph-base''s BEM classes don''t duplicate Drupal''s default `paragraph--type-*` class).'
+    style_class:
+      type: [string, 'null']
+      description: '`field_style` taxonomy term label run through `clean_class` (e.g. `light-grey`, `light-blue`). When set, adds `paragraph--layout-section--{style_class}` as a BEM modifier on the wrapper. When null, adds `paragraph--layout-section--backless`.'
+
+# Intentionally no content slot: the layout_section bundle has no paragraph
+# field. Children render through the layout_paragraphs module (parent_id base
+# field + the layout plugin), not through the section's own render array.
+# The section is purely a wrapper.

@@ -1,0 +1,29 @@
+/* =================
+   PARAGRAPH LAYOUT SECTION SIMPLE
+=================== */
+
+// Simple sections are (almost) never backgrounded, so their spacing is
+// driven entirely by padding-bottom — that creates the gap to whatever
+// comes next. Last section drops the bottom padding. Children inside the
+// section get their own element-spacing via margin-bottom.
+
+@use '../../../00-base/00-variables/units' as *;
+
+.paragraph--layout-section-simple {
+  padding: 0 $siteMargin $elementSpace;
+}
+
+// Last simple section drops its bottom padding so the page doesn't end on
+// trailing whitespace.
+.field-paragraphs > :last-child.paragraph--layout-section-simple {
+  padding-bottom: 0;
+}
+
+// Spacing between direct child paragraphs inside the simple section's layout
+// regions. `>` scopes to region direct children only — nested paragraphs
+// (accordion items, gallery items, etc.) manage their own spacing.
+// `:not(:last-child)` leaves the last paragraph in each region unspaced; the
+// section's own bottom padding handles the gap below it.
+.paragraph--layout-section-simple .layout__region > .paragraph:not(:last-child) {
+  margin-bottom: $elementSpace;
+}
