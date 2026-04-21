@@ -20,17 +20,48 @@ a render array of the form:
 [
   '#theme' => 'social_share_block',
   '#data'  => [
-    'url'      => $node->toUrl()->toString(),
-    'title'    => $node->getTitle(),
-    'base_url' => $GLOBALS['base_url'],
+    'url'   => $node->toUrl()->setAbsolute()->toString(),
+    'title' => $node->getTitle(),
   ],
 ]
 ```
 
-When the block is being previewed or is placed on a route without a node
-context, the plugin falls back to placeholder `example_url` / `Example Node
-Title` values — so you'll see the block render in block-placement preview,
-but the share URLs won't be real until it's on a node page.
+The URL is absolute (`setAbsolute()`) because share endpoints require a full
+URL, not a site-relative path. When the block is being previewed or is placed
+on a route without a node context, the plugin falls back to placeholder
+`https://example.com/example-node` / `Example Node Title` values so the block
+still renders in block-placement preview.
+
+## Caching
+
+The plugin returns per-page cache metadata so the block output doesn't get
+reused across different nodes:
+
+- `getCacheContexts()` → adds `url.path` to the parent contexts
+- `getCacheTags()` → merges the current node's cache tags when one is on the
+  route, so the block invalidates when the node changes
+
+## Privacy
+
+The rendered block is just `<a href>` elements with inline SVG icons. No
+third-party JavaScript, no cookies, no tracking pixels. A request to
+Facebook / X / LinkedIn only happens when the user actually clicks a share
+link. This is intentionally different from contrib options like `addtoany`,
+which load a remote tracking script on every page view.
+
+## Share endpoints
+
+- **Facebook:** `https://www.facebook.com/sharer/sharer.php?u=URL`
+  (`&title=` param is ignored; FB reads `og:title` from the scraped page)
+- **X:** `https://x.com/intent/post?text=TITLE&url=URL`
+  (the older `/intent/tweet` endpoint was decommissioned during the
+  twitter.com → x.com migration and now 404s)
+- **LinkedIn:** `https://www.linkedin.com/sharing/share-offsite/?url=URL`
+  (the previous `/shareArticle?mini=true` endpoint is deprecated)
+- **Email:** `mailto:?subject=TITLE&body=…`
+
+All query params are passed through Twig's `|url_encode` filter to handle
+titles that contain `&`, spaces, or other reserved characters.
 
 ## Template
 

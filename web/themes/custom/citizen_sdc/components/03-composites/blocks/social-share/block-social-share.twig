@@ -1,6 +1,6 @@
-<ul class="social-share">
+<ul class="social-share" aria-label="{{ 'Share this page'|t }}">
   <li class="social-share__item">
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{ data.url }}&title={{ data.title }}"
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ data.url|url_encode }}"
        target="_blank"
        rel="noopener noreferrer"
        class="social-share__link social-share__link--facebook"
@@ -9,7 +9,7 @@
     </a>
   </li>
   <li class="social-share__item">
-    <a href="https://x.com/intent/tweet?text={{ data.title }}&url={{ data.url }}"
+    <a href="https://x.com/intent/post?text={{ data.title|url_encode }}&url={{ data.url|url_encode }}"
        target="_blank"
        rel="noopener noreferrer"
        class="social-share__link social-share__link--x"
@@ -18,7 +18,7 @@
     </a>
   </li>
   <li class="social-share__item">
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ data.url }}&title={{ data.title }}&source={{ data.base_url }}"
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ data.url|url_encode }}"
        target="_blank"
        rel="noopener noreferrer"
        class="social-share__link social-share__link--linkedin"
@@ -27,7 +27,7 @@
     </a>
   </li>
   <li class="social-share__item">
-    <a href="mailto:?subject={{ data.title }}&body=Click the link:%0d%0a{{ data.url }}"
+    <a href="mailto:?subject={{ data.title|url_encode }}&body=Click%20the%20link%3A%0D%0A{{ data.url|url_encode }}"
        class="social-share__link social-share__link--email"
        aria-label="{{ 'Share this via email'|t }}">
       <svg xmlns="http://www.w3.org/2000/svg" class="social-share__icon" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><rect x="48" y="96" width="416" height="320" rx="40" ry="40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M112 160l144 112 144-112"/></svg>

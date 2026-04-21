@@ -15,10 +15,7 @@ props:
       properties:
         url:
           type: string
-          description: 'Relative or absolute URL of the node being shared'
+          description: 'Absolute URL of the node being shared'
         title:
           type: string
           description: 'Title of the node being shared'
-        base_url:
-          type: string
-          description: 'Site base URL (used by LinkedIn as the source parameter)'
