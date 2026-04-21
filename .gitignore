@@ -136,6 +136,9 @@ upstream/web/
 #ignore files for local theming
 /web/themes/*/node_modules
 .DS_Store
+
+# Ignore Playwright MCP scratch output (snapshots, console logs, network dumps).
+.playwright-mcp/
 /database.sql
 
 # Ignore local DB files
