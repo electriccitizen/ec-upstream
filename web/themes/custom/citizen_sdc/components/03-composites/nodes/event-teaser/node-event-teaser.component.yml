@@ -1,0 +1,35 @@
+component:
+  id: citizen_sdc:node-event-teaser
+  label: 'Node Event (Teaser)'
+  description: 'Teaser view-mode wrapper for event nodes. Delegates to node-teaser-base with the event image as the image slot and field_dates + field_meta_description composed into the content slot.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - title
+    - url
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the <article> wrapper'
+    title:
+      type: string
+      description: 'Plain-text node title'
+    url:
+      type: string
+      description: 'URL to the full event node'
+    title_attr:
+      type: object
+      description: 'Drupal Attributes object for the <h2> title element'
+
+slots:
+  image:
+    title: 'Image'
+    description: 'Rendered field_image (responsive image via entity_reference_entity_view → 400x300 media view mode)'
+  dates:
+    title: 'Dates'
+    description: 'Rendered field_dates (smartdate)'
+  summary:
+    title: 'Summary'
+    description: 'Rendered field_meta_description'

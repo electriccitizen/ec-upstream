@@ -1,0 +1,17 @@
+{% set listing_content %}
+  {% if dates %}
+    {{ dates }}
+  {% endif %}
+  {% if summary %}
+    {{ summary }}
+  {% endif %}
+{% endset %}
+
+{{ include('citizen_sdc:node-listing-base', {
+  attr: attr,
+  modifier_class: 'event',
+  title: title,
+  url: url,
+  title_attr: title_attr,
+  content: listing_content,
+}, with_context = false) }}
