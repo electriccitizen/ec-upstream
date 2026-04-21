@@ -1,0 +1,11 @@
+{% set classes = [
+  'node-content',
+  'node-content--' ~ modifier_class,
+] %}
+<article{{ attr.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  <div class="node-content__main">
+    {{ content }}
+  </div>
+</article>

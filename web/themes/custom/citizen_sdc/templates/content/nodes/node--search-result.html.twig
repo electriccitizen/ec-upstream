@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Default search-result template. Delegates to node-search-result-base.
+ * Content types with their own search-result SDC (node-[type]-search-result)
+ * ship their own Drupal template override at
+ * `node--[type]--search-result.html.twig`.
+ *
+ * The highlighted snippet comes from Search API's `search_api_excerpt` field
+ * (added to the search_result view mode's view display config per content
+ * type).
+ */
+#}
+{{ include('citizen_sdc:node-search-result-base', {
+  attr: attributes,
+  modifier_class: node.type.0.target_id|clean_class,
+  title: label.0['#context'].value,
+  url: url,
+  title_attr: title_attributes,
+  content_type_label: node.type.entity.label,
+  snippet: content.search_api_excerpt,
+}, with_context = false) }}

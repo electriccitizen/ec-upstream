@@ -1,0 +1,19 @@
+{% set classes = [
+  'node-search-result',
+  'node-search-result--' ~ modifier_class,
+] %}
+<article{{ attr.addClass(classes) }}>
+  <h2{{ title_attr.addClass('node-search-result__title') }}>
+    <a href="{{ url }}" rel="bookmark">{{ title }}</a>
+  </h2>
+  {% if snippet %}
+    <div class="node-search-result__snippet">
+      {{ snippet }}
+    </div>
+  {% endif %}
+  {% if content_type_label %}
+    <div class="node-search-result__meta">
+      {{ content_type_label }}
+    </div>
+  {% endif %}
+</article>

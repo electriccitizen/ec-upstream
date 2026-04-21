@@ -1,0 +1,36 @@
+component:
+  id: citizen_sdc:node-search-result-base
+  label: 'Node Search Result Base'
+  description: 'Base wrapper for the search_result view mode. Used by content-type-specific search result SDCs (node-news-search-result, node-bios-search-result, etc.). Renders a linked title, highlighted snippet, and content-type label as metadata.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - modifier_class
+    - title
+    - url
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the <article> wrapper'
+    modifier_class:
+      type: string
+      description: 'Content-type BEM suffix (e.g. `news`) appended to `node-search-result--`'
+    title:
+      type: string
+      description: 'Plain-text node title'
+    url:
+      type: string
+      description: 'URL to the full node'
+    title_attr:
+      type: object
+      description: 'Drupal Attributes object for the <h2> title element'
+    content_type_label:
+      type: string
+      description: 'Human-readable content type label (e.g. "News", "Biography") — rendered as metadata below the snippet'
+
+slots:
+  snippet:
+    title: 'Snippet'
+    description: 'Highlighted search-result excerpt (typically from Search API)'

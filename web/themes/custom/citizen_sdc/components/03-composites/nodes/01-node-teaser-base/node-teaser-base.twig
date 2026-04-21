@@ -1,0 +1,17 @@
+{% set classes = [
+  'node-teaser',
+  'node-teaser--' ~ modifier_class,
+] %}
+<article{{ attr.addClass(classes) }}>
+  {% if image %}
+    <div class="node-teaser__image">
+      {{ image }}
+    </div>
+  {% endif %}
+  <div class="node-teaser__content">
+    <h2{{ title_attr.addClass('node-teaser__title') }}>
+      <a href="{{ url }}" rel="bookmark">{{ title }}</a>
+    </h2>
+    {{ content }}
+  </div>
+</article>
