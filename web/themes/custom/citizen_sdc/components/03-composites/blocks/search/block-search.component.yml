@@ -1,6 +1,6 @@
 component:
-  id: citizen_sdc:search
-  label: 'Site Search'
+  id: citizen_sdc:block-search
+  label: 'Block Site Search'
   description: 'Custom site search block with toggle/close buttons and the rendered search form'
   status: experimental
 

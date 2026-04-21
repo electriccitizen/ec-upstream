@@ -1,6 +1,6 @@
 component:
-  id: citizen_sdc:branding
-  label: 'Branding'
+  id: citizen_sdc:block-branding
+  label: 'Block Branding'
   description: 'Branding block with site logo, name, and slogan'
   status: experimental
 

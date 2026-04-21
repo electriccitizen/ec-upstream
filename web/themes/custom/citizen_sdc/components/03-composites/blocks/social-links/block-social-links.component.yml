@@ -1,0 +1,10 @@
+component:
+  id: citizen_sdc:block-social-links
+  label: 'Block Social Links'
+  description: 'Social links block (footer placement) — wraps the platforms list from the social-links part'
+  status: experimental
+
+slots:
+  platforms:
+    title: 'Platforms'
+    description: 'Rendered field_platforms content — the link field whose field template includes citizen_sdc:social-links'

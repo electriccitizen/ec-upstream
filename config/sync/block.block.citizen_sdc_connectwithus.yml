@@ -1,0 +1,25 @@
+uuid: 385d1c77-38e2-4174-8769-70e91fd21442
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:social_links:55e20ab5-2157-4a56-82e7-a2288958e43f'
+  module:
+    - block_content
+  theme:
+    - citizen_sdc
+id: citizen_sdc_connectwithus
+theme: citizen_sdc
+region: footer
+weight: -7
+provider: null
+plugin: 'block_content:55e20ab5-2157-4a56-82e7-a2288958e43f'
+settings:
+  id: 'block_content:55e20ab5-2157-4a56-82e7-a2288958e43f'
+  label: 'Connect With Us'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -11,7 +11,7 @@ dependencies:
 id: citizen_sdc_copyright
 theme: citizen_sdc
 region: footer
-weight: -4
+weight: -5
 provider: null
 plugin: 'block_content:28a9b8e5-8032-4eb8-801d-5353b5d05c0a'
 settings:

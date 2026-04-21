@@ -11,7 +11,7 @@ dependencies:
 id: citizen_sdc_ancillary
 theme: citizen_sdc
 region: footer
-weight: -5
+weight: -6
 provider: null
 plugin: 'menu_block:ancillary'
 settings:

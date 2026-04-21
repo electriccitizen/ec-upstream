@@ -1,6 +1,6 @@
 component:
-  id: citizen_sdc:newsletter
-  label: 'Newsletter'
+  id: citizen_sdc:block-newsletter
+  label: 'Block Newsletter'
   description: 'Newsletter block with intro text and an embedded third-party signup form'
   status: experimental
 

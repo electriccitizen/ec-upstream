@@ -1,0 +1,34 @@
+/* =================
+   BLOCK SOCIAL LINKS
+=================== */
+
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+
+.block--social-links {
+  width: 100%;
+
+  @include tab {
+    max-width: 320px;
+    order: 2;
+  }
+
+  @include onlySmall {
+    .platforms {
+      justify-content: center;
+    }
+  }
+
+  .platforms__link {
+    color: $footerLink;
+
+    &:hover,
+    &:focus {
+      color: $footerLinkHover;
+    }
+
+    svg circle {
+      fill: $prefooterBack;
+    }
+  }
+}

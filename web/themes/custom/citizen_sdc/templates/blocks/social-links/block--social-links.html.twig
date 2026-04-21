@@ -1,7 +1,7 @@
 {% extends 'block.html.twig' %}
 
 {% block blockContent %}
-  {{ include('citizen_sdc:block-search', {
-    form: content,
+  {{ include('citizen_sdc:block-social-links', {
+    platforms: content.field_platforms,
   }, with_context = false) }}
 {% endblock %}
