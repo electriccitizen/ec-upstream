@@ -1,0 +1,38 @@
+/* =================
+   NODE NEWS DEFAULT
+=================== */
+
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
+@use '../../../00-base/01-mixins/type-mixins' as *;
+
+.node-content--news {
+  max-width: $contentStop;
+  margin: 0 auto $elementSpace;
+
+  .block--system-breadcrumb-block {
+    margin-bottom: $elementSpace;
+  }
+
+  .block-field--title {
+    max-width: 100%;
+    margin-bottom: $elementSpace;
+
+    h1 {
+      text-align: left;
+    }
+  }
+
+  .block-field--field-image {
+    margin-bottom: $spaceXs;
+    img {
+      @include image100W;
+    }
+  }
+
+  .block-field--created {
+    margin-bottom: $spaceXs;
+    @include metaText;
+  }
+}
