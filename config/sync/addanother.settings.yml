@@ -5,6 +5,7 @@ default_message: false
 default_tab: true
 default_tab_edit: false
 button:
+  alert: false
   page: false
   event: false
   news: false
@@ -15,6 +16,7 @@ button:
   gather_content_node: false
   bios: false
 message:
+  alert: false
   page: false
   event: false
   news: false
@@ -25,6 +27,7 @@ message:
   gather_content_node: true
   bios: false
 tab:
+  alert: true
   page: true
   event: true
   news: true
@@ -35,6 +38,7 @@ tab:
   gather_content_node: false
   bios: true
 tab_edit:
+  alert: false
   page: false
   event: false
   news: false

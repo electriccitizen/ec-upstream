@@ -40,8 +40,8 @@ content:
         90
         120|2 hours
         custom
-      show_extra: true
-      hide_date: true
+      show_extra: false
+      hide_date: false
       allday: true
       remove_seconds: false
       duration_overlay: true
