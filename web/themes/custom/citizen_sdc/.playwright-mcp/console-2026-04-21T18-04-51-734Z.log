@@ -1,0 +1,12 @@
+[    3672ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://ecup-sdc.ddev.site:33000/sites/default/files/styles/banner_middesk/public/2023-09/country-gold-wheat-sun.jpg.webp?itok=ShlUSykE:0
+[    3680ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://ecup-sdc.ddev.site:33000/sites/default/files/styles/full_non_crop/public/2023-06/mountain-lake-evening.jpg.webp?itok=-KeDu16f:0
+[    4069ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://ecup-sdc.ddev.site:33000/sites/default/files/2023-06/dirt-road-fall.jpg:0
+[    4135ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://ecup-sdc.ddev.site:33000/sites/default/files/styles/large_non_crop_non_webp/public/2023-05/mountain-meadow.jpg?itok=gB2HhpLj:0
+[    4297ms] [WARNING] jQuery.Deferred exception TypeError: $(...).slick is not a function
+    at HTMLDocument.<anonymous> (http://ecup-sdc.ddev.site:33000/themes/custom/citizen_sdc/components/03-composites/paragraphs/gallery/gallery.js?tduvj1:21:19)
+    at l (http://ecup-sdc.ddev.site:33000/core/assets/vendor/jquery/jquery.min.js?v=4.0.0-rc.1:2:24960)
+    at c (http://ecup-sdc.ddev.site:33000/core/assets/vendor/jquery/jquery.min.js?v=4.0.0-rc.1:2:25279) undefined @ http://ecup-sdc.ddev.site:33000/core/assets/vendor/jquery/jquery.min.js?v=4.0.0-rc.1:1
+[    4463ms] TypeError: $(...).slick is not a function
+    at HTMLDocument.<anonymous> (http://ecup-sdc.ddev.site:33000/themes/custom/citizen_sdc/components/03-composites/paragraphs/gallery/gallery.js?tduvj1:21:19)
+    at l (http://ecup-sdc.ddev.site:33000/core/assets/vendor/jquery/jquery.min.js?v=4.0.0-rc.1:2:24960)
+    at c (http://ecup-sdc.ddev.site:33000/core/assets/vendor/jquery/jquery.min.js?v=4.0.0-rc.1:2:25279)

@@ -57,8 +57,9 @@
       outline: none;
     }
 
-    .material-icons {
-      font-size: 24px;
+    svg {
+      width: 24px;
+      height: 24px;
     }
 
     @include desk {
@@ -84,12 +85,16 @@
     background: $searchCloseBack;
     color: $searchClose;
     font-family: $header;
-    font-size: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: all 0.15s ease-out;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
 
     &:hover,
     &:focus {
@@ -200,22 +205,24 @@
           box-shadow: none;
           outline: none;
 
-          & + .material-icons {
+          & + svg {
             color: $searchDropSearchIconHover;
           }
         }
       }
 
-      .material-icons {
+      svg {
         color: $searchDropSearchIcon;
-        font-size: 3rem;
+        width: 3rem;
+        height: 3rem;
         position: absolute;
         top: -45px;
         right: 8px;
         cursor: pointer;
 
         @include tab {
-          font-size: 3.5rem;
+          width: 3.5rem;
+          height: 3.5rem;
           top: -48px;
           right: 12px;
         }

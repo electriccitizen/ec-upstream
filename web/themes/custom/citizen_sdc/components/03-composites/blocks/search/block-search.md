@@ -28,6 +28,20 @@ The form action is set dynamically in `SiteSearchForm::buildForm()`:
 
 Method is `GET` so query strings are bookmarkable.
 
+## Icons
+
+Both the open/close toggle icons (in this SDC's twig) and the magnifying-glass
+inside the slide-down form (added as a `search_icon` render element in
+`SiteSearchForm::buildForm()`) are inline SVGs with `fill="currentColor"`, so
+they inherit the surrounding text color. Reference sources are colocated as
+`search-icon.svg` and `close-icon.svg` for easy diffing; the markup itself is
+inlined in the twig / form for render performance and to avoid file reads.
+
+The form icon is wrapped in `Markup::create()` because Drupal's render
+pipeline XSS-filters plain-string `#markup` / `#suffix` values and strips
+`<svg>` + `<path>` tags. Any future SVG added to a form render array needs
+the same treatment.
+
 ## Related
 
 - `menu-main.js` injects a separate "Search" link into the mobile main-menu
