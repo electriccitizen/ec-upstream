@@ -1,0 +1,22 @@
+{#
+  The layout_threecol_section plugin adds 'layout', 'layout--threecol-section',
+  and 'layout--threecol-section--{column_widths}' classes to attributes in its
+  build() method. No need to set classes here.
+#}
+<div{{ attr }}>
+  {% if first %}
+    <div{{ first_attr.addClass('layout__region', 'layout__region--first') }}>
+      {{ first }}
+    </div>
+  {% endif %}
+  {% if second %}
+    <div{{ second_attr.addClass('layout__region', 'layout__region--second') }}>
+      {{ second }}
+    </div>
+  {% endif %}
+  {% if third %}
+    <div{{ third_attr.addClass('layout__region', 'layout__region--third') }}>
+      {{ third }}
+    </div>
+  {% endif %}
+</div>
