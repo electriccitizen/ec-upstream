@@ -7,6 +7,7 @@ dependencies:
     - core.entity_view_mode.media.medium
     - core.entity_view_mode.media.small
   module:
+    - ckeditor5_premium_features
     - editor
     - lazy
     - linkit
@@ -18,6 +19,12 @@ name: 'Basic HTML'
 format: basic_html
 weight: 0
 filters:
+  ckeditor5_premium_features_collaboration_filter:
+    id: ckeditor5_premium_features_collaboration_filter
+    provider: ckeditor5_premium_features
+    status: false
+    weight: -40
+    settings: {  }
   editor_file_reference:
     id: editor_file_reference
     provider: editor
@@ -34,7 +41,7 @@ filters:
     id: filter_autop
     provider: filter
     status: false
-    weight: -40
+    weight: -38
     settings: {  }
   filter_caption:
     id: filter_caption
@@ -55,13 +62,13 @@ filters:
     id: filter_html_escape
     provider: filter
     status: false
-    weight: -41
+    weight: -39
     settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
     provider: filter
     status: false
-    weight: -39
+    weight: -37
     settings: {  }
   filter_htmlcorrector:
     id: filter_htmlcorrector
@@ -89,14 +96,14 @@ filters:
     id: filter_url
     provider: filter
     status: true
-    weight: -49
+    weight: -48
     settings:
       filter_url_length: 72
   lazy_filter:
     id: lazy_filter
     provider: lazy
     status: false
-    weight: -38
+    weight: -36
     settings:
       image: true
       iframe: true
@@ -104,7 +111,7 @@ filters:
     id: linkit
     provider: linkit
     status: true
-    weight: -48
+    weight: -41
     settings:
       title: true
       media_substitution: metadata
