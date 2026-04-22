@@ -1,0 +1,20 @@
+component:
+  id: citizen_sdc:form-placer
+  label: 'Paragraph Form Placer'
+  description: 'Renders a referenced webform inside a paragraph, optionally preceded by an H2 showing the webform''s title (toggled per-instance by `field_form_title`). The webform SDC suppresses its own H1 in this context via the `webform_placer` flag set by `citizen_sdc_preprocess_paragraph__form_placer()` — so we don''t get both an H1 and H2.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object from the paragraph template (class-stripped).'
+    title:
+      type: [string, 'null']
+      description: 'Optional H2 heading above the webform. The Drupal template derives this from `paragraph.field_form.entity.label` and only passes it when `field_form_title` is on. Null/empty = no heading.'
+
+slots:
+  form:
+    title: 'Rendered webform'
+    description: 'Rendered `content.field_form` — the webform entity reference formatter produces the full webform render array, which the webform SDC handles from there.'

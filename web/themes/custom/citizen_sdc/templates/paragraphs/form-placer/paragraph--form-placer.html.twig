@@ -1,16 +1,25 @@
 {#
-  Paragraph Form Placer wrapper that passes the rendered webform into the Form Placer SDC component.
+/**
+ * @file
+ * Form-placer paragraph — delegates to the form-placer SDC.
+ *
+ * **Title rendering ownership split:**
+ *  - H2 title in placer context: owned by THIS SDC (see `title` prop below).
+ *    Derives from `paragraph.field_form.entity.label` and gates on the
+ *    `field_form_title` boolean. Storing per-instance state on the paragraph
+ *    (not the webform entity) avoids the bleed that happens with multiple
+ *    placers referencing the same webform.
+ *  - H1 title on standalone `/forms/{id}` page: owned by the webform SDC.
+ *    `citizen_sdc_preprocess_paragraph__form_placer()` sets `webform_placer`
+ *    on the webform entity so the webform SDC suppresses its H1 in this
+ *    context (avoids double-heading).
+ */
 #}
+{% set form_title = paragraph.field_form.entity ? paragraph.field_form.entity.label : null %}
+{% set show_title = paragraph.field_form_title.value == '1' %}
 
-{% set rendered_form = content.field_form ?? '' %}
-{% set widget_title = paragraph.field_widget_title.value ?? '' %}
-{% set show_form_title = (paragraph.field_form_title.value ?? '0') == '1' %}
-
-{{ include([
-  'citizen_sdc:form-placer',
-  '@citizen_sdc/components/03-composites/paragraphs/form-placer/form-placer.twig'
-], {
-  title: widget_title,
-  form: rendered_form,
-  show_title: show_form_title
-}, with_context = false, ignore_missing = true) }}
+{{ include('citizen_sdc:form-placer', {
+  attr: attributes|without('class'),
+  title: show_title ? form_title : null,
+  form: content.field_form,
+}, with_context = false) }}

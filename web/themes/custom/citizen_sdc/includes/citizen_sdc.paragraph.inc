@@ -9,12 +9,15 @@
  * Implements hook_preprocess_paragraph__PARAGRAPH_ID().
  */
 function citizen_sdc_preprocess_paragraph__form_placer(&$variables) {
-  $paragraph = $variables['paragraph'] ?? '';
-  if (isset($paragraph->field_form_title->value)) {
-    $form_title = $paragraph->field_form_title->value;
-    $webform = $variables['elements']['field_form'][0]['#webform'];
+  // Flag the webform entity so the webform SDC suppresses its own H1. The
+  // placer SDC renders its own H2 (gated on field_form_title) above the
+  // form. We only need the boolean placer-context flag here; per-instance
+  // title visibility lives on the paragraph and is handled in the placer
+  // template — avoids the shared-state bleed that happens with multiple
+  // placers referencing the same webform.
+  $webform = $variables['elements']['field_form'][0]['#webform'] ?? NULL;
+  if ($webform) {
     $webform->set('webform_placer', TRUE);
-    $webform->set('show_placer_title', $form_title);
   }
 }
 

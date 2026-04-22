@@ -1,11 +1,13 @@
 <div class="webform-wrapper">
-	{% if webform_placer and show_form_title %}
-    <div class="webform-wrapper__widget-title">{{ title }}</div>
-  {% elseif not webform_placer %}
+  {# H1 only renders on the standalone `/forms/{id}` page. In form-placer
+     context, `webform_placer` is set by
+     `citizen_sdc_preprocess_paragraph__form_placer()` and the placer SDC
+     renders its own H2 above the form. #}
+  {% if not webform_placer %}
     <h1 class="webform-wrapper__title">{{ title }}</h1>
   {% endif %}
 
-	<form{{ attr }}>
+  <form{{ attr }}>
     {{ prefix }}
     {{ form }}
     {{ suffix }}

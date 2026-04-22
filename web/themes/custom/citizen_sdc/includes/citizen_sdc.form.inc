@@ -11,17 +11,14 @@ use Drupal\webform\Entity\Webform;
 /**
  * Implements hook_preprocess_webform().
  *
- * Adds form titles as twig variables.
+ * Exposes the webform title + placer-context flag as Twig variables. Per-
+ * instance title visibility is owned by the form-placer SDC, not here.
  */
 function citizen_sdc_preprocess_webform(&$variables) {
   $webform_id = $variables["element"]["#webform_id"];
   $webform = Webform::load($webform_id);
-  // Expose flags set by the paragraph form placer so SDC props receive them.
   if ($webform->get('webform_placer')) {
-    $variables['webform_placer'] = TRUE; 
-  }
-  if ($webform->get('show_placer_title') == 1) {
-    $variables['show_form_title'] = TRUE;
+    $variables['webform_placer'] = TRUE;
   }
   $variables['title'] = $webform->label();
 }
