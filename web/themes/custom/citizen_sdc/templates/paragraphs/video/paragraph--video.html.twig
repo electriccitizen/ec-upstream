@@ -1,10 +1,13 @@
 {#
-  Paragraph Video wrapper that passes field values into the Video SDC component.
+  Drupal paragraph template for the `video` bundle. Hands off to
+  `citizen_sdc:video`; the rendered remote_video media comes through the
+  `video` slot (view display renders field_video via media default view
+  mode, which oEmbeds).
 #}
+{% set video_slot %}{{ content.field_video }}{% endset %}
 
 {{ include('citizen_sdc:video', {
+  attr: attributes,
   title: paragraph.field_widget_title.value,
-  slots: {
-    content: content.field_video
-  }
+  video: video_slot,
 }, with_context = false) }}
