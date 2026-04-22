@@ -50,9 +50,7 @@
     &:hover,
     &:focus {
       .paragraph--portals__image img {
-        border-color: $borderRule;
-        opacity: 0.7;
-        transition: border-color 0.3s ease, opacity 0.3s ease;
+        transform: scale(1.05);
       }
 
       .paragraph--portals__headline {
@@ -61,11 +59,17 @@
     }
   }
 
+  // `overflow: hidden` keeps the wrapper (the "window frame") at a fixed
+  // size — the <img> scales inside it on hover without pushing anything
+  // else around on the page.
   .paragraph--portals__image {
     margin-bottom: $spaceXxs;
+    overflow: hidden;
 
     img {
       @include image100W;
+      transform-origin: center;
+      transition: transform 0.5s ease-out;
     }
   }
 
