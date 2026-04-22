@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Custom-embed paragraph — delegates to the custom-embed SDC.
+ *
+ * `field_embed_content` is passed as a rendered slot (basic_string formatter
+ * wraps the value in Markup so the HTML/JS renders unescaped). Don't pull
+ * `paragraph.field_embed_content.value` as a prop — that's a raw string
+ * Twig will escape on print.
+ */
+#}
+{{ include('citizen_sdc:custom-embed', {
+  attr: attributes|without('class'),
+  title: paragraph.field_widget_title.value,
+  content: content.field_embed_content,
+}, with_context = false) }}

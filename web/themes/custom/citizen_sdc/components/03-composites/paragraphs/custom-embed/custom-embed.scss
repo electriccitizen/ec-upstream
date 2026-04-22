@@ -1,0 +1,15 @@
+/* =================
+   PARAGRAPH CUSTOM EMBED
+=================== */
+
+@use '../../../00-base/01-mixins/type-mixins' as *;
+
+// No wrapper constraints — embeds are often full-width (videos, calendars,
+// maps, etc.). Per-project rules can be added here if a specific embed
+// needs containment.
+
+.paragraph--custom-embed {
+  .paragraph--custom-embed__title {
+    @include widgetTitle;
+  }
+}

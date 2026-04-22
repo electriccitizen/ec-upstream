@@ -70,6 +70,15 @@
   font-size: $h6Sm;
 }
 
+// Default for `field_widget_title` headings across paragraph SDCs. Centered
+// above the widget with a small bottom margin. Override per-SDC where the
+// title belongs to a composed layout (flex header rows, inside columns, etc.)
+// by simply not @including the mixin in that SDC's scss.
+@mixin widgetTitle {
+  text-align: center;
+  margin-bottom: $spaceXs;
+}
+
 @mixin blockTitle {
   @include headerGlobals;
   font-size: 2.5rem;

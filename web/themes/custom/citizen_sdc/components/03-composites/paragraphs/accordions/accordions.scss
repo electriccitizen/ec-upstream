@@ -8,12 +8,13 @@
 @use '../../../00-base/01-mixins/animation-mixins' as *;
 @use '../../../00-base/01-mixins/breakpoint-mixins' as *;
 @use '../../../00-base/01-mixins/layout-mixins' as *;
+@use '../../../00-base/01-mixins/type-mixins' as *;
 
 .paragraph--accordions {
   @include textConstrain;
 
   .paragraph--accordions__title {
-    margin-bottom: $spaceXs;
+    @include widgetTitle;
   }
 
   .paragraph--accordions__item {
