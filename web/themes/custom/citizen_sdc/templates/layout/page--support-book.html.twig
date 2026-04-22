@@ -46,34 +46,28 @@
 
 {% extends "page.html.twig" %}
 
-{# check if a user is authenticated and replace the support page content if they are not #}
+{# Anonymous gating for support_book now lives in the
+   `citizen_custom.anonymous_access_redirect` event subscriber — anonymous
+   visitors are redirected to /user/login before this template runs. What
+   remains here is the authenticated-user role check for `site_management`
+   support pages; planned for relocation to a node-access handler after
+   the initial access refactor settles. #}
 {% block pageMain %}
-	{%- if logged_in -%}
-    {% if node.field_support_type.0.value == 'site_management' %} 
-      {% if 'administrator' in user.roles or 'site_manager' in user.roles or user.id == '1' %}
-		    {{ parent() }}
-      {% else %}
-        <main role="main-content">
-          <div class="main-content__layout">
-            <div class="main-content__error-content">
-              <div>You do not have permission to view {% block restrictedType %}this support page{% endblock %}. Please contact a site administrator if you feel this is an error.</div>
-            </div>
-          </div>
-        </main>
-      {% endif %}
-    {% else %}
+  {% if node.field_support_type.0.value == 'site_management' %}
+    {% if 'administrator' in user.roles or 'site_manager' in user.roles or user.id == '1' %}
       {{ parent() }}
-    {% endif %}
-	{%- else -%}
-		<main role="main-content">
-      <div class="main-content__layout">
-        <div class="main-content__error-content">
-          
-          <div>You must be <a href="/user">logged in</a> to view {% block restrictedAnonMessage %}support pages{% endblock %}.</div>
+    {% else %}
+      <main role="main-content">
+        <div class="main-content__layout">
+          <div class="main-content__error-content">
+            <div>You do not have permission to view {% block restrictedType %}this support page{% endblock %}. Please contact a site administrator if you feel this is an error.</div>
+          </div>
         </div>
-      </div>
-    </main>
-	{%- endif -%}
+      </main>
+    {% endif %}
+  {% else %}
+    {{ parent() }}
+  {% endif %}
 {% endblock %}
   
 
