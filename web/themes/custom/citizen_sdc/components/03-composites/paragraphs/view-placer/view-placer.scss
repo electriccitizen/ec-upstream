@@ -7,7 +7,6 @@
 @use '../../../00-base/01-mixins/button-mixins' as *;
 
 .paragraph--view-placer {
-  background: red;
   // Header row: title on the left, "more" link on the right. Wraps onto
   // two lines on narrow viewports so the link drops below the title
   // instead of squeezing. Matches content-list.

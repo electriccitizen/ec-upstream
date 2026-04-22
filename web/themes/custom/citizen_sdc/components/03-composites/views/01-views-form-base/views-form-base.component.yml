@@ -1,0 +1,20 @@
+component:
+  id: citizen_sdc:views-form-base
+  label: 'Views Exposed Form Base'
+  description: 'Wrapper for a view''s exposed filter form. Owns the skip-nav anchor pair + the `#views-form-wrapper` div that carries the form styling. Delegated to by `views-exposed-form.html.twig`.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the wrapper.'
+
+slots:
+  q:
+    title: 'q parameter'
+    description: 'Hidden `q` form element for non-clean-URL setups (usually empty).'
+  form:
+    title: Form
+    description: 'The rendered exposed filter form render array.'

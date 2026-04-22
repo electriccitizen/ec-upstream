@@ -1,106 +1,45 @@
 {#
-/**
- * @file
- * Theme override for main view template.
- *
- * Available variables:
- * - attributes: Remaining HTML attributes for the element.
- * - css_name: A css-safe version of the view name.
- * - css_class: The user-specified classes names, if any.
- * - header: The optional header.
- * - footer: The optional footer.
- * - rows: The results of the view query, if any.
- * - empty: The content to display if there are no rows.
- * - pager: The optional pager next/prev links to display.
- * - exposed: Exposed widget form/info to display.
- * - feed_icons: Optional feed icons to display.
- * - more: An optional link to the next page of results.
- * - title: Title of the view, only used when displaying in the admin preview.
- * - title_prefix: Additional output populated by modules, intended to be
- *   displayed in front of the view title.
- * - title_suffix: Additional output populated by modules, intended to be
- *   displayed after the view title.
- * - attachment_before: An optional attachment view to be displayed before the
- *   view content.
- * - attachment_after: An optional attachment view to be displayed after the
- *   view content.
- * - dom_id: Unique id for every view being printed to give unique class for
- *   Javascript.
- *
- * @see template_preprocess_views_view()
- */
+  Drupal's main view-render template. Splits `footer.result` out into its
+  own `count` slot (matches the original block layout), then hands the
+  remaining regions to `citizen_sdc:views-base`.
 #}
-{%
-  set classes = [
-    'view',
-    'view--' ~ css_name|clean_class,
-    'view--' ~ css_name|clean_class ~ '--' ~ view.current_display|clean_class,
-    dom_id ? 'js-view-dom-id-' ~ dom_id,
-  ]
-%}
-{% block viewLibrary %}
-	{{ attach_library('citizen_sdc/views') }}
-{% endblock %}
+{% set footer_without_result %}
+  {% if footer %}{{ footer|without('result') }}{% endif %}
+{% endset %}
+{% set count_slot %}
+  {% if footer and footer.result %}{{ footer.result }}{% endif %}
+{% endset %}
 
-<div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {{ title }}
-  {{ title_suffix }}
+{% set title_prefix_slot %}{{ title_prefix }}{% endset %}
+{% set title_slot %}{{ title }}{% endset %}
+{% set title_suffix_slot %}{{ title_suffix }}{% endset %}
+{% set header_slot %}{{ header }}{% endset %}
+{% set exposed_slot %}{{ exposed }}{% endset %}
+{% set attachment_before_slot %}{{ attachment_before }}{% endset %}
+{% set rows_slot %}{{ rows }}{% endset %}
+{% set empty_slot %}{{ empty }}{% endset %}
+{% set pager_slot %}{{ pager }}{% endset %}
+{% set attachment_after_slot %}{{ attachment_after }}{% endset %}
+{% set more_slot %}{{ more }}{% endset %}
+{% set feed_icons_slot %}{{ feed_icons }}{% endset %}
 
-  {% block viewHeader %}
-    {% if header %}
-      <div class="view__header">
-        {{ header }}
-      </div>
-    {% endif %}
-  {% endblock %}
-
-  {% block viewExposed %}
-    {{ exposed }}
-  {% endblock %}
-
-  {% block viewAttachBefore %}
-    {{ attachment_before }}
-  {% endblock %}
-  
-  {% block viewRows %}
-    {% if rows %}
-      <div class="view__content">
-        {{ rows }}
-      </div>
-    {% endif %}
-  {% endblock %}
-
-  {% block viewEmpty %}
-    {% if empty %}
-      <div class="view__empty">
-        {{ empty }}
-      </div>
-    {% endif %}
-  {% endblock %}
-
-  {% block viewPager %}
-    {{ pager }}
-  {% endblock %}
-
-  {% block viewAttachAfter %}
-    {{ attachment_after }}
-  {% endblock %}
-  
-  {{ more }}
-
-  {% block viewFooter %}
-      {% if footer %}
-      <div class="view__footer">
-        {{- footer|without('result') -}}
-      </div>
-      {% if footer.result %}
-        {% block count %}
-          {{ footer.result }}
-        {% endblock %}
-      {% endif %}
-    {% endif %}
-  {% endblock %}
-
-  {{ feed_icons }}
-</div>
+{{ include('citizen_sdc:views-base', {
+  attr: attributes,
+  css_name: css_name,
+  display_id: view.current_display,
+  dom_id: dom_id,
+  title_prefix: title_prefix_slot,
+  title: title_slot,
+  title_suffix: title_suffix_slot,
+  header: header_slot,
+  exposed: exposed_slot,
+  attachment_before: attachment_before_slot,
+  rows: rows_slot,
+  empty: empty_slot,
+  pager: pager_slot,
+  attachment_after: attachment_after_slot,
+  more: more_slot,
+  footer: footer_without_result,
+  count: count_slot,
+  feed_icons: feed_icons_slot,
+}, with_context = false) }}

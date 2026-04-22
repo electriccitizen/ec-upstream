@@ -1,0 +1,47 @@
+component:
+  id: citizen_sdc:views-table-base
+  label: 'Views Table Base'
+  description: 'Renders a table-style view. Ports the markup from Drupal core''s `views-view-table.html.twig` essentially as-is, plus depends on `citizen_sdc/table` so the shared table styling + responsive basicTable JS come along automatically.'
+  status: experimental
+
+libraryOverrides:
+  dependencies:
+    - citizen_sdc/table
+
+props:
+  type: object
+  required:
+    - header
+    - rows
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the `<table>`.'
+    title:
+      type: [string, 'null']
+      description: 'Fallback caption text when `caption_needed` is true and no explicit `caption` is provided.'
+    caption:
+      type: [string, 'null']
+      description: 'Explicit caption text.'
+    caption_needed:
+      type: boolean
+      description: 'Whether to emit a `<caption>` at all.'
+    summary:
+      type: [string, 'null']
+      description: 'Optional accessibility summary rendered inside `<details><summary>`.'
+    description:
+      type: [string, 'null']
+      description: 'Optional accessibility description rendered inside `<details>`.'
+    header:
+      type: array
+      description: 'Header columns, keyed by column machine name — each `{ content, wrapper_element, url, title, sort_indicator, default_classes, attributes }`. Standard views preprocess shape.'
+    rows:
+      type: array
+      description: 'Result rows, each `{ attributes, columns }` where `columns` is keyed the same as `header`.'
+    fields:
+      type: array
+      description: 'Map of column key → field machine name (used to build `views-field-{field}` classes).'
+    responsive:
+      type: boolean
+    sticky:
+      type: boolean

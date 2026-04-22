@@ -1,0 +1,64 @@
+component:
+  id: citizen_sdc:views-base
+  label: 'Views Base'
+  description: 'Base wrapper for a view render — owns the outer `<div class="view view--{css_name} view--{css_name}--{display_id}">` + the standard views regions (header, exposed form, rows, empty, pager, footer, etc.). Per-view SDCs (news, events, bios, site-search, etc.) delegate here and feed slot content.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - css_name
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the view wrapper.'
+    css_name:
+      type: string
+      description: 'A css-safe version of the view machine name, used to build the `view--{name}` / `view--{name}--{display_id}` BEM classes.'
+    display_id:
+      type: [string, 'null']
+      description: 'Current display id (e.g. `block_1`, `page_1`). Emits `view--{name}--{display_id}` as a secondary class hook.'
+    dom_id:
+      type: [string, 'null']
+      description: 'Unique DOM id Drupal assigns per render; emitted as `js-view-dom-id-{dom_id}` so JS can target a specific instance.'
+
+slots:
+  title_prefix:
+    title: 'Title prefix'
+    description: 'Contextual module/theme output placed before the view title.'
+  title:
+    title: Title
+    description: 'View title (usually only shown in admin previews).'
+  title_suffix:
+    title: 'Title suffix'
+    description: 'Contextual module/theme output placed after the view title.'
+  header:
+    title: Header
+    description: 'View header region.'
+  exposed:
+    title: 'Exposed form'
+    description: 'Rendered exposed-filter form (already wrapped by `views-exposed-form.html.twig` → `citizen_sdc:views-form-base`).'
+  attachment_before:
+    title: 'Attachment (before)'
+    description: 'Optional attachment view output rendered above the main content.'
+  rows:
+    title: Rows
+    description: 'The view result rows (from the row-style template — unformatted, table, grid, etc.).'
+  empty:
+    title: Empty
+    description: 'Empty-result message shown when there are no rows.'
+  pager:
+    title: Pager
+    description: 'Pager output.'
+  attachment_after:
+    title: 'Attachment (after)'
+    description: 'Optional attachment view output rendered below the main content.'
+  more:
+    title: 'More link'
+    description: 'Optional "more" link configured on the view display.'
+  footer:
+    title: Footer
+    description: 'View footer region (Drupal template splits `footer.result` out into the separate `count` slot).'
+  feed_icons:
+    title: 'Feed icons'
+    description: 'RSS / Atom feed icons configured on the view.'

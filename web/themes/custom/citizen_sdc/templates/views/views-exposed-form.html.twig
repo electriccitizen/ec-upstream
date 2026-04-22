@@ -1,28 +1,11 @@
 {#
-/**
- * @file
- * Theme override of a views exposed form.
- *
- * Available variables:
- * - form: A render element representing the form.
- *
- * @see template_preprocess_views_exposed_form()
- */
+  Drupal's views-exposed-form template. Hands off to
+  `citizen_sdc:views-form-base` for the wrapper + skip-nav anchors.
 #}
-{% if q is not empty %}
-  {#
-    This ensures that, if clean URLs are off, the 'q' is added first,
-    as a hidden form element, so that it shows up first in the POST URL.
-  #}
-{{ q }}
-{% endif %}
+{% set q_slot %}{% if q is not empty %}{{ q }}{% endif %}{% endset %}
+{% set form_slot %}{{ form }}{% endset %}
 
-<a href="#skip-filters" class="skip-nav visually-hidden focusable">
-  {%- trans %}Skip filters{% endtrans -%}
-</a>
-
-<div id="views-form-wrapper">
-  {{ form }}
-</div>
-
-<a id="skip-filters" tabindex="-2"></a>
+{{ include('citizen_sdc:views-form-base', {
+  q: q_slot,
+  form: form_slot,
+}, with_context = false) }}

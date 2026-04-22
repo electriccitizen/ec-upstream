@@ -1,0 +1,117 @@
+/* =================
+   VIEWS EXPOSED FORM BASE
+=================== */
+
+@use '../../../00-base/00-variables/colors' as *;
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/button-mixins' as *;
+@use '../../../00-base/01-mixins/form-mixins' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+
+#views-form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spaceXs 20px;
+  margin-bottom: 5rem;
+
+  .form-item {
+    width: 100%;
+
+    // Date range fieldsets keep their own width; all other filter items
+    // get a two-up layout starting at the smallTab breakpoint.
+    &:not(#edit-field-dates-value-wrapper):not(#edit-field-dates-value-wrapper--2) {
+      @include smallTab {
+        width: calc(50% - 10px);
+        max-width: 300px;
+      }
+    }
+
+    &#edit-field-dates-value-wrapper,
+    &#edit-field-dates-value-wrapper--2 {
+      padding: 0;
+
+      legend {
+        padding: 0 10px;
+      }
+
+      .fieldset-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        .form-item {
+          padding: 0 10px;
+
+          &.form-item-field-dates-value-op {
+            @include smallTab {
+              margin-bottom: 8.5rem;
+            }
+          }
+
+          &.form-item-field-dates-value-min,
+          &.form-item-field-dates-value-max {
+            @include smallTab {
+              margin-top: -36px;
+            }
+          }
+        }
+      }
+    }
+
+    label {
+      @include formLabel;
+      margin-bottom: $spaceXxs;
+    }
+
+    .select2-container--default {
+      max-width: 100%;
+
+      .select2-selection__choice {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  .form-actions {
+    @include auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    @include smallTab {
+      @include edgeReset;
+    }
+
+    input.form-submit.button {
+      @include submitButton;
+      & { margin: 0 10px; }
+
+      // Reset button — dart's `warningButton` inline here so we don't add
+      // the mixin just for one use.
+      &[data-drupal-selector='edit-reset'] {
+        & {
+          background: $resetBack;
+          color: $resetText;
+          border-color: $resetBack;
+          margin: 0 10px;
+        }
+
+        &:hover,
+        &:focus {
+          background: $resetBackHover;
+          color: $resetTextHover;
+          border-color: $resetBackHover;
+        }
+
+        &:active {
+          background: $resetBackActive;
+          color: $resetTextActive;
+          border-color: $resetBackActive;
+        }
+      }
+    }
+  }
+}
