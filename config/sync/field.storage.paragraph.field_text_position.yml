@@ -1,22 +1,25 @@
-uuid: 1043d5dc-ffd0-40e1-9724-0aadf71de547
+uuid: ea26e3d5-0ba6-4031-bb7d-3a5dae743757
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.field_size
-field_name: field_size
+id: paragraph.field_text_position
+field_name: field_text_position
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: column
-      label: 'Column Width'
+      value: overlay
+      label: Overlay
     -
-      value: original
-      label: Original
+      value: above
+      label: 'Above image'
+    -
+      value: below
+      label: 'Below image'
   allowed_values_function: ''
 module: options
 locked: false

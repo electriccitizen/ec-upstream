@@ -1,0 +1,146 @@
+/* =================
+   PARAGRAPH IMAGE
+=================== */
+
+@use '../../../00-base/00-variables/colors' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+
+.paragraph--image {
+  // Media container — shared across all text-position modes. Capped at
+  // 1280px wide, centered, `overflow: hidden` required for the overlay
+  // slide-in animation not to leak past the image edges.
+  .paragraph--image__media {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  // Plain text block (used for above / below / mobile-overlay-fallback).
+  // Centered, constrained to same max width as the image.
+  .paragraph--image__text-block {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $siteMargin;
+  }
+
+  .paragraph--image__headline {
+    margin: 0;
+  }
+
+  .paragraph--image__text {
+    // Preserve line breaks the editor typed (string_long — plain text,
+    // stored with raw \n characters).
+    white-space: pre-line;
+    margin: $spaceXs 0 0 0;
+  }
+
+  // ABOVE — text above image, both centered.
+  &--above {
+    .paragraph--image__text-block--above {
+      text-align: center;
+      margin-bottom: $spaceMd;
+    }
+  }
+
+  // BELOW — text below image, both centered.
+  &--below {
+    .paragraph--image__text-block--below {
+      text-align: center;
+      margin-top: $spaceMd;
+    }
+  }
+
+  // OVERLAY (mobile fallback — below $tab) — text below image, centered,
+  // no dark gradient. Renders exactly like `--below`.
+  &--overlay {
+    .paragraph--image__overlay {
+      padding: 0 $siteMargin;
+      margin-top: $spaceMd;
+    }
+
+    .paragraph--image__gradient {
+      display: none;
+    }
+
+    .paragraph--image__text-block--overlay {
+      text-align: center;
+    }
+  }
+
+  // OVERLAY (tablet+) — text absolutely positioned over the image, left-
+  // aligned, vertically centered; dark left-weighted gradient ensures
+  // contrast. Whole panel slides in from the left on scroll-in.
+  @include tab {
+    &--overlay {
+      .paragraph--image__overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+      }
+
+      .paragraph--image__gradient {
+        display: block;
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.75) 0%,
+          rgba(0, 0, 0, 0.5) 35%,
+          rgba(0, 0, 0, 0) 70%
+        );
+        pointer-events: none;
+      }
+
+      .paragraph--image__text-block--overlay {
+        position: relative;
+        z-index: 1;
+        text-align: left;
+        color: $white;
+        padding: $spaceMd;
+        max-width: 60%;
+        margin-left: 10%;
+      }
+    }
+
+    // Slide-in from the left. Applies to the whole overlay (gradient +
+    // text together) so the effect reads as a panel sweeping in from
+    // off-screen. Paragraph-base adds `data-animate="yes"` because
+    // image.twig passes `animate: 'yes'` only when overlay is chosen;
+    // the observer adds `.is-in-view` when the paragraph scrolls into
+    // view.
+    &--overlay[data-animate="yes"] {
+      .paragraph--image__overlay {
+        transform: translateX(-100%);
+        opacity: 0;
+        transition:
+          transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1),
+          opacity 0.6s ease-out;
+      }
+
+      &.is-in-view .paragraph--image__overlay {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paragraph--image--overlay[data-animate="yes"] .paragraph--image__overlay {
+    transform: none;
+    opacity: 1;
+    transition: none;
+  }
+}

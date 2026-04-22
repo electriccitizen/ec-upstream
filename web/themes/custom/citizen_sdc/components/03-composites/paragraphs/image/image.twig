@@ -1,0 +1,68 @@
+{# Resolve the effective text position. If either text field is set and
+   position is blank/null, fall back to 'below'. When no text at all, no
+   position modifier. #}
+{% set has_headline = headline is not empty %}
+{% set has_text = additional_text is not empty %}
+{% set has_any_text = has_headline or has_text %}
+{% set resolved_position = has_any_text ? (text_position|default('') ?: 'below') : null %}
+
+{# BEM modifier + animate flag. Only overlay opts into the scroll-in
+   observer — above/below are static. #}
+{% set image_attr = (attr ?: create_attribute()) %}
+{% if resolved_position %}
+  {% set image_attr = image_attr.addClass('paragraph--image--' ~ resolved_position) %}
+{% else %}
+  {% set image_attr = image_attr.addClass('paragraph--image--no-text') %}
+{% endif %}
+
+{% set animate_flag = resolved_position == 'overlay' ? 'yes' : 'no' %}
+
+{# Reusable text block. Keeps headline + additional-text composition in one
+   place so above/below/overlay branches stay symmetric. #}
+{% macro text_block(headline, additional_text, has_headline, has_text) %}
+  {% if has_headline %}
+    <h2 class="paragraph--image__headline">{{ headline }}</h2>
+  {% endif %}
+  {% if has_text %}
+    <div class="paragraph--image__text">{{ additional_text }}</div>
+  {% endif %}
+{% endmacro %}
+{% import _self as m %}
+
+{% set body %}
+  {% if resolved_position == 'above' %}
+    <div class="paragraph--image__text-block paragraph--image__text-block--above">
+      {{ m.text_block(headline, additional_text, has_headline, has_text) }}
+    </div>
+  {% endif %}
+
+  <div class="paragraph--image__media">
+    {{ image }}
+
+    {% if resolved_position == 'overlay' %}
+      {# Overlay panel — absolutely positioned on tablet+, statically
+         positioned below the image on mobile (with the gradient hidden
+         via CSS). JS-free: the paragraph-animate observer + CSS handle
+         the slide-in from the left. #}
+      <div class="paragraph--image__overlay">
+        <div class="paragraph--image__gradient" aria-hidden="true"></div>
+        <div class="paragraph--image__text-block paragraph--image__text-block--overlay">
+          {{ m.text_block(headline, additional_text, has_headline, has_text) }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  {% if resolved_position == 'below' %}
+    <div class="paragraph--image__text-block paragraph--image__text-block--below">
+      {{ m.text_block(headline, additional_text, has_headline, has_text) }}
+    </div>
+  {% endif %}
+{% endset %}
+
+{{ include('citizen_sdc:paragraph-base', {
+  attr: image_attr,
+  modifier_class: 'image',
+  animate: animate_flag,
+  content: body,
+}, with_context = false) }}

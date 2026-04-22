@@ -1,19 +1,19 @@
-uuid: b434459f-9217-41b2-ac1a-54cb81a6e2c2
+uuid: c2ceb545-ce31-4ad2-8049-f2e9c0196ce8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_caption
+    - field.storage.paragraph.field_headline
     - paragraphs.paragraphs_type.image
-id: paragraph.image.field_caption
-field_name: field_caption
+id: paragraph.image.field_headline
+field_name: field_headline
 entity_type: paragraph
 bundle: image
-label: Caption
+label: Headline
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: string

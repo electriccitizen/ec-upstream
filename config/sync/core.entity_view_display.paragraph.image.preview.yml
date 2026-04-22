@@ -4,39 +4,51 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.image.field_caption
+    - field.field.paragraph.image.field_additional_text
+    - field.field.paragraph.image.field_headline
     - field.field.paragraph.image.field_image
-    - field.field.paragraph.image.field_link
-    - field.field.paragraph.image.field_size
-    - field.field.paragraph.image.field_widget_title
+    - field.field.paragraph.image.field_text_position
     - image.style.paragraph_preview
     - paragraphs.paragraphs_type.image
   module:
     - layout_builder
     - media
+    - options
 third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-_core:
-  default_config_hash: jbsfWwn_vJgd4Hjnf-kbM2D0M12rqKAWMYo97Mq6LVU
 id: paragraph.image.preview
 targetEntityType: paragraph
 bundle: image
 mode: preview
 content:
+  field_headline:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_image:
     type: media_thumbnail
-    label: inline
+    label: hidden
     settings:
       image_link: ''
       image_style: paragraph_preview
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
+  field_text_position:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
-  field_caption: true
-  field_link: true
-  field_size: true
-  field_widget_title: true
+  field_additional_text: true
   search_api_excerpt: true
