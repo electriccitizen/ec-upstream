@@ -1,22 +1,25 @@
-uuid: 0915bbe0-1b3b-4ff4-84d8-61df8f2de1e5
+uuid: 19b5013b-c075-4406-ad06-d30fe1457900
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.field_width
-field_name: field_width
+id: paragraph.field_color
+field_name: field_color
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: full
-      label: 'Full width'
+      value: light_gray
+      label: 'Light Gray'
     -
-      value: text
-      label: 'Text width'
+      value: black
+      label: Black
+    -
+      value: primary
+      label: 'Primary Brand Color'
   allowed_values_function: ''
 module: options
 locked: false

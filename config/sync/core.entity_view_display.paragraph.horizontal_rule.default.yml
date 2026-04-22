@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.horizontal_rule.field_width
+    - field.field.paragraph.horizontal_rule.field_color
     - paragraphs.paragraphs_type.horizontal_rule
 id: paragraph.horizontal_rule.default
 targetEntityType: paragraph
@@ -11,5 +11,5 @@ bundle: horizontal_rule
 mode: default
 content: {  }
 hidden:
-  field_width: true
+  field_color: true
   search_api_excerpt: true

@@ -24,6 +24,13 @@ targetEntityType: paragraph
 bundle: fifty_fifty
 mode: preview
 content:
+  field_alignment:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_media:
     type: media_thumbnail
     label: hidden
@@ -32,13 +39,6 @@ content:
       image_style: paragraph_preview
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_alignment:
-    type: list_default
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
     region: content
   field_widget_title:
     type: string

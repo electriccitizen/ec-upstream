@@ -1,9 +1,8 @@
 {#
-  Paragraph Horizontal Rule wrapper that passes field values into the Horizontal Rule SDC component.
+  Drupal paragraph template for the `horizontal_rule` bundle. Pulls the
+  color key off field_color and hands it to the SDC.
 #}
-
-{% set width = elements['#paragraph'].field_width.0.value|default('full') %}
-
 {{ include('citizen_sdc:horizontal-rule', {
-  width: width
+  attr: attributes,
+  color: paragraph.field_color.value,
 }, with_context = false) }}

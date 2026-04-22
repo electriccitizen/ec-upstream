@@ -19,26 +19,19 @@ targetEntityType: paragraph
 bundle: fifty_fifty
 mode: default
 content:
-  field_media:
-    type: media_library_widget
-    weight: 0
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
   field_alignment:
     type: options_select
     weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_widget_title:
-    type: string_textfield
-    weight: 2
+  field_link:
+    type: link_default
+    weight: 4
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_long_text:
     type: text_textarea
@@ -48,13 +41,20 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_link:
-    type: link_default
-    weight: 4
+  field_media:
+    type: media_library_widget
+    weight: 0
     region: content
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
+      media_types: {  }
+    third_party_settings: {  }
+  field_widget_title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

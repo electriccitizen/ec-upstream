@@ -1,0 +1,14 @@
+{# BEM color modifier on the wrapper. `|clean_class` turns `light_gray` →
+   `light-gray` to match CSS naming conventions. #}
+{% set hr_attr = (attr ?: create_attribute()).addClass('paragraph--horizontal-rule--' ~ color|clean_class) %}
+
+{# Capture the `<hr>` in a {% set %} block so Twig treats it as safe markup.
+   Passing `'<hr>'` as a string prop would auto-escape to `&lt;hr&gt;`. #}
+{% set hr_body %}<hr>{% endset %}
+
+{{ include('citizen_sdc:paragraph-base', {
+  attr: hr_attr,
+  modifier_class: 'horizontal-rule',
+  animate: 'no',
+  content: hr_body,
+}, with_context = false) }}

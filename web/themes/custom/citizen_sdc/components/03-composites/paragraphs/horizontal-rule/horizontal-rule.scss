@@ -1,0 +1,30 @@
+/* =================
+   PARAGRAPH HORIZONTAL RULE
+=================== */
+
+@use '../../../00-base/00-variables/colors' as *;
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+
+.paragraph--horizontal-rule {
+  @include textConstrain;
+
+  hr {
+    border: 0;
+    border-top: 1px solid;
+    margin: $spaceMd 0;
+  }
+
+  &--light-gray hr {
+    border-top-color: $lightGray;
+  }
+
+  &--black hr {
+    border-top-color: $black;
+  }
+
+  &--primary hr {
+    border-top-color: $hrPrimary;
+  }
+}

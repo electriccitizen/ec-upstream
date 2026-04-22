@@ -3,14 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.horizontal_rule.field_width
+    - field.field.paragraph.horizontal_rule.field_color
     - paragraphs.paragraphs_type.horizontal_rule
 id: paragraph.horizontal_rule.default
 targetEntityType: paragraph
 bundle: horizontal_rule
 mode: default
 content:
-  field_width:
+  field_color:
     type: options_select
     weight: 0
     region: content
