@@ -1,0 +1,14 @@
+/* =================
+   VIEWS — NEWS / ALL NEWS
+   Scoped under `.view--news--all-news` (emitted by views-base).
+=================== */
+
+@use '../../../../00-base/00-variables/units' as *;
+
+.view--news--all-news {
+  padding-bottom: $elementSpace;
+
+  .views-row:not(:last-child) {
+    margin-bottom: $spaceMd;
+  }
+}

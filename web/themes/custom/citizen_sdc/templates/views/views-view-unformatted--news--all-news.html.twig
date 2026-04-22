@@ -1,0 +1,9 @@
+{#
+  Display-specific suggestion for `news.all_news`. Routes to
+  `citizen_sdc:views-all-news` so its SCSS auto-attaches.
+#}
+{{ include('citizen_sdc:views-all-news', {
+  title: title,
+  default_row_class: default_row_class,
+  rows: rows,
+}, with_context = false) }}
