@@ -1,0 +1,28 @@
+{% set alignment_modifier = 'paragraph--fifty-fifty--' ~ (alignment|default('left')) %}
+{% set fifty_attr = (attr ?: create_attribute()).addClass(alignment_modifier) %}
+
+{% set fifty_body %}
+  <div class="paragraph--fifty-fifty__media">
+    {{ media }}
+  </div>
+  <div class="paragraph--fifty-fifty__content">
+    <h2 class="paragraph--fifty-fifty__title">{{ title }}</h2>
+    {% if text %}
+      <div class="paragraph--fifty-fifty__text">
+        {{ text }}
+      </div>
+    {% endif %}
+    {% if link %}
+      <div class="paragraph--fifty-fifty__actions">
+        {{ link }}
+      </div>
+    {% endif %}
+  </div>
+{% endset %}
+
+{{ include('citizen_sdc:paragraph-base', {
+  attr: fifty_attr,
+  modifier_class: 'fifty-fifty',
+  animate: 'yes',
+  content: fifty_body,
+}, with_context = false) }}

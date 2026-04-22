@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * 50/50 paragraph — delegates to the fifty-fifty SDC.
+ *
+ * Media rendering swaps by bundle:
+ *   - `image` → rendered at the `400x300` media view mode (via twig_tweak's
+ *     `drupal_entity` function) so responsive-image sizing kicks in.
+ *   - anything else (e.g. `remote_video`) → rendered via the field's default
+ *     render array from the paragraph view display (which is configured to
+ *     the `default` view mode).
+ *
+ * `content|without('field_media')` isn't strictly needed here since we never
+ * pass the raw content through, but the custom media rendering bypasses the
+ * field render array entirely — if that pattern bites later, strip it.
+ */
+#}
+{% set media_entity = paragraph.field_media.0.entity %}
+{% set media_bundle = media_entity ? media_entity.bundle.value : null %}
+
+{% if media_bundle == 'image' %}
+  {% set media_rendered = drupal_entity('media', media_entity.id.value, '400x300') %}
+{% else %}
+  {% set media_rendered = content.field_media %}
+{% endif %}
+
+{{ include('citizen_sdc:fifty-fifty', {
+  attr: attributes|without('class'),
+  title: paragraph.field_widget_title.value,
+  alignment: paragraph.field_alignment.value,
+  media_type: media_bundle,
+  media: media_rendered,
+  text: paragraph.field_long_text.value ? content.field_long_text : null,
+  link: paragraph.field_link.0 ? content.field_link : null,
+}, with_context = false) }}

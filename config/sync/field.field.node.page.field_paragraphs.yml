@@ -7,6 +7,7 @@ dependencies:
     - node.type.page
     - paragraphs.paragraphs_type.accordions
     - paragraphs.paragraphs_type.custom_embed
+    - paragraphs.paragraphs_type.fifty_fifty
     - paragraphs.paragraphs_type.form_placer
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.horizontal_rule
@@ -34,6 +35,7 @@ settings:
     target_bundles:
       accordions: accordions
       custom_embed: custom_embed
+      fifty_fifty: fifty_fifty
       form_placer: form_placer
       gallery: gallery
       horizontal_rule: horizontal_rule
@@ -57,6 +59,9 @@ settings:
         enabled: false
       custom_embed:
         weight: -37
+        enabled: true
+      fifty_fifty:
+        weight: -20
         enabled: true
       form_placer:
         weight: -35

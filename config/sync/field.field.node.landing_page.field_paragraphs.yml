@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.content_list
     - paragraphs.paragraphs_type.cta
     - paragraphs.paragraphs_type.custom_embed
+    - paragraphs.paragraphs_type.fifty_fifty
     - paragraphs.paragraphs_type.form_placer
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.horizontal_rule
@@ -40,6 +41,7 @@ settings:
       cta: cta
       content_list: content_list
       custom_embed: custom_embed
+      fifty_fifty: fifty_fifty
       form_placer: form_placer
       gallery: gallery
       horizontal_rule: horizontal_rule
@@ -68,6 +70,9 @@ settings:
         enabled: true
       custom_embed:
         weight: -36
+        enabled: true
+      fifty_fifty:
+        weight: -21
         enabled: true
       form_placer:
         weight: -35

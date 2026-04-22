@@ -1,0 +1,23 @@
+uuid: 1c591239-552f-4025-9365-b3ba18929e83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_alignment
+    - paragraphs.paragraphs_type.fifty_fifty
+  module:
+    - options
+id: paragraph.fifty_fifty.field_alignment
+field_name: field_alignment
+entity_type: paragraph
+bundle: fifty_fifty
+label: Alignment
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: left
+default_value_callback: ''
+settings: {  }
+field_type: list_string
