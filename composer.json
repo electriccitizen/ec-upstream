@@ -123,6 +123,10 @@
       "drupal/core": {
       	"Media library won't allow media in two fields with the same name on nodes": "https://www.drupal.org/files/issues/2023-02-28/3345064.patch",
         "Update module can get 'stuck' with 'no releases available', https://www.drupal.org/project/drupal/issues/2920285": "https://www.drupal.org/files/issues/2920285-update-status.patch"
+      },
+      "drupal/gin": {
+        "3580451 - Sidebar disappears after viewport resize (storage-key race)": "patches/gin-3580451-sidebar-storage-key-race-condition.patch",
+        "3580451 - Restore missing .meta-sidebar__trigger CSS selectors": "patches/gin-3580451-sidebar-missing-css-selectors.patch"
       }
     },
     "composer-exit-on-patch-failure": true,
