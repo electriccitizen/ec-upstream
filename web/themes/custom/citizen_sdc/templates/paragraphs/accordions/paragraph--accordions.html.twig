@@ -1,25 +1,36 @@
 {#
-  Paragraph Accordions wrapper that passes field values into the Accordions SDC component.
+/**
+ * @file
+ * Accordions paragraph — delegates to the accordions SDC.
+ *
+ * Single-SDC pattern for parent/child paragraph pairs: the `accordion_item`
+ * bundle has no dedicated SDC. This template iterates `field_accordion_items`
+ * and pulls each child's `field_accordion_header` + `field_long_text` into
+ * an `items` array that the parent SDC iterates to render the full accordion
+ * structure with ARIA-coordinated IDs.
+ *
+ * Unique `id` per item combines the parent paragraph ID + the item delta so
+ * multiple accordions on the same page don't collide on ARIA IDs.
+ */
 #}
-
 {% set items = [] %}
-{%- for key, accordion in content.field_accordion_items -%}
-  {% if key|first != '#' %}
-    {% set control_id = 'accordion-content-' ~ paragraph.id() ~ '-' ~ (key + 1) %}
-    {% set text = {
-      '#type': 'processed_text',
-      '#text': accordion['#paragraph'].field_long_text.0.value ?? '',
-      '#format': accordion['#paragraph'].field_long_text.0.format
-    } %}
+{% for key, accordion in content.field_accordion_items %}
+  {% if key|first != '#' and accordion['#paragraph'] %}
+    {% set item_paragraph = accordion['#paragraph'] %}
     {% set items = items|merge([{
-      id: control_id,
-      header: accordion['#paragraph'].field_accordion_header.0.value,
-      text: text
+      id: paragraph.id.value ~ '-' ~ (key + 1),
+      header: item_paragraph.field_accordion_header.0.value,
+      body: {
+        '#type': 'processed_text',
+        '#text': item_paragraph.field_long_text.0.value ?? '',
+        '#format': item_paragraph.field_long_text.0.format,
+      },
     }]) %}
   {% endif %}
-{%- endfor %}
+{% endfor %}
 
 {{ include('citizen_sdc:accordions', {
+  attr: attributes|without('class'),
   title: paragraph.field_widget_title.value,
-  items: items
+  items: items,
 }, with_context = false) }}
