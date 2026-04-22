@@ -1,0 +1,48 @@
+{# BEM modifier on the gallery wrapper: `paragraph--gallery--lightbox` or
+   `paragraph--gallery--slider`. paragraph-base adds the base
+   `paragraph` + `paragraph--gallery` classes; this modifier composes alongside. #}
+{% set gallery_attr = (attr ?: create_attribute()).addClass('paragraph--gallery--' ~ type) %}
+
+{% set gallery_body %}
+  {% if title %}
+    <h2 class="paragraph--gallery__title">{{ title }}</h2>
+  {% endif %}
+
+  <div class="paragraph--gallery__wrap" data-gallery-type="{{ type }}" data-gallery-id="{{ gallery_id }}">
+    {% if type == 'lightbox' %}
+      {% for item in items %}
+        <div class="paragraph--gallery__item featherlight-gal" href="#gallery-{{ gallery_id }}-item-{{ item.id }}" rel="gallery-{{ gallery_id }}">
+          <div class="paragraph--gallery__thumb">
+            {{ item.thumb }}
+          </div>
+          <div class="paragraph--gallery__hidden featherlight-hidden" id="gallery-{{ gallery_id }}-item-{{ item.id }}">
+            <div class="paragraph--gallery__full">
+              {{ item.full }}
+            </div>
+            {% if item.caption %}
+              <div class="paragraph--gallery__caption">{{ item.caption }}</div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      {% for item in items %}
+        <div class="paragraph--gallery__item">
+          <div class="paragraph--gallery__full">
+            {{ item.full }}
+          </div>
+          {% if item.caption %}
+            <div class="paragraph--gallery__caption">{{ item.caption }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endset %}
+
+{{ include('citizen_sdc:paragraph-base', {
+  attr: gallery_attr,
+  modifier_class: 'gallery',
+  animate: 'yes',
+  content: gallery_body,
+}, with_context = false) }}

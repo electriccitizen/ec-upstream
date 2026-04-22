@@ -40,3 +40,26 @@ select2:
   dependencies:
     - core/jquery
 
+slick:
+  version: 1.8.1
+  css:
+    theme:
+      components-addons/slick/slick.css: { minified: false }
+      components-addons/slick/slick-theme.css: { minified: false }
+  js:
+    components-addons/slick/slick.min.js: { minified: true }
+  dependencies:
+    - core/jquery
+
+featherlight:
+  version: 1.7.13
+  css:
+    theme:
+      components-addons/featherlight/featherlight.css: { minified: false }
+      components-addons/featherlight/featherlight.gallery.css: { minified: false }
+  js:
+    components-addons/featherlight/featherlight.min.js: { minified: true }
+    components-addons/featherlight/featherlight.gallery.min.js: { minified: true }
+  dependencies:
+    - core/jquery
+

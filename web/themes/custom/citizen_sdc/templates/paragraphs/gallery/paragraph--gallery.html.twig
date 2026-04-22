@@ -1,30 +1,48 @@
 {#
-  Paragraph Gallery wrapper that passes field values into the Gallery SDC component.
+  Drupal paragraph template for the `gallery` bundle.
+
+  Builds a structured `items` array (one entry per gallery_item child — no SDC
+  of its own; single-SDC pattern same as accordions) and delegates rendering
+  to `citizen_sdc:gallery`.
+
+  Renders each referenced media twice via drupal_entity():
+    - `large_thumb` for the lightbox thumbnail grid
+    - `large` for the lightbox modal full-size / slider main image
 #}
 
-{% set gallery_type = content.field_gallery_type.0['#markup']|clean_class %}
-{% set items = [] %}
+{# Derive render mode from the boolean field_gallery_type: TRUE = lightbox,
+   FALSE = slider. #}
+{% set gallery_type = paragraph.field_gallery_type.value == '1' ? 'lightbox' : 'slider' %}
 
-{%- for key, item in content.field_gallery_items -%}
-  {%- if key|first != '#' and item['#paragraph'].field_image.0.target_id > 0 -%}
+{# Conditionally attach the jQuery library Phase A relies on. Phase B will
+   replace both with vanilla JS and drop these. #}
+{% if gallery_type == 'lightbox' %}
+  {{ attach_library('citizen_sdc/featherlight') }}
+{% else %}
+  {{ attach_library('citizen_sdc/slick') }}
+{% endif %}
+
+{# Build the items array. Each child paragraph must have a media reference
+   in field_image; items without one are skipped. #}
+{% set items = [] %}
+{% for key, item in content.field_gallery_items %}
+  {% if key|first != '#' and item['#paragraph'].field_image.0.target_id > 0 %}
     {% set media_id = item['#paragraph'].field_image.0.target_id %}
-    {% set caption = item['#paragraph'].field_caption.0.value ?? '' %}
-    {% set thumb = drupal_entity('media', media_id, 'large_thumb') %}
-    {% set full = drupal_entity('media', media_id, 'large') %}
     {% set items = items|merge([{
       id: media_id,
-      thumb: thumb,
-      full: full,
-      caption: caption
+      thumb: drupal_entity('media', media_id, 'large_thumb'),
+      full: drupal_entity('media', media_id, 'large'),
+      caption: item['#paragraph'].field_caption.0.value ?? '',
     }]) %}
-  {%- endif -%}
-{%- endfor -%}
+  {% endif %}
+{% endfor %}
 
-{{ include([
-  'citizen_sdc:gallery',
-  '@citizen_sdc/components/03-composites/paragraphs/gallery/gallery.twig'
-], {
-  title: paragraph.field_widget_title.value,
-  type: gallery_type,
-  items: items
-}, with_context = false, ignore_missing = true) }}
+{% if items|length > 0 %}
+  {{ include('citizen_sdc:gallery', {
+    attr: attributes,
+    title: paragraph.field_widget_title.value,
+    type: gallery_type,
+    gallery_id: paragraph.id.value,
+    items: items,
+  }, with_context = false) }}
+{% endif %}
