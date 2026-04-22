@@ -15,11 +15,16 @@
  * field render array entirely — if that pattern bites later, strip it.
  */
 #}
+{# Media's `bundle` is an entity_reference base field (like node.type) —
+   `.bundle.target_id` gives the bundle machine name; `.bundle.value` would
+   return empty. #}
 {% set media_entity = paragraph.field_media.0.entity %}
-{% set media_bundle = media_entity ? media_entity.bundle.value : null %}
+{% set media_bundle = media_entity ? media_entity.bundle.target_id : null %}
 
+{# Media's ID base field is `mid` (like node's `nid`) — `.id` isn't a
+   valid field on Media, so we use `.mid.value` directly. #}
 {% if media_bundle == 'image' %}
-  {% set media_rendered = drupal_entity('media', media_entity.id.value, '400x300') %}
+  {% set media_rendered = drupal_entity('media', media_entity.mid.value, '400x300') %}
 {% else %}
   {% set media_rendered = content.field_media %}
 {% endif %}

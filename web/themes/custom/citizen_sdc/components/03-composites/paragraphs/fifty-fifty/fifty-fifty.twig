@@ -1,8 +1,13 @@
 {% set alignment_modifier = 'paragraph--fifty-fifty--' ~ (alignment|default('left')) %}
 {% set fifty_attr = (attr ?: create_attribute()).addClass(alignment_modifier) %}
 
+{# BEM modifier on the media div based on bundle (image, remote-video, …) so
+   CSS can scope image-only rules (equal-height stretch, object-fit cover)
+   without affecting video media. #}
+{% set media_type_class = media_type ? 'paragraph--fifty-fifty__media--' ~ media_type|clean_class : '' %}
+
 {% set fifty_body %}
-  <div class="paragraph--fifty-fifty__media">
+  <div class="paragraph--fifty-fifty__media{% if media_type_class %} {{ media_type_class }}{% endif %}">
     {{ media }}
   </div>
   <div class="paragraph--fifty-fifty__content">
