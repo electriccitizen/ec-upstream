@@ -14,12 +14,9 @@
    FALSE = slider. #}
 {% set gallery_type = paragraph.field_gallery_type.value == '1' ? 'lightbox' : 'slider' %}
 
-{# Lightbox is vanilla (native <dialog> — no library dep beyond the SDC's
-   co-located `gallery.js`). Slider still needs slick; will drop when slick
-   is replaced with Embla. #}
-{% if gallery_type == 'slider' %}
-  {{ attach_library('citizen_sdc/slick') }}
-{% endif %}
+{# Both variants are vanilla now. Lightbox uses native <dialog> (JS lives
+   in the gallery SDC). Slider delegates to `citizen_sdc:slider`, which
+   declares Embla as a library dependency — no attach_library needed. #}
 
 {# Build the items array. Each child paragraph must have a media reference
    in field_image; items without one are skipped. #}

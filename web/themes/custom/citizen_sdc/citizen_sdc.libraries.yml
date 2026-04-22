@@ -40,15 +40,11 @@ select2:
   dependencies:
     - core/jquery
 
-slick:
-  version: 1.8.1
-  css:
-    theme:
-      components-addons/slick/slick.css: { minified: false }
-      components-addons/slick/slick-theme.css: { minified: false }
+embla:
+  version: 8.x
   js:
-    components-addons/slick/slick.min.js: { minified: true }
-  dependencies:
-    - core/jquery
+    components-addons/embla/embla-carousel.umd.js: { minified: true }
+    components-addons/embla/embla-carousel-autoplay.umd.js: { minified: true }
+    components-addons/embla/embla-carousel-auto-height.umd.js: { minified: true }
 
 

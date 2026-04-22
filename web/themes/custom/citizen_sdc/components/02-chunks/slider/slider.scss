@@ -1,0 +1,105 @@
+/* =================
+   SLIDER
+   Carousel chrome — ul/li track, viewport overflow clip, prev/next arrow
+   buttons, SR-only live region. Consumer SDCs provide slide content and
+   style it themselves; this file owns only the carousel scaffolding.
+=================== */
+
+@use '../../00-base/00-variables/colors' as *;
+@use '../../00-base/00-variables/component-colors' as *;
+@use '../../00-base/00-variables/units' as *;
+@use '../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../00-base/01-mixins/general-mixins' as *;
+
+.slider {
+  position: relative;
+
+  &__viewport {
+    overflow: hidden;
+  }
+
+  &__track {
+    @include listReset;
+    display: flex;
+    // `flex-start` (not `stretch`) lets each slide keep its natural height
+    // — required for the AutoHeight plugin to detect per-slide differences
+    // and resize the viewport. With `stretch`, every slide matches the
+    // tallest and the plugin has nothing to react to.
+    align-items: flex-start;
+    backface-visibility: hidden;
+    touch-action: pan-y pinch-zoom;
+    // Smoothly animate height when adaptive_height is on — Embla's
+    // AutoHeight plugin writes inline `height` on THIS element (the
+    // container / first child of the viewport), not on the viewport
+    // itself. Transitioning on the viewport looks like nothing happens
+    // because the viewport's auto-height just follows the container
+    // instantly. Keep the duration modest so the height arrives around
+    // the same time the slide transform settles (~420ms).
+    transition: height 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  // Per-view width driven by CSS custom props set inline on the wrapper by
+  // the SDC twig (e.g. `style="--slider-per-view-tablet: 2; …"`). Each
+  // breakpoint falls back to the smaller one, so setting only `mobile: 1`
+  // gives 1 slide at all widths.
+  &__slide {
+    flex: 0 0 calc(100% / var(--slider-per-view-mobile, 1));
+    min-width: 0;
+    list-style: none;
+
+    @include tab {
+      flex: 0 0 calc(100% / var(--slider-per-view-tablet, var(--slider-per-view-mobile, 1)));
+    }
+
+    @include desk {
+      flex: 0 0 calc(100% / var(--slider-per-view-desktop, var(--slider-per-view-tablet, var(--slider-per-view-mobile, 1))));
+    }
+  }
+
+  // Prev / next arrow buttons — circular semi-transparent-black badge with
+  // a white SVG icon. Absolutely centered on the viewport's left/right
+  // edges. Shared shape across the two directions.
+  &__nav {
+    @include buttonWipe;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: $sliderArrowBack;
+    color: $modalGalButton;
+    transition: background 0.3s ease, color 0.3s ease;
+    z-index: 2;
+
+    &:hover,
+    &:focus-visible {
+      background: $modalGalButtonBackHover;
+      color: $modalGalButtonHover;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $link;
+      outline-offset: 2px;
+    }
+
+    svg {
+      display: block;
+    }
+  }
+
+  &__nav--prev {
+    left: 10px;
+  }
+
+  &__nav--next {
+    right: 10px;
+  }
+
+  &__live {
+    @include visuallyHidden;
+  }
+}

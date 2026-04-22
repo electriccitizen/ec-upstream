@@ -1,0 +1,54 @@
+component:
+  id: citizen_sdc:slider
+  label: Slider
+  description: 'Reusable carousel. Takes a list of rendered slides and produces the carousel chrome — ul/li track, prev/next buttons, ARIA live region — backed by Embla + autoplay plugin. Used by gallery (slider mode) and any other SDC that needs a carousel (news-featured, program-teasers, etc.).'
+  status: experimental
+
+libraryOverrides:
+  dependencies:
+    - citizen_sdc/embla
+
+props:
+  type: object
+  required:
+    - slider_id
+    - items
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the wrapper.'
+    slider_id:
+      type: string
+      description: 'Unique id per instance. Used for `data-slider` to scope the JS init + any per-instance hook selectors.'
+    label:
+      type: [string, 'null']
+      description: 'Accessible name for the carousel region (applied as `aria-label`). Leave null/empty when the slider is inside a named container (e.g. a gallery with its own H2) so assistive tech doesn''t announce a redundant region name.'
+    autoplay:
+      type: boolean
+      default: false
+      description: 'Whether to autoplay. Uses Embla''s autoplay plugin. Pauses on hover + on user interaction (wheel/drag).'
+    autoplay_interval:
+      type: integer
+      default: 5000
+      description: 'ms between auto-advances when autoplay is on.'
+    loop:
+      type: boolean
+      default: true
+      description: 'Whether to wrap around at the ends.'
+    adaptive_height:
+      type: boolean
+      default: false
+      description: 'When true, the viewport height follows the currently-visible slide''s height. Prevents a wall of whitespace under short images when slides vary in aspect ratio. Backed by the Embla `auto-height` plugin. CSS transition on `.slider__viewport` animates the height change smoothly.'
+    per_view:
+      type: [object, 'null']
+      description: 'Slides visible per viewport, keyed by breakpoint — e.g. `{ mobile: 1, tablet: 2, desktop: 4 }`. Values emit as CSS custom properties on the wrapper (`--slider-per-view-mobile`, etc.); slide widths are derived via `calc(100% / var(--slider-per-view-*, …))` with cascading fallback so `mobile: 1` works standalone. All keys optional; defaults to 1 slide everywhere.'
+      properties:
+        mobile:
+          type: integer
+        tablet:
+          type: integer
+        desktop:
+          type: integer
+    items:
+      type: array
+      description: 'Array of rendered slide markup. Each item becomes a `<li class="slider__slide">` whose content is the consumer''s responsibility — the SDC owns only the chrome (viewport, track, arrows, live region).'

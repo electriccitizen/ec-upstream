@@ -42,10 +42,34 @@
     let currentIndex = 0;
     let openedBy = null;
 
+    // Crossfade transition between images: fade the stage out, swap in
+    // the new content, wait for the new image to finish decoding (so we
+    // don't fade back in on a blank placeholder), then fade back in.
+    // Masks the momentary white flash that happens when the old node is
+    // removed and the new one hasn't painted yet.
+    const FADE_MS = 180;
+
     function render(index) {
       currentIndex = ((index % items.length) + items.length) % items.length;
       const clone = items[currentIndex].source.content.cloneNode(true);
-      stage.replaceChildren(clone);
+
+      stage.classList.add('is-transitioning');
+
+      const swap = () => {
+        stage.replaceChildren(clone);
+        const newImg = stage.querySelector('img');
+        const fadeIn = () => stage.classList.remove('is-transitioning');
+        if (newImg && !newImg.complete) {
+          newImg.addEventListener('load', fadeIn, { once: true });
+          newImg.addEventListener('error', fadeIn, { once: true });
+        } else {
+          requestAnimationFrame(fadeIn);
+        }
+      };
+      // Let the fade-out finish before swapping content, then fade back in
+      // once the new image is ready.
+      setTimeout(swap, FADE_MS);
+
       // Announce the position for screen readers.
       if (liveRegion) {
         liveRegion.textContent = `Image ${currentIndex + 1} of ${items.length}`;

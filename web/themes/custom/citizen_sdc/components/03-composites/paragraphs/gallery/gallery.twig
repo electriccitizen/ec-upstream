@@ -56,20 +56,32 @@
       <div class="paragraph--gallery__sr-status" data-gallery-live aria-live="polite"></div>
     </dialog>
   {% else %}
-    {# Slider markup unchanged pending slick → Embla rewrite. <ul>/<li>
-       semantics will move here with that pass, same as lightbox now. #}
-    <div class="paragraph--gallery__wrap" data-gallery-type="slider" data-gallery-id="{{ gallery_id }}">
-      {% for item in items %}
-        <div class="paragraph--gallery__item">
-          <div class="paragraph--gallery__full">
-            {{ item.full }}
-          </div>
+    {# Slider mode delegates to the shared `citizen_sdc:slider` SDC, which
+       owns the carousel chrome (ul/li track, arrows, ARIA live region) and
+       attaches the Embla library. We just compose each slide's content
+       (image + optional caption) and hand over the array. #}
+    {% set slides = [] %}
+    {% for item in items %}
+      {% set slide %}
+        <div class="paragraph--gallery__slide">
+          <div class="paragraph--gallery__full">{{ item.full }}</div>
           {% if item.caption %}
-            <div class="paragraph--gallery__caption">{{ item.caption }}</div>
+            <figcaption class="paragraph--gallery__caption">{{ item.caption }}</figcaption>
           {% endif %}
         </div>
-      {% endfor %}
-    </div>
+      {% endset %}
+      {% set slides = slides|merge([slide]) %}
+    {% endfor %}
+
+    {{ include('citizen_sdc:slider', {
+      slider_id: 'gallery-' ~ gallery_id,
+      label: '',
+      autoplay: true,
+      autoplay_interval: 5000,
+      loop: true,
+      adaptive_height: true,
+      items: slides,
+    }, with_context = false) }}
   {% endif %}
 {% endset %}
 

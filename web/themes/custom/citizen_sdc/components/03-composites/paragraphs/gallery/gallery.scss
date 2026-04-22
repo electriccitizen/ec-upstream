@@ -84,12 +84,20 @@
     }
 
     // Stage = <figure> holding the current image + caption clone. Position
-    // context for the prev/next/close buttons.
+    // context for the prev/next/close buttons. Opacity transition drives
+    // the crossfade between images — `gallery.js` toggles
+    // `.is-transitioning` around the swap so the old image fades out,
+    // content is replaced, then the new image fades in once decoded.
     .paragraph--gallery__modal-stage {
       position: relative;
       margin: 0;
       padding: 0;
       background: $siteBack;
+      transition: opacity 0.18s ease;
+
+      &.is-transitioning {
+        opacity: 0;
+      }
 
       img {
         display: block;
@@ -170,13 +178,17 @@
   }
 
   // =========================
-  // SLIDER — kept on slick for now. Visuals match dart output. Markup will
-  // move to <ul>/<li> when slick is replaced with Embla.
+  // SLIDER — delegates to `citizen_sdc:slider` (Embla). This scope styles
+  // only the slide content (image + caption); chrome (viewport, arrows,
+  // live region) comes from slider.scss.
   // =========================
   &.paragraph--gallery--slider {
     @include textConstrain;
 
-    .paragraph--gallery__wrap {
+    // Edge-to-edge on mobile to match the dart/slick visual; constrain on
+    // tablet+. Applied to the slider's section wrapper, not to inner
+    // slides (so arrows stay positioned relative to the visible area).
+    .slider {
       @include edgeToEdge;
       width: calc(100% + 40px);
 
@@ -184,10 +196,27 @@
         @include edgeReset;
         width: 100%;
       }
+    }
 
-      img {
-        width: 100%;
-      }
+    .paragraph--gallery__slide {
+      display: block;
+    }
+
+    .paragraph--gallery__full img {
+      width: 100%;
+      display: block;
+    }
+
+    // Caption below the image, italic grey (replaces the old .field-caption
+    // slick override from dart's _galleries.scss).
+    .paragraph--gallery__caption {
+      width: 100%;
+      margin: $spaceXs 0 0 0;
+      padding: 0 $siteMargin;
+      color: $midGray;
+      font-size: 2rem;
+      font-style: italic;
+      text-align: center;
     }
   }
 
@@ -196,12 +225,12 @@
   // =========================
   // SLIDER: whole carousel fades in; title is excluded.
   &.paragraph--gallery--slider[data-animate="yes"] {
-    .paragraph--gallery__wrap {
+    .slider {
       opacity: 0;
       transition: opacity 0.6s ease-out;
     }
 
-    &.is-in-view .paragraph--gallery__wrap {
+    &.is-in-view .slider {
       opacity: 1;
     }
   }
@@ -232,7 +261,8 @@
 @media (prefers-reduced-motion: reduce) {
   .paragraph--gallery[data-animate="yes"] {
     .paragraph--gallery__wrap,
-    .paragraph--gallery__item {
+    .paragraph--gallery__item,
+    .slider {
       opacity: 1;
       transform: none;
       transition: none;
