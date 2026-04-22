@@ -1,0 +1,10 @@
+{#
+  Display-specific suggestion for `site_search.site_search_block`. Routes
+  to `citizen_sdc:views-search-results` so its SCSS + search-highlight JS
+  auto-attach.
+#}
+{{ include('citizen_sdc:views-search-results', {
+  title: title,
+  default_row_class: default_row_class,
+  rows: rows,
+}, with_context = false) }}
