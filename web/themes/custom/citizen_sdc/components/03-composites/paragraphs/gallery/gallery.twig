@@ -8,24 +8,57 @@
     <h2 class="paragraph--gallery__title">{{ title }}</h2>
   {% endif %}
 
-  <div class="paragraph--gallery__wrap" data-gallery-type="{{ type }}" data-gallery-id="{{ gallery_id }}">
-    {% if type == 'lightbox' %}
+  {% if type == 'lightbox' %}
+    {# Semantic <ul>/<li>: thumbnails are a list. Each trigger is a real
+       <button> (modal activation) with aria-haspopup + positional aria-label.
+       Full-image + caption source lives in an inert <template> sibling; JS
+       clones it into the <dialog> stage on open. No extra DOM cost if JS
+       is disabled: thumbnails still render, just not clickable. #}
+    <ul class="paragraph--gallery__wrap" data-gallery-type="lightbox" data-gallery-id="{{ gallery_id }}">
       {% for item in items %}
-        <div class="paragraph--gallery__item featherlight-gal" href="#gallery-{{ gallery_id }}-item-{{ item.id }}" rel="gallery-{{ gallery_id }}">
-          <div class="paragraph--gallery__thumb">
-            {{ item.thumb }}
-          </div>
-          <div class="paragraph--gallery__hidden featherlight-hidden" id="gallery-{{ gallery_id }}-item-{{ item.id }}">
-            <div class="paragraph--gallery__full">
-              {{ item.full }}
-            </div>
+        <li class="paragraph--gallery__item">
+          <button type="button" class="paragraph--gallery__trigger" data-gallery-index="{{ loop.index0 }}" aria-haspopup="dialog" aria-label="Open image {{ loop.index }} of {{ items|length }}{% if item.caption %}: {{ item.caption }}{% endif %}">
+            <span class="paragraph--gallery__thumb">{{ item.thumb }}</span>
+          </button>
+          <template class="paragraph--gallery__source">
+            <div class="paragraph--gallery__full">{{ item.full }}</div>
             {% if item.caption %}
-              <div class="paragraph--gallery__caption">{{ item.caption }}</div>
+              <figcaption class="paragraph--gallery__caption">{{ item.caption }}</figcaption>
             {% endif %}
-          </div>
-        </div>
+          </template>
+        </li>
       {% endfor %}
-    {% else %}
+    </ul>
+
+    {# Native <dialog> modal. `.showModal()` hoists it to the top layer, so
+       stacking/overflow contexts of ancestors don't matter. ESC-to-close,
+       role="dialog", aria-modal, and focus trap are handled by the browser
+       for free. #}
+    <dialog class="paragraph--gallery__modal" aria-label="Image gallery" data-gallery-modal>
+      <button type="button" class="paragraph--gallery__modal-close" aria-label="Close gallery" data-gallery-close>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M18.3 5.71 12 12.01l6.3 6.3-1.42 1.42-6.3-6.3-6.3 6.3-1.41-1.42 6.3-6.3-6.3-6.3L4.3 4.3l6.3 6.3 6.3-6.3z"/>
+        </svg>
+      </button>
+      <button type="button" class="paragraph--gallery__modal-nav paragraph--gallery__modal-prev" aria-label="Previous image" data-gallery-prev>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+        </svg>
+      </button>
+      <figure class="paragraph--gallery__modal-stage" data-gallery-stage>
+        {# Populated by JS from the clicked item's <template> contents. #}
+      </figure>
+      <button type="button" class="paragraph--gallery__modal-nav paragraph--gallery__modal-next" aria-label="Next image" data-gallery-next>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+        </svg>
+      </button>
+      <div class="paragraph--gallery__sr-status" data-gallery-live aria-live="polite"></div>
+    </dialog>
+  {% else %}
+    {# Slider markup unchanged pending slick → Embla rewrite. <ul>/<li>
+       semantics will move here with that pass, same as lightbox now. #}
+    <div class="paragraph--gallery__wrap" data-gallery-type="slider" data-gallery-id="{{ gallery_id }}">
       {% for item in items %}
         <div class="paragraph--gallery__item">
           <div class="paragraph--gallery__full">
@@ -36,8 +69,8 @@
           {% endif %}
         </div>
       {% endfor %}
-    {% endif %}
-  </div>
+    </div>
+  {% endif %}
 {% endset %}
 
 {{ include('citizen_sdc:paragraph-base', {

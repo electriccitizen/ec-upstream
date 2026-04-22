@@ -14,11 +14,10 @@
    FALSE = slider. #}
 {% set gallery_type = paragraph.field_gallery_type.value == '1' ? 'lightbox' : 'slider' %}
 
-{# Conditionally attach the jQuery library Phase A relies on. Phase B will
-   replace both with vanilla JS and drop these. #}
-{% if gallery_type == 'lightbox' %}
-  {{ attach_library('citizen_sdc/featherlight') }}
-{% else %}
+{# Lightbox is vanilla (native <dialog> — no library dep beyond the SDC's
+   co-located `gallery.js`). Slider still needs slick; will drop when slick
+   is replaced with Embla. #}
+{% if gallery_type == 'slider' %}
   {{ attach_library('citizen_sdc/slick') }}
 {% endif %}
 

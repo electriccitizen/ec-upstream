@@ -2,8 +2,12 @@
    PARAGRAPH GALLERY
 =================== */
 
+@use '../../../00-base/00-variables/colors' as *;
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/fonts' as *;
 @use '../../../00-base/00-variables/units' as *;
 @use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/general-mixins' as *;
 @use '../../../00-base/01-mixins/media-mixins' as *;
 @use '../../../00-base/01-mixins/layout-mixins' as *;
 @use '../../../00-base/01-mixins/type-mixins' as *;
@@ -15,10 +19,12 @@
     @include widgetTitle;
   }
 
-  // LIGHTBOX — grid of thumbnails; featherlight opens the hidden full/caption
-  // pair in a modal gallery.
+  // =========================
+  // LIGHTBOX — thumbnail grid + <dialog> modal.
+  // =========================
   &.paragraph--gallery--lightbox {
     .paragraph--gallery__wrap {
+      @include listReset;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -26,24 +32,147 @@
       gap: $spaceMd 2rem;
     }
 
-    .paragraph--gallery__hidden {
-      display: none;
-    }
-
     .paragraph--gallery__item {
-      cursor: pointer;
-      overflow: hidden;
       width: 100%;
       max-width: 308px;
+      list-style: none;
+    }
 
+    // The trigger is a real <button>; strip browser chrome but keep focus
+    // ring for keyboard users.
+    .paragraph--gallery__trigger {
+      @include buttonWipe;
+      display: block;
+      width: 100%;
+      overflow: hidden;
+
+      &:focus-visible {
+        outline: 2px solid $link;
+        outline-offset: 2px;
+      }
+    }
+
+    .paragraph--gallery__thumb {
+      display: block;
       img {
         width: 100%;
         @include imageHover;
       }
     }
+
+    // -------------------------
+    // DIALOG MODAL
+    // -------------------------
+    .paragraph--gallery__modal {
+      // Modern <dialog> hoists to the top layer on .showModal(); stacking
+      // and overflow contexts of ancestors don't affect it.
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      max-width: 90vw;
+      max-height: 90vh;
+      overflow: visible;
+
+      &::backdrop {
+        background: $modalBack;
+      }
+
+      &:not([open]) {
+        display: none;
+      }
+    }
+
+    // Stage = <figure> holding the current image + caption clone. Position
+    // context for the prev/next/close buttons.
+    .paragraph--gallery__modal-stage {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      background: $siteBack;
+
+      img {
+        display: block;
+        max-width: 100%;
+        max-height: 90vh;
+      }
+
+      // Caption bar overlaid on the bottom of the image — dark translucent
+      // strip, italic white text (matches featherlight's old treatment).
+      .paragraph--gallery__caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+        background: rgba(35, 35, 35, 0.6);
+        color: $white;
+        font-size: 2rem;
+        font-style: italic;
+        text-align: center;
+        z-index: 30;
+        margin: 0;
+      }
+    }
+
+    // Shared styling for all three modal buttons: circular semi-transparent-
+    // black badge with a white SVG icon. Close sits at top-right; prev/next
+    // are absolutely centered on the stage's left/right edges.
+    .paragraph--gallery__modal-close,
+    .paragraph--gallery__modal-nav {
+      @include buttonWipe;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: $sliderArrowBack;
+      color: $modalGalButton;
+      transition: background 0.3s ease, color 0.3s ease;
+      z-index: 40;
+
+      &:hover,
+      &:focus-visible {
+        background: $modalGalButtonBackHover;
+        color: $modalGalButtonHover;
+      }
+
+      &:focus-visible {
+        outline: 2px solid $link;
+        outline-offset: 2px;
+      }
+    }
+
+    .paragraph--gallery__modal-close {
+      top: 8px;
+      right: 8px;
+    }
+
+    .paragraph--gallery__modal-nav {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .paragraph--gallery__modal-prev {
+      left: 8px;
+    }
+
+    .paragraph--gallery__modal-next {
+      right: 8px;
+    }
+
+    // SR-only live region for position announcements ("Image 2 of 5").
+    .paragraph--gallery__sr-status {
+      @include visuallyHidden;
+    }
   }
 
-  // SLIDER — single image at a time; slick handles the carousel.
+  // =========================
+  // SLIDER — kept on slick for now. Visuals match dart output. Markup will
+  // move to <ul>/<li> when slick is replaced with Embla.
+  // =========================
   &.paragraph--gallery--slider {
     @include textConstrain;
 
@@ -62,9 +191,10 @@
     }
   }
 
-  // SLIDER animation — whole carousel fades in. Title is intentionally
-  // excluded (renders immediately). Animating individual slides would fight
-  // slick's DOM manipulation, so we fade the wrap as a unit.
+  // =========================
+  // SCROLL-IN ANIMATIONS
+  // =========================
+  // SLIDER: whole carousel fades in; title is excluded.
   &.paragraph--gallery--slider[data-animate="yes"] {
     .paragraph--gallery__wrap {
       opacity: 0;
@@ -76,10 +206,9 @@
     }
   }
 
-  // LIGHTBOX animation — thumbnails fade + rise in with a random-ish
-  // staggered pattern. Five delay buckets cycled via :nth-child(5n+X) give
-  // a non-sequential look that still reads as intentional. Delays for the
-  // cycle: 0, 0.30s, 0.10s, 0.40s, 0.20s. Title excluded.
+  // LIGHTBOX: staggered, random-ish fade + rise on the <li> thumbnails via
+  // a 5-cycle nth-child delay pattern. Title is excluded. Delays cycle:
+  // 0s, 0.30s, 0.10s, 0.40s, 0.20s.
   &.paragraph--gallery--lightbox[data-animate="yes"] {
     .paragraph--gallery__item {
       opacity: 0;

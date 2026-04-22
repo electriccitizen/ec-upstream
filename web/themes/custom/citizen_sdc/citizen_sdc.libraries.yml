@@ -12,7 +12,7 @@ global:
 paragraph-animate:
   version: 1.0
   js:
-    js/paragraph-animate.js: {}
+    components/03-composites/paragraphs/00-paragraph-base/paragraph-animate.js: {}
   dependencies:
     - core/drupal
     - core/once
@@ -51,15 +51,4 @@ slick:
   dependencies:
     - core/jquery
 
-featherlight:
-  version: 1.7.13
-  css:
-    theme:
-      components-addons/featherlight/featherlight.css: { minified: false }
-      components-addons/featherlight/featherlight.gallery.css: { minified: false }
-  js:
-    components-addons/featherlight/featherlight.min.js: { minified: true }
-    components-addons/featherlight/featherlight.gallery.min.js: { minified: true }
-  dependencies:
-    - core/jquery
 
