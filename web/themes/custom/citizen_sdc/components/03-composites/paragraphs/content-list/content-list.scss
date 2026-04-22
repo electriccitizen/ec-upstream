@@ -1,0 +1,32 @@
+/* =================
+   PARAGRAPH CONTENT LIST
+=================== */
+
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/button-mixins' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+
+.paragraph--content-list {
+  @include textConstrain;
+
+  // Header row: title on the left, "more" link on the right. Wraps onto
+  // two lines on narrow viewports so the link drops below the title
+  // instead of squeezing.
+  .paragraph--content-list__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spaceXs $spaceSm;
+    margin-bottom: $spaceSm;
+  }
+
+  .paragraph--content-list__title {
+    margin: 0;
+  }
+
+  .paragraph--content-list__actions a {
+    @include button;
+  }
+}
