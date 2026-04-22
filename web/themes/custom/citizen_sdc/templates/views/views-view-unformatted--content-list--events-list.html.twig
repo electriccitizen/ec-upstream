@@ -1,0 +1,9 @@
+{#
+  Display-specific suggestion for `content_list.events_list`. Routes to
+  `citizen_sdc:views-events-list` so its SCSS auto-attaches.
+#}
+{{ include('citizen_sdc:views-events-list', {
+  title: title,
+  default_row_class: default_row_class,
+  rows: rows,
+}, with_context = false) }}
