@@ -3,10 +3,19 @@
  * Accordion toggle behavior. One listener per `[data-accordions]` wrapper.
  * Click on a `.paragraph--accordions__toggle` button expands/collapses its
  * `.paragraph--accordions__panel` sibling-within-item. Only one item can be
- * open at a time within a wrapper — opening one closes any sibling that's
- * currently expanded. Transitions via inline `max-height` so the panel
- * animates between 0 and its natural content height. ARIA state
- * (`aria-expanded`, `aria-hidden`, `inert`) stays in sync with visual state.
+ * open at a time — opening one closes any sibling that's currently expanded.
+ * The transition itself is pure CSS (`grid-template-rows: 0fr → 1fr` on the
+ * panel); JS just toggles the `.is-expanded` / `.is-collapsed` classes and
+ * keeps ARIA state + `inert` in sync. No height measurement, no inline
+ * styles — grid-rows sizes itself from content and adapts if content height
+ * changes after open (late-loading images, embeds).
+ * `transitionend` drives the scroll-into-view follow-up so timing stays
+ * coupled to the CSS duration.
+ * ARIA: `aria-expanded` on the toggle, `inert` on the panel (removed when
+ * expanded — `inert` alone handles hiding from AT and tab order, no
+ * redundant `aria-hidden`).
+ * Keyboard: click/Enter/Space toggle (native button); ↑/↓ move focus to
+ * sibling toggles, Home/End jump to first/last (WAI-ARIA accordion pattern).
  */
 ((Drupal, once) => {
   'use strict';
@@ -20,26 +29,25 @@
     item.classList.remove('is-collapsed');
     item.classList.add('is-expanded');
     toggle.setAttribute('aria-expanded', 'true');
-    panel.setAttribute('aria-hidden', 'false');
     panel.removeAttribute('inert');
-
-    // Start at 0, then set scrollHeight on next tick so the transition runs.
-    panel.style.maxHeight = '0px';
-    setTimeout(() => {
-      panel.style.maxHeight = `${panel.scrollHeight}px`;
-    }, 10);
   };
 
-  // Slightly longer than the max-height transition (600ms in SCSS). After
-  // the close-siblings + open animations finish, the layout has settled so
-  // the clicked header's final viewport position is known.
-  const SCROLL_DELAY_MS = 650;
+  const closeItem = (item, toggle, panel) => {
+    item.classList.remove('is-expanded');
+    item.classList.add('is-collapsed');
+    toggle.setAttribute('aria-expanded', 'false');
+    panel.setAttribute('inert', '');
+  };
 
-  // If the clicked header ends up off-screen (common when a sibling was open
-  // far above and its panel just collapsed, pushing the page up), scroll
-  // so the header is back in view. Respects prefers-reduced-motion.
-  const ensureToggleVisible = (toggle) => {
-    setTimeout(() => {
+  // After the open transition completes (layout has settled), scroll the
+  // toggle into view if it ended up off-screen — happens when a sibling
+  // was open above and its collapse pushed the clicked item up past the
+  // viewport top. Uses `transitionend` so we stay coupled to CSS duration.
+  const ensureToggleVisibleWhenDone = (toggle, panel) => {
+    const onEnd = (event) => {
+      if (event.propertyName !== 'grid-template-rows') return;
+      panel.removeEventListener('transitionend', onEnd);
+
       const rect = toggle.getBoundingClientRect();
       const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
       const isVisible = rect.top >= 0 && rect.bottom <= viewportHeight;
@@ -50,22 +58,27 @@
         behavior: reducedMotion ? 'auto' : 'smooth',
         block: 'start',
       });
-    }, SCROLL_DELAY_MS);
+    };
+    panel.addEventListener('transitionend', onEnd);
   };
 
-  const closeItem = (item, toggle, panel) => {
-    item.classList.remove('is-expanded');
-    item.classList.add('is-collapsed');
-    toggle.setAttribute('aria-expanded', 'false');
-    panel.setAttribute('aria-hidden', 'true');
-    panel.setAttribute('inert', '');
+  // Focus a sibling toggle — supports ArrowUp/ArrowDown (wrap) + Home/End
+  // per the WAI-ARIA accordion pattern.
+  const focusSibling = (wrapper, currentToggle, direction) => {
+    const toggles = Array.from(wrapper.querySelectorAll(TOGGLE_SELECTOR));
+    const count = toggles.length;
+    if (count === 0) return;
 
-    // Set the current height explicitly first, then 0 on next tick so the
-    // transition has a start value to animate from.
-    panel.style.maxHeight = `${panel.scrollHeight}px`;
-    setTimeout(() => {
-      panel.style.maxHeight = '0px';
-    }, 10);
+    const currentIndex = toggles.indexOf(currentToggle);
+    let nextIndex;
+    switch (direction) {
+      case 'next': nextIndex = (currentIndex + 1) % count; break;
+      case 'prev': nextIndex = (currentIndex - 1 + count) % count; break;
+      case 'first': nextIndex = 0; break;
+      case 'last': nextIndex = count - 1; break;
+      default: return;
+    }
+    toggles[nextIndex].focus();
   };
 
   Drupal.behaviors.citizenAccordions = {
@@ -76,13 +89,12 @@
           const panel = item.querySelector(PANEL_SELECTOR);
           if (!toggle || !panel) return;
 
-          toggle.addEventListener('click', (event) => {
-            event.preventDefault();
+          toggle.addEventListener('click', () => {
             const isCollapsed = item.classList.contains('is-collapsed');
 
             if (isCollapsed) {
-              // Close any currently-expanded siblings in this wrapper first
-              // so only one item is open at a time.
+              // Close any currently-expanded siblings so only one item is
+              // open at a time.
               wrapper.querySelectorAll(`${ITEM_SELECTOR}.is-expanded`).forEach((other) => {
                 if (other === item) return;
                 const otherToggle = other.querySelector(TOGGLE_SELECTOR);
@@ -93,12 +105,31 @@
               });
 
               openItem(item, toggle, panel);
-              // After the layout settles (sibling close + open), scroll the
-              // toggle back into view if the reflow pushed it off-screen.
-              ensureToggleVisible(toggle);
+              ensureToggleVisibleWhenDone(toggle, panel);
             }
             else {
               closeItem(item, toggle, panel);
+            }
+          });
+
+          toggle.addEventListener('keydown', (event) => {
+            switch (event.key) {
+              case 'ArrowDown':
+                event.preventDefault();
+                focusSibling(wrapper, toggle, 'next');
+                break;
+              case 'ArrowUp':
+                event.preventDefault();
+                focusSibling(wrapper, toggle, 'prev');
+                break;
+              case 'Home':
+                event.preventDefault();
+                focusSibling(wrapper, toggle, 'first');
+                break;
+              case 'End':
+                event.preventDefault();
+                focusSibling(wrapper, toggle, 'last');
+                break;
             }
           });
         });

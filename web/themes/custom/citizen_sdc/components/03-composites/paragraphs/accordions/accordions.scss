@@ -17,6 +17,15 @@
   }
 
   .paragraph--accordions__item {
+    // H3 wrapper carries no visual weight — zero out default heading margins
+    // and inherit font from the button inside.
+    .paragraph--accordions__heading {
+      margin: 0;
+      padding: 0;
+      font: inherit;
+      font-weight: inherit;
+    }
+
     .paragraph--accordions__toggle {
       width: 100%;
       text-align: left;
@@ -51,29 +60,35 @@
       flex: 1 1 auto;
     }
 
+    // Single morphing SVG — the icon element IS the `<svg>` itself (no span
+    // wrapper). Vertical line hides on expanded state, turning + into −.
     .paragraph--accordions__icon {
       flex: 0 0 auto;
-      display: inline-flex;
-      align-items: center;
-
-      svg {
-        width: 2.4rem;
-        height: 2.4rem;
-      }
-      &--minus {
-        display: none;
-      }
+      width: 2.4rem;
+      height: 2.4rem;
     }
 
     .paragraph--accordions__panel {
-      transition: max-height 0.6s ease-out;
-      max-height: 0;
-      overflow: hidden;
+      // Grid-rows transition: `0fr` (collapsed) → `1fr` (expanded). The
+      // browser animates grid-template-rows between them. No JS height
+      // measurement, no inline styles, content can grow after open.
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 1.2s ease-out;
+    }
 
-      .paragraph--accordions__body {
-        padding: 4rem 3rem;
-        background: $accordContentBack;
-      }
+    // Inner wrapper is the single grid item. It clips the body (including
+    // the body's padding) when the grid row collapses to 0. Separating
+    // this from the padded body lets both concerns stay simple: inner
+    // handles clipping, body handles spacing.
+    .paragraph--accordions__inner {
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .paragraph--accordions__body {
+      padding: 4rem 3rem;
+      background: $accordContentBack;
     }
 
     &.is-expanded {
@@ -91,13 +106,14 @@
         }
       }
 
-      // Swap icon visibility on expanded state.
-      .paragraph--accordions__icon--plus {
-        display: none;
+      // Expand the panel's grid row to content size.
+      .paragraph--accordions__panel {
+        grid-template-rows: 1fr;
       }
 
-      .paragraph--accordions__icon--minus {
-        display: inline-flex;
+      // Hide the vertical line — single morphing SVG turns + into −.
+      .paragraph--accordions__icon-vertical {
+        display: none;
       }
     }
   }
