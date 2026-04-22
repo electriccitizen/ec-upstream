@@ -19,6 +19,8 @@ Usage from a per-bundle SDC twig:
   content: composed_markup,   // the bundle's rendered body
 }, with_context = false) }}
 ```
+## Admin Paragraph Icons
+These icons are shown by layout paragraphs and need to be added for each new paragraph. Download the icon you want from material.io and add it to the icons folder in the citizen_custom module. Add CSS to the admin.css file to assign the icon to the new paragraph.
 
 ## Scroll-in animation
 

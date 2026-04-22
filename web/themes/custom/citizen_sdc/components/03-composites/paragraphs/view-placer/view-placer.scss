@@ -1,0 +1,35 @@
+/* =================
+   PARAGRAPH VIEW PLACER
+=================== */
+
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/button-mixins' as *;
+
+.paragraph--view-placer {
+  background: red;
+  // Header row: title on the left, "more" link on the right. Wraps onto
+  // two lines on narrow viewports so the link drops below the title
+  // instead of squeezing. Matches content-list.
+  .paragraph--view-placer__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spaceXs $spaceSm;
+    margin-bottom: $spaceSm;
+  }
+
+  .paragraph--view-placer__title {
+    margin: 0;
+  }
+
+  .paragraph--view-placer__actions a {
+    @include button;
+  }
+
+  // Per-display tweaks live in per-project overrides that target
+  // `.paragraph--view-placer--{display-machine-name}` — no generic rules
+  // here; view-placer is used for "designerly" views where the header
+  // layout and view chrome vary per project.
+}

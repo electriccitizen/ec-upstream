@@ -1,16 +1,16 @@
 {#
-  Paragraph View Placer wrapper that passes selected view output into the View Placer SDC component.
+  Drupal paragraph template for the `view_placer` bundle. Renders
+  field_view (viewsreference → embed/block display) directly; no
+  emptiness check — views are dev-built, the empty output is the signal
+  if something's misconfigured.
 #}
+{% set view_slot %}{{ content.field_view }}{% endset %}
+{% set link_slot %}{{ content.field_link }}{% endset %}
 
-{% set rendered_view = content.field_view ?? '' %}
-{% set rendered_link = content.field_link ?? '' %}
-{% set widget_title = paragraph.field_widget_title.value ?? '' %}
-
-{{ include([
-  'citizen_sdc:view-placer',
-  '@citizen_sdc/components/03-composites/paragraphs/view-placer/view-placer.twig'
-], {
-  title: widget_title,
-  view: rendered_view,
-  link: rendered_link
-}, with_context = false, ignore_missing = true) }}
+{{ include('citizen_sdc:view-placer', {
+  attr: attributes,
+  title: paragraph.field_widget_title.value,
+  view_display: paragraph.field_view.display_id,
+  view: view_slot,
+  link: link_slot,
+}, with_context = false) }}

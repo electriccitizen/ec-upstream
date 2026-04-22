@@ -1,0 +1,129 @@
+/* =================
+   USER DASHBOARD
+   /user/{uid} landing. Two-column with circular profile image on the
+   left and identity/metadata/actions on the right. Replaces the old
+   Layout-Builder display — this SDC owns the full layout.
+=================== */
+
+@use '../../00-base/00-variables/colors' as *;
+@use '../../00-base/00-variables/component-colors' as *;
+@use '../../00-base/00-variables/fonts' as *;
+@use '../../00-base/00-variables/units' as *;
+@use '../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../00-base/01-mixins/general-mixins' as *;
+@use '../../00-base/01-mixins/layout-mixins' as *;
+@use '../../00-base/01-mixins/style-mixins' as *;
+
+.user-dashboard {
+  @include auto;
+  max-width: $contentStop;
+  padding: $spaceMd $siteMargin;
+  display: flex;
+  flex-direction: column;
+  gap: $spaceMd;
+
+  @include tab {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: $spaceLg;
+  }
+
+  &__media {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 225px;
+    align-self: center;
+
+    @include tab {
+      width: 300px;
+      max-width: 300px;
+      align-self: flex-start;
+    }
+
+    // Circular crop — the rendered image field still emits a wrapper div
+    // around the <img>, so the clipping lives on the outer container to
+    // keep the <img> fully responsive inside it.
+    > * {
+      border-radius: 50%;
+      overflow: hidden;
+      display: block;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__info {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  &__name {
+    margin: 0 0 $spaceXs 0;
+  }
+
+  &__meta {
+    margin-bottom: $spaceXxs;
+    font-size: 2rem;
+  }
+
+  &__meta-label {
+    font-weight: $heavy;
+    margin-right: $spaceXxs;
+  }
+
+  // Account-level inline links (Edit Profile | Logout) with vertical-rule
+  // dividers between items. Reuses dart's `vertRule` mixin for the seam.
+  &__account-actions {
+    margin: $spaceXs 0;
+
+    ul {
+      @include listReset;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0;
+    }
+
+    li {
+      padding: 0 $spaceXs;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:not(:last-child) {
+        position: relative;
+
+        &::after {
+          @include vertRule(right, 80%, $borderRule);
+        }
+      }
+    }
+
+    a {
+      color: $link;
+    }
+  }
+
+  // Task buttons (View Content, + Add Content, Support Book, etc.). The
+  // <a class="ec-button"> styling is applied globally via the button
+  // system; this scope only handles spacing.
+  &__task-actions {
+    margin: $spaceSm 0;
+
+    ul {
+      @include listReset;
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spaceXs;
+    }
+  }
+
+  &__masquerade {
+    margin-top: $spaceSm;
+  }
+}
