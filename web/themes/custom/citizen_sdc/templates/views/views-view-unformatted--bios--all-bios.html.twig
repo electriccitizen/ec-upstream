@@ -1,0 +1,11 @@
+{#
+  Display-specific suggestion for the `bios.all_bios` view+display. Hands
+  off to `citizen_sdc:views-all-bios` (which itself delegates to
+  `citizen_sdc:views-unformatted-base`) — the point of this routing is
+  so the display-specific SCSS auto-attaches on these renders.
+#}
+{{ include('citizen_sdc:views-all-bios', {
+  title: title,
+  default_row_class: default_row_class,
+  rows: rows,
+}, with_context = false) }}
