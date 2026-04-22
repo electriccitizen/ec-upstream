@@ -74,7 +74,7 @@
       // measurement, no inline styles, content can grow after open.
       display: grid;
       grid-template-rows: 0fr;
-      transition: grid-template-rows 1.2s ease-out;
+      transition: grid-template-rows 0.84s ease-out;
     }
 
     // Inner wrapper is the single grid item. It clips the body (including
