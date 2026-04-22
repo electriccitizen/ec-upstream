@@ -1,0 +1,25 @@
+component:
+  id: citizen_sdc:cta
+  label: 'Paragraph CTA'
+  description: 'Call-to-action paragraph. Headline + optional supporting text + optional button link, composed inside paragraph-base. Opts into the scroll-in observer (`animate: yes`).'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - headline
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object from the paragraph template (class-stripped via `attributes|without(''class'')`).'
+    headline:
+      type: string
+      description: 'Plain-text heading from field_headline. Rendered as `<h2 class="paragraph--cta__headline">`.'
+    additional_text:
+      type: [string, 'null']
+      description: 'Plain-text supporting copy from field_additional_text. Rendered as a `<p class="paragraph--cta__text">` when present.'
+
+slots:
+  link:
+    title: 'Link'
+    description: 'Rendered field_link render array (the link field''s default formatter produces an `<a>`). Wrapped in `<div class="paragraph--cta__actions">` by the SDC. Pass as a slot (rather than a structured url/title prop) so we avoid wrangling Drupal Url objects through the Twig sandbox.'

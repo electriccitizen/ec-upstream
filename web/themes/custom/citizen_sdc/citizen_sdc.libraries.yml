@@ -8,6 +8,15 @@ global:
     - core/drupalSettings
     - core/once
     - core/normalize
+
+paragraph-animate:
+  version: 1.0
+  js:
+    js/paragraph-animate.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
 basicTable:
   version: 2.0.0
   css:

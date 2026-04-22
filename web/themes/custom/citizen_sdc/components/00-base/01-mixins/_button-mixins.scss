@@ -23,6 +23,14 @@
   font-family: $header;
   font-weight: $heavy;
   font-size: $button;
+  // Transition on the base state (rather than only on :hover) so the breathe
+  // scale + color changes animate on mouse-enter AND mouse-leave — otherwise
+  // the button would snap back to its base state instantly on mouse-out.
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 
   &:hover,
   &:focus {
@@ -31,13 +39,25 @@
     border-color: $buttonBackHover;
     text-decoration: none;
     outline: 0;
-    @include transAll(.3s);
+    // Breathe scale — subtle grow on hover/focus.
+    transform: scale(1.03);
   }
 
   &:active {
     color: $buttonTextActive;
     background-color: $buttonBackActive;
     border-color: $buttonBackActive;
+  }
+
+  // Respect the user's reduced-motion preference — skip the transition and
+  // cancel the hover scale.
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &:hover,
+    &:focus {
+      transform: none;
+    }
   }
 
   .field--text-with-summary &,

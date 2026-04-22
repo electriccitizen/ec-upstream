@@ -1,0 +1,71 @@
+/* =================
+   PARAGRAPH CTA
+=================== */
+
+@use '../../../00-base/00-variables/colors' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/button-mixins' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+
+.paragraph--cta {
+  background: $offWhite;
+  padding: 40px 30px;
+
+  .paragraph--cta__inner {
+    max-width: $textMax;
+    @include auto;
+  }
+
+  .paragraph--cta__headline {
+    text-align: center;
+    margin-bottom: $spaceXs;
+  }
+
+  .paragraph--cta__text {
+    margin-bottom: $spaceXs;
+  }
+
+  .paragraph--cta__actions {
+    text-align: center;
+    a {
+      @include button;
+    }
+  }
+
+  &[data-animate="yes"] {
+    .paragraph--cta__headline {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease-out 0.25s, transform 0.5s ease-out 0.25s;
+    }
+
+    .paragraph--cta__actions {
+      opacity: 0;
+      transition: opacity 0.5s ease-out 0.5s;
+    }
+
+    &.is-in-view {
+      .paragraph--cta__headline {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .paragraph--cta__actions {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paragraph--cta[data-animate="yes"] {
+    .paragraph--cta__headline,
+    .paragraph--cta__actions {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
+
+

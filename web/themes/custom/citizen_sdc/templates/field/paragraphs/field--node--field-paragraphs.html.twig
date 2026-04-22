@@ -6,9 +6,15 @@
  * rendered raw, so layout-section paragraph wrappers land as direct children
  * of `.field-paragraphs` and their `+` sibling selectors (same-style seam
  * collapse) work correctly.
+ *
+ * The `data-paragraph-animate-field` attribute + attached library wires in
+ * the field-level intersection observer. One observer watches every
+ * descendant `[data-animate="yes"]` paragraph (including nested ones inside
+ * layout-sections) and adds `is-in-view` when each scrolls into view.
  */
 #}
-<div class="field-paragraphs">
+{{ attach_library('citizen_sdc/paragraph-animate') }}
+<div class="field-paragraphs" data-paragraph-animate-field>
   {%- for item in items -%}
     {{- item.content -}}
   {%- endfor -%}
