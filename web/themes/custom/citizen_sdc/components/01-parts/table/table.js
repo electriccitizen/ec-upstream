@@ -10,7 +10,6 @@
         if (theadElements.length === 0) {
           this.classList.add('no-header');
         }
-
       });
     }
   };

@@ -5,8 +5,10 @@ component:
   status: experimental
 
 libraryOverrides:
+  # SDC auto-libraries are registered as `core/components.{theme}--{component}`,
+  # NOT `{theme}/{component}`. Getting this wrong means the dep silently no-ops.
   dependencies:
-    - citizen_sdc/table
+    - core/components.citizen_sdc--table
 
 props:
   type: object
