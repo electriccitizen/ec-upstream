@@ -1,0 +1,110 @@
+/* =================
+   PARAGRAPH PORTALS
+=================== */
+
+@use '../../../00-base/00-variables/colors' as *;
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/general-mixins' as *;
+@use '../../../00-base/01-mixins/media-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
+@use '../../../00-base/01-mixins/type-mixins' as *;
+
+.paragraph--portals {
+  .paragraph--portals__title {
+    @include widgetTitle;
+  }
+
+  .paragraph--portals__list {
+    @include listReset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spaceMd 3rem;
+  }
+
+  .paragraph--portals__item {
+    width: 100%;
+    max-width: 308px;
+    list-style: none;
+
+    @include tab {
+      width: calc(33.33% - 2rem);
+      max-width: 100%;
+    }
+  }
+
+  // Single clickable region (image + headline). Long text sits OUTSIDE the
+  // link as a sibling — matches dart's structure.
+  .paragraph--portals__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    &:focus-visible {
+      outline: 2px solid $link;
+      outline-offset: 4px;
+    }
+
+    &:hover,
+    &:focus {
+      .paragraph--portals__image img {
+        border-color: $borderRule;
+        opacity: 0.7;
+        transition: border-color 0.3s ease, opacity 0.3s ease;
+      }
+
+      .paragraph--portals__headline {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .paragraph--portals__image {
+    margin-bottom: $spaceXxs;
+
+    img {
+      @include image100W;
+    }
+  }
+
+  .paragraph--portals__headline {
+    @include heading4;
+    text-align: center;
+    margin: 0;
+  }
+
+  .paragraph--portals__text {
+    margin-top: $spaceXxs;
+    font-size: 2rem;
+  }
+
+  // Staggered random-ish fade-in on the portal cards. 3-delay cycle fits
+  // the typical 3-or-6-item count — delays: 0s, 0.20s, 0.10s. Shuffled so
+  // sequential cards don't appear in delay order.
+  &[data-animate="yes"] {
+    .paragraph--portals__item {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+    }
+
+    .paragraph--portals__item:nth-child(3n+1) { transition-delay: 0s; }
+    .paragraph--portals__item:nth-child(3n+2) { transition-delay: 0.20s; }
+    .paragraph--portals__item:nth-child(3n)   { transition-delay: 0.10s; }
+
+    &.is-in-view .paragraph--portals__item {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paragraph--portals[data-animate="yes"] .paragraph--portals__item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

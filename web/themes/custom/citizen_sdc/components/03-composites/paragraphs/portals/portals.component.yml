@@ -1,0 +1,38 @@
+component:
+  id: citizen_sdc:portals
+  label: 'Paragraph Portals'
+  description: 'Grid of portal cards — each is an image + H3 headline inside a single link, with optional long-text description below. Single-SDC pattern for the portals / portal parent/child bundle pair: the `portal` child has no SDC of its own; the Drupal template for `paragraph--portals` iterates `field_portals` and passes a structured `items` array to this SDC (same approach as accordions and gallery).'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - items
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object from the paragraph template (class-stripped).'
+    title:
+      type: [string, 'null']
+      description: 'Optional widget title from field_widget_title — rendered as `<h2 class="paragraph--portals__title">` above the grid.'
+    items:
+      type: array
+      description: 'Array of portal card data. Each item: `{ id: string|int, link: { url, title, target?, rel? }, image: render-array (media rendered with `400x300` view mode), headline: string (required), long_text: render-array|null }`.'
+      items:
+        type: object
+        required:
+          - id
+          - link
+          - image
+          - headline
+        properties:
+          id:
+            type: [string, integer]
+          link:
+            type: object
+          image:
+            type: [object, string]
+          headline:
+            type: string
+          long_text:
+            type: [object, string, 'null']
