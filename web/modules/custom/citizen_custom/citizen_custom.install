@@ -1,0 +1,172 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for Citizen Custom module.
+ */
+
+use Drupal\Core\Utility\UpdateException;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
+
+/**
+ * Migrate content_list paragraphs from field_content_type (taxonomy) to field_content_list_type (list_string).
+ */
+function citizen_custom_update_10001(&$sandbox) {
+  // Hardcoded map — single source of truth for this migration.
+  // This must not depend on config that may not be imported yet.
+  $map = [
+    'Events' => 'event',
+    'News' => 'news',
+  ];
+
+  // Ensure the new field storage exists.
+  if (!FieldStorageConfig::loadByName('paragraph', 'field_content_list_type')) {
+    FieldStorageConfig::create([
+      'field_name' => 'field_content_list_type',
+      'entity_type' => 'paragraph',
+      'type' => 'list_string',
+      'cardinality' => 1,
+      'settings' => [
+        'allowed_values' => [
+          'event' => 'Events',
+          'news' => 'News',
+        ],
+      ],
+    ])->save();
+  }
+
+  // Ensure the new field instance exists on content_list paragraph.
+  if (!FieldConfig::loadByName('paragraph', 'content_list', 'field_content_list_type')) {
+    FieldConfig::create([
+      'field_name' => 'field_content_list_type',
+      'entity_type' => 'paragraph',
+      'bundle' => 'content_list',
+      'label' => 'Content Type',
+      'required' => TRUE,
+    ])->save();
+  }
+
+  // Validate all list_widget terms have entries in the map.
+  $term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  $vocab_exists = \Drupal::entityTypeManager()->getStorage('taxonomy_vocabulary')->load('list_widget');
+
+  if ($vocab_exists) {
+    $terms = $term_storage->loadByProperties(['vid' => 'list_widget']);
+    foreach ($terms as $term) {
+      $term_name = $term->getName();
+      if (!isset($map[$term_name])) {
+        throw new UpdateException("List widget term '$term_name' (tid: {$term->id()}) has no entry in map. Aborting migration.");
+      }
+    }
+  }
+
+  // Clear entity field definition cache so the new field is recognized.
+  \Drupal::entityTypeManager()->clearCachedDefinitions();
+  \Drupal::service('entity_field.manager')->clearCachedFieldDefinitions();
+
+  // Load all content_list paragraphs.
+  $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+  $paragraph_ids = $paragraph_storage->getQuery()
+    ->condition('type', 'content_list')
+    ->accessCheck(FALSE)
+    ->execute();
+
+  $counts = [
+    'scanned' => count($paragraph_ids),
+    'migrated' => 0,
+    'skipped' => 0,
+    'failed' => 0,
+  ];
+
+  $paragraphs = $paragraph_storage->loadMultiple($paragraph_ids);
+
+  foreach ($paragraphs as $paragraph) {
+    // Skip if already has new field value.
+    if ($paragraph->hasField('field_content_list_type') && !$paragraph->get('field_content_list_type')->isEmpty()) {
+      $counts['skipped']++;
+      continue;
+    }
+
+    // Read old field_content_type (entity reference to taxonomy).
+    if (!$paragraph->hasField('field_content_type') || $paragraph->get('field_content_type')->isEmpty()) {
+      $counts['skipped']++;
+      continue;
+    }
+
+    $term = $paragraph->get('field_content_type')->entity;
+    if (!$term) {
+      $counts['skipped']++;
+      continue;
+    }
+
+    $term_name = $term->getName();
+    if (!isset($map[$term_name])) {
+      $counts['failed']++;
+      \Drupal::logger('citizen_custom')->error("Paragraph {$paragraph->id()}: unknown term '$term_name' not in map.");
+      continue;
+    }
+
+    $bundle = $map[$term_name];
+    $paragraph->set('field_content_list_type', $bundle);
+    $paragraph->save();
+    $counts['migrated']++;
+  }
+
+  if ($counts['failed'] > 0) {
+    throw new UpdateException("Migration encountered {$counts['failed']} unknown mappings. Check logs for details.");
+  }
+
+  return t('Content list migration: @scanned scanned, @migrated migrated, @skipped skipped, @failed failed.', [
+    '@scanned' => $counts['scanned'],
+    '@migrated' => $counts['migrated'],
+    '@skipped' => $counts['skipped'],
+    '@failed' => $counts['failed'],
+  ]);
+}
+
+/**
+ * Remove old field_content_type, field_list_widget, and list_widget taxonomy.
+ */
+function citizen_custom_update_10002(&$sandbox) {
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $field_config = $entity_type_manager->getStorage('field_config');
+  $field_storage_config = $entity_type_manager->getStorage('field_storage_config');
+
+  // Delete all list_widget taxonomy terms and the vocabulary itself.
+  $vocab = $entity_type_manager->getStorage('taxonomy_vocabulary')->load('list_widget');
+  if ($vocab) {
+    $terms = $entity_type_manager->getStorage('taxonomy_term')->loadByProperties(['vid' => 'list_widget']);
+    foreach ($terms as $term) {
+      $term->delete();
+    }
+    $vocab->delete();
+  }
+
+  // Delete old paragraph field_content_type (entity reference to taxonomy).
+  $instance = $field_config->load('paragraph.content_list.field_content_type');
+  if ($instance) {
+    $instance->delete();
+  }
+  $storage = $field_storage_config->load('paragraph.field_content_type');
+  if ($storage) {
+    $storage->delete();
+  }
+
+  // Delete field_list_widget from node bundles.
+  foreach (['event', 'news'] as $bundle) {
+    $instance = $field_config->load("node.$bundle.field_list_widget");
+    if ($instance) {
+      $instance->delete();
+    }
+  }
+  $storage = $field_storage_config->load('node.field_list_widget');
+  if ($storage) {
+    $storage->delete();
+  }
+
+  // Purge field data.
+  field_purge_batch(500);
+
+  return t('Removed field_content_type, field_list_widget, and list_widget taxonomy.');
+}

@@ -1,54 +1,37 @@
 (function (Drupal, once) {
 
+  // Mapping from select option values (machine names) to the category field
+  // name fragment. Example: value "event" -> field name "field_events_category".
+  var typeToCategoryPrefix = {
+    event: 'events',
+    news: 'news'
+  };
+
   /* CONTENT LIST PARAGRAPH SELECT LIST FUNCTIONALITY
   ----------------------- */
   Drupal.behaviors.contentList = {
     attach: function (context) {
-      once('isContentPlacer', '.field--name-field-content-type', context).forEach(contentTypeField => {
-      
-        // Hide select and limit fields that are not the content type (taxonomy)
-        // field. These get displayed later depending on which content type is
-        // selected.
+      once('isContentPlacer', '.field--name-field-content-list-type', context).forEach(contentTypeField => {
+
+        // Hide select and limit fields that are not the content type field.
+        // These get displayed later depending on which content type is selected.
         hideAllBut('.field--widget-options-select, .field--name-field-limit-list', contentTypeField, context);
         const contentTypeSelect = contentTypeField.querySelector("select");
-        // Store the "machine name" of the currently selected Content type.
-        let typeName = getTypeString(contentTypeSelect);  
-        
-        // If the Content Placer has already had options set, make sure the
-        // appropriate fields are shown.
-        if (typeName && contentTypeSelect.selectedIndex != "_none") {
-          // This will work for content type category fields (like events_category)
-          // as long as the field is correctly named. Additional control fields
-          // like 'event_type' will need to be added using individual logic
-          const categories = '.field--name-field-' + typeName + '-category';
-          context.querySelectorAll(categories).forEach(element => {
-            element.style.display = 'block';
-          });
-          if ((typeName == 'events') || (typeName == 'news')) {
-            context.querySelectorAll('.field--name-field-limit-list').forEach(limit => {
-              limit.style.display = 'block';
-            });
-          } 
+        let typeValue = getTypeValue(contentTypeSelect);
+
+        // If the Content List has already had options set, show appropriate fields.
+        if (typeValue) {
+          showFieldsForType(typeValue, context);
         }
 
-        // Assign onchange events to various fields to hide and show related
-        // fields.
+        // Assign onchange events to hide and show related fields.
         contentTypeField.addEventListener("change", event => {
-          // Re-hide any fields that may have been unhidden since the last
-          // change.
+          // Re-hide any fields that may have been unhidden since the last change.
           hideAllBut('.field--widget-options-select, .field--name-field-limit-list', contentTypeField, context, true);
 
-          typeName = getTypeString(event.target);
-          if (typeName && contentTypeSelect.selectedIndex != "_none") {
-            const categories = '.field--name-field-' + typeName + '-category';
-            context.querySelectorAll(categories).forEach(element => {
-              element.style.display = 'block';
-            });
-            if ((typeName == 'events') || (typeName == 'news')) {
-              context.querySelectorAll('.field--name-field-limit-list').forEach(limit => {
-                limit.style.display = 'block';
-              });
-            } 
+          typeValue = getTypeValue(event.target);
+          if (typeValue) {
+            showFieldsForType(typeValue, context);
           }
         });
       });
@@ -71,16 +54,34 @@
   };
 
   /**
-   * Generates a machine name based on the selected option in a select element.
+   * Gets the selected option value (machine name) from a select element.
    * @param {HTMLSelectElement} selectTarget
-   * @returns {string}
+   * @returns {string|null}
    */
-  function getTypeString(selectTarget) {
-    let returnString = null;
-    if (selectTarget?.options && selectTarget.options[selectTarget.selectedIndex]) {
-      returnString = selectTarget.options[selectTarget.selectedIndex].text.toLowerCase().replace(/_/g, '-');
+  function getTypeValue(selectTarget) {
+    if (selectTarget && selectTarget.value && selectTarget.value !== '_none') {
+      return selectTarget.value;
     }
-    return returnString;
+    return null;
+  }
+
+  /**
+   * Shows the category and limit fields for the given content type value.
+   * @param {string} typeValue - The machine name value (e.g., "event", "news").
+   * @param {Document} context - The DOM context.
+   */
+  function showFieldsForType(typeValue, context) {
+    var prefix = typeToCategoryPrefix[typeValue];
+    if (prefix) {
+      var categories = '.field--name-field-' + prefix + '-category';
+      context.querySelectorAll(categories).forEach(function (element) {
+        element.style.display = 'block';
+      });
+    }
+    // Show limit field whenever any content type is selected.
+    context.querySelectorAll('.field--name-field-limit-list').forEach(function (limit) {
+      limit.style.display = 'block';
+    });
   }
 
   /**
@@ -90,14 +91,15 @@
    * @param {Document} context: a DOM Node that the query is restricted to.
    * @param {boolean} unset: set all select boxes to the "_none" option as well.
    **/
-  function hideAllBut(hideSelector, keepNode, context, unset = false) {
-    context.querySelectorAll(hideSelector).forEach(hideNode => {
+  function hideAllBut(hideSelector, keepNode, context, unset) {
+    if (typeof unset === 'undefined') unset = false;
+    context.querySelectorAll(hideSelector).forEach(function (hideNode) {
       if (hideNode !== keepNode) {
         // Reset selected options to the default value, if unset is selected.
         if (unset) {
-          const select = hideNode.querySelector("select");
+          var select = hideNode.querySelector("select");
           if (select) {
-            select.selectedIndex = "_none";
+            select.value = '_none';
           }
         }
         hideNode.style.display = 'none';

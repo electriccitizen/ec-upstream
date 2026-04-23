@@ -1,0 +1,21 @@
+uuid: a2b4c6d8-e0f2-4a6b-8c0d-2e4f6a8b0c2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_list_type
+    - paragraphs.paragraphs_type.content_list
+  module:
+    - options
+id: paragraph.content_list.field_content_list_type
+field_name: field_content_list_type
+entity_type: paragraph
+bundle: content_list
+label: 'Content Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

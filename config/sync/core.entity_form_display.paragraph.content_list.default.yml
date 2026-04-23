@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.content_list.field_content_type
+    - field.field.paragraph.content_list.field_content_list_type
     - field.field.paragraph.content_list.field_events_category
     - field.field.paragraph.content_list.field_limit_list
     - field.field.paragraph.content_list.field_link
@@ -12,12 +12,13 @@ dependencies:
     - paragraphs.paragraphs_type.content_list
   module:
     - link
+    - options
 id: paragraph.content_list.default
 targetEntityType: paragraph
 bundle: content_list
 mode: default
 content:
-  field_content_type:
+  field_content_list_type:
     type: options_select
     weight: 1
     region: content

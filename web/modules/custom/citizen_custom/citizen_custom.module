@@ -5,10 +5,12 @@
  * Custom hooks and preprocesses for Citizen Custom module.
  */
 
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Database\Query\AlterableInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\views\Views;
 
 /**
  * Implements hook_help().
@@ -180,91 +182,136 @@ function citizen_custom_field_widget_single_element_form_alter(&$element, FormSt
 }
 
 /**
- * Implements views_pre_view().
+ * Implements hook_views_data_alter().
+ */
+function citizen_custom_views_data_alter(array &$data) {
+  if (isset($data['node_field_data'])) {
+    $data['node_field_data']['content_list_paragraph'] = [
+      'title' => t('Content List Paragraph'),
+      'help' => t('Filters nodes by content type based on a content_list paragraph ID.'),
+      'argument' => [
+        'id' => 'content_list_paragraph',
+      ],
+    ];
+  }
+}
+
+/**
+ * Implements hook_views_pre_view().
+ *
+ * Config-driven: reads display_filters from citizen_custom.settings to map
+ * view displays to paragraph category fields and view filter identifiers.
  */
 function citizen_custom_views_pre_view($view, $display_id, &$args) {
-
-  // List of valid views for the Content Placer paragraph, by name => displays.
-  $content_list_views = [
-    "content_list" => ["events_list", "news_list"],
-  ];
-  $is_valid_view = FALSE;
-  $view_name = '';
-  $view_display = '';
-
-  // Alters views to accept fields from related paragraphs to be used for
-  // filters.
-  if (isset($view->element['#name'])) {
-    foreach ($content_list_views as $view_name => $view_displays) {
-      foreach ($view_displays as $view_display) {
-        if ($view->element['#name'] === $view_name && $view->current_display === $view_display) {
-          $is_valid_view = TRUE;
-          break;
-        }
-      }
-      if ($is_valid_view) {
-        break;
-      }
-    }
-    // If a valid view was found, $view_name and $view_display should contain
-    // the name and display, respectively.
-    if ($is_valid_view && $view->args[0]) {
-      $filters = $view->display_handler->getOption('filters');
-      $paragraph = Paragraph::load($view->args[0]);
-      switch ($view_display) {
-        case "events_list":
-          // Unset or alter categories filter.
-          if ($paragraph->field_events_category[0]) {
-            // Make an array out of the category set in the paragraph.
-            $categories = [];
-            foreach ($paragraph->field_events_category as $category) {
-              $categories[] = $category->target_id;
-            }
-            // Replace the category_tid filter with the paragraph category.
-            $filters['field_category_target_id']['value'] = $categories;
-          }
-          elseif ($filters['field_category_target_id']) {
-            // If the category field is not used, then unset the category
-            // filter.
-            unset($filters['field_category_target_id']);
-          }
-
-          break;
-
-        case "news_list":
-          // Unset or alter categories filter.
-          if ($paragraph->field_news_category[0]) {
-            // Make an array out of the category set in the paragraph.
-            $categories = [];
-            foreach ($paragraph->field_news_category as $category) {
-              $categories[] = $category->target_id;
-            }
-            // Replace the category_tid filter with the paragraph category.
-            $filters['field_category_target_id']['value'] = $categories;
-          }
-          elseif ($filters['field_category_target_id']) {
-            // If the category field is not used, then unset the category
-            // filter.
-            unset($filters['field_category_target_id']);
-          }
-          break;
-      }
-
-      $view->display_handler->setOption('filters', $filters);
-
-      $pager = $view->display_handler->getOption('pager');
-      if (isset($paragraph->field_limit_list[0])) {
-        $per_page = $paragraph->field_limit_list[0]->value;
-        $pager['type'] = 'some';
-        $view->setItemsPerPage($per_page);
-      }
-      else {
-        $pager['type'] = 'none';
-      }
-      $view->display_handler->setOption('pager', $pager);
-
-    }
-
+  if ($view->id() !== 'content_list') {
+    return;
   }
+
+  $config = \Drupal::config('citizen_custom.settings');
+  $display_filters = $config->get('content_list.display_filters') ?? [];
+
+  if (!isset($display_filters[$display_id])) {
+    return;
+  }
+
+  if (empty($args[0]) || !is_numeric($args[0])) {
+    return;
+  }
+
+  $paragraph = Paragraph::load($args[0]);
+  if (!$paragraph) {
+    return;
+  }
+
+  $filter_config = $display_filters[$display_id];
+  $category_field = $filter_config['category_field'];
+  $view_filter = $filter_config['view_filter'];
+
+  // Apply category filter from paragraph field.
+  $filters = $view->display_handler->getOption('filters');
+  if ($paragraph->hasField($category_field) && !$paragraph->get($category_field)->isEmpty()) {
+    $categories = [];
+    foreach ($paragraph->get($category_field) as $item) {
+      $categories[] = $item->target_id;
+    }
+    $filters[$view_filter]['value'] = $categories;
+  }
+  elseif (isset($filters[$view_filter])) {
+    unset($filters[$view_filter]);
+  }
+  $view->display_handler->setOption('filters', $filters);
+
+  // Apply pager/limit from paragraph.
+  $pager = $view->display_handler->getOption('pager');
+  if ($paragraph->hasField('field_limit_list') && !$paragraph->get('field_limit_list')->isEmpty()) {
+    $per_page = $paragraph->get('field_limit_list')->value;
+    $pager['type'] = 'some';
+    $view->setItemsPerPage($per_page);
+  }
+  else {
+    $pager['type'] = 'none';
+  }
+  $view->display_handler->setOption('pager', $pager);
+}
+
+/**
+ * Implements hook_preprocess_paragraph__BUNDLE() for content_list.
+ *
+ * Renders the view once in PHP and passes the result to Twig, eliminating
+ * the double-render caused by drupal_view() + render|striptags|trim checks.
+ */
+function citizen_custom_preprocess_paragraph__content_list(&$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+
+  // No paragraph ID means we're in preview mode (unsaved).
+  if (!$paragraph->id()) {
+    $variables['content_list_preview_mode'] = TRUE;
+    return;
+  }
+
+  $content_type = NULL;
+  if ($paragraph->hasField('field_content_list_type') && !$paragraph->get('field_content_list_type')->isEmpty()) {
+    $content_type = $paragraph->get('field_content_list_type')->value;
+  }
+
+  if (!$content_type) {
+    $variables['content_list_has_results'] = FALSE;
+    return;
+  }
+
+  $display_id = $content_type . '_list';
+  $view = Views::getView('content_list');
+
+  if (!$view) {
+    $variables['content_list_has_results'] = FALSE;
+    return;
+  }
+
+  if (!$view->setDisplay($display_id)) {
+    $variables['content_list_has_results'] = FALSE;
+    return;
+  }
+
+  $view->setArguments([$paragraph->id()]);
+  $view->preExecute([$paragraph->id()]);
+  $view->execute();
+
+  // Always render the view so cache metadata (e.g., node_list tag) propagates
+  // even when there are no results. Without this, an empty list would be
+  // permanently cached and never update when new content is published.
+  $rendered = $view->render();
+  $cache_metadata = CacheableMetadata::createFromRenderArray($rendered);
+  $cache_metadata->applyTo($variables);
+
+  if (!empty($view->result)) {
+    $variables['content_list_view'] = $rendered;
+    $variables['content_list_has_results'] = TRUE;
+  }
+  else {
+    $variables['content_list_has_results'] = FALSE;
+  }
+
+  $variables['content_type_key'] = $content_type;
 }
 
