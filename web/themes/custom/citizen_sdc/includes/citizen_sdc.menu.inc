@@ -49,6 +49,7 @@ function _menu_item_classes_recursive(array &$items) {
     // Add an active class.
     if ($item['url']->toString() === \Drupal::request()->getRequestUri()) {
       $item['link_classes'][] = 'menu-item__link--active';
+      $item['is_current_page'] = TRUE;
     }
   }
 }

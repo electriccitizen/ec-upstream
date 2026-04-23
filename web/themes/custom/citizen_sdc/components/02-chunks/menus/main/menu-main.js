@@ -113,7 +113,7 @@
     if (!open) li.classList.remove(SHIFT_LEFT_CLASS, SHIFT_RIGHT_CLASS);
     setAriaExpanded(toggle, open);
     setAriaHidden(childUl, !open);
-    setToggleText(toggle, open ? 'Collapse Menu' : 'Expand Menu');
+    setToggleText(toggle, open ? toggle.dataset.collapseLabel : toggle.dataset.expandLabel);
     if (manageOverflow && open) applyDropdownOverflowClass(childUl, li);
     if (animate) {
       animateHeight(childUl, open);
@@ -125,11 +125,6 @@
   const resetSubmenus = (root) => {
     root.querySelectorAll(EXPANDED_LI_SELECTOR).forEach((li) => setSubmenuState(li, false, { animate: false }));
   };
-
-  const focusTopLevelItems = (menu) => Array.from(menu.querySelectorAll(':scope > li')).map((li) => {
-    const control = li.querySelector(':scope > .menu-item__toggle, :scope > a, :scope > button, :scope > [tabindex]');
-    return control instanceof HTMLElement ? control : null;
-  }).filter(Boolean);
 
   const debounce = Drupal.debounce
     ? Drupal.debounce
@@ -193,6 +188,29 @@
       handleModeChange();
       window.addEventListener('resize', debounce(handleModeChange, 150));
 
+      const closeMainMenu = () => {
+        toggleBtn.classList.remove(TOGGLE_ACTIVE_CLASS);
+        setAriaExpanded(toggleBtn, false);
+        setAriaHidden(mainMenu, true);
+        setToggleText(toggleBtn, toggleBtn.dataset.openText || 'Open Menu');
+        mainMenu.classList.add(MENU_MAIN_CLOSING_CLASS);
+        animateHeight(mainMenu, false, () => {
+          mainMenu.classList.remove(MENU_MAIN_OPEN_CLASS);
+          mainMenu.classList.remove(MENU_MAIN_CLOSING_CLASS);
+          mainMenu.classList.add(MENU_MAIN_HIDDEN_CLASS);
+        });
+      };
+
+      const openMainMenu = () => {
+        toggleBtn.classList.add(TOGGLE_ACTIVE_CLASS);
+        setAriaExpanded(toggleBtn, true);
+        setAriaHidden(mainMenu, false);
+        setToggleText(toggleBtn, toggleBtn.dataset.closeText || 'Close Menu');
+        mainMenu.classList.remove(MENU_MAIN_CLOSING_CLASS, MENU_MAIN_HIDDEN_CLASS);
+        mainMenu.classList.add(MENU_MAIN_OPEN_CLASS);
+        animateHeight(mainMenu, true);
+      };
+
       const handleMainToggle = (event) => {
         const target = event.target;
         if (!(target instanceof HTMLElement)) return;
@@ -200,24 +218,9 @@
         if (!modeState.mobile) return;
         const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
         if (expanded) {
-          toggleBtn.classList.remove(TOGGLE_ACTIVE_CLASS);
-          setAriaExpanded(toggleBtn, false);
-          setAriaHidden(mainMenu, true);
-          setToggleText(toggleBtn, toggleBtn.dataset.openText || 'Open Menu');
-          mainMenu.classList.add(MENU_MAIN_CLOSING_CLASS);
-          animateHeight(mainMenu, false, () => {
-            mainMenu.classList.remove(MENU_MAIN_OPEN_CLASS);
-            mainMenu.classList.remove(MENU_MAIN_CLOSING_CLASS);
-            mainMenu.classList.add(MENU_MAIN_HIDDEN_CLASS);
-          });
+          closeMainMenu();
         } else {
-          toggleBtn.classList.add(TOGGLE_ACTIVE_CLASS);
-          setAriaExpanded(toggleBtn, true);
-          setAriaHidden(mainMenu, false);
-          setToggleText(toggleBtn, toggleBtn.dataset.closeText || 'Close Menu');
-          mainMenu.classList.remove(MENU_MAIN_CLOSING_CLASS, MENU_MAIN_HIDDEN_CLASS);
-          mainMenu.classList.add(MENU_MAIN_OPEN_CLASS);
-          animateHeight(mainMenu, true);
+          openMainMenu();
         }
       };
 
@@ -276,52 +279,49 @@
         setSubmenuState(li, false, { animate: false });
       });
 
+      // Desktop: click anywhere outside the nav closes any open submenu.
+      // Covers the case where keyboard-open or hover-open left a submenu open
+      // and the user clicks elsewhere without tabbing or hovering out first.
+      document.addEventListener('click', (event) => {
+        if (modeState.mobile) return;
+        if (nav.contains(event.target)) return;
+        resetSubmenus(nav);
+      });
+
       nav.addEventListener('keydown', (event) => {
         const activeEl = document.activeElement;
         if (!(activeEl instanceof HTMLElement)) return;
+        const key = event.key;
 
-        if (!modeState.mobile) {
-          const key = event.key;
+        // Escape works in both modes. If focus is inside an expanded li,
+        // close that submenu and return focus to its toggle. Otherwise on
+        // mobile, close the mobile menu panel and return focus to the hamburger.
+        if (key === 'Escape') {
           const li = activeEl.closest(EXPANDED_LI_SELECTOR);
-          if (key === 'Enter' || key === ' ') {
-            const toggle = activeEl.closest(ITEM_TOGGLE_SELECTOR);
-            if (toggle) {
-              event.preventDefault();
-              const parentLi = toggle.closest(EXPANDED_LI_SELECTOR);
-              const open = toggle.getAttribute('aria-expanded') === 'true';
-              if (open) {
-                setSubmenuState(parentLi, false, { animate: false });
-              } else {
-                setSubmenuState(parentLi, true, { manageOverflow: true, animate: false });
-              }
-            }
-          }
-
-          if (key === 'Escape' && li) {
+          if (li) {
             event.preventDefault();
-            setSubmenuState(li, false, { animate: false });
-            const parentToggle = li.querySelector(ITEM_TOGGLE_SELECTOR);
-            parentToggle?.focus();
+            setSubmenuState(li, false, { animate: modeState.mobile });
+            li.querySelector(ITEM_TOGGLE_SELECTOR)?.focus();
+            return;
           }
-
-          const topItems = focusTopLevelItems(mainMenu);
-          const idx = topItems.indexOf(activeEl);
-          if (idx !== -1 && (key === 'ArrowRight' || key === 'ArrowLeft')) {
+          if (modeState.mobile && toggleBtn.getAttribute('aria-expanded') === 'true') {
             event.preventDefault();
-            const dir = key === 'ArrowRight' ? 1 : -1;
-            const next = (idx + dir + topItems.length) % topItems.length;
-            topItems[next].focus();
+            closeMainMenu();
+            toggleBtn.focus();
+            return;
           }
+        }
 
-          if ((key === 'ArrowDown' || key === 'ArrowUp') && li) {
-            const childUl = li.querySelector(':scope > ul');
-            if (childUl && li.classList.contains(MENU_OPEN_CLASS)) {
-              const focusables = childUl.querySelectorAll('a, button, [tabindex]');
-              if (focusables.length) {
-                event.preventDefault();
-                const targetIndex = key === 'ArrowDown' ? 0 : focusables.length - 1;
-                focusables[targetIndex].focus();
-              }
+        if (!modeState.mobile && (key === 'Enter' || key === ' ')) {
+          const toggle = activeEl.closest(ITEM_TOGGLE_SELECTOR);
+          if (toggle) {
+            event.preventDefault();
+            const parentLi = toggle.closest(EXPANDED_LI_SELECTOR);
+            const open = toggle.getAttribute('aria-expanded') === 'true';
+            if (open) {
+              setSubmenuState(parentLi, false, { animate: false });
+            } else {
+              setSubmenuState(parentLi, true, { manageOverflow: true, animate: false });
             }
           }
         }

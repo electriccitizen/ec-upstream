@@ -1,4 +1,4 @@
-name: ecup-sdc
+name: ec-upstream
 type: drupal11
 docroot: web
 php_version: "8.3"

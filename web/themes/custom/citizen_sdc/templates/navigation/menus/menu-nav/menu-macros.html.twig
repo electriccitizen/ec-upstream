@@ -22,11 +22,18 @@
           ? item.href
           : (item.url and item.url.toString() ? item.url.toString() : '#')
         %}
-        <a href="{{ href }}" class="{{ item['link_classes']|join(' ') }}">{{ item.title }}</a>
+        <a href="{{ href }}" class="{{ item['link_classes']|join(' ') }}"{% if item.is_current_page %} aria-current="page"{% endif %}>{{ item.title }}</a>
       {% endif %}
       {% if item.below %}
-        <button href="#" class="menu-item__toggle button--clean" aria-expanded="false">{{ "Expand Menu"|t }}</button>
-        <ul aria-hidden="true">
+        {# Unique submenu id: URL-based slug for devtools readability + random
+           suffix to survive duplicate links to the same URL in a menu. #}
+        {% set submenu_id = 'submenu-' ~ menu_name ~ '-' ~ (item.url.toString()|clean_class) ~ '-' ~ random(99999) %}
+        {% set expand_label = 'Expand @label submenu'|t({'@label': item.title}) %}
+        {% set collapse_label = 'Collapse @label submenu'|t({'@label': item.title}) %}
+        <button type="button" class="menu-item__toggle button--clean" aria-expanded="false" aria-controls="{{ submenu_id }}" data-expand-label="{{ expand_label }}" data-collapse-label="{{ collapse_label }}">
+          <span class="visually-hidden">{{ expand_label }}</span>
+        </button>
+        <ul id="{{ submenu_id }}" aria-hidden="true">
           {{ menus.menu_links(item.below, menu_name, current_level + 1) }}
         </ul>
       {% endif %}

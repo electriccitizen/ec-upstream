@@ -180,6 +180,13 @@
   z-index: 1;
   cursor: pointer;
 
+  // Keyboard focus ring — browser default, offset so parent overflow: hidden
+  // (on mobile .menu-item__level-1) doesn't clip it.
+  &:focus-visible {
+    outline: revert;
+    outline-offset: 2px;
+  }
+
   &:after {
     content: '';
     width: 18px;
