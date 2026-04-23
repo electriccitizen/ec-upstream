@@ -84,19 +84,9 @@ function citizen_sdc_preprocess_responsive_image(&$variables) {
       $img_height = 187;
       break;
 
-    case 'square':
-      $img_width = 360;
-      $img_height = 360;
-      break;
-
     case 'thumbnail_cropped':
       $img_width = 96;
       $img_height = 96;
-      break;
-
-    case 'views_card':
-      $img_width = 400;
-      $img_height = 300;
       break;
 
     default:

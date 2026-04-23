@@ -5,6 +5,8 @@
  * Includes all preprocess and alter hooks related to breadcrumbs.
  */
 
+use Drupal\node\NodeInterface;
+
 /**
  * Implements template_preprocess_breadcrumb().
  */
