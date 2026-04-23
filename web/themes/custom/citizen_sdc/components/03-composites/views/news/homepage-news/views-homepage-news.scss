@@ -1,0 +1,15 @@
+/* =================
+   VIEWS — NEWS / HOME PAGE NEWS
+   Scoped under `.view--news--homepage-news` (emitted by views-base).
+   Starter SCSS cloned from `views-all-news` — tune per project.
+=================== */
+
+@use '../../../../00-base/00-variables/units' as *;
+
+.view--news--homepage-news {
+  padding-bottom: $elementSpace;
+
+  .views-row:not(:last-child) {
+    margin-bottom: $spaceMd;
+  }
+}

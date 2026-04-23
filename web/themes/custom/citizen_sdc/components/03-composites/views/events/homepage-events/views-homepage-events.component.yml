@@ -1,0 +1,19 @@
+component:
+  id: citizen_sdc:views-homepage-events
+  label: 'Views Home Page Events'
+  description: 'Thin child of `citizen_sdc:views-unformatted-base` for the `events.homepage_events` embed display. Filters to promoted upcoming events, limit 3, no exposed filters — intended for the site home page via view-placer.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - rows
+  properties:
+    attr:
+      type: object
+    title:
+      type: [string, 'null']
+    default_row_class:
+      type: boolean
+    rows:
+      type: array
