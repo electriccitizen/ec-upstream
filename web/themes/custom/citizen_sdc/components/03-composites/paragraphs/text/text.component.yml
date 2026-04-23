@@ -1,0 +1,17 @@
+component:
+  id: citizen_sdc:text
+  label: 'Paragraph Text'
+  description: 'Simple text paragraph. Wraps field_long_text in paragraph-base with `animate: yes` (default). Bundle has no widget_title field so content is just the text render array.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object from the paragraph template (class-stripped via `attributes|without(''class'')`).'
+
+slots:
+  content:
+    title: 'Content'
+    description: 'Rendered field_long_text — the text_default formatter output.'

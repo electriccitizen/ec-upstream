@@ -1,0 +1,34 @@
+{% set portals_body %}
+  {% if title %}
+    <h2 class="paragraph--portals__title">{{ title }}</h2>
+  {% endif %}
+
+  {# Semantic <ul>/<li>: each portal card is a list item. The link wraps
+     image + headline (card click target); long_text sits outside the link
+     as a sibling description — matches dart's structure. #}
+  <ul class="paragraph--portals__list">
+    {% for item in items %}
+      <li class="paragraph--portals__item">
+        <a
+          class="paragraph--portals__link"
+          href="{{ item.link.url }}"
+          {% if item.link.target %}target="{{ item.link.target }}"{% endif %}
+          {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+        >
+          <div class="paragraph--portals__image">{{ item.image }}</div>
+          <h3 class="paragraph--portals__headline">{{ item.headline }}</h3>
+        </a>
+        {% if item.long_text %}
+          <div class="paragraph--portals__text">{{ item.long_text }}</div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endset %}
+
+{{ include('citizen_sdc:paragraph-base', {
+  attr: attr,
+  modifier_class: 'portals',
+  animate: 'yes',
+  content: portals_body,
+}, with_context = false) }}

@@ -1,0 +1,16 @@
+{#
+  Drupal paragraph template for the `image` bundle. Hands off to
+  `citizen_sdc:image`; field_image comes in via the `image` slot already
+  rendered by the view display (entity_reference_entity_view → media view
+  mode `full`, which emits the responsive_image). The SDC caps display at
+  1280px regardless.
+#}
+{% set image_slot %}{{ content.field_image }}{% endset %}
+
+{{ include('citizen_sdc:image', {
+  attr: attributes,
+  headline: paragraph.field_headline.value,
+  additional_text: paragraph.field_additional_text.value,
+  text_position: paragraph.field_text_position.value,
+  image: image_slot,
+}, with_context = false) }}

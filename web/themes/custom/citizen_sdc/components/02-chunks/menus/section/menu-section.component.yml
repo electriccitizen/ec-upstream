@@ -1,0 +1,29 @@
+component:
+  id: citizen_sdc:menu-section
+  label: 'Sidebar Section of Main Menu'
+  description: 'Section menu structure'
+  status: experimental
+
+libraryOverrides:
+  dependencies:
+    - core/drupal.debounce
+
+props:
+  type: object
+  required:
+    - menu_level
+  properties:
+    menu_level:
+      type: integer
+      description: 'The level of the menu loop being rendered'
+    menu_name:
+      type: string
+      description: 'Machine name of the menu (used for top-level id attribute)'
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the top level menu <ul>'
+
+slots:
+  menu_items:
+    title: Menu Content
+    description: Content of the menu

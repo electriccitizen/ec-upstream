@@ -1,0 +1,54 @@
+uuid: 78c26c1a-1413-498e-aa87-b9b4ec90a37d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.fifty_fifty.field_alignment
+    - field.field.paragraph.fifty_fifty.field_link
+    - field.field.paragraph.fifty_fifty.field_long_text
+    - field.field.paragraph.fifty_fifty.field_media
+    - field.field.paragraph.fifty_fifty.field_widget_title
+    - image.style.paragraph_preview
+    - paragraphs.paragraphs_type.fifty_fifty
+  module:
+    - layout_builder
+    - media
+    - options
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.fifty_fifty.preview
+targetEntityType: paragraph
+bundle: fifty_fifty
+mode: preview
+content:
+  field_alignment:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: paragraph_preview
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_widget_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_link: true
+  field_long_text: true
+  search_api_excerpt: true

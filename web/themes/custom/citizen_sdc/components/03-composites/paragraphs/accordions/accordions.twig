@@ -1,0 +1,45 @@
+{% set accordions_body %}
+  {% if title %}
+    <h2 class="paragraph--accordions__title">{{ title }}</h2>
+  {% endif %}
+  <div class="paragraph--accordions__items" data-accordions>
+    {% for item in items %}
+      {% set toggle_id = 'accordion-toggle-' ~ item.id %}
+      {% set panel_id = 'accordion-panel-' ~ item.id %}
+      <div class="paragraph--accordions__item is-collapsed">
+        {# H3 wrapper per WAI-ARIA accordion pattern — lets screen readers
+           jump between sections via heading navigation. #}
+        <h3 class="paragraph--accordions__heading">
+          <button type="button" id="{{ toggle_id }}" class="paragraph--accordions__toggle" aria-controls="{{ panel_id }}" aria-expanded="false">
+            <span class="paragraph--accordions__label">{{ item.header }}</span>
+            {# Single morphing SVG — vertical line is hidden via CSS when the
+               item is `.is-expanded`, turning the plus into a minus without
+               a second SVG in the markup. #}
+            <svg class="paragraph--accordions__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="10"/>
+              <line class="paragraph--accordions__icon-vertical" x1="12" y1="8" x2="12" y2="16"/>
+              <line x1="8" y1="12" x2="16" y2="12"/>
+            </svg>
+          </button>
+        </h3>
+        <div class="paragraph--accordions__panel" id="{{ panel_id }}" role="region" aria-labelledby="{{ toggle_id }}" inert>
+          {# Inner wrapper is the single grid item — it owns `overflow:
+             hidden` + `min-height: 0` so the grid row can collapse to 0
+             regardless of content. Body keeps its padding cleanly. #}
+          <div class="paragraph--accordions__inner">
+            <div class="paragraph--accordions__body">
+              {{ item.body }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endset %}
+
+{{ include('citizen_sdc:paragraph-base', {
+  attr: attr,
+  modifier_class: 'accordions',
+  animate: 'no',
+  content: accordions_body,
+}, with_context = false) }}

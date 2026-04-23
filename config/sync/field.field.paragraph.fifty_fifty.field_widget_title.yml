@@ -1,0 +1,19 @@
+uuid: 96b330c4-45c1-49bb-b094-496f7456432b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_widget_title
+    - paragraphs.paragraphs_type.fifty_fifty
+id: paragraph.fifty_fifty.field_widget_title
+field_name: field_widget_title
+entity_type: paragraph
+bundle: fifty_fifty
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

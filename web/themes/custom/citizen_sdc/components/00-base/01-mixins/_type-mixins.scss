@@ -1,0 +1,185 @@
+/* ===============
+	 TYPOGRAPHY MIXINS
+============== */
+
+@use '../00-variables/colors' as *;
+@use '../00-variables/component-colors' as *;
+@use '../00-variables/fonts' as *;
+@use '../00-variables/units' as *;
+@use '../01-mixins/animation-mixins' as *;
+@use '../01-mixins/breakpoint-mixins' as *;
+@use '../01-mixins/layout-mixins' as *;
+@use 'sass:color';
+
+@mixin headerGlobals {
+  line-height: 1.15;
+  font-weight: $heavy;
+  font-family: $header;
+  margin: 0;
+  font-feature-settings: "liga", "dlig";
+}
+
+@mixin heading1 {
+  @include headerGlobals;
+  font-family: $displayHeader;
+  font-size: $h1Sm;
+
+  @include tab {
+    font-size: $h1Mid;
+  }
+
+  @include contentStop {
+    font-size: $h1Lg;
+  }
+}
+
+@mixin heading2 {
+  @include headerGlobals;
+  font-size: $h2Sm;
+
+  @include tab {
+    font-size: $h2Md;
+  }
+
+  @include contentStop {
+    font-size: $h2Lg;
+  }
+}
+
+@mixin heading3 {
+  @include headerGlobals;
+  font-size: $h3Sm;
+
+  @include tab {
+    font-size: $h3Mid;
+  }
+}
+
+@mixin heading4 {
+  @include headerGlobals;
+  font-size: $h4Sm;
+}
+
+@mixin heading5 {
+  @include headerGlobals;
+  font-size: $h5Sm;
+}
+
+@mixin heading6 {
+  @include headerGlobals;
+  font-size: $h6Sm;
+}
+
+// Default for `field_widget_title` headings across paragraph SDCs. Centered
+// above the widget with a small bottom margin. Override per-SDC where the
+// title belongs to a composed layout (flex header rows, inside columns, etc.)
+// by simply not @including the mixin in that SDC's scss.
+@mixin widgetTitle {
+  text-align: center;
+  margin-bottom: $spaceXs;
+}
+
+@mixin blockTitle {
+  @include headerGlobals;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  max-width: $textMax;
+  margin-bottom: $spaceMd;
+  @include auto;
+}
+
+@mixin inlineBlockTitle {
+  @include blockTitle;
+  margin-bottom: 0;
+  display: inline-block;
+
+  &+* {
+    display: inline;
+  }
+}
+
+@mixin metaText {
+  font-size: 2rem;
+  font-style: italic;
+  font-family: $serif;
+}
+
+//pixel sizes helpful for CKE control
+@mixin quote {
+  margin: 0;
+  position: relative;
+  font-family: $serif;
+  font-style: italic;
+  font-size: 24px;
+  padding-top: 8px;
+  padding-left: 40px;
+  @include tab {
+    font-size: 36px;
+    padding-left: 56px;
+  }
+
+  &:before {
+    content: "“";
+    display: block;
+    width: 36px;
+    font-size: 64px;
+    line-height: 1;
+    position: absolute;
+    top: -4px;
+    left: 0;
+    color: $quoteMark;
+    background-color: transparent;
+
+    @include tab {
+      width: 50px;
+      top: -8px;
+      font-size: 88px;
+    }
+  }
+}
+
+%materialSetup {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+@mixin materialIcon($icon) {
+  content: '#{$icon}';
+  font-family: 'Material Icons';
+  @extend %materialSetup;
+}
+
+@mixin materialIconOutline($icon) {
+  content: '#{$icon}';
+  font-family: 'Material Icons Outlined';
+  @extend %materialSetup;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+}
+
+.material-icons-outlined {
+  font-family: 'Material Icons Outlined';
+}
+
+@mixin caption {
+  text-align: center;
+  font-size: 2rem;
+  font-style: italic;
+  color: $midGray;
+}

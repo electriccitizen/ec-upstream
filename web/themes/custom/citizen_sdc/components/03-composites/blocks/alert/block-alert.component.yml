@@ -1,0 +1,23 @@
+component:
+  id: citizen_sdc:block-alert
+  label: 'Block Alert'
+  description: 'Empty placeholder for the alert region. The citizen_custom/alert library fetches active alert teasers from the endpoint and injects them in place.'
+  status: experimental
+
+libraryOverrides:
+  dependencies:
+    - citizen_custom/alert
+    # node-alert-teaser renders inside the AJAX response to /ajax/alert, so its
+    # auto-attached CSS never reaches the parent page. Pull it in here instead
+    # — block-alert renders on every page, whether or not any active teasers
+    # exist yet.
+    - core/components.citizen_sdc--node-alert-teaser
+
+props:
+  type: object
+  required:
+    - endpoint
+  properties:
+    endpoint:
+      type: string
+      description: 'URL that returns rendered alert teasers (defaults to /ajax/alert)'

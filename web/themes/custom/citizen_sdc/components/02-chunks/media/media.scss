@@ -1,0 +1,101 @@
+/* ===============
+  MEDIA
+================= */
+
+@use '../../00-base/00-variables/units' as *;
+@use '../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../00-base/01-mixins/media-mixins' as *;
+@use '../../00-base/01-mixins/layout-mixins' as *;
+@use '../../00-base/01-mixins/type-mixins' as *;
+
+figure.media-item {
+  margin: 0;
+}
+
+figcaption {
+  @include caption;
+}
+
+article.media-item {
+  & + figcaption {
+    margin-top: $spaceXs;
+  }
+}
+
+
+/* EMBEDDED VIDEO
+------------------ */
+.field--media-oembed-video {
+  @include responsiveVideo;
+}
+
+/* EMBEDDED MEDIA
+------------------- */
+.field--text-with-summary,
+.field--text-long {
+  .media-item {
+    margin: 0 0 $spaceMd 0;
+
+    img {
+      @include imageBase;
+    }
+
+    &.align-left {
+      float: none;
+
+      @include desk {
+        max-width: 50%;
+        margin-right: $spaceMd;
+        float: left;
+      }
+    }
+
+    &.align-right {
+      float: none;
+
+      @include desk {
+        max-width: 50%;
+        margin-left: $spaceMd;
+        float: right;
+      }
+    }
+
+    &.align-center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &.media-item--small {
+      @include smallEmbed;
+    }
+
+    &.media-item--medium {
+      @include mediumEmbed;
+    }
+
+    &.media-item--large {
+      @include largeEmbed;
+    }
+
+    &.media-item--default {
+      @include defaultEmbed;
+    }
+  }
+}
+
+span.file {
+  a {
+    @include docIcon;
+  }
+}
+
+a[data-entity-type='media'][href$='.pdf'],
+a[data-entity-type='media'][href$='.doc'],
+a[data-entity-type='media'][href$=".docx"],
+a[data-entity-type='media'][href$='.xls'],
+a[data-entity-type='media'][href$=".xlsx"],
+a[data-entity-type='media'][href$='.ppt'],
+a[data-entity-type='media'][href$=".pptx"] {
+  @include docIcon;
+}
+

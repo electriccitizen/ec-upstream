@@ -1,0 +1,14 @@
+{% set component_name = 'citizen_sdc:menu-footer' %}
+
+{% import '@citizen_sdc/navigation/menus/menu-nav/menu-macros.html.twig' as menus %}
+
+{% set menu_markup %}
+  {{ menus.menu_links(items, menu_name, 0) }}
+{% endset %}
+
+{{ include(component_name, {
+  menu_level: 0,
+  attr: attributes,
+  menu_name: menu_name,
+  menu_items: menu_markup
+}, with_context = false) }}

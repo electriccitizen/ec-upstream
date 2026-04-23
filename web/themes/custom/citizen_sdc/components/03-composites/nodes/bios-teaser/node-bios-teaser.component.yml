@@ -1,0 +1,32 @@
+component:
+  id: citizen_sdc:node-bios-teaser
+  label: 'Node Bios (Teaser)'
+  description: 'Teaser view-mode wrapper for bios nodes. Delegates to node-teaser-base with the headshot as the image slot and field_position composed into the content slot. The teaser view display hides every other field, so there is nothing else to compose.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - title
+    - url
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the <article> wrapper'
+    title:
+      type: string
+      description: 'Plain-text node title'
+    url:
+      type: string
+      description: 'URL to the full bios node'
+    title_attr:
+      type: object
+      description: 'Drupal Attributes object for the <h2> title element'
+
+slots:
+  image:
+    title: 'Headshot'
+    description: 'Rendered field_headshot (responsive image)'
+  position:
+    title: 'Position'
+    description: 'Rendered field_position'

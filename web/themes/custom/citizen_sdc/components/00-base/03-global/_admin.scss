@@ -1,0 +1,327 @@
+/* ==================
+ FRONT-END ADMIN
+====================*/
+
+@use '../00-variables/colors' as *;
+@use '../00-variables/component-colors' as *;
+@use '../00-variables/fonts' as *;
+@use '../00-variables/units' as *;
+@use '../01-mixins/breakpoint-mixins' as *;
+@use '../01-mixins/button-mixins' as *;
+@use '../01-mixins/general-mixins' as *;
+@use '../01-mixins/layout-mixins' as *;
+
+/* GIN TOOLBAR
+--------------------- */
+// Fix rem usage of flyout menu sub items from Gin toolbar.
+#gin-toolbar-bar {
+  body.gin--vertical-toolbar & {
+    .toolbar-menu-administration {
+      & > .toolbar-menu {
+        & > .menu-item {
+
+          &.menu-item--active-trail > .toolbar-icon::after,
+          &:hover > .toolbar-icon::after {
+            left: calc(50% - 26px);
+          }
+
+          .toolbar-menu {
+            .menu-item {
+              .toolbar-icon {
+                font-size: 16px;
+              }
+
+              &.menu-item--expanded {
+                &:before {
+                  top: .75rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* DRUPAL PREVIEW TOOLBAR 
+-------------------------- */
+.node-preview-container {
+  .node-preview-form-select {
+    .js-form-item--view-mode {
+      display: none;
+    }
+  }
+}
+
+/* ADMIN NODE EDIT TABS
+----------------- */
+#block-citizen-sdc-local-tasks {
+  max-width: $contentStop;
+  padding: $spaceMd 0 $spaceSm;
+  position: relative;
+  @include auto;
+
+  body:not(.logged-in) & {
+    display: none;
+  }
+
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid $borderRule;
+    @include listReset;
+
+    li {
+      @include onlySmall {
+        width: 100%;
+      }
+
+      @include tab {
+        &:not(:first-child) {
+          margin-left: -1px;
+        }
+      }
+    }
+
+    a {
+      text-transform: none;
+      padding: 4px 12px;
+      display: block;
+      margin-bottom: $spaceXs;
+      border: 1px solid $borderRule;
+      font-weight: $heavy;
+      color: $black;
+
+      &:hover,
+      &:focus {
+        background: $buttonBackHover;
+        color: $buttonTextHover;
+        text-decoration: none;
+      }
+
+      &:active {
+        background: $buttonBackActive;
+        color: $buttonTextActive;
+      }
+
+      &.is-active {
+        background-color: $adminGold;
+
+        &:hover,
+        &:focus {
+          background: $buttonBackHover;
+          color: $buttonTextHover;
+        }
+
+        &:active {
+          background: $buttonBackActive;
+          color: $buttonTextActive;
+        }
+      }
+
+      @include tab {
+        margin-bottom: -1px;
+      }
+    }
+  }
+}
+
+/* SECONDARY TASK BUTTONS
+------------------ */
+#block-citizen-dart-local-tasks .tabs.secondary a {
+  background: $link !important;
+  border-color: $link;
+  color: $white;
+  padding: .5rem 1.5rem;
+  font-weight: bold;
+
+  &:hover,
+  &:focus,
+  &.is-active {
+    background: $white !important;
+    color: $link;
+    border-color: $link;
+    outline: 0;
+  }
+}
+
+/* HELP 
+-------------- */
+#block-citizen-sdc-help{
+  padding: 0 $siteMargin;
+  max-width: calc($contentStop + (2 * $siteMargin));
+  @include auto;
+}
+
+/* MODERATION SIDEBAR
+----------------- */
+.moderation-sidebar-actions {
+  a,
+  input.button {
+
+    &:hover,
+    &:focus {
+      text-decoration: underline !important;
+    }
+  }
+}
+
+/* DIALOGS
+----------------- */
+.ui-dialog {
+  &:not(.ui-dialog-off-canvas) {
+    padding: 0;
+  }
+
+  .ui-dialog-titlebar {
+    .ui-dialog-title {
+      white-space: normal;
+      font-size: 2.25rem;
+    }
+  }
+
+  .ui-widget-content.ui-dialog-buttonpane .ui-dialog-buttonset{
+    .button {
+      @include button;
+
+      & {
+        font-size: 1.5rem;
+        padding: 1rem 2.5rem;
+      }
+
+      &:last-child {
+        background: $resetBack;
+        border-color: $resetBack;
+        color: $resetText;
+
+        &:hover,&:focus {
+          background: $resetBackHover;
+          border-color: $resetBackHover;
+          color: $resetTextHover;
+        }
+
+        &:active {
+          background: $resetBackActive;
+          border-color: $resetBackActive;
+          color: $resetTextActive;
+        }
+      }
+    }
+  }
+
+  .ui-dialog-off-canvas + .select2-container--open {
+    height: 40px;
+
+    .select2-dropdown {
+      font-size: 1.75rem;
+      width: 100% !important;
+
+      &.select2-dropdown--below {
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
+    }
+  }
+}
+
+/* OFF CANVAS
+----------------- */
+#drupal-off-canvas-wrapper.ui-dialog.ui-dialog-off-canvas.ui-widget.ui-widget-content {
+  .ui-dialog-titlebar {
+    .ui-dialog-title {
+      font-size: 15px !important;
+      line-height: .75em;
+      font-weight: $regular;
+
+      &:before {
+        width: 14px;
+        margin-right: 2px;
+      }
+    }
+
+    .ui-dialog-titlebar-close {
+      width: 22px;
+      height: 22px;
+
+      &:hover {
+        border: 1px solid $white;
+      }
+    }
+  }
+
+  .ui-widget-content.ui-dialog-content {
+    font-size: 16px !important;
+
+    .inline-block-create-button {
+      display: none;
+    }
+
+    button,
+    .ui-button {
+
+      &:before,
+      &:after {
+        content: none;
+      }
+    }
+
+    summary,
+    input:where(:not([type="checkbox"],[type="radio"],[type="file"])),
+    textarea {
+      font-size: 14px !important;
+    }
+
+    .form-actions {
+      margin-top: 10px;
+    }
+
+    select {
+      background-color: revert;
+      font-size: 14px !important;
+      background-size: .75em;
+    }
+
+    #formatter-settings-wrapper {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.block--system-main-block {
+  .layout-builder-form,
+  .layout-builder-discard-changes,
+  .layout-builder-revert-overrides {
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 0 $siteMargin;
+      max-width: calc($contentStop + (2 * $siteMargin));
+      @include auto;
+
+      & > input {
+        min-width: 204px !important;
+      }
+
+      .button--primary {
+        @include submitButton;
+      }
+
+      #edit-discard-changes {
+        @include cautionButton;
+      }
+
+      #edit-revert,
+      a#edit-cancel {
+        @include resetButton;
+      }
+
+      #edit-preview-toggle {
+        margin-top: 1rem;
+        order: 99;
+      }
+    }
+  }
+}

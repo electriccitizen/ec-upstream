@@ -1,0 +1,32 @@
+component:
+  id: citizen_sdc:media
+  label: 'Media'
+  description: 'Wrapper for media elements'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - media
+    - bundle
+    - display
+    - media_id
+  properties:
+    media:
+      type: object
+      description: 'Media content'
+    bundle:
+      type: string
+      description: 'The type of media'
+    display:
+      type: string
+      description: 'Rendered view mode of the media'
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the media <article>'
+    media_id:
+      type: string
+      description: 'Unique identifier of the media item'
+    suffix:
+      type: object
+      description: 'Placeholder for media contextual links'

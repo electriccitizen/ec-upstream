@@ -1,0 +1,26 @@
+{# BEM modifier on the paragraph block: either a style variant
+   (`paragraph--layout-section--light-grey` / `--light-blue`) or `--backless`
+   when no field_style is set. paragraph-base adds the `paragraph` +
+   `paragraph--layout-section` classes; this modifier composes alongside. #}
+{% set bem_modifier = style_class
+  ? 'paragraph--layout-section--' ~ style_class
+  : 'paragraph--layout-section--backless' %}
+{% set section_attr = (attr ?: create_attribute()).addClass(bem_modifier) %}
+
+{# Compose the section body: optional title (rendered as an H2 owned by this
+   SDC) + everything else. `content` carries any per-project section-level
+   fields (intro text, etc.) plus the layout_paragraphs-injected layout
+   template and nested child paragraphs. #}
+{% set section_body %}
+  {% if title %}
+    <h2 class="paragraph--layout-section__title">{{ title }}</h2>
+  {% endif %}
+  {{ content }}
+{% endset %}
+
+{{ include('citizen_sdc:paragraph-base', {
+  attr: section_attr,
+  modifier_class: 'layout-section',
+  animate: 'no',
+  content: section_body,
+}, with_context = false) }}

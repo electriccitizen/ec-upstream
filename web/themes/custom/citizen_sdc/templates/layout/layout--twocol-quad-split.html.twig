@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Layout template for the `twocol_quad_split` layout plugin. Delegates to
+ * the citizen_sdc:twocol-quad-split SDC.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ * - region_attributes: HTML attributes for each region wrapper.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  {{ include('citizen_sdc:twocol-quad-split', {
+    attr: attributes,
+    first_attr: region_attributes.first,
+    second_attr: region_attributes.second,
+    third_attr: region_attributes.third,
+    content_attr: region_attributes.content,
+    first: content.first,
+    second: content.second,
+    third: content.third,
+    content: content.content,
+  }, with_context = false) }}
+{% endif %}

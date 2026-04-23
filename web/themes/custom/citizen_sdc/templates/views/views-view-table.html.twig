@@ -1,0 +1,19 @@
+{#
+  Drupal's views-view-table template. Hands off to
+  `citizen_sdc:views-table-base`, which transforms the views preprocess
+  shape into what `citizen_sdc:table` expects and delegates there
+  (bringing responsive/basicTable JS + shared table styling for free).
+#}
+{{ include('citizen_sdc:views-table-base', {
+  attr: attributes,
+  caption: caption,
+  caption_needed: caption_needed,
+  title: title,
+  summary: summary,
+  description: description,
+  header: header,
+  rows: rows,
+  fields: fields,
+  responsive: responsive,
+  sticky: sticky,
+}, with_context = false) }}

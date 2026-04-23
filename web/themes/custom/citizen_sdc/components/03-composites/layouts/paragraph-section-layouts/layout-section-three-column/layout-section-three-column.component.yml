@@ -1,0 +1,32 @@
+component:
+  id: citizen_sdc:layout-section-three-column
+  label: 'Three Column Section Paragraph Layout'
+  description: 'Drupal core layout_threecol_section used inside a layout_section paragraph via layout_paragraphs. Supports four column-width ratios: 33-34-33 (default, equal), 25-50-25, 25-25-50, 50-25-25.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the layout wrapper (includes the ratio modifier class from the layout plugin)'
+    first_attr:
+      type: object
+      description: 'Drupal Attributes object for the first region wrapper'
+    second_attr:
+      type: object
+      description: 'Drupal Attributes object for the second region wrapper'
+    third_attr:
+      type: object
+      description: 'Drupal Attributes object for the third region wrapper'
+
+slots:
+  first:
+    title: 'First'
+    description: 'Left column region'
+  second:
+    title: 'Second'
+    description: 'Middle column region'
+  third:
+    title: 'Third'
+    description: 'Right column region'

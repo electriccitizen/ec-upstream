@@ -1,0 +1,9 @@
+{#
+  Display-specific suggestion for `events.homepage_events`. Routes to
+  `citizen_sdc:views-homepage-events` so its SCSS auto-attaches.
+#}
+{{ include('citizen_sdc:views-homepage-events', {
+  title: title,
+  default_row_class: default_row_class,
+  rows: rows,
+}, with_context = false) }}

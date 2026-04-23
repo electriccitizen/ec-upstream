@@ -1,0 +1,66 @@
+/* =================
+   NEWSLETTER BLOCK
+=================== */
+
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/button-mixins' as *;
+@use '../../../00-base/01-mixins/form-mixins' as *;
+
+.block--newsletter {
+  width: 100%;
+
+  @include tab {
+    width: 33.33%;
+  }
+
+  .field.body {
+    margin-bottom: $spaceMd;
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+    a {
+      color: $prefooterLink;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: $prefooterLinkHover;
+        text-decoration: none;
+      }
+    }
+  }
+
+  #mc_embed_signup {
+    background: none;
+    font: inherit;
+    width: 100%;
+
+    label {
+      display: none;
+    }
+
+    #mc-embedded-subscribe-form {
+      padding: 0;
+    }
+
+    #mce-EMAIL {
+      @include textInput;
+      border-radius: 0;
+    }
+
+    #mc-embedded-subscribe {
+      @include submitButton;
+      width: auto;
+      border-radius: 0;
+    }
+  }
+
+  .ctct-form-custom {
+    .grecaptcha-badge {
+      display: none !important;
+    }
+  }
+}

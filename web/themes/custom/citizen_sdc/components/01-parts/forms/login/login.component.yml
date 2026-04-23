@@ -1,0 +1,21 @@
+component:
+  id: citizen_sdc:login
+  label: 'Form'
+  description: 'User login form'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      type: string
+      title: 'Login'
+      description: 'User login title.'
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the <form'
+
+slots:
+  form:

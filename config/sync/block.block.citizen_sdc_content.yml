@@ -1,0 +1,22 @@
+uuid: 141bf3dc-4602-454a-a967-f51a6165186e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - citizen_sdc
+_core:
+  default_config_hash: LaETGw2K3Niq-67hPI0n8SEhFM1-XxUB5BcC08k-f0Q
+id: citizen_sdc_content
+theme: citizen_sdc
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

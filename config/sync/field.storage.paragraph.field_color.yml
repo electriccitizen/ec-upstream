@@ -1,0 +1,30 @@
+uuid: 19b5013b-c075-4406-ad06-d30fe1457900
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_color
+field_name: field_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: light_gray
+      label: 'Light Gray'
+    -
+      value: black
+      label: Black
+    -
+      value: primary
+      label: 'Primary Brand Color'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

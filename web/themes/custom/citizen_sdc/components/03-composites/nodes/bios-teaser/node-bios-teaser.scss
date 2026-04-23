@@ -1,0 +1,35 @@
+/* =================
+   NODE BIOS TEASER
+=================== */
+
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
+@use '../../../00-base/01-mixins/type-mixins' as *;
+
+.node-teaser--bios {
+  @include smallTab {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .field--headshot {
+    margin-bottom: $spaceXs;
+    padding-right: 0;
+    img {
+      @include image100W;
+    }
+  }
+
+  .node-teaser__content {
+    @include smallTab {
+      width: 100%;
+    }
+  }
+
+  .node-teaser__title {
+    @include heading4;
+    margin-bottom: $spaceXxs;
+    width: 100%;
+  }
+}

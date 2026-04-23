@@ -1,0 +1,11 @@
+/* =================
+   NODE NEWS TEASER
+=================== */
+
+@use '../../../00-base/01-mixins/type-mixins' as *;
+
+.node-teaser--news {
+  .node-teaser__date {
+    @include metaText;
+  }
+}

@@ -1,0 +1,26 @@
+component:
+  id: citizen_sdc:twocol-sideright
+  label: 'Two Column Sidebar Right Layout'
+  description: 'Node layout with a main content region (content) and a right sidebar region (second). Flex row on desktop, stacked on mobile.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the layout wrapper'
+    content_attr:
+      type: object
+      description: 'Drupal Attributes object for the content region wrapper'
+    second_attr:
+      type: object
+      description: 'Drupal Attributes object for the second region wrapper'
+
+slots:
+  content:
+    title: 'Content'
+    description: 'Main content region on the left'
+  second:
+    title: 'Second'
+    description: 'Sidebar region on the right'

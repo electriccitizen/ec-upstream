@@ -1,0 +1,10 @@
+{#
+/**
+ * @file
+ * Text paragraph — delegates to the text SDC.
+ */
+#}
+{{ include('citizen_sdc:text', {
+  attr: attributes|without('class'),
+  content: content.field_long_text,
+}, with_context = false) }}

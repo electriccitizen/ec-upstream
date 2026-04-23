@@ -1,0 +1,19 @@
+component:
+  id: citizen_sdc:views-events-list
+  label: 'Views Events List'
+  description: 'Thin child of `citizen_sdc:views-unformatted-base` for the `content_list.events_list` view display. Exists so display-specific SCSS auto-attaches on these renders.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - rows
+  properties:
+    attr:
+      type: object
+    title:
+      type: [string, 'null']
+    default_row_class:
+      type: boolean
+    rows:
+      type: array

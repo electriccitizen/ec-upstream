@@ -1,0 +1,26 @@
+component:
+  id: citizen_sdc:layout-section-two-column
+  label: 'Two Column Section Paragraph Layout'
+  description: 'Drupal core layout_twocol_section used inside a layout_section paragraph via layout_paragraphs. Supports five column-width ratios: 50-50 (default), 33-67, 67-33, 25-75, 75-25.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the layout wrapper (includes the ratio modifier class from the layout plugin)'
+    first_attr:
+      type: object
+      description: 'Drupal Attributes object for the first region wrapper'
+    second_attr:
+      type: object
+      description: 'Drupal Attributes object for the second region wrapper'
+
+slots:
+  first:
+    title: 'First'
+    description: 'Left column region'
+  second:
+    title: 'Second'
+    description: 'Right column region'

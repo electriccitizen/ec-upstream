@@ -1,0 +1,7 @@
+{% extends 'block.html.twig' %}
+
+{% block blockContent %}
+  {{ include('citizen_sdc:block-about', {
+    body: content.body,
+  }, with_context = false) }}
+{% endblock %}

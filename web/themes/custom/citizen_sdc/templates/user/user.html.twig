@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * /user/{uid} display. Single source of truth for the dashboard layout:
+ * composes name from first+last, builds the account + task action lists
+ * and the roles list, delegates everything to `citizen_sdc:user-dashboard`.
+ *
+ * Per-site tweaks (e.g. changing the Support Book URL, adding moderation
+ * dashboard / scheduler shortcuts) live in the `task_actions` array below.
+ * No Layout Builder, no field-template hacks — just edit here.
+ */
+#}
+
+{# Display name: prefer first+last, fall back to the login username. #}
+{% set first = user.field_first_name.0.value ?? '' %}
+{% set last = user.field_last_name.0.value ?? '' %}
+{% set full_name = (first ~ ' ' ~ last)|trim %}
+{% if full_name is empty %}
+  {% set full_name = user.name.0.value %}
+{% endif %}
+
+{# Role labels — iterate the entity_reference field, skip the implicit
+   `authenticated` role (every logged-in user has it; displaying it is
+   noise). Uses `.entity.label` off each reference item; same pattern we
+   use in form-placer. #}
+{% set role_labels = [] %}
+{% for role_item in user.roles %}
+  {% if role_item.target_id and role_item.target_id != 'authenticated' and role_item.entity %}
+    {% set role_labels = role_labels|merge([role_item.entity.label]) %}
+  {% endif %}
+{% endfor %}
+
+{# Account-level inline links (left-side dividers in SCSS). #}
+{% set account_actions = [
+  { url: '/user/' ~ user.uid.0.value ~ '/edit', label: 'Edit Profile' },
+  { url: '/user/logout', label: 'Logout' },
+] %}
+
+{# Task buttons — edit/add per site. Support Book URL is the one piece
+   that changes between projects (node id varies). Add or remove buttons
+   for moderation dashboards, scheduler, etc. as needed. #}
+{% set task_actions = [
+  { url: '/admin/content', label: 'View Content' },
+  { url: '/node/add', label: '+ Add Content' },
+  { url: path('entity.node.canonical', {'node': '18'}), label: 'Support Book' },
+] %}
+
+{% set image_slot %}{{ content.field_image }}{% endset %}
+{% set masquerade_slot %}{{ content.masquerade }}{% endset %}
+
+{{ include('citizen_sdc:user-dashboard', {
+  attr: attributes,
+  name: full_name,
+  username: user.name.0.value,
+  roles: role_labels|join(', '),
+  account_actions: account_actions,
+  task_actions: task_actions,
+  image: image_slot,
+  masquerade: masquerade_slot,
+}, with_context = false) }}

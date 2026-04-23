@@ -1,0 +1,238 @@
+/* ============
+   TYPOGRAPHY
+============== */
+
+@use '../00-variables/colors' as *;
+@use '../00-variables/component-colors' as *;
+@use '../00-variables/fonts' as *;
+@use '../00-variables/units' as *;
+@use '../01-mixins/animation-mixins' as *;
+@use '../01-mixins/button-mixins' as *;
+@use '../01-mixins/general-mixins' as *;
+@use '../01-mixins/type-mixins' as *;
+
+/* HEADING STYLING
+------------------- */
+h1 {
+  @include heading1;
+}
+
+h2 {
+  @include heading2;
+
+  .field--text-long &,
+  .field--text-with-summary & {
+    margin-bottom: $spaceLg;
+  }
+}
+
+h3 {
+  @include heading3;
+
+  .field--text-long &,
+  .field--text-with-summary & {
+    margin-bottom: $spaceMd;
+  }
+}
+
+h4 {
+  @include heading4;
+
+  .field--text-long &,
+  .field--text-with-summary & {
+    margin-bottom: $spaceSm;
+  }
+}
+
+h5 {
+  @include heading5;
+
+  .field--text-long &,
+  .field--text-with-summary & {
+    margin-bottom: $spaceXs;
+  }
+}
+
+h6 {
+  @include heading6;
+}
+
+h2+ul,
+h3+ul,
+h4+ul,
+h5+ul,
+h6+ul {
+  margin-top: 0;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+
+  &[type="A"] {
+    list-style-type: lower-alpha;
+  }
+
+  &[type="I"] {
+    list-style-type: upper-roman;
+  }
+}
+
+/* TEXT STYLES
+--------------- */
+html,
+code {
+  font-family: $bodyFont;
+  font-size: $em-base;
+  line-height: 1.4;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: normal;
+  font-synthesis: none;
+  font-feature-settings: “liga” 0;
+}
+
+body {
+  color: $baseText;
+  margin: 0;
+  font-size: $baseSize;
+}
+
+p {
+  margin-top: 0;
+
+  &:not(:last-child) {
+    margin-bottom: $spaceMd;
+  }
+}
+
+a {
+  color: $link;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $hoverLink;
+    text-decoration: underline;
+
+    .field--text-with-summary &,
+    .field--text-long & {
+      @include transAll(.3s);
+    }
+  }
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: $heavy;
+}
+
+small {
+  font-size: 80%;
+}
+
+p.warning {
+  background: none;
+  padding: 1rem 2rem;
+  margin-bottom: $spaceMd;
+  color: $validation;
+  border: 1px solid $validation;
+  text-align: center;
+}
+
+mark {
+  background-color: unset;
+
+  &.pen-red {
+    color: $redText;
+  }
+
+  &.pen-green {
+    color: $greenText;
+  }
+
+  &.marker-yellow {
+    background-color: $yellowMarker;
+  }
+
+  &.marker-green {
+    background-color: $greenMarker;
+  }
+
+  &.marker-pink {
+    background-color: $pinkMarker;
+  }
+
+  &.marker-blue {
+    background-color: $blueMarker;
+  }
+}
+
+.hr,
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: currentColor;
+
+  &+* {
+    margin-top: $spaceMd;
+  }
+}
+
+blockquote {
+  @include quote;
+}
+
+.field--text-with-summary,
+.field--text-long {
+  @include clearFix;
+
+  &>*:last-child {
+    margin-bottom: 0;
+  }
+
+  &+* {
+    clear: both;
+  }
+
+  article:not(:last-child):not([data-quickedit-entity-id*=media]) {
+    margin-bottom: $spaceMd;
+  }
+
+  ul,
+  ol {
+    overflow: hidden;
+    margin: $spaceXs 0 $spaceMd;
+    padding: 0 0 0 3.5rem;
+
+    ul,
+    ol {
+      margin: $spaceXs 0;
+      padding: 0 0 0 2.5rem;
+    }
+  }
+}
+
+/* BUTTONS
+-------------- */
+.ec-button {
+  @include button;
+}
+
+.ec-button--reset {
+  @include resetButton;
+}
+
+.ec-button--warning {
+  @include cautionButton;
+}
+
+.button--clean {
+  @include buttonWipe;
+}

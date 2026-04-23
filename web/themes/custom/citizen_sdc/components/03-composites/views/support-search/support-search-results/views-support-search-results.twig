@@ -1,0 +1,30 @@
+{% set row_classes = [default_row_class ? 'views-row'] %}
+
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+
+{% for row in visible_rows %}
+  <div{{ row.attributes.addClass(row_classes) }}>
+    {{ row.content }}
+  </div>
+{% endfor %}
+
+{% if drawer_rows is not empty %}
+  {% set drawer_content %}
+    {% for row in drawer_rows %}
+      <div{{ row.attributes.addClass(row_classes) }}>
+        {{ row.content }}
+      </div>
+    {% endfor %}
+  {% endset %}
+
+  {{ include('citizen_sdc:drawer', {
+    toggle_position: 'below',
+    drawer_style: 'sharp',
+    toggle_open_text: 'See all results',
+    toggle_close_text: 'Show fewer results',
+    rando: rando,
+    drawer: drawer_content,
+  }, with_context = false) }}
+{% endif %}

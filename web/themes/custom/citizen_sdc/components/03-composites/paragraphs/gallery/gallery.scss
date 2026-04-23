@@ -1,0 +1,271 @@
+/* =================
+   PARAGRAPH GALLERY
+=================== */
+
+@use '../../../00-base/00-variables/colors' as *;
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/fonts' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/general-mixins' as *;
+@use '../../../00-base/01-mixins/media-mixins' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+@use '../../../00-base/01-mixins/type-mixins' as *;
+
+.paragraph--gallery {
+  max-width: 100%;
+
+  .paragraph--gallery__title {
+    @include widgetTitle;
+  }
+
+  // =========================
+  // LIGHTBOX — thumbnail grid + <dialog> modal.
+  // =========================
+  &.paragraph--gallery--lightbox {
+    .paragraph--gallery__wrap {
+      @include listReset;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: $spaceMd 2rem;
+    }
+
+    .paragraph--gallery__item {
+      width: 100%;
+      max-width: 308px;
+      list-style: none;
+    }
+
+    // The trigger is a real <button>; strip browser chrome but keep focus
+    // ring for keyboard users.
+    .paragraph--gallery__trigger {
+      @include buttonWipe;
+      display: block;
+      width: 100%;
+      overflow: hidden;
+
+      &:focus-visible {
+        outline: 2px solid $link;
+        outline-offset: 2px;
+      }
+    }
+
+    .paragraph--gallery__thumb {
+      display: block;
+      img {
+        width: 100%;
+        @include imageHover;
+      }
+    }
+
+    // -------------------------
+    // DIALOG MODAL
+    // -------------------------
+    .paragraph--gallery__modal {
+      // Modern <dialog> hoists to the top layer on .showModal(); stacking
+      // and overflow contexts of ancestors don't affect it.
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      max-width: 90vw;
+      max-height: 90vh;
+      overflow: visible;
+
+      &::backdrop {
+        background: $modalBack;
+      }
+
+      &:not([open]) {
+        display: none;
+      }
+    }
+
+    // Stage = <figure> holding the current image + caption clone. Position
+    // context for the prev/next/close buttons. Opacity transition drives
+    // the crossfade between images — `gallery.js` toggles
+    // `.is-transitioning` around the swap so the old image fades out,
+    // content is replaced, then the new image fades in once decoded.
+    .paragraph--gallery__modal-stage {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      background: $siteBack;
+      transition: opacity 0.18s ease;
+
+      &.is-transitioning {
+        opacity: 0;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        max-height: 90vh;
+      }
+
+      // Caption bar overlaid on the bottom of the image — dark translucent
+      // strip, italic white text (matches featherlight's old treatment).
+      .paragraph--gallery__caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+        background: rgba(35, 35, 35, 0.6);
+        color: $white;
+        font-size: 2rem;
+        font-style: italic;
+        text-align: center;
+        z-index: 30;
+        margin: 0;
+      }
+    }
+
+    // Shared styling for all three modal buttons: circular semi-transparent-
+    // black badge with a white SVG icon. Close sits at top-right; prev/next
+    // are absolutely centered on the stage's left/right edges.
+    .paragraph--gallery__modal-close,
+    .paragraph--gallery__modal-nav {
+      @include buttonWipe;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: $sliderArrowBack;
+      color: $modalGalButton;
+      transition: background 0.3s ease, color 0.3s ease;
+      z-index: 40;
+
+      &:hover,
+      &:focus-visible {
+        background: $modalGalButtonBackHover;
+        color: $modalGalButtonHover;
+      }
+
+      &:focus-visible {
+        outline: 2px solid $link;
+        outline-offset: 2px;
+      }
+    }
+
+    .paragraph--gallery__modal-close {
+      top: 8px;
+      right: 8px;
+    }
+
+    .paragraph--gallery__modal-nav {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .paragraph--gallery__modal-prev {
+      left: 8px;
+    }
+
+    .paragraph--gallery__modal-next {
+      right: 8px;
+    }
+
+    // SR-only live region for position announcements ("Image 2 of 5").
+    .paragraph--gallery__sr-status {
+      @include visuallyHidden;
+    }
+  }
+
+  // =========================
+  // SLIDER — delegates to `citizen_sdc:slider` (Embla). This scope styles
+  // only the slide content (image + caption); chrome (viewport, arrows,
+  // live region) comes from slider.scss.
+  // =========================
+  &.paragraph--gallery--slider {
+    @include textConstrain;
+
+    // Edge-to-edge on mobile to match the dart/slick visual; constrain on
+    // tablet+. Applied to the slider's section wrapper, not to inner
+    // slides (so arrows stay positioned relative to the visible area).
+    .slider {
+      @include edgeToEdge;
+      width: calc(100% + 40px);
+
+      @include tab {
+        @include edgeReset;
+        width: 100%;
+      }
+    }
+
+    .paragraph--gallery__slide {
+      display: block;
+    }
+
+    .paragraph--gallery__full img {
+      width: 100%;
+      display: block;
+    }
+
+    // Caption below the image, italic grey (replaces the old .field-caption
+    // slick override from dart's _galleries.scss).
+    .paragraph--gallery__caption {
+      width: 100%;
+      margin: $spaceXs 0 0 0;
+      padding: 0 $siteMargin;
+      color: $midGray;
+      font-size: 2rem;
+      font-style: italic;
+      text-align: center;
+    }
+  }
+
+  // =========================
+  // SCROLL-IN ANIMATIONS
+  // =========================
+  // SLIDER: whole carousel fades in; title is excluded.
+  &.paragraph--gallery--slider[data-animate="yes"] {
+    .slider {
+      opacity: 0;
+      transition: opacity 0.6s ease-out;
+    }
+
+    &.is-in-view .slider {
+      opacity: 1;
+    }
+  }
+
+  // LIGHTBOX: staggered, random-ish fade + rise on the <li> thumbnails via
+  // a 5-cycle nth-child delay pattern. Title is excluded. Delays cycle:
+  // 0s, 0.30s, 0.10s, 0.40s, 0.20s.
+  &.paragraph--gallery--lightbox[data-animate="yes"] {
+    .paragraph--gallery__item {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+    }
+
+    .paragraph--gallery__item:nth-child(5n+1) { transition-delay: 0s; }
+    .paragraph--gallery__item:nth-child(5n+2) { transition-delay: 0.30s; }
+    .paragraph--gallery__item:nth-child(5n+3) { transition-delay: 0.10s; }
+    .paragraph--gallery__item:nth-child(5n+4) { transition-delay: 0.40s; }
+    .paragraph--gallery__item:nth-child(5n+5) { transition-delay: 0.20s; }
+
+    &.is-in-view .paragraph--gallery__item {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paragraph--gallery[data-animate="yes"] {
+    .paragraph--gallery__wrap,
+    .paragraph--gallery__item,
+    .slider {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}

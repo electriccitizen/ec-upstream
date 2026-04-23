@@ -1,0 +1,44 @@
+component:
+  id: citizen_sdc:table
+  label: 'Table'
+  description: 'Table HTML structure and mobile conversion'
+  status: experimental
+
+libraryOverrides:
+  dependencies:
+    - citizen_sdc/basicTable
+
+props:
+  type: object
+  required:
+    - rows
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the <table>'
+    caption:
+      type: string
+      description: 'Table caption text'
+    colgroups:
+      type: array
+      description: 'Column groups for the table'
+    header:
+      type: array
+      description: 'Cells in the table header'
+    rows:
+      type: array
+      description: 'Cell rows in the table body'
+    header_columns:
+      type: array
+      description: 'The count of header columns used when the table content is empty'
+    empty:
+      type: object
+      title: 'Empty Table'
+      description: 'Placeholder for empty table content'
+    footer:
+      type: array
+      description: 'Cells in the table footer'
+
+
+    
+    

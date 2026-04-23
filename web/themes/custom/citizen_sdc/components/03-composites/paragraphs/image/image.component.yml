@@ -1,0 +1,32 @@
+component:
+  id: citizen_sdc:image
+  label: 'Paragraph Image'
+  description: 'Single image paragraph with optional text (headline + additional text) placed overlay, above, or below. Replaces dart''s multi-size/linked/captioned variants — image always grows to a 1280px max. When overlay is chosen, the text panel slides in from the left on scroll-in over a dark gradient; on mobile the overlay falls back to the below-image layout.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object from the paragraph template (class-stripped).'
+    headline:
+      type: [string, 'null']
+      description: 'Optional headline, rendered as an H2.'
+    additional_text:
+      type: [string, 'null']
+      description: 'Optional body text (plain, multiline — line breaks preserved via `white-space: pre-line`).'
+    text_position:
+      type: [string, 'null']
+      enum:
+        - overlay
+        - above
+        - below
+        - ''
+        - null
+      description: 'Where to place the text. Omit / null / empty means "below" when text is present. Ignored when both headline and additional_text are empty.'
+
+slots:
+  image:
+    title: Image
+    description: 'Rendered media (typically the `field_image` render array with view-mode `full` / responsive_image style `full`).'

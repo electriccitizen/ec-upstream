@@ -136,6 +136,9 @@ upstream/web/
 #ignore files for local theming
 /web/themes/*/node_modules
 .DS_Store
+
+# Ignore Playwright MCP scratch output (snapshots, console logs, network dumps).
+.playwright-mcp/
 /database.sql
 
 # Ignore local DB files
@@ -146,3 +149,7 @@ upstream/web/
 /web/sites/default/settings.docksal.php
 /.docksal/docksal-local.env
 /.docksal/docksal-local.yml
+
+# Ignore theme dist if it gets generated from running old commands
+/web/themes/citizen_sdc/dist
+/web/themes/custom/citizen_sdc/dist

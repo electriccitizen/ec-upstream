@@ -1,0 +1,12 @@
+{% extends 'block.html.twig' %}
+
+{% block blockContent %}
+  {% set copyright = content.body.0 ? {
+    '#type': 'processed_text',
+    '#text': content.body.0['#text'],
+    '#format': content.body.0['#format']
+  } : "" %}
+  {{ include('citizen_sdc:block-copyright', {
+    body: copyright,
+  }, with_context = false) }}
+{% endblock %}

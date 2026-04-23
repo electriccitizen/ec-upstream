@@ -1,0 +1,27 @@
+/* =================
+   VIEWS BASE
+   Shared wrapper styling for every view. Per-view SDCs add their own
+   modifier-scoped rules on top of this.
+=================== */
+
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+
+.view {
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    > * {
+      width: 100%;
+    }
+  }
+
+  &__empty {
+    margin-bottom: $spaceLg;
+    max-width: $textMax;
+    @include auto;
+    text-align: center;
+  }
+}

@@ -1,0 +1,28 @@
+/* ================
+	 FIELDS
+============== */
+
+@use '../00-variables/fonts' as *;
+@use '../01-mixins/general-mixins' as *;
+
+.field {
+  .field__label--inline {
+    font-weight: $heavy;
+    margin-right: 1rem;
+
+    &+div {
+      display: inline;
+
+      &.field-multi-item {
+        &>div {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  &.field--long-text,
+  &.field--text-with-summary {
+    @include clearFix;
+  }
+}

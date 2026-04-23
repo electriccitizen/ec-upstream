@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Theme hook template for `social_share_block` (registered by citizen_custom).
+ *
+ * Available variables:
+ * - data: payload with url, title, base_url (see citizen_custom SocialShare block).
+ *
+ * Rendered inside block.html.twig automatically; no extends needed.
+ */
+#}
+{{ include('citizen_sdc:block-social-share', {
+  data: data,
+}, with_context = false) }}

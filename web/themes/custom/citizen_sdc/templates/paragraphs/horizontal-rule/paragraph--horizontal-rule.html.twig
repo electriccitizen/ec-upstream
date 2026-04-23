@@ -1,0 +1,8 @@
+{#
+  Drupal paragraph template for the `horizontal_rule` bundle. Pulls the
+  color key off field_color and hands it to the SDC.
+#}
+{{ include('citizen_sdc:horizontal-rule', {
+  attr: attributes,
+  color: paragraph.field_color.value,
+}, with_context = false) }}

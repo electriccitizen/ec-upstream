@@ -1,0 +1,32 @@
+component:
+  id: citizen_sdc:node-event-listing
+  label: 'Node Event (Listing)'
+  description: 'Listing view-mode wrapper for event nodes. Delegates to node-listing-base with field_dates + field_meta_description composed into the content slot. No image in the listing display.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - title
+    - url
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the <article> wrapper'
+    title:
+      type: string
+      description: 'Plain-text node title'
+    url:
+      type: string
+      description: 'URL to the full event node'
+    title_attr:
+      type: object
+      description: 'Drupal Attributes object for the <h2> title element'
+
+slots:
+  dates:
+    title: 'Dates'
+    description: 'Rendered field_dates (smartdate)'
+  summary:
+    title: 'Summary'
+    description: 'Rendered field_meta_description'

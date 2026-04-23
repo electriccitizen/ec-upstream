@@ -1,0 +1,60 @@
+
+{% if pages %}
+  <nav class="pager" aria-label="{{ 'Pagination'|t }}">
+    <div id="pagination-heading" class="visually-hidden">{{ 'Pagination'|t }}</div>
+
+    <ul class="pager__items js-pager__items">
+
+      {% if first_text != '' %}
+        <li class="pager__item pager__item--first{% if not first %} disabled{% endif %}">
+          <a href="{{ first_href }}" title="{{ 'Go to first page'|t }}" rel="first"{{ first_attr|without('href', 'title', 'rel') }}>
+            <span>{{ first_text|default('First'|t) }}</span>
+          </a>
+        </li>
+      {% endif %}
+
+      {% if previous_text != '' %}
+        <li class="pager__item pager__item--previous pager__item--has-arrow {% if not previous %} disabled{% endif %}">
+          <a href="{{ previous_href }}" title="{{ 'Go to previous page'|t }}" rel="prev"{{ previous_attri|without('href', 'title', 'rel') }}>
+            <svg id="left-arrow" class="pager__item--arrow" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 12 12"><path d="M11.3,5.3H3.2l3.7-3.7-.9-.9L.7,6l5.3,5.3.9-.9-3.7-3.7h8.1v-1.3Z"/></svg>
+            <span>{{ previous_text|default('Previous'|t) }}</span>
+          </a>
+        </li>
+      {% endif %}
+
+
+      {% for key, page in pages %}
+        <li class="pager__item{{ current == key ? ' is-active' : '' }} pager__number">
+          {% if current == key %}
+            {% set title = 'Current page'|t %}
+          {% else %}
+            {% set title = 'Go to page @key'|t({'@key': key}) %}
+          {% endif %}
+          <a href="{{ page.href }}" title="{{ title }}"{{ page.attributes|without('href', 'title') }}>
+            <span class="visually-hidden">
+              {{ current == key ? 'Current page'|t : 'Page'|t }}
+            </span>
+            {{- key -}}
+          </a>
+        </li>
+      {% endfor %}
+
+      {% if next_text != '' %}
+        <li class="pager__item pager__item--next pager__item--has-arrow{% if not items.next %} disabled{% endif %}">
+          <a href="{{ next_href }}" title="{{ 'Go to next page'|t }}" rel="next"{{ next_attr|without('href', 'title', 'rel') }}>
+            <span>{{ next_text|default('Next'|t) }}</span>
+            <svg id="right-arrow" class="pager__item--arrow" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 12 12"><path d="M.7,6.7h8.1s-3.7,3.7-3.7,3.7l.9.9,5.3-5.3L6,.7l-.9.9,3.7,3.7H.7s0,1.3,0,1.3Z"/></svg>
+          </a>
+        </li>
+      {% endif %}
+
+      {% if last_text != '' %}
+        <li class="pager__item pager__item--last{% if not last %} disabled{% endif %}">
+          <a href="{{ last_href }}" title="{{ 'Go to last page'|t }}" rel="last"{{ last_attr|without('href', 'title', 'rel') }}>
+            <span>{{ last_text|default('Last'|t) }}</span>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}

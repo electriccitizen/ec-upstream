@@ -1,0 +1,44 @@
+{#
+  Drupal paragraph template for the `gallery` bundle.
+
+  Builds a structured `items` array (one entry per gallery_item child — no SDC
+  of its own; single-SDC pattern same as accordions) and delegates rendering
+  to `citizen_sdc:gallery`.
+
+  Renders each referenced media twice via drupal_entity():
+    - `large_thumb` for the lightbox thumbnail grid
+    - `large` for the lightbox modal full-size / slider main image
+#}
+
+{# Derive render mode from the boolean field_gallery_type: TRUE = lightbox,
+   FALSE = slider. #}
+{% set gallery_type = paragraph.field_gallery_type.value == '1' ? 'lightbox' : 'slider' %}
+
+{# Both variants are vanilla now. Lightbox uses native <dialog> (JS lives
+   in the gallery SDC). Slider delegates to `citizen_sdc:slider`, which
+   declares Embla as a library dependency — no attach_library needed. #}
+
+{# Build the items array. Each child paragraph must have a media reference
+   in field_image; items without one are skipped. #}
+{% set items = [] %}
+{% for key, item in content.field_gallery_items %}
+  {% if key|first != '#' and item['#paragraph'].field_image.0.target_id > 0 %}
+    {% set media_id = item['#paragraph'].field_image.0.target_id %}
+    {% set items = items|merge([{
+      id: media_id,
+      thumb: drupal_entity('media', media_id, 'large_thumb'),
+      full: drupal_entity('media', media_id, 'large'),
+      caption: item['#paragraph'].field_caption.0.value ?? '',
+    }]) %}
+  {% endif %}
+{% endfor %}
+
+{% if items|length > 0 %}
+  {{ include('citizen_sdc:gallery', {
+    attr: attributes,
+    title: paragraph.field_widget_title.value,
+    type: gallery_type,
+    gallery_id: paragraph.id.value,
+    items: items,
+  }, with_context = false) }}
+{% endif %}

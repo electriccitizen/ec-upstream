@@ -1,0 +1,16 @@
+{% set classes = [
+  'layout',
+  'layout--twocol-sideright',
+] %}
+<div{{ attr.addClass(classes) }}>
+  {% if content %}
+    <div{{ content_attr.addClass('layout__region', 'layout__region--content') }}>
+      {{ content }}
+    </div>
+  {% endif %}
+  {% if second %}
+    <div{{ second_attr.addClass('layout__region', 'layout__region--second') }}>
+      {{ second }}
+    </div>
+  {% endif %}
+</div>

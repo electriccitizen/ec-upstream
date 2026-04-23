@@ -1,0 +1,45 @@
+/* =================
+   VIEWS — SITE SEARCH RESULTS
+   Scoped under `.view--site-search--site-search-block` (emitted by views-base).
+=================== */
+
+@use '../../../../00-base/00-variables/colors' as *;
+@use '../../../../00-base/00-variables/component-colors' as *;
+@use '../../../../00-base/00-variables/fonts' as *;
+@use '../../../../00-base/00-variables/units' as *;
+@use '../../../../00-base/01-mixins/layout-mixins' as *;
+
+.view--site-search--site-search-block {
+  // Content + empty regions share the text-constrained column.
+  .view__content,
+  .view__empty {
+    @include auto;
+    margin-bottom: $elementSpace;
+    max-width: $textMax;
+    width: 100%;
+  }
+
+  .views-row {
+    &:not(:last-child) {
+      margin-bottom: $elementSpace;
+    }
+
+    .views-field-title {
+      margin-bottom: $spaceXxs;
+    }
+
+    // Search-highlight `<mark>` injected by views-search-results.js — strip
+    // the yellow default, use weight to indicate the match instead.
+    .views-field-body-1 {
+      .search-highlight {
+        background: none;
+        font-weight: $heavy;
+      }
+    }
+  }
+
+  .pager {
+    @include auto;
+    max-width: $textMax;
+  }
+}

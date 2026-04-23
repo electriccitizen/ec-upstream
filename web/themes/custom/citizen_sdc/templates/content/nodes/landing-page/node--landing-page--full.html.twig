@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Landing-page default/full view — delegates to node-landing-page-default SDC.
+ */
+#}
+{% import '@citizen_sdc/macros/node-layout-sections.html.twig' as node_macros %}
+
+{{ include('citizen_sdc:node-landing-page-default', {
+  attr: attributes,
+  title_prefix: title_prefix,
+  title_suffix: title_suffix,
+  content: node_macros.wrap_layout_builder_sections(content),
+}, with_context = false) }}

@@ -1,0 +1,22 @@
+component:
+  id: citizen_sdc:breadcrumbs
+  label: 'Breadcrumbs'
+  description: 'Links to send users to parent pages'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - breadcrumb
+  properties:
+    breadcrumb:
+      type: array
+      title: 'Breadcrumbs'
+      description: 'Drupal system breadcrumb links'
+    breadcrumb_label:
+      type: String
+      title: 'Breadcrumbs'
+      description: 'Accessiblity text for breadcrumb element'
+
+slots:
+  trail:

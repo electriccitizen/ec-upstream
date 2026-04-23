@@ -1,0 +1,28 @@
+{% set content_list_body %}
+  {# Header row — title + "more" link, flex-justified on one line above the
+     list. Rendered only when at least one of the two exists. #}
+  {% if title or link %}
+    <div class="paragraph--content-list__header">
+      {% if title %}
+        <h2 class="paragraph--content-list__title">{{ title }}</h2>
+      {% endif %}
+      {% if link %}
+        <div class="paragraph--content-list__actions">{{ link }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {# The view itself — pre-rendered by the Drupal template (same render
+     used for the emptiness check) so what we showed on the length check
+     is exactly what lands here. List items styled by their own SDCs. #}
+  <div class="paragraph--content-list__items">
+    {{ view }}
+  </div>
+{% endset %}
+
+{{ include('citizen_sdc:paragraph-base', {
+  attr: attr,
+  modifier_class: 'content-list',
+  animate: 'no',
+  content: content_list_body,
+}, with_context = false) }}

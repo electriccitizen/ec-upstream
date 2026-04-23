@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Default node template for the full view mode. Delegates to node-base.
+ *
+ * Content types with their own default SDC (node-[type]-default) typically
+ * ship their own Drupal template override at node--[type]--full.html.twig.
+ */
+#}
+{% import '@citizen_sdc/macros/node-layout-sections.html.twig' as node_macros %}
+
+{{ include('citizen_sdc:node-base', {
+  attr: attributes,
+  modifier_class: node.type.0.target_id|clean_class,
+  title_prefix: title_prefix,
+  title_suffix: title_suffix,
+  content: node_macros.wrap_layout_builder_sections(content),
+}, with_context = false) }}

@@ -22,7 +22,7 @@ dependencies:
     - user
     - views
   theme:
-    - citizen_dart
+    - citizen_sdc
 third_party_settings:
   layout_builder:
     enabled: true
@@ -63,6 +63,7 @@ third_party_settings:
               context_mapping: {  }
               follow: false
               follow_parent: active
+              display_empty: false
               label_link: true
               label_type: parent
               level: 2
@@ -70,7 +71,7 @@ third_party_settings:
               expand_all_items: true
               parent: 'support-book:'
               render_parent: false
-              suggestion: section_menu
+              suggestion: support_book
               hide_on_nonactive: false
             weight: 0
             additional: {  }

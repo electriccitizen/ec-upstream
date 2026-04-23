@@ -1,0 +1,13 @@
+{% set form_placer_body %}
+  {% if title %}
+    <h2 class="paragraph--form-placer__title">{{ title }}</h2>
+  {% endif %}
+  {{ form }}
+{% endset %}
+
+{{ include('citizen_sdc:paragraph-base', {
+  attr: attr,
+  modifier_class: 'form-placer',
+  animate: 'no',
+  content: form_placer_body,
+}, with_context = false) }}

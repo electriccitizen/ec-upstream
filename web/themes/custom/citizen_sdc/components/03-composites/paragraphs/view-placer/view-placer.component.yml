@@ -1,0 +1,26 @@
+component:
+  id: citizen_sdc:view-placer
+  label: 'Paragraph View Placer'
+  description: 'Embeds a dev-built Views display in content. Editor picks the view + display via viewsreference; the chosen display machine name is emitted as a BEM modifier on the wrapper (`paragraph--view-placer--{display|clean_class}`) so per-view SCSS can customize title/link placement per-project. Same title+more-link header layout as `citizen_sdc:content-list`, minus the emptiness check (views are dev-built; if the editor picked a broken one, the empty output is the signal).'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object from the paragraph template (class-stripped).'
+    title:
+      type: [string, 'null']
+      description: 'Optional widget title — rendered as `<h2 class="paragraph--view-placer__title">` inside the header row.'
+    view_display:
+      type: [string, 'null']
+      description: 'The selected view display machine name (e.g. `block_1`, `embed_featured`). Added as `paragraph--view-placer--{value|clean_class}` to the wrapper for per-display SCSS hooks.'
+
+slots:
+  view:
+    title: View
+    description: 'Rendered view output (the `content.field_view` render array from the Drupal template).'
+  link:
+    title: More link
+    description: 'Optional rendered more-link (the `content.field_link` render array). Floats to the right of the title on wide viewports; drops below on narrow.'

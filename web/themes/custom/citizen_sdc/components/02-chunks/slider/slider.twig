@@ -1,0 +1,52 @@
+{# Build the wrapper attributes: BEM class + ARIA carousel role + data
+   attrs the JS reads for config. Per-view CSS custom props are inlined on
+   the wrapper so each instance is independently responsive without a
+   combinatorial SCSS matrix. #}
+{% set slider_attr = (attr ?: create_attribute())
+  .addClass('slider')
+  .setAttribute('role', 'region')
+  .setAttribute('aria-roledescription', 'carousel')
+  .setAttribute('data-slider', slider_id)
+  .setAttribute('data-slider-autoplay', autoplay ? 'yes' : 'no')
+  .setAttribute('data-slider-autoplay-interval', autoplay_interval|default(5000))
+  .setAttribute('data-slider-loop', loop is same as(false) ? 'no' : 'yes')
+  .setAttribute('data-slider-adaptive-height', adaptive_height ? 'yes' : 'no') %}
+
+{% if label %}
+  {% set slider_attr = slider_attr.setAttribute('aria-label', label) %}
+{% endif %}
+
+{% set css_vars = [] %}
+{% if per_view and per_view.mobile %}{% set css_vars = css_vars|merge(['--slider-per-view-mobile: ' ~ per_view.mobile]) %}{% endif %}
+{% if per_view and per_view.tablet %}{% set css_vars = css_vars|merge(['--slider-per-view-tablet: ' ~ per_view.tablet]) %}{% endif %}
+{% if per_view and per_view.desktop %}{% set css_vars = css_vars|merge(['--slider-per-view-desktop: ' ~ per_view.desktop]) %}{% endif %}
+{% if css_vars|length %}
+  {% set slider_attr = slider_attr.setAttribute('style', css_vars|join('; ')) %}
+{% endif %}
+
+<section{{ slider_attr }}>
+  <div class="slider__viewport" data-slider-viewport>
+    <ul class="slider__track" data-slider-container>
+      {% for slide in items %}
+        <li class="slider__slide" role="group" aria-roledescription="slide" aria-label="{{ loop.index }} of {{ items|length }}">
+          {{ slide }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  {# Only show arrows + live region when there's more than one slide. #}
+  {% if items|length > 1 %}
+    <button type="button" class="slider__nav slider__nav--prev" aria-label="Previous slide" data-slider-prev>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </button>
+    <button type="button" class="slider__nav slider__nav--next" aria-label="Next slide" data-slider-next>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+    </button>
+    <div class="slider__live" aria-live="polite" data-slider-live></div>
+  {% endif %}
+</section>

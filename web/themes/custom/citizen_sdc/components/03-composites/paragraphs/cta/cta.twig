@@ -1,0 +1,20 @@
+{% set cta_body %}
+  <div class="paragraph--cta__inner">
+    <h2 class="paragraph--cta__headline">{{ headline }}</h2>
+    {% if additional_text %}
+      <p class="paragraph--cta__text">{{ additional_text }}</p>
+    {% endif %}
+    {% if link %}
+      <div class="paragraph--cta__actions">
+        {{ link }}
+      </div>
+    {% endif %}
+  </div>
+{% endset %}
+
+{{ include('citizen_sdc:paragraph-base', {
+  attr: attr,
+  modifier_class: 'cta',
+  animate: 'yes',
+  content: cta_body,
+}, with_context = false) }}

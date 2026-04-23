@@ -1,0 +1,46 @@
+component:
+  id: citizen_sdc:gallery
+  label: 'Paragraph Gallery'
+  description: 'Image gallery with two render modes — lightbox (thumbnails opening a modal gallery via featherlight) and slider (carousel via slick). Single-SDC pattern for parent/child paragraph pair: the `gallery_item` child bundle has no SDC of its own — the Drupal template for `paragraph--gallery` iterates `field_gallery_items` and passes a structured `items` array to this SDC. Same pattern as accordions.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - type
+    - gallery_id
+    - items
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object from the paragraph template (class-stripped).'
+    title:
+      type: [string, 'null']
+      description: 'Optional widget title from field_widget_title — rendered as `<h2 class="paragraph--gallery__title">` above the gallery.'
+    type:
+      type: string
+      enum:
+        - lightbox
+        - slider
+      description: 'Render mode. `lightbox` renders a thumbnail grid where each thumb opens a modal gallery (featherlight). `slider` renders a single-image-at-a-time carousel (slick). Derived in the Drupal template from the `field_gallery_type` boolean (on = lightbox, off = slider).'
+    gallery_id:
+      type: string
+      description: 'Unique id per paragraph instance. Drives the featherlight `rel="gallery-{id}"` group so multiple lightbox galleries on one page stay separate, and the slider data attribute for JS init.'
+    items:
+      type: array
+      description: 'Array of gallery item objects. Each item: `{ id: string|int (media entity id), thumb: render-array (media rendered with `large_thumb` image style), full: render-array (media rendered with `large` image style, used for lightbox modal + slider main image), caption: string (optional gallery_item.field_caption) }`.'
+      items:
+        type: object
+        required:
+          - id
+          - thumb
+          - full
+        properties:
+          id:
+            type: [string, integer]
+          thumb:
+            type: [object, string]
+          full:
+            type: [object, string]
+          caption:
+            type: [string, 'null']

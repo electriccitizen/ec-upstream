@@ -1,0 +1,71 @@
+/* =================
+   NODE ALERT DEFAULT
+=================== */
+
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/general-mixins' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem 2.5rem;
+
+  .alert__body {
+    flex: 1 1 auto;
+
+    a {
+      color: inherit;
+      text-decoration: underline from-font;
+      text-decoration-thickness: 2px;
+
+      &:hover,&:focus {
+        text-decoration: none;
+      }
+    }
+
+    & > :first-child {
+      margin-top: 0;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .alert__close {
+    flex: 0 0 24px;
+    height: 24px;
+    display: block;
+    border-radius: 50%;
+    @include buttonWipe;
+  }
+
+  &.alert--standard {
+    background-color: $alertStandardBack;
+    color: $alertStandardText;
+
+    .alert__body a,.alert__close {
+      color: $alertStandardText;
+
+      &:hover,&:focus {
+        background-color: $alertStandardHover;
+      }
+    }
+  }
+
+  &.alert--urgent {
+    background-color: $alertUrgentBack;
+    color: $alertUrgentText;
+
+    .alert__body a,.alert__close {
+      color: $alertUrgentText;
+
+      &:hover,&:focus {
+        background-color: $alertUrgentHover;
+      }
+    }
+  }
+}

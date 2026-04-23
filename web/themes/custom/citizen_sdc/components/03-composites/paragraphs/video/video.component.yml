@@ -1,0 +1,20 @@
+component:
+  id: citizen_sdc:video
+  label: 'Paragraph Video'
+  description: 'Single remote-video paragraph (typically YouTube/Vimeo via the `remote_video` media type). Optional widget title rendered above. Fades in on scroll-in.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object from the paragraph template (class-stripped).'
+    title:
+      type: [string, 'null']
+      description: 'Optional widget title — rendered as `<h2 class="paragraph--video__title">` above the video.'
+
+slots:
+  video:
+    title: Video
+    description: 'Rendered media (typically `content.field_video` — remote_video media entity in its default view mode, which oEmbeds to an iframe).'

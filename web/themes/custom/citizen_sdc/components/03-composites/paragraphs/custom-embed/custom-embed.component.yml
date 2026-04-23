@@ -1,0 +1,20 @@
+component:
+  id: citizen_sdc:custom-embed
+  label: 'Paragraph Custom Embed'
+  description: 'Renders arbitrary HTML/JS pasted by an editor into `field_embed_content`. Optional widget title above the embed. Embed content arrives as a pre-rendered slot (`basic_string` formatter wraps the field value in Markup so it passes through unescaped) — the SDC just drops it in.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object from the paragraph template (class-stripped).'
+    title:
+      type: [string, 'null']
+      description: 'Optional widget title (field_widget_title), rendered as `<h2 class="paragraph--custom-embed__title">` above the embed.'
+
+slots:
+  content:
+    title: 'Embed content'
+    description: 'Rendered `content.field_embed_content` — arbitrary HTML / JS / embed markup. Passed through the slot unchanged.'

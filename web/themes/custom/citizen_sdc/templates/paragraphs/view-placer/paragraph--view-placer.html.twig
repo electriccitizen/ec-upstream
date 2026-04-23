@@ -1,0 +1,16 @@
+{#
+  Drupal paragraph template for the `view_placer` bundle. Renders
+  field_view (viewsreference → embed/block display) directly; no
+  emptiness check — views are dev-built, the empty output is the signal
+  if something's misconfigured.
+#}
+{% set view_slot %}{{ content.field_view }}{% endset %}
+{% set link_slot %}{{ content.field_link }}{% endset %}
+
+{{ include('citizen_sdc:view-placer', {
+  attr: attributes,
+  title: paragraph.field_widget_title.value,
+  view_display: paragraph.field_view.display_id,
+  view: view_slot,
+  link: link_slot,
+}, with_context = false) }}

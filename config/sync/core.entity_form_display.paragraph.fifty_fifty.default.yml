@@ -1,0 +1,62 @@
+uuid: e60bcd8c-e187-43aa-b407-72d461b28995
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fifty_fifty.field_alignment
+    - field.field.paragraph.fifty_fifty.field_link
+    - field.field.paragraph.fifty_fifty.field_long_text
+    - field.field.paragraph.fifty_fifty.field_media
+    - field.field.paragraph.fifty_fifty.field_widget_title
+    - paragraphs.paragraphs_type.fifty_fifty
+  module:
+    - link
+    - media_library
+    - options
+    - text
+id: paragraph.fifty_fifty.default
+targetEntityType: paragraph
+bundle: fifty_fifty
+mode: default
+content:
+  field_alignment:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_long_text:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_media:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_widget_title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

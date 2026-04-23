@@ -1,0 +1,38 @@
+/* =================
+   VIEWS — BIOS / ALL BIOS
+   Rows scoped under `.view--bios--all-bios` (emitted by views-base on
+   the outer wrapper as `view view--bios view--bios--all-bios`).
+=================== */
+
+@use '../../../../00-base/00-variables/units' as *;
+@use '../../../../00-base/01-mixins/breakpoint-mixins' as *;
+
+.view--bios--all-bios {
+  padding-bottom: $elementSpace;
+
+  // Replaces dart's `bleed(padding, 40px)` on `.view-content` — gap on
+  // the flex wrap gives the same inter-card gutters without the
+  // negative-margin trick.
+  .view__content {
+    gap: $spaceMd 40px;
+  }
+
+  .views-row {
+    text-align: center;
+
+    // Responsive columns — 1 / 2 / 3 / 4 across the breakpoints. Default
+    // (mobile) width comes from views-base (`.view__content > * { width:
+    // 100% }`). calc widths account for the 40px gap between columns.
+    @include smallTab {
+      width: calc(50% - 20px);
+    }
+
+    @include tab {
+      width: calc(33.33% - 27px);
+    }
+
+    @include desk {
+      width: calc(25% - 30px);
+    }
+  }
+}

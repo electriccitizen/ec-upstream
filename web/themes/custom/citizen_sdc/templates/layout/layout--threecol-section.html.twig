@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Override of core's three-column section layout. Delegates to
+ * citizen_sdc:layout-section-three-column.
+ *
+ * The layout_threecol_section plugin adds 'layout', 'layout--threecol-section',
+ * and the ratio modifier (e.g. 'layout--threecol-section--33-34-33') to
+ * attributes in MultiWidthLayoutBase::build().
+ *
+ * Available variables:
+ * - content: Content for the layout.
+ * - attributes: HTML attributes for the layout wrapper.
+ * - region_attributes: HTML attributes for each region.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  {{ include('citizen_sdc:layout-section-three-column', {
+    attr: attributes,
+    first_attr: region_attributes.first,
+    second_attr: region_attributes.second,
+    third_attr: region_attributes.third,
+    first: content.first,
+    second: content.second,
+    third: content.third,
+  }, with_context = false) }}
+{% endif %}

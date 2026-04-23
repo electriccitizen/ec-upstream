@@ -1,0 +1,23 @@
+component:
+  id: citizen_sdc:content-list
+  label: 'Paragraph Content List'
+  description: 'Widget that embeds a custom Views "Content List" display of teasers (news, events, etc.). The Drupal template runs a `drupal_view_result()` check first and only includes this SDC when the view returns rows — empty lists do not render the wrapper at all. SDC itself assumes results exist. Styling concern is just the header row (title + "more" link on one flex-justified row) above the list; the teasers themselves render via the views SDCs / content-type teaser SDCs and are not this SDC''s concern.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object from the paragraph template (class-stripped).'
+    title:
+      type: [string, 'null']
+      description: 'Optional widget title (field_widget_title), rendered as `<h2 class="paragraph--content-list__title">` on the left side of the header flex row.'
+
+slots:
+  view:
+    title: 'Rendered view'
+    description: 'Pre-rendered `drupal_view(''content_list'', display, paragraph_id)` output. The Drupal template renders the view once, runs `|render|striptags|trim|length > 0` on it to decide whether to include this SDC at all, and passes the same rendered output through as this slot — so what we check is exactly what we render. No double-execution.'
+  link:
+    title: 'More link'
+    description: 'Rendered field_link (optional). Sits on the right side of the header flex row, opposite the title. Wrapped in `.paragraph--content-list__actions` by the SDC.'

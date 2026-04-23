@@ -1,0 +1,30 @@
+component:
+  id: citizen_sdc:views-support-search-results
+  label: 'Views Support Search Results'
+  description: 'Renders the `support_search.search_results` view display. First 6 rows show inline; the rest collapse into a drawer under a "See all results" toggle. Includes `citizen_sdc:drawer` for the toggle + collapse markup; the drawer SDC''s auto-attached library supplies the open/close behavior.'
+  status: experimental
+
+libraryOverrides:
+  dependencies:
+    - core/components.citizen_sdc--drawer
+
+props:
+  type: object
+  required:
+    - rando
+  properties:
+    attr:
+      type: object
+    title:
+      type: [string, 'null']
+    default_row_class:
+      type: boolean
+    visible_rows:
+      type: array
+      description: 'Rows rendered inline above the drawer. Same `{ attributes, content }` shape as `rows` in the unformatted base.'
+    drawer_rows:
+      type: array
+      description: 'Rows stashed inside the collapsible drawer. Empty array = no drawer + no toggle.'
+    rando:
+      type: [string, integer]
+      description: 'Random suffix used for the drawer''s unique id (`drawer-{rando}`). Supplied by the Drupal template.'

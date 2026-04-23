@@ -1,0 +1,21 @@
+component:
+  id: citizen_sdc:block-social-share
+  label: 'Block Social Share'
+  description: 'Social share block — renders share links to Facebook, X, LinkedIn, and email for the current node'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - data
+  properties:
+    data:
+      type: object
+      description: 'Share payload populated by the citizen_custom SocialShare block from the current route node'
+      properties:
+        url:
+          type: string
+          description: 'Absolute URL of the node being shared'
+        title:
+          type: string
+          description: 'Title of the node being shared'

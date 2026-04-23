@@ -1,0 +1,10 @@
+component:
+  id: citizen_sdc:region-footer
+  label: 'Footer Region'
+  description: 'Main site footer region. Rendered as <footer role="contentinfo"> with an included back-to-top link.'
+  status: experimental
+
+slots:
+  content:
+    title: 'Content'
+    description: 'Rendered output of the page.footer region'

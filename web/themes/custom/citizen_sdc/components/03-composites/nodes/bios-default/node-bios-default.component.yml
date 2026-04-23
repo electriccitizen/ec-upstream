@@ -1,0 +1,23 @@
+component:
+  id: citizen_sdc:node-bios-default
+  label: 'Node Bios (Default)'
+  description: 'Default view-mode wrapper for bios nodes. Delegates to node-base with modifier_class=bios; exists to colocate bios-specific default-view styling. Layout Builder sections are pre-wrapped in node--bios--full.html.twig before being passed into the content slot.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the <article> wrapper'
+    title_prefix:
+      type: object
+      description: 'Placeholder for module and theme output before the node'
+    title_suffix:
+      type: object
+      description: 'Placeholder for contextual links'
+
+slots:
+  content:
+    title: 'Content'
+    description: 'Rendered node content — Layout Builder sections pre-wrapped by the Drupal template'

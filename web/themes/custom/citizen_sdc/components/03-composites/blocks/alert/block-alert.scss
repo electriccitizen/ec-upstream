@@ -1,0 +1,11 @@
+// Block Alert
+//
+// Empty placeholder for active alert teasers. The placeholder itself has no
+// appearance — sizing, spacing, and backgrounds live on the teaser markup
+// (see node-alert-teaser.scss).
+
+.alert-placeholder {
+  &:empty {
+    display: none;
+  }
+}

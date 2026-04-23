@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Override of core's two-column section layout. Delegates to
+ * citizen_sdc:layout-section-two-column.
+ *
+ * The layout_twocol_section plugin adds 'layout', 'layout--twocol-section',
+ * and the ratio modifier (e.g. 'layout--twocol-section--50-50') to attributes
+ * in MultiWidthLayoutBase::build().
+ *
+ * Available variables:
+ * - content: Content for the layout.
+ * - attributes: HTML attributes for the layout wrapper.
+ * - region_attributes: HTML attributes for each region.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  {{ include('citizen_sdc:layout-section-two-column', {
+    attr: attributes,
+    first_attr: region_attributes.first,
+    second_attr: region_attributes.second,
+    first: content.first,
+    second: content.second,
+  }, with_context = false) }}
+{% endif %}

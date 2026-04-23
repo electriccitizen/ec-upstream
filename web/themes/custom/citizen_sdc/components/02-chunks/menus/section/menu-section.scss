@@ -1,0 +1,228 @@
+/* ===============
+  SECTION MENU
+================= */
+
+@use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/fonts' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
+@use '../../../00-base/01-mixins/type-mixins' as *;
+
+
+#block-menu-section {
+  .block-menu__title {
+    display: block;
+    padding: 2rem 3rem;
+    background: $smBlockTitleBack;
+    font-size: 2.75rem;
+  }
+
+  @include onlyMobile {
+    .block-menu__title {
+      display: none;
+    }
+  }
+
+  .block-menu--section__toggle-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    background: $smBlockTitleBack;
+
+    @include desk {
+      display: none;
+    }
+
+    .block-menu__mobile-title {
+      display: block;
+      width: calc(100% - 40px);
+    }
+
+    .block-menu__toggle {
+      display: block;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      background-color: $smMobileMenuToggle;
+      mask-image: url('hamburger.svg');
+      mask-repeat: no-repeat;
+      mask-size: 24px;
+      mask-position: center;
+
+      &:hover,&:focus {
+        background-color: $smMobileMenuToggleHover;
+        transition: background-color .3s ease;
+      }
+
+      &.block-menu__toggle--active {
+        mask-image: url('close.svg');
+        mask-size: 16px;
+      }
+    }
+  }
+}
+
+#menu-section {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-family: $header;
+  font-weight: $heavy;
+  column-gap: 8px;
+  position: relative;
+  z-index: 2;
+  flex-direction: column;
+  background: $smBack;
+  @include mobileMenuDrawer;
+
+  @include desk {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    overflow: auto;
+  }
+
+  ul[aria-hidden='true'] {
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    pointer-events: none;
+    list-style-type: none;
+  }
+
+  li {
+    list-style: none;
+    position: relative;
+    
+    &.menu-item--open {
+      .menu-item__toggle {
+        &:after {
+          transform: rotate(180deg);
+          transition: transform .3s ease, background-color .3s ease;
+        }
+      }
+    }
+
+    .menu-item__link {
+      display: block;
+      transition: color .3s ease;
+    }
+
+    .menu-item__toggle:after {
+      transition: background-color .3s ease;
+    }
+  }
+
+  // top level
+  .menu-item__level-1 {
+    &:first-child {
+      padding-top: 1rem;
+    }
+    &:last-child {
+      padding-bottom: 1rem;
+    }
+
+    .menu-item__link {
+      display: block;
+      padding: 1rem 5rem 1rem 3rem;
+      color: $smTopLink;
+
+      &:hover,&:focus {
+        color: $smTopLinkHover;
+      }
+
+      &.menu-item--active-trail {
+        .menu-item__toggle {
+          &:hover,&:focus {
+            &:after {
+              background-color: $smTopActiveHover;
+            }
+          }
+
+          &:after {
+            background-color: $smTopActive;
+          }
+        }
+      }
+    }
+
+    .menu-item__toggle {
+      @include menuItemToggle;
+
+      & {
+        width: 64px;
+        height: 40px;
+        &:after {
+          top: calc(50% - 8px);
+          right: 30px;
+          mask-size: 16px;
+          background-color: $smTopLink;
+        }
+      }
+
+      &:hover,&:focus {
+        &:after {
+          background-color: $smTopLinkHover;
+        }
+      }
+    }
+  }
+
+  //sub levels
+  .menu-item:not(.menu-item__level-1) {
+    &:first-child {
+      padding-top: .5rem;
+    }
+    &:last-child {
+      padding-bottom: .5rem;
+    }
+
+    .menu-item__link {
+      display: block;
+      font-size: 2rem;
+      padding: .5rem 5rem .5rem 5rem;
+      color: $smChildLink;
+
+      &:hover,&:focus {
+        color: $smChildLinkHover;
+      }
+
+      &.menu-item--active-trail {
+        .menu-item__toggle {
+          &:hover,&:focus {
+            &:after {
+              background-color: $smChildActiveHover;
+            }
+          }
+
+          &:after {
+            background-color: $smChildActive;
+          }
+        }
+      }
+    }
+
+    .menu-item__toggle {
+      @include menuItemToggle;
+
+      & {
+        width: 64px;
+        height: 30px;
+        &:after {
+          top: calc(50% - 7px);
+          right: 31px;
+          mask-size: 14px;
+          background-color: $smTopLink;
+        }
+      }
+
+      &:hover,&:focus {
+        &:after {
+          background-color: $smTopLinkHover;
+        }
+      }
+    }
+  }
+}
+

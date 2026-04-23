@@ -1,0 +1,14 @@
+/* =================
+   VIEWS — EVENTS / ALL UPCOMING EVENTS
+   Scoped under `.view--events--all-upcoming-events` (emitted by views-base).
+=================== */
+
+@use '../../../../00-base/00-variables/units' as *;
+
+.view--events--all-upcoming-events {
+  padding-bottom: $elementSpace;
+
+  .views-row:not(:last-child) {
+    margin-bottom: $spaceMd;
+  }
+}

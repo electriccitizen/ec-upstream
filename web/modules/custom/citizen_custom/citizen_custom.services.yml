@@ -3,3 +3,14 @@ services:
     class: Drupal\citizen_custom\TwigExtension
     tags:
       - { name: twig.extension }
+
+  citizen_custom.anonymous_access_denial:
+    class: Drupal\citizen_custom\EventSubscriber\AnonymousAccessDenial
+    arguments:
+      - '@current_user'
+      - '@current_route_match'
+    tags:
+      - { name: event_subscriber }
+
+  citizen_custom.support_book_access:
+    class: Drupal\citizen_custom\Access\SupportBookAccess

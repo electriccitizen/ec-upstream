@@ -1,0 +1,23 @@
+uuid: 85158e68-4568-41c8-8216-900b9597bafd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_color
+    - paragraphs.paragraphs_type.horizontal_rule
+  module:
+    - options
+id: paragraph.horizontal_rule.field_color
+field_name: field_color
+entity_type: paragraph
+bundle: horizontal_rule
+label: 'HR Color'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: light_gray
+default_value_callback: ''
+settings: {  }
+field_type: list_string

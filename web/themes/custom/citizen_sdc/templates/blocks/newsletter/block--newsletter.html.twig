@@ -1,0 +1,13 @@
+{% extends 'block.html.twig' %}
+
+{% block blockContent %}
+  {% set intro = content.body.0 ? {
+    '#type': 'processed_text',
+    '#text': content.body.0['#text'],
+    '#format': content.body.0['#format']
+  } : '' %}
+  {{ include('citizen_sdc:block-newsletter', {
+    intro: intro,
+    form_embed: content.field_form_embed.0 ? content.field_form_embed['#items'].0.value : '',
+  }, with_context = false) }}
+{% endblock %}

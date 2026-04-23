@@ -1,0 +1,15 @@
+/* =================
+   VIEWS — CONTENT LIST / NEWS LIST
+   Scoped under `.view--content-list--news-list` (emitted by views-base).
+=================== */
+
+@use '../../../../00-base/00-variables/units' as *;
+@use '../../../../00-base/01-mixins/layout-mixins' as *;
+
+.view--content-list--news-list {
+  @include textConstrain;
+
+  .views-row:not(:last-child) {
+    margin-bottom: $spaceMd;
+  }
+}

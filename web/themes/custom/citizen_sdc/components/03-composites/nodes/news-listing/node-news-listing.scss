@@ -1,0 +1,11 @@
+/* =================
+   NODE NEWS LISTING
+=================== */
+
+@use '../../../00-base/01-mixins/type-mixins' as *;
+
+.node-listing--news {
+  .node-listing__date {
+    @include metaText;
+  }
+}

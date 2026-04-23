@@ -1,0 +1,10 @@
+component:
+  id: citizen_sdc:region-alert
+  label: 'Alert Region'
+  description: 'Sitewide alert region rendered at the very top of the page. Wrapped in a complementary <section>.'
+  status: experimental
+
+slots:
+  content:
+    title: 'Content'
+    description: 'Rendered output of the page.alert region'

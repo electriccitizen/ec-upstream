@@ -1,0 +1,22 @@
+/* =================
+   HEADER REGION
+=================== */
+
+@use '../../../../00-base/00-variables/component-colors' as *;
+@use '../../../../00-base/00-variables/units' as *;
+@use '../../../../00-base/01-mixins/layout-mixins' as *;
+
+.site-header {
+  padding: 20px $siteMargin;
+  background: $headerBack;
+}
+
+.site-header__inner > div {
+  max-width: $contentStop;
+  @include auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+}

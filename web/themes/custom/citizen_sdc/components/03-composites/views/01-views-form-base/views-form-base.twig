@@ -1,0 +1,15 @@
+{% if q is not empty %}
+  {# Hidden `q` input for non-clean-URL Drupal setups. Must render before
+     the visible form so the POST URL picks it up first. #}
+  {{ q }}
+{% endif %}
+
+<a href="#skip-filters" class="skip-nav visually-hidden focusable">
+  {%- trans %}Skip filters{% endtrans -%}
+</a>
+
+<div id="views-form-wrapper">
+  {{ form }}
+</div>
+
+<a id="skip-filters" tabindex="-2"></a>

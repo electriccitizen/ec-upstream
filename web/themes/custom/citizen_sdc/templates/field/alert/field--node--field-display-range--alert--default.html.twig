@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Alert display range (default/full view mode). Bypasses the smartdate_default
+ * formatter to build the string ourselves — the stock format compresses
+ * repeated month/year across ranges (e.g. "4/21 - 23/26") which looks wrong
+ * here. Rules:
+ *
+ *   - Single day, all day      → "4/21/26, All day"
+ *   - Single day, time range   → "4/21/26, 10am - 1:23pm"
+ *   - Multi-day, all day       → "4/21/26 - 4/24/26, All day"
+ *   - Multi-day, time range    → "4/21/26, 10am - 4/24/26, 1:23pm"
+ *
+ * Dates are always M/D/YY (no compression). Times drop ":00" for round hours
+ * (10am vs 10:00am). All-day detection matches smartdate's convention:
+ * start at 00:00 and end at 23:59.
+ */
+#}
+{% set item = element['#items'][0] %}
+{% set start_ts = item.value %}
+{% set end_ts = item.end_value %}
+
+{% set start_date = start_ts|date('n/j/y') %}
+{% set end_date = end_ts|date('n/j/y') %}
+{% set same_day = start_date == end_date %}
+
+{% set is_all_day = start_ts|date('Hi') == '0000' and end_ts|date('Hi') == '2359' %}
+
+{% set start_time = start_ts|date(start_ts|date('i') == '00' ? 'ga' : 'g:ia') %}
+{% set end_time = end_ts|date(end_ts|date('i') == '00' ? 'ga' : 'g:ia') %}
+
+{% set display %}
+  {%- if is_all_day -%}
+    {%- if same_day -%}
+      {{ start_date }}, All day
+    {%- else -%}
+      {{ start_date }} - {{ end_date }}, All day
+    {%- endif -%}
+  {%- elseif same_day -%}
+    {{ start_date }}, {{ start_time }} - {{ end_time }}
+  {%- else -%}
+    {{ start_date }}, {{ start_time }} - {{ end_date }}, {{ end_time }}
+  {%- endif -%}
+{% endset %}
+
+{% set classes = ['field', 'field--display-range', 'field--smartdate'] %}
+<div{{ attributes.addClass(classes) }}>
+  {%- if label_display == 'inline' -%}
+    <span class="field__label field__label--inline">{{- label -}}:</span>
+  {%- elseif label_display == 'visually_hidden' -%}
+    <div class="field__label visually-hidden">{{- label -}}</div>
+  {%- elseif not label_hidden -%}
+    <div class="field__label">{{- label -}}</div>
+  {%- endif -%}
+  <div class="field__item">{{- display|trim -}}</div>
+</div>

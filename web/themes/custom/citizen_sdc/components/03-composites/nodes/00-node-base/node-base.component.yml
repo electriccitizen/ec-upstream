@@ -1,0 +1,28 @@
+component:
+  id: citizen_sdc:node-base
+  label: 'Node Base'
+  description: 'Base wrapper for the default/full node view mode. Used by content-type-specific default SDCs (node-basic-page-default, node-news-default, etc.). Node sections (Layout Builder) are pre-wrapped by node.html.twig and passed in via the content slot.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - modifier_class
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the <article> wrapper'
+    modifier_class:
+      type: string
+      description: 'Content-type BEM suffix (e.g. `basic-page`) appended to `node-content--`'
+    title_prefix:
+      type: object
+      description: 'Placeholder for module and theme output before the node (admin tabs, contextual links placeholder, etc.)'
+    title_suffix:
+      type: object
+      description: 'Placeholder for contextual links'
+
+slots:
+  content:
+    title: 'Content'
+    description: 'Rendered node content — Layout Builder sections pre-wrapped in node.html.twig, or raw content for non-LB content types'

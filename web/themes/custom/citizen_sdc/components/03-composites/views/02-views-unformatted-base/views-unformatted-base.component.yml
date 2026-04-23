@@ -1,0 +1,23 @@
+component:
+  id: citizen_sdc:views-unformatted-base
+  label: 'Views Unformatted Rows Base'
+  description: 'Renders a group of unformatted (non-table, non-grid) view rows — one `<div>` per result. Delegated to by `views-view-unformatted.html.twig`.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - rows
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for per-row wrappers (only used indirectly via `rows[].attributes`).'
+    title:
+      type: [string, 'null']
+      description: 'Optional title for this group of rows (rendered as `<h3>`). Views emits a group title when grouping is configured.'
+    default_row_class:
+      type: boolean
+      description: 'Whether each row should get the default `views-row` class.'
+    rows:
+      type: array
+      description: 'Array of row items — each `{ attributes: DrupalAttributes, content: render-array }`. Attributes usually come straight from `views_view_unformatted` preprocess; this SDC just adds `views-row` when `default_row_class` is true.'

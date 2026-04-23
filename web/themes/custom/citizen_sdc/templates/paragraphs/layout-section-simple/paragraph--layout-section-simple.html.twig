@@ -1,0 +1,11 @@
+{#
+/**
+ * @file
+ * Layout-section-simple paragraph — delegates to the layout-section-simple
+ * SDC. No field_style; always backless.
+ */
+#}
+{{ include('citizen_sdc:layout-section-simple', {
+  attr: attributes|without('class'),
+  content: content,
+}, with_context = false) }}

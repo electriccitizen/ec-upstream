@@ -1,0 +1,17 @@
+/* ==============
+  Compile the base sheets into a single styles sheet
+================== */
+
+@use '00-base/02-form-elements/checkbox';
+@use '00-base/02-form-elements/date';
+@use '00-base/02-form-elements/file';
+@use '00-base/02-form-elements/radio';
+@use '00-base/02-form-elements/textfields';
+
+@use '00-base/03-global/admin';
+@use '00-base/03-global/fields';
+@use '00-base/03-global/global-layout';
+@use '00-base/03-global/pages';
+@use '00-base/03-global/print';
+@use '00-base/03-global/taxonomy';
+@use '00-base/03-global/typography';

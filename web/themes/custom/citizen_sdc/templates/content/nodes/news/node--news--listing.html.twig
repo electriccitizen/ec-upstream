@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * News listing — delegates to node-news-listing SDC.
+ */
+#}
+{{ include('citizen_sdc:node-news-listing', {
+  attr: attributes,
+  title: label.0['#context'].value,
+  url: url,
+  title_attr: title_attributes,
+  date: node.created.value,
+  summary: content.field_meta_description,
+}, with_context = false) }}

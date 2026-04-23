@@ -1,0 +1,36 @@
+component:
+  id: citizen_sdc:node-listing-base
+  label: 'Node Listing Base'
+  description: 'Base wrapper for the listing view mode. Used by content-type-specific listing SDCs (node-news-listing, node-bios-listing, etc.).'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - modifier_class
+    - title
+    - url
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the <article> wrapper'
+    modifier_class:
+      type: string
+      description: 'Content-type BEM suffix (e.g. `news`) appended to `node-listing--`'
+    title:
+      type: string
+      description: 'Plain-text node title'
+    url:
+      type: string
+      description: 'URL to the full node'
+    title_attr:
+      type: object
+      description: 'Drupal Attributes object for the <h2> title element'
+
+slots:
+  image:
+    title: 'Image'
+    description: 'Optional rendered image field for the listing. Currently only used by the bios content type; other types can omit it.'
+  content:
+    title: 'Content'
+    description: 'Rendered listing body content (without the image field)'

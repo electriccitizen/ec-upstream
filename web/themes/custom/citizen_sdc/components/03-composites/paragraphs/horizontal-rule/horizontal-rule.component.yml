@@ -1,0 +1,21 @@
+component:
+  id: citizen_sdc:horizontal-rule
+  label: 'Paragraph Horizontal Rule'
+  description: 'Simple `<hr>` divider. Editor picks a color from the `field_color` list; BEM modifier on the wrapper drives the rule''s `border-top-color`. Primary routes to `$hrPrimary` (themable per-project); other keys map to matching theme color variables.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - color
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object from the paragraph template (class-stripped).'
+    color:
+      type: string
+      enum:
+        - light_gray
+        - black
+        - primary
+      description: 'Color key from `field_color`. Renders as a `paragraph--horizontal-rule--{clean_class}` modifier on the wrapper — the SCSS maps `--light-gray` → `$lightGray`, `--black` → `$black`, `--primary` → `$hrPrimary` (per-project override hook).'

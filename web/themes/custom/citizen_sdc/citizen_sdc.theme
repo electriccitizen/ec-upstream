@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Custom theming hooks and preprocesses for Citizen SDC.
+ */
+
+include 'includes/citizen_sdc.html.inc';
+include 'includes/citizen_sdc.block.inc';
+include 'includes/citizen_sdc.breadcrumb.inc';
+include 'includes/citizen_sdc.field.inc';
+include 'includes/citizen_sdc.form.inc';
+include 'includes/citizen_sdc.media.inc';
+include 'includes/citizen_sdc.menu.inc';
+include 'includes/citizen_sdc.node.inc';
+include 'includes/citizen_sdc.paragraph.inc';
+include 'includes/citizen_sdc.views.inc';

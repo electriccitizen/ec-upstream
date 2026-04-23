@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Default teaser template. Delegates to node-teaser-base. Content types with
+ * their own teaser SDC (node-[type]-teaser) ship their own Drupal template
+ * override at `node--[type]--teaser.html.twig`.
+ */
+#}
+{{ include('citizen_sdc:node-teaser-base', {
+  attr: attributes,
+  modifier_class: node.type.0.target_id|clean_class,
+  title: label.0['#context'].value,
+  url: url,
+  title_attr: title_attributes,
+  image: content.field_image,
+  content: content|without('field_image'),
+}, with_context = false) }}

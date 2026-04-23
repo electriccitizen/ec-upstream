@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Event listing — delegates to node-event-listing SDC.
+ */
+#}
+{{ include('citizen_sdc:node-event-listing', {
+  attr: attributes,
+  title: label.0['#context'].value,
+  url: url,
+  title_attr: title_attributes,
+  dates: content.field_dates,
+  summary: content.field_meta_description,
+}, with_context = false) }}

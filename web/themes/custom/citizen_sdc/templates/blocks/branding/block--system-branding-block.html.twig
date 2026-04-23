@@ -1,0 +1,11 @@
+{% extends 'block.html.twig' %}
+
+{% block blockContent %}
+  {{ include('citizen_sdc:block-branding', {
+    site_logo: site_logo,
+    logo_width: 300,
+    logo_height: 92,
+    site_name: site_name,
+    site_slogan: site_slogan,
+  }, with_context = false) }}
+{% endblock %}

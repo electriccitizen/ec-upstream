@@ -1,0 +1,9 @@
+{#
+  Drupal's views-view-unformatted template. Hands off to
+  `citizen_sdc:views-unformatted-base`.
+#}
+{{ include('citizen_sdc:views-unformatted-base', {
+  title: title,
+  default_row_class: default_row_class,
+  rows: rows,
+}, with_context = false) }}

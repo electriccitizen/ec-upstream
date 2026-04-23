@@ -1,0 +1,7 @@
+{% extends 'block.html.twig' %}
+
+{% block blockContent %}
+  {{ include('citizen_sdc:block-search', {
+    form: content,
+  }, with_context = false) }}
+{% endblock %}

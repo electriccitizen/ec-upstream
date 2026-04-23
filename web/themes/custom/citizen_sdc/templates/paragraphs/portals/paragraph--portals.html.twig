@@ -1,0 +1,45 @@
+{#
+  Drupal paragraph template for the `portals` bundle. Iterates the portal
+  children and builds a structured `items` array for the SDC — same single-
+  SDC pattern as accordions/gallery. `portal` children have no SDC of
+  their own; the generic `paragraph.html.twig` catches any edge-case
+  standalone render.
+#}
+{% set items = [] %}
+{% for key, portal in content.field_portals %}
+  {% if key|first != '#' and portal['#paragraph'] is defined %}
+    {% set portal_entity = portal['#paragraph'] %}
+    {% set link_item = portal_entity.field_link.0 ?? null %}
+    {% set link = link_item ? {
+      url: link_item.url ? link_item.url.toString() : '',
+      title: link_item.title ?? '',
+      target: link_item.options.attributes.target ?? '',
+      rel: link_item.options.attributes.rel ?? ''
+    } : { url: '', title: '' } %}
+    {% set long_text_item = portal_entity.field_long_text.0 ?? null %}
+    {% set long_text = long_text_item ? {
+      '#type': 'processed_text',
+      '#text': long_text_item.value,
+      '#format': long_text_item.format
+    } : null %}
+    {% set image_id = portal_entity.field_image.0.target_id ?? null %}
+    {% set image = image_id ? drupal_entity('media', image_id, '400x300') : null %}
+    {% if image_id %}
+      {% set items = items|merge([{
+        id: portal_entity.id.value,
+        link: link,
+        image: image,
+        headline: portal_entity.field_headline.0.value ?? '',
+        long_text: long_text,
+      }]) %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% if items|length > 0 %}
+  {{ include('citizen_sdc:portals', {
+    attr: attributes,
+    title: paragraph.field_widget_title.value,
+    items: items,
+  }, with_context = false) }}
+{% endif %}

@@ -1,0 +1,32 @@
+component:
+  id: citizen_sdc:webform
+  label: 'Webform'
+  description: 'Form built using the Webform contrib module UI. Renders an H1 with the webform label on the standalone `/forms/{id}` page. In form-placer context, `webform_placer` is set by the paragraph preprocess so the H1 is suppressed — the placer SDC renders its own H2 above the form.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      type: string
+      description: 'Webform title.'
+    webform_placer:
+      type: boolean
+      default: false
+      description: 'TRUE when the webform is being rendered inside a form-placer paragraph. Suppresses the standalone H1. Set by `citizen_sdc_preprocess_paragraph__form_placer()`.'
+    attr:
+      type: object
+      description: 'HTML attributes for the form element.'
+
+slots:
+  form:
+    title: 'Form body'
+    description: 'The rendered webform children (form fields, submit button, etc.).'
+  prefix:
+    title: 'Title prefix'
+    description: 'Passthrough of `title_prefix` for contextual links placeholder.'
+  suffix:
+    title: 'Title suffix'
+    description: 'Passthrough of `title_suffix` for contextual links placeholder.'

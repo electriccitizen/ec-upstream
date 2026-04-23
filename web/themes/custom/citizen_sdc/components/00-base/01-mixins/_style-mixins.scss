@@ -1,0 +1,204 @@
+/* ============
+	STYLE MIXINS
+======================= */
+
+@use '../00-variables/component-colors' as *;
+@use 'sass:math';
+
+@mixin overlay($overlayColor) {
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: $overlayColor;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+}
+
+@mixin vertRule($rulePosition, $ruleHeight, $ruleColor) {
+  content: '';
+  display: block;
+  position: absolute;
+  #{$rulePosition}: 0;
+  top: math.div(100% - $ruleHeight, 2);
+  width: 1px;
+  height: $ruleHeight;
+  background: $ruleColor;
+}
+
+@mixin gradient($grad-direction, $grad-start, $gradStartPercent, $grad-stop) {
+  background: -moz-linear-gradient($grad-direction, $grad-start $gradStartPercent, $grad-stop 100%);
+  /* FF3.6+ */
+  background: -webkit-linear-gradient($grad-direction, $grad-start $gradStartPercent, $grad-stop 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient($grad-direction, $grad-start $gradStartPercent, $grad-stop 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient($grad-direction, $grad-start $gradStartPercent, $grad-stop 100%);
+
+  /* IE10+ */
+  @if $grad-direction =='top' {
+    background: linear-gradient(to bottom, $grad-start $gradStartPercent, $grad-stop 100%);
+    /* W3C */
+  }
+
+  @else if $grad-direction =='bottom' {
+    background: linear-gradient(to top, $grad-start $gradStartPercent, $grad-stop 100%);
+    /* W3C */
+  }
+
+  @else if $grad-direction =='left' {
+    background: linear-gradient(to right, $grad-start $gradStartPercent, $grad-stop 100%);
+    /* W3C */
+  }
+
+  @else if $grad-direction =='right' {
+    background: linear-gradient(to left, $grad-start $gradStartPercent, $grad-stop 100%);
+    /* W3C */
+  }
+
+}
+
+@mixin lightBack($lightText, $lightLink) {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  div,
+  li,
+  .field-caption {
+    color: $lightText;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  :before,
+  :after {
+    color: $lightText;
+  }
+
+  a {
+    color: $lightLink;
+
+    &:hover,
+    &:focus {
+      opacity: .6;
+      @include transAll(.3s);
+    }
+  }
+}
+
+@mixin darkBack($darkText, $darkLink) {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  div,
+  li,
+  .field-caption {
+    color: $darkText;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :before,
+  :after {
+    color: $darkText;
+  }
+
+  a {
+    color: $darkLink;
+
+    &:hover,
+    &:focus {
+      opacity: .6;
+      @include transAll(.3s);
+    }
+  }
+}
+
+@mixin warning {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  & > div {
+    max-width: $textMax + 40px;
+    border: 1px solid $borderRule;
+    padding: 40px 30px;
+  }
+
+  #block-citizen-SDC-content {
+    padding-top: 0 !important;
+  }
+}
+
+@mixin mobileMenuDrawer {
+  overflow: hidden;
+  transition: height 500ms ease, opacity 350ms ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  &.menu--open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  &.menu--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &.menu--closing {
+    opacity: 0;
+  }
+}
+
+@mixin menuItemToggle {
+  background: transparent;
+  display: block;
+  position: absolute;
+  right: 0;
+  text-indent: -9000px;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: calc(50% - 9px);
+    top: calc(50% - 9px);
+    z-index: 2;
+    background-color: $mmMobileTop;
+    mask-image: url('caret-down.svg');
+    mask-repeat: no-repeat;
+    mask-size: 18px;
+    mask-position: center;
+    transition: transform .3s ease;
+  }
+}
+
+@mixin image100W {
+  display: block;
+  width: 100%;
+  height: auto;
+}

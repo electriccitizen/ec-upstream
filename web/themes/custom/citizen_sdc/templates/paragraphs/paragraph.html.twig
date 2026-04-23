@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Generic fallback for any paragraph bundle that doesn't ship its own
+ * per-bundle template override. Delegates to paragraph-base with the bundle
+ * name as the BEM modifier. Per-bundle templates under
+ * `templates/paragraphs/{bundle}/paragraph--{bundle}.html.twig` override this
+ * and typically delegate to a per-bundle SDC (paragraph-cta, paragraph-image,
+ * etc.) which itself wraps paragraph-base.
+ */
+#}
+{{ include('citizen_sdc:paragraph-base', {
+  attr: attributes,
+  modifier_class: paragraph.bundle|clean_class,
+  content: content,
+}, with_context = false) }}

@@ -1,0 +1,10 @@
+component:
+  id: citizen_sdc:region-prefooter
+  label: 'Prefooter Region'
+  description: 'Prefooter region rendered above the site footer. Wrapped in a complementary <section>.'
+  status: experimental
+
+slots:
+  content:
+    title: 'Content'
+    description: 'Rendered output of the page.prefooter region'

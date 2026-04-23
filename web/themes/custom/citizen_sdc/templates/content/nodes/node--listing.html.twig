@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Default listing template. Delegates to node-listing-base. Content types
+ * with their own listing SDC (node-[type]-listing) ship their own Drupal
+ * template override at `node--[type]--listing.html.twig`.
+ */
+#}
+{{ include('citizen_sdc:node-listing-base', {
+  attr: attributes,
+  modifier_class: node.type.0.target_id|clean_class,
+  title: label.0['#context'].value,
+  url: url,
+  title_attr: title_attributes,
+  image: content.field_image,
+  content: content|without('field_image'),
+}, with_context = false) }}

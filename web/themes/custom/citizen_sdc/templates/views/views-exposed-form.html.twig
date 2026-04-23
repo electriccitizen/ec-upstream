@@ -1,0 +1,11 @@
+{#
+  Drupal's views-exposed-form template. Hands off to
+  `citizen_sdc:views-form-base` for the wrapper + skip-nav anchors.
+#}
+{% set q_slot %}{% if q is not empty %}{{ q }}{% endif %}{% endset %}
+{% set form_slot %}{{ form }}{% endset %}
+
+{{ include('citizen_sdc:views-form-base', {
+  q: q_slot,
+  form: form_slot,
+}, with_context = false) }}

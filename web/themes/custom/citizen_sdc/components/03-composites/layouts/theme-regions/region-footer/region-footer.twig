@@ -1,0 +1,10 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer__inner">
+    {{ content }}
+  </div>
+  {% set back_top_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.81 9.84" fill="#ffffff"><path d="M0,9.14l.34.34.37.37,10.2-4.18,10.31,4.13.31-.31.29-.29L10.9,0,0,9.14Z"/></svg>' %}
+  {{ include('citizen_sdc:back-top', {
+    back_top_label: 'Back To Top'|t,
+    back_top_icon: back_top_icon,
+  }, with_context = false) }}
+</footer>

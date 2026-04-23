@@ -10,3 +10,11 @@ admin-global:
     - core/once
     - core/drupal
     - core/drupalSettings
+
+alert:
+  version: 1.0
+  js:
+    js/alert.js: {}
+  dependencies:
+    - core/once
+    - core/drupal

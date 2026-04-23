@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ include('citizen_sdc:media', {
+  media: content,
+  bundle: media.bundle.0.target_id,
+  display: view_mode,
+  attr: attributes,
+  media_id: media.mid.0.value,
+  suffix: title_suffix.contextual_links
+}, with_context = false) }}

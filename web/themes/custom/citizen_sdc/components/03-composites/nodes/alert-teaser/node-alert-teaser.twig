@@ -1,0 +1,14 @@
+{% set urgency_class = urgency|default('standard') %}
+{% set close_label = dismiss_label|default('Dismiss alert'|t) %}
+<div class="alert alert--{{ urgency_class }}" role="alert" data-alert-uuid="{{ uuid }}">
+  <div class="alert__body">
+    {{ content }}
+  </div>
+  <button type="button" class="alert__close" data-alert-close aria-label="{{ close_label }}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="8" y1="8" x2="16" y2="16"/>
+      <line x1="16" y1="8" x2="8" y2="16"/>
+    </svg>
+  </button>
+</div>

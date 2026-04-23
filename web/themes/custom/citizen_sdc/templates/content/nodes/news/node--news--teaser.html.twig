@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * News teaser — delegates to node-news-teaser SDC.
+ */
+#}
+{{ include('citizen_sdc:node-news-teaser', {
+  attr: attributes,
+  title: label.0['#context'].value,
+  url: url,
+  title_attr: title_attributes,
+  date: node.created.value,
+  image: content.field_image,
+  summary: content.field_meta_description,
+}, with_context = false) }}

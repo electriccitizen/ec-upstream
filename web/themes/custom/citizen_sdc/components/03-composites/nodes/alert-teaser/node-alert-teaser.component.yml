@@ -1,0 +1,28 @@
+component:
+  id: citizen_sdc:node-alert-teaser
+  label: 'Node Alert Teaser'
+  description: 'Dismissible alert teaser rendered inside the alert region block. AJAX-loaded, so this markup is what the browser receives from /ajax/alert. The data-alert-uuid attribute keys the 30-day localStorage dismissal handled by citizen_custom/alert.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - uuid
+  properties:
+    uuid:
+      type: string
+      description: 'Alert node UUID — used as the dismissal key in localStorage'
+    urgency:
+      type: string
+      enum:
+        - standard
+        - urgent
+      description: 'Urgency modifier class. Defaults to standard.'
+    dismiss_label:
+      type: string
+      description: 'aria-label for the close button'
+
+slots:
+  content:
+    title: 'Alert text'
+    description: 'Rendered alert text (field_alert_text)'

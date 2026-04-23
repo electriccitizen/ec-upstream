@@ -1,0 +1,25 @@
+uuid: 11a95f26-b3f6-4c56-8e69-07c9d65e4d38
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:9f1d2a20-cf57-41e3-af59-6423d2a37e2a'
+  module:
+    - block_content
+  theme:
+    - citizen_sdc
+id: citizen_sdc_aboutsomethings
+theme: citizen_sdc
+region: prefooter
+weight: -6
+provider: null
+plugin: 'block_content:9f1d2a20-cf57-41e3-af59-6423d2a37e2a'
+settings:
+  id: 'block_content:9f1d2a20-cf57-41e3-af59-6423d2a37e2a'
+  label: 'About Some Things'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

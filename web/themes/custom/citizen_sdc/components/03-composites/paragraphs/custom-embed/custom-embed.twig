@@ -1,0 +1,15 @@
+{% set custom_embed_body %}
+  {% if title %}
+    <h2 class="paragraph--custom-embed__title">{{ title }}</h2>
+  {% endif %}
+  <div class="paragraph--custom-embed__content">
+    {{ content }}
+  </div>
+{% endset %}
+
+{{ include('citizen_sdc:paragraph-base', {
+  attr: attr,
+  modifier_class: 'custom-embed',
+  animate: 'no',
+  content: custom_embed_body,
+}, with_context = false) }}

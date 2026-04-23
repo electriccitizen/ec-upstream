@@ -1,0 +1,32 @@
+/* =================
+   PARAGRAPH VIDEO
+=================== */
+
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/layout-mixins' as *;
+@use '../../../00-base/01-mixins/type-mixins' as *;
+
+.paragraph--video {
+  @include textConstrain;
+
+  .paragraph--video__title {
+    @include widgetTitle;
+  }
+
+  // Simple fade-in on scroll-in. Title + media fade together as a unit.
+  &[data-animate="yes"] {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+
+    &.is-in-view {
+      opacity: 1;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paragraph--video[data-animate="yes"] {
+    opacity: 1;
+    transition: none;
+  }
+}

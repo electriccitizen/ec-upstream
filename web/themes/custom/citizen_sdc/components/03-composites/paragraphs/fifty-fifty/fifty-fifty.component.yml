@@ -1,0 +1,35 @@
+component:
+  id: citizen_sdc:fifty-fifty
+  label: 'Paragraph 50/50'
+  description: 'Two-column widget: media (image or remote video) on one side, title + optional text + optional button on the other. `alignment` prop drives a BEM modifier (`paragraph--fifty-fifty--left` / `--right`) so CSS controls which side the media lands on — no field rendering of the alignment value. Media slot receives the rendered field_media; the Drupal template (or downstream CSS) handles image-vs-video differentiation per-project.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - title
+    - alignment
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object from the paragraph template (class-stripped).'
+    title:
+      type: string
+      description: 'Widget title (field_widget_title), rendered as `<h2 class="paragraph--fifty-fifty__title">`.'
+    alignment:
+      type: string
+      enum:
+        - left
+        - right
+      description: 'Which side the media lives on (`left` or `right`). Emitted as the BEM modifier `paragraph--fifty-fifty--{alignment}` — layout is CSS-driven, no field rendering. Also drives the scroll-in animation direction: media slides in from the aligned side.'
+
+slots:
+  media:
+    title: 'Media'
+    description: 'Rendered field_media. The Drupal template renders `image` bundle media with the `400x300` view mode (via twig_tweak''s `drupal_entity`) and `remote_video` bundle media via the field''s default render array.'
+  text:
+    title: 'Text'
+    description: 'Rendered field_long_text (optional). Pass `null` / omit when empty.'
+  link:
+    title: 'Link'
+    description: 'Rendered field_link (optional). Pass `null` / omit when empty. Wrapped in `.paragraph--fifty-fifty__actions` by the SDC.'

@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * CTA paragraph — delegates to the cta SDC. field_headline and
+ * field_additional_text pass as plain-text props; field_link passes as a
+ * rendered slot so Drupal's link formatter produces the `<a>` markup.
+ */
+#}
+{{ include('citizen_sdc:cta', {
+  attr: attributes|without('class'),
+  headline: paragraph.field_headline.value,
+  additional_text: paragraph.field_additional_text.value,
+  link: content.field_link,
+}, with_context = false) }}

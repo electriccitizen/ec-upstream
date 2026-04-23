@@ -1,0 +1,38 @@
+/* ================
+	SOCIAL LINKS
+============== */
+
+@use '../../00-base/00-variables/colors' as *;
+@use '../../00-base/00-variables/units' as *;
+@use '../../00-base/01-mixins/general-mixins' as *;
+
+.platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  @include listReset;
+  
+  .platforms__item {
+    margin-bottom: $spaceXxs;
+  }
+
+  .platforms__link {
+    &:hover,&:focus {
+      svg {
+        circle {
+          fill: $black;
+        }
+        path {
+          fill: $white;
+        }
+      }
+    }
+    svg {
+      width: 4rem;
+      height: 4rem;
+      circle {
+        fill: $lightGray;
+      }
+    }
+  }
+}

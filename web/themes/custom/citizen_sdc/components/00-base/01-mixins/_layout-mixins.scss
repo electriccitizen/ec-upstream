@@ -1,0 +1,134 @@
+/* ============
+	LAYOUT MIXINS
+======================= */
+
+@use '../00-variables/units' as *;
+
+@mixin cssColumns($columns, $gap, $break) {
+  -webkit-column-count: #{$columns};
+  -moz-column-count: #{$columns};
+  column-count: #{$columns};
+  -webkit-column-gap: #{$gap};
+  -moz-column-gap: #{$gap};
+  column-gap: #{$gap};
+
+  @if $break =='nobreak' {
+    &>* {
+      display: block;
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      overflow: hidden;
+    }
+  }
+}
+
+/**
+ * Two-column flex layout where:
+ * - column-gap fluidly scales WITH THE CONTAINER (not the viewport)
+ * - widths are computed as ratios of (100% - gap)
+ * - assumes exactly two direct children: & > * (1) left, (2) right
+ *
+ * Scaling range is fixed:
+ * - start: 800px container width
+ * - end:   1094px container width
+ *
+ *
+ * Usage Example:
+ * @include twoColumnFluid(
+ *   $gap-min-px: 32,
+ *   $gap-max-px: 115,
+ *   $left-px: 524,
+ *   $right-px: 433
+ * );
+ * //its a good idea to add some safety guards
+ * .left-content{
+ *   max-width: 524px;
+ * }
+ * .right-content {
+ *   max-width: 433px;
+ * }
+ *
+ */
+
+$site-side-padding: 3rem;   // per side
+$column-gap-min: 32;        // px at 800
+$column-gap-max: 115;       // px at 1094
+$column-width-min: 800;     // px
+$column-width-max: 1094;    // px
+$column-left-px: 524;       // design intent width at max
+$column-right-px: 433;
+
+@mixin twoColumnFluid(
+  $gap-min-px: $column-gap-min,
+  $gap-max-px: $column-gap-max,
+  $left-px: $column-left-px,
+  $right-px: $column-right-px,
+  $side-padding-rem: $site-side-padding,
+  $min-width-px: $column-width-min,
+  $max-width-px: $column-width-max
+) {
+  $gap-min: rem8($gap-min-px);
+  $gap-max: rem8($gap-max-px);
+
+  // Ratios from design intent
+  $sum: $left-px + $right-px;
+  $left-ratio: math.div($left-px, $sum);
+  $right-ratio: math.div($right-px, $sum);
+
+  // Linear interpolation (unitless slope)
+  $slope: math.div(($gap-max-px - $gap-min-px), ($max-width-px - $min-width-px));
+  $intercept-px: $gap-min-px - ($slope * $min-width-px);
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  // Available width = viewport minus site padding, capped
+  --cw: min(#{$max-width-px}px, calc(100vw - (2 * #{$side-padding-rem})));
+
+  // Fluid gap
+  --column-gap: clamp(
+    #{$gap-min},
+    calc(#{rem8($intercept-px)} + #{$slope} * var(--cw)),
+    #{$gap-max}
+  );
+
+  column-gap: var(--column-gap);
+
+  & > * {
+    min-width: 0;
+  }
+
+  & > *:nth-child(1) {
+    flex: 0 0 calc((100% - var(--column-gap)) * #{$left-ratio});
+  }
+
+  & > *:nth-child(2) {
+    flex: 0 0 calc((100% - var(--column-gap)) * #{$right-ratio});
+  }
+}
+
+@mixin edgeToEdge {
+  margin-left: $siteMargin * -1;
+  margin-right: $siteMargin * -1;
+}
+
+@mixin auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin edgeReset {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@mixin textConstrain {
+  .node-section >.layout--onecol &,
+  .paragraph--layout-section >.layout--onecol &,
+  .paragraph--layout-section-simple >.layout--onecol & {
+    max-width: $textMax;
+    @include auto;
+  }
+}

@@ -1,0 +1,27 @@
+uuid: 0b11de8d-9436-4592-ad3f-af6b3727623e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.cta.field_additional_text
+    - field.field.paragraph.cta.field_headline
+    - field.field.paragraph.cta.field_link
+    - paragraphs.paragraphs_type.cta
+id: paragraph.cta.preview
+targetEntityType: paragraph
+bundle: cta
+mode: preview
+content:
+  field_headline:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_additional_text: true
+  field_link: true
+  search_api_excerpt: true

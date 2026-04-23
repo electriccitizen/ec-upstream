@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Content-list paragraph — delegates to the content-list SDC.
+ *
+ * Two-stage guard before the SDC renders:
+ *   1. `paragraph.id.value` — unsaved paragraphs (first-add preview) can't
+ *      provide a contextual filter, so we show an editor-only placeholder
+ *      instead of embedding the view.
+ *   2. Render the view ONCE into `rendered_view`, then check
+ *      `|render|striptags|trim|length > 0` — same approach dart uses. This
+ *      catches cases where `drupal_view_result()` reports rows but the view
+ *      actually renders empty (filter narrowing applied during render, empty
+ *      handler suppression, etc.). The same rendered output is then passed
+ *      as the SDC's `view` slot, so what we checked is exactly what we show.
+ *
+ * `view_display` derives from the `field_content_type` term's label,
+ * lowercased, plus `_list` — e.g. term "News" → display `news_list`. Matches
+ * the dart-era convention + the citizen_custom `views_pre_view` hook that
+ * reads this paragraph's field selections via the paragraph ID context arg.
+ */
+#}
+{% if paragraph.id.value %}
+  {% set content_type = paragraph.field_content_type.entity ? paragraph.field_content_type.entity.label|lower : null %}
+  {% set view_display = content_type ? content_type ~ '_list' : null %}
+  {% set rendered_view = view_display ? drupal_view('content_list', view_display, paragraph.id.value) : null %}
+
+  {% if rendered_view and rendered_view|render|striptags|trim|length > 0 %}
+    {{ include('citizen_sdc:content-list', {
+      attr: attributes|without('class'),
+      title: paragraph.field_widget_title.value,
+      view: rendered_view,
+      link: content.field_link,
+    }, with_context = false) }}
+  {% endif %}
+{% else %}
+  <p><strong>Content placer widgets are not available in preview until the node is saved after they have been added.</strong></p>
+{% endif %}

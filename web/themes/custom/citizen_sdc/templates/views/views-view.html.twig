@@ -1,0 +1,45 @@
+{#
+  Drupal's main view-render template. Splits `footer.result` out into its
+  own `count` slot (matches the original block layout), then hands the
+  remaining regions to `citizen_sdc:views-base`.
+#}
+{% set footer_without_result %}
+  {% if footer %}{{ footer|without('result') }}{% endif %}
+{% endset %}
+{% set count_slot %}
+  {% if footer and footer.result %}{{ footer.result }}{% endif %}
+{% endset %}
+
+{% set title_prefix_slot %}{{ title_prefix }}{% endset %}
+{% set title_slot %}{{ title }}{% endset %}
+{% set title_suffix_slot %}{{ title_suffix }}{% endset %}
+{% set header_slot %}{{ header }}{% endset %}
+{% set exposed_slot %}{{ exposed }}{% endset %}
+{% set attachment_before_slot %}{{ attachment_before }}{% endset %}
+{% set rows_slot %}{{ rows }}{% endset %}
+{% set empty_slot %}{{ empty }}{% endset %}
+{% set pager_slot %}{{ pager }}{% endset %}
+{% set attachment_after_slot %}{{ attachment_after }}{% endset %}
+{% set more_slot %}{{ more }}{% endset %}
+{% set feed_icons_slot %}{{ feed_icons }}{% endset %}
+
+{{ include('citizen_sdc:views-base', {
+  attr: attributes,
+  css_name: css_name,
+  display_id: view.current_display,
+  dom_id: dom_id,
+  title_prefix: title_prefix_slot,
+  title: title_slot,
+  title_suffix: title_suffix_slot,
+  header: header_slot,
+  exposed: exposed_slot,
+  attachment_before: attachment_before_slot,
+  rows: rows_slot,
+  empty: empty_slot,
+  pager: pager_slot,
+  attachment_after: attachment_after_slot,
+  more: more_slot,
+  footer: footer_without_result,
+  count: count_slot,
+  feed_icons: feed_icons_slot,
+}, with_context = false) }}

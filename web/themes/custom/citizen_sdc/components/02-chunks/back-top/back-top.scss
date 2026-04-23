@@ -1,0 +1,35 @@
+/* ===============
+  BACK TO TOP
+================= */
+
+@use '../../00-base/00-variables/component-colors' as *;
+@use '../../00-base/01-mixins/breakpoint-mixins' as *;
+
+#back-to-top {
+  opacity: 0;
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  z-index: 500;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: $link;
+  
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $hoverLink;
+  }
+
+  &.back-top-button--visible {
+    opacity: 1;
+    transition: opacity .75s ease;
+  }
+}

@@ -1,0 +1,17 @@
+{% set classes = [
+  'node-listing',
+  'node-listing--' ~ modifier_class,
+] %}
+<article{{ attr.addClass(classes) }}>
+  {% if image %}
+    <div class="node-listing__image">
+      {{ image }}
+    </div>
+  {% endif %}
+  <div class="node-listing__content">
+    <h2{{ title_attr.addClass('node-listing__title') }}>
+      <a href="{{ url }}" rel="bookmark">{{ title }}</a>
+    </h2>
+    {{ content }}
+  </div>
+</article>

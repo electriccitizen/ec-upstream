@@ -1,0 +1,28 @@
+component:
+  id: citizen_sdc:paragraph-base
+  label: 'Paragraph Base'
+  description: 'Base wrapper for paragraphs. Used by per-bundle paragraph SDCs (paragraph-cta, paragraph-image, etc.) and as the fallback for the generic paragraph.html.twig. Renders `.paragraph` + `.paragraph--{modifier_class}` BEM classes and emits a `data-animate` attribute the paragraph-field intersection observer checks to decide whether to animate the element on scroll-in.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - modifier_class
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the wrapper'
+    modifier_class:
+      type: string
+      description: 'Bundle-specific BEM suffix (e.g. `cta`, `image`) appended to `paragraph--`'
+    animate:
+      type: string
+      enum:
+        - 'yes'
+        - 'no'
+      description: 'Whether this paragraph participates in the field-level scroll-in animation observer. **Defaults to `no`** — per-bundle SDCs must opt in by passing `animate: ''yes''`. The opt-in default keeps the observer overhead off by default; a forgotten `animate` setting just means no animation (visible and easy to fix) rather than an always-running observer the dev didn''t know about.'
+
+slots:
+  content:
+    title: 'Content'
+    description: 'Rendered paragraph body content (all fields, including any widget title). Per-bundle SDCs compose their own field markup into this slot.'

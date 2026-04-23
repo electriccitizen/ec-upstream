@@ -1,0 +1,63 @@
+/* =================
+   PARAGRAPH LAYOUT SECTION
+=================== */
+
+@use '../../../00-base/00-variables/colors' as *;
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+
+.paragraph--layout-section {
+  // Padding-based vertical spacing so backgrounds can bleed edge to edge
+  // without special-casing margin collapse.
+  padding: $elementSpace $siteMargin;
+
+  &--light-grey {
+    background: $offWhite;
+  }
+
+  &--light-blue {
+    background: $lightBlue;
+  }
+
+  .paragraph--layout-section__title {
+    text-align: center;
+    max-width: $textMax;
+    margin: 0 auto $spaceXs;
+  }
+}
+
+// First **backless** layout-section drops its top padding — backgrounded
+// sections keep their top padding so content has breathing room inside the
+// colored block. (Simple sections have no top padding at all — see
+// layout-section-simple.scss for their spacing model.)
+.field-paragraphs > :first-child.paragraph--layout-section--backless {
+  padding-top: 0;
+}
+
+// Last **backless** layout-section drops its bottom padding.
+.field-paragraphs > :last-child.paragraph--layout-section--backless {
+  padding-bottom: 0;
+}
+
+// Same-style seam collapse between adjacent layout-sections of this bundle.
+.paragraph--layout-section--backless + .paragraph--layout-section--backless,
+.paragraph--layout-section--light-grey + .paragraph--layout-section--light-grey,
+.paragraph--layout-section--light-blue + .paragraph--layout-section--light-blue {
+  padding-top: 0;
+}
+
+// When a backless layout-section follows a simple section, drop its top
+// padding so the gap stays at `$elementSpace` (simple's padding-bottom
+// provides it) instead of doubling to 2×.
+.paragraph--layout-section-simple + .paragraph--layout-section--backless {
+  padding-top: 0;
+}
+
+// Spacing between direct child paragraphs inside the section's layout regions.
+// `>` scopes to region direct children only, so nested paragraphs (accordion
+// items, gallery items, etc.) are unaffected — they manage their own spacing.
+// `:not(:last-child)` leaves the last paragraph in each region unspaced; the
+// section's own bottom padding handles the gap below it.
+.paragraph--layout-section .layout__region > .paragraph:not(:last-child) {
+  margin-bottom: $elementSpace;
+}

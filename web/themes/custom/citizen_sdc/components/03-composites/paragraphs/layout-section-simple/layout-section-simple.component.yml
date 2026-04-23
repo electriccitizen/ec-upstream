@@ -1,0 +1,16 @@
+component:
+  id: citizen_sdc:layout-section-simple
+  label: 'Paragraph Layout Section Simple'
+  description: 'Section-wrapping paragraph for the `layout_section_simple` bundle. Kept as a separate SDC from `layout-section` because the two bundles frequently diverge per-project in fields, design options, and SCSS. The simple variant has no field_style and is always backless. Delegates to paragraph-base with `animate: no`.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object from the paragraph template (class-stripped via `attributes|without(''class'')`).'
+
+# Intentionally no content slot: the layout_section_simple bundle has no
+# paragraph field. Children render through the layout_paragraphs module, not
+# through the section's own render array. The section is purely a wrapper.

@@ -1,0 +1,26 @@
+uuid: a73cff1a-7745-4d71-aa0c-9a47e8586ef1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_range
+    - node.type.alert
+  module:
+    - smart_date
+id: node.alert.field_display_range
+field_name: field_display_range
+entity_type: node
+bundle: alert
+label: 'Display Range'
+description: 'The alert displays in the site alert region while the current time is inside this range.'
+required: true
+translatable: false
+default_value:
+  -
+    default_duration: 60
+    default_duration_increments: "30\r\n60|1 hour\r\n90\r\n120|2 hours\r\ncustom"
+    default_date_type: ''
+    default_date: ''
+default_value_callback: ''
+settings: {  }
+field_type: smartdate

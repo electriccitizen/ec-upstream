@@ -1,0 +1,22 @@
+component:
+  id: citizen_sdc:select-input
+  label: 'Select Input'
+  description: 'Select form element'
+  status: experimental
+
+libraryOverrides:
+  dependencies:
+    - citizen_sdc/select2
+
+props:
+  type: object
+  additionalProperties: false
+  required:
+    - options
+  properties:
+    attr:
+      type: object
+      description: Drupal Attributes object for the <select>.
+    options:
+      type: array
+      description: Options array (supports option + optgroup structures).

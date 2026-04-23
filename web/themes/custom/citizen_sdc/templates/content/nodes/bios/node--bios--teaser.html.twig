@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Bios teaser — delegates to node-bios-teaser SDC.
+ */
+#}
+{{ include('citizen_sdc:node-bios-teaser', {
+  attr: attributes,
+  title: label.0['#context'].value,
+  url: url,
+  title_attr: title_attributes,
+  image: content.field_headshot,
+  position: content.field_position,
+}, with_context = false) }}

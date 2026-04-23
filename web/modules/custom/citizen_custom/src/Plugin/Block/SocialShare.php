@@ -3,8 +3,9 @@
 namespace Drupal\citizen_custom\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\Routing\CurrentRouteMatch;
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\node\NodeInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -20,11 +21,19 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class SocialShare extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * The node from the routematch.
+   * The current route match.
    *
-   * @var node \Drupal\node\NodeInterface
+   * @var \Drupal\Core\Routing\RouteMatchInterface
    */
-  protected $node;
+  protected $routeMatch;
+
+  /**
+   * {@inheritdoc}
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, RouteMatchInterface $route_match) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->routeMatch = $route_match;
+  }
 
   /**
    * {@inheritdoc}
@@ -41,34 +50,46 @@ class SocialShare extends BlockBase implements ContainerFactoryPluginInterface {
   /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $route) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->node = $route->getParameter('node');
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function build() {
+    $node = $this->routeMatch->getParameter('node');
 
-    // Set defaults. If $node is not set, this block is either improperly placed
-    // or is being previewed.
-    $data = [
-      'url' => 'example_url',
-      'title' => $this->t("Example Node Title"),
-      'base_url' => $GLOBALS['base_url'],
-    ];
-
-    if ($this->node instanceof NodeInterface) {
-      // Get the variables we need to pass to twig.
-      $data['url'] = $this->node->toUrl()->toString();
-      $data['title'] = $this->node->getTitle();
+    if ($node instanceof NodeInterface) {
+      $data = [
+        'url' => $node->toUrl()->setAbsolute()->toString(),
+        'title' => $node->getTitle(),
+      ];
+    }
+    else {
+      // Placeholder values for block-placement preview / non-node routes.
+      $data = [
+        'url' => 'https://example.com/example-node',
+        'title' => $this->t('Example Node Title'),
+      ];
     }
 
     return [
       '#theme' => 'social_share_block',
       '#data' => $data,
     ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheContexts() {
+    return Cache::mergeContexts(parent::getCacheContexts(), ['url.path']);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheTags() {
+    $tags = parent::getCacheTags();
+    $node = $this->routeMatch->getParameter('node');
+    if ($node instanceof NodeInterface) {
+      $tags = Cache::mergeTags($tags, $node->getCacheTags());
+    }
+    return $tags;
   }
 
 }

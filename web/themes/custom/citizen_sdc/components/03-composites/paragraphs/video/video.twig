@@ -1,0 +1,15 @@
+{% set video_body %}
+  {% if title %}
+    <h2 class="paragraph--video__title">{{ title }}</h2>
+  {% endif %}
+  <div class="paragraph--video__media">
+    {{ video }}
+  </div>
+{% endset %}
+
+{{ include('citizen_sdc:paragraph-base', {
+  attr: attr,
+  modifier_class: 'video',
+  animate: 'yes',
+  content: video_body,
+}, with_context = false) }}

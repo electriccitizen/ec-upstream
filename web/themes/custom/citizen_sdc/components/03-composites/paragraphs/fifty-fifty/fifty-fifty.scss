@@ -1,0 +1,107 @@
+/* =================
+   PARAGRAPH 50/50
+=================== */
+
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/button-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
+
+.paragraph--fifty-fifty {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  overflow: hidden;
+
+  @include tab {
+    flex-direction: row;
+    align-items: center;
+
+    &:has(.paragraph--fifty-fifty__media--image) {
+      align-items: stretch;
+    }
+
+    &--right {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .paragraph--fifty-fifty__media,
+  .paragraph--fifty-fifty__content {
+    @include tab {
+      flex: 1 1 50%;
+      min-width: 0; // prevent flex items from overflowing their basis
+    }
+  }
+
+  .paragraph--fifty-fifty__media {
+    img {
+      @include onlySmall {
+        @include image100W;
+      }
+
+      @include tab {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &--image {
+      @include tab {
+        min-height: 300px;
+
+        * {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .paragraph--fifty-fifty__content {
+    @include tab {
+      padding: $spaceMd 0;
+    }
+
+    .paragraph--fifty-fifty__title,
+    .paragraph--fifty-fifty__text {
+      margin-bottom: $spaceXs;
+    }
+  }
+
+  .paragraph--fifty-fifty__actions {
+    a {
+      @include button;
+    }
+  }
+
+  &[data-animate="yes"] {
+    .paragraph--fifty-fifty__media {
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    &.paragraph--fifty-fifty--right {
+      .paragraph--fifty-fifty__media {
+        transform: translateX(100%);
+      }
+    }
+
+    &.is-in-view {
+      .paragraph--fifty-fifty__media {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paragraph--fifty-fifty[data-animate="yes"] {
+    .paragraph--fifty-fifty__media {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}

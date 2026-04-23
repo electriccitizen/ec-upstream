@@ -1,0 +1,32 @@
+component:
+  id: citizen_sdc:node-news-listing
+  label: 'Node News (Listing)'
+  description: 'Listing view-mode wrapper for news nodes. Delegates to node-listing-base with a publication date (`F j, Y`) + field_meta_description composed into the content slot. No image (listing view display hides it).'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - title
+    - url
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the <article> wrapper'
+    title:
+      type: string
+      description: 'Plain-text node title'
+    url:
+      type: string
+      description: 'URL to the full news node'
+    title_attr:
+      type: object
+      description: 'Drupal Attributes object for the <h2> title element'
+    date:
+      type: [string, integer, 'null']
+      description: 'Unix timestamp for the publication date (typically `node.created.value`). Rendered with the `F j, Y` PHP date format.'
+
+slots:
+  summary:
+    title: 'Summary'
+    description: 'Rendered field_meta_description'

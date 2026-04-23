@@ -1,0 +1,36 @@
+component:
+  id: citizen_sdc:node-teaser-base
+  label: 'Node Teaser Base'
+  description: 'Base wrapper for the teaser view mode. Used by content-type-specific teaser SDCs (node-news-teaser, node-bios-teaser, etc.).'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - modifier_class
+    - title
+    - url
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the <article> wrapper'
+    modifier_class:
+      type: string
+      description: 'Content-type BEM suffix (e.g. `news`) appended to `node-teaser--`'
+    title:
+      type: string
+      description: 'Plain-text node title'
+    url:
+      type: string
+      description: 'URL to the full node'
+    title_attr:
+      type: object
+      description: 'Drupal Attributes object for the <h2> title element'
+
+slots:
+  image:
+    title: 'Image'
+    description: 'Optional rendered image field for the teaser. Omit in content types that do not show an image.'
+  content:
+    title: 'Content'
+    description: 'Rendered teaser body content (without the image field)'

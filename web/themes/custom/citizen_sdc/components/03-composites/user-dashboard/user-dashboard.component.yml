@@ -1,0 +1,58 @@
+component:
+  id: citizen_sdc:user-dashboard
+  label: 'User Dashboard'
+  description: 'Authenticated user landing page (`/user/{uid}`). Two-column layout with profile image + identity/metadata/actions. Replaces the old Layout-Builder-driven display — page rarely changes and the per-site tweak (task action URLs) is a one-liner in `user.html.twig`. Any admin-only controls like masquerade come through the `masquerade` slot.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - name
+    - username
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the wrapper.'
+    name:
+      type: string
+      description: 'Display name — typically `field_first_name` + `field_last_name` composed in `user.html.twig`, falling back to the username.'
+    username:
+      type: string
+      description: 'The account login username (from `user.name.0.value`).'
+    roles:
+      type: [string, 'null']
+      description: 'Comma-joined list of role labels (excluding `authenticated`). Built in `user.html.twig` by iterating `user.roles` and pulling `.entity.label` off each item. Rendered as `Roles: {{ roles }}` when present.'
+    account_actions:
+      type: array
+      description: 'Inline account-level links shown between identity and tasks (e.g. Edit Profile, Logout). Each: `{ url: string, label: string }`. Rendered as a list with a vertical-rule separator between items.'
+      items:
+        type: object
+        required:
+          - url
+          - label
+        properties:
+          url:
+            type: string
+          label:
+            type: string
+    task_actions:
+      type: array
+      description: 'Button-styled editor/task shortcuts (e.g. View Content, + Add Content, Support Book, Moderation Dashboard). Each: `{ url: string, label: string }`. Rendered as `<a class="ec-button">` buttons. Site-specific — edit the array in `user.html.twig`.'
+      items:
+        type: object
+        required:
+          - url
+          - label
+        properties:
+          url:
+            type: string
+          label:
+            type: string
+
+slots:
+  image:
+    title: 'Profile image'
+    description: 'Rendered user image (`content.field_image`). Styled into a circular frame.'
+  masquerade:
+    title: 'Masquerade'
+    description: 'Rendered masquerade link (`content.masquerade`) — only populated when an admin is viewing another user.'
