@@ -105,12 +105,6 @@
       }
     }
 
-    &.menu-item--support-type--site-management {
-      body:not(.role--super-user,.role--administrator,.role--site_manager) & {
-        display: none;
-      }
-    }
-
     .menu-item__link {
       display: block;
       transition: color .3s ease;

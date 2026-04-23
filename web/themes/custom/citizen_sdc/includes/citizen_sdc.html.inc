@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_preprocess_html().
@@ -70,6 +71,23 @@ function citizen_sdc_preprocess_html(&$variables) {
         'twitter:image',
       ];
     }
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function citizen_sdc_preprocess_page(&$variables) {
+  // Expose is_elevated on support_book pages so page--support-book.html.twig
+  // can show the friendly "no permission" message without each template
+  // re-implementing the role check. Source of truth is
+  // citizen_custom.support_book_access.
+  $node = $variables['node'] ?? NULL;
+  if ($node instanceof NodeInterface && $node->bundle() === 'support_book') {
+    $variables['is_elevated'] = \Drupal::service('citizen_custom.support_book_access')
+      ->isElevated(\Drupal::currentUser());
+    // Output varies per role — tag the render so the page cache splits.
+    $variables['#cache']['contexts'][] = 'user.roles';
   }
 }
 

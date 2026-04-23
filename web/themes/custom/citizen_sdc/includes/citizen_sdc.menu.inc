@@ -56,9 +56,12 @@ function _menu_item_classes_recursive(array &$items) {
 /**
  * Implements template_preprocess_menu__support_book().
  *
- * Adds the field_support_type key value as a BEM modifier class to each
- * support book menu item's <li> element. This allows CSS/JS to target items
- * by support type without altering the shared menu macro or Twig templates.
+ * Two passes over the tree:
+ *   1. Strip `site_management` items (and their descendants) for non-elevated
+ *      users so the markup never contains links editors can't access — no
+ *      more CSS display:none leaking them into view-source.
+ *   2. Add `menu-item--support-type--{type}` BEM modifier classes to the
+ *      items that remain, so CSS/JS can target by type.
  */
 function citizen_sdc_preprocess_menu__support_book(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
@@ -72,7 +75,40 @@ function citizen_sdc_preprocess_menu__support_book(&$variables) {
     return;
   }
 
+  $is_elevated = \Drupal::service('citizen_custom.support_book_access')
+    ->isElevated(\Drupal::currentUser());
+
+  if (!$is_elevated) {
+    _support_book_filter_site_management($variables['items']);
+  }
+
   _support_book_add_type_classes($variables['items']);
+
+  // Output varies per role when the filter runs — tag cache accordingly.
+  $variables['#cache']['contexts'][] = 'user.roles';
+}
+
+/**
+ * Drops menu items pointing at site_management support_book nodes.
+ *
+ * Walks the tree and removes any item whose URL resolves to a support_book
+ * node of type `site_management`. Runs recursively so descendants under a
+ * removed parent are also dropped.
+ *
+ * @param array $items
+ *   Menu items array from template_preprocess_menu().
+ */
+function _support_book_filter_site_management(array &$items): void {
+  foreach ($items as $key => &$item) {
+    $type = _support_book_item_type($item);
+    if ($type === 'site_management') {
+      unset($items[$key]);
+      continue;
+    }
+    if (!empty($item['below'])) {
+      _support_book_filter_site_management($item['below']);
+    }
+  }
 }
 
 /**
@@ -87,35 +123,36 @@ function citizen_sdc_preprocess_menu__support_book(&$variables) {
  */
 function _support_book_add_type_classes(array &$items): void {
   foreach ($items as &$item) {
-    $url = $item['url'];
-
-    if (
-      !$url->isExternal()
-      && $url->isRouted()
-      && $url->getRouteName() === 'entity.node.canonical'
-    ) {
-      $params = $url->getRouteParameters();
-
-      if (!empty($params['node'])) {
-        $node = \Drupal::entityTypeManager()
-          ->getStorage('node')
-          ->load($params['node']);
-
-        if (
-          $node
-          && $node->hasField('field_support_type')
-          && !$node->get('field_support_type')->isEmpty()
-        ) {
-          $support_type = $node->get('field_support_type')->value;
-          $class = 'menu-item--support-type--'
-            . \Drupal\Component\Utility\Html::cleanCssIdentifier($support_type);
-          $item['attributes']->addClass($class);
-        }
-      }
+    $type = _support_book_item_type($item);
+    if ($type !== NULL) {
+      $class = 'menu-item--support-type--'
+        . \Drupal\Component\Utility\Html::cleanCssIdentifier($type);
+      $item['attributes']->addClass($class);
     }
 
     if (!empty($item['below'])) {
       _support_book_add_type_classes($item['below']);
     }
   }
+}
+
+/**
+ * Returns the support_book field_support_type for a menu item, or NULL.
+ */
+function _support_book_item_type(array $item): ?string {
+  $url = $item['url'] ?? NULL;
+  if (!$url || $url->isExternal() || !$url->isRouted()
+    || $url->getRouteName() !== 'entity.node.canonical') {
+    return NULL;
+  }
+  $params = $url->getRouteParameters();
+  if (empty($params['node'])) {
+    return NULL;
+  }
+  $node = \Drupal::entityTypeManager()->getStorage('node')->load($params['node']);
+  if (!$node || !$node->hasField('field_support_type')
+    || $node->get('field_support_type')->isEmpty()) {
+    return NULL;
+  }
+  return $node->get('field_support_type')->value;
 }

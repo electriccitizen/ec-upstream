@@ -11,3 +11,6 @@ services:
       - '@current_route_match'
     tags:
       - { name: event_subscriber }
+
+  citizen_custom.support_book_access:
+    class: Drupal\citizen_custom\Access\SupportBookAccess

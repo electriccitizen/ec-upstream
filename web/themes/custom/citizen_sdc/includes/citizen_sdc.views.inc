@@ -26,12 +26,11 @@ function citizen_sdc_preprocess_views_view_unformatted(&$variables) {
   // Expose an is_elevated flag for the support-search results template so the
   // `site-management` row filter has a reliable signal. The default `user`
   // twig variable isn't populated in the view-template render context.
+  // Delegates the role check to citizen_custom.support_book_access so the
+  // definition of "elevated" stays in one place.
   if ($view->id() === 'support_search' && $view->current_display === 'search_results') {
-    $account = \Drupal::currentUser();
-    $roles = $account->getRoles();
-    $variables['is_elevated'] = (int) $account->id() === 1
-      || in_array('administrator', $roles, TRUE)
-      || in_array('site_manager', $roles, TRUE);
+    $variables['is_elevated'] = \Drupal::service('citizen_custom.support_book_access')
+      ->isElevated(\Drupal::currentUser());
     // Cache by user since the output varies per role.
     $variables['#cache']['contexts'][] = 'user.roles';
   }

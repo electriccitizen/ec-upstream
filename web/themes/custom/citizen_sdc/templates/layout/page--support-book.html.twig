@@ -46,30 +46,24 @@
 
 {% extends "page.html.twig" %}
 
-{# Anonymous gating for support_book now lives in the
-   `citizen_custom.anonymous_access_redirect` event subscriber — anonymous
-   visitors are redirected to /user/login before this template runs. What
-   remains here is the authenticated-user role check for `site_management`
-   support pages; planned for relocation to a node-access handler after
-   the initial access refactor settles. #}
+{# Access gating for support_book:
+ - Anonymous visitors: blocked earlier in the request by
+   `citizen_custom.anonymous_access_denial` — they never reach this template.
+ - Authenticated non-elevated users on `site_management` pages: see the
+   friendly denial message below. `is_elevated` is injected by
+   `citizen_sdc_preprocess_page()`, which delegates to
+   `citizen_custom.support_book_access` — single source of truth for the
+   role check. #}
 {% block pageMain %}
-  {% if node.field_support_type.0.value == 'site_management' %}
-    {% if 'administrator' in user.roles or 'site_manager' in user.roles or user.id == '1' %}
-      {{ parent() }}
-    {% else %}
-      <main role="main-content">
-        <div class="main-content__layout">
-          <div class="main-content__error-content">
-            <div>You do not have permission to view {% block restrictedType %}this support page{% endblock %}. Please contact a site administrator if you feel this is an error.</div>
-          </div>
+  {% if node.field_support_type.0.value == 'site_management' and not is_elevated %}
+    <main role="main-content">
+      <div class="main-content__layout">
+        <div class="main-content__error-content">
+          <div>You do not have permission to view {% block restrictedType %}this support page{% endblock %}. Please contact a site administrator if you feel this is an error.</div>
         </div>
-      </main>
-    {% endif %}
+      </div>
+    </main>
   {% else %}
     {{ parent() }}
   {% endif %}
 {% endblock %}
-  
-
-  
-
