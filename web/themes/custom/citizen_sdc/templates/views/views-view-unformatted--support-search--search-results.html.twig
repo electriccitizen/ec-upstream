@@ -3,18 +3,18 @@
   the first 6 rows as always-visible results and stashes the rest in a
   collapsible drawer. Non-elevated users never see rows tagged
   `site-management` (the view's `row_class` is set from
-  `field_support_type`). The role check runs here because the Twig `user`
-  object is not available inside the SDC (`with_context = false`).
+  `field_support_type`). `is_elevated` is provided by
+  `citizen_sdc_preprocess_views_view_unformatted()` — the twig `user`
+  variable isn't populated in the views render context.
 #}
-{% set is_elevated = 'administrator' in user.roles or 'site_manager' in user.roles or user.id == '1' %}
 {% set filtered_rows = is_elevated
   ? rows
-  : rows|filter(row => row.attributes.class != 'site-management') %}
+  : rows|filter(row => 'site-management' not in row.attributes.class) %}
 
 {{ include('citizen_sdc:views-support-search-results', {
   title: title,
   default_row_class: default_row_class,
-  visible_rows: filtered_rows|filter(row => row.content['#row'].index < 6),
-  drawer_rows: filtered_rows|filter(row => row.content['#row'].index >= 6),
+  visible_rows: filtered_rows|slice(0, 6),
+  drawer_rows: filtered_rows|slice(6),
   rando: random(10),
 }, with_context = false) }}
