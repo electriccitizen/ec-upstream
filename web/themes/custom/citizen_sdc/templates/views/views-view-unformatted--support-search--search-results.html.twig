@@ -1,58 +1,20 @@
 {#
-/**
- * @file
- * Theme override to display a view of unformatted rows.
- *
- * Available variables:
- * - title: The title of this group of rows. May be empty.
- * - rows: A list of the view's row items.
- *   - attributes: The row's HTML attributes.
- *   - content: The row's content.
- * - view: The view object.
- * - default_row_class: A flag indicating whether default classes should be
- *   used on rows.
- *
- * @see template_preprocess_views_view_unformatted()
- */
+  Display-specific suggestion for `support_search.search_results`. Splits
+  the first 6 rows as always-visible results and stashes the rest in a
+  collapsible drawer. Non-elevated users never see rows tagged
+  `site-management` (the view's `row_class` is set from
+  `field_support_type`). The role check runs here because the Twig `user`
+  object is not available inside the SDC (`with_context = false`).
 #}
+{% set is_elevated = 'administrator' in user.roles or 'site_manager' in user.roles or user.id == '1' %}
+{% set filtered_rows = is_elevated
+  ? rows
+  : rows|filter(row => row.attributes.class != 'site-management') %}
 
-
-{% extends 'views-view-unformatted.html.twig' %}
-
-{% block unformattedRows %}
-  {{ attach_library('citizen_sdc/drawers') }}
-  {%
-    set row_classes = [
-      default_row_class ? 'views-row',
-    ]
-  %}
-  {% set rando = random(10) %}
-  {% if 'administrator' in user.roles or 'site_manager' in user.roles or user.id == '1' %}
-    {% for row in rows|filter(row => row.content['#row'].index < 6) %}
-      <div{{ row.attributes.addClass(row_classes) }}>
-        {{ row.content }}
-      </div>
-    {% endfor %}
-    <div id="drawer-{{ rando }}" class="drawer-content drawer-content--not-fade" aria-hidden="true">
-    {% for row in rows|filter(row => row.content['#row'].index >= 6) %}
-      <div{{ row.attributes.addClass(row_classes) }}>
-        {{ row.content }}
-      </div>
-    {% endfor %}
-    </div>
-  {% else %}
-    {% for row in rows|filter(row => row.attributes.class != 'site-management' and row.content['#row'].index < 6) %}
-      <div{{ row.attributes.addClass(row_classes) }}>
-        {{ row.content }}
-      </div>
-    {% endfor %}
-    <div id="drawer-{{ rando }}" class="drawer-content drawer-content--not-fade" aria-hidden="true">
-    {% for row in rows|filter(row => row.attributes.class != 'site-management' and row.content['#row'].index >= 6) %}
-      <div{{ row.attributes.addClass(row_classes) }}>
-        {{ row.content }}
-      </div>
-    {% endfor %}
-    </div>
-  {% endif %}
-  <a href="#" class="drawer-toggle drawer-toggle--drawer-above drawer-toggle--pre-hide-toggle" aria-controls="drawer-{{ rando }}" aria-expanded="false">See all results</a>
-{% endblock %}
+{{ include('citizen_sdc:views-support-search-results', {
+  title: title,
+  default_row_class: default_row_class,
+  visible_rows: filtered_rows|filter(row => row.content['#row'].index < 6),
+  drawer_rows: filtered_rows|filter(row => row.content['#row'].index >= 6),
+  rando: random(10),
+}, with_context = false) }}

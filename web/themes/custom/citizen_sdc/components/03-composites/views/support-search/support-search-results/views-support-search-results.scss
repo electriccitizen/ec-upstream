@@ -1,0 +1,96 @@
+/* =================
+   VIEWS — SUPPORT SEARCH RESULTS
+   Scoped under `.view--support-search--search-results` (emitted by views-base).
+   Exposed-form input gets absolute-positioned submit/reset buttons using
+   mask-image so the icon color can be driven by $buttonBack tokens.
+=================== */
+
+@use '../../../../00-base/00-variables/colors' as *;
+@use '../../../../00-base/00-variables/component-colors' as *;
+@use '../../../../00-base/00-variables/fonts' as *;
+@use '../../../../00-base/00-variables/units' as *;
+@use '../../../../00-base/01-mixins/general-mixins' as *;
+@use '../../../../00-base/01-mixins/layout-mixins' as *;
+
+.view--support-search--search-results {
+  .view__content,
+  .view__empty {
+    @include auto;
+    margin-bottom: $elementSpace;
+    max-width: $textMax;
+    width: 100%;
+  }
+
+  .views-row {
+    &:not(:last-child) {
+      margin-bottom: $spaceSm;
+    }
+
+    .views-field-title {
+      margin-bottom: $spaceXxs;
+    }
+  }
+
+  // Exposed form: text input with absolutely-positioned submit + reset icons.
+  #views-exposed-form-support-search-search-results #views-form-wrapper {
+    position: relative;
+
+    .js-form-type-textfield {
+      width: 100%;
+      max-width: 100%;
+
+      label {
+        @include visuallyHidden;
+      }
+
+      input {
+        padding-right: 80px;
+      }
+    }
+
+    .form-actions {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: $white;
+
+      input[type='submit'] {
+        text-indent: -9000px;
+        width: 30px;
+        min-width: 30px;
+        height: 44px;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        background-color: $buttonBack;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: 24px;
+
+        &:hover,
+        &:focus {
+          background-color: $buttonBackHover;
+        }
+
+        &:active {
+          background-color: $buttonBackActive;
+        }
+
+        &.views-submit {
+          right: 16px;
+          mask-image: url(./search-icon.svg);
+
+          &:not(:last-child) {
+            right: 46px;
+          }
+        }
+
+        &.views-reset {
+          right: 16px;
+          mask-image: url(./close-icon.svg);
+        }
+      }
+    }
+  }
+}
