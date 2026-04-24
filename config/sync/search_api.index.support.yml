@@ -135,7 +135,6 @@ processor_settings:
       - field_support_type
       - title
   language_with_fallback: {  }
-  rendered_item: {  }
   stemmer:
     weights:
       preprocess_index: 0

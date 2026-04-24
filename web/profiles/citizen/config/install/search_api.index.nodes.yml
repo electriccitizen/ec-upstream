@@ -93,7 +93,6 @@ processor_settings:
       - body
       - title
   language_with_fallback: {  }
-  rendered_item: {  }
   stemmer:
     weights:
       preprocess_index: -43
