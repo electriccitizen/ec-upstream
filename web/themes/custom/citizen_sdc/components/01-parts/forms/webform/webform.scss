@@ -107,7 +107,10 @@
   .webform-confirmation__back {
     a {
       @include button;
-      margin-bottom: 0;
+
+      &{ 
+        margin-bottom: 0;
+      }
     }
   }
 }

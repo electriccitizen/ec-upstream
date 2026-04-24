@@ -133,6 +133,10 @@ a {
   }
 }
 
+button {
+  touch-action: manipulation;
+}
+
 em {
   font-style: italic;
 }

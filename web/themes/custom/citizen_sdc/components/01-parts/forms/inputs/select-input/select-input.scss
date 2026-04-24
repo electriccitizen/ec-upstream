@@ -32,6 +32,7 @@ body,
       height: auto;
       border-radius: 0;
       border: 0;
+      touch-action: manipulation;
 
       &:hover {
         .select2-selection__rendered {
@@ -90,6 +91,7 @@ body,
       background: $siteBack;
       padding: 8px 28px 6px 6px;
       position: static;
+      touch-action: manipulation;
      
       &:after {
         content: '';
@@ -182,6 +184,10 @@ body,
 
     .select2-results__options {
       font-size: 16px;
+    }
+
+    .select2-results__option {
+      touch-action: manipulation;
     }
   }
 }

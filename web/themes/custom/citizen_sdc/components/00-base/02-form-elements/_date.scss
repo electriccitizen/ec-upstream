@@ -37,6 +37,9 @@
       max-width: 120px;
       margin-bottom: 0;
     }
+    input {
+      touch-action: manipulation;
+    }
   }
 
 }
@@ -57,5 +60,8 @@
     width: 100%;
     max-width: 160px;
     margin-right: 1rem;
+    input {
+      touch-action: manipulation;
+    }
   }
 }

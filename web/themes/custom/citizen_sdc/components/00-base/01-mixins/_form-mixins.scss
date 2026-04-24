@@ -63,6 +63,7 @@
   width: 100%;
   line-height: 1.4;
   min-height: 44px;
+  touch-action: manipulation;
   @include placeholder;
 
   &:hover {

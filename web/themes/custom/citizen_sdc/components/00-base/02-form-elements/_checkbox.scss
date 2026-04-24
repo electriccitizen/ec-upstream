@@ -46,6 +46,7 @@
     height: 100%;
     opacity: 0;
     cursor: pointer;
+    touch-action: manipulation;
 
     &:hover,&:focus {
       & + label {

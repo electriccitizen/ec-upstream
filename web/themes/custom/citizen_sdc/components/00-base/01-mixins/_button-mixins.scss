@@ -23,9 +23,7 @@
   font-family: $header;
   font-weight: $heavy;
   font-size: $button;
-  // Transition on the base state (rather than only on :hover) so the breathe
-  // scale + color changes animate on mouse-enter AND mouse-leave — otherwise
-  // the button would snap back to its base state instantly on mouse-out.
+  touch-action: manipulation;
   transition:
     background-color 0.3s ease,
     color 0.3s ease,
