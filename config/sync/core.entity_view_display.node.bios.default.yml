@@ -76,44 +76,6 @@ third_party_settings:
                     data_uri: false
             weight: 0
             additional: {  }
-          309fb6a3-f256-4d0e-8b0a-c3eb31997687:
-            uuid: 309fb6a3-f256-4d0e-8b0a-c3eb31997687
-            region: content
-            configuration:
-              id: 'field_block:node:bios:title'
-              label: Title
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: string
-                label: hidden
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          40c08fae-ad78-46b3-917b-973e2ba599ce:
-            uuid: 40c08fae-ad78-46b3-917b-973e2ba599ce
-            region: content
-            configuration:
-              id: 'field_block:node:bios:field_position'
-              label: Position
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: string
-                label: hidden
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
           b8f1809e-7a20-4e59-a3c8-33097218a597:
             uuid: b8f1809e-7a20-4e59-a3c8-33097218a597
             region: content
@@ -168,6 +130,44 @@ third_party_settings:
                   link_to_entity: false
                 third_party_settings: {  }
             weight: 3
+            additional: {  }
+          309fb6a3-f256-4d0e-8b0a-c3eb31997687:
+            uuid: 309fb6a3-f256-4d0e-8b0a-c3eb31997687
+            region: third
+            configuration:
+              id: 'field_block:node:bios:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          40c08fae-ad78-46b3-917b-973e2ba599ce:
+            uuid: 40c08fae-ad78-46b3-917b-973e2ba599ce
+            region: third
+            configuration:
+              id: 'field_block:node:bios:field_position'
+              label: Position
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -
