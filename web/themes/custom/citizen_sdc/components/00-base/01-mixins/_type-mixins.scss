@@ -10,6 +10,31 @@
 @use '../01-mixins/breakpoint-mixins' as *;
 @use '../01-mixins/layout-mixins' as *;
 @use 'sass:color';
+@use 'sass:math';
+
+@mixin fluidType($min-rem, $max-rem, $vw-unit: dvw) {
+  $min-w: 400;
+  $max-w: 1200;
+  $rem-base: 8;
+
+  $min: math.div($min-rem, 1rem);
+  $max: math.div($max-rem, 1rem);
+
+  $a: math.div(
+    ($max - $min) * $rem-base * 100,
+    ($max-w - $min-w)
+  );
+  $b: $min - math.div(
+    $a * $min-w,
+    100 * $rem-base
+  );
+
+  font-size: clamp(
+    #{$min}rem,
+    calc(#{$a}#{$vw-unit} + #{$b}rem),
+    #{$max}rem
+  );
+}
 
 @mixin headerGlobals {
   line-height: 1.15;
@@ -22,37 +47,17 @@
 @mixin heading1 {
   @include headerGlobals;
   font-family: $displayHeader;
-  font-size: $h1Sm;
-
-  @include tab {
-    font-size: $h1Mid;
-  }
-
-  @include contentStop {
-    font-size: $h1Lg;
-  }
+  @include fluidType($h1Sm, $h1Lg);
 }
 
 @mixin heading2 {
   @include headerGlobals;
-  font-size: $h2Sm;
-
-  @include tab {
-    font-size: $h2Md;
-  }
-
-  @include contentStop {
-    font-size: $h2Lg;
-  }
+  @include fluidType($h2Sm, $h2Lg);
 }
 
 @mixin heading3 {
   @include headerGlobals;
-  font-size: $h3Sm;
-
-  @include tab {
-    font-size: $h3Mid;
-  }
+  @include fluidType($h3Sm, $h3Lg);
 }
 
 @mixin heading4 {
