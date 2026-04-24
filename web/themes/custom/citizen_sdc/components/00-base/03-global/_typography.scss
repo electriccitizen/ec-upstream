@@ -116,7 +116,7 @@ a {
   &:hover,
   &:focus {
     color: $hoverLink;
-    text-decoration: underline;
+    text-decoration: underline from-font;
 
     .field--text-with-summary &,
     .field--text-long & {

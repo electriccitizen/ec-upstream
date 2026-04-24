@@ -23,7 +23,7 @@
     }
     a {
       color: $prefooterLink;
-      text-decoration: underline;
+      text-decoration: underline from-font;
 
       &:hover,
       &:focus {
