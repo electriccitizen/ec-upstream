@@ -1,0 +1,38 @@
+component:
+  id: citizen_sdc:twocol-split-left
+  label: 'Two Column Split Left Layout'
+  description: 'Node layout with a left sidebar column that can split into two stacked regions (first, second) and a main content column that can split into two stacked regions (third, content). Regions have independent column heights via CSS floats on desktop; collapses to a reordered single column on mobile.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the layout wrapper'
+    first_attr:
+      type: object
+      description: 'Drupal Attributes object for the first region wrapper'
+    second_attr:
+      type: object
+      description: 'Drupal Attributes object for the second region wrapper'
+    third_attr:
+      type: object
+      description: 'Drupal Attributes object for the third region wrapper'
+    content_attr:
+      type: object
+      description: 'Drupal Attributes object for the content region wrapper'
+
+slots:
+  first:
+    title: 'First'
+    description: 'Top region in the left sidebar column'
+  second:
+    title: 'Second'
+    description: 'Bottom region in the left sidebar column'
+  third:
+    title: 'Third'
+    description: 'Top region in the right content column'
+  content:
+    title: 'Content'
+    description: 'Main content region in the right column, flowing below third'

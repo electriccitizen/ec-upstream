@@ -19,7 +19,7 @@ third_party_settings:
     allow_custom: false
     sections:
       -
-        layout_id: two_column_sidebar_left
+        layout_id: twocol_split_left
         layout_settings:
           label: ''
           context_mapping: {  }

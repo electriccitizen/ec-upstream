@@ -39,7 +39,7 @@ third_party_settings:
             additional: {  }
         third_party_settings: {  }
       -
-        layout_id: two_column_sidebar_left
+        layout_id: twocol_split_left
         layout_settings:
           label: ''
           context_mapping: {  }

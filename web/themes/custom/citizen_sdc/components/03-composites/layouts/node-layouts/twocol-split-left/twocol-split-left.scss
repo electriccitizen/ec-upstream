@@ -1,5 +1,5 @@
 /* =================
-   TWO COLUMN QUAD SPLIT LAYOUT
+   TWO COLUMN SPLIT LEFT LAYOUT
 =================== */
 
 @use '../../../../00-base/00-variables/units' as *;
@@ -7,7 +7,7 @@
 @use '../../../../00-base/01-mixins/general-mixins' as *;
 @use '../../../../00-base/01-mixins/layout-mixins' as *;
 
-.layout--twocol-quad-split {
+.layout--twocol-split-left {
   width: 100%;
   max-width: $contentStop;
   @include auto;
@@ -40,6 +40,11 @@
     @include desk {
       float: left;
       width: $sideBar;
+    }
+
+    /* Space the Add Block buttons in Layout Builder so stacked regions are visually distinct. */
+    &.layout-builder__region {
+      margin-bottom: $spaceMd;
     }
   }
 
@@ -84,6 +89,10 @@
         margin-right: auto;
         padding-left: 0;
       }
+    }
+
+    &.layout-builder__region {
+      margin-bottom: $spaceMd;
     }
   }
 

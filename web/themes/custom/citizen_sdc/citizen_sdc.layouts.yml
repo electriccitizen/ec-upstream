@@ -11,15 +11,33 @@ two_column_sidebar_left:
       label: First
     content:
       label: Content
-two_column_quad_split:
-  label: Two Column Quad Split
+twocol_split_left:
+  label: Two Column Split Left
   category: Citizen SDC Layouts
   path: templates/layout
-  template: layout--twocol-quad-split
+  template: layout--twocol-split-left
   default_region: first
   icon_map:
     - [first, third, third, third]
     - [second, content, content, content]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+    third:
+      label: Third
+    content:
+      label: Content
+twocol_split_right:
+  label: Two Column Split Right
+  category: Citizen SDC Layouts
+  path: templates/layout
+  template: layout--twocol-split-right
+  default_region: first
+  icon_map:
+    - [third, third, third, first]
+    - [content, content, content, second]
   regions:
     first:
       label: First
