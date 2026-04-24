@@ -84,9 +84,6 @@ settings:
     ckeditor5_style:
       styles:
         -
-          label: Warning
-          element: '<p class="warning">'
-        -
           label: Button
           element: '<a class="ec-button">'
     linkit_extension:
