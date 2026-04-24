@@ -3,8 +3,8 @@ _core:
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: ''
-  url: ''
-  use_default: true
+  url: /themes/custom/citizen_sdc/images/favicons/favicon.ico
+  use_default: false
 features:
   comment_user_picture: true
   comment_user_verification: true

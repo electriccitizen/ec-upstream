@@ -13,7 +13,6 @@ tags:
   canonical_url: '[site:url]'
   description: '[site:slogan]'
   geo_region: US-MN
-  generator: 'Drupal 8 (http://drupal.org)'
   abstract: '[site:slogan]'
   article_modified_time: '[node:changed:custom:c]'
   article_published_time: '[node:created:custom:c]'

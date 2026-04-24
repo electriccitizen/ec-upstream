@@ -11,7 +11,6 @@ tags:
   article_published_time: '[node:created:custom:c]'
   canonical_url: '[current-page:url:absolute]'
   content_language: en
-  generator: 'Drupal 9 (http://drupal.org)'
   geo_region: US-MN
   og_country_name: US
   og_site_name: '[site:name]'

@@ -12,7 +12,6 @@ tags:
   article_published_time: '[node:created:custom:c]'
   canonical_url: '[site:url]'
   description: '[node:field_meta_description]'
-  generator: 'Drupal 11 (http://drupal.org)'
   geo_region: US-MN
   og_country_name: US
   og_description: '[node:field_meta_description]'
