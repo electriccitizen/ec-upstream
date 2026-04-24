@@ -2,6 +2,7 @@
    TYPOGRAPHY
 ============== */
 
+@use 'sass:color';
 @use '../00-variables/colors' as *;
 @use '../00-variables/component-colors' as *;
 @use '../00-variables/fonts' as *;
@@ -117,10 +118,17 @@ a {
   &:focus {
     color: $hoverLink;
     text-decoration: underline from-font;
-
     .field--text-with-summary &,
-    .field--text-long & {
+    .field--text-long &,
+    .paragraph--accordions__body &,
+    .paragraph--portals__text & {
+      background-color: $lightBlue2;
       @include transAll(.3s);
+
+      .paragraph--layout-section--light-blue &,
+      .paragraph--layout-section--light-grey & {
+        background-color: color.adjust($lightBlue2, $lightness: -5%);
+      }
     }
   }
 }
