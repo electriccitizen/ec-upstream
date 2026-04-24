@@ -68,7 +68,7 @@
       const announce = () => {
         const i = embla.selectedScrollSnap() + 1;
         const n = embla.scrollSnapList().length;
-        live.textContent = `Slide ${i} of ${n}`;
+        live.textContent = Drupal.t('Slide @i of @n', {'@i': i, '@n': n});
       };
       embla.on('select', announce);
     }

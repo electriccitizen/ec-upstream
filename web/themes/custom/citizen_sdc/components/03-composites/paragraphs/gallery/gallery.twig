@@ -34,13 +34,13 @@
        stacking/overflow contexts of ancestors don't matter. ESC-to-close,
        role="dialog", aria-modal, and focus trap are handled by the browser
        for free. #}
-    <dialog class="paragraph--gallery__modal" aria-label="Image gallery" data-gallery-modal>
-      <button type="button" class="paragraph--gallery__modal-close" aria-label="Close gallery" data-gallery-close>
+    <dialog class="paragraph--gallery__modal" aria-label="{{ 'Image gallery'|t }}" data-gallery-modal>
+      <button type="button" class="paragraph--gallery__modal-close" aria-label="{{ 'Close gallery'|t }}" data-gallery-close>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
           <path fill="currentColor" d="M18.3 5.71 12 12.01l6.3 6.3-1.42 1.42-6.3-6.3-6.3 6.3-1.41-1.42 6.3-6.3-6.3-6.3L4.3 4.3l6.3 6.3 6.3-6.3z"/>
         </svg>
       </button>
-      <button type="button" class="paragraph--gallery__modal-nav paragraph--gallery__modal-prev" aria-label="Previous image" data-gallery-prev>
+      <button type="button" class="paragraph--gallery__modal-nav paragraph--gallery__modal-prev" aria-label="{{ 'Previous image'|t }}" data-gallery-prev>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
           <path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
         </svg>
@@ -48,7 +48,7 @@
       <figure class="paragraph--gallery__modal-stage" data-gallery-stage>
         {# Populated by JS from the clicked item's <template> contents. #}
       </figure>
-      <button type="button" class="paragraph--gallery__modal-nav paragraph--gallery__modal-next" aria-label="Next image" data-gallery-next>
+      <button type="button" class="paragraph--gallery__modal-nav paragraph--gallery__modal-next" aria-label="{{ 'Next image'|t }}" data-gallery-next>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
           <path fill="currentColor" d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
         </svg>

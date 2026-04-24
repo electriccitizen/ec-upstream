@@ -1,6 +1,6 @@
 <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
   {% if site_logo %}
-    <img class="branding__logo" src="{{ site_logo }}" alt="{{ 'Home'|t }}"{% if logo_width %} width="{{ logo_width }}"{% endif %}{% if logo_height %} height="{{ logo_height }}"{% endif %} />
+    <img class="branding__logo" src="{{ site_logo }}" alt="{{ '@site_name logo'|t({'@site_name': site_name}) }}"{% if logo_width %} width="{{ logo_width }}"{% endif %}{% if logo_height %} height="{{ logo_height }}"{% endif %} />
   {% endif %}
   {% if site_name %}
     <span class="branding__site-name">{{ site_name }}</span>

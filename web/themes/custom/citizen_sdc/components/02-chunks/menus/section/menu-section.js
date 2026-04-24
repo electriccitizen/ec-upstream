@@ -63,7 +63,7 @@
     li.classList.toggle(MENU_OPEN_CLASS, open);
     setAriaExpanded(toggle, open);
     setAriaHidden(childUl, !open);
-    setToggleText(toggle, open ? 'Collapse Menu' : 'Expand Menu');
+    setToggleText(toggle, open ? Drupal.t('Collapse Menu') : Drupal.t('Expand Menu'));
 
     if (animate) {
       animateHeight(childUl, open);
@@ -130,7 +130,7 @@
         toggleBtn.removeAttribute('aria-expanded');
         sectionMenu.removeAttribute('aria-hidden');
         toggleBtn.classList.remove(TOGGLE_ACTIVE_CLASS);
-        setToggleText(toggleBtn, toggleBtn.dataset.openText || 'Open Menu');
+        setToggleText(toggleBtn, toggleBtn.dataset.openText || Drupal.t('Open Menu'));
         sectionMenu.style.height = '';
         sectionMenu.classList.remove(MENU_SECTION_OPEN_CLASS, MENU_SECTION_HIDDEN_CLASS, MENU_SECTION_CLOSING_CLASS);
         nav.querySelectorAll(`${SECTION_MENU_SELECTOR} ul`).forEach((ul) => { ul.style.height = ''; });
@@ -144,7 +144,7 @@
         setAriaExpanded(toggleBtn, false);
         setAriaHidden(sectionMenu, true);
         toggleBtn.classList.remove(TOGGLE_ACTIVE_CLASS);
-        setToggleText(toggleBtn, toggleBtn.dataset.openText || 'Open Menu');
+        setToggleText(toggleBtn, toggleBtn.dataset.openText || Drupal.t('Open Menu'));
         sectionMenu.style.height = '0px';
         sectionMenu.classList.remove(MENU_SECTION_OPEN_CLASS, MENU_SECTION_CLOSING_CLASS);
         sectionMenu.classList.add(MENU_SECTION_HIDDEN_CLASS);
@@ -175,7 +175,7 @@
           toggleBtn.classList.remove(TOGGLE_ACTIVE_CLASS);
           setAriaExpanded(toggleBtn, false);
           setAriaHidden(sectionMenu, true);
-          setToggleText(toggleBtn, toggleBtn.dataset.openText || 'Open Menu');
+          setToggleText(toggleBtn, toggleBtn.dataset.openText || Drupal.t('Open Menu'));
           sectionMenu.classList.add(MENU_SECTION_CLOSING_CLASS);
           animateHeight(sectionMenu, false, () => {
             sectionMenu.classList.remove(MENU_SECTION_OPEN_CLASS, MENU_SECTION_CLOSING_CLASS);
@@ -185,7 +185,7 @@
           toggleBtn.classList.add(TOGGLE_ACTIVE_CLASS);
           setAriaExpanded(toggleBtn, true);
           setAriaHidden(sectionMenu, false);
-          setToggleText(toggleBtn, toggleBtn.dataset.closeText || 'Close Menu');
+          setToggleText(toggleBtn, toggleBtn.dataset.closeText || Drupal.t('Close Menu'));
           sectionMenu.classList.remove(MENU_SECTION_CLOSING_CLASS, MENU_SECTION_HIDDEN_CLASS);
           sectionMenu.classList.add(MENU_SECTION_OPEN_CLASS);
           animateHeight(sectionMenu, true);

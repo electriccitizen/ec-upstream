@@ -253,7 +253,7 @@
 
     // top level
     .menu-item__level-1 {
-      &:hover,&:focus,&.menu-item--open {
+      &:hover,&:focus-within,&.menu-item--open {
         background: $mmTopBackHover;
 
         & > .menu-item__link {
@@ -272,7 +272,7 @@
       }
 
       &.menu-item--active-trail {
-        &:hover,&:focus {
+        &:hover,&:focus-within {
           & > .menu-item__link,& > .menu-item__toggle {
             color: $mmTopActiveHover;
           }
@@ -297,6 +297,7 @@
         font-size: 2.25rem;
         display: block;
         position: relative;
+        cursor: pointer;
 
         &:not(.menu-item__link--menu-parent) {
           &:after {
@@ -355,7 +356,7 @@
 
     // second level and below
     li.menu-item__level-2 {
-      &:hover,&:focus,&.menu-item--open {
+      &:hover,&:focus-within,&.menu-item--open {
         & > .menu-item__toggle {
           background-color: $mmChildLinkHover;
           transform: rotate(90deg);

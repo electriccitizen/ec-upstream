@@ -19,7 +19,7 @@
         function initializeSelect2(selector) {
           document.querySelectorAll(selector).forEach(function (select) {
             $(select).select2({
-              placeholder: 'Select an option'
+              placeholder: Drupal.t('Select an option')
             });
           });
         }

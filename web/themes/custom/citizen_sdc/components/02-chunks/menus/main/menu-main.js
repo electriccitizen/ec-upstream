@@ -152,7 +152,7 @@
         toggleBtn.removeAttribute('aria-expanded');
         mainMenu.removeAttribute('aria-hidden');
         toggleBtn.classList.remove(TOGGLE_ACTIVE_CLASS);
-        setToggleText(toggleBtn, toggleBtn.dataset.openText || 'Open Menu');
+        setToggleText(toggleBtn, toggleBtn.dataset.openText || Drupal.t('Open Menu'));
         mainMenu.style.height = '';
         mainMenu.classList.remove(MENU_MAIN_OPEN_CLASS, MENU_MAIN_HIDDEN_CLASS);
         removeMobileExtras(mainMenu);
@@ -165,7 +165,7 @@
         setAriaExpanded(toggleBtn, false);
         setAriaHidden(mainMenu, true);
         toggleBtn.classList.remove(TOGGLE_ACTIVE_CLASS);
-        setToggleText(toggleBtn, toggleBtn.dataset.openText || 'Open Menu');
+        setToggleText(toggleBtn, toggleBtn.dataset.openText || Drupal.t('Open Menu'));
         mainMenu.style.height = '0px';
         mainMenu.classList.remove(MENU_MAIN_OPEN_CLASS);
         mainMenu.classList.add(MENU_MAIN_HIDDEN_CLASS);
@@ -192,7 +192,7 @@
         toggleBtn.classList.remove(TOGGLE_ACTIVE_CLASS);
         setAriaExpanded(toggleBtn, false);
         setAriaHidden(mainMenu, true);
-        setToggleText(toggleBtn, toggleBtn.dataset.openText || 'Open Menu');
+        setToggleText(toggleBtn, toggleBtn.dataset.openText || Drupal.t('Open Menu'));
         mainMenu.classList.add(MENU_MAIN_CLOSING_CLASS);
         animateHeight(mainMenu, false, () => {
           mainMenu.classList.remove(MENU_MAIN_OPEN_CLASS);
@@ -205,7 +205,7 @@
         toggleBtn.classList.add(TOGGLE_ACTIVE_CLASS);
         setAriaExpanded(toggleBtn, true);
         setAriaHidden(mainMenu, false);
-        setToggleText(toggleBtn, toggleBtn.dataset.closeText || 'Close Menu');
+        setToggleText(toggleBtn, toggleBtn.dataset.closeText || Drupal.t('Close Menu'));
         mainMenu.classList.remove(MENU_MAIN_CLOSING_CLASS, MENU_MAIN_HIDDEN_CLASS);
         mainMenu.classList.add(MENU_MAIN_OPEN_CLASS);
         animateHeight(mainMenu, true);

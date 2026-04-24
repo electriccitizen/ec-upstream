@@ -72,7 +72,7 @@
 
       // Announce the position for screen readers.
       if (liveRegion) {
-        liveRegion.textContent = `Image ${currentIndex + 1} of ${items.length}`;
+        liveRegion.textContent = Drupal.t('Image @i of @n', {'@i': currentIndex + 1, '@n': items.length});
       }
       // Hide prev/next entirely when there's only one image.
       const hasMulti = items.length > 1;

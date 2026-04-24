@@ -9,11 +9,11 @@
         password.addEventListener('click', function (e) {
           if (password.classList.contains('show')) {
             password.classList.remove('show');
-            password.textContent = 'Show Password';
+            password.textContent = Drupal.t('Show Password');
             passwordInput.type = 'password';
           } else {
             password.classList.add('show');
-            password.textContent = 'Hide Password';
+            password.textContent = Drupal.t('Hide Password');
             passwordInput.type = 'text';
           }
         });

@@ -9,19 +9,19 @@
     <h1 class="user-dashboard__name">{{ name }}</h1>
 
     <div class="user-dashboard__meta">
-      <span class="user-dashboard__meta-label">Username:</span>
+      <span class="user-dashboard__meta-label">{{ 'Username:'|t }}</span>
       <span class="user-dashboard__meta-value">{{ username }}</span>
     </div>
 
     {% if roles %}
       <div class="user-dashboard__meta user-dashboard__meta--roles">
-        <span class="user-dashboard__meta-label">Roles:</span>
+        <span class="user-dashboard__meta-label">{{ 'Roles:'|t }}</span>
         <span class="user-dashboard__meta-value">{{ roles }}</span>
       </div>
     {% endif %}
 
     {% if account_actions %}
-      <nav class="user-dashboard__account-actions" aria-label="Account actions">
+      <nav class="user-dashboard__account-actions" aria-label="{{ 'Account actions'|t }}">
         <ul>
           {% for action in account_actions %}
             <li>
@@ -33,7 +33,7 @@
     {% endif %}
 
     {% if task_actions %}
-      <nav class="user-dashboard__task-actions" aria-label="Editor tasks">
+      <nav class="user-dashboard__task-actions" aria-label="{{ 'Editor tasks'|t }}">
         <ul>
           {% for action in task_actions %}
             <li>
