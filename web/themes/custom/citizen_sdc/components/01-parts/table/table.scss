@@ -193,60 +193,51 @@
             border-bottom: 1px solid $rowBorder;
           }
         }
-
-        // Give a bit extra room in the row on mobile.
-        @include onlyMobile {
-          td {
-            padding: 1rem $siteMargin;
-          }
-
-          //style headers
-          &>td.st-key {
-            text-transform: uppercase;
-            font-weight: $heavy;
-          }
-        }
       }
     }
 
-    // Responsive Tables uses bt for mobile styles.
-    &.bt {
-      &.no-header {
-        tbody {
-          tr:first-child {
-            display: none;
-          }
-        }
+    @include onlyMobile {
+      thead {
+        display: none;
+      }
+
+      &.no-header tbody tr:first-child {
+        display: none;
       }
 
       tbody {
-        tr:last-child {
-          td:not(:last-child) {
-            border-bottom: 1px solid $borderRule;
-          }
+        th {
+          display: none;
         }
 
-        tr:nth-of-type(odd) td:before {
+        tr:last-child td:not(:last-child) {
+          border-bottom: 1px solid $borderRule;
+        }
+
+        tr:nth-of-type(odd) td::before {
           background: $tableHeaderBack;
           color: $tableHeaderText;
         }
 
         td {
-          padding: 0 !important;
+          display: block;
+          padding: 1rem $siteMargin;
 
-          &:before {
+          &.st-key {
+            text-transform: uppercase;
+            font-weight: $heavy;
+          }
+
+          &::before {
             content: attr(data-th);
-            border-right: 1px solid $borderRule;
+            display: block;
+            margin: -1rem #{-$siteMargin} 1rem;
+            padding: 1rem $siteMargin;
             background: $tableRowHeaderBack;
             color: $tableRowHeaderText;
-            padding: 1rem 3rem;
-          }
-
-          span.bt-content {
-            padding: 1rem 3rem;
+            border-right: 1px solid $borderRule;
           }
         }
-
       }
     }
   }

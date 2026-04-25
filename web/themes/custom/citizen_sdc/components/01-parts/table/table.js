@@ -1,17 +1,22 @@
-(function ($, Drupal, once) {
+((Drupal, once) => {
+  Drupal.behaviors.responsiveTable = {
+    attach(context) {
+      once('responsive-table', '.layout-container table:not(.ui-datepicker-calendar)', context).forEach((table) => {
+        const headers = Array.from(table.querySelectorAll('thead th')).map((th) => th.textContent.trim());
 
-  /* RESPONSIVE TABLES WITH BASIC TABLE
-  ------------------------------------ */
-  Drupal.behaviors.basicTable = {
-    attach: function (context, settings) {
-      $(once('responsive_table', '.layout-container table:not(.ui-datepicker-calendar)', context)).each(function () {
-        $(this).basictable({ breakpoint: 760, });
-        const theadElements = this.getElementsByTagName('thead');
-        if (theadElements.length === 0) {
-          this.classList.add('no-header');
+        if (headers.length === 0) {
+          table.classList.add('no-header');
+          return;
         }
-      });
-    }
-  };
 
-})(jQuery, Drupal, once);
+        table.querySelectorAll('tbody tr').forEach((row) => {
+          row.querySelectorAll('td').forEach((cell, index) => {
+            if (headers[index]) {
+              cell.setAttribute('data-th', headers[index]);
+            }
+          });
+        });
+      });
+    },
+  };
+})(Drupal, once);

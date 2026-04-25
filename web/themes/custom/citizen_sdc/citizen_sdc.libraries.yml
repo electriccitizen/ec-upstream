@@ -17,15 +17,6 @@ paragraph-animate:
     - core/drupal
     - core/once
 
-basicTable:
-  version: 2.0.0
-  css:
-    theme:
-      components-addons/basictable/basictable.css: { minified: false }
-  js:
-    components-addons/basictable/jquery.basictable.min.js: { minified: true }
-  dependencies:
-    - core/jquery
 fonts:
   css:
     theme:

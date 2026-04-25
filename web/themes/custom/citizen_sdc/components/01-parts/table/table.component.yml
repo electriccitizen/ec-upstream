@@ -4,10 +4,6 @@ component:
   description: 'Table HTML structure and mobile conversion'
   status: experimental
 
-libraryOverrides:
-  dependencies:
-    - citizen_sdc/basicTable
-
 props:
   type: object
   required:
