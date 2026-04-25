@@ -28,6 +28,7 @@ dependencies:
   - default_content
   - dynamic_page_cache
   - editor
+  - editoria11y
   - embed
   - entity
   - entity_reference_revisions
