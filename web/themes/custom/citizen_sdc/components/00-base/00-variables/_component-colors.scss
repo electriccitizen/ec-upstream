@@ -21,6 +21,22 @@ $outlineLight : $gold;
 $outlineMid : $midGray;
 $outlineDark : $black;
 
+/* THEME REGIONS
+--------------------- */
+$preheaderBack : $darkBlue;
+$preheaderText : $white;
+$preheaderLink : $white;
+$preheaderLinkHover : $gold;
+$headerBack : $offWhite;
+$prefooterBack : $navy;
+$prefooterText : $offWhite;
+$prefooterLink : $adminGold;
+$prefooterLinkHover : $adminWhiteGold;
+$footerBack : $black;
+$footerText : $offWhite;
+$footerLink : $adminGold;
+$footerLinkHover : $adminWhiteGold;
+
 /* BUTTONS
 ---------------------- */
 $buttonBack : $link;
@@ -47,22 +63,6 @@ $cautionBackHover : $gray;
 $cautionTextHover : $black;
 $cautionBackActive : $black;
 $cautionTextActive : $black;
-
-/* THEME REGIONS
---------------------- */
-$preheaderBack : $darkBlue;
-$preheaderText : $white;
-$preheaderLink : $white;
-$preheaderLinkHover : $gold;
-$headerBack : $offWhite;
-$prefooterBack : $darkGray;
-$prefooterText : $offWhite;
-$prefooterLink : $adminGold;
-$prefooterLinkHover : $adminWhiteGold;
-$footerBack : $black;
-$footerText : $offWhite;
-$footerLink : $adminGold;
-$footerLinkHover : $adminWhiteGold;
 
 /* SITE SEARCH
 ------------------- */
