@@ -22,8 +22,7 @@
   .platforms__link {
     color: $footerLink;
 
-    &:hover,
-    &:focus {
+    &:hover {
       color: $footerLinkHover;
     }
 

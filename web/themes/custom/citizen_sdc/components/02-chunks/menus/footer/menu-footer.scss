@@ -23,8 +23,7 @@
     display: block;
     color: $prefooterLink;
 
-    &:hover,
-    &:focus {
+    &:hover {
       color: $prefooterLinkHover;
       @include transAll(.3s);
     }

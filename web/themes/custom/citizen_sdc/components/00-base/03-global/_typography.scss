@@ -114,8 +114,7 @@ a {
   color: $link;
   text-decoration: none;
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: $hoverLink;
     text-decoration: underline from-font;
     .field--text-with-summary &,

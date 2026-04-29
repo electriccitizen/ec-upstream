@@ -86,8 +86,7 @@
   a {
     color: $lightLink;
 
-    &:hover,
-    &:focus {
+    &:hover {
       opacity: .6;
       @include transAll(.3s);
     }
@@ -118,8 +117,7 @@
   a {
     color: $darkLink;
 
-    &:hover,
-    &:focus {
+    &:hover {
       opacity: .6;
       @include transAll(.3s);
     }

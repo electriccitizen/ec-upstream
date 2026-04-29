@@ -68,8 +68,7 @@
         mask-position: center;
         mask-size: 24px;
 
-        &:hover,
-        &:focus {
+        &:hover {
           background-color: $buttonBackHover;
         }
 

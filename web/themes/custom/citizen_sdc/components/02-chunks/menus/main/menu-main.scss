@@ -33,7 +33,7 @@
     mask-size: 24px;
     mask-position: center;
 
-    &:hover,&:focus {
+    &:hover {
       background-color: $menuToggleHover;
     }
 
@@ -129,7 +129,7 @@
         position: relative;
         cursor: pointer;
 
-        &:hover,&:focus {
+        &:hover {
           text-decoration: none;
         }
 
@@ -180,7 +180,7 @@
         color: $mmMobileChild;
         display: block;
 
-        &:hover,&:focus {
+        &:hover {
           text-decoration: none;
         }
 
@@ -404,8 +404,7 @@
         font-size: 2rem;
         color: $mmChildLink;
 
-        &:hover,
-        &:focus {
+        &:hover {
           color: $mmChildLinkHover;
           text-decoration: underline from-font;
           text-decoration-thickness: 2px;

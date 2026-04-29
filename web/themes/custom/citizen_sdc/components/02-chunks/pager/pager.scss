@@ -27,8 +27,7 @@
   justify-content: center;
   align-items: center;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: $pagerLinkBackHover;
     color: $pagerLinkHover;
     text-decoration: none;
@@ -38,7 +37,7 @@
 
 .pager__item--has-arrow {
   a {
-    &:hover,&:focus {
+    &:hover {
       background-color: transparent;
 
       svg {
@@ -59,7 +58,7 @@
     color: $pagerLinkActive;
     background-color: $pagerLinkActiveBack;
 
-    &:hover,&:focus {
+    &:hover {
       color: $pagerLinkActiveHover;
       background-color: $pagerLinkActiveBackHover;
     }
@@ -77,7 +76,7 @@
 .pager__item--previous {
   margin-right: 2rem;
   a {
-    &:hover,&:focus {
+    &:hover {
 
       .pager__item--arrow {
         left: -1rem;
@@ -94,7 +93,7 @@
 .pager__item--next {
   margin-left: 2rem;
   a {
-    &:hover,&:focus {
+    &:hover {
       .pager__item--arrow {
         right: -1rem;
         transition: right .3s ease, fill .3s ease;

@@ -77,8 +77,7 @@
       background: $link;
       position: relative;
 
-      &:hover,
-      &:focus {
+      &:hover {
         outline: none;
         background: $hoverLink;
       }

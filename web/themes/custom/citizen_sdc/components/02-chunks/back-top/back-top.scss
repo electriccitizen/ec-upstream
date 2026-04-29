@@ -23,8 +23,7 @@
     transform: translate(-50%,-50%);
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: $hoverLink;
   }
 

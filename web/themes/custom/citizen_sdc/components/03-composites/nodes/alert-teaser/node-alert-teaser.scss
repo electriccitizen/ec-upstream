@@ -21,7 +21,7 @@
       text-decoration: underline from-font;
       text-decoration-thickness: 2px;
 
-      &:hover,&:focus {
+      &:hover {
         text-decoration: none;
       }
     }
@@ -50,7 +50,7 @@
     .alert__body a,.alert__close {
       color: $alertStandardText;
 
-      &:hover,&:focus {
+      &:hover {
         background-color: $alertStandardHover;
       }
     }
@@ -63,7 +63,7 @@
     .alert__body a,.alert__close {
       color: $alertUrgentText;
 
-      &:hover,&:focus {
+      &:hover {
         background-color: $alertUrgentHover;
       }
     }

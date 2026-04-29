@@ -27,8 +27,7 @@
       color: $breadLink;
       @include transAll(.3s);
 
-      &:hover,
-      &:focus {
+      &:hover {
         color: $breadLinkHover;
       }
     }

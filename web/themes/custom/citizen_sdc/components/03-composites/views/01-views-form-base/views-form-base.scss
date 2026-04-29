@@ -99,8 +99,7 @@
           margin: 0 10px;
         }
 
-        &:hover,
-        &:focus {
+        &:hover {
           background: $resetBackHover;
           color: $resetTextHover;
           border-color: $resetBackHover;

@@ -16,8 +16,7 @@
     display: block;
     color: $preheaderLink;
 
-    &:hover,
-    &:focus {
+    &:hover {
       color: $preheaderLinkHover;
       @include transAll(.3s);
 

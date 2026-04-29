@@ -50,7 +50,7 @@
       mask-size: 24px;
       mask-position: center;
 
-      &:hover,&:focus {
+      &:hover {
         background-color: $smMobileMenuToggleHover;
         transition: background-color .3s ease;
       }
@@ -128,13 +128,13 @@
       padding: 1rem 5rem 1rem 3rem;
       color: $smTopLink;
 
-      &:hover,&:focus {
+      &:hover {
         color: $smTopLinkHover;
       }
 
       &.menu-item--active-trail {
         .menu-item__toggle {
-          &:hover,&:focus {
+          &:hover {
             &:after {
               background-color: $smTopActiveHover;
             }
@@ -161,7 +161,7 @@
         }
       }
 
-      &:hover,&:focus {
+      &:hover {
         &:after {
           background-color: $smTopLinkHover;
         }
@@ -184,13 +184,13 @@
       padding: .5rem 5rem .5rem 5rem;
       color: $smChildLink;
 
-      &:hover,&:focus {
+      &:hover {
         color: $smChildLinkHover;
       }
 
       &.menu-item--active-trail {
         .menu-item__toggle {
-          &:hover,&:focus {
+          &:hover {
             &:after {
               background-color: $smChildActiveHover;
             }
@@ -217,7 +217,7 @@
         }
       }
 
-      &:hover,&:focus {
+      &:hover {
         &:after {
           background-color: $smTopLinkHover;
         }

@@ -46,8 +46,7 @@
         font-size: 2.75rem;
       }
 
-      &:hover,
-      &:focus {
+      &:hover {
         color: $accordHeaderHover;
         background: $accordHeaderBackHover;
         border-color: $accordHeaderBorderHover;
@@ -88,8 +87,7 @@
         border-color: $accordActiveBorder;
         border-bottom: 0;
 
-        &:hover,
-        &:focus {
+        &:hover {
           color: $accordActiveHover;
           background: $accordActiveBackHover;
           border-color: $accordActiveBorderHover;

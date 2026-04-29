@@ -93,8 +93,7 @@
       font-weight: $heavy;
       color: $black;
 
-      &:hover,
-      &:focus {
+      &:hover {
         background: $buttonBackHover;
         color: $buttonTextHover;
         text-decoration: none;
@@ -108,8 +107,7 @@
       &.is-active {
         background-color: $adminGold;
 
-        &:hover,
-        &:focus {
+        &:hover {
           background: $buttonBackHover;
           color: $buttonTextHover;
         }
@@ -137,7 +135,6 @@
   font-weight: bold;
 
   &:hover,
-  &:focus,
   &.is-active {
     background: $white !important;
     color: $link;
@@ -160,8 +157,7 @@
   a,
   input.button {
 
-    &:hover,
-    &:focus {
+    &:hover {
       text-decoration: underline from-font !important;
     }
   }
@@ -195,7 +191,7 @@
         border-color: $resetBack;
         color: $resetText;
 
-        &:hover,&:focus {
+        &:hover {
           background: $resetBackHover;
           border-color: $resetBackHover;
           color: $resetTextHover;

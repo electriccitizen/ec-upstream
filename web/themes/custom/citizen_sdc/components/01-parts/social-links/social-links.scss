@@ -17,7 +17,7 @@
   }
 
   .platforms__link {
-    &:hover,&:focus {
+    &:hover {
       svg {
         circle {
           fill: $black;

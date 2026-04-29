@@ -16,8 +16,7 @@
   color: $link;
   font-weight: $heavy;
   
-  &:hover,
-  &:focus {
+  &:hover {
     color: $hoverLink;
 
     .drawer-toggle__icon {

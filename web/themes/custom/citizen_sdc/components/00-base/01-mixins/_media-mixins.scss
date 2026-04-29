@@ -16,8 +16,7 @@
 @mixin imageHover {
   border: 1px solid $lightGray;
 
-  &:hover,
-  &:focus {
+  &:hover {
     border-color: $borderRule;
     opacity: .7;
     @include transAll(.3s);
@@ -67,8 +66,7 @@
   position: relative;
   padding-left: 22px;
 
-  &:hover:before,
-  &:focus:before {
+  &:hover:before {
     opacity: .7;
   }
 
