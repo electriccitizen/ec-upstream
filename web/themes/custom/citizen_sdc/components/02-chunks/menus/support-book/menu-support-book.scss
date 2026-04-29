@@ -45,18 +45,26 @@
       cursor: pointer;
       width: 32px;
       height: 32px;
-      background-color: $spbMobileMenuToggle;
-      mask-image: url('hamburger.svg');
-      mask-repeat: no-repeat;
-      mask-size: 24px;
-      mask-position: center;
+      position: relative;
 
-      &:hover {
+      // Mask on :after so the button's focus outline paints unclipped.
+      &:after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: $spbMobileMenuToggle;
+        mask-image: url('hamburger.svg');
+        mask-repeat: no-repeat;
+        mask-size: 24px;
+        mask-position: center;
+      }
+
+      &:hover:after {
         background-color: $spbMobileMenuToggleHover;
         transition: background-color .3s ease;
       }
 
-      &.block-menu__toggle--active {
+      &.block-menu__toggle--active:after {
         mask-image: url('close.svg');
         mask-size: 16px;
       }

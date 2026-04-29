@@ -33,11 +33,22 @@
     cursor: pointer;
     width: 24px;
     height: 24px;
-    background-color: $scmTopLink;
-    mask-image: url('caret-down.svg');
-    mask-repeat: no-repeat;
-    mask-size: 10px;
-    mask-position: center;
+    position: relative;
+
+    // Caret lives on the pseudo-element, not the button itself, so the
+    // button's :focus-visible outline can paint cleanly — CSS `mask-image`
+    // applied directly to a focusable element clips its outline.
+    &:after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: $scmTopLink;
+      mask-image: url('caret-down.svg');
+      mask-repeat: no-repeat;
+      mask-size: 10px;
+      mask-position: center;
+      transition: transform .3s ease;
+    }
 
     &:focus-visible {
       @include focusOutline(light);
@@ -48,6 +59,19 @@
     & > .menu-item__link {
       &:focus-visible {
         @include focusOutline(light);
+      }
+    }
+
+    // .menu-item--open is the single source of truth. JS adds it on hover
+    // (mouseover) and toggle click; Escape and outside-click remove it.
+    // Keeping hover/focus-within out of this rule means an explicit close
+    // wins over a still-true :focus-within (focus returned to the toggle).
+    &.menu-item--open {
+      & > ul {
+        display: block;
+      }
+      & > .menu-item__toggle:after {
+        transform: rotate(180deg);
       }
     }
 

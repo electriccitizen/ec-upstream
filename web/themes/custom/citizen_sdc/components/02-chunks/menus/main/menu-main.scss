@@ -27,17 +27,25 @@
     cursor: pointer;
     width: 32px;
     height: 32px;
-    background-color: $menuToggle;
-    mask-image: url('hamburger.svg');
-    mask-repeat: no-repeat;
-    mask-size: 24px;
-    mask-position: center;
+    position: relative;
 
-    &:hover {
+    // Mask on :after so the button's focus outline paints unclipped.
+    &:after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: $menuToggle;
+      mask-image: url('hamburger.svg');
+      mask-repeat: no-repeat;
+      mask-size: 24px;
+      mask-position: center;
+    }
+
+    &:hover:after {
       background-color: $menuToggleHover;
     }
 
-    &.block-menu__toggle--active {
+    &.block-menu__toggle--active:after {
       mask-image: url('close.svg');
       mask-size: 16px;
     }
@@ -265,7 +273,7 @@
           }
         }
 
-        & > .menu-item__toggle {
+        & > .menu-item__toggle:after {
           background-color: $mmTopLinkHover;
           transform: rotate(180deg);
         }
@@ -320,7 +328,6 @@
       }
 
       & > .menu-item__toggle {
-        background-color: $mmTopLink;
         width: 24px;
         height: 24px;
         position: absolute;
@@ -328,11 +335,20 @@
         right: 0;
         text-indent: -9000px;
         font-size: 0;
-        mask-image: url(caret-down.svg);
-        mask-repeat: no-repeat;
-        mask-size: 12px;
-        mask-position: center;
-        transition: transform .3s ease, color .3s ease;
+
+        // Mask on :after so the button's focus outline paints unclipped.
+        // Rotation transition lives here too so the outline doesn't rotate.
+        &:after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-color: $mmTopLink;
+          mask-image: url(caret-down.svg);
+          mask-repeat: no-repeat;
+          mask-size: 12px;
+          mask-position: center;
+          transition: transform .3s ease, background-color .3s ease;
+        }
       }
 
       //first level dropdown
@@ -357,7 +373,7 @@
     // second level and below
     li.menu-item__level-2 {
       &:hover,&:focus-within,&.menu-item--open {
-        & > .menu-item__toggle {
+        & > .menu-item__toggle:after {
           background-color: $mmChildLinkHover;
           transform: rotate(90deg);
         }
@@ -412,20 +428,28 @@
       }
 
       .menu-item__toggle {
-        background-color: $mmTopLink;
         width: 24px;
         height: 24px;
         position: absolute;
         top: calc(50% - 12px);
         right: 8px;
         text-indent: -9000px;
-        transform: rotate(270deg);
         font-size: 0;
-        mask-image: url(caret-down.svg);
-        mask-repeat: no-repeat;
-        mask-size: 10px;
-        mask-position: center;
-        transition: transform .3s ease, color .3s ease;
+
+        // Mask + rotation on :after so the button's focus outline paints
+        // unclipped and stays axis-aligned (only the icon rotates).
+        &:after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-color: $mmTopLink;
+          mask-image: url(caret-down.svg);
+          mask-repeat: no-repeat;
+          mask-size: 10px;
+          mask-position: center;
+          transform: rotate(270deg);
+          transition: transform .3s ease, background-color .3s ease;
+        }
       }
     }
   }
