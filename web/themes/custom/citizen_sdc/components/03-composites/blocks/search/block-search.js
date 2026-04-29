@@ -29,9 +29,35 @@
         setTabindex(input, '-1');
         setTabindex(submit, '-1');
 
+        // While the drawer is open, trap Tab / Shift+Tab among close → input
+        // → submit (DOM order); Escape clicks the close button so keyboard
+        // users have a non-mouse exit. Listener is added on open, removed
+        // on close — no work runs when the drawer is shut.
+        const trapKeydown = (event) => {
+          if (event.key === 'Escape') {
+            event.preventDefault();
+            if (closeBtn) closeBtn.click();
+            return;
+          }
+          if (event.key !== 'Tab') return;
+          const focusables = [closeBtn, input, submit].filter(Boolean);
+          if (focusables.length === 0) return;
+          const first = focusables[0];
+          const last = focusables[focusables.length - 1];
+          const active = document.activeElement;
+          if (event.shiftKey && active === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && active === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        };
+
         const openSearch = (event) => {
           event.preventDefault();
           wrapper.setAttribute('aria-hidden', 'false');
+          setTabindex(openBtn, '-1');
           setTabindex(closeBtn, '0');
           setTabindex(input, '0');
           setTabindex(submit, '0');
@@ -47,11 +73,13 @@
           if (input) {
             setTimeout(() => input.focus(), 320);
           }
+          document.addEventListener('keydown', trapKeydown);
         };
 
         const closeSearch = (event) => {
           event.preventDefault();
           wrapper.setAttribute('aria-hidden', 'true');
+          setTabindex(openBtn, '0');
           setTabindex(closeBtn, '-1');
           setTabindex(input, '-1');
           setTabindex(submit, '-1');
@@ -60,6 +88,7 @@
             wrapper.style.maxHeight = '0px';
           }, 10);
           openBtn.focus();
+          document.removeEventListener('keydown', trapKeydown);
         };
 
         openBtn.addEventListener('click', openSearch);

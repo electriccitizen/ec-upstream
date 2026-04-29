@@ -9,6 +9,7 @@
 @use '../../../00-base/01-mixins/breakpoint-mixins' as *;
 @use '../../../00-base/01-mixins/general-mixins' as *;
 @use '../../../00-base/01-mixins/layout-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
 
 %searchBlockPlaceholder {
   &::placeholder {
@@ -20,45 +21,34 @@
 %searchBlockPlaceholderFocus {
   &::placeholder {
     opacity: .2;
-    color: $searchDropPlaceFocus;
+    color: $searchDropPlaceActive;
   }
 }
 
 .block--site-search {
-  /* Placement in site header */
   position: static;
-  display: inline-block;
   text-align: right;
-
-  @include desk {
-    width: calc(100% - 240px);
-  }
 
   .contextual {
     display: none;
   }
 
-  /* Open toggle */
-  .site-search__toggle--open {
-    display: inline-block;
-  }
-
   .site-search__trigger--open {
     @include buttonWipe;
-    position: absolute;
-    top: 18px;
-    right: 10px;
     border: $inputBorderWidth solid transparent;
     color: $searchIcon;
 
     &:hover {
       color: $searchIconHover;
-      outline: none;
+    }
+
+    &:focus-visible {
+      @include focusOutline(light);
     }
 
     svg {
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
     }
 
     @include desk {
@@ -69,52 +59,50 @@
   /* Close toggle */
   .site-search__toggle--close {
     height: 48px;
-    width: 48px;
+    width: 60px;
     display: none;
     position: absolute;
-    top: -20px;
+    top: 0;
     right: 0;
     z-index: 502;
-  }
 
-  .site-search__trigger--close {
-    @include buttonWipe;
-    height: 100%;
-    width: 100%;
-    background: $searchCloseBack;
-    color: $searchClose;
-    font-family: $header;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.15s ease-out;
+    .site-search__trigger--close {
+      @include buttonWipe;
+      height: 100%;
+      width: 100%;
+      background: $searchCloseBack;
+      color: $searchClose;
+      font-family: $header;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease-out;
 
-    svg {
-      width: 24px;
-      height: 24px;
-    }
+      svg {
+        width: 20px;
+        height: 20px;
+      }
 
-    &:hover {
-      background: $searchCloseBackHover;
-      color: $searchCloseHover;
-      outline: none;
+      &:hover {
+        background: $searchCloseBackHover;
+        color: $searchCloseHover;
+      }
+
+      &:focus-visible {
+        @include focusOutline(light);
+      }
     }
   }
 
   /* Slide-down form wrapper */
   #search-form-wrapper {
-    width: calc(100% + #{$siteMargin} * 2);
+    width: 100vw;
     position: absolute;
-    top: -20px;
-    left: -$siteMargin;
+    top: 0;
+    left: 0;
     z-index: 500;
     @include showContent(.5s);
-
-    @include contentStop {
-      width: 100vw;
-      left: calc(-50vw + #{$contentStop} / 2);
-    }
   }
 
   /* Search form */
@@ -152,7 +140,7 @@
         @extend %searchBlockPlaceholder;
 
         &:-webkit-autofill {
-          -webkit-box-shadow: 0 0 0 1000px $searchDropInputFocus inset;
+          -webkit-box-shadow: 0 0 0 1000px $searchDropPlaceActive inset;
         }
 
         @include tab {
@@ -160,15 +148,12 @@
         }
 
         &:hover {
-          border-color: $searchDropInputFocus;
-          box-shadow: inset 0 0 0 1px $searchDropInputFocus;
+          border-color: $searchDropInputHover;
+          box-shadow: inset 0 0 0 1px $searchDropInputHover;
         }
 
-        &:focus {
-          outline: none;
-          border-color: $inputBorderFocus;
-          box-shadow: inset 0 0 0 1px $inputBorderFocus;
-          @extend %searchBlockPlaceholderFocus;
+        &:focus-visible {
+          @include focusOutline(light);
         }
       }
     }
@@ -205,6 +190,10 @@
           & + svg {
             color: $searchDropSearchIconHover;
           }
+        }
+
+        &:focus-visible + svg {
+          @include focusOutline(light);
         }
       }
 

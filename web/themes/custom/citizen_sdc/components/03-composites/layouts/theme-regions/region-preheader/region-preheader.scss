@@ -11,9 +11,14 @@
   position: relative;
 
   .site-preheader__inner {
-    padding: 4px 20px;
-    max-width: $contentStop;
+    padding: 8px 24px;
+    max-width: $contentStop + 48px;
     @include auto;
+
+    & > div {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
 

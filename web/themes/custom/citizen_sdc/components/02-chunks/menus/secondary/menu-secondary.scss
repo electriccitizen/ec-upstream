@@ -5,21 +5,76 @@
 @use '../../../00-base/00-variables/component-colors' as *;
 @use '../../../00-base/01-mixins/animation-mixins' as *;
 @use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
 
 .menu--secondary {
   @include tab {
     column-gap: 16px;
     font-size: 2rem;
   }
+
+  .menu-item {
+    display: flex;
+    position: relative;
+  }
   
   .menu-item__link {
     display: block;
-    color: $preheaderLink;
+    color: $scmTopLink;
 
     &:hover {
-      color: $preheaderLinkHover;
+      color: $scmTopLinkHover;
       @include transAll(.3s);
+    }
+  }
 
+  .menu-item__toggle {
+    display: block;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background-color: $scmTopLink;
+    mask-image: url('caret-down.svg');
+    mask-repeat: no-repeat;
+    mask-size: 10px;
+    mask-position: center;
+
+    &:focus-visible {
+      @include focusOutline(light);
+    }
+  }
+
+  .menu-item__level-1 {
+    & > .menu-item__link {
+      &:focus-visible {
+        @include focusOutline(light);
+      }
+    }
+
+    & > ul {
+      display: none;
+      background: $scmDropdown;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 180px;
+      padding: 8px 0;
+      border-bottom: 2px solid $preheaderBack;
+      z-index: 20;
+
+      a {
+        color: $scmChildLink;
+        display: inline-block;
+        padding: 4px 12px;
+
+        &:hover {
+          color: $scmChildLinkHover;
+        }
+
+        &:focus-visible {
+          @include focusOutline(dark);
+        }
+      }
     }
   }
 }

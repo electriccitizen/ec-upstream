@@ -14,9 +14,25 @@ Building the block and form in a custom module gives us full control over the
 rendered markup and, critically, lets us set **stable, unique IDs** on the
 input and submit elements — `site-search--fulltext` on the text input and
 `edit-site-search-submit` on the submit button. Those IDs are relied on by
-`search.js` (for managing `tabindex` during open/close) and by accessibility
-tooling. A Views-generated exposed form does not give us reliable control over
-those IDs.
+`block-search.js` (for managing `tabindex` and the focus trap during
+open/close) and by accessibility tooling. A Views-generated exposed form does
+not give us reliable control over those IDs.
+
+## Keyboard focus trap
+
+When the drawer is open, `block-search.js` installs a document-level keydown
+handler that:
+
+- Cycles **Tab** and **Shift+Tab** among the close button, the input, and the
+  submit button — keyboard focus cannot leave the drawer until the user
+  closes it.
+- Treats **Escape** as a click on the close button so keyboard users have a
+  non-mouse way out.
+
+The handler is registered on open and removed on close, so nothing runs while
+the drawer is shut. The open trigger is also tabindex-managed (`-1` while
+open, `0` while closed) since it's visually hidden behind the drawer overlay
+once the search slides down.
 
 ## Form submission
 

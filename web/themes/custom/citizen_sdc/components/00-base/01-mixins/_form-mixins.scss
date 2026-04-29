@@ -71,11 +71,8 @@
     box-shadow: inset 0 0 0 1px $inputBorderHover;
   }
 
-  &:focus {
+  &:focus-within {
     @include placeholderFocus;
-    outline: none;
-    box-shadow: inset 0 0 0 1px $inputBorderFocus;
-    border-color: $inputBorderFocus;
   }
 }
 

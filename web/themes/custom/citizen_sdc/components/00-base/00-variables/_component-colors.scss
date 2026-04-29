@@ -5,8 +5,10 @@
 @use 'colors' as *;
 @use 'sass:color';
 
-/* TEXT
+/* SYSTEM
 ---------------------- */
+$siteBack : $white;
+$unpub : $adminPink;
 $baseText : $black;
 $link : $blue;
 $activeLink : $black;
@@ -14,7 +16,10 @@ $hoverLink : $darkGray;
 $breadLink : $link;
 $breadLinkHover : $hoverLink;
 $breadCurrent : $darkGray;
-$quoteMark : $midGray;
+$borderRule : $black;
+$outlineLight : $gold;
+$outlineMid : $midGray;
+$outlineDark : $black;
 
 /* BUTTONS
 ---------------------- */
@@ -43,14 +48,12 @@ $cautionTextHover : $black;
 $cautionBackActive : $black;
 $cautionTextActive : $black;
 
-/* SYSTEM
+/* THEME REGIONS
 --------------------- */
-$siteBack : $white;
-$unpub : $adminPink;
-$preheaderBack : $darkGray;
+$preheaderBack : $darkBlue;
 $preheaderText : $white;
 $preheaderLink : $white;
-$preheaderLinkHover : $lightGray;
+$preheaderLinkHover : $gold;
 $headerBack : $offWhite;
 $prefooterBack : $darkGray;
 $prefooterText : $offWhite;
@@ -60,20 +63,21 @@ $footerBack : $black;
 $footerText : $offWhite;
 $footerLink : $adminGold;
 $footerLinkHover : $adminWhiteGold;
-$borderRule : $black;
-$hrPrimary  : $link;
+
+/* SITE SEARCH
+------------------- */
 $searchIcon : $white;
-$searchIconHover : $link;
+$searchIconHover : $gold;
 $searchDropBack : rgba(35, 35, 35, 0.97);
 $searchDropText : $white;
 $searchDropPlace : $white;
-$searchDropPlaceFocus : $white;
+$searchDropPlaceActive : $white;
 $searchDropInputBorder : $white;
-$searchDropInputFocus : $white;
+$searchDropInputHover : $gold;
 $searchDropSearchIcon : $white;
-$searchDropSearchIconHover : $link;
+$searchDropSearchIconHover : $gold;
 $searchClose : $black;
-$searchCloseHover : $white;
+$searchCloseHover : $gold;
 $searchCloseBack : $white;
 $searchCloseBackHover : $black;
 
@@ -129,9 +133,9 @@ $modalGalButtonBackHover : $black;
 $modalGalButtonShadow : $transBlack;
 $modalGalButtonShadowHover : $transBlack;
 
-/* NAVIGATION
+/* MENUS
 ---------------------- */
-//desktop
+//main menu desktop
 $mmTopLink : $black;
 $mmTopLinkHover : $link;
 $mmTopBackHover : transparent;
@@ -143,7 +147,7 @@ $mmChildActive : $link;
 $mmChildActiveHover : $hoverLink;
 $mmDropdown : $lightGray;
 
-//mobile
+//main menu mobile
 $menuToggle : $link;
 $menuToggleHover : $hoverLink;
 $mmMobileDrop : $white;
@@ -160,8 +164,14 @@ $mmMobileSecondary : $mmMobileTop;
 $mmMobileSecondaryActive : $mmMobileTopActive;
 $mmMobileSecondaryBack : $mmMobileDrop;
 
-/* SECTION MENU 
---------------------- */
+//secondary menu
+$scmTopLink : $preheaderLink;
+$scmTopLinkHover : $preheaderLinkHover;
+$scmDropdown : $offWhite;
+$scmChildLink : $link;
+$scmChildLinkHover : $hoverLink;
+
+// section menu
 $smMobileMenuToggle : $link;
 $smMobileMenuToggleHover : $black;
 $smBlockTitle : $black;
@@ -177,8 +187,7 @@ $smChildLinkHover : $hoverLink;
 $smChildActive : $link;
 $smChildActiveHover : $hoverLink;
 
-/* SUPPORT MENU 
---------------------- */
+// support book menu
 $spbMobileMenuToggle : $link;
 $spbMobileMenuToggleHover : $black;
 $spbBlockTitle : $black;
@@ -206,6 +215,11 @@ $pagerLinkActiveBack : $lightGray;
 $pagerLinkActiveHover : $black;
 $pagerLinkActiveBackHover : color.adjust($lightGray, $lightness:-12%);
 
+/* MISC WIDGETS
+------------------- */
+$quoteMark : $midGray;
+$hrPrimary  : $link;
+
 /* ACCORDIONS
 ------------------- */
 $accordHeader : $baseText;
@@ -228,7 +242,7 @@ $accordActiveBackHover : $darkGray;
 $alertUrgentBack : $red;
 $alertUrgentText : $white;
 $alertUrgentHover : rgba(255,255,255,0.25);
-$alertStandardBack : $yellow;
+$alertStandardBack : $gold;
 $alertStandardText : $black;
 $alertStandardHover : rgba(0,0,0,0.2);
 

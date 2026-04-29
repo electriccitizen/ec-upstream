@@ -202,8 +202,26 @@
   }
 }
 
+@mixin focusOutline($hue) {
+  $color: null;
+  @if $hue == light {
+    $color: $outlineLight;
+  } @else if $hue == middle {
+    $color: $outlineMid;
+  } @else if $hue == dark {
+    $color: $outlineDark;
+  } @else {
+    @error "focusOutline: unknown $hue '#{$hue}'. Use light, middle, or dark.";
+  }
+
+  outline: 1px solid $color;
+  outline-offset: 2px;
+}
+
 @mixin image100W {
   display: block;
   width: 100%;
   height: auto;
 }
+
+
