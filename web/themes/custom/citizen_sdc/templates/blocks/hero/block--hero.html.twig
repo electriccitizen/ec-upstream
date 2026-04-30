@@ -1,0 +1,24 @@
+{% extends 'block.html.twig' %}
+
+{% block blockContent %}
+  {% set videos = [] %}
+  {% if content.field_video['#items'] is defined and content.field_video['#items']|length %}
+    {% for item in content.field_video['#items'] %}
+      {% set file = item.entity %}
+      {% if file %}
+        {% set videos = videos|merge([{
+          url: file.fileuri|file_url,
+          mime: file.filemime.value,
+        }]) %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {{ include('citizen_sdc:block-hero', {
+    eyebrow: content.field_eyebrow|render|striptags|trim,
+    headline: content.field_headline|render|striptags|trim,
+    videos: videos,
+    image: videos is empty ? content.field_image : null,
+    link: content.field_link,
+  }, with_context = false) }}
+{% endblock %}

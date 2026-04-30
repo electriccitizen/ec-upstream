@@ -1,0 +1,27 @@
+component:
+  id: citizen_sdc:block-hero
+  label: 'Block Hero'
+  description: 'A hero block with a background image or video, headline, and call-to-action link.'
+  status: experimental
+
+props:
+  type: object
+  required:
+    - headline
+  properties:
+    eyebrow:
+      type: [string, 'null']
+      description: 'Optional intro text rendered above the headline (e.g. "Start Your Career in").'
+    headline:
+      type: string
+      description: 'Main hero headline text.'
+    videos:
+      type: array
+      description: 'Array of background video sources, each with url and mime keys. When non-empty, video is rendered and image is ignored.'
+    image:
+      type: object
+      description: 'Rendered media reference field (banner view mode). Used as the background when no video is supplied.'
+slots:
+  link:
+    title: 'Link'
+    description: 'Rendered field_link (CTA button).'

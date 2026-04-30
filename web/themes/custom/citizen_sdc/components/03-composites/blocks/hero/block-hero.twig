@@ -1,0 +1,40 @@
+<div class="hero__media">
+  {% if videos is not empty %}
+    <video class="hero__video" autoplay muted loop playsinline>
+      {% for v in videos %}
+        <source src="{{ v.url }}"{% if v.mime %} type="{{ v.mime }}"{% endif %}>
+      {% endfor %}
+    </video>
+  {% elseif image %}
+    <div class="hero__image">{{ image }}</div>
+  {% endif %}
+  <div class="hero__gradient" aria-hidden="true"></div>
+</div>
+
+{% if videos is not empty %}
+  <button type="button" class="hero__playpause" data-hero-playpause aria-label="{{ 'Pause background video'|t }}">
+    <span class="hero__playpause-icon hero__playpause-icon--pause" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" focusable="false">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="10" y1="8" x2="10" y2="16"/>
+        <line x1="14" y1="8" x2="14" y2="16"/>
+      </svg>
+    </span>
+    <span class="hero__playpause-icon hero__playpause-icon--play" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+        <circle cx="12" cy="12" r="10"/>
+        <polygon points="10,8 10,16 16.5,12"/>
+      </svg>
+    </span>
+  </button>
+{% endif %}
+
+<div class="hero__content">
+  {% if eyebrow %}
+    <p class="hero__eyebrow">{{ eyebrow }}</p>
+  {% endif %}
+  <h1 class="hero__headline">{{ headline }}</h1>
+  {% if link %}
+    <div class="hero__actions">{{ link }}</div>
+  {% endif %}
+</div>
