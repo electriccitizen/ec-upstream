@@ -383,7 +383,9 @@ display:
             image_loading:
               attribute: lazy
           group_column: target_id
-          group_columns: {  }
+          group_columns:
+            width: width
+            height: height
           group_rows: true
           delta_limit: 0
           delta_offset: 0
