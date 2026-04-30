@@ -5,6 +5,7 @@
 @use '../../../00-base/00-variables/colors' as *;
 @use '../../../00-base/00-variables/component-colors' as *;
 @use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
 
 .block--system-branding-block {
   // Leave room for search toggle and menu hamburger on mobile.
@@ -17,6 +18,26 @@
 
   a {
     display: block;
+
+    &:hover {
+      text-decoration: none;
+
+      img {
+        border-color: $borderRule;
+      }
+
+      .branding__site-name {
+        color: $black;
+
+        @include tab {
+          font-size: 4rem;
+        }
+      }
+    }
+
+    &:focus-visible {
+      @include focusOutline(dark);
+    }
 
     img {
       border: 1px solid transparent;
@@ -34,24 +55,6 @@
       font-size: 3rem;
       color: $white;
       display: none;
-    }
-
-    &:hover {
-      text-decoration: none;
-
-      img {
-        border-color: $borderRule;
-      }
-
-      .branding__site-name {
-        color: $black;
-      }
-    }
-
-    @include tab {
-      .branding__site-name {
-        font-size: 4rem;
-      }
     }
   }
 

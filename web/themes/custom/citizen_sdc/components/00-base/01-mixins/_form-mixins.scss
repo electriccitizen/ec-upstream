@@ -6,6 +6,7 @@
 @use '../00-variables/component-colors' as *;
 @use '../00-variables/fonts' as *;
 @use '../00-variables/units' as *;
+@use 'style-mixins' as *;
 
 @mixin placeholder {
   $placeTint: 1;
@@ -73,6 +74,10 @@
 
   &:focus-within {
     @include placeholderFocus;
+  }
+
+  &:focus-visible {
+    @include focusOutline(dark);
   }
 }
 

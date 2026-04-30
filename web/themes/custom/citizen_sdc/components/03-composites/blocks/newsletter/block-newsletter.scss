@@ -7,15 +7,20 @@
 @use '../../../00-base/01-mixins/breakpoint-mixins' as *;
 @use '../../../00-base/01-mixins/button-mixins' as *;
 @use '../../../00-base/01-mixins/form-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
 
 .block--newsletter {
   width: 100%;
 
   @include tab {
-    width: 33.33%;
+    width: calc((100% - 80px) / 3)
   }
 
-  .field.body {
+  h2.block__title {
+    margin-bottom: $spaceXxs;
+  }
+
+  .newsletter__intro {
     margin-bottom: $spaceMd;
 
     & > *:last-child {
@@ -32,34 +37,53 @@
     }
   }
 
-  #mc_embed_signup {
-    background: none;
-    font: inherit;
-    width: 100%;
+  .newsletter__form-embed {
+    #mc_embed_signup {
+      background: none;
+      font: inherit;
+      width: 100%;
+      margin-top: -($spaceSm);
+      max-width: 400px;
 
-    label {
-      display: none;
+      label {
+        display: none;
+      }
+
+      #mc-embedded-subscribe-form {
+        padding: 0;
+      }
+
+      #mce-EMAIL {
+        @include textInput;
+
+        & {
+          border-radius: 0;
+        }
+
+        &:focus-visible {
+          @include focusOutline(light);
+        }
+      }
+
+      #mc-embedded-subscribe {
+        @include submitButton;
+
+        & {
+          width: auto;
+          border-radius: 0;
+          max-width: 180px;
+        }
+
+        &:focus-visible {
+          @include focusOutline(light);
+        }
+      }
     }
 
-    #mc-embedded-subscribe-form {
-      padding: 0;
-    }
-
-    #mce-EMAIL {
-      @include textInput;
-      border-radius: 0;
-    }
-
-    #mc-embedded-subscribe {
-      @include submitButton;
-      width: auto;
-      border-radius: 0;
-    }
-  }
-
-  .ctct-form-custom {
-    .grecaptcha-badge {
-      display: none !important;
+    .ctct-form-custom {
+      .grecaptcha-badge {
+        display: none !important;
+      }
     }
   }
 }

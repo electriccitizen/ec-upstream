@@ -8,6 +8,7 @@
 @use 'animation-mixins' as *;
 @use 'general-mixins' as *;
 @use 'layout-mixins' as *;
+@use 'style-mixins' as *;
 
 @mixin button {
   background-color: $buttonBack;
@@ -38,6 +39,10 @@
     outline: 0;
     // Breathe scale — subtle grow on hover/focus.
     transform: scale(1.03);
+  }
+
+  &:focus-visible {
+    @include focusOutline(dark);
   }
 
   &:active {

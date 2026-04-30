@@ -1,8 +1,10 @@
 {% if intro %}
-  {{ intro }}
+  <div class="newsletter__intro">
+    {{ intro }}
+  </div>
 {% endif %}
 {% if form_embed %}
-  <div class="form-embed">
+  <div class="newsletter__form-embed">
     {% autoescape false %}
       {{- form_embed -}}
     {% endautoescape %}

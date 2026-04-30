@@ -40,6 +40,10 @@
       background-color: $menuToggleHover;
     }
 
+    &:focus-visible {
+      @include focusOutline(dark);
+    }
+
     &.block-menu__toggle--active:after {
       mask-image: url('close.svg');
       mask-size: 16px;
@@ -254,6 +258,12 @@
       }
     }
 
+    .menu-item__link,.menu-item__toggle {
+      &:focus-visible {
+        @include focusOutline(dark);
+      }
+    }
+
     // top level
     .menu-item__level-1 {
       &:hover,&:focus-within,&.menu-item--open {
@@ -330,9 +340,6 @@
         right: 0;
         text-indent: -9000px;
         font-size: 0;
-
-        // Mask on :after so the button's focus outline paints unclipped.
-        // Rotation transition lives here too so the outline doesn't rotate.
         &:after {
           content: '';
           position: absolute;

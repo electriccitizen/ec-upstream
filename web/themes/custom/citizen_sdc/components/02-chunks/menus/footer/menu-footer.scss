@@ -3,14 +3,20 @@
 ================= */
 
 @use '../../../00-base/00-variables/component-colors' as *;
+@use '../../../00-base/00-variables/units' as *;
 @use '../../../00-base/01-mixins/animation-mixins' as *;
 @use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
 
 .block-menu--footer {
   width: 100%;
 
   @include tab {
-    width: 33.33%;
+    width: calc((100% - 80px) / 3)
+  }
+
+  h2.block-menu__title {
+    margin-bottom: $spaceXxs;
   }
 }
 
@@ -20,12 +26,16 @@
   }
 
   .menu-item__link {
-    display: block;
+    display: inline-block;
     color: $prefooterLink;
 
     &:hover {
       color: $prefooterLinkHover;
       @include transAll(.3s);
+    }
+
+    &:focus-visible {
+      @include focusOutline(light);
     }
   }
 }

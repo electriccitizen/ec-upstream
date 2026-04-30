@@ -4,6 +4,7 @@
 
 @use '../../00-base/00-variables/component-colors' as *;
 @use '../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../00-base/01-mixins/style-mixins' as *;
 
 #back-to-top {
   opacity: 0;
@@ -15,20 +16,24 @@
   width: 60px;
   height: 60px;
   background-color: $link;
+
+  &:hover {
+    background-color: $hoverLink;
+  }
+
+  &:focus-visible {
+      @include focusOutline(light);
+    }
+
+  &.back-top-button--visible {
+    opacity: 1;
+    transition: opacity .75s ease;
+  }
   
   svg {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-  }
-
-  &:hover {
-    background-color: $hoverLink;
-  }
-
-  &.back-top-button--visible {
-    opacity: 1;
-    transition: opacity .75s ease;
   }
 }
