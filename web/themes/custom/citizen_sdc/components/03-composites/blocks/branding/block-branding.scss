@@ -8,7 +8,6 @@
 
 .block--system-branding-block {
   // Leave room for search toggle and menu hamburger on mobile.
-  width: calc(100% - 70px);
   position: relative;
   z-index: 10;
 
@@ -22,12 +21,12 @@
     img {
       border: 1px solid transparent;
       display: block;
-      width: 100%;
-      max-width: 160px;
+      width: 160px;
+      height: auto;
       margin-right: 4px;
 
       @include desk {
-        max-width: 100%;
+        width: 240px;
       }
     }
 

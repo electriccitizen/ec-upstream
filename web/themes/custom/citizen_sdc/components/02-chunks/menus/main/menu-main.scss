@@ -7,12 +7,6 @@
 @use '../../../00-base/01-mixins/breakpoint-mixins' as *;
 @use '../../../00-base/01-mixins/style-mixins' as *;
 
-//remove once we do header theming
-#block-menu-main {
-  position: relative;
-}
-
-
 /* MOBILE MENU TOGGLE
 ------------------ */
 .block-menu--main__toggle-wrapper {
@@ -28,6 +22,7 @@
     width: 32px;
     height: 32px;
     position: relative;
+    margin-right: -10px;
 
     // Mask on :after so the button's focus outline paints unclipped.
     &:after {

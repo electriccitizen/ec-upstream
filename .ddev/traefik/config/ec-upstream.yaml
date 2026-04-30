@@ -5,6 +5,15 @@
 
 http:
   routers:
+    ec-upstream-xhgui-80-http:
+      entrypoints:
+        - http-8143
+      rule: HostRegexp(`^ec-upstream\.ddev\.site$`)
+      
+      service: "ec-upstream-xhgui-80"
+      tls: false
+      # middlewares:
+      #   - "ec-upstream-redirectHttps"
     ec-upstream-web-80-http:
       entrypoints:
         - http-33000
@@ -23,16 +32,17 @@ http:
       tls: false
       # middlewares:
       #   - "ec-upstream-redirectHttps"
-    ec-upstream-xhgui-80-http:
+    
+    
+    ec-upstream-xhgui-80-https:
       entrypoints:
-        - http-8143
+        - http-8142
       rule: HostRegexp(`^ec-upstream\.ddev\.site$`)
       
       service: "ec-upstream-xhgui-80"
-      tls: false
-      # middlewares:
-      #   - "ec-upstream-redirectHttps"
-    
+      
+      tls: true
+      
     
     
     ec-upstream-web-80-https:
@@ -54,16 +64,6 @@ http:
       tls: true
       
     
-    ec-upstream-xhgui-80-https:
-      entrypoints:
-        - http-8142
-      rule: HostRegexp(`^ec-upstream\.ddev\.site$`)
-      
-      service: "ec-upstream-xhgui-80"
-      
-      tls: true
-      
-    
 
   middlewares:
     ec-upstream-redirectHttps:
@@ -72,6 +72,12 @@ http:
         permanent: true
 
   services:
+    ec-upstream-xhgui-80:
+      loadbalancer:
+        servers:
+          - url: http://ddev-ec-upstream-xhgui:80
+        
+    
     ec-upstream-web-80:
       loadbalancer:
         servers:
@@ -83,12 +89,6 @@ http:
           - url: http://ddev-ec-upstream-web:8025
         
     
-    
-    ec-upstream-xhgui-80:
-      loadbalancer:
-        servers:
-          - url: http://ddev-ec-upstream-xhgui:80
-        
     
     
 
