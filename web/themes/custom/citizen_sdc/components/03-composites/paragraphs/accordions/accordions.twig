@@ -12,13 +12,11 @@
         <h3 class="paragraph--accordions__heading">
           <button type="button" id="{{ toggle_id }}" class="paragraph--accordions__toggle" aria-controls="{{ panel_id }}" aria-expanded="false">
             <span class="paragraph--accordions__label">{{ item.header }}</span>
-            {# Single morphing SVG — vertical line is hidden via CSS when the
-               item is `.is-expanded`, turning the plus into a minus without
-               a second SVG in the markup. #}
-            <svg class="paragraph--accordions__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            {# Caret points down when collapsed; rotated 180deg via CSS when
+               `.is-expanded`. #}
+            <svg class="paragraph--accordions__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
               <circle cx="12" cy="12" r="10"/>
-              <line class="paragraph--accordions__icon-vertical" x1="12" y1="8" x2="12" y2="16"/>
-              <line x1="8" y1="12" x2="16" y2="12"/>
+              <polyline points="9,11 12,14 15,11"/>
             </svg>
           </button>
         </h3>

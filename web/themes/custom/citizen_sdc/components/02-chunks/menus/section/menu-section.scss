@@ -11,11 +11,19 @@
 
 
 #block-menu-section {
+  margin-bottom: $elementSpace;
+  
   .block-menu__title {
     display: block;
     padding: 2rem 3rem;
     background: $smBlockTitleBack;
     font-size: 2.75rem;
+
+    a {
+      &:focus-visible {
+        @include focusOutline(dark);
+      }
+    }
   }
 
   @include onlyMobile {
@@ -61,6 +69,10 @@
       &:hover:after {
         background-color: $smMobileMenuToggleHover;
         transition: background-color .3s ease;
+      }
+
+      &:focus-visible {
+        @include focusOutline(dark);
       }
 
       &.block-menu__toggle--active:after {
@@ -115,6 +127,10 @@
     .menu-item__link {
       display: block;
       transition: color .3s ease;
+
+      &:focus-visible {
+        @include focusOutline(dark);
+      }
     }
 
     .menu-item__toggle:after {
@@ -132,7 +148,7 @@
     }
 
     .menu-item__link {
-      display: block;
+      display: inline-block;
       padding: 1rem 5rem 1rem 3rem;
       color: $smTopLink;
 
@@ -160,11 +176,13 @@
 
       & {
         width: 64px;
-        height: 40px;
+        height: 41px;
+        top: 1rem;
+
         &:after {
           top: calc(50% - 8px);
           right: 30px;
-          mask-size: 16px;
+          mask-size: 12px;
           background-color: $smTopLink;
         }
       }
@@ -173,6 +191,10 @@
         &:after {
           background-color: $smTopLinkHover;
         }
+      }
+
+      &:focus-visible {
+        @include focusOutline(dark);
       }
     }
   }
@@ -187,7 +209,7 @@
     }
 
     .menu-item__link {
-      display: block;
+      display: inline-block;
       font-size: 2rem;
       padding: .5rem 5rem .5rem 5rem;
       color: $smChildLink;
@@ -220,7 +242,7 @@
         &:after {
           top: calc(50% - 7px);
           right: 31px;
-          mask-size: 14px;
+          mask-size: 12px;
           background-color: $smTopLink;
         }
       }

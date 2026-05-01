@@ -8,6 +8,7 @@
 @use '../../../00-base/01-mixins/animation-mixins' as *;
 @use '../../../00-base/01-mixins/breakpoint-mixins' as *;
 @use '../../../00-base/01-mixins/layout-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
 @use '../../../00-base/01-mixins/type-mixins' as *;
 
 .paragraph--accordions {
@@ -33,16 +34,17 @@
       align-items: center;
       gap: 1rem;
       scroll-margin-top: $spaceSm;
-      padding: 2rem 3.5rem;
+      padding: 2rem 0;
       color: $accordHeader;
       font-weight: $heavy;
       font-size: 2.5rem;
-      border: 2px solid $accordHeaderBorder;
-      margin-top: -2px; // collapse double borders between adjacent items
+      border-top: 0;
+      border-right: 0;
+      border-left: 0;
+      border-bottom: 1px solid $accordHeaderBorder;
       background: $accordHeaderBack;
 
       @include tab {
-        padding: 2rem 4.5rem;
         font-size: 2.75rem;
       }
 
@@ -52,6 +54,10 @@
         border-color: $accordHeaderBorderHover;
         @include transAll(.3s);
       }
+
+      &:focus-visible {
+        @include focusOutline(middle);
+      }
     }
 
     .paragraph--accordions__label {
@@ -60,8 +66,9 @@
 
     .paragraph--accordions__icon {
       flex: 0 0 auto;
-      width: 2.4rem;
-      height: 2.4rem;
+      width: 32px;
+      height: 32px;
+      transition: transform .3s ease-out;
     }
 
     .paragraph--accordions__panel {
@@ -83,9 +90,7 @@
     &.is-expanded {
       .paragraph--accordions__toggle {
         color: $accordActive;
-        background: $accordActiveBack;
-        border-color: $accordActiveBorder;
-        border-bottom: 0;
+        border-bottom-color: $accordActiveBorder;
 
         &:hover {
           color: $accordActiveHover;
@@ -99,9 +104,9 @@
         grid-template-rows: 1fr;
       }
 
-      // Hide the vertical line — single morphing SVG turns + into −.
-      .paragraph--accordions__icon-vertical {
-        display: none;
+      // Flip the caret to point up.
+      .paragraph--accordions__icon {
+        transform: rotate(180deg);
       }
     }
   }

@@ -176,8 +176,8 @@ $smMobileMenuToggle : $link;
 $smMobileMenuToggleHover : $black;
 $smBlockTitle : $black;
 $smBlockTitleHover : $hoverLink;
-$smBlockTitleBack : $lightGray;
-$smBack : $offWhite;
+$smBlockTitleBack : $lightGold;
+$smBack : $cream;
 $smTopLink : $link;
 $smTopLinkHover : $hoverLink;
 $smTopActive : $black;
@@ -222,20 +222,20 @@ $hrPrimary  : $link;
 
 /* ACCORDIONS
 ------------------- */
-$accordHeader : $baseText;
-$accordHeaderHover : $white;
-$accordHeaderBorder : $darkGray;
-$accordHeaderBorderHover : $darkGray;
-$accordHeaderBack : $siteBack;
-$accordHeaderBackHover : $darkGray;
-$accordContentBack : $siteBack;
+$accordHeader : $link;
+$accordHeaderHover : $hoverLink;
+$accordHeaderBorder : $link;
+$accordHeaderBorderHover : $hoverLink;
+$accordHeaderBack : transparent;
+$accordHeaderBackHover : transparent;
+$accordContentBack : transparent;
 $accordContentBorder : transparent;
-$accordActive : $white;
-$accordActiveHover : $white;
-$accordActiveBorder : $black;
-$accordActiveBorderHover : $darkGray;
-$accordActiveBack : $black;
-$accordActiveBackHover : $darkGray;
+$accordActive : $baseText;
+$accordActiveHover : $link;
+$accordActiveBorder : $baseText;
+$accordActiveBorderHover : $link;
+$accordActiveBack : transparent;
+$accordActiveBackHover : transparent;
 
 /* ALERTS
 ------------------- */
