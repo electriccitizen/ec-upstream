@@ -106,14 +106,69 @@
     }
 
     figure.drupal-media {
-      margin: 0 0 $spaceXs;
+      // 2rem top + 32px bottom on every embed (CKE-only — keeps embeds off
+      // the bottom of preceding lists). Front-end has no top margin.
+      margin: 2rem 0 32px;
 
+      // Floated `display: table` figures (CKE5 default) shrink-to-fit, and
+      // remote-video oEmbeds — which size via `padding-bottom: 56.25%` of
+      // parent width — collapse to 0×0. Forcing the inner remote-video
+      // article to 100% gives the aspect-ratio padding a width to compute
+      // against. Sized images survive via their intrinsic width; default
+      // images intentionally shrink (see the `:not([data-view-mode])`
+      // block below).
+      article.media-item--remote-video {
+        width: 100%;
+      }
+
+      // Default-size images: CKE5 strips `data-view-mode="default"` so
+      // these figures fall back to `.drupal-media.ck-widget { width: 100% }`
+      // and `.ck-content .drupal-media img { min-width: 100% }` from
+      // drupalmedia.css — which together upscale tiny images to the full
+      // editor width. Shrink figure + article + img to natural size.
+      &:not([data-view-mode]):has(.media-item--image) {
+        width: auto;
+
+        article {
+          width: auto;
+        }
+
+        img {
+          min-width: 0;
+          width: auto;
+          max-width: 100%;
+        }
+      }
+
+      // View-mode-driven sizing: figures carry data-view-mode set by the
+      // CKE5 drupalMedia plugin. The wider `figure.drupal-media[...]`
+      // selector beats the `.drupal-media.ck-widget` width:100% above.
+      &[data-view-mode='small'] {
+        width: 280px;
+        max-width: 100%;
+      }
+
+      &[data-view-mode='medium'] {
+        width: 480px;
+        max-width: 100%;
+      }
+
+      &[data-view-mode='large'] {
+        width: 640px;
+        max-width: 100%;
+      }
+
+      // 24px side gap when aligned, matching the front-side $spaceSm.
+      // `max-width: 50%` mirrors the front and overrides the view-mode
+      // `max-width: 100%` so aligned-large doesn't fill the editor.
       &.drupal-media-style-align-left {
-        margin-right: $spaceXs;
+        max-width: 50%;
+        margin-right: 24px;
       }
 
       &.drupal-media-style-align-right {
-        margin-left: $spaceXs;
+        max-width: 50%;
+        margin-left: 24px;
       }
 
       &.drupal-media-style-align-center {
@@ -148,29 +203,6 @@
         height: 100%;
       }
     }
-  }
-
-  .small {
-    width: 100%;
-    max-width: 280px;
-  }
-
-  .medium {
-    width: 100%;
-    max-width: 480px;
-  }
-
-  .large {
-    width: 100%;
-    max-width: 640px;
-  }
-
-  .full {
-    width: 100%;
-  }
-
-  .default.remote-video {
-    width: 100%;
   }
 
   a.ec-button {

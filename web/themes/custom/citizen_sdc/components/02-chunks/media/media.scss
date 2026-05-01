@@ -40,31 +40,6 @@ article.media-item {
       @include imageBase;
     }
 
-    &.align-left {
-      float: none;
-
-      @include desk {
-        max-width: 50%;
-        margin-right: $spaceMd;
-        float: left;
-      }
-    }
-
-    &.align-right {
-      float: none;
-
-      @include desk {
-        max-width: 50%;
-        margin-left: $spaceMd;
-        float: right;
-      }
-    }
-
-    &.align-center {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
     &.media-item--small {
       @include smallEmbed;
     }
@@ -79,6 +54,41 @@ article.media-item {
 
     &.media-item--default {
       @include defaultEmbed;
+    }
+
+    // Default-size remote_video has no intrinsic dimensions, so when the
+    // wrapper floats it shrink-to-fits and the aspect-ratio padding (56.25%
+    // of parent width) collapses to 0. Forcing 100% gives the float a width
+    // to size against; the align rule's max-width: 50% then caps it.
+    &.media-item--remote-video.media-item--default {
+      width: 100%;
+    }
+
+    // Align rules come after the size rules so the 50% cap from
+    // floated alignment beats the size-class `max-width: 100%`.
+    &.align-left {
+      float: none;
+
+      @include tab {
+        max-width: 50%;
+        margin-right: $spaceSm;
+        float: left;
+      }
+    }
+
+    &.align-right {
+      float: none;
+
+      @include tab {
+        max-width: 50%;
+        margin-left: $spaceSm;
+        float: right;
+      }
+    }
+
+    &.align-center {
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }
