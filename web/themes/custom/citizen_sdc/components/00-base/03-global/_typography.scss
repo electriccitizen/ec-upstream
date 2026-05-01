@@ -209,7 +209,7 @@ blockquote {
 
   ul,
   ol {
-    overflow: hidden;
+    display: flow-root;
     margin: $spaceXs 0 $spaceMd;
     padding: 0 0 0 3.5rem;
 
