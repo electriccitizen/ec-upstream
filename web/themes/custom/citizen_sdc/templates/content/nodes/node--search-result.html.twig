@@ -6,9 +6,10 @@
  * ship their own Drupal template override at
  * `node--[type]--search-result.html.twig`.
  *
- * The highlighted snippet comes from Search API's `search_api_excerpt` field
- * (added to the search_result view mode's view display config per content
- * type).
+ * The meta description comes from `field_meta_description`, rendered by the
+ * per-bundle `search_result` view display. The site-search highlighting JS
+ * targets the `.node-search-result__meta-description` selector that the SDC
+ * wraps around it.
  */
 #}
 {{ include('citizen_sdc:node-search-result-base', {
@@ -18,5 +19,5 @@
   url: url,
   title_attr: title_attributes,
   content_type_label: node.type.entity.label,
-  snippet: content.search_api_excerpt,
+  meta_description: content.field_meta_description,
 }, with_context = false) }}

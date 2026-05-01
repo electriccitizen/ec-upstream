@@ -2,5 +2,16 @@
    NODE SEARCH RESULT BASE
 =================== */
 
-// Content-type-specific search-result styling lives in each node-[content-type]-search-result SDC.
-// This base file can hold shared search-result styling if it emerges.
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/type-mixins' as *;
+
+.node-search-result {
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__meta {
+    @include metaText;
+    margin-bottom: 2rem;
+  }
+}

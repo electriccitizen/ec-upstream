@@ -292,7 +292,12 @@ display:
       style:
         type: default
       row:
-        type: fields
+        type: search_api
+        options:
+          view_modes:
+            'entity:node':
+              landing_page: search_result
+              page: search_result
       query:
         type: search_api_query
         options:
@@ -425,17 +430,10 @@ display:
           grouping: {  }
           row_class: ''
           default_row_class: true
-      row:
-        type: fields
-        options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
       defaults:
         title: false
         style: false
-        row: false
+        row: true
         filters: false
         filter_groups: false
       display_description: ''

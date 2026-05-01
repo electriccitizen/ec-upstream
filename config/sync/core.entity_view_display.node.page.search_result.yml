@@ -24,26 +24,15 @@ mode: search_result
 content:
   field_meta_description:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 101
-    region: content
-  field_search_keywords:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 102
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
     region: content
 hidden:
   body: true
   field_image: true
   field_paragraphs: true
+  field_search_keywords: true
+  links: true
   search_api_excerpt: true
