@@ -1,0 +1,72 @@
+/* =================
+   VIEWS — SUPPORT SEARCH FORM
+=================== */
+
+@use '../../../../00-base/00-variables/colors' as *;
+@use '../../../../00-base/00-variables/component-colors' as *;
+@use '../../../../00-base/00-variables/units' as *;
+@use '../../../../00-base/01-mixins/general-mixins' as *;
+
+.views-form--support-search {
+  position: relative;
+  margin-top: $spaceSm;
+
+  #views-form-wrapper {
+    flex-wrap: nowrap;
+    gap: 0 2rem;
+  }
+
+  .js-form-type--textfield {
+    width: 100%;
+    max-width: 100%;
+
+    label {
+      @include visuallyHidden;
+    }
+
+    input {
+      padding-right: 80px;
+    }
+  }
+
+  .form-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: $white;
+
+     input.form-submit.button {
+      text-indent: -9000px;
+      width: 30px;
+      min-width: 30px;
+      height: 44px;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      right: 16px;
+      background-color: $buttonBack;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: 24px;
+      mask-image: url(./search-icon.svg);
+
+      &:hover {
+        background-color: $buttonBackHover;
+      }
+
+      &:active {
+        background-color: $buttonBackActive;
+      }
+
+      &.views-submit {
+        
+      }
+
+      &.views-reset {
+        right: 16px;
+        mask-image: url(./close-icon.svg);
+      }
+    }
+  }
+}

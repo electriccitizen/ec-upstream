@@ -9,11 +9,7 @@
 @use '../../../00-base/01-mixins/style-mixins' as *;
 
 .block-menu--footer {
-  width: 100%;
-
-  @include tab {
-    width: calc((100% - 80px) / 3)
-  }
+  grid-area: menu;
 
   h2.block-menu__title {
     margin-bottom: $spaceXxs;

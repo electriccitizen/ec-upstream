@@ -9,12 +9,12 @@
 @use '../../../00-base/01-mixins/form-mixins' as *;
 @use '../../../00-base/01-mixins/style-mixins' as *;
 
+.block--2 {
+  grid-area: newsletter;
+}
+
 .block--newsletter {
   width: 100%;
-
-  @include tab {
-    width: calc((100% - 80px) / 3)
-  }
 
   h2.block__title {
     margin-bottom: $spaceXxs;

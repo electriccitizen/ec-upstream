@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["block-about.scss","../../../../00-base/01-mixins/_breakpoint-mixins.scss","../../../../00-base/00-variables/_units.scss"],"names":[],"mappings":"AAOA,UACE,WCKA,qCDNF,UAII,6BAGF,0BACE,cEQQ","file":"block-about.css"}
+{"version":3,"sourceRoot":"","sources":["block-about.scss","../../../../00-base/00-variables/_units.scss"],"names":[],"mappings":"AAOA,UACE,gBAEA,0BACE,cCYQ","file":"block-about.css"}

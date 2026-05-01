@@ -1,0 +1,13 @@
+{#
+  Per-view override for the support_search exposed form. Hands off to
+  `citizen_sdc:views-support-search-form`, which wraps `views-form-base`
+  with a BEM hook so support-search-specific form CSS attaches when the
+  form renders (before any results have come back).
+#}
+{% set q_slot %}{% if q is not empty %}{{ q }}{% endif %}{% endset %}
+{% set form_slot %}{{ form }}{% endset %}
+
+{{ include('citizen_sdc:views-support-search-form', {
+  q: q_slot,
+  form: form_slot,
+}, with_context = false) }}

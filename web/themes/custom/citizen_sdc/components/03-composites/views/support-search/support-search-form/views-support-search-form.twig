@@ -1,0 +1,7 @@
+{% set wrapper_attr = attr ?: create_attribute() %}
+<div{{ wrapper_attr.addClass(['views-form', 'views-form--support-search']) }}>
+  {{ include('citizen_sdc:views-form-base', {
+    q: q,
+    form: form,
+  }, with_context = false) }}
+</div>

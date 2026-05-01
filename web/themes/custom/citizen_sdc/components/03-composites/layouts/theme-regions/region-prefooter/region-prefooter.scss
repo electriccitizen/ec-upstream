@@ -29,12 +29,15 @@
   }
 
   & > div {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: $spaceMd 40px;
+    @include tab {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        "about  menu newsletter"
+        "social menu newsletter";
+      gap: 4rem;
+    }
 
     & > * h2.block-title {
       margin-bottom: 1.5rem;

@@ -4,14 +4,40 @@
 
 @use '../../../00-base/00-variables/component-colors' as *;
 @use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/style-mixins' as *;
+
+.block--7 {
+  grid-area: social;
+
+  .platforms .platforms__link {
+    svg {
+      circle {
+        fill: $prefooterLink;
+      }
+      path {
+        fill: $prefooterBack;
+      }
+    }
+
+    &:hover {
+      
+      svg {
+        circle {
+          fill: $prefooterLinkHover;
+        }
+        path {
+          fill: $prefooterBack;
+        }
+      }
+    }
+
+    &:focus-visible {
+      @include focusOutline(dark);
+    }
+  }
+}
 
 .block--social-links {
-  width: 100%;
-
-  @include tab {
-    max-width: 320px;
-    order: 2;
-  }
 
   @include onlySmall {
     .platforms {
@@ -20,14 +46,18 @@
   }
 
   .platforms__link {
-    color: $footerLink;
+    color: $link;
 
     &:hover {
-      color: $footerLinkHover;
+      color: $hoverLink;
+    }
+
+    &:focus-visible {
+      @include focusOutline(dark);
     }
 
     svg circle {
-      fill: $prefooterBack;
+      fill: currentColor;
     }
   }
 }

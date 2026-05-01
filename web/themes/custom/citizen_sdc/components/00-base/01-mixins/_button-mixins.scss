@@ -78,19 +78,19 @@
 
 @mixin outlineButton($outlineColor) {
   @include button;
-  background: transparent;
+  background-color: transparent;
   border: 1px solid $outlineColor;
   color: $outlineColor;
 
   &:hover {
-    background: $buttonBackHover;
+    background-color: $buttonBackHover;
     color: $buttonTextHover;
     border-color: $buttonBackHover;
     @include transAll(.3s);
   }
 
   &:active {
-    background: $buttonBackActive;
+    background-color: $buttonBackActive;
     color: $buttonTextActive;
     border-color: $buttonBackActive;
   }
@@ -108,7 +108,7 @@
   @include button;
 
   & {
-    background: $submitBack;
+    background-color: $submitBack;
     color: $submitText;
     padding: $submitPadding;
     height: 44px;
@@ -122,13 +122,13 @@
   }
 
   &:hover {
-    background: $submitBackHover;
+    background-color: $submitBackHover;
     border-color: $submitBackHover;
     color: $submitTextHover;
   }
 
   &:active {
-    background: $submitBackActive;
+    background-color: $submitBackActive;
     border-color: $submitBackActive;
     color: $submitTextActive;
   }
@@ -138,19 +138,19 @@
   @include submitButton;
 
   & {
-    background: $cautionBack;
+    background-color: $cautionBack;
     color: $cautionText;
     border-color: $cautionBack;
   }
 
   &:hover {
-    background: $cautionBackHover;
+    background-color: $cautionBackHover;
     border-color: $cautionBackHover;
     color: $cautionTextHover;
   }
 
   &:active {
-    background: $cautionBackActive;
+    background-color: $cautionBackActive;
     border-color: $cautionBackActive;
     color: $cautionTextActive;
   }
@@ -160,19 +160,19 @@
   @include submitButton;
 
   & {
-    background: $resetBack;
+    background-color: $resetBack;
     color: $resetText;
     border-color: $resetBack;
   }
 
   &:hover {
-    background: $resetBackHover;
+    background-color: $resetBackHover;
     border-color: $resetBackHover;
     color: $resetTextHover;
   }
 
   &:active {
-    background: $resetBackActive;
+    background-color: $resetBackActive;
     border-color: $resetBackActive;
     color: $resetTextActive;
   }
