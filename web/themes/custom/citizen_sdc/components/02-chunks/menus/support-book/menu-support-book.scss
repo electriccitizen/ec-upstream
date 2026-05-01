@@ -9,14 +9,21 @@
 @use '../../../00-base/01-mixins/style-mixins' as *;
 @use '../../../00-base/01-mixins/type-mixins' as *;
 
+
 #block-menu-support-book {
   margin-bottom: $elementSpace;
   
   .block-menu__title {
     display: block;
     padding: 2rem 3rem;
-    background: $spbBlockTitleBack;
+    background: $smBlockTitleBack;
     font-size: 2.75rem;
+
+    a {
+      &:focus-visible {
+        @include focusOutline(dark);
+      }
+    }
   }
 
   @include onlyMobile {
@@ -29,7 +36,7 @@
     display: flex;
     justify-content: space-between;
     padding: 2rem 3rem;
-    background: $spbBlockTitleBack;
+    background: $smBlockTitleBack;
 
     @include desk {
       display: none;
@@ -52,7 +59,7 @@
         content: '';
         position: absolute;
         inset: 0;
-        background-color: $spbMobileMenuToggle;
+        background-color: $smMobileMenuToggle;
         mask-image: url('hamburger.svg');
         mask-repeat: no-repeat;
         mask-size: 24px;
@@ -60,8 +67,12 @@
       }
 
       &:hover:after {
-        background-color: $spbMobileMenuToggleHover;
+        background-color: $smMobileMenuToggleHover;
         transition: background-color .3s ease;
+      }
+
+      &:focus-visible {
+        @include focusOutline(dark);
       }
 
       &.block-menu__toggle--active:after {
@@ -82,7 +93,7 @@
   position: relative;
   z-index: 2;
   flex-direction: column;
-  background: $spbBack;
+  background: $smBack;
   @include mobileMenuDrawer;
 
   @include desk {
@@ -105,7 +116,7 @@
     position: relative;
     
     &.menu-item--open {
-      .menu-item__toggle {
+      & > .menu-item__toggle {
         &:after {
           transform: rotate(180deg);
           transition: transform .3s ease, background-color .3s ease;
@@ -116,6 +127,10 @@
     .menu-item__link {
       display: block;
       transition: color .3s ease;
+
+      &:focus-visible {
+        @include focusOutline(dark);
+      }
     }
 
     .menu-item__toggle:after {
@@ -133,24 +148,24 @@
     }
 
     .menu-item__link {
-      display: block;
+      display: inline-block;
       padding: 1rem 5rem 1rem 3rem;
-      color: $spbTopLink;
+      color: $smTopLink;
 
       &:hover {
-        color: $spbTopLinkHover;
+        color: $smTopLinkHover;
       }
 
       &.menu-item--active-trail {
         .menu-item__toggle {
           &:hover {
             &:after {
-              background-color: $spbTopActiveHover;
+              background-color: $smTopActiveHover;
             }
           }
 
           &:after {
-            background-color: $spbTopActive;
+            background-color: $smTopActive;
           }
         }
       }
@@ -161,19 +176,25 @@
 
       & {
         width: 64px;
-        height: 40px;
+        height: 41px;
+        top: 1rem;
+
         &:after {
           top: calc(50% - 8px);
           right: 30px;
-          mask-size: 16px;
-          background-color: $spbTopLink;
+          mask-size: 12px;
+          background-color: $smTopLink;
         }
       }
 
       &:hover {
         &:after {
-          background-color: $spbTopLinkHover;
+          background-color: $smTopLinkHover;
         }
+      }
+
+      &:focus-visible {
+        @include focusOutline(dark);
       }
     }
   }
@@ -188,25 +209,25 @@
     }
 
     .menu-item__link {
-      display: block;
+      display: inline-block;
       font-size: 2rem;
       padding: .5rem 5rem .5rem 5rem;
-      color: $spbChildLink;
+      color: $smChildLink;
 
       &:hover {
-        color: $spbChildLinkHover;
+        color: $smChildLinkHover;
       }
 
       &.menu-item--active-trail {
         .menu-item__toggle {
           &:hover {
             &:after {
-              background-color: $spbChildActiveHover;
+              background-color: $smChildActiveHover;
             }
           }
 
           &:after {
-            background-color: $spbChildActive;
+            background-color: $smChildActive;
           }
         }
       }
@@ -221,14 +242,14 @@
         &:after {
           top: calc(50% - 7px);
           right: 31px;
-          mask-size: 14px;
-          background-color: $spbTopLink;
+          mask-size: 12px;
+          background-color: $smTopLink;
         }
       }
 
       &:hover {
         &:after {
-          background-color: $spbTopLinkHover;
+          background-color: $smTopLinkHover;
         }
       }
     }
