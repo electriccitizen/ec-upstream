@@ -2,29 +2,19 @@
    VIEWS — SUPPORT SEARCH
 =================== */
 
-@use '../../../../00-base/00-variables/colors' as *;
-@use '../../../../00-base/00-variables/component-colors' as *;
-@use '../../../../00-base/00-variables/fonts' as *;
 @use '../../../../00-base/00-variables/units' as *;
-@use '../../../../00-base/01-mixins/general-mixins' as *;
-@use '../../../../00-base/01-mixins/layout-mixins' as *;
+@use '../../../../00-base/01-mixins/style-mixins' as *;
 
 .block--views-blocksupport-search-search-results {
-  .view__content,
-  .view__empty {
-    @include auto;
-    margin-bottom: $elementSpace;
-    max-width: $textMax;
-    width: 100%;
-  }
-
   .views-row {
-    &:not(:last-child) {
-      margin-bottom: $spaceSm;
-    }
-
     .views-field-title {
       margin-bottom: $spaceXxs;
+      
+      a {
+        &:focus-visible {
+          @include focusOutline(dark);
+        }
+      }
     }
   }
 }
