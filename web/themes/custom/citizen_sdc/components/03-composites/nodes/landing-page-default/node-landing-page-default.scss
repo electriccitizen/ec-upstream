@@ -18,14 +18,23 @@
   }
 
   .block-field--title {
-    margin-bottom: $elementSpace;
+    max-width: $contentStopPadding;
+    padding: 0 $siteMargin;
+    margin: 0 auto $elementSpace;
+
     .node-title {
       text-align: center;
     }
   }
 
-  .block-field--body {
+  #node-section-2 {
+    max-width: $contentStopPadding;
+    padding: 0 $siteMargin;
     @include auto;
+  }
+
+  .block-field--body {
     max-width: $textMax;
+    margin: 0 auto $elementSpace;
   }
 }

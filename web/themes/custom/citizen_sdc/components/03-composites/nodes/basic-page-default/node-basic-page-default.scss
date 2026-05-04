@@ -10,7 +10,8 @@
   margin-bottom: $elementSpace;
 
   #node-section-1,#node-section-2 {
-    max-width: $contentStop;
+    max-width: $contentStopPadding;
+    padding: 0 $siteMargin;
     margin: 0 auto $elementSpace;
   }
 

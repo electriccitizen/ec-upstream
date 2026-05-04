@@ -10,11 +10,12 @@
 
 
 .node-content--bios {
-  margin-bottom: $elementSpace;
+  max-width: $contentStopPadding;
+  padding: 0 $siteMargin;
+  @include auto;
 
   .node-content__section {
-    max-width: $textMax;
-    @include auto;
+    margin-bottom: $elementSpace;
   }
 
   .block--system-breadcrumb-block {
@@ -23,11 +24,7 @@
 
   .block-field--field-headshot {
     max-width: 320px;
-    @include auto;
-
-    @include tab {
-      @include edgeReset;
-    }
+    margin-bottom: $elementSpace;
 
     img {
       @include image100W;
@@ -35,22 +32,15 @@
   }
 
   .block-field--title {
-    @include tab {
-      text-align: left;
-    }
+    margin-bottom: $elementSpace;
   }
 
   .block-field--field-position {
     @include heading4;
-    margin-top: $spaceSm;
-    text-align: center;
 
-    @include tab {
-      text-align: left;
-    }
-
-    &:not(:last-child) {
-      margin-bottom: $spaceMd;
+    & {
+      margin-top: -($spaceSm);
+      margin-bottom: $elementSpace;
     }
   }
 

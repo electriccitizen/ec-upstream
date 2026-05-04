@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["layout-section-simple.scss"],"names":[],"mappings":"AAWA,kCACE,oBAKF,+DACE,iBAQF,8EACE","file":"layout-section-simple.css"}
+{"version":3,"sourceRoot":"","sources":["layout-section-simple.scss","../../../00-base/00-variables/_units.scss"],"names":[],"mappings":"AAWA,kCACE,oBAKF,+DACE,iBAQF,8EACE,cCnBa","file":"layout-section-simple.css"}

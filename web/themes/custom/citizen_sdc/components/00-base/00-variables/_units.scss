@@ -3,6 +3,15 @@
 ======================= */
 
 $em-base: 8px;
+$siteMargin: 3rem;
+$formElementSpace: 3rem;
+$inputBorderWidth: 1px;
+$elementSpace: 5rem;
+$buttonPadding: 2rem 3.5rem;
+$submitPadding: 0 2rem;
+$sideBar: 300px;
+$sectionGutter: 40px;
+$selectInput: 240px;
 
 /* BREAKPOINT VARIABLES
 ------------------------ */
@@ -11,6 +20,7 @@ $tab: 800px;
 $desk: 984px;
 $deskMenu: 1020px;
 $contentStop: 1200px;
+$contentStopPadding: calc(#{$contentStop} + 2 * #{$siteMargin});
 $largeScreen: 1600px;
 $textMax: 800px;
 $onlyTab: $tab $desk - 1px;
@@ -27,16 +37,3 @@ $spaceSm : 3rem;
 $spaceMd : 4rem;
 $spaceLg : 6rem;
 $spaceXl : 9rem;
-
-$siteMargin: 3rem;
-
-$formElementSpace: $spaceMd;
-$inputBorderWidth: 1px;
-$elementSpace: $spaceLg;
-
-$buttonPadding: 2rem 3.5rem;
-$submitPadding: 0 2rem;
-
-$sideBar: 300px;
-$sectionGutter: 40px;
-$selectInput: 240px;
