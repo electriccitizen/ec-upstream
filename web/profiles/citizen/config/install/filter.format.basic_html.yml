@@ -3,10 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.full
-    - core.entity_view_mode.media.large_embed
-    - core.entity_view_mode.media.medium_embed
-    - core.entity_view_mode.media.small_embed
+    - core.entity_view_mode.media.large
+    - core.entity_view_mode.media.medium
+    - core.entity_view_mode.media.small
   module:
     - editor
     - linkit
@@ -102,10 +101,9 @@ filters:
       default_view_mode: default
       allowed_view_modes:
         default: default
-        full: full
-        large_embed: large_embed
-        medium_embed: medium_embed
-        small_embed: small_embed
+        large: large
+        medium: medium
+        small: small
       allowed_media_types:
         document: document
         image: image
