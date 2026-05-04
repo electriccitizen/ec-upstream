@@ -1,0 +1,25 @@
+uuid: 55104d34-5c22-4ab2-b092-281a1fd9227f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - citizen_sdc
+_core:
+  default_config_hash: 9NbN6s35sLKnO8KhDJKCKxTKAnNnRo69nxpk-LzaMXM
+id: citizen_sdc_branding
+theme: citizen_sdc
+region: header
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

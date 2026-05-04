@@ -1,0 +1,27 @@
+uuid: d56754f3-3cab-4ac8-b1a3-f2c7bf60db1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.field_video
+  module:
+    - file
+id: block_content.hero.field_video
+field_name: field_video
+entity_type: block_content
+bundle: hero
+label: 'Background video'
+description: 'Optional background video. Upload up to three formats (e.g. mp4, webm, mov) for browser compatibility. When supplied, the video replaces the background image.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'hero/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'mp4 webm mov'
+  max_filesize: ''
+  description_field: false
+field_type: file

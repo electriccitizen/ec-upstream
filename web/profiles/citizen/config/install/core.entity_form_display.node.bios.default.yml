@@ -7,18 +7,17 @@ dependencies:
     - field.field.node.bios.field_bio_order
     - field.field.node.bios.field_email
     - field.field.node.bios.field_first_name
-    - field.field.node.bios.field_image
+    - field.field.node.bios.field_headshot
     - field.field.node.bios.field_last_name
-    - field.field.node.bios.field_list_widget
-    - field.field.node.bios.field_metatags
+    - field.field.node.bios.field_meta_description
     - field.field.node.bios.field_phone
     - field.field.node.bios.field_position
+    - image.style.thumbnail
     - node.type.bios
   module:
     - allowed_formats
     - field_group
-    - media_library
-    - metatag
+    - focal_point
     - telephone
     - text
 third_party_settings:
@@ -30,7 +29,7 @@ third_party_settings:
       label: 'Contact Information'
       region: content
       parent_name: ''
-      weight: 6
+      weight: 7
       format_type: details
       format_settings:
         classes: ''
@@ -47,7 +46,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 5
+    weight: 6
     region: content
     settings:
       rows: 9
@@ -56,11 +55,11 @@ content:
       show_summary: false
     third_party_settings:
       allowed_formats:
-        hide_help: '0'
-        hide_guidelines: '0'
+        hide_help: '1'
+        hide_guidelines: '1'
   field_bio_order:
     type: number
-    weight: 3
+    weight: 4
     region: content
     settings:
       placeholder: ''
@@ -81,12 +80,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_image:
-    type: media_library_widget
+  field_headshot:
+    type: image_focal_point
     weight: 0
     region: content
     settings:
-      media_types: {  }
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
     third_party_settings: {  }
   field_last_name:
     type: string_textfield
@@ -96,13 +98,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_metatags:
-    type: metatag_firehose
-    weight: 7
+  field_meta_description:
+    type: string_textarea
+    weight: 3
     region: content
     settings:
-      sidebar: true
-      use_details: true
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_phone:
     type: telephone_default
@@ -113,7 +115,7 @@ content:
     third_party_settings: {  }
   field_position:
     type: string_textfield
-    weight: 4
+    weight: 5
     region: content
     settings:
       size: 60
@@ -128,7 +130,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_list_widget: true
   path: true
   promote: true
   sticky: true

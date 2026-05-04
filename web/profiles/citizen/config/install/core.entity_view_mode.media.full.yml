@@ -8,5 +8,6 @@ _core:
   default_config_hash: ZsvgY8rnPw5m0OnMMlI0iib1NOaLV9Sg5dO-PRMsNXM
 id: media.full
 label: Full
+description: ''
 targetEntityType: media
 cache: true

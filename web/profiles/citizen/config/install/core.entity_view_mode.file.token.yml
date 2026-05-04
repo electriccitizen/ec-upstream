@@ -8,5 +8,6 @@ _core:
   default_config_hash: NyjQSQbJNUh1aS8HFT0cwRGdpxECYp0tSJW3EahAjjE
 id: file.token
 label: Token
+description: ''
 targetEntityType: file
 cache: true

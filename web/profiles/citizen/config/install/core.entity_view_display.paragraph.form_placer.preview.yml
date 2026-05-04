@@ -22,10 +22,12 @@ bundle: form_placer
 mode: preview
 content:
   field_form:
-    type: webform_entity_reference_entity_view
+    type: webform_entity_reference_link
     label: hidden
     settings:
-      source_entity: true
+      label: '[webform:title]'
+      dialog: ''
+      attributes: {  }
     third_party_settings: {  }
     weight: 0
     region: content

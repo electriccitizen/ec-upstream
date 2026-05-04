@@ -76,10 +76,12 @@ display:
           batch: true
           batch_size: 50
           form_step: true
+          ajax_loader: false
           buttons: false
           action_title: Action
-          clear_on_exposed: false
-          force_selection_info: false
+          clear_on_exposed: true
+          show_multipage_selection_box: default
+          show_select_all: default
           selected_actions:
             6:
               action_id: views_bulk_operations_delete_entity
@@ -248,6 +250,15 @@ display:
             date_format: short
             custom_date_format: ''
             timezone: ''
+            tooltip:
+              date_format: ''
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
         operations:
           id: operations
           table: node
@@ -301,6 +312,7 @@ display:
       pager:
         type: full
         options:
+          pagination_heading_level: h4
           items_per_page: 50
           tags:
             next: 'Next ›'
@@ -422,8 +434,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -465,8 +475,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -551,6 +559,7 @@ display:
           empty_table: true
           caption: ''
           description: ''
+          class: ''
       row:
         type: fields
       query:

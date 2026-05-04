@@ -1,0 +1,17 @@
+uuid: b181be7f-d2d8-4984-99d5-a5e9f634bc6c
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+id: layout_section_simple
+label: 'Layout Section Simple'
+icon_uuid: null
+icon_default: null
+description: 'Single or double column layout with no additional fields.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: true
+    available_layouts:
+      layout_onecol: 'One column'
+      layout_twocol_section: 'Two column'

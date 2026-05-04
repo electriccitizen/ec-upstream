@@ -1,0 +1,29 @@
+uuid: bce2a8af-7e60-4d3c-bb66-bb0b78b01528
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.field_image
+    - media.type.image
+id: block_content.hero.field_image
+field_name: field_image
+entity_type: block_content
+bundle: hero
+label: 'Background image'
+description: 'Background image for the hero. Used when no background video is supplied.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

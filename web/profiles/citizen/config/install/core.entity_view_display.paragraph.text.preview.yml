@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.text.field_long_text
-    - field.field.paragraph.text.field_widget_title
     - paragraphs.paragraphs_type.text
   module:
     - layout_builder
@@ -22,12 +21,12 @@ bundle: text
 mode: preview
 content:
   field_long_text:
-    type: text_default
-    label: inline
-    settings: {  }
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 180
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
-  field_widget_title: true
   search_api_excerpt: true

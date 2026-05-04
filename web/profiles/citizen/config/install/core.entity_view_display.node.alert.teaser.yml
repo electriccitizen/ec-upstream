@@ -1,0 +1,35 @@
+uuid: 4666957e-34d6-4bdc-a7a0-46c068cb4b74
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.alert.field_alert_text
+    - field.field.node.alert.field_display_range
+    - field.field.node.alert.field_urgency
+    - node.type.alert
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.alert.teaser
+targetEntityType: node
+bundle: alert
+mode: teaser
+content:
+  field_alert_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_display_range: true
+  field_urgency: true
+  links: true
+  search_api_excerpt: true

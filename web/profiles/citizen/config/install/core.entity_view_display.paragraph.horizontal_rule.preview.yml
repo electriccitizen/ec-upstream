@@ -1,0 +1,29 @@
+uuid: cc727f92-0660-4506-932b-90338f1616c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.horizontal_rule.field_color
+    - paragraphs.paragraphs_type.horizontal_rule
+  module:
+    - layout_builder
+    - options
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.horizontal_rule.preview
+targetEntityType: paragraph
+bundle: horizontal_rule
+mode: preview
+content:
+  field_color:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -5,8 +5,9 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_image
-    - field.field.node.page.field_metatags
+    - field.field.node.page.field_meta_description
     - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_search_keywords
     - node.type.page
     - system.menu.main
   module:
@@ -16,7 +17,7 @@ dependencies:
     - system
     - user
   theme:
-    - citizen_dart
+    - citizen_sdc
 third_party_settings:
   layout_builder:
     enabled: true
@@ -96,9 +97,9 @@ third_party_settings:
               follow: true
               follow_parent: active
               label_link: true
-              label_type: root
+              label_type: parent
               level: 2
-              depth: 3
+              depth: 0
               expand_all_items: true
               parent: 'main:'
               suggestion: section_menu
@@ -154,6 +155,21 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
+  field_meta_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_search_keywords:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -162,6 +178,5 @@ content:
 hidden:
   body: true
   field_image: true
-  field_metatags: true
   field_paragraphs: true
   search_api_excerpt: true

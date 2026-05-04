@@ -8,29 +8,29 @@ dependencies:
     - image.style.thumbnail_cropped_2x
     - image.style.thumbnail_cropped_non_webp
   theme:
-    - citizen_dart
+    - citizen_sdc
 id: thumbnail_cropped
 label: 'Thumbnail Cropped'
 image_style_mappings:
   -
     image_mapping_type: image_style
     image_mapping: thumbnail_cropped
-    breakpoint_id: citizen_dart.desk
+    breakpoint_id: citizen_sdc.desk
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: thumbnail_cropped
+    breakpoint_id: citizen_sdc.mobile
     multiplier: 1x
   -
     image_mapping_type: image_style
     image_mapping: thumbnail_cropped_1_5x
-    breakpoint_id: citizen_dart.mobile
+    breakpoint_id: citizen_sdc.mobile
     multiplier: 1.5x
   -
     image_mapping_type: image_style
-    image_mapping: thumbnail_cropped
-    breakpoint_id: citizen_dart.mobile
-    multiplier: 1x
-  -
-    image_mapping_type: image_style
     image_mapping: thumbnail_cropped_2x
-    breakpoint_id: citizen_dart.mobile
+    breakpoint_id: citizen_sdc.mobile
     multiplier: 2x
-breakpoint_group: citizen_dart
+breakpoint_group: citizen_sdc
 fallback_image_style: thumbnail_cropped_non_webp

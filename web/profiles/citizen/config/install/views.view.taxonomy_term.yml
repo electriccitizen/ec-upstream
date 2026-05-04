@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.rss
     - core.entity_view_mode.node.teaser
-    - field.storage.node.body
+    - field.storage.node.field_meta_description
   module:
     - node
     - taxonomy
-    - text
     - user
 _core:
   default_config_hash: 7Zu3LR5ZE6cgQnVG37zxGk3l2UIr8J-CB4MX3WWNJ7o
@@ -31,6 +31,7 @@ display:
         type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 10
           total_pages: 0
           id: 0
@@ -281,7 +282,7 @@ display:
         type: node_rss
         options:
           relationship: none
-          view_mode: default
+          view_mode: rss
       query:
         type: views_query
         options: {  }
@@ -370,10 +371,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        body:
-          id: body
-          table: node__body
-          field: body
+        field_meta_description:
+          id: field_meta_description
+          table: node__field_meta_description
+          field: field_meta_description
           relationship: none
           group_type: group
           admin_label: ''
@@ -397,16 +398,16 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 180
+            max_length: 0
             word_boundary: true
             ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: true
-            trim: true
+            strip_tags: false
+            trim: false
             preserve_tags: ''
-            html: true
+            html: false
           element_type: ''
           element_class: ''
           element_label_type: ''
@@ -420,9 +421,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: text_summary_or_trimmed
-          settings:
-            trim_length: 600
+          type: basic_string
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -492,4 +492,4 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_meta_description'

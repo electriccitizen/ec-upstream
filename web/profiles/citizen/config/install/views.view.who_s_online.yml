@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - smart_date
     - user
 _core:
   default_config_hash: PrTbZ9KWGAlX7tCX05491yP4ryGKHu_QlEmEFUaWWpw
@@ -154,8 +155,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
             min_placeholder: ''
             max_placeholder: ''
             placeholder: ''

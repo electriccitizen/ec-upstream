@@ -6,3 +6,4 @@ name: 'News Categories'
 vid: news_categories
 description: 'Categories for news articles.'
 weight: 0
+new_revision: false

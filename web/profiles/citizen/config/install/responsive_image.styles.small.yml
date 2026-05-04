@@ -8,29 +8,29 @@ dependencies:
     - image.style.small_non_crop_2x
     - image.style.small_non_crop_non_webp
   theme:
-    - citizen_dart
+    - citizen_sdc
 id: small
 label: Small
 image_style_mappings:
   -
     image_mapping_type: image_style
     image_mapping: small_non_crop
-    breakpoint_id: citizen_dart.desk
+    breakpoint_id: citizen_sdc.desk
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: small_non_crop
+    breakpoint_id: citizen_sdc.mobile
     multiplier: 1x
   -
     image_mapping_type: image_style
     image_mapping: small_non_crop_1_5x
-    breakpoint_id: citizen_dart.mobile
+    breakpoint_id: citizen_sdc.mobile
     multiplier: 1.5x
   -
     image_mapping_type: image_style
-    image_mapping: small_non_crop
-    breakpoint_id: citizen_dart.mobile
-    multiplier: 1x
-  -
-    image_mapping_type: image_style
     image_mapping: small_non_crop_2x
-    breakpoint_id: citizen_dart.mobile
+    breakpoint_id: citizen_sdc.mobile
     multiplier: 2x
-breakpoint_group: citizen_dart
+breakpoint_group: citizen_sdc
 fallback_image_style: small_non_crop_non_webp

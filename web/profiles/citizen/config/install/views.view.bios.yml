@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.storage.node.field_image
     - field.storage.node.field_position
     - node.type.bios
   module:
     - node
-    - taxonomy
     - user
 _core:
   default_config_hash: 3ycpVvTNgbzBcmj1Md6ICUCn9BIpeWapPAlO7M7WDhI
@@ -222,14 +222,15 @@ display:
         type: full
         options:
           offset: 0
-          items_per_page: 8
+          pagination_heading_level: h3
+          items_per_page: 12
           total_pages: null
           id: 0
           tags:
-            next: "Next\_»"
-            previous: "«\_Prev"
-            first: '« First'
-            last: 'Last »'
+            next: Next
+            previous: Previous
+            first: ''
+            last: ''
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -238,7 +239,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 5
+          quantity: 3
       exposed_form:
         type: basic
         options:
@@ -380,10 +381,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              senior_editor: '0'
-              editor: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -408,12 +405,10 @@ display:
           row_class: vertical
           default_row_class: true
       row:
-        type: fields
+        type: 'entity:node'
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          relationship: none
+          view_mode: teaser
       query:
         type: views_query
         options:

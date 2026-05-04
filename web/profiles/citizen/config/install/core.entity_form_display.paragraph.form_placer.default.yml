@@ -16,12 +16,15 @@ bundle: form_placer
 mode: default
 content:
   field_form:
-    type: webform_entity_reference_select
+    type: webform_entity_reference_autocomplete
     weight: 0
     region: content
     settings:
+      match_limit: 10
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
       default_data: false
-      webforms: {  }
     third_party_settings: {  }
   field_form_title:
     type: boolean_checkbox

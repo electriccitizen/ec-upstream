@@ -1,0 +1,10 @@
+uuid: c89c3a6b-92b1-4846-8813-c25c1b50fa97
+langcode: en
+status: true
+dependencies: {  }
+id: fifty_fifty
+label: 50/50
+icon_uuid: null
+icon_default: null
+description: 'A two-column widget with media (image or video) on one side and a title, text, and optional button on the other. Alignment controls which side the media is on.'
+behavior_plugins: {  }

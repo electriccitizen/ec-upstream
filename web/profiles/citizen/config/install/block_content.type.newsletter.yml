@@ -6,5 +6,5 @@ _core:
   default_config_hash: Qjd77sg0a6ZbyzH8AQAAEK3uPiAg5Huhkhwbm9DFoiY
 id: newsletter
 label: Newsletter
-revision: 0
+revision: false
 description: 'Used for embedded newsletter signup blocks.'

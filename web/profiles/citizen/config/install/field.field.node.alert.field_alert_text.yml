@@ -1,0 +1,24 @@
+uuid: 1d973a06-03ca-4cf8-941a-21d97275202b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alert_text
+    - filter.format.limited_html
+    - node.type.alert
+  module:
+    - text
+id: node.alert.field_alert_text
+field_name: field_alert_text
+entity_type: node
+bundle: alert
+label: 'Alert Text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - limited_html
+field_type: text_long

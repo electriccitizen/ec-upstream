@@ -3,33 +3,43 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.node.landing_page.default
+    - block_content.type.basic
+    - block_content.type.hero
+    - block_content.type.newsletter
+    - block_content.type.social_links
     - filter.format.limited_html
+    - filter.format.support_html
+    - filter.format.webform_default
     - media.type.document
     - media.type.image
     - media.type.remote_video
+    - node.type.alert
     - node.type.bios
     - node.type.event
     - node.type.landing_page
     - node.type.news
     - node.type.page
+    - node.type.support_book
+    - taxonomy.vocabulary.event_categories
+    - taxonomy.vocabulary.news_categories
   module:
     - addanother
-    - block_content_permissions
+    - block_content
     - citizen_custom
-    - contextual
+    - entity_usage
+    - file
     - filter
-    - layout_builder
+    - help
     - media
     - menu_admin_per_menu
     - node
     - path
     - redirect
-    - responsive_preview
-    - role_delegation
     - shortcut
+    - smart_date_recur
     - system
     - taxonomy
+    - trash
     - webform
 _core:
   default_config_hash: JotecaDH6FqenwPpGTB370LYSGcRJAdLfXPZkjhsM64
@@ -39,17 +49,20 @@ weight: 5
 is_admin: null
 permissions:
   - 'access administration pages'
-  - 'access block content overview'
+  - 'access block library'
   - 'access content overview'
-  - 'access contextual links'
+  - 'access entity usage statistics'
+  - 'access help pages'
   - 'access media overview'
-  - 'access responsive preview'
   - 'access site reports'
   - 'access taxonomy overview'
+  - 'access trash'
   - 'access user profiles'
   - 'access webform overview'
+  - 'administer ancillary menu items'
   - 'administer footer menu items'
   - 'administer main menu items'
+  - 'administer nodes'
   - 'administer redirects'
   - 'administer secondary menu items'
   - 'administer url aliases'
@@ -59,12 +72,14 @@ permissions:
   - 'assign editor role'
   - 'assign site_manager role'
   - 'cancel account'
+  - 'cancel smart date recur instances'
   - 'change own username'
-  - 'configure editable landing_page node layout overrides'
+  - 'create alert content'
   - 'create basic block content'
   - 'create bios content'
   - 'create document media'
   - 'create event content'
+  - 'create hero block content'
   - 'create image media'
   - 'create landing_page content'
   - 'create media'
@@ -72,44 +87,74 @@ permissions:
   - 'create newsletter block content'
   - 'create page content'
   - 'create remote_video media'
-  - 'create social_media_links block content'
+  - 'create social_links block content'
+  - 'create support_book content'
+  - 'create terms in event_categories'
+  - 'create terms in news_categories'
   - 'create url aliases'
   - 'create webform'
-  - 'customize shortcut links'
+  - 'delete alert revisions'
   - 'delete all revisions'
+  - 'delete any alert content'
   - 'delete any basic block content'
+  - 'delete any basic block content revisions'
   - 'delete any bios content'
+  - 'delete any document media'
   - 'delete any event content'
+  - 'delete any hero block content'
+  - 'delete any hero block content revisions'
+  - 'delete any image media'
   - 'delete any landing_page content'
+  - 'delete any media'
   - 'delete any news content'
   - 'delete any newsletter block content'
+  - 'delete any newsletter block content revisions'
   - 'delete any page content'
-  - 'delete any social_media_links block content'
+  - 'delete any remote_video media'
+  - 'delete any social_links block content'
+  - 'delete any support_book content'
   - 'delete any webform'
   - 'delete any webform submission'
   - 'delete bios revisions'
   - 'delete event revisions'
   - 'delete landing_page revisions'
+  - 'delete media'
   - 'delete news revisions'
+  - 'delete own alert content'
   - 'delete own bios content'
+  - 'delete own document media'
   - 'delete own event content'
+  - 'delete own files'
+  - 'delete own image media'
   - 'delete own landing_page content'
   - 'delete own news content'
   - 'delete own page content'
+  - 'delete own remote_video media'
+  - 'delete own support_book content'
   - 'delete own webform'
   - 'delete own webform submission'
   - 'delete page revisions'
+  - 'delete support_book revisions'
+  - 'delete terms in event_categories'
+  - 'delete terms in news_categories'
+  - 'edit any alert content'
+  - 'edit any basic block content'
   - 'edit any bios content'
   - 'edit any document media'
   - 'edit any event content'
+  - 'edit any hero block content'
   - 'edit any image media'
   - 'edit any landing_page content'
   - 'edit any news content'
+  - 'edit any newsletter block content'
   - 'edit any page content'
   - 'edit any remote_video media'
+  - 'edit any social_links block content'
+  - 'edit any support_book content'
   - 'edit any webform'
   - 'edit any webform submission'
   - 'edit layout paragraphs plugin config'
+  - 'edit own alert content'
   - 'edit own bios content'
   - 'edit own document media'
   - 'edit own event content'
@@ -118,30 +163,52 @@ permissions:
   - 'edit own news content'
   - 'edit own page content'
   - 'edit own remote_video media'
+  - 'edit own support_book content'
   - 'edit own webform'
   - 'edit own webform submission'
+  - 'edit terms in event_categories'
+  - 'edit terms in news_categories'
+  - 'make smart dates recur'
+  - 'manage editoria11y results'
+  - 'mark as hidden in editoria11y'
+  - 'mark as ok in editoria11y'
+  - 'perform batch updates entity usage'
+  - 'purge node entities'
+  - 'reschedule smart date recur instances'
+  - 'restore node entities'
+  - 'revert alert revisions'
   - 'revert all revisions'
+  - 'revert any basic block content revisions'
+  - 'revert any hero block content revisions'
+  - 'revert any newsletter block content revisions'
   - 'revert bios revisions'
   - 'revert event revisions'
   - 'revert landing_page revisions'
   - 'revert news revisions'
   - 'revert page revisions'
+  - 'revert support_book revisions'
   - 'switch shortcut sets'
-  - 'update any basic block content'
   - 'update any media'
-  - 'update any newsletter block content'
-  - 'update any social_media_links block content'
   - 'update media'
   - 'use add another'
   - 'use text format limited_html'
+  - 'use text format support_html'
+  - 'use text format webform_default'
+  - 'view alert revisions'
   - 'view all media revisions'
   - 'view all revisions'
+  - 'view any basic block content history'
+  - 'view any hero block content history'
+  - 'view any newsletter block content history'
   - 'view any webform submission'
   - 'view bios revisions'
+  - 'view deleted entities'
+  - 'view editoria11y checker'
   - 'view event revisions'
   - 'view landing_page revisions'
   - 'view news revisions'
   - 'view own unpublished content'
   - 'view own webform submission'
   - 'view page revisions'
+  - 'view support_book revisions'
   - 'view the administration theme'

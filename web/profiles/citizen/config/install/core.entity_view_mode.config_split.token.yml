@@ -8,5 +8,6 @@ _core:
   default_config_hash: dZgi5JNhwFooPQWAWZ_LTck1JS5DB_7I493AaPZgZuI
 id: config_split.token
 label: Token
+description: ''
 targetEntityType: config_split
 cache: true

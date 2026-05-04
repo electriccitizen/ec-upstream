@@ -3,11 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_caption
     - field.field.media.image.field_media_image
     - media.type.image
   module:
     - image
+    - lazy
 _core:
   default_config_hash: 1iCnAlf6G1vE96vB1vuUJGlz4MdnNTVZm8NhaG1lxTg
 id: media.image.default
@@ -15,13 +15,6 @@ targetEntityType: media
 bundle: image
 mode: default
 content:
-  field_caption:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_media_image:
     type: image
     label: hidden
@@ -30,7 +23,11 @@ content:
       image_style: ''
       image_loading:
         attribute: lazy
-    third_party_settings: {  }
+    third_party_settings:
+      lazy:
+        lazy_image: '0'
+        placeholder_style: ''
+        data_uri: false
     weight: 0
     region: content
 hidden:

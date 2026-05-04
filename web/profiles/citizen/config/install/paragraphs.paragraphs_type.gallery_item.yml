@@ -1,0 +1,10 @@
+uuid: 384ac28d-19c9-4256-a854-578641128d67
+langcode: en
+status: true
+dependencies: {  }
+id: gallery_item
+label: 'Gallery Item'
+icon_uuid: null
+icon_default: null
+description: 'Add photos to a gallery.'
+behavior_plugins: {  }

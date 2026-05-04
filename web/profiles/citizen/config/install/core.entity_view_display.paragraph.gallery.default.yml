@@ -3,15 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.gallery.field_gallery_items
     - field.field.paragraph.gallery.field_gallery_type
-    - field.field.paragraph.gallery.field_image_multi
     - field.field.paragraph.gallery.field_widget_title
     - paragraphs.paragraphs_type.gallery
   module:
-    - layout_builder
-third_party_settings:
-  layout_builder:
-    sections: {  }
+    - entity_reference_revisions
 _core:
   default_config_hash: kvfrcdWLRSMnQn2s3dm8zyBavqFoa5rzQEYZhHYgHF8
 id: paragraph.gallery.default
@@ -19,6 +16,15 @@ targetEntityType: paragraph
 bundle: gallery
 mode: default
 content:
+  field_gallery_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_gallery_type:
     type: boolean
     label: hidden
@@ -26,15 +32,6 @@ content:
       format: default
       format_custom_false: ''
       format_custom_true: ''
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_image_multi:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: full
-      link: false
     third_party_settings: {  }
     weight: 2
     region: content
@@ -44,7 +41,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
   search_api_excerpt: true

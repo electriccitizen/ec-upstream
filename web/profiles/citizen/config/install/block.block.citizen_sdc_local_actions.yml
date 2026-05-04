@@ -1,0 +1,20 @@
+uuid: 73379c8e-4848-4554-aaf1-98e03b822e9b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - citizen_sdc
+_core:
+  default_config_hash: 5GJ2p4I_EeFqtPksYve78IDxw9QB5FY2HZ9VKymHoX4
+id: citizen_sdc_local_actions
+theme: citizen_sdc
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

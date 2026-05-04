@@ -1,0 +1,20 @@
+uuid: b38a2199-7668-4677-ab48-a7028b13b6c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - citizen_custom
+  theme:
+    - citizen_sdc
+id: citizen_sdc_alert
+theme: citizen_sdc
+region: alert
+weight: 0
+provider: null
+plugin: alert
+settings:
+  id: alert
+  label: Alert
+  label_display: '0'
+  provider: citizen_custom
+visibility: {  }

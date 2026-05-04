@@ -1,0 +1,24 @@
+uuid: 37717de0-4ae7-4d09-a8a3-adc4e9645ac0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_long_text
+    - filter.format.limited_html
+    - paragraphs.paragraphs_type.fifty_fifty
+  module:
+    - text
+id: paragraph.fifty_fifty.field_long_text
+field_name: field_long_text
+entity_type: paragraph
+bundle: fifty_fifty
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - limited_html
+field_type: text_long

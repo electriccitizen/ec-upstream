@@ -8,5 +8,6 @@ _core:
   default_config_hash: 55biYHxD6sxtdf-FTxGALWA8Runa2u_973LK_iyCfao
 id: media.large_thumb
 label: 'Large Thumb'
+description: ''
 targetEntityType: media
 cache: true

@@ -4,11 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_first_name
+    - field.field.user.user.field_image
     - field.field.user.user.field_last_name
-    - field.field.user.user.field_user_image
+    - field.field.user.user.field_last_password_reset
+    - field.field.user.user.field_password_expiration
+    - field.field.user.user.field_pending_expire_sent
+    - image.style.thumbnail
   module:
+    - datetime
     - field_group
-    - media_library
+    - focal_point
     - user
 third_party_settings:
   field_group:
@@ -16,11 +21,11 @@ third_party_settings:
       children:
         - field_first_name
         - field_last_name
-        - field_user_image
+        - field_image
       label: 'User Personalization'
       region: content
       parent_name: ''
-      weight: 5
+      weight: 1
       format_type: details
       format_settings:
         classes: ''
@@ -51,6 +56,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_image:
+    type: image_focal_point
+    weight: 6
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
   field_last_name:
     type: string_textfield
     weight: 4
@@ -59,12 +74,18 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_user_image:
-    type: media_library_widget
-    weight: 5
+  field_last_password_reset:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_password_expiration:
+    type: boolean_checkbox
+    weight: 3
     region: content
     settings:
-      media_types: {  }
+      display_label: true
     third_party_settings: {  }
   google_analytics:
     weight: 2
@@ -72,6 +93,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_pending_expire_sent: true
   language: true
   path: true
   timezone: true

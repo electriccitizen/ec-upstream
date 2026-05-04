@@ -6,6 +6,8 @@ id: test
 label: Test
 description: 'Config split for Test.'
 weight: 0
+stackable: false
+no_patching: false
 storage: folder
 folder: ../config/test
 module: {  }

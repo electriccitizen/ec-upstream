@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.large_thumb
-    - field.field.media.image.field_caption
     - field.field.media.image.field_media_image
     - lazy.settings
     - media.type.image
@@ -30,16 +29,17 @@ content:
     settings:
       responsive_image_style: large_thumb
       image_link: ''
+      image_loading:
+        attribute: lazy
     third_party_settings:
       lazy:
         lazy_image: '1'
-        placeholder_style: large_thumbnail
+        placeholder_style: ''
         data_uri: false
     weight: 0
     region: content
 hidden:
   created: true
-  field_caption: true
   name: true
   search_api_excerpt: true
   thumbnail: true

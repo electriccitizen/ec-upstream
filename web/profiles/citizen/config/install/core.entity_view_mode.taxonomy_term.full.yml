@@ -8,5 +8,6 @@ _core:
   default_config_hash: UNDP9_27AdNFQdkwtnCuY4eYlv5ikIPJEo5B-VYqSvA
 id: taxonomy_term.full
 label: 'Taxonomy term page'
+description: ''
 targetEntityType: taxonomy_term
 cache: true
