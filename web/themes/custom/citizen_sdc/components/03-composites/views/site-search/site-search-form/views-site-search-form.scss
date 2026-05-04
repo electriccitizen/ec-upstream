@@ -1,5 +1,5 @@
 /* =================
-   VIEWS — NEWS
+   VIEWS — SITE SEARCH FORM
 =================== */
 
 @use '../../../../00-base/00-variables/colors' as *;
@@ -8,8 +8,7 @@
 @use '../../../../00-base/01-mixins/layout-mixins' as *;
 @use '../../../../00-base/01-mixins/views-mixins' as *;
 
-.view--news--all-news {
-  padding-bottom: $elementSpace;
+.views-form--site-search {
   max-width: $contentStop;
   @include auto;
 
@@ -27,9 +26,5 @@
         max-width: $selectInput;
       }
     }
-  }
-
-  .views-row:not(:last-child) {
-    margin-bottom: $spaceMd;
   }
 }

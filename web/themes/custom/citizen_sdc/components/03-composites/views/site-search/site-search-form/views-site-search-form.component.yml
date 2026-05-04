@@ -1,0 +1,20 @@
+component:
+  id: citizen_sdc:views-site-search-form
+  label: 'Views Site Search Form'
+  description: 'Per-view exposed-form wrapper for the `site_search` view. Adds a `views-form--site-search` BEM hook around `citizen_sdc:views-form-base` so site-search-specific form CSS attaches at form-render time (not gated on results). Delegated to by `views-exposed-form--site-search.html.twig`.'
+  status: experimental
+
+props:
+  type: object
+  properties:
+    attr:
+      type: object
+      description: 'Drupal Attributes object for the wrapper.'
+
+slots:
+  q:
+    title: 'q parameter'
+    description: 'Hidden `q` form element for non-clean-URL setups (usually empty). Forwarded to views-form-base.'
+  form:
+    title: Form
+    description: 'The rendered exposed filter form render array. Forwarded to views-form-base.'

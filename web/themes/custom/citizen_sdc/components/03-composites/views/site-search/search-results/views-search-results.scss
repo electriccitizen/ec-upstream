@@ -1,6 +1,5 @@
 /* =================
    VIEWS — SITE SEARCH RESULTS
-   Scoped under `.view--site-search--site-search-block` (emitted by views-base).
 =================== */
 
 @use '../../../../00-base/00-variables/colors' as *;
@@ -10,7 +9,6 @@
 @use '../../../../00-base/01-mixins/layout-mixins' as *;
 
 .view--site-search--site-search-block {
-  // Content + empty regions share the text-constrained column.
   .view__content,
   .view__empty {
     @include auto;
@@ -23,9 +21,6 @@
     &:not(:last-child) {
       margin-bottom: $elementSpace;
     }
-
-    // Search-highlight `<mark>` injected by views-search-results.js — bold
-    // the match (`mark` already has `background-color: unset` in typography).
     .node-search-result__meta-description .search-highlight {
       font-weight: $heavy;
     }

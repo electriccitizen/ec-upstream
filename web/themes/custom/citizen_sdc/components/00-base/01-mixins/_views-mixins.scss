@@ -2,8 +2,16 @@
   VIEWS MIXINS
 ==================== */
 
-@use '../00-variables' as *;
+@use '../00-variables/units' as *;
 @use 'layout-mixins' as *;
+@use 'breakpoint-mixins' as *;
+
+@mixin formLayout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 2rem;
+}
 
 @mixin viewsTitle {
   @include heading4;
