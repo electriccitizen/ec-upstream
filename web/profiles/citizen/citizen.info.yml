@@ -16,6 +16,13 @@ dependencies:
   - breakpoint
   - citizen_custom
   - ckeditor5
+  - ckeditor5_fullscreen
+  - ckeditor5_paste_filter
+  - ckeditor5_plugin_pack
+  - ckeditor5_plugin_pack_free_wproofreader
+  - ckeditor5_plugin_pack_highlight
+  - ckeditor5_premium_features
+  - ckeditor5_premium_features_wproofreader
   - config
   - config_filter
   - config_ignore
@@ -24,6 +31,7 @@ dependencies:
   - crop
   - ctools
   - ctools_block
+  - date_popup
   - datetime
   - default_content
   - dynamic_page_cache
@@ -40,20 +48,22 @@ dependencies:
   - file
   - filter
   - focal_point
+  - gin_toolbar
   - help
   - history
   - image
   - image_style_quality
   - inline_form_errors
   - jquery_ui_draggable
+  - key
   - layout_builder
   - layout_discovery
   - layout_paragraphs
   - lazy
   - link
   - linkit
+  - masquerade
   - media
-  - media_entity_file_replace
   - media_library
   - menu_admin_per_menu
   - menu_block
@@ -67,6 +77,9 @@ dependencies:
   - options
   - page_cache
   - paragraphs
+  - password_policy
+  - password_policy_character_types
+  - password_policy_username
   - path
   - pathauto
   - path_alias
@@ -82,21 +95,24 @@ dependencies:
   - smart_date
   - smart_date_recur
   - system
+  - tagify
   - taxonomy
   - telephone
   - text
   - token
   - toolbar
+  - trash
   - twig_tweak
   - user
   - views
   - views_bulk_operations
   - views_ui
+  - viewsreference
   - webform
   - webform_ui
 
 themes:
   - stable9
-  - citizen_dart
+  - citizen_sdc
   - claro
   - gin
