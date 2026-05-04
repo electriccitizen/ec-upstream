@@ -1,0 +1,7 @@
+{% extends "page--4xx.html.twig" %}
+
+{% block errorTitle %}{{ "Page Not Found"|t }}{% endblock %}
+
+{% block errorMessage %}
+  <p>{{ "Sorry, we couldn't find the page you were looking for. It may have been moved or no longer exists. Please check the URL or use the site navigation to find what you need."|t }}</p>
+{% endblock %}

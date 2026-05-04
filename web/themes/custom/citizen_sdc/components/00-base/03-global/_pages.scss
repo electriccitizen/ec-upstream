@@ -20,3 +20,13 @@ html > body:not(.is-front):not(.path--node) {
     margin-bottom: $elementSpace;
   }
 }
+
+.main-content__non-node-page.main-content__error-content {
+  max-width: $textMax;
+  padding: $elementSpace 0;
+  @include auto;
+
+  h1 {
+    margin-bottom: $spaceMd;
+  }
+}
