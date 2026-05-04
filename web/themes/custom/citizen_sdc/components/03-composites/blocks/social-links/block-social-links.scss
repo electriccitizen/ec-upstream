@@ -2,6 +2,7 @@
    BLOCK SOCIAL LINKS
 =================== */
 
+@use '../../../00-base/00-variables/colors' as *;
 @use '../../../00-base/00-variables/component-colors' as *;
 @use '../../../00-base/01-mixins/breakpoint-mixins' as *;
 @use '../../../00-base/01-mixins/style-mixins' as *;
@@ -15,18 +16,18 @@
         fill: $prefooterLink;
       }
       path {
-        fill: $prefooterBack;
+        fill: $navy;
       }
     }
 
     &:hover {
-      
+
       svg {
         circle {
           fill: $prefooterLinkHover;
         }
         path {
-          fill: $prefooterBack;
+          fill: $navy;
         }
       }
     }
