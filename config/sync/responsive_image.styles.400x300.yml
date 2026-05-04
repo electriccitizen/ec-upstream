@@ -8,24 +8,24 @@ dependencies:
     - image.style.400x300_2x
     - image.style.400x300_non_webp
   theme:
-    - citizen_dart
+    - citizen_sdc
 id: 400x300
 label: 400x300
 image_style_mappings:
   -
     image_mapping_type: image_style
     image_mapping: 400x300
-    breakpoint_id: citizen_dart.mobile
+    breakpoint_id: citizen_sdc.mobile
     multiplier: 1x
   -
     image_mapping_type: image_style
     image_mapping: 400x300_1_5x
-    breakpoint_id: citizen_dart.mobile
+    breakpoint_id: citizen_sdc.mobile
     multiplier: 1.5x
   -
     image_mapping_type: image_style
     image_mapping: 400x300_2x
-    breakpoint_id: citizen_dart.mobile
+    breakpoint_id: citizen_sdc.mobile
     multiplier: 2x
-breakpoint_group: citizen_dart
+breakpoint_group: citizen_sdc
 fallback_image_style: 400x300_non_webp

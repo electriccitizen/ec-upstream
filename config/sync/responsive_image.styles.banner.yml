@@ -14,54 +14,54 @@ dependencies:
     - image.style.banner_tablet_1_5x
     - image.style.banner_tablet_2x
   theme:
-    - citizen_dart
+    - citizen_sdc
 id: banner
 label: Banner
 image_style_mappings:
   -
     image_mapping_type: image_style
     image_mapping: banner_big_desk
-    breakpoint_id: citizen_dart.largedesk
+    breakpoint_id: citizen_sdc.largedesk
     multiplier: 1x
   -
     image_mapping_type: image_style
     image_mapping: banner_middesk
-    breakpoint_id: citizen_dart.middesk
+    breakpoint_id: citizen_sdc.middesk
     multiplier: 1x
   -
     image_mapping_type: image_style
     image_mapping: banner_desk
-    breakpoint_id: citizen_dart.desk
+    breakpoint_id: citizen_sdc.desk
     multiplier: 1x
   -
     image_mapping_type: image_style
     image_mapping: banner_tablet
-    breakpoint_id: citizen_dart.tab
+    breakpoint_id: citizen_sdc.tab
     multiplier: 1x
   -
     image_mapping_type: image_style
     image_mapping: banner_tablet_1_5x
-    breakpoint_id: citizen_dart.tab
+    breakpoint_id: citizen_sdc.tab
     multiplier: 1.5x
   -
     image_mapping_type: image_style
     image_mapping: banner_tablet_2x
-    breakpoint_id: citizen_dart.tab
+    breakpoint_id: citizen_sdc.tab
     multiplier: 2x
   -
     image_mapping_type: image_style
     image_mapping: banner_mobile
-    breakpoint_id: citizen_dart.mobile
+    breakpoint_id: citizen_sdc.mobile
     multiplier: 1x
   -
     image_mapping_type: image_style
     image_mapping: banner_mobile_1_5x
-    breakpoint_id: citizen_dart.mobile
+    breakpoint_id: citizen_sdc.mobile
     multiplier: 1.5x
   -
     image_mapping_type: image_style
     image_mapping: banner_mobile_2x
-    breakpoint_id: citizen_dart.mobile
+    breakpoint_id: citizen_sdc.mobile
     multiplier: 2x
-breakpoint_group: citizen_dart
+breakpoint_group: citizen_sdc
 fallback_image_style: banner_desk_non_webp
