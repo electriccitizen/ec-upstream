@@ -94,11 +94,11 @@ To re-enable it again, run the command that enabled it during installation:
 `ddev sniffon`
 
 # Theming
-The active theme for this project is **citizen_dart**:
-`~/Projects/ec-upstream/web/themes/custom/citizen_dart`
+The active theme for this project is **citizen_sdc**:
+`~/Projects/ec-upstream/web/themes/custom/citizen_sdc`
 
 See the THEME-INSTALL.md file inside of the theme root for install instructions.
-[THEME-INSTALL.md](/web/themes/custom/citizen_dart/THEME-INSTALL.md)
+[THEME-INSTALL.md](/web/themes/custom/citizen_sdc/THEME-INSTALL.md)
 
 # Drush aliases
 

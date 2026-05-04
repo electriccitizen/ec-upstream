@@ -230,21 +230,6 @@ The Drupal template at `templates/content/nodes/{type}/node--{type}--teaser.html
 - **Node teaser children:** `.node-teaser__title`, `.node-teaser__image`, `.node-teaser__content`, etc. (already on the base; use these inside per-type SCSS too).
 - **Field wrappers** (from `templates/field/field.html.twig`): `.field--{fieldname-without-field-prefix}` for custom fields with `field_` prefix; for base fields like `title`/`body` the prefix is dropped already.
 
-### Dart → SDC selector cheat sheet
-
-When porting styles from `citizen_dart`:
-
-- `.node-{type}` → `.node-content--{type}`
-- `.node-teaser-{type}` → `.node-teaser--{type}`
-- `.node-listing-{type}` → `.node-listing--{type}`
-- Dart field-block wrappers `.block-field-{fieldname}` → SDC `.block-field--{machine_name}` (custom fields keep `field_` prefix; base fields drop it).
-- Dart `h2.block-title` → SDC `.block__title`.
-- Dart field wrappers `.field-{fieldname}` → SDC `.field--{fieldname}` (leading `field_` stripped).
-- Dart section ids `#node-section-1, #node-section-2` → SDC `.node-content__section`.
-- Teaser internals `.node-teaser-content` / `.node-field-title` → `.node-teaser__content` / `.node-teaser__title`.
-
-When SDC-ifying, **port the dart styles** — don't ship a bare-wrapper SCSS file when dart already has working styles. Translate the rules into the new BEM selectors.
-
 ## Step 7 — SCSS conventions
 
 `@use` paths are **per-file and explicit** — never `@use '../../../00-base' as *`. Pull only what the file needs:
