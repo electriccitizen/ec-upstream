@@ -2,6 +2,8 @@ uuid: 07a71d76-c197-44b7-8aaf-f5b2316bb772
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.bios
   module:
     - node
 _core:
@@ -9,12 +11,11 @@ _core:
 id: bios
 label: Bios
 type: 'canonical_entities:node'
-pattern: 'bios/[node:title]'
+pattern: '/bios/[node:title]'
 selection_criteria:
   1e19efa3-96e8-4998-8613-ae3f8e267d04:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 1e19efa3-96e8-4998-8613-ae3f8e267d04
     context_mapping:
       node: node
     bundles:

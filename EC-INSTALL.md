@@ -1,6 +1,6 @@
 EC-Upstream Local Development
 =============================
-Reviewed by Brian, 2026-04-13
+Updated by Brian, 2026-05-22
 
 # Project Details
 - **NAME:** ec-upstream
