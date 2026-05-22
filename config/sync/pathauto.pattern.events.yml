@@ -2,6 +2,8 @@ uuid: 5bf0b585-f6db-420b-882e-1fb3f5dccbfd
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.event
   module:
     - node
 _core:
@@ -9,12 +11,11 @@ _core:
 id: events
 label: Events
 type: 'canonical_entities:node'
-pattern: 'events/[node:title]'
+pattern: '/events/[node:title]'
 selection_criteria:
   6f90d8d3-3135-4107-9cbe-ccb2c1578810:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 6f90d8d3-3135-4107-9cbe-ccb2c1578810
     context_mapping:
       node: node
     bundles:

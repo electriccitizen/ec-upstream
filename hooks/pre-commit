@@ -7,17 +7,20 @@ if [ ! -z "$files" ]; then
   echo "Running DDev code-sniffing stuff"
 
   # Execute PHP Code Sniffer for Coding Standards.
+  # Exit 16 means "no files matched the extension filter" (phpcs 4+), which is
+  # not an error for commits that only touch yml/json/md files.
   ddev exec phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,scss ${files} --ignore="\.min\.css,\.min\.js,*/dist/*\.css,/components-addons/*"
-  if [ $? -ne 0 ]; then
+  rc=$?
+  if [ $rc -ne 0 ] && [ $rc -ne 16 ]; then
     echo "Coding Standard errors were found in the files you are committing. Please make all listed adjustments and commit again."
     exit 1
   fi
 
   # Execute PHP Code Sniffer for Drupal Best Practices.
   ddev exec phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,scss,twig ${files} --ignore="\.min\.css,\.min\.js,*/dist/*\.css,/components-addons/*"
-  if [ $? -ne 0 ]; then
+  rc=$?
+  if [ $rc -ne 0 ] && [ $rc -ne 16 ]; then
     echo "The code you are committing are violating Drupal's Best Practices. Please make all listed adjustments and commit again."
     exit 1
   fi
 fi
-
