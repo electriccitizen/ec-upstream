@@ -1,20 +1,44 @@
 import text from './text.twig';
+import {
+  renderSection,
+  regionCountFor,
+  sectionArgTypes,
+} from '../paragraph-story-utils.js';
 
-// Mirror what Drupal's field--text-long.html.twig emits around the rendered
-// field_long_text body, so styles scoped to `.field--text-long` apply.
-const wrapAsField = (body) =>
-  `<div class="field field--long-text field--text-long">${body}</div>`;
+// Render the Text SDC with the Drupal field wrapper the text_default formatter
+// emits around field_long_text editor HTML.
+const renderText = (html) =>
+  text({
+    content: `<div class="field field--long-text field--text-long">${html}</div>`,
+  });
+
+// Fill every region of the chosen layout with a Text paragraph, so flipping the
+// `layout` control actually shows 1 / 2 / 3 populated columns in the playground.
+const fillRegions = (html, layout) =>
+  Array.from({ length: regionCountFor(layout) }, () => renderText(html));
 
 export default {
   title: 'Paragraphs/Text',
   tags: ['autodocs'],
-  render: ({ content }) => text({ content: wrapAsField(content) }),
+  render: ({ content, style_class, layout, ratio }) =>
+    renderSection({
+      regions: fillRegions(content, layout),
+      style_class,
+      layout,
+      ratio,
+    }),
   argTypes: {
     content: {
       control: 'text',
       description:
-        'Editor HTML for field_long_text. The story wraps this in the standard `.field.field--long-text.field--text-long` div to match Drupal field rendering.',
+        'Editor HTML for field_long_text. Wrapped in `.field.field--long-text.field--text-long`, rendered through the Text SDC, then nested in the selected column layout inside a Layout Section — matching production ancestry.',
     },
+    ...sectionArgTypes,
+  },
+  args: {
+    style_class: null,
+    layout: 'onecol',
+    ratio: null,
   },
 };
 
@@ -48,4 +72,39 @@ export const ShortLine = {
   args: {
     content: '<p>A single short line of text.</p>',
   },
+};
+
+// Distinct content per column rather than a repeated fill — closer to a real
+// two-column section. Overrides the default render to control each region.
+export const TwoColumn = {
+  args: { layout: 'twocol', ratio: null },
+  render: ({ style_class, ratio }) =>
+    renderSection({
+      layout: 'twocol',
+      ratio,
+      style_class,
+      regions: [
+        renderText(
+          '<p>Left column. Two-column sections place one Text paragraph in each region; the gutter and column widths come from the layout’s ratio.</p>',
+        ),
+        renderText(
+          '<p>Right column. Switch the <em>Column widths</em> control to try 33-67, 67-33, 25-75, or 75-25.</p>',
+        ),
+      ],
+    }),
+};
+
+export const ThreeColumn = {
+  args: { layout: 'threecol', ratio: null },
+  render: ({ style_class, ratio }) =>
+    renderSection({
+      layout: 'threecol',
+      ratio,
+      style_class,
+      regions: [
+        renderText('<p>First column of a three-column section.</p>'),
+        renderText('<p>Second (middle) column.</p>'),
+        renderText('<p>Third column.</p>'),
+      ],
+    }),
 };
