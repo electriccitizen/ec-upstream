@@ -18,6 +18,63 @@ const componentStyles = import.meta.glob(
 );
 void componentStyles;
 
+// --- Minimal Drupal JS runtime shim -----------------------------------------
+// Interactive components (accordions, gallery, …) ship their behavior as a
+// `Drupal.behaviors.*` object that calls the global `once()` and expects a
+// global `Drupal`. Provide just enough of both that a story can `import` a
+// component's .js (its IIFE registers the behavior) and then run it from a
+// `play` function via `Drupal.attachBehaviors(canvasElement)`. Installed here
+// in preview.ts so the globals exist before any story module (and the
+// component .js it imports) evaluates.
+const onceElements = (selector: unknown, context: ParentNode = document) =>
+  typeof selector === 'string'
+    ? Array.from((context as ParentNode).querySelectorAll(selector))
+    : Array.isArray(selector)
+      ? (selector as Element[])
+      : [selector as Element];
+
+const once = ((id: string, selector: unknown, context?: ParentNode) =>
+  onceElements(selector, context).filter((el) => {
+    const applied = (el.getAttribute('data-once') ?? '').split(' ').filter(Boolean);
+    if (applied.includes(id)) return false;
+    el.setAttribute('data-once', [...applied, id].join(' '));
+    return true;
+  })) as ((id: string, selector: unknown, context?: ParentNode) => Element[]) & {
+  remove: (id: string, selector: unknown, context?: ParentNode) => Element[];
+};
+
+once.remove = (id, selector, context) =>
+  onceElements(selector, context).filter((el) => {
+    const applied = (el.getAttribute('data-once') ?? '').split(' ').filter(Boolean);
+    const i = applied.indexOf(id);
+    if (i === -1) return false;
+    applied.splice(i, 1);
+    if (applied.length) el.setAttribute('data-once', applied.join(' '));
+    else el.removeAttribute('data-once');
+    return true;
+  });
+
+type Behavior = {
+  attach?: (context: Element | Document, settings?: unknown) => void;
+  detach?: (context: Element | Document, settings?: unknown, trigger?: string) => void;
+};
+
+const Drupal = {
+  behaviors: {} as Record<string, Behavior>,
+  attachBehaviors(context: Element | Document = document, settings: unknown = {}) {
+    Object.values(Drupal.behaviors).forEach((b) => b.attach?.(context, settings));
+  },
+  detachBehaviors(
+    context: Element | Document = document,
+    settings: unknown = {},
+    trigger = 'unload',
+  ) {
+    Object.values(Drupal.behaviors).forEach((b) => b.detach?.(context, settings, trigger));
+  },
+};
+
+Object.assign(window, { Drupal, once, drupalSettings: {} });
+
 // Pre-register every SDC twig template under its `citizen_sdc:{id}` namespace
 // so function-form includes (`{{ include('citizen_sdc:foo', ...) }}`) resolve
 // at render time. See .storybook/main.ts for why this is needed.
