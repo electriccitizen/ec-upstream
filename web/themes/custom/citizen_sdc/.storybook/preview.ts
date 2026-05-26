@@ -71,6 +71,14 @@ const Drupal = {
   ) {
     Object.values(Drupal.behaviors).forEach((b) => b.detach?.(context, settings, trigger));
   },
+  // Minimal Drupal.t: substitutes @/%/! placeholders, no escaping/markup
+  // distinction. Behaviors (gallery, slider) use it for aria-live strings.
+  t(str: string, args: Record<string, string | number> = {}) {
+    return Object.keys(args).reduce(
+      (out, key) => out.split(key).join(String(args[key])),
+      str,
+    );
+  },
 };
 
 Object.assign(window, { Drupal, once, drupalSettings: {} });

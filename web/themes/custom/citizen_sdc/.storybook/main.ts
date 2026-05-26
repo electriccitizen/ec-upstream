@@ -56,6 +56,11 @@ const RESOLVED_ID = '\0' + VIRTUAL_ID;
 const config: StorybookConfig = {
   stories: ['../components/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [],
+  // Serve the vendored Embla UMD bundles (the Drupal `citizen_sdc/embla`
+  // library) so preview-head.html can load them as real browser globals
+  // (window.EmblaCarousel, …) — the slider SDC, used by the gallery's slider
+  // mode, reads those globals.
+  staticDirs: [{ from: '../components-addons', to: '/components-addons' }],
   framework: {
     name: '@storybook/html-vite',
     options: {},

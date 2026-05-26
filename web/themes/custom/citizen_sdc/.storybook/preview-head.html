@@ -1,0 +1,11 @@
+<!--
+  Load the vendored Embla UMD bundles as plain scripts so they expose their
+  browser globals (window.EmblaCarousel / EmblaCarouselAutoplay /
+  EmblaCarouselAutoHeight) before any story runs — mirroring the Drupal
+  `citizen_sdc/embla` library. The slider SDC's behavior (used by the gallery's
+  slider mode) reads these globals; without them it degrades to static slides.
+  Served from ../components-addons via staticDirs (see main.ts).
+-->
+<script src="/components-addons/embla/embla-carousel.umd.js"></script>
+<script src="/components-addons/embla/embla-carousel-autoplay.umd.js"></script>
+<script src="/components-addons/embla/embla-carousel-auto-height.umd.js"></script>
