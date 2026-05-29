@@ -128,6 +128,9 @@
       "drupal/gin": {
         "3580451 - Sidebar disappears after viewport resize (storage-key race)": "patches/gin-3580451-sidebar-storage-key-race-condition.patch",
         "3580451 - Restore missing .meta-sidebar__trigger CSS selectors": "patches/gin-3580451-sidebar-missing-css-selectors.patch"
+      },
+      "drupal/linkit": {
+        "MLH-338: Clear stale data-entity-* attributes when a link URL is changed manually (Linkit 7.0.13+ regression of #3111578)": "patches/linkit-clear-stale-entity-attributes-on-url-edit-3111578.patch"
       }
     },
     "composer-exit-on-patch-failure": true,
