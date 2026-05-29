@@ -1,0 +1,98 @@
+name: Deploy to Pantheon (Push to PR)
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: deploy-push-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  update_multidev:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.PANTHEON_SSH_KEY }}
+          config: ${{ secrets.SSH_CONFIG }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+
+      - name: Check if this branch has an open PR
+        id: check_pr
+        run: |
+          BRANCH_NAME="${{ github.ref_name }}"
+          REPO="${{ github.repository }}"
+
+          # Debugging: Print the repo and branch info
+          echo "Checking PRs for repository: $REPO"
+          echo "Looking for PRs with head branch: $BRANCH_NAME"
+          PR_COUNT=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/$REPO/pulls?head=${{ github.repository_owner }}:$BRANCH_NAME" | jq '. | length')
+
+          echo "Found PR Count: $PR_COUNT"
+
+          if [ "$PR_COUNT" -gt 0 ]; then
+            echo "HAS_PR=true" >> $GITHUB_ENV
+          else
+            echo "HAS_PR=false" >> $GITHUB_ENV
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Terminus
+        if: env.HAS_PR == 'true'
+        uses: pantheon-systems/terminus-github-actions@main
+        with:
+          pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+
+      - name: Generate Multidev Name
+        if: env.HAS_PR == 'true'
+        id: multidev_name
+        run: |
+          BRANCH_NAME="${{ github.ref_name }}"
+          BRANCH_NAME=$(echo "$BRANCH_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | cut -c1-11 | sed 's/^-*//;s/-*$//')
+          echo "multidev_env=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Push Updates to Multidev
+        if: env.HAS_PR == 'true'
+        run: |
+          MULTIDEV="${{ steps.multidev_name.outputs.multidev_env }}"
+          git remote add pantheon "${{ secrets.PANTHEON_REPO }}"
+          git push --force pantheon HEAD:refs/heads/$MULTIDEV
+          terminus workflow:wait ${{ secrets.PANTHEON_SITE_NAME }}.$MULTIDEV
+
+      - name: Wait for multidev build_step to complete
+        if: env.HAS_PR == 'true'
+        run: |
+          MULTIDEV="${{ steps.multidev_name.outputs.multidev_env }}"
+          # workflow:wait above can return before Pantheon's server-side composer install
+          # finishes. Poll Drupal bootstrap directly (typical 1-4 min, 10 min cap).
+          for i in $(seq 1 60); do
+            if terminus drush ${{ secrets.PANTHEON_SITE_NAME }}.$MULTIDEV -- status --field=bootstrap 2>/dev/null | grep -q Successful; then
+              echo "Drupal bootstrap ready after ${i}0s"
+              exit 0
+            fi
+            echo "[${i}/60] Waiting for Drupal to be bootable on $MULTIDEV..."
+            sleep 10
+          done
+          echo "ERROR: Drupal never became bootable within 10 minutes"
+          exit 1
+
+      - name: Run Drush on Multidev
+        if: env.HAS_PR == 'true'
+        run: |
+          MULTIDEV="${{ steps.multidev_name.outputs.multidev_env }}"
+          terminus env:wake ${{ secrets.PANTHEON_SITE_NAME }}.$MULTIDEV
+          terminus drush ${{ secrets.PANTHEON_SITE_NAME }}.$MULTIDEV -- deploy
+          terminus env:clear-cache ${{ secrets.PANTHEON_SITE_NAME }}.$MULTIDEV
