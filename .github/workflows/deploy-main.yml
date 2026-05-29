@@ -1,0 +1,62 @@
+name: Deploy to Pantheon (Main Branch)
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-main
+  cancel-in-progress: false
+
+jobs:
+  deploy_main:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.PANTHEON_SSH_KEY }}
+          config: ${{ secrets.SSH_CONFIG }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+
+      - name: Install Terminus
+        uses: pantheon-systems/terminus-github-actions@main
+        with:
+          pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+
+      - name: Push code to Pantheon dev/master
+        run: |
+          terminus connection:set ${{ secrets.PANTHEON_SITE_NAME }}.dev git
+          git remote add pantheon "${{ secrets.PANTHEON_REPO }}"
+          git push --force pantheon HEAD:master
+          terminus workflow:wait ${{ secrets.PANTHEON_SITE_NAME }}.dev
+
+      - name: Wait for Pantheon build_step to complete
+        run: |
+          # workflow:wait above can return before Pantheon's server-side composer install
+          # finishes. Poll Drupal bootstrap directly — when it succeeds, the env is ready.
+          # Times out at 10 minutes (typical settle: 1-4 minutes).
+          for i in $(seq 1 60); do
+            if terminus drush ${{ secrets.PANTHEON_SITE_NAME }}.dev -- status --field=bootstrap 2>/dev/null | grep -q Successful; then
+              echo "Drupal bootstrap ready after ${i}0s"
+              exit 0
+            fi
+            echo "[${i}/60] Waiting for Drupal to be bootable..."
+            sleep 10
+          done
+          echo "ERROR: Drupal never became bootable within 10 minutes"
+          exit 1
+
+      - name: Run Drush updates
+        run: |
+          terminus env:wake ${{ secrets.PANTHEON_SITE_NAME }}.dev
+          terminus drush ${{ secrets.PANTHEON_SITE_NAME }}.dev -- deploy
+          terminus env:clear-cache ${{ secrets.PANTHEON_SITE_NAME }}.dev
