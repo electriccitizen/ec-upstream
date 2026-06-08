@@ -1,0 +1,21 @@
+uuid: d510de5f-cf47-4578-acef-976dfa948607
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.bios
+  module:
+    - metatag
+id: node.bios.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: bios
+label: Metatags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

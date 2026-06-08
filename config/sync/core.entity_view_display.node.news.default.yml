@@ -8,11 +8,13 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_list_widget
     - field.field.node.news.field_meta_description
+    - field.field.node.news.field_metatags
     - node.type.news
   module:
     - citizen_custom
     - layout_builder
     - layout_discovery
+    - metatag
     - system
     - user
   theme:
@@ -156,6 +158,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
     region: content
   links:
     settings: {  }

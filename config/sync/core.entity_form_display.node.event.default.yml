@@ -10,12 +10,14 @@ dependencies:
     - field.field.node.event.field_image
     - field.field.node.event.field_list_widget
     - field.field.node.event.field_meta_description
+    - field.field.node.event.field_metatags
     - node.type.event
   module:
     - address
     - allowed_formats
     - field_group
     - media_library
+    - metatag
     - smart_date
     - smart_date_recur
     - tagify
@@ -120,6 +122,14 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_metatags:
+    type: metatag_firehose
+    weight: 26
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   promote:
     type: boolean_checkbox

@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.bios.field_headshot
     - field.field.node.bios.field_last_name
     - field.field.node.bios.field_meta_description
+    - field.field.node.bios.field_metatags
     - field.field.node.bios.field_phone
     - field.field.node.bios.field_position
     - image.style.thumbnail
@@ -18,6 +19,7 @@ dependencies:
     - allowed_formats
     - field_group
     - focal_point
+    - metatag
     - telephone
     - text
 third_party_settings:
@@ -105,6 +107,14 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_metatags:
+    type: metatag_firehose
+    weight: 26
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_phone:
     type: telephone_default

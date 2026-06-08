@@ -8,10 +8,12 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_list_widget
     - field.field.node.news.field_meta_description
+    - field.field.node.news.field_metatags
     - node.type.news
   module:
     - allowed_formats
     - media_library
+    - metatag
     - tagify
     - text
 _core:
@@ -67,6 +69,14 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_metatags:
+    type: metatag_firehose
+    weight: 26
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   promote:
     type: boolean_checkbox

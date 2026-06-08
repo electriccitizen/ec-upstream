@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.event.field_image
     - field.field.node.event.field_list_widget
     - field.field.node.event.field_meta_description
+    - field.field.node.event.field_metatags
     - node.type.event
   module:
     - layout_builder
@@ -72,5 +73,6 @@ hidden:
   field_address: true
   field_category: true
   field_list_widget: true
+  field_metatags: true
   links: true
   search_api_excerpt: true
