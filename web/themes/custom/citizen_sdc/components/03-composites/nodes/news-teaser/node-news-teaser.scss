@@ -2,10 +2,40 @@
    NODE NEWS TEASER
 =================== */
 
+@use '../../../00-base/00-variables/units' as *;
+@use '../../../00-base/01-mixins/breakpoint-mixins' as *;
+@use '../../../00-base/01-mixins/media-mixins' as *;
 @use '../../../00-base/01-mixins/type-mixins' as *;
 
+
 .node-teaser--news {
+  @include smallTab {
+    display: flex;
+    column-gap: 24px;
+  }
+
+  .node-teaser__image {
+    @include smallTab {
+      max-width: 320px;
+    }
+
+    img {
+      @include imageBase;
+    }
+  }
+
+  .node-teaser__content {
+    @include smallTab {
+      padding-top: 3rem;
+    }
+  }
+
+  .node-teaser__title {
+    margin-bottom: $spaceXxs;
+  }
+
   .node-teaser__date {
+    margin-bottom: $spaceXs;
     @include metaText;
   }
 }

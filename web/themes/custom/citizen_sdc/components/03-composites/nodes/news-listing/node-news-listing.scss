@@ -2,10 +2,16 @@
    NODE NEWS LISTING
 =================== */
 
+@use '../../../00-base/00-variables/units' as *;
 @use '../../../00-base/01-mixins/type-mixins' as *;
 
 .node-listing--news {
+  .node-listing__title {
+    margin-bottom: $spaceXxs;
+  }
+
   .node-listing__date {
+    margin-bottom: $spaceXs;
     @include metaText;
   }
 }
