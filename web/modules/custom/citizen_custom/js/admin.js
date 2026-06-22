@@ -6,10 +6,17 @@
     attach: function (context) {
       once('isContentPlacer', '.field--name-field-content-type', context).forEach(contentTypeField => {
       
+        // Scope all show/hide work to this Content Placer's own paragraph
+        // subform. Without it, the broad '.field--widget-options-select'
+        // selector also hides unrelated option-select fields elsewhere on the
+        // node form. Falls back to the full context (e.g. the AJAX
+        // paragraph-edit form) when no paragraph wrapper exists.
+        const scope = contentTypeField.closest('.paragraph') || context;
+
         // Hide select and limit fields that are not the content type (taxonomy)
         // field. These get displayed later depending on which content type is
         // selected.
-        hideAllBut('.field--widget-options-select, .field--name-field-limit-list', contentTypeField, context);
+        hideAllBut('.field--widget-options-select, .field--name-field-limit-list', contentTypeField, scope);
         const contentTypeSelect = contentTypeField.querySelector("select");
         // Store the "machine name" of the currently selected Content type.
         let typeName = getTypeString(contentTypeSelect);  
@@ -21,14 +28,14 @@
           // as long as the field is correctly named. Additional control fields
           // like 'event_type' will need to be added using individual logic
           const categories = '.field--name-field-' + typeName + '-category';
-          context.querySelectorAll(categories).forEach(element => {
+          scope.querySelectorAll(categories).forEach(element => {
             element.style.display = 'block';
           });
           if ((typeName == 'events') || (typeName == 'news')) {
-            context.querySelectorAll('.field--name-field-limit-list').forEach(limit => {
+            scope.querySelectorAll('.field--name-field-limit-list').forEach(limit => {
               limit.style.display = 'block';
             });
-          } 
+          }
         }
 
         // Assign onchange events to various fields to hide and show related
@@ -36,19 +43,19 @@
         contentTypeField.addEventListener("change", event => {
           // Re-hide any fields that may have been unhidden since the last
           // change.
-          hideAllBut('.field--widget-options-select, .field--name-field-limit-list', contentTypeField, context, true);
+          hideAllBut('.field--widget-options-select, .field--name-field-limit-list', contentTypeField, scope, true);
 
           typeName = getTypeString(event.target);
           if (typeName && contentTypeSelect.selectedIndex != "_none") {
             const categories = '.field--name-field-' + typeName + '-category';
-            context.querySelectorAll(categories).forEach(element => {
+            scope.querySelectorAll(categories).forEach(element => {
               element.style.display = 'block';
             });
             if ((typeName == 'events') || (typeName == 'news')) {
-              context.querySelectorAll('.field--name-field-limit-list').forEach(limit => {
+              scope.querySelectorAll('.field--name-field-limit-list').forEach(limit => {
                 limit.style.display = 'block';
               });
-            } 
+            }
           }
         });
       });
