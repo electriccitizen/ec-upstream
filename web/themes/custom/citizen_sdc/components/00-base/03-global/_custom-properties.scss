@@ -1,0 +1,10 @@
+/* ============
+	CSS CUSTOM PROPERTIES
+======================= */
+
+@use '../00-variables/units' as *;
+
+:root {
+  --desk: #{$desk};
+  --desk-menu: #{$deskMenu};
+}

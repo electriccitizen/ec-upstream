@@ -1,5 +1,10 @@
 ((Drupal, once) => {
-  const deskMenu = 984;
+  // Desktop breakpoint sourced from the --desk custom property
+  // ($desk in _units.scss) so the SCSS and JS share one value.
+  const desk = parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue('--desk'),
+    10,
+  );
   const ROOT_NAV_SELECTOR = '#block-menu-support-book';
   const SECTION_MENU_SELECTOR = '#menu-support-book';
   const TOGGLE_SELECTOR = '#support-book-menu-toggle';
@@ -11,7 +16,7 @@
   const MENU_SECTION_HIDDEN_CLASS = 'menu--hidden';
   const MENU_SECTION_CLOSING_CLASS = 'menu--closing';
 
-  const isMobile = () => window.innerWidth < deskMenu;
+  const isMobile = () => window.innerWidth < desk;
 
   const setAriaExpanded = (el, state) => {
     if (el) el.setAttribute('aria-expanded', state ? 'true' : 'false');

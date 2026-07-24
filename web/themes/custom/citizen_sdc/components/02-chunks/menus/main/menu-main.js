@@ -1,5 +1,10 @@
 ((Drupal, once) => {
-  const deskMenu = 1020;
+  // Desktop breakpoint sourced from the --desk-menu custom property
+  // ($deskMenu in _units.scss) so the SCSS and JS share one value.
+  const deskMenu = parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue('--desk-menu'),
+    10,
+  );
   const ROOT_NAV_SELECTOR = '#block-menu-main';
   const MAIN_MENU_SELECTOR = '#menu-main';
   const TOGGLE_SELECTOR = '#main-menu-toggle';
