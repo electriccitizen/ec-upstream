@@ -1,7 +1,7 @@
 component:
   id: citizen_sdc:views-search-results
   label: 'Views Site Search Results'
-  description: 'Thin child of `citizen_sdc:views-unformatted-base` for the `site_search.site_search_block` view display. Ports the dart search-results SCSS and hosts the search-highlight JS that wraps matched terms in `<mark class="search-highlight">` for the meta-description field.'
+  description: 'Thin child of `citizen_sdc:views-unformatted-base` for the `site_search.search_results_block` view display. Ports the dart search-results SCSS and hosts the search-highlight JS that wraps matched terms in `<mark class="search-highlight">` for the meta-description field.'
   status: experimental
 
 props:
