@@ -12,7 +12,10 @@
  * @ingroup themeable
  */
 #}
-{% if content %}
+{% if region_attributes.first.hasClass('layout-builder__region') %}
+  {# Layout Builder edit UI: keep every region visible so editors can drop
+     blocks into them. Pass the render arrays straight through — pre-rendering
+     here would strip the builder's contextual links / drag-drop wiring. #}
   {{ include('citizen_sdc:twocol-split-right', {
     attr: attributes,
     first_attr: region_attributes.first,
@@ -24,4 +27,34 @@
     third: content.third,
     content: content.content,
   }, with_context = false) }}
+{% else %}
+  {# Front end: render each region once and drop the ones whose real output is
+     empty — a region can hold a block (e.g. the section menu) that produces no
+     markup, so a truthy render array isn't proof of content. The striptags
+     allow-list keeps media/embeds counting as content. When both sidebar
+     regions (first + second) are empty, flag it so the main column can go
+     full-width via the `--no-sidebar` modifier. #}
+  {% set keep = '<img><svg><iframe><video><audio><embed><object><input><canvas><picture>' %}
+  {% set first_out = content.first|render %}
+  {% set second_out = content.second|render %}
+  {% set third_out = content.third|render %}
+  {% set content_out = content.content|render %}
+  {% set has_first = first_out|striptags(keep)|trim is not empty %}
+  {% set has_second = second_out|striptags(keep)|trim is not empty %}
+  {% set has_third = third_out|striptags(keep)|trim is not empty %}
+  {% set has_content = content_out|striptags(keep)|trim is not empty %}
+  {% if has_first or has_second or has_third or has_content %}
+    {{ include('citizen_sdc:twocol-split-right', {
+      attr: attributes,
+      modifier_class: (not has_first and not has_second) ? 'no-sidebar' : '',
+      first_attr: region_attributes.first,
+      second_attr: region_attributes.second,
+      third_attr: region_attributes.third,
+      content_attr: region_attributes.content,
+      first: has_first ? first_out : null,
+      second: has_second ? second_out : null,
+      third: has_third ? third_out : null,
+      content: has_content ? content_out : null,
+    }, with_context = false) }}
+  {% endif %}
 {% endif %}

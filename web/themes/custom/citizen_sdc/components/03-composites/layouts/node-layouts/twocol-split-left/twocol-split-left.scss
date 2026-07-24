@@ -20,17 +20,18 @@
     align-items: flex-start;
   }
 
-  /* Prevent inner field-level clearfix pseudo-elements from breaking float flow */
-  .field-long-text,
-  .text-long,
-  .text-with-summary {
-    &::after {
-      content: none;
-      clear: none !important;
+  &--no-sidebar.layout {
+    & > .layout__region--content,& > .layout__region--third {
+      @include desk {
+        width: 100%;
+        max-width: $textMax;
+        padding-left: 0;
+        @include auto;
+      }
     }
   }
 
-  .layout__region--first {
+  & > .layout__region--first {
     width: 100%;
 
     @include onlyMobile {
@@ -47,7 +48,7 @@
     }
   }
 
-  .layout__region--second {
+  & > .layout__region--second {
     width: 100%;
 
     @include onlyMobile {
@@ -65,7 +66,7 @@
     }
   }
 
-  .layout__region--third {
+  & > .layout__region--third {
     width: 100%;
 
     @include onlyMobile {
@@ -80,14 +81,6 @@
       width: calc(100% - #{$sideBar});
       margin-left: $sideBar;
       padding-left: $sectionGutter;
-
-      &:first-child {
-        width: 100%;
-        max-width: $textMax;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 0;
-      }
     }
 
     &.layout-builder__region {
@@ -95,7 +88,7 @@
     }
   }
 
-  .layout__region--content {
+  & > .layout__region--content {
     width: 100%;
 
     @include onlyMobile {
@@ -106,14 +99,6 @@
       width: calc(100% - #{$sideBar});
       margin-left: $sideBar;
       padding-left: $sectionGutter;
-
-      &:first-child {
-        width: 100%;
-        max-width: $textMax;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 0;
-      }
     }
   }
 }

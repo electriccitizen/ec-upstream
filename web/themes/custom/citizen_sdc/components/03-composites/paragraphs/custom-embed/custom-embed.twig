@@ -3,7 +3,9 @@
     <h2 class="paragraph--custom-embed__title">{{ title }}</h2>
   {% endif %}
   <div class="paragraph--custom-embed__content">
-    {{ content }}
+    {% autoescape false %}
+      {{- embed -}}
+    {% endautoescape %}
   </div>
 {% endset %}
 

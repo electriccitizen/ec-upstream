@@ -10,6 +10,9 @@ props:
     attr:
       type: object
       description: 'Drupal Attributes object for the layout wrapper'
+    modifier_class:
+      type: string
+      description: 'Optional BEM modifier appended to the layout wrapper (e.g. `no-sidebar` when both sidebar regions are empty).'
     first_attr:
       type: object
       description: 'Drupal Attributes object for the first region wrapper'

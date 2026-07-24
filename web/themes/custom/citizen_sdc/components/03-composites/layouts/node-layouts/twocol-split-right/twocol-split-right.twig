@@ -1,6 +1,7 @@
 {% set classes = [
   'layout',
   'layout--twocol-split-right',
+  modifier_class ? 'layout--twocol-split-right--' ~ modifier_class,
 ] %}
 <div{{ attr.addClass(classes) }}>
   {% if first %}

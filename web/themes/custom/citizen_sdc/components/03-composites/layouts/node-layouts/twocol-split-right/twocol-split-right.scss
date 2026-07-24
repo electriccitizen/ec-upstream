@@ -20,13 +20,14 @@
     align-items: flex-start;
   }
 
-  /* Prevent inner field-level clearfix pseudo-elements from breaking float flow */
-  .field-long-text,
-  .text-long,
-  .text-with-summary {
-    &::after {
-      content: none;
-      clear: none !important;
+  &--no-sidebar.layout {
+    & > .layout__region--content,& > .layout__region--third {
+      @include desk {
+        width: 100%;
+        max-width: $textMax;
+        padding-right: 0;
+        @include auto;
+      }
     }
   }
 
@@ -80,14 +81,6 @@
       width: calc(100% - #{$sideBar});
       margin-right: $sideBar;
       padding-right: $sectionGutter;
-
-      &:first-child {
-        width: 100%;
-        max-width: $textMax;
-        margin-left: auto;
-        margin-right: auto;
-        padding-right: 0;
-      }
     }
 
     &.layout-builder__region {
@@ -106,14 +99,6 @@
       width: calc(100% - #{$sideBar});
       margin-right: $sideBar;
       padding-right: $sectionGutter;
-
-      &:first-child {
-        width: 100%;
-        max-width: $textMax;
-        margin-left: auto;
-        margin-right: auto;
-        padding-right: 0;
-      }
     }
   }
 }
