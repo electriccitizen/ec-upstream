@@ -17,9 +17,6 @@
 }
 
 .menu--footer {
-  @include tab {
-    flex-direction: column;
-  }
 
   .menu-item__link {
     display: inline-block;

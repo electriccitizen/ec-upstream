@@ -245,6 +245,8 @@
     column-gap: 8px;
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
 
     //global item controls

@@ -12,6 +12,8 @@
   @include tab {
     column-gap: 16px;
     font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
   }
   
   .menu-item__link {
