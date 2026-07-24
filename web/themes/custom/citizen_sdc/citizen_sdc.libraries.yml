@@ -10,7 +10,6 @@ global:
     - core/normalize
 
 paragraph-animate:
-  version: 1.0
   js:
     components/03-composites/paragraphs/00-paragraph-base/paragraph-animate.js: {}
   dependencies:
