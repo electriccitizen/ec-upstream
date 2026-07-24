@@ -82,6 +82,19 @@ function citizen_custom_page_attachments(array &$attachments) {
   // Add custom admin theme files to admin pages.
   if (\Drupal::service('router.admin_context')->isAdminRoute()) {
     $attachments['#attached']['library'][] = 'citizen_custom/admin-global';
+
+    // Provide paragraph bundle machine name => label so the Layout Paragraphs
+    // preview labels (js/admin.js) show the human-readable bundle label
+    // instead of the machine name (which can drift when a bundle is relabeled).
+    $entity_type_manager = \Drupal::entityTypeManager();
+    if ($entity_type_manager->hasDefinition('paragraphs_type')) {
+      $labels = [];
+      foreach ($entity_type_manager->getStorage('paragraphs_type')->loadMultiple() as $paragraph_type) {
+        $labels[$paragraph_type->id()] = $paragraph_type->label();
+      }
+      $attachments['#attached']['drupalSettings']['citizenCustom']['paragraphLabels'] = $labels;
+      $attachments['#cache']['tags'][] = 'config:paragraphs_type_list';
+    }
   }
 
   // Keep the user login and password-reset pages out of search indexes.

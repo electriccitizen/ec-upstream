@@ -1,4 +1,4 @@
-(function (Drupal, once) {
+(function (Drupal, once, drupalSettings) {
 
   /* CONTENT LIST PARAGRAPH SELECT LIST FUNCTIONALITY
   ----------------------- */
@@ -66,11 +66,14 @@
   ----------------------- */
   Drupal.behaviors.previewLabel = {
     attach: function (context) {
+      const paragraphLabels = (drupalSettings.citizenCustom && drupalSettings.citizenCustom.paragraphLabels) || {};
       once('isParaPreview', '.lp-builder .paragraph--view-mode--preview', context).forEach((element) => {
         if (typeof element.dataset.type !== 'undefined') {
           const label = document.createElement('div');
           label.className = "para-preview-label";
-          label.innerHTML = element.dataset.type.replace(/_/g, ' ') + " widget";
+          // Prefer the human-readable bundle label; fall back to the machine name.
+          const base = paragraphLabels[element.dataset.type] || element.dataset.type.replace(/_/g, ' ');
+          label.textContent = base + " widget";
           element.prepend(label);
         }
       });
@@ -112,4 +115,4 @@
     });
   }
 
-})(Drupal, once);
+})(Drupal, once, drupalSettings);
