@@ -103,6 +103,13 @@
     left: 0;
     z-index: 500;
     @include showContent(.5s);
+    visibility: hidden;
+    transition: max-height .5s ease-out, visibility 0s ease-out .5s;
+
+    &[aria-hidden='false'] {
+      visibility: visible;
+      transition: max-height .5s ease-out, visibility 0s ease-out 0s;
+    }
   }
 
   /* Search form */

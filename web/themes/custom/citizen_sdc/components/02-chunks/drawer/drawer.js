@@ -49,6 +49,10 @@
 
         content.style.overflow = content.style.overflow || 'hidden';
         content.style.height = '0px';
+        // Closed content is clipped to 0 height; also flip it to
+        // visibility:hidden so it leaves the a11y tree / contrast tooling
+        // entirely (on top of aria-hidden + the tabindex management below).
+        content.style.visibility = 'hidden';
 
         if (!prefersReducedMotion) {
           content.style.transition = content.style.transition || 'height 300ms ease';
@@ -99,6 +103,7 @@
         const openDrawer = () => {
           setFocusable(true);
           content.setAttribute('aria-hidden', 'false');
+          content.style.visibility = 'visible';
           setTogglesState(true);
 
           if (prefersReducedMotion) {
@@ -128,6 +133,7 @@
 
           if (prefersReducedMotion) {
             content.style.height = '0px';
+            content.style.visibility = 'hidden';
             return;
           }
 
@@ -138,6 +144,19 @@
           content.offsetHeight; // eslint-disable-line no-unused-expressions
 
           content.style.height = '0px';
+
+          // Stay visible through the collapse, then drop out of the a11y tree /
+          // contrast tooling. Guard on aria-hidden so a fast re-open wins.
+          const hideOnClose = (event) => {
+            if (event.propertyName !== 'height') {
+              return;
+            }
+            if (content.getAttribute('aria-hidden') === 'true') {
+              content.style.visibility = 'hidden';
+            }
+            content.removeEventListener('transitionend', hideOnClose);
+          };
+          content.addEventListener('transitionend', hideOnClose);
         };
 
         // Ensure the drawer starts closed and unfocusable.
