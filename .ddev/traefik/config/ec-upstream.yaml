@@ -7,7 +7,7 @@ http:
   routers:
     ec-upstream-web-80-http:
       entrypoints:
-        - http-33000
+        - http-80
       rule: HostRegexp(`^ec-upstream\.ddev\.site$`)
       
       service: "ec-upstream-web-80"
@@ -37,7 +37,7 @@ http:
     
     ec-upstream-web-80-https:
       entrypoints:
-        - http-33001
+        - http-443
       rule: HostRegexp(`^ec-upstream\.ddev\.site$`)
       
       service: "ec-upstream-web-80"
