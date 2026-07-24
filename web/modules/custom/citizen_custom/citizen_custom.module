@@ -83,6 +83,27 @@ function citizen_custom_page_attachments(array &$attachments) {
   if (\Drupal::service('router.admin_context')->isAdminRoute()) {
     $attachments['#attached']['library'][] = 'citizen_custom/admin-global';
   }
+
+  // Keep the user login and password-reset pages out of search indexes.
+  $noindex_routes = [
+    'user.login',
+    'user.pass',
+    'user.reset',
+    'user.reset.login',
+    'user.reset.form',
+  ];
+  if (in_array(\Drupal::routeMatch()->getRouteName(), $noindex_routes, TRUE)) {
+    $attachments['#attached']['html_head'][] = [
+      [
+        '#tag' => 'meta',
+        '#attributes' => [
+          'name' => 'robots',
+          'content' => 'noindex, nofollow',
+        ],
+      ],
+      'citizen_custom_noindex',
+    ];
+  }
 }
 
 /**
