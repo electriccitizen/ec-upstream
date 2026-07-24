@@ -1,5 +1,5 @@
 /* =================
-   PARAGRAPH 50/50
+   PARAGRAPH TEXT & MEDIA
 =================== */
 
 @use '../../../00-base/00-variables/units' as *;
@@ -7,7 +7,7 @@
 @use '../../../00-base/01-mixins/button-mixins' as *;
 @use '../../../00-base/01-mixins/style-mixins' as *;
 
-.paragraph--fifty-fifty {
+.paragraph--text-media {
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -17,7 +17,7 @@
     flex-direction: row;
     align-items: center;
 
-    &:has(.paragraph--fifty-fifty__media--image) {
+    &:has(.paragraph--text-media__media--image) {
       align-items: stretch;
     }
 
@@ -26,15 +26,15 @@
     }
   }
 
-  .paragraph--fifty-fifty__media,
-  .paragraph--fifty-fifty__content {
+  .paragraph--text-media__media,
+  .paragraph--text-media__content {
     @include tab {
       flex: 1 1 50%;
       min-width: 0; // prevent flex items from overflowing their basis
     }
   }
 
-  .paragraph--fifty-fifty__media {
+  .paragraph--text-media__media {
     img {
       @include onlySmall {
         @include image100W;
@@ -57,38 +57,38 @@
     }
   }
 
-  .paragraph--fifty-fifty__content {
+  .paragraph--text-media__content {
     @include tab {
       padding: $spaceMd 0;
     }
 
-    .paragraph--fifty-fifty__title,
-    .paragraph--fifty-fifty__text {
+    .paragraph--text-media__title,
+    .paragraph--text-media__text {
       margin-bottom: $spaceXs;
     }
   }
 
-  .paragraph--fifty-fifty__actions {
+  .paragraph--text-media__actions {
     a {
       @include button;
     }
   }
 
   &[data-animate="yes"] {
-    .paragraph--fifty-fifty__media {
+    .paragraph--text-media__media {
       opacity: 0;
       transform: translateX(-100%);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 
-    &.paragraph--fifty-fifty--right {
-      .paragraph--fifty-fifty__media {
+    &.paragraph--text-media--right {
+      .paragraph--text-media__media {
         transform: translateX(100%);
       }
     }
 
     &.is-in-view {
-      .paragraph--fifty-fifty__media {
+      .paragraph--text-media__media {
         opacity: 1;
         transform: translateX(0);
       }
@@ -97,8 +97,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .paragraph--fifty-fifty[data-animate="yes"] {
-    .paragraph--fifty-fifty__media {
+  .paragraph--text-media[data-animate="yes"] {
+    .paragraph--text-media__media {
       opacity: 1;
       transform: none;
       transition: none;

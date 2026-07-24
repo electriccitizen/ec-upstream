@@ -1,17 +1,17 @@
-uuid: 37717de0-4ae7-4d09-a8a3-adc4e9645ac0
+uuid: 404be5d9-6ce4-4c4e-aa9c-c1df063301b2
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_long_text
     - filter.format.limited_html
-    - paragraphs.paragraphs_type.fifty_fifty
+    - paragraphs.paragraphs_type.text_media
   module:
     - text
-id: paragraph.fifty_fifty.field_long_text
+id: paragraph.text_media.field_long_text
 field_name: field_long_text
 entity_type: paragraph
-bundle: fifty_fifty
+bundle: text_media
 label: Text
 description: ''
 required: false

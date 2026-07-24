@@ -1,22 +1,22 @@
-uuid: e60bcd8c-e187-43aa-b407-72d461b28995
+uuid: d0c57fbd-acd2-447c-9812-c0a9e71ef459
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.fifty_fifty.field_alignment
-    - field.field.paragraph.fifty_fifty.field_link
-    - field.field.paragraph.fifty_fifty.field_long_text
-    - field.field.paragraph.fifty_fifty.field_media
-    - field.field.paragraph.fifty_fifty.field_widget_title
-    - paragraphs.paragraphs_type.fifty_fifty
+    - field.field.paragraph.text_media.field_alignment
+    - field.field.paragraph.text_media.field_link
+    - field.field.paragraph.text_media.field_long_text
+    - field.field.paragraph.text_media.field_media
+    - field.field.paragraph.text_media.field_widget_title
+    - paragraphs.paragraphs_type.text_media
   module:
     - link
     - media_library
     - options
     - text
-id: paragraph.fifty_fifty.default
+id: paragraph.text_media.default
 targetEntityType: paragraph
-bundle: fifty_fifty
+bundle: text_media
 mode: default
 content:
   field_alignment:

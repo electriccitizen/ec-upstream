@@ -1,16 +1,16 @@
-uuid: d5fa7073-2ef7-440f-850a-5a4b068e5b81
+uuid: aaf2a3f2-746b-4960-a673-c21f66f44066
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_link
-    - paragraphs.paragraphs_type.fifty_fifty
+    - paragraphs.paragraphs_type.text_media
   module:
     - link
-id: paragraph.fifty_fifty.field_link
+id: paragraph.text_media.field_link
 field_name: field_link
 entity_type: paragraph
-bundle: fifty_fifty
+bundle: text_media
 label: Link
 description: ''
 required: false

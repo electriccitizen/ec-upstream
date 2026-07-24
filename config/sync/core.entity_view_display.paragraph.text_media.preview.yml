@@ -1,16 +1,16 @@
-uuid: 78c26c1a-1413-498e-aa87-b9b4ec90a37d
+uuid: 26e83e45-1881-4f3e-b209-f9cbde95d3f7
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.fifty_fifty.field_alignment
-    - field.field.paragraph.fifty_fifty.field_link
-    - field.field.paragraph.fifty_fifty.field_long_text
-    - field.field.paragraph.fifty_fifty.field_media
-    - field.field.paragraph.fifty_fifty.field_widget_title
+    - field.field.paragraph.text_media.field_alignment
+    - field.field.paragraph.text_media.field_link
+    - field.field.paragraph.text_media.field_long_text
+    - field.field.paragraph.text_media.field_media
+    - field.field.paragraph.text_media.field_widget_title
     - image.style.paragraph_preview
-    - paragraphs.paragraphs_type.fifty_fifty
+    - paragraphs.paragraphs_type.text_media
   module:
     - layout_builder
     - media
@@ -19,9 +19,9 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: paragraph.fifty_fifty.preview
+id: paragraph.text_media.preview
 targetEntityType: paragraph
-bundle: fifty_fifty
+bundle: text_media
 mode: preview
 content:
   field_alignment:

@@ -7,13 +7,13 @@ dependencies:
     - node.type.page
     - paragraphs.paragraphs_type.accordions
     - paragraphs.paragraphs_type.custom_embed
-    - paragraphs.paragraphs_type.fifty_fifty
     - paragraphs.paragraphs_type.form_placer
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.horizontal_rule
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.layout_section_simple
     - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.text_media
     - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
@@ -35,7 +35,7 @@ settings:
     target_bundles:
       accordions: accordions
       custom_embed: custom_embed
-      fifty_fifty: fifty_fifty
+      text_media: text_media
       form_placer: form_placer
       gallery: gallery
       horizontal_rule: horizontal_rule
@@ -59,9 +59,6 @@ settings:
         enabled: false
       custom_embed:
         weight: -37
-        enabled: true
-      fifty_fifty:
-        weight: -20
         enabled: true
       form_placer:
         weight: -35
@@ -101,6 +98,9 @@ settings:
         enabled: true
       text:
         weight: -29
+        enabled: true
+      text_media:
+        weight: -20
         enabled: true
       video:
         weight: -28

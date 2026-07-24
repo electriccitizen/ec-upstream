@@ -1,4 +1,4 @@
-uuid: 3d3b4bc1-494c-44a4-b291-badcf690eb51
+uuid: accd4d06-5b00-43a0-ad11-6d103b63e1d6
 langcode: en
 status: true
 dependencies:
@@ -6,11 +6,11 @@ dependencies:
     - field.storage.paragraph.field_media
     - media.type.image
     - media.type.remote_video
-    - paragraphs.paragraphs_type.fifty_fifty
-id: paragraph.fifty_fifty.field_media
+    - paragraphs.paragraphs_type.text_media
+id: paragraph.text_media.field_media
 field_name: field_media
 entity_type: paragraph
-bundle: fifty_fifty
+bundle: text_media
 label: Media
 description: ''
 required: true

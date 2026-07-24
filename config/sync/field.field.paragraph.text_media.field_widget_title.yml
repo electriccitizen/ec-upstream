@@ -1,14 +1,14 @@
-uuid: 96b330c4-45c1-49bb-b094-496f7456432b
+uuid: 7cf3aab5-9b4b-4227-8a3a-1a832e1fe8b9
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_widget_title
-    - paragraphs.paragraphs_type.fifty_fifty
-id: paragraph.fifty_fifty.field_widget_title
+    - paragraphs.paragraphs_type.text_media
+id: paragraph.text_media.field_widget_title
 field_name: field_widget_title
 entity_type: paragraph
-bundle: fifty_fifty
+bundle: text_media
 label: Title
 description: ''
 required: true

@@ -9,7 +9,6 @@ dependencies:
     - paragraphs.paragraphs_type.content_list
     - paragraphs.paragraphs_type.cta
     - paragraphs.paragraphs_type.custom_embed
-    - paragraphs.paragraphs_type.fifty_fifty
     - paragraphs.paragraphs_type.form_placer
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.horizontal_rule
@@ -17,6 +16,7 @@ dependencies:
     - paragraphs.paragraphs_type.layout_section
     - paragraphs.paragraphs_type.portals
     - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.text_media
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.view_placer
   module:
@@ -41,7 +41,7 @@ settings:
       cta: cta
       content_list: content_list
       custom_embed: custom_embed
-      fifty_fifty: fifty_fifty
+      text_media: text_media
       form_placer: form_placer
       gallery: gallery
       horizontal_rule: horizontal_rule
@@ -70,9 +70,6 @@ settings:
         enabled: true
       custom_embed:
         weight: -36
-        enabled: true
-      fifty_fifty:
-        weight: -21
         enabled: true
       form_placer:
         weight: -35
@@ -109,6 +106,9 @@ settings:
         enabled: true
       text:
         weight: -26
+        enabled: true
+      text_media:
+        weight: -21
         enabled: true
       video:
         weight: -25

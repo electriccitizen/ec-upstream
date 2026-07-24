@@ -132,10 +132,6 @@ button.disabled:hover {
   background-image: url('../icons/form-placer.svg');
 }
 
-.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-fifty_fifty>a:before {
-  background-image: url('../icons/50-50.svg');
-}
-
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-gallery>a:before {
   background-image: url('../icons/gallery.svg');
 }
@@ -154,6 +150,10 @@ button.disabled:hover {
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-text>a:before {
   background-image: url('../icons/text.svg');
+}
+
+.lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-text_media>a:before {
+  background-image: url('../icons/text-media.svg');
 }
 
 .lpb-component-list .lpb-component-list__group>.lpb-component-list__group--content>.type-video>a:before {

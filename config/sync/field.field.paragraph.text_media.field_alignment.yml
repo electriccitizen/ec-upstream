@@ -1,16 +1,16 @@
-uuid: 1c591239-552f-4025-9365-b3ba18929e83
+uuid: 64bbc8f0-79a7-4a6b-b0f2-807f14a79c26
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_alignment
-    - paragraphs.paragraphs_type.fifty_fifty
+    - paragraphs.paragraphs_type.text_media
   module:
     - options
-id: paragraph.fifty_fifty.field_alignment
+id: paragraph.text_media.field_alignment
 field_name: field_alignment
 entity_type: paragraph
-bundle: fifty_fifty
+bundle: text_media
 label: 'Media Alignment'
 description: ''
 required: true

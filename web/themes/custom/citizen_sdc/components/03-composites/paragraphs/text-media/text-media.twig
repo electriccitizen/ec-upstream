@@ -1,0 +1,33 @@
+{% set alignment_modifier = 'paragraph--text-media--' ~ (alignment|default('left')) %}
+{% set text_media_attr = (attr ?: create_attribute()).addClass(alignment_modifier) %}
+
+{# BEM modifier on the media div based on bundle (image, remote-video, …) so
+   CSS can scope image-only rules (equal-height stretch, object-fit cover)
+   without affecting video media. #}
+{% set media_type_class = media_type ? 'paragraph--text-media__media--' ~ media_type|clean_class : '' %}
+
+{% set text_media_body %}
+  <div class="paragraph--text-media__media{% if media_type_class %} {{ media_type_class }}{% endif %}">
+    {{ media }}
+  </div>
+  <div class="paragraph--text-media__content">
+    <h2 class="paragraph--text-media__title">{{ title }}</h2>
+    {% if text %}
+      <div class="paragraph--text-media__text">
+        {{ text }}
+      </div>
+    {% endif %}
+    {% if link %}
+      <div class="paragraph--text-media__actions">
+        {{ link }}
+      </div>
+    {% endif %}
+  </div>
+{% endset %}
+
+{{ include('citizen_sdc:paragraph-base', {
+  attr: text_media_attr,
+  modifier_class: 'text-media',
+  animate: 'yes',
+  content: text_media_body,
+}, with_context = false) }}
