@@ -16,6 +16,7 @@ dependencies:
   module:
     - addanother
     - citizen_custom
+    - editoria11y
     - file
     - filter
     - help
