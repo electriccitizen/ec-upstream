@@ -10,6 +10,7 @@
 @use '../01-mixins/animation-mixins' as *;
 @use '../01-mixins/button-mixins' as *;
 @use '../01-mixins/general-mixins' as *;
+@use '../01-mixins/style-mixins' as *;
 @use '../01-mixins/type-mixins' as *;
 
 /* HEADING STYLING
@@ -110,7 +111,7 @@ p {
   }
 }
 
-a {
+a:not([class*="ec-button"]) {
   color: $link;
   text-decoration: none;
 
@@ -128,6 +129,13 @@ a {
       .paragraph--layout-section--light-grey & {
         background-color: color.adjust($lightBlue2, $lightness: -5%);
       }
+    }
+  }
+  &:focus-visible {
+    .field--text-with-summary &,
+    .field--text-long &,
+    .field--body__text &{
+      @include focusOutline(dark);
     }
   }
 }
@@ -193,7 +201,7 @@ blockquote {
 
 .field--text-with-summary,
 .field--text-long {
-  @include clearFix;
+  display: flow-root;
 
   &>*:last-child {
     margin-bottom: 0;
