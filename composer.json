@@ -38,6 +38,7 @@
     "drupal/core-recommended": "^11",
     "drupal/crop": "^2.1",
     "drupal/ctools": "^4.0",
+    "drupal/custom_field": "^4.0",
     "drupal/date_popup": "^2.0",
     "drupal/default_content": "^2.0",
     "drupal/devel": "^5.0",

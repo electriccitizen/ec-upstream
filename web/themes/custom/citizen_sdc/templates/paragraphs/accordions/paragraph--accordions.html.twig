@@ -3,31 +3,56 @@
  * @file
  * Accordions paragraph — delegates to the accordions SDC.
  *
- * Single-SDC pattern for parent/child paragraph pairs: the `accordion_item`
- * bundle has no dedicated SDC. This template iterates `field_accordion_items`
- * and pulls each child's `field_accordion_header` + `field_long_text` into
- * an `items` array that the parent SDC iterates to render the full accordion
- * structure with ARIA-coordinated IDs.
+ * This template flattens the accordion source data into an `items` array that
+ * the parent SDC iterates to render the full accordion structure with
+ * ARIA-coordinated IDs.
+ *
+ * Primary source is `field_accordions`, a custom_field with two subfields:
+ * `header` (string) and `text` (string_long, formatted). The text format is
+ * not stored per row — it comes from the field's own settings
+ * (`field.field.paragraph.accordions.field_accordions` →
+ * `field_settings.text.default_format`), so it is mirrored here.
+ *
+ * TRANSITIONAL: `field_accordion_items` (the legacy nested `accordion_item`
+ * child paragraph) is still read as a fallback so content that has not been
+ * migrated yet keeps rendering. Delete that block — and this note — once the
+ * child bundle is removed.
  *
  * Unique `id` per item combines the parent paragraph ID + the item delta so
  * multiple accordions on the same page don't collide on ARIA IDs.
  */
 #}
+{% set text_format = 'basic_html' %}
 {% set items = [] %}
-{% for key, accordion in content.field_accordion_items %}
-  {% if key|first != '#' and accordion['#paragraph'] %}
-    {% set item_paragraph = accordion['#paragraph'] %}
-    {% set items = items|merge([{
-      id: paragraph.id.value ~ '-' ~ (key + 1),
-      header: item_paragraph.field_accordion_header.0.value,
-      body: {
-        '#type': 'processed_text',
-        '#text': item_paragraph.field_long_text.0.value ?? '',
-        '#format': item_paragraph.field_long_text.0.format,
-      },
-    }]) %}
-  {% endif %}
+
+{% for delta, accordion in paragraph.field_accordions %}
+  {% set items = items|merge([{
+    id: paragraph.id.value ~ '-' ~ (delta + 1),
+    header: accordion.header,
+    body: {
+      '#type': 'processed_text',
+      '#text': accordion.text,
+      '#format': text_format,
+    },
+  }]) %}
 {% endfor %}
+
+{% if items is empty %}
+  {% for key, accordion in content.field_accordion_items %}
+    {% if key|first != '#' and accordion['#paragraph'] %}
+      {% set item_paragraph = accordion['#paragraph'] %}
+      {% set items = items|merge([{
+        id: paragraph.id.value ~ '-' ~ (key + 1),
+        header: item_paragraph.field_accordion_header.0.value,
+        body: {
+          '#type': 'processed_text',
+          '#text': item_paragraph.field_long_text.0.value ?? '',
+          '#format': item_paragraph.field_long_text.0.format,
+        },
+      }]) %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 
 {{ include('citizen_sdc:accordions', {
   attr: attributes|without('class'),

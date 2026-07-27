@@ -1,0 +1,27 @@
+uuid: ca1e5058-86bd-49e5-9390-2439b423dc36
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_field
+    - paragraphs
+id: paragraph.field_accordions
+field_name: field_accordions
+entity_type: paragraph
+type: custom
+settings:
+  columns:
+    header:
+      name: header
+      type: string
+      length: 255
+    text:
+      name: text
+      type: string_long
+module: custom_field
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

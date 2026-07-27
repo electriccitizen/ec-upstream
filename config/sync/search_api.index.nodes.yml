@@ -3,14 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
     - field.storage.node.body
     - field.storage.node.field_exclude_search
     - field.storage.node.field_meta_description
     - field.storage.node.field_paragraphs
     - field.storage.node.field_search_keywords
-    - field.storage.paragraph.field_accordion_header
-    - field.storage.paragraph.field_accordion_items
+    - field.storage.paragraph.field_accordions
     - field.storage.paragraph.field_long_text
     - field.storage.paragraph.field_widget_title
     - search_api.server.local
@@ -32,41 +30,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.body
-  field_accordion_header:
-    label: 'Accordion Header'
-    datasource_id: 'entity:node'
-    property_path: 'field_paragraphs:entity:field_accordion_header'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_paragraphs
-        - field.storage.paragraph.field_accordion_header
-      module:
-        - paragraphs
-  field_accordion_text:
-    label: 'Accordion Body'
-    datasource_id: 'entity:node'
-    property_path: 'field_paragraphs:entity:field_accordion_items:entity:field_long_text'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_paragraphs
-        - field.storage.paragraph.field_accordion_items
-        - field.storage.paragraph.field_long_text
-      module:
-        - paragraphs
-  field_accordion_title:
-    label: 'Accordion Title'
-    datasource_id: 'entity:node'
-    property_path: 'field_paragraphs:entity:field_accordion_items:entity:field_widget_title'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_paragraphs
-        - field.storage.paragraph.field_accordion_items
-        - field.storage.paragraph.field_widget_title
-      module:
-        - paragraphs
   field_exclude_search:
     label: 'Exclude from Site Search'
     datasource_id: 'entity:node'
@@ -113,6 +76,28 @@ field_settings:
       config:
         - field.storage.node.field_paragraphs
         - field.storage.paragraph.field_widget_title
+      module:
+        - paragraphs
+  header:
+    label: 'Accordions Header'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_accordions:header'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_accordions
+      module:
+        - paragraphs
+  text:
+    label: 'Accordions Text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_accordions:text'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_accordions
       module:
         - paragraphs
   title:
@@ -173,13 +158,12 @@ processor_settings:
     all_fields: true
     fields:
       - body
-      - field_accordion_header
-      - field_accordion_text
-      - field_accordion_title
       - field_long_text
       - field_meta_description
       - field_search_keywords
       - field_widget_title
+      - header
+      - text
       - title
       - type
     ignorable: "['¿¡!?,.:;]"
@@ -198,16 +182,16 @@ processor_settings:
     all_fields: true
     fields:
       - body
-      - field_accordion_header
-      - field_accordion_text
-      - field_accordion_title
       - field_long_text
       - field_meta_description
       - field_search_keywords
       - field_widget_title
+      - header
+      - text
       - title
       - type
   language_with_fallback: {  }
+  rendered_item: {  }
   stemmer:
     weights:
       preprocess_index: -46
@@ -215,10 +199,11 @@ processor_settings:
     all_fields: true
     fields:
       - body
-      - field_accordion_text
       - field_long_text
       - field_meta_description
       - field_search_keywords
+      - header
+      - text
       - title
     exceptions:
       mexican: mexic
@@ -230,10 +215,11 @@ processor_settings:
     all_fields: true
     fields:
       - body
-      - field_accordion_text
       - field_long_text
       - field_meta_description
       - field_search_keywords
+      - header
+      - text
       - title
     stopwords:
       - a
@@ -278,10 +264,11 @@ processor_settings:
     all_fields: true
     fields:
       - body
-      - field_accordion_text
       - field_long_text
       - field_meta_description
       - field_search_keywords
+      - header
+      - text
       - title
     spaces: ''
     ignored: ._-
@@ -294,13 +281,12 @@ processor_settings:
     all_fields: true
     fields:
       - body
-      - field_accordion_header
-      - field_accordion_text
-      - field_accordion_title
       - field_long_text
       - field_meta_description
       - field_search_keywords
       - field_widget_title
+      - header
+      - text
       - title
       - type
 tracker_settings:
@@ -308,6 +294,7 @@ tracker_settings:
     indexing_order: fifo
 options:
   cron_limit: 50
+  delete_on_fail: true
   index_directly: true
   track_changes_in_references: true
 server: local

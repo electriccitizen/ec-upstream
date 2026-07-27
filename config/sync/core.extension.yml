@@ -28,6 +28,9 @@ module:
   crop: 0
   ctools: 0
   ctools_block: 0
+  custom_field: 0
+  custom_field_media: 0
+  custom_field_search_api: 0
   date_popup: 0
   datetime: 0
   default_content: 0

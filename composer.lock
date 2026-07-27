@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b7da1376d81f2f4945894d1c5127df8",
+    "content-hash": "5ae694f40f5f89c31c7536f90002f0cb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3581,6 +3581,71 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/ctools",
                 "issues": "https://www.drupal.org/project/issues/ctools"
+            }
+        },
+        {
+            "name": "drupal/custom_field",
+            "version": "4.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/custom_field.git",
+                "reference": "4.0.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/custom_field-4.0.9.zip",
+                "reference": "4.0.9",
+                "shasum": "7a47d5bb369ac5af9858c8056feefcc308e6ab0f"
+            },
+            "require": {
+                "drupal/core": "^10.3 || >=11.0 <11.4"
+            },
+            "require-dev": {
+                "drupal/ai": "^1.2 || ^1.3",
+                "drupal/entity_browser": "^2",
+                "drupal/entity_usage": "^2",
+                "drupal/feeds": "^3",
+                "drupal/graphql_compose": "2.4.x-dev",
+                "drupal/linkit": "^6.1 || ^7",
+                "drupal/paragraphs": "^1",
+                "drupal/search_api": "^1",
+                "drupal/svg_image": "^3",
+                "drupal/token": "^1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.0.9",
+                    "datestamp": "1784833026",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "apmsooner",
+                    "homepage": "https://www.drupal.org/user/593202"
+                },
+                {
+                    "name": "dave reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                }
+            ],
+            "description": "Dynamic custom field types with extensive widget and formatter plugin support. A highly performant & scalable alternative to paragraphs and entity reference by storing data in a single table.",
+            "homepage": "https://www.drupal.org/project/custom_field",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/custom_field",
+                "issues": "https://www.drupal.org/project/issues/custom_field",
+                "docs": "https://www.drupal.org/docs/extending-drupal/contributed-modules/contributed-module-documentation/custom-field"
             }
         },
         {
@@ -16127,5 +16192,5 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }

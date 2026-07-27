@@ -1,7 +1,7 @@
 component:
   id: citizen_sdc:accordions
   label: 'Paragraph Accordions'
-  description: 'Expandable/collapsible accordion list. Handles parent + children in one SDC: the `accordion_item` child bundle has no SDC of its own — the Drupal template for `paragraph--accordions` iterates `field_accordion_items` and passes a structured `items` array to this SDC. Single-SDC pattern used for any parent/child paragraph pair where the child is only meaningful inside its parent (see also gallery, portals).'
+  description: 'Expandable/collapsible accordion list. The Drupal template for `paragraph--accordions` flattens the `field_accordions` custom_field (subfields `header` + `text`) into a structured `items` array and passes it to this SDC, which renders the full accordion structure. The prop contract is source-agnostic — any template that can build `items` can use this SDC.'
   status: experimental
 
 props:
@@ -17,7 +17,7 @@ props:
       description: 'Optional widget title from field_widget_title — rendered as `<h2 class="paragraph--accordions__title">` above the item list.'
     items:
       type: array
-      description: 'Array of accordion item objects. Each item: `{ id: string (unique, used to coordinate aria-controls/id), header: string (accordion_item.field_accordion_header), body: render-array (accordion_item.field_long_text as processed_text) }`.'
+      description: 'Array of accordion item objects. Each item: `{ id: string (unique, used to coordinate aria-controls/id), header: string, body: render-array (processed_text) }`.'
       items:
         type: object
         required:

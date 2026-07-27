@@ -3,11 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.accordions.field_accordion_items
+    - field.field.paragraph.accordions.field_accordions
     - field.field.paragraph.accordions.field_widget_title
     - paragraphs.paragraphs_type.accordions
   module:
-    - entity_reference_revisions
+    - custom_field
 _core:
   default_config_hash: XKVZ5Td58smhFzmlHunld46LAdv8LdZIfoN2NvOm3rg
 id: paragraph.accordions.default
@@ -15,14 +15,41 @@ targetEntityType: paragraph
 bundle: accordions
 mode: default
 content:
-  field_accordion_items:
-    type: entity_reference_revisions_entity_view
+  field_accordions:
+    type: custom_formatter
     label: hidden
     settings:
-      view_mode: default
-      link: ''
+      fields:
+        header:
+          weight: 0
+          format_type: string
+          wrappers:
+            field_wrapper_tag: ''
+            field_wrapper_classes: ''
+            field_tag: ''
+            field_classes: ''
+            label_tag: ''
+            label_classes: ''
+          formatter_settings:
+            key_label: label
+            label_display: hidden
+            field_label: ''
+            prefix_suffix: false
+        text:
+          weight: 0
+          format_type: text_default
+          wrappers:
+            field_wrapper_tag: ''
+            field_wrapper_classes: ''
+            field_tag: ''
+            field_classes: ''
+            label_tag: ''
+            label_classes: ''
+          formatter_settings:
+            label_display: hidden
+            field_label: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_widget_title:
     type: string

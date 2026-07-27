@@ -1,0 +1,45 @@
+uuid: def08a4f-4a32-4b25-bf7a-8c78bae0ea7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_accordions
+    - paragraphs.paragraphs_type.accordions
+  module:
+    - custom_field
+id: paragraph.accordions.field_accordions
+field_name: field_accordions
+entity_type: paragraph
+bundle: accordions
+label: Accordions
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  add_more_label: 'Add Accordion'
+  field_settings:
+    header:
+      label: Header
+      check_empty: false
+      required: true
+      translatable: false
+      description: ''
+      description_display: after
+      prefix: ''
+      suffix: ''
+      allowed_values: {  }
+    text:
+      label: Text
+      check_empty: false
+      required: true
+      translatable: false
+      description: ''
+      description_display: after
+      formatted: true
+      default_format: basic_html
+      format:
+        guidelines: false
+        help: false
+field_type: custom
