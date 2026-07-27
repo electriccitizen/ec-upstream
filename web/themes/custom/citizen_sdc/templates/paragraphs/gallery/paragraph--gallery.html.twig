@@ -10,11 +10,6 @@
   Renders each referenced media twice via drupal_entity():
     - `large_thumb` for the lightbox thumbnail grid
     - `large` for the lightbox modal full-size / slider main image
-
-  TRANSITIONAL: `field_gallery_items` (the legacy nested `gallery_item` child
-  paragraph) is still read as a fallback so content that has not been migrated
-  yet keeps rendering. Delete that block — and this note — once the child
-  bundle is removed.
 #}
 
 {# Derive render mode from the boolean field_gallery_type: TRUE = lightbox,

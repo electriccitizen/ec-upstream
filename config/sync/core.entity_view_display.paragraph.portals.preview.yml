@@ -4,11 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.portals.field_portals
     - field.field.paragraph.portals.field_widget_title
     - paragraphs.paragraphs_type.portals
   module:
-    - entity_reference_revisions
     - layout_builder
 third_party_settings:
   layout_builder:
@@ -20,16 +18,7 @@ id: paragraph.portals.preview
 targetEntityType: paragraph
 bundle: portals
 mode: preview
-content:
-  field_portals:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: preview
-      link: ''
-    third_party_settings: {  }
-    weight: 0
-    region: content
+content: {  }
 hidden:
   field_widget_title: true
   search_api_excerpt: true
