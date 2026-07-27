@@ -1,13 +1,20 @@
 {#
   Drupal paragraph template for the `gallery` bundle.
 
-  Builds a structured `items` array (one entry per gallery_item child — no SDC
-  of its own; single-SDC pattern same as accordions) and delegates rendering
-  to `citizen_sdc:gallery`.
+  Builds a structured `items` array and delegates rendering to
+  `citizen_sdc:gallery`.
+
+  Primary source is `field_gallery`, a custom_field with two subfields:
+  `gallery_image` (entity reference to a media:image) and `caption` (string).
 
   Renders each referenced media twice via drupal_entity():
     - `large_thumb` for the lightbox thumbnail grid
     - `large` for the lightbox modal full-size / slider main image
+
+  TRANSITIONAL: `field_gallery_items` (the legacy nested `gallery_item` child
+  paragraph) is still read as a fallback so content that has not been migrated
+  yet keeps rendering. Delete that block — and this note — once the child
+  bundle is removed.
 #}
 
 {# Derive render mode from the boolean field_gallery_type: TRUE = lightbox,
@@ -18,18 +25,26 @@
    in the gallery SDC). Slider delegates to `citizen_sdc:slider`, which
    declares Embla as a library dependency — no attach_library needed. #}
 
-{# Build the items array. Each child paragraph must have a media reference
-   in field_image; items without one are skipped. #}
+{# Build the items array. Items without a media reference are skipped.
+
+   custom_field stores `gallery_image` as a bare entity id and does NOT clean
+   it up when the media is deleted, so a non-zero id is not proof the media
+   still exists. drupal_entity() returns an empty array for a missing — or
+   access-denied — entity, so render the thumbnail up front and skip the item
+   when it comes back empty. Without this a dangling id renders an empty tile
+   in the lightbox grid / a blank slide in the slider. #}
 {% set items = [] %}
-{% for key, item in content.field_gallery_items %}
-  {% if key|first != '#' and item['#paragraph'].field_image.0.target_id > 0 %}
-    {% set media_id = item['#paragraph'].field_image.0.target_id %}
-    {% set items = items|merge([{
-      id: media_id,
-      thumb: drupal_entity('media', media_id, 'large_thumb'),
-      full: drupal_entity('media', media_id, 'large'),
-      caption: item['#paragraph'].field_caption.0.value ?? '',
-    }]) %}
+{% for item in paragraph.field_gallery %}
+  {% if item.gallery_image > 0 %}
+    {% set thumb = drupal_entity('media', item.gallery_image, 'large_thumb')|render %}
+    {% if thumb|trim is not empty %}
+      {% set items = items|merge([{
+        id: item.gallery_image,
+        thumb: thumb,
+        full: drupal_entity('media', item.gallery_image, 'large')|render,
+        caption: item.caption ?? '',
+      }]) %}
+    {% endif %}
   {% endif %}
 {% endfor %}
 

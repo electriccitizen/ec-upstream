@@ -1,0 +1,50 @@
+uuid: 78099510-f490-44de-b473-9c6c85e378c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_gallery
+    - media.type.image
+    - paragraphs.paragraphs_type.gallery
+  module:
+    - custom_field
+id: paragraph.gallery.field_gallery
+field_name: field_gallery
+entity_type: paragraph
+bundle: gallery
+label: Gallery
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  add_more_label: 'Add Image'
+  field_settings:
+    gallery_image:
+      label: 'Gallery image'
+      check_empty: false
+      required: true
+      translatable: false
+      description: '<strong>Optimal image size:</strong> is 1200px'
+      description_display: after
+      handler: 'default:media'
+      handler_settings:
+        sort:
+          field: _none
+          direction: ASC
+        auto_create: false
+        target_bundles:
+          image: image
+        auto_create_bundle: ''
+    caption:
+      label: Caption
+      check_empty: false
+      required: false
+      translatable: false
+      description: ''
+      description_display: after
+      prefix: ''
+      suffix: ''
+      allowed_values: {  }
+field_type: custom

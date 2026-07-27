@@ -1,0 +1,29 @@
+uuid: 70930cf0-0d3b-4c45-ab88-85df2b696252
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_field
+    - media
+    - paragraphs
+id: paragraph.field_gallery
+field_name: field_gallery
+entity_type: paragraph
+type: custom
+settings:
+  columns:
+    gallery_image:
+      name: gallery_image
+      type: entity_reference
+      target_type: media
+    caption:
+      name: caption
+      type: string
+      length: 255
+module: custom_field
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

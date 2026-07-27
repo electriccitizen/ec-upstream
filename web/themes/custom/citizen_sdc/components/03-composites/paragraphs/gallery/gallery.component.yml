@@ -1,7 +1,7 @@
 component:
   id: citizen_sdc:gallery
   label: 'Paragraph Gallery'
-  description: 'Image gallery with two render modes — lightbox (thumbnails opening a modal gallery via featherlight) and slider (carousel via slick). Single-SDC pattern for parent/child paragraph pair: the `gallery_item` child bundle has no SDC of its own — the Drupal template for `paragraph--gallery` iterates `field_gallery_items` and passes a structured `items` array to this SDC. Same pattern as accordions.'
+  description: 'Image gallery with two render modes — lightbox (thumbnail grid opening a native <dialog> modal) and slider (carousel, delegates to `citizen_sdc:slider`). The Drupal template for `paragraph--gallery` flattens the `field_gallery` custom_field (subfields `gallery_image` + `caption`) into a structured `items` array and passes it to this SDC. The prop contract is source-agnostic — any template that can build `items` can use this SDC.'
   status: experimental
 
 props:
@@ -28,7 +28,7 @@ props:
       description: 'Unique id per paragraph instance. Drives the featherlight `rel="gallery-{id}"` group so multiple lightbox galleries on one page stay separate, and the slider data attribute for JS init.'
     items:
       type: array
-      description: 'Array of gallery item objects. Each item: `{ id: string|int (media entity id), thumb: render-array (media rendered with `large_thumb` image style), full: render-array (media rendered with `large` image style, used for lightbox modal + slider main image), caption: string (optional gallery_item.field_caption) }`.'
+      description: 'Array of gallery item objects. Each item: `{ id: string|int (media entity id), thumb: render-array (media rendered with `large_thumb` image style), full: render-array (media rendered with `large` image style, used for lightbox modal + slider main image), caption: string (optional) }`.'
       items:
         type: object
         required:

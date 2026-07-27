@@ -37,23 +37,6 @@
   }]) %}
 {% endfor %}
 
-{% if items is empty %}
-  {% for key, accordion in content.field_accordion_items %}
-    {% if key|first != '#' and accordion['#paragraph'] %}
-      {% set item_paragraph = accordion['#paragraph'] %}
-      {% set items = items|merge([{
-        id: paragraph.id.value ~ '-' ~ (key + 1),
-        header: item_paragraph.field_accordion_header.0.value,
-        body: {
-          '#type': 'processed_text',
-          '#text': item_paragraph.field_long_text.0.value ?? '',
-          '#format': item_paragraph.field_long_text.0.format,
-        },
-      }]) %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-
 {{ include('citizen_sdc:accordions', {
   attr: attributes|without('class'),
   title: paragraph.field_widget_title.value,
