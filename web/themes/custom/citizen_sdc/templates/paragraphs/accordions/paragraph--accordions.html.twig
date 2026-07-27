@@ -1,22 +1,5 @@
-{#
-/**
- * @file
- * Accordions paragraph — delegates to the accordions SDC.
- *
- * This template flattens the accordion source data into an `items` array that
- * the parent SDC iterates to render the full accordion structure with
- * ARIA-coordinated IDs.
- *
- * Primary source is `field_accordions`, a custom_field with two subfields:
- * `header` (string) and `text` (string_long, formatted). The text format is
- * not stored per row — it comes from the field's own settings
- * (`field.field.paragraph.accordions.field_accordions` →
- * `field_settings.text.default_format`), so it is mirrored here.
- *
- * Unique `id` per item combines the parent paragraph ID + the item delta so
- * multiple accordions on the same page don't collide on ARIA IDs.
- */
-#}
+{# Mirrors field_accordions' text subfield default_format — the subfield has no
+   per-row format column. #}
 {% set text_format = 'basic_html' %}
 {% set items = [] %}
 

@@ -1,17 +1,3 @@
-{#
-  Drupal paragraph template for the `gallery` bundle.
-
-  Builds a structured `items` array and delegates rendering to
-  `citizen_sdc:gallery`.
-
-  Primary source is `field_gallery`, a custom_field with two subfields:
-  `gallery_image` (entity reference to a media:image) and `caption` (string).
-
-  Renders each referenced media twice via drupal_entity():
-    - `large_thumb` for the lightbox thumbnail grid
-    - `large` for the lightbox modal full-size / slider main image
-#}
-
 {# Derive render mode from the boolean field_gallery_type: TRUE = lightbox,
    FALSE = slider. #}
 {% set gallery_type = paragraph.field_gallery_type.value == '1' ? 'lightbox' : 'slider' %}
@@ -20,14 +6,8 @@
    in the gallery SDC). Slider delegates to `citizen_sdc:slider`, which
    declares Embla as a library dependency — no attach_library needed. #}
 
-{# Build the items array. Items without a media reference are skipped.
-
-   custom_field stores `gallery_image` as a bare entity id and does NOT clean
-   it up when the media is deleted, so a non-zero id is not proof the media
-   still exists. drupal_entity() returns an empty array for a missing — or
-   access-denied — entity, so render the thumbnail up front and skip the item
-   when it comes back empty. Without this a dangling id renders an empty tile
-   in the lightbox grid / a blank slide in the slider. #}
+{# Empty thumb means the media is missing or unviewable — skip the item so a
+   dangling id doesn't render an empty tile. #}
 {% set items = [] %}
 {% for item in paragraph.field_gallery %}
   {% if item.gallery_image > 0 %}

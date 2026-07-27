@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.portals.field_portals
     - field.field.paragraph.portals.field_widget_title
     - paragraphs.paragraphs_type.portals
   module:
+    - custom_field
     - layout_builder
 third_party_settings:
   layout_builder:
@@ -18,7 +20,85 @@ id: paragraph.portals.preview
 targetEntityType: paragraph
 bundle: portals
 mode: preview
-content: {  }
+content:
+  field_portals:
+    type: custom_formatter
+    label: hidden
+    settings:
+      fields:
+        image:
+          weight: -10
+          format_type: entity_reference_entity_view
+          wrappers:
+            field_wrapper_tag: ''
+            field_wrapper_classes: ''
+            field_tag: ''
+            field_classes: ''
+            label_tag: ''
+            label_classes: ''
+          formatter_settings:
+            label_display: hidden
+            field_label: ''
+            view_mode: thumbnail_cropped
+            link: false
+        headline:
+          weight: -9
+          format_type: string
+          wrappers:
+            field_wrapper_tag: ''
+            field_wrapper_classes: ''
+            field_tag: ''
+            field_classes: ''
+            label_tag: ''
+            label_classes: ''
+          formatter_settings:
+            key_label: label
+            label_display: hidden
+            field_label: ''
+            prefix_suffix: false
+        link:
+          weight: -8
+          format_type: hidden
+          wrappers:
+            field_wrapper_tag: ''
+            field_wrapper_classes: ''
+            field_tag: ''
+            field_classes: ''
+            label_tag: ''
+            label_classes: ''
+          formatter_settings:
+            label_display: above
+            field_label: ''
+            link_text: ''
+            title: ''
+            trim_length: 80
+            url_plain: false
+            url_only: false
+            rel: '0'
+            noopener: '0'
+            noreferrer: '0'
+            id: ''
+            class: ''
+            aria-label: ''
+            accesskey: ''
+            name: ''
+            target: '0'
+        additional_text:
+          weight: -7
+          format_type: hidden
+          wrappers:
+            field_wrapper_tag: ''
+            field_wrapper_classes: ''
+            field_tag: ''
+            field_classes: ''
+            label_tag: ''
+            label_classes: ''
+          formatter_settings:
+            label_display: above
+            field_label: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_widget_title: true
   search_api_excerpt: true

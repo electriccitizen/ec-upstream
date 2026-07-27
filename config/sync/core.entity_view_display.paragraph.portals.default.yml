@@ -3,8 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.portals.field_portals
     - field.field.paragraph.portals.field_widget_title
     - paragraphs.paragraphs_type.portals
+  module:
+    - custom_field
 _core:
   default_config_hash: NsEqvTF9ucgdI06p2j17_i4hWD2dS95LNLqCQJz6fuM
 id: paragraph.portals.default
@@ -12,6 +15,84 @@ targetEntityType: paragraph
 bundle: portals
 mode: default
 content:
+  field_portals:
+    type: custom_formatter
+    label: hidden
+    settings:
+      fields:
+        headline:
+          weight: 0
+          format_type: string
+          wrappers:
+            field_wrapper_tag: ''
+            field_wrapper_classes: ''
+            field_tag: ''
+            field_classes: ''
+            label_tag: ''
+            label_classes: ''
+          formatter_settings:
+            key_label: label
+            label_display: hidden
+            field_label: ''
+            prefix_suffix: false
+        link:
+          weight: 0
+          format_type: link
+          wrappers:
+            field_wrapper_tag: ''
+            field_wrapper_classes: ''
+            field_tag: ''
+            field_classes: ''
+            label_tag: ''
+            label_classes: ''
+          formatter_settings:
+            label_display: hidden
+            field_label: ''
+            link_text: ''
+            title: ''
+            trim_length: null
+            url_plain: true
+            url_only: true
+            rel: '0'
+            noopener: '0'
+            noreferrer: '0'
+            id: ''
+            class: ''
+            aria-label: ''
+            accesskey: ''
+            name: ''
+            target: '0'
+        image:
+          weight: 0
+          format_type: entity_reference_entity_view
+          wrappers:
+            field_wrapper_tag: ''
+            field_wrapper_classes: ''
+            field_tag: ''
+            field_classes: ''
+            label_tag: ''
+            label_classes: ''
+          formatter_settings:
+            label_display: hidden
+            field_label: ''
+            view_mode: 400x300
+            link: false
+        additional_text:
+          weight: 0
+          format_type: text_default
+          wrappers:
+            field_wrapper_tag: ''
+            field_wrapper_classes: ''
+            field_tag: ''
+            field_classes: ''
+            label_tag: ''
+            label_classes: ''
+          formatter_settings:
+            label_display: hidden
+            field_label: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_widget_title:
     type: string
     label: hidden

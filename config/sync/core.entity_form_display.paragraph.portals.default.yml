@@ -3,8 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.portals.field_portals
     - field.field.paragraph.portals.field_widget_title
     - paragraphs.paragraphs_type.portals
+  module:
+    - custom_field
 _core:
   default_config_hash: 6EXjuTHsSDHaktYI_mAQXp2oyiG7GrVRoTzJw9CDzQA
 id: paragraph.portals.default
@@ -12,6 +15,44 @@ targetEntityType: paragraph
 bundle: portals
 mode: default
 content:
+  field_portals:
+    type: custom_stacked
+    weight: 1
+    region: content
+    settings:
+      wrapper: details
+      label_value: ''
+      label_limit: 60
+      label_prefix: Portal
+      auto_collapse: false
+      open: true
+      fields:
+        image:
+          weight: -10
+          type: media_library_widget
+          label: ''
+        headline:
+          weight: -9
+          type: text
+          label: ''
+          size: 60
+          placeholder: ''
+          maxlength: 255
+        link:
+          weight: -8
+          type: link_default
+          label: ''
+          maxlength: 255
+          placeholder_url: ''
+          placeholder_title: ''
+        additional_text:
+          weight: -7
+          type: textarea
+          label: ''
+          placeholder: ''
+          maxlength: null
+          rows: 5
+    third_party_settings: {  }
   field_widget_title:
     type: string_textfield
     weight: 0

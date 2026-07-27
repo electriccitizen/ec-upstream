@@ -1,7 +1,7 @@
 component:
   id: citizen_sdc:portals
   label: 'Paragraph Portals'
-  description: 'Grid of portal cards — each is an image + H3 headline inside a single link, with optional long-text description below. Single-SDC pattern for the portals / portal parent/child bundle pair: the `portal` child has no SDC of its own; the Drupal template for `paragraph--portals` iterates `field_portals` and passes a structured `items` array to this SDC (same approach as accordions and gallery).'
+  description: 'Grid of portal cards — each is an image + H3 headline inside a single link, with optional long-text description below. Fed by the `field_portals` custom_field (subfields `headline`, `link`, `image`, `additional_text`), flattened into a structured `items` array by the paragraph template, which reads the formatter output — see portals.md. The prop contract is source-agnostic: any code that can build `items` can use this SDC.'
   status: experimental
 
 props:
@@ -17,7 +17,7 @@ props:
       description: 'Optional widget title from field_widget_title — rendered as `<h2 class="paragraph--portals__title">` above the grid.'
     items:
       type: array
-      description: 'Array of portal card data. Each item: `{ id: string|int, link: { url, title, target?, rel? }, image: render-array (media rendered with `400x300` view mode), headline: string (required), long_text: render-array|null }`.'
+      description: 'Array of portal card data. Each item: `{ id: string|int, link: { url, target?, rel? }, image: render-array (media rendered with `400x300` view mode), headline: string (required), long_text: render-array|null }`. `target`/`rel` come from the link subfield''s stored options and are empty unless link attributes are enabled on the field — external links get theirs from extlink at runtime.'
       items:
         type: object
         required:

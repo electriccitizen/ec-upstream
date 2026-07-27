@@ -1,0 +1,35 @@
+uuid: e3f2c4be-f0aa-4dc5-8515-f94bceff7441
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_field
+    - media
+    - paragraphs
+id: paragraph.field_portals
+field_name: field_portals
+entity_type: paragraph
+type: custom
+settings:
+  columns:
+    headline:
+      name: headline
+      type: string
+      length: 255
+    link:
+      name: link
+      type: link
+    image:
+      name: image
+      type: entity_reference
+      target_type: media
+    additional_text:
+      name: additional_text
+      type: string_long
+module: custom_field
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,83 @@
+uuid: 40fe7e6e-8bbd-4461-b7d4-92381bfa8797
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_portals
+    - media.type.image
+    - paragraphs.paragraphs_type.portals
+  module:
+    - custom_field
+id: paragraph.portals.field_portals
+field_name: field_portals
+entity_type: paragraph
+bundle: portals
+label: Portals
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  add_more_label: 'Add Portal'
+  field_settings:
+    headline:
+      label: Headline
+      check_empty: false
+      required: true
+      translatable: false
+      description: ''
+      description_display: after
+      prefix: ''
+      suffix: ''
+      allowed_values: {  }
+    link:
+      label: Link
+      check_empty: false
+      required: true
+      translatable: false
+      description: ''
+      description_display: after
+      link_type: 17
+      field_prefix: default
+      field_prefix_custom: ''
+      title: 0
+      enabled_attributes:
+        title: false
+        aria-label: false
+        target: false
+        class: false
+        id: false
+        name: false
+        rel: false
+        accesskey: false
+      widget_default_open: expandIfValuesSet
+    image:
+      label: Image
+      check_empty: false
+      required: true
+      translatable: false
+      description: '<strong>Optimal image size:</strong> is 800x600px'
+      description_display: after
+      handler: 'default:media'
+      handler_settings:
+        sort:
+          field: _none
+          direction: ASC
+        auto_create: false
+        target_bundles:
+          image: image
+        auto_create_bundle: ''
+    additional_text:
+      label: 'Additional Text'
+      check_empty: false
+      required: false
+      translatable: false
+      description: ''
+      description_display: after
+      formatted: true
+      default_format: limited_html
+      format:
+        guidelines: false
+        help: false
+field_type: custom
