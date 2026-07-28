@@ -16,7 +16,7 @@
     @include widgetTitle;
   }
 
-  .paragraph--portals__list {
+  &__list {
     @include listReset;
     display: flex;
     flex-wrap: wrap;
@@ -24,7 +24,7 @@
     gap: $spaceMd 3rem;
   }
 
-  .paragraph--portals__item {
+  &__item {
     width: 100%;
     max-width: 308px;
     list-style: none;
@@ -35,9 +35,7 @@
     }
   }
 
-  // Single clickable region (image + headline). Long text sits OUTSIDE the
-  // link as a sibling — matches dart's structure.
-  .paragraph--portals__link {
+  &__link {
     display: block;
     text-decoration: none;
     color: inherit;
@@ -58,10 +56,7 @@
     }
   }
 
-  // `overflow: hidden` keeps the wrapper (the "window frame") at a fixed
-  // size — the <img> scales inside it on hover without pushing anything
-  // else around on the page.
-  .paragraph--portals__image {
+  &__image {
     margin-bottom: $spaceXxs;
     overflow: hidden;
 
@@ -72,20 +67,17 @@
     }
   }
 
-  .paragraph--portals__headline {
+  &__headline {
     @include heading4;
     text-align: center;
     margin: 0;
   }
 
-  .paragraph--portals__text {
+  &__text {
     margin-top: $spaceXxs;
     font-size: 2rem;
   }
 
-  // Staggered random-ish fade-in on the portal cards. 3-delay cycle fits
-  // the typical 3-or-6-item count — delays: 0s, 0.20s, 0.10s. Shuffled so
-  // sequential cards don't appear in delay order.
   &[data-animate="yes"] {
     .paragraph--portals__item {
       opacity: 0;

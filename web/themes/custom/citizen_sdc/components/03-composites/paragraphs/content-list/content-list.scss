@@ -10,10 +10,7 @@
 .paragraph--content-list {
   @include textConstrain;
 
-  // Header row: title on the left, "more" link on the right. Wraps onto
-  // two lines on narrow viewports so the link drops below the title
-  // instead of squeezing.
-  .paragraph--content-list__header {
+  &__header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -22,11 +19,11 @@
     margin-bottom: $spaceSm;
   }
 
-  .paragraph--content-list__title {
+  &__title {
     margin: 0;
   }
 
-  .paragraph--content-list__actions a {
+  &__actions a {
     @include button;
   }
 }

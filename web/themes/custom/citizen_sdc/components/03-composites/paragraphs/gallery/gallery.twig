@@ -1,6 +1,3 @@
-{# BEM modifier on the gallery wrapper: `paragraph--gallery--lightbox` or
-   `paragraph--gallery--slider`. paragraph-base adds the base
-   `paragraph` + `paragraph--gallery` classes; this modifier composes alongside. #}
 {% set gallery_attr = (attr ?: create_attribute()).addClass('paragraph--gallery--' ~ type) %}
 
 {% set gallery_body %}
@@ -9,11 +6,7 @@
   {% endif %}
 
   {% if type == 'lightbox' %}
-    {# Semantic <ul>/<li>: thumbnails are a list. Each trigger is a real
-       <button> (modal activation) with aria-haspopup + positional aria-label.
-       Full-image + caption source lives in an inert <template> sibling; JS
-       clones it into the <dialog> stage on open. No extra DOM cost if JS
-       is disabled: thumbnails still render, just not clickable. #}
+
     <ul class="paragraph--gallery__wrap" data-gallery-type="lightbox" data-gallery-id="{{ gallery_id }}">
       {% for item in items %}
         <li class="paragraph--gallery__item">
@@ -30,10 +23,6 @@
       {% endfor %}
     </ul>
 
-    {# Native <dialog> modal. `.showModal()` hoists it to the top layer, so
-       stacking/overflow contexts of ancestors don't matter. ESC-to-close,
-       role="dialog", aria-modal, and focus trap are handled by the browser
-       for free. #}
     <dialog class="paragraph--gallery__modal" aria-label="{{ 'Image gallery'|t }}" data-gallery-modal>
       <button type="button" class="paragraph--gallery__modal-close" aria-label="{{ 'Close gallery'|t }}" data-gallery-close>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
@@ -56,10 +45,6 @@
       <div class="paragraph--gallery__sr-status" data-gallery-live aria-live="polite"></div>
     </dialog>
   {% else %}
-    {# Slider mode delegates to the shared `citizen_sdc:slider` SDC, which
-       owns the carousel chrome (ul/li track, arrows, ARIA live region) and
-       attaches the Embla library. We just compose each slide's content
-       (image + optional caption) and hand over the array. #}
     {% set slides = [] %}
     {% for item in items %}
       {% set slide %}

@@ -9,11 +9,10 @@
 .paragraph--video {
   @include textConstrain;
 
-  .paragraph--video__title {
+  &__title {
     @include widgetTitle;
   }
 
-  // Simple fade-in on scroll-in. Title + media fade together as a unit.
   &[data-animate="yes"] {
     opacity: 0;
     transition: opacity 0.8s ease-out;

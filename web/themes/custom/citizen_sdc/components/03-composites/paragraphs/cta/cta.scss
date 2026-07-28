@@ -11,21 +11,21 @@
   background: $offWhite;
   padding: 40px 30px;
 
-  .paragraph--cta__inner {
+  &__inner {
     max-width: $textMax;
     @include auto;
   }
 
-  .paragraph--cta__headline {
+  &__headline {
     text-align: center;
     margin-bottom: $spaceXs;
   }
 
-  .paragraph--cta__text {
+  &__text {
     margin-bottom: $spaceXs;
   }
 
-  .paragraph--cta__actions {
+  &__actions {
     text-align: center;
     a {
       @include button;

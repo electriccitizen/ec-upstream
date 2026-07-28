@@ -1,8 +1,5 @@
 /* =================
    USER DASHBOARD
-   /user/{uid} landing. Two-column with circular profile image on the
-   left and identity/metadata/actions on the right. Replaces the old
-   Layout-Builder display — this SDC owns the full layout.
 =================== */
 
 @use '../../00-base/00-variables/colors' as *;
@@ -40,10 +37,7 @@
       align-self: flex-start;
     }
 
-    // Circular crop — the rendered image field still emits a wrapper div
-    // around the <img>, so the clipping lives on the outer container to
-    // keep the <img> fully responsive inside it.
-    > * {
+    & > * {
       border-radius: 50%;
       overflow: hidden;
       display: block;
@@ -75,8 +69,6 @@
     margin-right: $spaceXxs;
   }
 
-  // Account-level inline links (Edit Profile | Logout) with vertical-rule
-  // dividers between items. Reuses dart's `vertRule` mixin for the seam.
   &__account-actions {
     margin: $spaceXs 0;
 
@@ -108,10 +100,7 @@
       color: $link;
     }
   }
-
-  // Task buttons (View Content, + Add Content, Support Book, etc.). The
-  // <a class="ec-button"> styling is applied globally via the button
-  // system; this scope only handles spacing.
+  
   &__task-actions {
     margin: $spaceSm 0;
 

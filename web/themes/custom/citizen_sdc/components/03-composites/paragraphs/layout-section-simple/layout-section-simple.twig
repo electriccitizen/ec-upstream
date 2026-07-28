@@ -1,7 +1,3 @@
-{# `content` is not a declared slot — same rationale as layout-section.twig.
-   layout_paragraphs injects the layout + nested children into the `content`
-   render array during preprocess; we pipe it through so they land inside
-   the section wrapper. #}
 {% set section_attr = (attr ?: create_attribute()).addClass('backless') %}
 
 {{ include('citizen_sdc:paragraph-base', {

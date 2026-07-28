@@ -1,9 +1,6 @@
 {% set alignment_modifier = 'paragraph--text-media--' ~ (alignment|default('left')) %}
 {% set text_media_attr = (attr ?: create_attribute()).addClass(alignment_modifier) %}
 
-{# BEM modifier on the media div based on bundle (image, remote-video, …) so
-   CSS can scope image-only rules (equal-height stretch, object-fit cover)
-   without affecting video media. #}
 {% set media_type_class = media_type ? 'paragraph--text-media__media--' ~ media_type|clean_class : '' %}
 
 {% set text_media_body %}

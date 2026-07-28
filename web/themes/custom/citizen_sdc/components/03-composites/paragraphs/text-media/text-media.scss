@@ -17,7 +17,7 @@
     flex-direction: row;
     align-items: center;
 
-    &:has(.paragraph--text-media__media--image) {
+    &__media--image {
       align-items: stretch;
     }
 
@@ -26,15 +26,15 @@
     }
   }
 
-  .paragraph--text-media__media,
-  .paragraph--text-media__content {
+  &__media,
+  &__content {
     @include tab {
       flex: 1 1 50%;
-      min-width: 0; // prevent flex items from overflowing their basis
+      min-width: 0;
     }
   }
 
-  .paragraph--text-media__media {
+  &__media {
     img {
       @include onlySmall {
         @include image100W;
@@ -57,7 +57,7 @@
     }
   }
 
-  .paragraph--text-media__content {
+  &__content {
     @include tab {
       padding: $spaceMd 0;
     }
@@ -68,7 +68,7 @@
     }
   }
 
-  .paragraph--text-media__actions {
+  &__actions {
     a {
       @include button;
     }

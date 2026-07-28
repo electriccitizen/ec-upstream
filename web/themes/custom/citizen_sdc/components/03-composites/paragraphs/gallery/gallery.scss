@@ -15,15 +15,15 @@
 .paragraph--gallery {
   max-width: 100%;
 
-  .paragraph--gallery__title {
+  &__title {
     @include widgetTitle;
   }
 
-  .paragraph--gallery__preload {
+  &__preload {
     @include visuallyHidden;
   }
 
-  &.paragraph--gallery--lightbox {
+  &--lightbox {
     .paragraph--gallery__wrap {
       @include listReset;
       display: flex;
@@ -170,12 +170,9 @@
   // only the slide content (image + caption); chrome (viewport, arrows,
   // live region) comes from slider.scss.
   // =========================
-  &.paragraph--gallery--slider {
+  &--slider {
     @include textConstrain;
 
-    // Edge-to-edge on mobile to match the dart/slick visual; constrain on
-    // tablet+. Applied to the slider's section wrapper, not to inner
-    // slides (so arrows stay positioned relative to the visible area).
     .slider {
       @include edgeToEdge;
       width: calc(100% + 40px);
@@ -195,8 +192,6 @@
       display: block;
     }
 
-    // Caption below the image, italic grey (replaces the old .field-caption
-    // slick override from dart's _galleries.scss).
     .paragraph--gallery__caption {
       width: 100%;
       margin: $spaceXs 0 0 0;
@@ -211,8 +206,7 @@
   // =========================
   // SCROLL-IN ANIMATIONS
   // =========================
-  // SLIDER: whole carousel fades in; title is excluded.
-  &.paragraph--gallery--slider[data-animate="yes"] {
+  &--slider[data-animate="yes"] {
     .slider {
       opacity: 0;
       transition: opacity 0.6s ease-out;
@@ -223,10 +217,7 @@
     }
   }
 
-  // LIGHTBOX: staggered, random-ish fade + rise on the <li> thumbnails via
-  // a 5-cycle nth-child delay pattern. Title is excluded. Delays cycle:
-  // 0s, 0.30s, 0.10s, 0.40s, 0.20s.
-  &.paragraph--gallery--lightbox[data-animate="yes"] {
+  &--lightbox[data-animate="yes"] {
     .paragraph--gallery__item {
       opacity: 0;
       transform: translateY(12px);

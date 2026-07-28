@@ -10,9 +10,6 @@
 @use '../../../00-base/01-mixins/form-mixins' as *;
 @use '../../../00-base/01-mixins/layout-mixins' as *;
 
-// Empty post-form anchor that views-form-base.js focuses after a result
-// scroll. Suppress the default focus ring — the anchor has no content, so
-// the ring renders as a stray dot under the filters.
 #skip-filters:focus {
   outline: none;
 }

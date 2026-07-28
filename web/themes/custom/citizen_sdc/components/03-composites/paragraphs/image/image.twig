@@ -1,13 +1,9 @@
-{# Resolve the effective text position. If either text field is set and
-   position is blank/null, fall back to 'below'. When no text at all, no
-   position modifier. #}
 {% set has_headline = headline is not empty %}
 {% set has_text = additional_text is not empty %}
 {% set has_any_text = has_headline or has_text %}
 {% set resolved_position = has_any_text ? (text_position|default('') ?: 'below') : null %}
 
-{# BEM modifier + animate flag. Only overlay opts into the scroll-in
-   observer — above/below are static. #}
+
 {% set image_attr = (attr ?: create_attribute()) %}
 {% if resolved_position %}
   {% set image_attr = image_attr.addClass('paragraph--image--' ~ resolved_position) %}
@@ -17,8 +13,6 @@
 
 {% set animate_flag = resolved_position == 'overlay' ? 'yes' : 'no' %}
 
-{# Reusable text block. Keeps headline + additional-text composition in one
-   place so above/below/overlay branches stay symmetric. #}
 {% macro text_block(headline, additional_text, has_headline, has_text) %}
   {% if has_headline %}
     <h2 class="paragraph--image__headline">{{ headline }}</h2>
@@ -40,10 +34,6 @@
     {{ image }}
 
     {% if resolved_position == 'overlay' %}
-      {# Overlay panel — absolutely positioned on tablet+, statically
-         positioned below the image on mobile (with the gradient hidden
-         via CSS). JS-free: the paragraph-animate observer + CSS handle
-         the slide-in from the left. #}
       <div class="paragraph--image__overlay">
         <div class="paragraph--image__gradient" aria-hidden="true"></div>
         <div class="paragraph--image__text-block paragraph--image__text-block--overlay">

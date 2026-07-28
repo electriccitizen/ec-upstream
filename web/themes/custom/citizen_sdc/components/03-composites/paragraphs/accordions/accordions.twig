@@ -7,13 +7,9 @@
       {% set toggle_id = 'accordion-toggle-' ~ item.id %}
       {% set panel_id = 'accordion-panel-' ~ item.id %}
       <div class="paragraph--accordions__item is-collapsed">
-        {# H3 wrapper per WAI-ARIA accordion pattern — lets screen readers
-           jump between sections via heading navigation. #}
         <h3 class="paragraph--accordions__heading">
           <button type="button" id="{{ toggle_id }}" class="paragraph--accordions__toggle" aria-controls="{{ panel_id }}" aria-expanded="false">
             <span class="paragraph--accordions__label">{{ item.header }}</span>
-            {# Caret points down when collapsed; rotated 180deg via CSS when
-               `.is-expanded`. #}
             <svg class="paragraph--accordions__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
               <circle cx="12" cy="12" r="10"/>
               <polyline points="9,11 12,14 15,11"/>
@@ -21,9 +17,6 @@
           </button>
         </h3>
         <div class="paragraph--accordions__panel" id="{{ panel_id }}" role="region" aria-labelledby="{{ toggle_id }}" inert>
-          {# Inner wrapper is the single grid item — it owns `overflow:
-             hidden` + `min-height: 0` so the grid row can collapse to 0
-             regardless of content. Body keeps its padding cleanly. #}
           <div class="paragraph--accordions__inner">
             <div class="paragraph--accordions__body field--text-long">
               {{ item.body }}

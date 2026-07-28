@@ -1,7 +1,3 @@
-{# BEM modifier on the paragraph block: either a style variant
-   (`paragraph--layout-section--light-grey` / `--light-blue`) or `--backless`
-   when no field_style is set. paragraph-base adds the `paragraph` +
-   `paragraph--layout-section` classes; this modifier composes alongside. #}
 {% set bem_modifier = style_class
   ? 'paragraph--layout-section--' ~ style_class
   : 'paragraph--layout-section--backless' %}

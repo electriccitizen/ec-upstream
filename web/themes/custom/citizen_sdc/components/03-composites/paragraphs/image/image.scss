@@ -8,10 +8,7 @@
 @use '../../../00-base/01-mixins/layout-mixins' as *;
 
 .paragraph--image {
-  // Media container — shared across all text-position modes. Capped at
-  // 1280px wide, centered, `overflow: hidden` required for the overlay
-  // slide-in animation not to leak past the image edges.
-  .paragraph--image__media {
+  &__media {
     position: relative;
     max-width: 1280px;
     margin: 0 auto;
@@ -24,21 +21,17 @@
     }
   }
 
-  // Plain text block (used for above / below / mobile-overlay-fallback).
-  // Centered, constrained to same max width as the image.
-  .paragraph--image__text-block {
+  &__text-block {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 $siteMargin;
   }
 
-  .paragraph--image__headline {
+  &__headline {
     margin: 0;
   }
 
-  .paragraph--image__text {
-    // Preserve line breaks the editor typed (string_long — plain text,
-    // stored with raw \n characters).
+  &__text {
     white-space: pre-line;
     margin: $spaceXs 0 0 0;
   }
@@ -114,12 +107,6 @@
       }
     }
 
-    // Slide-in from the left. Applies to the whole overlay (gradient +
-    // text together) so the effect reads as a panel sweeping in from
-    // off-screen. Paragraph-base adds `data-animate="yes"` because
-    // image.twig passes `animate: 'yes'` only when overlay is chosen;
-    // the observer adds `.is-in-view` when the paragraph scrolls into
-    // view.
     &--overlay[data-animate="yes"] {
       .paragraph--image__overlay {
         transform: translateX(-100%);

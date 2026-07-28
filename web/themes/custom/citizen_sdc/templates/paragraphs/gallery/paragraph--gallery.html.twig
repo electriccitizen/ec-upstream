@@ -1,13 +1,5 @@
-{# Derive render mode from the boolean field_gallery_type: TRUE = lightbox,
-   FALSE = slider. #}
 {% set gallery_type = paragraph.field_gallery_type.value == '1' ? 'lightbox' : 'slider' %}
 
-{# Both variants are vanilla now. Lightbox uses native <dialog> (JS lives
-   in the gallery SDC). Slider delegates to `citizen_sdc:slider`, which
-   declares Embla as a library dependency — no attach_library needed. #}
-
-{# Empty thumb means the media is missing or unviewable — skip the item so a
-   dangling id doesn't render an empty tile. #}
 {% set items = [] %}
 {% for item in paragraph.field_gallery %}
   {% if item.gallery_image > 0 %}

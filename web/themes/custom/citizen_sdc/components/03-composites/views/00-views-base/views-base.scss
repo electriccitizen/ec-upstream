@@ -1,7 +1,5 @@
 /* =================
    VIEWS BASE
-   Shared wrapper styling for every view. Per-view SDCs add their own
-   modifier-scoped rules on top of this.
 =================== */
 
 @use '../../../00-base/00-variables/units' as *;

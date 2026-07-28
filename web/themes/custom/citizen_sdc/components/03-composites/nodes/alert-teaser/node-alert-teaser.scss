@@ -13,7 +13,7 @@
   gap: 1rem;
   padding: 1.5rem 2.5rem;
 
-  .alert__body {
+  &__body {
     flex: 1 1 auto;
 
     a {
@@ -35,7 +35,7 @@
     }
   }
 
-  .alert__close {
+  &__close {
     flex: 0 0 24px;
     height: 24px;
     display: block;
@@ -43,11 +43,11 @@
     @include buttonWipe;
   }
 
-  &.alert--standard {
+  &--standard {
     background-color: $alertStandardBack;
     color: $alertStandardText;
 
-    .alert__body a,.alert__close {
+    &__body a,&__close {
       color: $alertStandardText;
 
       &:hover {
@@ -56,11 +56,11 @@
     }
   }
 
-  &.alert--urgent {
+  &--urgent {
     background-color: $alertUrgentBack;
     color: $alertUrgentText;
 
-    .alert__body a,.alert__close {
+    &__body a,&__close {
       color: $alertUrgentText;
 
       &:hover {

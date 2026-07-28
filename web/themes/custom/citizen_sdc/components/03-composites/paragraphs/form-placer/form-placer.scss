@@ -5,7 +5,7 @@
 @use '../../../00-base/01-mixins/type-mixins' as *;
 
 .paragraph--form-placer {
-  .paragraph--form-placer__title {
+  &__title {
     @include widgetTitle;
   }
 

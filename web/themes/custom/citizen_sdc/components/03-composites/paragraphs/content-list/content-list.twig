@@ -1,6 +1,4 @@
 {% set content_list_body %}
-  {# Header row — title + "more" link, flex-justified on one line above the
-     list. Rendered only when at least one of the two exists. #}
   {% if title or link %}
     <div class="paragraph--content-list__header">
       {% if title %}
@@ -11,10 +9,7 @@
       {% endif %}
     </div>
   {% endif %}
-
-  {# The view itself — pre-rendered by the Drupal template (same render
-     used for the emptiness check) so what we showed on the length check
-     is exactly what lands here. List items styled by their own SDCs. #}
+  
   <div class="paragraph--content-list__items">
     {{ view }}
   </div>

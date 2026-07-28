@@ -1,15 +1,9 @@
-{# Per-display modifier so per-project SCSS can adjust title/link placement
-   for individual "designerly" views. Example output:
-   `paragraph--view-placer paragraph--view-placer--block-1`. #}
 {% set view_placer_attr = (attr ?: create_attribute()) %}
 {% if view_display %}
   {% set view_placer_attr = view_placer_attr.addClass('paragraph--view-placer--' ~ view_display|clean_class) %}
 {% endif %}
 
 {% set view_placer_body %}
-  {# Header row — same layout as content-list: title + more link on one
-     row, flex-justified; wraps to two rows on narrow viewports. Rendered
-     only when at least one of the two exists. #}
   {% if title or link %}
     <div class="paragraph--view-placer__header">
       {% if title %}

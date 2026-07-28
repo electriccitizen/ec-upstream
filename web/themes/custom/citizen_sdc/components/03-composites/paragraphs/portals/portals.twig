@@ -3,9 +3,6 @@
     <h2 class="paragraph--portals__title">{{ title }}</h2>
   {% endif %}
 
-  {# Semantic <ul>/<li>: each portal card is a list item. The link wraps
-     image + headline (card click target); long_text sits outside the link
-     as a sibling description — matches dart's structure. #}
   <ul class="paragraph--portals__list">
     {% for item in items %}
       <li class="paragraph--portals__item">

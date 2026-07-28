@@ -14,11 +14,11 @@
 .paragraph--accordions {
   @include textConstrain;
 
-  .paragraph--accordions__title {
+  &__title {
     @include widgetTitle;
   }
 
-  .paragraph--accordions__item {
+  &__item {
     .paragraph--accordions__heading {
       margin: 0;
       padding: 0;

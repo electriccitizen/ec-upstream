@@ -17,7 +17,6 @@
 
       @include tab {
         flex: 0 0 calc(50% - 20px);
-        width: calc(50% - 20px);
       }
     }
   }
@@ -29,7 +28,6 @@
 
       @include tab {
         flex: 0 0 calc(33.3% - 20px);
-        width: calc(33.3% - 20px);
       }
     }
 
@@ -38,7 +36,6 @@
 
       @include tab {
         flex: 0 0 calc(66.7% - 20px);
-        width: calc(66.7% - 20px);
       }
     }
   }
@@ -50,7 +47,6 @@
 
       @include tab {
         flex: 0 0 calc(66.7% - 20px);
-        width: calc(66.7% - 20px);
       }
     }
 
@@ -59,7 +55,6 @@
 
       @include tab {
         flex: 0 0 calc(33.3% - 20px);
-        width: calc(33.3% - 20px);
       }
     }
   }
@@ -71,7 +66,6 @@
 
       @include tab {
         flex: 0 0 calc(75% - 20px);
-        width: calc(75% - 20px);
       }
     }
 
@@ -80,7 +74,6 @@
 
       @include tab {
         flex: 0 0 calc(25% - 20px);
-        width: calc(25% - 20px);
       }
     }
   }
@@ -92,7 +85,6 @@
 
       @include tab {
         flex: 0 0 calc(25% - 20px);
-        width: calc(25% - 20px);
       }
     }
 
@@ -101,7 +93,6 @@
 
       @include tab {
         flex: 0 0 calc(75% - 20px);
-        width: calc(75% - 20px);
       }
     }
   }
