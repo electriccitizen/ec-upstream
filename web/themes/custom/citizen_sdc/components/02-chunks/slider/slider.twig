@@ -1,7 +1,3 @@
-{# Build the wrapper attributes: BEM class + ARIA carousel role + data
-   attrs the JS reads for config. Per-view CSS custom props are inlined on
-   the wrapper so each instance is independently responsive without a
-   combinatorial SCSS matrix. #}
 {% set slider_attr = (attr ?: create_attribute())
   .addClass('slider')
   .setAttribute('role', 'region')
@@ -35,7 +31,6 @@
     </ul>
   </div>
 
-  {# Only show arrows + live region when there's more than one slide. #}
   {% if items|length > 1 %}
     <button type="button" class="slider__nav slider__nav--prev" aria-label="{{ 'Previous slide'|t }}" data-slider-prev>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">

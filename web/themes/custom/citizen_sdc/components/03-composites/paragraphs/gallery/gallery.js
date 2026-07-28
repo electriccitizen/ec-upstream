@@ -42,6 +42,38 @@
     let currentIndex = 0;
     let openedBy = null;
 
+    // Full images live inside inert <template>s, so the browser fetches
+    // nothing until one is cloned onto the stage — that download is why the
+    // stage holds blank on a first view. Warm the adjacent images so a
+    // prev/next swap paints immediately. Each <source> selects on a viewport
+    // media query (no `sizes`), so a clone parked in a hidden container picks
+    // the same candidate the stage will. The clone is dropped once loaded;
+    // the HTTP cache keeps the bytes.
+    const preload = document.createElement('div');
+    preload.className = 'paragraph--gallery__preload';
+    preload.setAttribute('aria-hidden', 'true');
+    root.appendChild(preload);
+
+    const warmed = new Set();
+
+    function warm(index) {
+      const i = ((index % items.length) + items.length) % items.length;
+      if (i === currentIndex || warmed.has(i)) return;
+      warmed.add(i);
+
+      const picture = items[i].source.content.querySelector('picture, img');
+      if (!picture) return;
+
+      const clone = picture.cloneNode(true);
+      const img = clone.tagName === 'IMG' ? clone : clone.querySelector('img');
+      if (!img) return;
+
+      const done = () => clone.remove();
+      img.addEventListener('load', done, { once: true });
+      img.addEventListener('error', done, { once: true });
+      preload.appendChild(clone);
+    }
+
     // Crossfade transition between images: fade the stage out, swap in
     // the new content, wait for the new image to finish decoding (so we
     // don't fade back in on a blank placeholder), then fade back in.
@@ -78,6 +110,9 @@
       const hasMulti = items.length > 1;
       prevBtn.hidden = !hasMulti;
       nextBtn.hidden = !hasMulti;
+
+      warm(currentIndex + 1);
+      warm(currentIndex - 1);
     }
 
     function open(index, trigger) {

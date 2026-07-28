@@ -16,7 +16,7 @@
       {% set items = items|merge([{
         id: item.gallery_image,
         thumb: thumb,
-        full: drupal_entity('media', item.gallery_image, 'large')|render,
+        full: drupal_entity('media', item.gallery_image, 'slideshow')|render,
         caption: item.caption ?? '',
       }]) %}
     {% endif %}

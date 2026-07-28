@@ -19,9 +19,10 @@
     @include widgetTitle;
   }
 
-  // =========================
-  // LIGHTBOX — thumbnail grid + <dialog> modal.
-  // =========================
+  .paragraph--gallery__preload {
+    @include visuallyHidden;
+  }
+
   &.paragraph--gallery--lightbox {
     .paragraph--gallery__wrap {
       @include listReset;
@@ -38,8 +39,6 @@
       list-style: none;
     }
 
-    // The trigger is a real <button>; strip browser chrome but keep focus
-    // ring for keyboard users.
     .paragraph--gallery__trigger {
       @include buttonWipe;
       display: block;
@@ -60,12 +59,7 @@
       }
     }
 
-    // -------------------------
-    // DIALOG MODAL
-    // -------------------------
     .paragraph--gallery__modal {
-      // Modern <dialog> hoists to the top layer on .showModal(); stacking
-      // and overflow contexts of ancestors don't affect it.
       padding: 0;
       border: 0;
       background: transparent;
@@ -83,11 +77,6 @@
       }
     }
 
-    // Stage = <figure> holding the current image + caption clone. Position
-    // context for the prev/next/close buttons. Opacity transition drives
-    // the crossfade between images — `gallery.js` toggles
-    // `.is-transitioning` around the swap so the old image fades out,
-    // content is replaced, then the new image fades in once decoded.
     .paragraph--gallery__modal-stage {
       position: relative;
       margin: 0;
@@ -105,8 +94,6 @@
         max-height: 90vh;
       }
 
-      // Caption bar overlaid on the bottom of the image — dark translucent
-      // strip, italic white text (matches featherlight's old treatment).
       .paragraph--gallery__caption {
         position: absolute;
         bottom: 0;
@@ -123,9 +110,6 @@
       }
     }
 
-    // Shared styling for all three modal buttons: circular semi-transparent-
-    // black badge with a white SVG icon. Close sits at top-right; prev/next
-    // are absolutely centered on the stage's left/right edges.
     .paragraph--gallery__modal-close,
     .paragraph--gallery__modal-nav {
       @include buttonWipe;
@@ -156,6 +140,10 @@
     .paragraph--gallery__modal-close {
       top: 8px;
       right: 8px;
+      svg {
+        position: relative;
+        left: 1px;
+      }
     }
 
     .paragraph--gallery__modal-nav {

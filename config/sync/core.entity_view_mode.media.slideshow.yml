@@ -1,0 +1,11 @@
+uuid: 80c16015-2e01-4518-ba10-259d20b13994
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.slideshow
+label: Slideshow
+description: null
+targetEntityType: media
+cache: true
