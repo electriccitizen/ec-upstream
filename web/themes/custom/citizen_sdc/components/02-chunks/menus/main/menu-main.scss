@@ -44,7 +44,7 @@
       @include focusOutline(dark);
     }
 
-    &.block-menu__toggle--active:after {
+    &--active:after {
       mask-image: url('close.svg');
       mask-size: 16px;
     }
@@ -140,11 +140,11 @@
           text-decoration: none;
         }
 
-        &.menu-item__link--menu-parent {
+        &--menu-parent {
           width: calc(100% - 60px);
         }
 
-        &.menu-item__link--active {
+        &--active {
           color: $mmMobileChildActive;
         }
       }
@@ -191,11 +191,11 @@
           text-decoration: none;
         }
 
-        &.menu-item__link--menu-parent {
+        &--menu-parent {
           width: calc(100% - 40px);
         }
 
-        &.menu-item__link--active {
+        &--active {
           color: $mmMobileChildActive;
         }
       }
@@ -329,7 +329,7 @@
           }
         }
 
-        &.menu-item__link--menu-parent {
+        &--menu-parent {
           padding-right: 3rem;
         }
       }
@@ -440,8 +440,6 @@
         text-indent: -9000px;
         font-size: 0;
 
-        // Mask + rotation on :after so the button's focus outline paints
-        // unclipped and stays axis-aligned (only the icon rotates).
         &:after {
           content: '';
           position: absolute;

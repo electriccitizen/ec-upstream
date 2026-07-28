@@ -10,11 +10,11 @@
     font-weight: $heavy;
     margin-right: 1rem;
 
-    &+div {
+    & + div {
       display: inline;
 
       &.field-multi-item {
-        &>div {
+        & > div {
           display: inline;
         }
       }

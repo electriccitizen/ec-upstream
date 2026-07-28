@@ -1,5 +1,4 @@
 <ul class="platforms">
-  {# To get new social SVG icon codes, the SVGs must be created in illustrator (starting from an IconFinder brand SVG download) and exported as selections. Open the SVG file in an IDE and the copde should be similar to what is below. Simply past in and add the proper platform classes.  #}
   {% for platform in social_links %}
     {% set url = platform.content['#plain_text'] %}
     {% if 'facebook' in url %}

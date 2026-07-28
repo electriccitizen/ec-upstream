@@ -75,7 +75,7 @@
         @include focusOutline(dark);
       }
 
-      &.block-menu__toggle--active:after {
+      &--active:after {
         mask-image: url('close.svg');
         mask-size: 16px;
       }

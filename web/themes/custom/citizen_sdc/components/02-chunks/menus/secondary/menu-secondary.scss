@@ -37,9 +37,6 @@
     height: 24px;
     position: relative;
 
-    // Caret lives on the pseudo-element, not the button itself, so the
-    // button's :focus-visible outline can paint cleanly — CSS `mask-image`
-    // applied directly to a focusable element clips its outline.
     &:after {
       content: '';
       position: absolute;
@@ -64,10 +61,6 @@
       }
     }
 
-    // .menu-item--open is the single source of truth. JS adds it on hover
-    // (mouseover) and toggle click; Escape and outside-click remove it.
-    // Keeping hover/focus-within out of this rule means an explicit close
-    // wins over a still-true :focus-within (focus returned to the toggle).
     &.menu-item--open {
       & > ul {
         display: block;

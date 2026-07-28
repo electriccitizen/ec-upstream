@@ -59,11 +59,11 @@ h6 {
   @include heading6;
 }
 
-h2+ul,
-h3+ul,
-h4+ul,
-h5+ul,
-h6+ul {
+h2 + ul,
+h3 + ul,
+h4 + ul,
+h5 + ul,
+h6 + ul {
   margin-top: 0;
 }
 
@@ -119,9 +119,7 @@ a:not([class*="ec-button"]) {
     color: $hoverLink;
     text-decoration: underline from-font;
     .field--text-with-summary &,
-    .field--text-long &,
-    .paragraph--accordions__body &,
-    .paragraph--portals__text & {
+    .field--text-long & {
       background-color: $lightBlue2;
       @include transAll(.3s);
 
@@ -133,8 +131,7 @@ a:not([class*="ec-button"]) {
   }
   &:focus-visible {
     .field--text-with-summary &,
-    .field--text-long &,
-    .field--body__text &{
+    .field--text-long &{
       @include focusOutline(dark);
     }
   }
@@ -190,7 +187,7 @@ hr {
   border-width: 1px 0 0;
   color: currentColor;
 
-  &+* {
+  & + * {
     margin-top: $spaceMd;
   }
 }
@@ -203,11 +200,11 @@ blockquote {
 .field--text-long {
   display: flow-root;
 
-  &>*:last-child {
+  & > *:last-child {
     margin-bottom: 0;
   }
 
-  &+* {
+  & + * {
     clear: both;
   }
 

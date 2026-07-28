@@ -29,32 +29,28 @@
     margin-top: $spaceXxs;
   }
 
-  .drawer-toggle__icon {
+  &__icon {
     position: absolute;
     top: 5px;
     right: 5px;
     width: 14px;
     fill: $link;
     transition: transform .3s ease;
-    transform: rotate(180deg);
   }
 
-  &.drawer-toggle--active-drawer {
+  &--active-drawer {
     .drawer-toggle__icon {
-      transform: rotate(360deg);
+      transform: rotate(180deg);
     }
 
     &.drawer-toggle--above {
       .drawer-toggle__icon {
-        transform: rotate(180deg);
+        transform: rotate(360deg);
       }
     }
   }
 
-  &.drawer-toggle--above {
-    .drawer-toggle__icon {
-      transform: rotate(0deg);
-    }
+  &--above {
 
     & + .drawer-content {
       padding-top: $spaceXxs;

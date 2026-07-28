@@ -29,11 +29,6 @@
  * - widths are computed as ratios of (100% - gap)
  * - assumes exactly two direct children: & > * (1) left, (2) right
  *
- * Scaling range is fixed:
- * - start: 800px container width
- * - end:   1094px container width
- *
- *
  * Usage Example:
  * @include twoColumnFluid(
  *   $gap-min-px: 32,
@@ -41,22 +36,14 @@
  *   $left-px: 524,
  *   $right-px: 433
  * );
- * //its a good idea to add some safety guards
- * .left-content{
- *   max-width: 524px;
- * }
- * .right-content {
- *   max-width: 433px;
- * }
- *
  */
 
-$site-side-padding: 3rem;   // per side
-$column-gap-min: 32;        // px at 800
-$column-gap-max: 115;       // px at 1094
-$column-width-min: 800;     // px
-$column-width-max: 1094;    // px
-$column-left-px: 524;       // design intent width at max
+$site-side-padding: 3rem;
+$column-gap-min: 32;
+$column-gap-max: 115;
+$column-width-min: 800;
+$column-width-max: 1094;
+$column-left-px: 524;
 $column-right-px: 433;
 
 @mixin twoColumnFluid(

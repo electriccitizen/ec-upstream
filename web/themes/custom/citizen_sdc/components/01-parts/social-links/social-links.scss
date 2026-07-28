@@ -12,11 +12,11 @@
   gap: 12px;
   @include listReset;
   
-  .platforms__item {
+  &__item {
     margin-bottom: $spaceXxs;
   }
 
-  .platforms__link {
+  &__link {
     &:hover {
       svg {
         circle {

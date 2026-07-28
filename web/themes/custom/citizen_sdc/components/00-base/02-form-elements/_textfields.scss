@@ -4,7 +4,6 @@
 
 @use '../01-mixins/form-mixins' as *;
 
-//set class arrays for form-item mixin styling
 $text-inputs: textfield, email, password, textarea, number, tel, url, date-time-daypicker-time; 
 
 @each $type in $text-inputs {
