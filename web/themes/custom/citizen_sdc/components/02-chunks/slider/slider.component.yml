@@ -15,7 +15,7 @@ props:
     - items
   properties:
     attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Drupal Attributes object for the wrapper.'
     slider_id:
       type: string

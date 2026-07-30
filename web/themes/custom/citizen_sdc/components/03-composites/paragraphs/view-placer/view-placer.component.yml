@@ -8,7 +8,7 @@ props:
   type: object
   properties:
     attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Drupal Attributes object from the paragraph template (class-stripped).'
     title:
       type: [string, 'null']

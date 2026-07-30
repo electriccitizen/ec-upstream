@@ -8,7 +8,7 @@ props:
   type: object
   properties:
     attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Drupal Attributes object for the block'
     title_prefix:
       type: object
@@ -21,4 +21,4 @@ props:
       description: 'Placeholder for contextual links'
 
 slots:
-  block:
+  block: {}

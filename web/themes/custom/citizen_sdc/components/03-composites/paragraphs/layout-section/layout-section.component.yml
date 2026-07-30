@@ -8,7 +8,7 @@ props:
   type: object
   properties:
     attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Drupal Attributes object from the paragraph template (class-stripped via `attributes|without(''class'')` so paragraph-base''s BEM classes don''t duplicate Drupal''s default `paragraph--type-*` class).'
     style_class:
       type: [string, 'null']

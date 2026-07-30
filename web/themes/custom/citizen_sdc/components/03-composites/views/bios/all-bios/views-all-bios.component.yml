@@ -10,7 +10,7 @@ props:
     - rows
   properties:
     attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
     title:
       type: [string, 'null']
     default_row_class:

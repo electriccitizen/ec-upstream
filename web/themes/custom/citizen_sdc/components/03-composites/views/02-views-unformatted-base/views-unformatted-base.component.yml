@@ -10,7 +10,7 @@ props:
     - rows
   properties:
     attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Drupal Attributes object for per-row wrappers (only used indirectly via `rows[].attributes`).'
     title:
       type: [string, 'null']

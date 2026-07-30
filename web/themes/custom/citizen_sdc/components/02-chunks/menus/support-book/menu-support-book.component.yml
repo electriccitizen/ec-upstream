@@ -20,7 +20,7 @@ props:
       type: string
       description: 'Machine name of the menu (used for top-level id attribute)'
     attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Drupal Attributes object for the top level menu <ul>'
 
 slots:

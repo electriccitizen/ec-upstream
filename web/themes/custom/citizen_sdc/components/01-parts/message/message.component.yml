@@ -20,7 +20,7 @@ props:
       type: string 
       description: 'The cleaned status of the message used as a styling modifier'
     attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Drupal Attributes object for the <message>'
     message_list:
       type: array
@@ -30,6 +30,6 @@ props:
           type: array
           description: 'Messages within the message list'
           properties:
-          message:
-            type: string
-            description: 'Mesages within the message list'
+            message:
+              type: string
+              description: 'Mesages within the message list'

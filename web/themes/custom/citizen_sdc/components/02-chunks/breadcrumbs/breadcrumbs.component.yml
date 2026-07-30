@@ -14,9 +14,9 @@ props:
       title: 'Breadcrumbs'
       description: 'Drupal system breadcrumb links'
     breadcrumb_label:
-      type: String
+      type: string
       title: 'Breadcrumbs'
       description: 'Accessiblity text for breadcrumb element'
 
 slots:
-  trail:
+  trail: {}

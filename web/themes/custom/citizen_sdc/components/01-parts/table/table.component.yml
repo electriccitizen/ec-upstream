@@ -10,7 +10,7 @@ props:
     - rows
   properties:
     attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Drupal Attributes object for the <table>'
     caption:
       type: string

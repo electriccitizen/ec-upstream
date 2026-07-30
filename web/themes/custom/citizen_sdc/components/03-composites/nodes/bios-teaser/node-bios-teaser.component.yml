@@ -11,7 +11,7 @@ props:
     - url
   properties:
     attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Drupal Attributes object for the <article> wrapper'
     title:
       type: string
@@ -20,7 +20,7 @@ props:
       type: string
       description: 'URL to the full bios node'
     title_attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Drupal Attributes object for the <h2> title element'
 
 slots:

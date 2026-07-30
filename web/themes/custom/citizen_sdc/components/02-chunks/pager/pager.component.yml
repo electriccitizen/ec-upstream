@@ -19,7 +19,7 @@ props:
       type: string
       description: 'URL of the first page'
     first_attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Link to first page'
     first_text:
       type: string
@@ -31,7 +31,7 @@ props:
       type: string
       description: 'URL of the first page'
     previous_attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Link to first page'
     previous_text:
       type: string
@@ -49,7 +49,7 @@ props:
       type: string
       description: 'URL of the next page'
     next_attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Link to next page'
     next_text:
       type: string
@@ -61,7 +61,7 @@ props:
       type: string
       description: 'URL of the last page'
     last_attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Link to last page'
     last_text:
       type: string

@@ -14,8 +14,8 @@ props:
       title: 'Login'
       description: 'User login title.'
     attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Drupal Attributes object for the <form'
 
 slots:
-  form:
+  form: {}

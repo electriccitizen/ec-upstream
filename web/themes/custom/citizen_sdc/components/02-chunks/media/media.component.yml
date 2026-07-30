@@ -22,7 +22,7 @@ props:
       type: string
       description: 'Rendered view mode of the media'
     attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Drupal Attributes object for the media <article>'
     media_id:
       type: string

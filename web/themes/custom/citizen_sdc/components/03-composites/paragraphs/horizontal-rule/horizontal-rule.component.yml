@@ -10,7 +10,7 @@ props:
     - color
   properties:
     attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Drupal Attributes object from the paragraph template (class-stripped).'
     color:
       type: string

@@ -7,12 +7,12 @@ component:
 props:
   type: object
   required:
-    - back_to_label
+    - back_top_label
   properties:
     back_top_label:
       type: string
       title: 'Back to Top'
       description: 'Accessible label for the back to top element'
     back_top_icon:
-      type: object
+      type: string
       description: 'Back to top SVG icon'

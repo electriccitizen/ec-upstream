@@ -8,8 +8,8 @@ props:
   type: object
   properties:
     attr:
-      type: object
+      type: Drupal\Core\Template\Attribute
       description: 'Drupal Attributes object for the <form>'
 
 slots:
-  form:
+  form: {}
