@@ -1,0 +1,73 @@
+name: Deploy to Pantheon (Open new PR)
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-pr-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  create_multidev:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.PANTHEON_SSH_KEY }}
+          config: ${{ secrets.SSH_CONFIG }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+
+      - name: Install Terminus
+        uses: pantheon-systems/terminus-github-actions@main
+        with:
+          pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+
+      - name: Generate Multidev Name
+        id: multidev_name
+        run: |
+          BRANCH_NAME="${{ github.head_ref }}"
+          BRANCH_NAME=$(echo "$BRANCH_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | cut -c1-11 | sed 's/^-*//;s/-*$//')
+          echo "multidev_env=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Push to Multidev
+        run: |
+          MULTIDEV="${{ steps.multidev_name.outputs.multidev_env }}"
+          git remote add pantheon "${{ secrets.PANTHEON_REPO }}"
+          # Push the branch to Pantheon. Pantheon will NOT trigger a "Sync code" workflow
+          # for branches that have no multidev yet — it just receives the branch. The
+          # multidev:create call below is what actually provisions the env.
+          git push --force pantheon HEAD:refs/heads/$MULTIDEV
+          terminus multidev:create ${{ secrets.PANTHEON_SITE_NAME }}.dev "$MULTIDEV"
+
+      - name: Wait for multidev build_step to complete
+        run: |
+          MULTIDEV="${{ steps.multidev_name.outputs.multidev_env }}"
+          # multidev:create triggers Pantheon's env-creation workflow, which terminus
+          # auto-waits for — but build_step composer install may still be settling.
+          # Poll Drupal bootstrap directly until ready (typical 1-4 min, 10 min cap).
+          for i in $(seq 1 60); do
+            if terminus drush ${{ secrets.PANTHEON_SITE_NAME }}.$MULTIDEV -- status --field=bootstrap 2>/dev/null | grep -q Successful; then
+              echo "Drupal bootstrap ready after ${i}0s"
+              exit 0
+            fi
+            echo "[${i}/60] Waiting for Drupal to be bootable on $MULTIDEV..."
+            sleep 10
+          done
+          echo "ERROR: Drupal never became bootable within 10 minutes"
+          exit 1
+
+      - name: Run Drush on Multidev
+        run: |
+          MULTIDEV="${{ steps.multidev_name.outputs.multidev_env }}"
+          terminus env:wake ${{ secrets.PANTHEON_SITE_NAME }}.$MULTIDEV
+          terminus drush ${{ secrets.PANTHEON_SITE_NAME }}.$MULTIDEV -- deploy
+          terminus env:clear-cache ${{ secrets.PANTHEON_SITE_NAME }}.$MULTIDEV
